@@ -12,6 +12,10 @@
     .govuk-summary-list__key{
         font-weight: normal
     }
+    .dynamic-bar{
+      display:block;
+      padding-bottom: 1em;
+    }
 
 </style>
 <dl class="govuk-summary-list">
@@ -20,7 +24,7 @@
   Outstanding
 </dt>
 <dd class="govuk-summary-list__value">
- <span class="dynamic-cell" style="padding-right:3em">15</span>
+ 0
 </dd>
 </div>
 <div class="govuk-summary-list__row">
@@ -28,7 +32,10 @@
     Good
   </dt>
   <dd class="govuk-summary-list__value">
-  <span class="dynamic-cell" style="padding-right:6em">36</span>
+ 14
+    <svg width="120" height="10" xmlns="http://www.w3.org/2000/svg" class="dynamic-bar">
+      <rect width="120" height="10" x="0" y="0" rx="0" ry="0" fill="gold" />
+     </svg>
   </dd>
 
   </div>
@@ -37,7 +44,10 @@
       Requires improvement
     </dt>
     <dd class="govuk-summary-list__value">
-     <span class="dynamic-cell" style="padding-right:0.2em">2</span>
+     3
+     <svg width="120" height="10" xmlns="http://www.w3.org/2000/svg" class="dynamic-bar">
+      <rect width="30" height="10" x="0" y="0" rx="0" ry="0" fill="gold" />
+     </svg>
     </dd>
     </div>
     <div class="govuk-summary-list__row">
@@ -45,7 +55,10 @@
         Inadequate
       </dt>
       <dd class="govuk-summary-list__value">
-       <span class="dynamic-cell" style="padding-right:0.1em">1</span>
+       7
+       <svg width="120" height="10" xmlns="http://www.w3.org/2000/svg" class="dynamic-bar">
+        <rect width="70" height="10" x="0" y="0" rx="0" ry="0" fill="gold" />
+       </svg>
       </dd>
       </div>
 <div class="govuk-summary-list__row">
@@ -53,7 +66,7 @@
     Total
   </dt>
   <dd class="govuk-summary-list__value">
-   54 </span>
+   24</span>
   </dd>
   </div>
   </dl>
