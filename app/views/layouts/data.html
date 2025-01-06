@@ -1,6 +1,10 @@
-{% extends "layouts/main.html" %}
+{#
+For guidance on how to use layouts see:
+https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
+#}
 
-{% set pageName="Your dashboard" %}
+{% extends "govuk-prototype-kit/layouts/govuk-branded.njk" %}
+<script src="https://d3js.org/d3.v4.js"></script>
 
 {% block header %}
 <header class="govuk-header govuk-header--full-width-border" data-module="govuk-header">
@@ -50,12 +54,12 @@
   },
   {
     href: "get-data",
-    text: "Get data"
+    text: "Get data",
+    active: true
   },
   {
-    href: "#",
-    text: "Your dashboard",
-    active: true
+    href: "dashboard",
+    text: "Your dashboard"
   },
   {
     href: "#",
@@ -64,86 +68,3 @@
   ]
 }) }}
 {% endblock %}
-
-{% block content %}
-
-<!-- <a href="#" class="govuk-back-link">Back</a> -->
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-full">
-    <!-- <a href="#" class="govuk-back-link">Back</a> -->
-    <h1 class="govuk-heading-xl">
-      Your dashboard
-    </h1>
-   <p>Select the 'add to dashboard' option to show indicators here.</p>
-   <!-- <div class="govuk-button-group">
-    <button type="submit" class="govuk-button" data-module="govuk-button">
-      Explore data
-    </button>
-    <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
-      Visit dashboards
-    </button>
-  </div> -->
-  <!-- <p style="padding:0.5em; border: 1px solid #e1e1e1; background-color: #f3f2f1;">You're viewing data for <strong>Suffolk | nursing homes | 2021-2023</strong><a href="#" style="float:right">Change</a></p>
-  -->
-  <style>
-    h1,h2,h3,p{font-family: "GDS Transport", arial, sans-serif;}
-    h3{font-size:1.6em}
-    .dashboard-tile{
-      background-color: #e1e1e1;
-      border:0.5em solid #FFF;
-    }
-    .govuk-summary-list__key{
-      font-weight: normal;
-    }
-    .govuk-grid-column-one-half{
-      padding:0 5em 0 0em
-    }
-  </style>
-
-  <div class="govuk-width-container">
-    <div class="govuk-grid-column-one-half">
-
-      <h3>Total beds versus occupied beds</h3>
-      <p>Topic: Capacity and planning</p>
-      <!-- <p>Source: Adult social care in England, monthly statistics: December 2024 
-      </p> -->
-      <!-- <dl class="govuk-summary-list">
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key govuk-!-width-one-half">
-            Date range
-          </dt>
-          <dd class="govuk-summary-list__value">
-            2021 - 2023
-          </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key govuk-!-width-one-half">
-              Care provider type
-            </dt>
-            <dd class="govuk-summary-list__value">
-              Nursing home
-            </dd>
-            </div> 
-            </dl>-->
-            
-            <p><span style="background-color:green; padding:0 0.25em; margin-right: 1em"> </span>Total beds</p>
-            <p><span style="background-color:red; padding:0 0.25em; margin-right: 1em"> </span>Occupied beds</p>
-      
-      {% include "./_beds-line-chart.html" %}
-      <a href="total-beds"><button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
-        View data
-       </button></a>
-      </div>
-      <div class="govuk-grid-column-one-half">
-        <h3>Suffolk nursing homes: CQC ratings</h3>
-        <!-- <p>Source: CQC data</p> -->
-      {% include "./_cqc-rating.html" %}
-      <a href="total-beds"><button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
-        View data
-       </button></a>
-      </div>
-      </div>
-  </div>
-
-  {% endblock %}
-  

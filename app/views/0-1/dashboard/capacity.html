@@ -105,7 +105,7 @@
 
   <div class="govuk-width-container">
     <div class="govuk-grid-column-one-half">
-      <h3>Total beds versus occupied beds</h3>
+      <h3>Total beds</h3>
       <!-- <p>Source: Adult social care in England, monthly statistics: December 2024 
       </p> -->
       <!-- <dl class="govuk-summary-list">
@@ -127,18 +127,18 @@
             </div> 
             </dl>-->
             
-            <p><span style="background-color:green; padding:0 0.25em; margin-right: 1em"> </span>Total beds</p>
-            <p><span style="background-color:red; padding:0 0.25em; margin-right: 1em"> </span>Occupied beds</p>
+            <p><span style="background-color:green; padding:0 0.25em; margin-right: 1em"> </span>Total beds - Suffolk</p>
+            <p><span style="background-color:red; padding:0 0.25em; margin-right: 1em"> </span>Residential beds - Suffolk</p>
       
       {% include "./_beds-line-chart.html" %}
-      <a href="total-beds"><button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+      <a href="beds-total"><button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
         View data
        </button></a>
       </div>
       <div class="govuk-grid-column-one-half">
         <h3>Suffolk nursing homes: CQC ratings</h3>
         <!-- <p>Source: CQC data</p> -->
-      {% include "./cqc-rating.html" %}
+      {% include "./_cqc-rating.html" %}
       <a href="total-beds"><button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
         View data
        </button></a>
