@@ -1,0 +1,170 @@
+<h2 class="govuk-heading-m">Chart type</h2>
+
+<div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
+  <div class="govuk-radios__item">
+    <input class="govuk-radios__input" id="changedName" name="changedName" type="radio" value="month">
+    <label class="govuk-label govuk-radios__label" for="changedName">
+      Bar chart
+    </label>
+  </div>
+  <div class="govuk-radios__item">
+    <input class="govuk-radios__input" id="changedName-2" name="changedName" type="radio" value="year">
+    <label class="govuk-label govuk-radios__label" for="changedName-2">
+      Line chart
+    </label>
+  </div>
+  <div class="govuk-radios__item">
+    <input class="govuk-radios__input" id="changedName-2" name="changedName" type="radio" value="year">
+    <label class="govuk-label govuk-radios__label" for="changedName-2">
+      Map
+    </label>
+  </div>
+</div>
+<br>
+<button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+  Update chart type
+</button>
+
+<div class="moj-filter">
+    <div class="moj-filter__header">
+      <div class="moj-filter__header-title">
+        <h2 class="govuk-heading-m">Filter</h2>
+
+      </div>
+      <div class="moj-filter__header-action">
+      </div>
+    </div>
+    <div class="moj-filter__content">
+      <div class="moj-filter__selected">
+        <div class="moj-filter__selected-heading">
+          <div class="moj-filter__heading-title">
+            <h2 class="govuk-heading-m">Selected filters</h2>
+          </div>
+          <div class="moj-filter__heading-action">
+            <p><a class="govuk-link govuk-link--no-visited-state" href="">Clear filters</a></p>
+          </div>
+        </div>
+        <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Compare other local authorities</h3>
+        <ul class="moj-filter-tags">
+          <li><a class="moj-filter__tag" href="/path/to/remove/this"><span class="govuk-visually-hidden">Remove this filter</span> Norfolk Country Council</a></li>
+          <li><a class="moj-filter__tag" href="/path/to/remove/this"><span class="govuk-visually-hidden">Remove this filter</span> Cambridgshire County Council</a></li>
+        </ul>
+        <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Beds</h3>
+        <ul class="moj-filter-tags">
+          <li><a class="moj-filter__tag" href="/path/to/remove/this"><span class="govuk-visually-hidden">Remove this filter</span> Total</a></li>
+          <li><a class="moj-filter__tag" href="/path/to/remove/this"><span class="govuk-visually-hidden">Remove this filter</span> Occupied</a></li>
+        </ul>
+      </div>
+      <div class="moj-filter__options">
+        <button type="submit" class="govuk-button" data-module="govuk-button" data-test-id="submit-button">
+          Apply filters
+        </button>
+
+ 
+        <div class="govuk-form-group">
+
+          <div class="moj-datepicker" data-module="moj-date-picker">
+          
+          <label class="govuk-label govuk-label--m" for="keywords">
+            Start date
+          </label>
+          <input class="govuk-input moj-js-datepicker-input " id="date" name="date" type="text" aria-describedby="date-hint" autocomplete="off" value="1/04/2021">
+
+          </div>
+
+        </div>
+        <div class="govuk-form-group">
+
+            <div class="moj-datepicker" data-module="moj-date-picker">
+          <label class="govuk-label govuk-label--m" for="keywords">
+            End date
+          </label>
+          <input class="govuk-input moj-js-datepicker-input " id="date" name="date" type="text" aria-describedby="date-hint" autocomplete="off" value="1/04/2021">
+
+            </div>
+        </div>
+
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-label--m" for="keywords">
+            Local authorities
+          </label>
+          <input class="govuk-input" id="keywords" name="keywords" type="text">
+        </div>
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+              Selected
+            </legend>
+  
+            <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+  
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="type" name="type" type="checkbox" value="1" checked>
+                <label class="govuk-label govuk-checkboxes__label" for="type">
+                  Norfolk County Council
+                </label>
+  
+              </div>
+  
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="type-2" name="type" type="checkbox" value="2" checked>
+                <label class="govuk-label govuk-checkboxes__label" for="type-2">
+                  Cambridgeshire County Council 
+                </label>
+  
+              </div>
+
+  
+            </div>
+  
+          </fieldset>
+  
+        </div>
+  
+        <div class="govuk-form-group">
+  
+          <fieldset class="govuk-fieldset">
+  
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+  
+              Beds
+  
+            </legend>
+  
+            <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+  
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="status" name="status" type="checkbox" value="complete" checked>
+                <label class="govuk-label govuk-checkboxes__label" for="status">
+                  Total
+                </label>
+  
+              </div>
+  
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="status-2" name="status" type="checkbox" value="incomplete">
+                <label class="govuk-label govuk-checkboxes__label" for="status-2">
+                  Occupied
+                </label>
+  
+              </div>
+  
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="status-3" name="status" type="checkbox" value="inprogress">
+                <label class="govuk-label govuk-checkboxes__label" for="status-3">
+                  Unoccupied
+                </label>
+  
+              </div>
+  
+            </div>
+  
+          </fieldset>
+  
+        </div>
+  
+      </div>
+  
+    </div>
+  
+  </div>
