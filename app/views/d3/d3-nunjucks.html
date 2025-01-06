@@ -1,0 +1,150 @@
+{% extends "layouts/main.html" %}
+
+{% set pageName="D3 example" %}
+
+{% block content %}
+<!-- Load d3.js -->
+<script src="https://d3js.org/d3.v4.js"></script>
+
+<!-- Examples taken from https://d3-graph-gallery.com/graph/shape.html -->
+ 
+      <h1>{{pageName}}</h1>
+
+      <!-- 
+      
+      Basic circle 
+      
+      -->
+      {% set thisData=[1,200,3] %}
+      <p>{{thisData[1]}} works</p>
+      <!-- The following doesn't work! -->
+      <svg>
+        <circle style="fill: #69b3a2" stroke="black" cx=100 cy="{{thisData[1]}}" r=40></circle>
+      </svg>
+
+<p>SVG circle:</p>
+<svg>
+  <circle style="fill: #69b3a2" stroke="black" cx=100 cy=100 r=40></circle>
+</svg>
+<!-- 
+
+Circle created with D3.js 
+
+-->
+<p>D3 circle:</p>
+<!-- Create a div where the graph will take place -->
+<div id="circle"></div>
+
+<script>
+
+// create svg element:
+var svg = d3.select("#circle").append("svg").attr("width", 200).attr("height", 200)
+
+// Add the path using this helper function
+svg.append('circle')
+  .attr('cx', 100)
+  .attr('cy', 100)
+  .attr('r', 50)
+  .attr('stroke', 'black')
+  .attr('fill', '#69a3b2');
+</script>
+
+
+<!-- 
+
+Curve 
+
+-->
+<p>Curve, using data definied within the script:</p>
+<div id="curve"></div>
+<div id="rect"></div>
+<script>
+  // create data
+var data = [{x: 0, y: 20}, {x: 150, y: 150}, {x: 300, y: 100}, {x: 450, y: 20}, {x: 600, y: 130}]
+
+// create svg element:
+var svg = d3.select("#curve").append("svg").attr("width", 800).attr("height", 200)
+
+// prepare a helper function
+var curveFunc = d3.line()
+  .curve(d3.curveBasis)              // This is where you define the type of curve. Try curveStep for instance.
+  .x(function(d) { return d.x })
+  .y(function(d) { return d.y })
+
+// Add the path using this helper function
+svg.append('path')
+  .attr('d', curveFunc(data))
+  .attr('stroke', 'black')
+  .attr('fill', 'none');
+
+  //Second svg
+  // create svg element:
+  var svg = d3.select("#rect").append("svg").attr("width", 800).attr("height", 200)
+
+  svg.append('rect')
+  .attr('x',curveFunc(data))
+  .attr('y',10)
+  .attr('width',10)
+  .attr('height',10)
+
+</script>
+
+<!-- 
+
+Bar chart (broken) - see https://d3js.org/d3-shape/stack
+
+-->
+<!-- <p>Bar chart, using data within the script:</p>
+<div id="bar-chart"></div>
+
+<script>
+  // create data
+  const data = [
+  {date: new Date("2015-01-01"), fruit: "apples", sales: 3840},
+  {date: new Date("2015-01-01"), fruit: "bananas", sales: 1920},
+  {date: new Date("2015-01-01"), fruit: "cherries", sales: 960},
+  {date: new Date("2015-01-01"), fruit: "durians", sales: 400},
+  {date: new Date("2015-02-01"), fruit: "apples", sales: 1600},
+  {date: new Date("2015-02-01"), fruit: "bananas", sales: 1440},
+  {date: new Date("2015-02-01"), fruit: "cherries", sales: 960},
+  {date: new Date("2015-02-01"), fruit: "durians", sales: 400},
+  {date: new Date("2015-03-01"), fruit: "apples", sales: 640},
+  {date: new Date("2015-03-01"), fruit: "bananas", sales: 960},
+  {date: new Date("2015-03-01"), fruit: "cherries", sales: 640},
+  {date: new Date("2015-03-01"), fruit: "durians", sales: 400},
+  {date: new Date("2015-04-01"), fruit: "apples", sales: 320},
+  {date: new Date("2015-04-01"), fruit: "bananas", sales: 480},
+  {date: new Date("2015-04-01"), fruit: "cherries", sales: 640},
+  {date: new Date("2015-04-01"), fruit: "durians", sales: 400}
+];
+
+// create svg element:
+var svg = d3.select("#bar-chart").append("svg").attr("width", 800).attr("height", 200)
+
+//Index the data by date and fruit
+const series = d3.stack()
+    .keys(d3.union(data.map(d => d.fruit))) // apples, bananas, cherries, …
+    .value(([, group], key) => group.get(key).sales)
+  (d3.index(data, d => d.date, d => d.fruit));
+
+// create svg element:
+svg.append("g")
+  .selectAll("g")
+  .data(series)
+  .join("g")
+    .attr("fill", d => color(d.key))
+  .selectAll("rect")
+  .data(D => D)
+  .join("rect")
+    .attr("x", d => x(d.data[0]))
+    .attr("y", d => y(d[1]))
+    .attr("height", d => y(d[0]) - y(d[1]))
+    .attr("width", x.bandwidth());
+</script> -->
+    <!--
+
+    End of Main section
+
+    -->
+  </main>
+{% endblock %}

@@ -1,6 +1,10 @@
-{% extends "layouts/main.html" %}
+{#
+For guidance on how to use layouts see:
+https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
+#}
 
-{% set pageName="Total beds" %}
+{% extends "govuk-prototype-kit/layouts/govuk-branded.njk" %}
+<script src="https://d3js.org/d3.v4.js"></script>
 
 {% block header %}
 <header class="govuk-header govuk-header--full-width-border" data-module="govuk-header">
@@ -64,110 +68,3 @@
   ]
 }) }}
 {% endblock %}
-
-{% block content %}
-
-<!-- <a href="#" class="govuk-back-link">Back</a> -->
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-full">
-    <h1 class="govuk-heading-xl">
-      Total beds versus occupied beds
-    </h1>
-    <div class="govuk-form-group">
-      <fieldset class="govuk-fieldset">
-        <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
-          <div class="govuk-checkboxes__item">
-            <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc" checked>
-            <label class="govuk-label govuk-checkboxes__label" for="organisation">
-              Show this indicator on your dashboard
-            </label>
-          </div>
-        </div>
-
-</form>
-<h2>Query details</h2>
-    <dl class="govuk-summary-list">
-  <div class="govuk-summary-list__row">
-    <dt class="govuk-summary-list__key">
-      Dataset
-    </dt>
-    <dd class="govuk-summary-list__value">
-      <a href="#">Adult social care in England, monthly statistic</a>
-    </dd>
-    <!-- <dd class="govuk-summary-list__actions">
-      <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> name</span></a>
-    </dd> -->
-  </div>
-  <div class="govuk-summary-list__row">
-    <dt class="govuk-summary-list__key">
-      Tags
-    </dt>
-    <dd class="govuk-summary-list__value">
-      Capacity planning
-    </dd>
-    <dd class="govuk-summary-list__actions">
-      <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> name</span></a>
-    </dd>
-  </div>
-  <div class="govuk-summary-list__row">
-    <dt class="govuk-summary-list__key">
-      Indicator
-    </dt>
-    <dd class="govuk-summary-list__value">
-      Occupancy rates in care homes in the last 7 days
-    </dd>
-    <dd class="govuk-summary-list__actions">
-      <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> name</span></a>
-    </dd>
-  </div>
-  <div class="govuk-summary-list__row">
-    <dt class="govuk-summary-list__key">
-      Filter
-    </dt>
-    <dd class="govuk-summary-list__value">
-      Contains "suffolk"
-    </dd>
-    <dd class="govuk-summary-list__actions">
-      <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> name</span></a>
-    </dd>
-  </div>
-  <div class="govuk-summary-list__row">
-    <dt class="govuk-summary-list__key">
-      Date range
-    </dt>
-    <dd class="govuk-summary-list__value">
-      Week ending 16/01/2023 to Week ending 16/12/2023
-    </dd>
-    <dd class="govuk-summary-list__actions">
-      <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> name</span></a>
-    </dd>
-  </div>
-  <div class="govuk-summary-list__row">
-    <dt class="govuk-summary-list__key">
-      Output 
-    </dt>
-    <dd class="govuk-summary-list__value">
-      Line chart
-    </dd>
-    <dd class="govuk-summary-list__actions">
-      <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> name</span></a>
-    </dd>
-  </div>
-</dl>
-<h2>Output</h2>
-{% include "./beds-line-chart.html" %}
-<div class="govuk-button-group">
-  <a href="get-data"><button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
-    Export chart
-  </button>
-</a>
-  <a href="dashboard"><button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
-    Download data
-  </button></a>
-</div>
-<a href="get-data"><button type="submit" class="govuk-button" data-module="govuk-button">
-  Exit
-</button>
-</a>
-{% endblock %}
-  

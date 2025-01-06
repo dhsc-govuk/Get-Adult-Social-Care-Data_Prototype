@@ -1,6 +1,6 @@
 {% extends "layouts/main.html" %}
 
-{% set pageName="Your dashboard" %}
+{% set pageName="Total beds" %}
 
 {% block header %}
 <header class="govuk-header govuk-header--full-width-border" data-module="govuk-header">
@@ -50,12 +50,12 @@
   },
   {
     href: "get-data",
-    text: "Get data"
+    text: "Get data",
+    active: true
   },
   {
-    href: "#",
-    text: "Your dashboard",
-    active: true
+    href: "dashboard",
+    text: "Your dashboard"
   },
   {
     href: "#",
@@ -67,108 +67,127 @@
 
 {% block content %}
 
-<br>
-
-<!-- <a href="#" class="govuk-back-link">Back</a> -->
+<a href="#" class="govuk-back-link">Back</a>
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
-    <!-- <a href="#" class="govuk-back-link">Back</a> -->
-    <h1 class="govuk-heading-l">
-      Your dashboard
+    <h1 class="govuk-heading-xl">
+      Total beds versus occupied beds
     </h1>
+    <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset">
+        <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc" checked>
+            <label class="govuk-label govuk-checkboxes__label" for="organisation">
+              Show this indicator on your dashboard
+            </label>
+          </div>
+        </div>
+</fieldset>
 
-    <div id="govuk-notification-banner" class="govuk-notification-banner govuk-!-width-full" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
-      <div class="govuk-notification-banner__header">
-        <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
-          Important
-        </h2>
+<h2>Settings</h2>
+<!-- 
+  
+  LA picker  
+
+-->
+<div class="govuk-form-group">
+  <h1 class="govuk-label-wrapper">
+    <label class="govuk-label govuk-label--s" for="event-name">
+      Local authority
+    </label>
+  </h1>
+  <input class="govuk-input govuk-input--width-20" id="event-name" name="eventName" type="text" value="Suffolk">
+</div>
+
+<!-- 
+  
+  Date picker 
+
+-->
+<style>
+  .date-pickers{
+    margin-bottom:3em;
+    display: grid;
+    grid-template-columns: 35% 35%;
+  }
+</style>
+<div class="date-pickers">
+<div class="moj-datepicker" data-module="moj-date-picker">
+  <div class="govuk-form-group">
+    <label class="govuk-label" for="date">
+      Date range: from 
+    </label>
+    <input class="govuk-input moj-js-datepicker-input " id="date" name="date" type="text" aria-describedby="date-hint" autocomplete="off" value="1/04/2021">
+  </div>
+</div>
+
+<div class="moj-datepicker" data-module="moj-date-picker">
+  <div class="govuk-form-group">
+    <label class="govuk-label" for="date">
+      Date range: to
+    </label>
+    <input class="govuk-input moj-js-datepicker-input " id="date" name="date" type="text" aria-describedby="date-hint" autocomplete="off" value="1/11/2023">
+  </div>
+</div>
+</div>
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-third">
+{% include ("./_lhs-filter.html") %}
+</div>
+<!-- 
+  
+  Main panel 
+
+-->
+
+  <div class="govuk-grid-column-two-thirds">
+<h2 class="govuk-heading-l">Output</h2>
+<div class="govuk-form-group">
+  <fieldset class="govuk-fieldset" aria-describedby="changedName-hint">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+      <h1 class="govuk-fieldset__heading">
+        Chart type
+      </h1>
+    </legend>
+    <div class="govuk-radios govuk-radios--inline govuk-radios--small" data-module="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="changedName" name="changedName" type="radio" value="yes" checked>
+        <label class="govuk-label govuk-radios__label" for="changedName">
+          Line
+        </label>
       </div>
-      <div class="govuk-notification-banner__content" style="max-width: 100%;">
-        <h3 class="govuk-notification-banner__heading">
-          Start using your dashboard
-        </h3>
-        <p class="govuk-body">To help you get started, we've created this dashboard for you.</p>
-        <p class="govuk-body" style="max-width: 100%;">To add or remove an indicator, select one to view its details, then use the 'Show this indicator on your dashboard' option.</p>
-        <p class="govuk-body"><a id="hide-banner" class="govuk-notification-banner__link" href="#">Hide this message</a></p>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="changedName-2" name="changedName" type="radio" value="no">
+        <label class="govuk-label govuk-radios__label" for="changedName-2">
+          Bar
+        </label>
       </div>
     </div>
-    
-    <script>
-      document.getElementById('hide-banner').addEventListener('click', function (event) {
-        event.preventDefault(); // Prevent the default action of the link
-        const banner = document.getElementById('govuk-notification-banner');
-        banner.style.display = 'none'; // Hides the banner
-      });
-    </script>
-   <!-- <div class="govuk-button-group">
-    <button type="submit" class="govuk-button" data-module="govuk-button">
-      Explore data
-    </button>
-    <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
-      Visit dashboards
-    </button>
-  </div> -->
-  <!-- <p style="padding:0.5em; border: 1px solid #e1e1e1; background-color: #f3f2f1;">You're viewing data for <strong>Suffolk | nursing homes | 2021-2023</strong><a href="#" style="float:right">Change</a></p>
-  -->
-  <style>
-    h1,h2,h3,p{font-family: "GDS Transport", arial, sans-serif;}
-    h3{font-size:1.6em}
-    .dashboard-tile{
-      background-color: #e1e1e1;
-      border:0.5em solid #FFF;
-    }
-    .govuk-summary-list__key{
-      font-weight: normal;
-    }
-    .govuk-grid-column-one-half{
-      padding:0 5em 0 0em
-    }
-  </style>
-
-  <div class="govuk-width-container">
-    <div class="govuk-grid-column-one-half">
-
-      <h3>Total beds versus occupied beds</h3>
-      <p>Topic: Capacity and planning</p>
-      <!-- <p>Source: Adult social care in England, monthly statistics: December 2024 
-      </p> -->
-      <!-- <dl class="govuk-summary-list">
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key govuk-!-width-one-half">
-            Date range
-          </dt>
-          <dd class="govuk-summary-list__value">
-            2021 - 2023
-          </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key govuk-!-width-one-half">
-              Care provider type
-            </dt>
-            <dd class="govuk-summary-list__value">
-              Nursing home
-            </dd>
-            </div> 
-            </dl>-->
-            
-            <p><span style="background-color:green; padding:0 0.25em; margin-right: 1em"> </span>Total beds</p>
+  </fieldset>
+</div>
+<hr style="color:#e1e1e1">
+<h2>Total beds versus occupied beds</h2>
+<p><span style="background-color:green; padding:0 0.25em; margin-right: 1em"> </span>Total beds</p>
             <p><span style="background-color:red; padding:0 0.25em; margin-right: 1em"> </span>Occupied beds</p>
       
-      {% include "./_beds-line-chart.html" %}
-      <a href="total-beds"><button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
-        View data
-       </button></a>
-      </div>
-      <div class="govuk-grid-column-one-half">
-        <h3>Suffolk nursing homes: CQC ratings</h3>
-        <!-- <p>Source: CQC data</p> -->
-      {% include "./_cqc-rating.html" %}
-      <a href="total-beds"><button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
-        View data
-       </button></a>
-      </div>
-      </div>
-  </div>
-
-  {% endblock %}
+{% include "./_beds-line-chart-wide.html" %}
+<div class="govuk-button-group">
+  <a href="get-data"><button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+    Export chart
+  </button>
+</a>
+  <a href="dashboard"><button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+    Download data
+  </button></a>
+</div>
+<h2>Smart insights</h2>
+<p>Insights go here</p>
+<a href="get-data"><button type="submit" class="govuk-button" data-module="govuk-button">
+  Exit
+</button>
+</a>
+{% endblock %}
   
