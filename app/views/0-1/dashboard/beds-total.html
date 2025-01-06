@@ -19,52 +19,59 @@
                     </div>
                 </div>
             </fieldset>
-            
             <h2>Settings</h2>
-            <!-- 
-            
-            LA picker  
-            
-            -->
-            <div class="govuk-form-group">
-                <h1 class="govuk-label-wrapper">
-                    <label class="govuk-label govuk-label--s" for="event-name">
-                        Local authority
-                    </label>
-                </h1>
-                <input class="govuk-input govuk-input--width-20" id="event-name" name="eventName" type="text" value="Suffolk">
+            <div class="govuk-grid-row" style="margin-bottom:4em">
+                <div class="govuk-grid-column-one-third">
+                    <!-- 
+                    
+                    LA picker  
+                    
+                    -->
+                    <div class="govuk-form-group">
+                        <h1 class="govuk-label-wrapper">
+                            <label class="govuk-label govuk-label--s" for="event-name">
+                                Local authority
+                            </label>
+                        </h1>
+                        <input class="govuk-input govuk-input--width-20" id="event-name" name="eventName" type="text" value="Suffolk">
+                    </div>
+                </div>
+                <div class="govuk-grid-column-one-third">
+                    <!-- 
+                    
+                    Date range from
+                    
+                    -->
+                    <div class="moj-datepicker" data-module="moj-date-picker">
+                        <div class="govuk-form-group">
+                            <label class="govuk-label" for="date">
+                                Date range: from 
+                            </label>
+                            <input class="govuk-input moj-js-datepicker-input " id="date" name="date" type="text" aria-describedby="date-hint" autocomplete="off" value="1/04/2021">
+                        </div>
+                    </div>
+                </div>
+                <div class="govuk-grid-column-one-third">
+                    <!-- 
+                    
+                    Date range to
+                    
+                    -->
+                    <div class="moj-datepicker" data-module="moj-date-picker">
+                        <div class="govuk-form-group">
+                            <label class="govuk-label" for="date">
+                                Date range: to
+                            </label>
+                            <input class="govuk-input moj-js-datepicker-input " id="date" name="date" type="text" aria-describedby="date-hint" autocomplete="off" value="1/11/2023">
+                        </div>
+                    </div>
+                </div>
             </div>
             <!-- 
             
-            Date picker 
+            Filter column 
             
             -->
-            <style>
-                .date-pickers{
-                    margin-bottom:3em;
-                    display: grid;
-                    grid-template-columns: 35% 35%;
-                }
-            </style>
-            <div class="date-pickers">
-                <div class="moj-datepicker" data-module="moj-date-picker">
-                    <div class="govuk-form-group">
-                        <label class="govuk-label" for="date">
-                            Date range: from 
-                        </label>
-                        <input class="govuk-input moj-js-datepicker-input " id="date" name="date" type="text" aria-describedby="date-hint" autocomplete="off" value="1/04/2021">
-                    </div>
-                </div>
-                
-                <div class="moj-datepicker" data-module="moj-date-picker">
-                    <div class="govuk-form-group">
-                        <label class="govuk-label" for="date">
-                            Date range: to
-                        </label>
-                        <input class="govuk-input moj-js-datepicker-input " id="date" name="date" type="text" aria-describedby="date-hint" autocomplete="off" value="1/11/2023">
-                    </div>
-                </div>
-            </div>
             <div class="govuk-grid-row">
                 <div class="govuk-grid-column-one-third">
                     <div class="moj-filter">
@@ -87,7 +94,7 @@
                                 </div>
                                 <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Beds indicators</h3>
                                 <ul class="moj-filter-tags">
-                                    <li><a class="moj-filter__tag" href="/path/to/remove/this"><span class="govuk-visually-hidden">Remove this filter</span> Total</a></li>
+                                    <li><a class="moj-filter__tag" href="/path/to/remove/this"><span class="govuk-visually-hidden">Remove this filter</span> Total beds</a></li>
                                     <li><a class="moj-filter__tag" href="/path/to/remove/this"><span class="govuk-visually-hidden">Remove this filter</span> General residential</a></li>
                                 </ul>
                                 <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Compare other local authorities</h3>
@@ -121,7 +128,7 @@
                                             <div class="govuk-checkboxes__item">
                                                 <input class="govuk-checkboxes__input" id="status" name="status" type="checkbox" value="complete" checked>
                                                 <label class="govuk-label govuk-checkboxes__label" for="status">
-                                                    Total
+                                                    Total beds
                                                 </label>
                                             </div>
                                             <div class="govuk-checkboxes__item">
@@ -160,7 +167,7 @@
                                             <div class="govuk-checkboxes__item">
                                                 <input class="govuk-checkboxes__input" id="type-2" name="type" type="checkbox" value="2" checked>
                                                 <label class="govuk-label govuk-checkboxes__label" for="type-2">
-                                                    Cambridgeshire
+                                                    Cambridgeshire and Peterborough
                                                 </label>
                                             </div>
                                         </div>
