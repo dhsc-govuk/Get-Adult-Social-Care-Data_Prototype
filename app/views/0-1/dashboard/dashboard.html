@@ -67,14 +67,39 @@
 
 {% block content %}
 
+<br>
+
 <!-- <a href="#" class="govuk-back-link">Back</a> -->
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
     <!-- <a href="#" class="govuk-back-link">Back</a> -->
-    <h1 class="govuk-heading-xl">
+    <h1 class="govuk-heading-l">
       Your dashboard
     </h1>
-   <p>Select the 'add to dashboard' option to show indicators here.</p>
+
+    <div id="govuk-notification-banner" class="govuk-notification-banner govuk-!-width-full" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+      <div class="govuk-notification-banner__header">
+        <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+          Important
+        </h2>
+      </div>
+      <div class="govuk-notification-banner__content" style="max-width: 100%;">
+        <h3 class="govuk-notification-banner__heading">
+          Start using your dashboard
+        </h3>
+        <p class="govuk-body">To help you get started, we've created this dashboard for you.</p>
+        <p class="govuk-body" style="max-width: 100%;">To add or remove an indicator, select one to view its details, then use the 'Show this indicator on your dashboard' option.</p>
+        <p class="govuk-body"><a id="hide-banner" class="govuk-notification-banner__link" href="#">Hide this message</a></p>
+      </div>
+    </div>
+    
+    <script>
+      document.getElementById('hide-banner').addEventListener('click', function (event) {
+        event.preventDefault(); // Prevent the default action of the link
+        const banner = document.getElementById('govuk-notification-banner');
+        banner.style.display = 'none'; // Hides the banner
+      });
+    </script>
    <!-- <div class="govuk-button-group">
     <button type="submit" class="govuk-button" data-module="govuk-button">
       Explore data
