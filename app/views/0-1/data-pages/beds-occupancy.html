@@ -1,0 +1,472 @@
+{% extends "layouts/data.html" %}
+
+{% set pageName="Bed occupancy rate" %}
+
+{% block content %} 
+<!-- <a href="#" class="govuk-back-link">Back</a> -->
+{{ govukBreadcrumbs({
+    items: [
+    {
+        text: "Home",
+        href: "/"
+    },
+    {
+        text: "Get data",
+        href: "../dashboard/get-data"
+    },
+    {
+        text: "Demand and capacity",
+        href: "../dashboard/capacity"
+    }
+    ,
+    {
+        text: "Bed occupacy rate"
+    }
+    ]
+}) }}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <!-- <span class="govuk-caption-l">Demand and capacity</span> -->
+        <h1 class="govuk-heading-l">{{pageName}}</h1>
+        <p class="govuk-body">
+            This indicator shows the total number of available beds in care homes with the number of beds that are occupied. 
+        </p>
+        <p class="govuk-body">
+            Last updated: 24 December 2024
+        </p>
+        <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset">
+                <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                    <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc" checked>
+                        <label class="govuk-label govuk-checkboxes__label" for="organisation">
+                            Show this indicator on your dashboard
+                        </label>
+                    </div>
+                </div>
+            </fieldset>
+            <h2>Settings</h2>
+            <div class="govuk-grid-row" style="margin-bottom:4em">
+                <div class="govuk-grid-column-one-third">
+                    <!-- 
+                    
+                    LA picker  
+                    
+                    -->
+                    <div class="govuk-form-group">
+                        <h1 class="govuk-label-wrapper">
+                            <label class="govuk-label govuk-label--s" for="event-name">
+                                Local authority
+                            </label>
+                        </h1>
+                        <input class="govuk-input govuk-input--width-20" id="event-name" name="eventName" type="text" value="Suffolk">
+                    </div>
+                </div>
+                <div class="govuk-grid-column-one-third">
+                    <!-- 
+                    
+                    Date range from
+                    
+                    -->
+                    <div class="moj-datepicker" data-module="moj-date-picker">
+                        <div class="govuk-form-group">
+                            <label class="govuk-label" for="date">
+                                Date range: from 
+                            </label>
+                            <input class="govuk-input moj-js-datepicker-input " id="date" name="date" type="text" aria-describedby="date-hint" autocomplete="off" value="1/04/2021">
+                        </div>
+                    </div>
+                </div>
+                <div class="govuk-grid-column-one-third">
+                    <!-- 
+                    
+                    Date range to
+                    
+                    -->
+                    <div class="moj-datepicker" data-module="moj-date-picker">
+                        <div class="govuk-form-group">
+                            <label class="govuk-label" for="date">
+                                Date range: to
+                            </label>
+                            <input class="govuk-input moj-js-datepicker-input " id="date" name="date" type="text" aria-describedby="date-hint" autocomplete="off" value="1/11/2023">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 
+            
+            Filter column 
+            
+            -->
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-one-third">
+                    <div class="moj-filter">
+                        <div class="moj-filter__header">
+                            <div class="moj-filter__header-title">
+                                <h2 class="govuk-heading-m">Filter</h2>
+                            </div>
+                            <div class="moj-filter__header-action">
+                            </div>
+                        </div>
+                        <div class="moj-filter__content">
+                            <div class="moj-filter__selected">
+                                <div class="moj-filter__selected-heading">
+                                    <div class="moj-filter__heading-title">
+                                        <h2 class="govuk-heading-m">Selected filters</h2>
+                                    </div>
+                                    <div class="moj-filter__heading-action">
+                                        <p><a class="govuk-link govuk-link--no-visited-state" href="">Clear filters</a></p>
+                                    </div>
+                                </div>
+                                <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Beds indicators</h3>
+                                <ul class="moj-filter-tags">
+                                    <li><a class="moj-filter__tag" href="/path/to/remove/this"><span class="govuk-visually-hidden">Remove this filter</span> Total beds</a></li>
+                                    <li><a class="moj-filter__tag" href="/path/to/remove/this"><span class="govuk-visually-hidden">Remove this filter</span> General residential</a></li>
+                                </ul>
+                                <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Compare other local authorities</h3>
+                                <ul class="moj-filter-tags">
+                                    <!-- <li><a class="moj-filter__tag" href="/path/to/remove/this"><span class="govuk-visually-hidden">Remove this filter</span> Norfolk</a></li> -->
+                                    <li><a class="moj-filter__tag" href="/path/to/remove/this"><span class="govuk-visually-hidden">Remove this filter</span> Cambridgeshire</a></li>
+                                </ul>
+                            </div>
+                            <div class="moj-filter__options">
+                                <button type="submit" class="govuk-button" data-module="govuk-button" data-test-id="submit-button">
+                                    Apply filters
+                                </button>
+                                <!-- 
+                                
+                                Beds 
+                                
+                                -->
+                                <h2>Beds</h2>
+                                <div class="govuk-form-group">
+                                    <label class="govuk-label govuk-label--s" for="keywords">
+                                        Add beds indicator
+                                    </label>
+                                    <input class="govuk-input" id="keywords" name="keywords" type="text">
+                                </div>
+                                <div class="govuk-form-group">
+                                    <fieldset class="govuk-fieldset">
+                                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                                            Selected
+                                        </legend>
+                                        <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                                            <div class="govuk-checkboxes__item">
+                                                <input class="govuk-checkboxes__input" id="status" name="status" type="checkbox" value="complete" checked>
+                                                <label class="govuk-label govuk-checkboxes__label" for="status">
+                                                    Total beds
+                                                </label>
+                                            </div>
+                                            <div class="govuk-checkboxes__item">
+                                                <input class="govuk-checkboxes__input" id="status-2" name="status" type="checkbox" value="incomplete" checked>
+                                                <label class="govuk-label govuk-checkboxes__label" for="status-2">
+                                                    General residential
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </fieldset>
+                                </div>
+                                <!-- 
+                                
+                                Local authorities 
+                                
+                                -->
+                                <h2>Local authorities</h2>
+                                <div class="govuk-form-group">
+                                    <label class="govuk-label govuk-label--s" for="keywords">
+                                        Add local authority
+                                    </label>
+                                    <input class="govuk-input" id="keywords" name="keywords" type="text">
+                                </div>
+                                <div class="govuk-form-group">
+                                    <fieldset class="govuk-fieldset">
+                                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                                            Selected
+                                        </legend>
+                                        <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                                            <!-- <div class="govuk-checkboxes__item">
+                                                <input class="govuk-checkboxes__input" id="type" name="type" type="checkbox" value="1" checked>
+                                                <label class="govuk-label govuk-checkboxes__label" for="type">
+                                                    Norfolk
+                                                </label>
+                                            </div> -->
+                                            <div class="govuk-checkboxes__item">
+                                                <input class="govuk-checkboxes__input" id="type-2" name="type" type="checkbox" value="2" checked>
+                                                <label class="govuk-label govuk-checkboxes__label" for="type-2">
+                                                    Cambridgeshire and Peterborough
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </fieldset>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 
+                
+                Main panel 
+                
+                -->
+                <div class="govuk-grid-column-two-thirds">
+                    <h2 class="govuk-heading-l">Output</h2>
+                    <h3>Occupancy rate for Suffolk: 85%</h3>
+                    <p>12,158 beds out of 14,200 were occupied in December 24, 2024.</p>
+                    <style>
+                        #percentage-bar{width:25%}
+                    </style>
+                    <svg viewBox="0 0 50 10" xmlns="http://www.w3.org/2000/svg" id="percentage-bar">
+                        <rect x="0" width="50" height="5" rx="1" fill="#FFF" stroke="#e1e1e1"/>
+                        <rect x="0" width="42.5" height="5" rx="1" fill="gold"/>
+                    </svg>
+                    
+                    <div class="govuk-form-group">
+                        <fieldset class="govuk-fieldset" aria-describedby="changedName-hint">
+                            <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                                <h1 class="govuk-fieldset__heading">
+                                    Chart type
+                                </h1>
+                            </legend>
+                            <div class="govuk-radios govuk-radios--inline govuk-radios--small" data-module="govuk-radios">
+                                <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="changedName" name="changedName" type="radio" value="yes">
+                                    <label class="govuk-label govuk-radios__label" for="changedName">
+                                        Time series
+                                    </label>
+                                </div>
+                                <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="changedName-2" name="changedName" type="radio" value="no"  checked>
+                                    <label class="govuk-label govuk-radios__label" for="changedName-2">
+                                        Table
+                                    </label>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </div>
+                    <style>
+                        .comparison-table{
+                            text-align: left;
+                            font-family: "GDS Transport", arial, sans-serif;
+                            padding-bottom:2em;
+                            border-collapse: collapse;
+                        }
+                        .comparison-table th{
+                            padding: 1em 2em 0 1em;
+                        }
+                        .comparison-table td{
+                            padding: 1em;
+                            border: 1px solid grey
+                        }
+                         .comparison-table td{
+                            text-align:right
+                        }
+                        .comparison-table td:nth-child(1){
+                            text-align:left
+                        }
+                        .rowspan-comparison{
+                            vertical-align: top;
+                            border: 1px solid grey
+                        }
+                    </style>
+                    <table class="comparison-table">
+                        <tbody>
+                        <tr>
+                        <td>Indicator</td>
+                        <td>Numerator</td>
+                        <td>Denominator</td>
+                        <td>Percentage</td>
+                        </tr>
+                        <tr>
+                        <td>Adult community contacts</td>
+                        <td>1202</td>
+                        <td>1788</td>
+                        <td>67                                <svg viewBox="0 0 50 10" xmlns="http://www.w3.org/2000/svg">
+                                    <rect x="0" width="50" height="5" rx="1" fill="#FFF" stroke="#e1e1e1"/>
+                                    <rect x="0" width="33.5" height="5" rx="1" fill="gold"/>
+                                </svg>
+                        </tr>
+                        <tr>
+                        <td>Adult hospice at home beds</td>
+                        <td>58</td>
+                        <td>164</td>
+                        <td>35                                <svg viewBox="0 0 50 10" xmlns="http://www.w3.org/2000/svg">
+                                    <rect x="0" width="50" height="5" rx="1" fill="#FFF" stroke="#e1e1e1"/>
+                                    <rect x="0" width="17.5" height="5" rx="1" fill="gold"/>
+                                </svg>
+                        </tr>
+                        <tr>
+                        <td>Adult impatient beds</td>
+                        <td>44</td>
+                        <td>56</td>
+                        <td>79                                <svg viewBox="0 0 50 10" xmlns="http://www.w3.org/2000/svg">
+                                    <rect x="0" width="50" height="5" rx="1" fill="#FFF" stroke="#e1e1e1"/>
+                                    <rect x="0" width="35" height="5" rx="1" fill="gold"/>
+                                </svg>
+                        </tr>
+                        <tr>
+                        <td>Children's community contacts</td>
+                        <td>228</td>
+                        <td>228</td>
+                        <td>100                                <svg viewBox="0 0 50 10" xmlns="http://www.w3.org/2000/svg">
+                                    <rect x="0" width="50" height="5" rx="1" fill="#FFF" stroke="#e1e1e1"/>
+                                    <rect x="0" width="50" height="5" rx="1" fill="gold"/>
+                                </svg>
+                        </tr>
+                        <tr>
+                        <td>Children's hospice at home beds</td>
+                        <td>10</td>
+                        <td>10</td>
+                        <td>100                                <svg viewBox="0 0 50 10" xmlns="http://www.w3.org/2000/svg">
+                                    <rect x="0" width="50" height="5" rx="1" fill="#FFF" stroke="#e1e1e1"/>
+                                    <rect x="0" width="50" height="5" rx="1" fill="gold"/>
+                                </svg>
+                        </tr>
+                        <tr>
+                        <td>Children's impatient beds</td>
+                        <td>4</td>
+                        <td>4</td>
+                        <td>100                                <svg viewBox="0 0 50 10" xmlns="http://www.w3.org/2000/svg">
+                                    <rect x="0" width="50" height="5" rx="1" fill="#FFF" stroke="#e1e1e1"/>
+                                    <rect x="0" width="50" height="5" rx="1" fill="gold"/>
+                                </svg>
+                        </tr>
+                        <tr>
+                        <td>Community rehabilitation NHS or LA funded</td>
+                        <td>274</td>
+                        <td>276</td>
+                        <td>99                                <svg viewBox="0 0 50 10" xmlns="http://www.w3.org/2000/svg">
+                                    <rect x="0" width="50" height="5" rx="1" fill="#FFF" stroke="#e1e1e1"/>
+                                    <rect x="0" width="50" height="5" rx="1" fill="gold"/>
+                                </svg>
+                        </tr>
+                        <tr>
+                        <td>Community rehabilitation private funded</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td class="xl16">null</td>
+                        </tr>
+                        <tr>
+                        <td>Community support</td>
+                        <td>106</td>
+                        <td>136</td>
+                        <td>78                                <svg viewBox="0 0 50 10" xmlns="http://www.w3.org/2000/svg">
+                                    <rect x="0" width="50" height="5" rx="1" fill="#FFF" stroke="#e1e1e1"/>
+                                    <rect x="0" width="39" height="5" rx="1" fill="gold"/>
+                                </svg>
+                        </tr>
+                        <tr>
+                        <td>Dementia nursing</td>
+                        <td>852</td>
+                        <td>932</td>
+                        <td>91                                <svg viewBox="0 0 50 10" xmlns="http://www.w3.org/2000/svg">
+                                    <rect x="0" width="50" height="5" rx="1" fill="#FFF" stroke="#e1e1e1"/>
+                                    <rect x="0" width="45" height="5" rx="1" fill="gold"/>
+                                </svg>
+                        </tr>
+                        <tr>
+                        <td>Dementia residential</td>
+                        <td>3406</td>
+                        <td>3776</td>
+                        <td>90                                <svg viewBox="0 0 50 10" xmlns="http://www.w3.org/2000/svg">
+                                    <rect x="0" width="50" height="5" rx="1" fill="#FFF" stroke="#e1e1e1"/>
+                                    <rect x="0" width="45" height="5" rx="1" fill="gold"/>
+                                </svg>
+                        </tr>
+                        <tr>
+                        <td>End of life</td>
+                        <td>94</td>
+                        <td>98</td>
+                        <td>96                                <svg viewBox="0 0 50 10" xmlns="http://www.w3.org/2000/svg">
+                                    <rect x="0" width="50" height="5" rx="1" fill="#FFF" stroke="#e1e1e1"/>
+                                    <rect x="0" width="48" height="5" rx="1" fill="gold"/>
+                                </svg>
+                        </tr>
+                        <tr>
+                        <td>General nursing</td>
+                        <td>1640</td>
+                        <td>1832</td>
+                        <td>90                                <svg viewBox="0 0 50 10" xmlns="http://www.w3.org/2000/svg">
+                                    <rect x="0" width="50" height="5" rx="1" fill="#FFF" stroke="#e1e1e1"/>
+                                    <rect x="0" width="45" height="5" rx="1" fill="gold"/>
+                                </svg>
+                        </tr>
+                        <tr>
+                        <td>General residential</td>
+                        <td>3608</td>
+                        <td>4124</td>
+                        <td>87                                <svg viewBox="0 0 50 10" xmlns="http://www.w3.org/2000/svg">
+                                    <rect x="0" width="50" height="5" rx="1" fill="#FFF" stroke="#e1e1e1"/>
+                                    <rect x="0" width="43" height="5" rx="1" fill="gold"/>
+                                </svg>
+                        </tr>
+                        <tr>
+                        <td>Learning disability nursing</td>
+                        <td>20</td>
+                        <td>20</td>
+                        <td>100                                <svg viewBox="0 0 50 10" xmlns="http://www.w3.org/2000/svg">
+                                    <rect x="0" width="50" height="5" rx="1" fill="#FFF" stroke="#e1e1e1"/>
+                                    <rect x="0" width="50" height="5" rx="1" fill="gold"/>
+                                </svg>
+                        </tr>
+                        <tr>
+                        <td>Learning disability residential</td>
+                        <td>366</td>
+                        <td>466</td>
+                        <td>79                                <svg viewBox="0 0 50 10" xmlns="http://www.w3.org/2000/svg">
+                                    <rect x="0" width="50" height="5" rx="1" fill="#FFF" stroke="#e1e1e1"/>
+                                    <rect x="0" width="40" height="5" rx="1" fill="gold"/>
+                                </svg>
+                        </tr>
+                        <tr>
+                        <td>Mental health nursing</td>
+                        <td>120</td>
+                        <td>136</td>
+                        <td>88                                <svg viewBox="0 0 50 10" xmlns="http://www.w3.org/2000/svg">
+                                    <rect x="0" width="50" height="5" rx="1" fill="#FFF" stroke="#e1e1e1"/>
+                                    <rect x="0" width="44" height="5" rx="1" fill="gold"/>
+                                </svg>
+                        </tr>
+                        <tr>
+                        <td>Mental health residential</td>
+                        <td>104</td>
+                        <td>122</td>
+                        <td>85                                <svg viewBox="0 0 50 10" xmlns="http://www.w3.org/2000/svg">
+                                    <rect x="0" width="50" height="5" rx="1" fill="#FFF" stroke="#e1e1e1"/>
+                                    <rect x="0" width="42" height="5" rx="1" fill="gold"/>
+                                </svg>
+                        </tr>
+                        <tr>
+                        <td>Transitional</td>
+                        <td>20</td>
+                        <td>30</td>
+                        <td>67                                <svg viewBox="0 0 50 10" xmlns="http://www.w3.org/2000/svg">
+                                    <rect x="0" width="50" height="5" rx="1" fill="#FFF" stroke="#e1e1e1"/>
+                                    <rect x="0" width="33" height="5" rx="1" fill="gold"/>
+                                </svg>
+                        </tr>
+                        <tr>
+                        <td>YPD young physically disabled</td>
+                        <td>2</td>
+                        <td>2</td>
+                        <td>100                                <svg viewBox="0 0 50 10" xmlns="http://www.w3.org/2000/svg">
+                                    <rect x="0" width="50" height="5" rx="1" fill="#FFF" stroke="#e1e1e1"/>
+                                    <rect x="0" width="50" height="5" rx="1" fill="gold"/>
+                                </svg>
+                        </tr>
+                        <tr>
+                        <td class="xl19" height="20">Total</td>
+                        <td>12158</td>
+                        <td>14200</td>
+                        <td>86                                <svg viewBox="0 0 50 10" xmlns="http://www.w3.org/2000/svg">
+                                    <rect x="0" width="50" height="5" rx="1" fill="#FFF" stroke="#e1e1e1"/>
+                                    <rect x="0" width="43" height="5" rx="1" fill="gold"/>
+                                </svg>
+                        </tr>
+                        </tbody>
+                        </table>
+                        <p>&nbsp;</p>
+                        <a href="get-data"><button type="submit" class="govuk-button" data-module="govuk-button">
+                            Exit
+                        </button>
+                    </a>
+                    {% endblock%}
