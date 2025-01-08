@@ -1,6 +1,6 @@
 {% extends "layouts/main.html" %}
 
-{% set pageName="Your dashboard" %}
+{% set pageName="Demand and capacity" %}
 
 {% block header %}
 <header class="govuk-header govuk-header--full-width-border" data-module="govuk-header">
@@ -66,85 +66,130 @@
 {% endblock %}
 
 {% block content %}
-
-<!-- <a href="#" class="govuk-back-link">Back</a> -->
+<a href="get-data" class="govuk-back-link">Back</a>
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
     <!-- <a href="#" class="govuk-back-link">Back</a> -->
     <h1 class="govuk-heading-xl">
-      Demand and capacity
+      {{pageName}}
     </h1>
-
-   <!-- <div class="govuk-button-group">
-    <button type="submit" class="govuk-button" data-module="govuk-button">
-      Explore data
-    </button>
-    <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
-      Visit dashboards
-    </button>
-  </div> -->
-  <!-- <p style="padding:0.5em; border: 1px solid #e1e1e1; background-color: #f3f2f1;">You're viewing data for <strong>Suffolk | nursing homes | 2021-2023</strong><a href="#" style="float:right">Change</a></p>
-  -->
-  <style>
-    h1,h2,h3,p{font-family: "GDS Transport", arial, sans-serif;}
-    h3{font-size:1.6em}
-    .dashboard-tile{
-      background-color: #e1e1e1;
-      border:0.5em solid #FFF;
-    }
-    .govuk-summary-list__key{
-      font-weight: normal;
-    }
-    .govuk-grid-column-one-half{
-      padding:0 5em 0 0em
-    }
-  </style>
-  <h2 class="govuk-heading-l">
-    Current demand
-  </h2>
-
-  <div class="govuk-width-container">
-    <div class="govuk-grid-column-one-half">
-      <h3>Total beds</h3>
-      <!-- <p>Source: Adult social care in England, monthly statistics: December 2024 
-      </p> -->
-      <!-- <dl class="govuk-summary-list">
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key govuk-!-width-one-half">
-            Date range
-          </dt>
-          <dd class="govuk-summary-list__value">
-            2021 - 2023
-          </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key govuk-!-width-one-half">
-              Care provider type
-            </dt>
-            <dd class="govuk-summary-list__value">
-              Nursing home
-            </dd>
-            </div> 
-            </dl>-->
-            
-            <p><span style="background-color:green; padding:0 0.25em; margin-right: 1em"> </span>Total beds - Suffolk</p>
-            <p><span style="background-color:red; padding:0 0.25em; margin-right: 1em"> </span>Residential beds - Suffolk</p>
-      
-      {% include "./_beds-line-chart.html" %}
-      <a href="../data-pages/beds-total"><button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
-        View data
-       </button></a>
+    
+    <!-- <div class="govuk-button-group">
+      <button type="submit" class="govuk-button" data-module="govuk-button">
+        Explore data
+      </button>
+      <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+        Visit dashboards
+      </button>
+    </div> -->
+    <!-- <p style="padding:0.5em; border: 1px solid #e1e1e1; background-color: #f3f2f1;">You're viewing data for <strong>Suffolk | nursing homes | 2021-2023</strong><a href="#" style="float:right">Change</a></p>
+    -->
+    <style>
+      h1,h2,h3,p{font-family: "GDS Transport", arial, sans-serif;}
+      h3{font-size:1.6em}
+      .dashboard-tile{
+        background-color: #e1e1e1;
+        border:0.5em solid #FFF;
+      }
+      .govuk-summary-list__key{
+        font-weight: normal;
+      }
+      .govuk-grid-column-one-half{
+        padding:0 5em 0 0em
+      }
+    </style>
+    <h2 class="govuk-heading-l">
+      Present demand
+    </h2>
+    
+    <div class="govuk-width-container">
+      <div class="govuk-grid-column-one-half">
+        <h3>Total beds</h3>
+        <p>The total number of beds recorded by care providers across health and adult social care. </p>
+        <p><span style="background-color:green; padding:0 0.25em; margin-right: 1em"> </span>Total beds - Suffolk County Council</p>
+        <p><span style="background-color:red; padding:0 0.25em; margin-right: 1em"> </span>Residential beds - Suffolk County Council</p>
+        
+        {% include "./_beds-line-chart.html" %}
+        <a href="../data-pages/beds-total"><button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+          View data
+        </button></a>
       </div>
+      <div class="govuk-grid-column-one-half">
+        <h3>Bed occupancy rate</h3>
+        <p>The number of occupied beds as a proportion of all available beds. </p>
+        <h3 class="govuk-heading-s">Bed occupancy rate for Suffolk County Council: 85%</h3>
+        <style>
+          #percentage-bar{width:25%}
+      </style>
+      <p>
+      <svg viewBox="0 0 50 10" xmlns="http://www.w3.org/2000/svg" id="percentage-bar">
+          <rect x="0" width="50" height="5" rx="1" fill="#FFF" stroke="#e1e1e1"/>
+          <rect x="0" width="42.5" height="5" rx="1" fill="gold"/>
+      </svg>
+    </p>
+        <p>12,158 beds out of 14,200 were occupied in December 24, 2024.</p>
+        <a href="../data-pages/beds-occupancy"><button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+          View data
+        </button></a>
+      </div>
+      </div>
+      </div>
+      <div class="govuk-width-container">
+        <div class="govuk-grid-column-one-half">
+          <h3>Population with disabilities</h3>
+          <table class="govuk-table">
+            <caption><h3 class="govuk-heading-s" style="text-align:left">Suffolk County Council</h3></caption>
+            <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Under 25</th>
+                <td class="govuk-table__cell">9%
+                    <svg viewBox="0 0 50 10" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="0" width="50" height="5" rx="1" fill="#FFF" stroke="#e1e1e1"/>
+                        <rect x="0" width="4.5" height="5" rx="1" fill="gold"/>
+                    </svg>
+                </td>
+            </tr>
+            <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Aged 22-64</th>
+                <td class="govuk-table__cell">16%
+                    <svg viewBox="0 0 50 10" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="0" width="50" height="5" rx="1" fill="#FFF" stroke="#e1e1e1"/>
+                        <rect x="0" width="8" height="5" rx="1" fill="gold"/>
+                    </svg>
+                </td>
+            </tr>
+            <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Over 65</th>
+                <td class="govuk-table__cell">31%
+                    <svg viewBox="0 0 50 10" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="0" width="50" height="5" rx="1" fill="#FFF" stroke="#e1e1e1"/>
+                        <rect x="0" width="15.5" height="5" rx="1" fill="gold"/>
+                    </svg>
+                </td>
+            </tr>
+            <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">All age groups</th>
+                <td class="govuk-table__cell">18%
+                    <svg viewBox="0 0 50 10" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="0" width="50" height="5" rx="1" fill="#FFF" stroke="#e1e1e1"/>
+                        <rect x="0" width="9" height="5" rx="1" fill="gold"/>
+                    </svg>
+                </td>
+            </tr>
+        </table>
+          <a href="../data-pages/population-disability"><button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+            View data
+          </button></a>
+        </div>
       <div class="govuk-grid-column-one-half">
         <h3>Suffolk nursing homes: CQC ratings</h3>
         <!-- <p>Source: CQC data</p> -->
-      {% include "./_cqc-rating.html" %}
-      <a href="total-beds"><button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
-        View data
-       </button></a>
+        {% include "./_cqc-rating.html" %}
+        <a href="total-beds"><button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+          View data
+        </button></a>
       </div>
-      </div>
+    </div>
   </div>
-
+  
   {% endblock %}
   
