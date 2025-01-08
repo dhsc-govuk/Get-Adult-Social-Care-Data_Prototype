@@ -1,0 +1,20 @@
+{% extends "layouts/main.html" %}
+
+{% set pageName="SVG CSS" %}
+
+{% block content %}
+<h1>{{pageName}}</h1>
+<p>You can set the size of SVG elements using Nunjucks, if you go through CSS.</p>
+<h2>SVG bar</h2>
+{% set x = 47 %}
+<style>
+  #gold-bar{
+    width:{{x}}px
+  }
+</style>
+<svg viewBox="0 0 50 10" xmlns="http://www.w3.org/2000/svg" id="percentage-bar">
+  <rect x="0" width="50" height="5" rx="1" fill="#FFF" stroke="#e1e1e1"/>
+  <rect x="0" width="1" height="5" rx="1" fill="gold" id="gold-bar" style=""/>
+</svg>
+
+{% endblock %}
