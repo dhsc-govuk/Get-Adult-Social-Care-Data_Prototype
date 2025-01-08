@@ -3,8 +3,8 @@
 {% set pageName="Bed occupancy rate" %}
 
 {% block content %} 
-<!-- <a href="#" class="govuk-back-link">Back</a> -->
-{{ govukBreadcrumbs({
+<a href="../dashboard/capacity" class="govuk-back-link">Back</a>
+<!-- {{ govukBreadcrumbs({
     items: [
     {
         text: "Home",
@@ -23,7 +23,7 @@
         text: "Bed occupacy rate"
     }
     ]
-}) }}
+}) }} -->
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
         <!-- <span class="govuk-caption-l">Demand and capacity</span> -->
@@ -59,7 +59,7 @@
                                 Local authority
                             </label>
                         </h1>
-                        <input class="govuk-input govuk-input--width-20" id="event-name" name="eventName" type="text" value="Suffolk">
+                        <input class="govuk-input govuk-input--width-20" id="event-name" name="eventName" type="text" value="Suffolk County Council">
                     </div>
                 </div>
                 <div class="govuk-grid-column-one-third">
@@ -73,7 +73,7 @@
                             <label class="govuk-label" for="date">
                                 Date range: from 
                             </label>
-                            <input class="govuk-input moj-js-datepicker-input " id="date" name="date" type="text" aria-describedby="date-hint" autocomplete="off" value="1/04/2021">
+                            <input class="govuk-input moj-js-datepicker-input " id="date" name="date" type="text" aria-describedby="date-hint" autocomplete="off" value="24/12/2024">
                         </div>
                     </div>
                 </div>
@@ -88,7 +88,7 @@
                             <label class="govuk-label" for="date">
                                 Date range: to
                             </label>
-                            <input class="govuk-input moj-js-datepicker-input " id="date" name="date" type="text" aria-describedby="date-hint" autocomplete="off" value="1/11/2023">
+                            <input class="govuk-input moj-js-datepicker-input " id="date" name="date" type="text" aria-describedby="date-hint" autocomplete="off" value="24/12/2024">
                         </div>
                     </div>
                 </div>
@@ -118,10 +118,9 @@
                                         <p><a class="govuk-link govuk-link--no-visited-state" href="">Clear filters</a></p>
                                     </div>
                                 </div>
-                                <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Beds indicators</h3>
+                                <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Bed occupancy indicators</h3>
                                 <ul class="moj-filter-tags">
-                                    <li><a class="moj-filter__tag" href="/path/to/remove/this"><span class="govuk-visually-hidden">Remove this filter</span> Total beds</a></li>
-                                    <li><a class="moj-filter__tag" href="/path/to/remove/this"><span class="govuk-visually-hidden">Remove this filter</span> General residential</a></li>
+                                    <li><a class="moj-filter__tag" href="/path/to/remove/this"><span class="govuk-visually-hidden">Remove this filter</span> Show all</a></li>
                                 </ul>
                                 <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Compare other local authorities</h3>
                                 <ul class="moj-filter-tags">
@@ -138,7 +137,7 @@
                                 Beds 
                                 
                                 -->
-                                <h2>Beds</h2>
+                                <h2>Beds occupied</h2>
                                 <div class="govuk-form-group">
                                     <label class="govuk-label govuk-label--s" for="keywords">
                                         Add beds indicator
@@ -154,13 +153,7 @@
                                             <div class="govuk-checkboxes__item">
                                                 <input class="govuk-checkboxes__input" id="status" name="status" type="checkbox" value="complete" checked>
                                                 <label class="govuk-label govuk-checkboxes__label" for="status">
-                                                    Total beds
-                                                </label>
-                                            </div>
-                                            <div class="govuk-checkboxes__item">
-                                                <input class="govuk-checkboxes__input" id="status-2" name="status" type="checkbox" value="incomplete" checked>
-                                                <label class="govuk-label govuk-checkboxes__label" for="status-2">
-                                                    General residential
+                                                    All
                                                 </label>
                                             </div>
                                         </div>
@@ -210,7 +203,7 @@
                 -->
                 <div class="govuk-grid-column-two-thirds">
                     <h2 class="govuk-heading-l">Output</h2>
-                    <h3>Occupancy rate for Suffolk: 85%</h3>
+                    <h3>Bed occupancy rate for Suffolk County Council: 85%</h3>
                     <p>12,158 beds out of 14,200 were occupied in December 24, 2024.</p>
                     <style>
                         #percentage-bar{width:25%}
@@ -251,7 +244,8 @@
                             border-collapse: collapse;
                         }
                         .comparison-table th{
-                            padding: 1em 2em 0 1em;
+                            padding: 1em 2em 1em 1em;
+                            border: 1px solid grey
                         }
                         .comparison-table td{
                             padding: 1em;
@@ -271,10 +265,10 @@
                     <table class="comparison-table">
                         <tbody>
                         <tr>
-                        <td>Indicator</td>
-                        <td>Numerator</td>
-                        <td>Denominator</td>
-                        <td>Percentage</td>
+                        <th>Indicator</th>
+                        <th>Beds occupied</th>
+                        <th>Total beds</th>
+                        <th>Percentage</th>
                         </tr>
                         <tr>
                         <td>Adult community contacts</td>
@@ -295,7 +289,7 @@
                                 </svg>
                         </tr>
                         <tr>
-                        <td>Adult impatient beds</td>
+                        <td>Adult inpatient beds</td>
                         <td>44</td>
                         <td>56</td>
                         <td>79                                <svg viewBox="0 0 50 10" xmlns="http://www.w3.org/2000/svg">

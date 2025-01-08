@@ -3,8 +3,8 @@
 {% set pageName="Total beds" %}
 
 {% block content %} 
-<!-- <a href="#" class="govuk-back-link">Back</a> -->
-{{ govukBreadcrumbs({
+<a href="../dashboard/capacity" class="govuk-back-link">Back</a>
+<!-- {{ govukBreadcrumbs({
     items: [
     {
         text: "Home",
@@ -23,7 +23,7 @@
         text: pageName
     }
     ]
-}) }}
+}) }} -->
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
         <!-- <span class="govuk-caption-l">Demand and capacity</span> -->
@@ -59,7 +59,7 @@
                                 Local authority
                             </label>
                         </h1>
-                        <input class="govuk-input govuk-input--width-20" id="event-name" name="eventName" type="text" value="Suffolk">
+                        <input class="govuk-input govuk-input--width-20" id="event-name" name="eventName" type="text" value="Suffolk County Council">
                     </div>
                 </div>
                 <div class="govuk-grid-column-one-third">
@@ -126,7 +126,7 @@
                                 <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Compare other local authorities</h3>
                                 <ul class="moj-filter-tags">
                                     <!-- <li><a class="moj-filter__tag" href="/path/to/remove/this"><span class="govuk-visually-hidden">Remove this filter</span> Norfolk</a></li> -->
-                                    <li><a class="moj-filter__tag" href="/path/to/remove/this"><span class="govuk-visually-hidden">Remove this filter</span> Cambridgeshire</a></li>
+                                    <li><a class="moj-filter__tag" href="/path/to/remove/this"><span class="govuk-visually-hidden">Remove this filter</span> Cambridgeshire and Peterborough</a></li>
                                 </ul>
                             </div>
                             <div class="moj-filter__options">
@@ -235,9 +235,9 @@
                     </div>
                     <h2>Total beds</h2>
                     <ul class="govuk-list">
-                        <li><span style="background-color:green; padding:0 0.25em; margin-right: 1em"> </span>Total beds - Suffolk</li>
+                        <li><span style="background-color:green; padding:0 0.25em; margin-right: 1em"> </span>Total beds - Suffolk County Council</li>
                         <li><span style="background-color:gold; padding:0 0.25em; margin-right: 1em"> </span>Total beds - Cambridgeshire and Peterborough</li>
-                        <li><span style="background-color:red; padding:0 0.25em; margin-right: 1em"> </span>General residential - Suffolk</li>
+                        <li><span style="background-color:red; padding:0 0.25em; margin-right: 1em"> </span>General residential - Suffolk County Council</li>
                         <li><span style="background-color:violet; padding:0 0.25em; margin-right: 1em"> </span>General residential - Cambridgeshire and Peterborough</li>   
                     </ul>
                     <!-- 
@@ -285,10 +285,11 @@
                                 style="fill:none;stroke:violet;stroke-width:3" />
                             </g>
                         </svg>
-                        <p class="govuk-body">
-                            Source: Office for National Statistics
-                        </p>
-                        <p><img src="https://govuk-elements.herokuapp.com/public/images/icon-file-download-2x.png" height=20 width=15 align="center">&nbsp;&nbsp;<a href="" class="govuk-link">Download chart image (PNG)</a>&nbsp;  &nbsp;<img src="https://govuk-elements.herokuapp.com/public/images/icon-file-download-2x.png" align="center" height=20 width=15>&nbsp;<a href="" class="govuk-link">Download data (CSV)</a></p>
+                        <h3>Outputs</h3>
+                        <ul>
+                        <li><a href="" class="govuk-link">Download chart image (PNG)</a></li>
+                        <li><a href="" class="govuk-link">Download data (CSV)</a></li>
+                        </ul>
                         <!-- 
                         
                         Smart insights 
