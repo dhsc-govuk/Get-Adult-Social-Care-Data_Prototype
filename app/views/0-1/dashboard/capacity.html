@@ -73,17 +73,6 @@
     <h1 class="govuk-heading-xl">
       {{pageName}}
     </h1>
-    
-    <!-- <div class="govuk-button-group">
-      <button type="submit" class="govuk-button" data-module="govuk-button">
-        Explore data
-      </button>
-      <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
-        Visit dashboards
-      </button>
-    </div> -->
-    <!-- <p style="padding:0.5em; border: 1px solid #e1e1e1; background-color: #f3f2f1;">You're viewing data for <strong>Suffolk | nursing homes | 2021-2023</strong><a href="#" style="float:right">Change</a></p>
-    -->
     <style>
       h1,h2,h3,p{font-family: "GDS Transport", arial, sans-serif;}
       h3{font-size:1.6em}
@@ -95,13 +84,12 @@
         font-weight: normal;
       }
       .govuk-grid-column-one-half{
-        padding:0 5em 0 0em
+        padding:0 5em 2em 0em
       }
     </style>
     <h2 class="govuk-heading-l">
       Care market profiles
     </h2>
-    
     <div class="govuk-width-container">
       <div class="govuk-grid-column-one-half">
         <h3>Total beds</h3>
@@ -239,86 +227,165 @@
 CP performance
 
 -->
-<!-- <div class="govuk-width-container">
+<div class="govuk-width-container">
   <h2 class="govuk-heading-l">
     Care provider performance
+  </h2>
+ <div class="govuk-grid-column-one-half"><h3>Client quality of life scores</h3>
+  <p>Social care-related quality of life scores for clients.</p>
+  <table class="govuk-table">
+    <caption><h3 class="govuk-heading-s" style="text-align:left">Suffolk County Council</h3></caption>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">2017</th>
+      <td class="govuk-table__cell">19.2
+        <svg viewBox="0 0 50 10" xmlns="http://www.w3.org/2000/svg">
+          <rect x="0" width="50" height="5" rx="1" fill="#FFF" stroke="#e1e1e1"/>
+          <rect x="0" width="25" height="5" rx="1" fill="gold"/>
+        </svg>
+      </td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">2018</th>
+      <td class="govuk-table__cell">19.7
+        <svg viewBox="0 0 50 10" xmlns="http://www.w3.org/2000/svg">
+          <rect x="0" width="50" height="5" rx="1" fill="#FFF" stroke="#e1e1e1"/>
+          <rect x="0" width="50" height="5" rx="1" fill="gold"/>
+        </svg>
+      </td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">2019</th>
+      <td class="govuk-table__cell">19.4
+        <svg viewBox="0 0 50 10" xmlns="http://www.w3.org/2000/svg">
+          <rect x="0" width="50" height="5" rx="1" fill="#FFF" stroke="#e1e1e1"/>
+          <rect x="0" width="35" height="5" rx="1" fill="gold"/>
+        </svg>
+      </td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">2020</th>
+      <td class="govuk-table__cell">19.7
+        <svg viewBox="0 0 50 10" xmlns="http://www.w3.org/2000/svg">
+          <rect x="0" width="50" height="5" rx="1" fill="#FFF" stroke="#e1e1e1"/>
+          <rect x="0" width="50" height="5" rx="1" fill="gold"/>
+        </svg>
+      </td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">2021</th>
+      <td class="govuk-table__cell">Null
+      </td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">2022</th>
+      <td class="govuk-table__cell">18.8
+        <svg viewBox="0 0 50 10" xmlns="http://www.w3.org/2000/svg">
+          <rect x="0" width="50" height="5" rx="1" fill="#FFF" stroke="#e1e1e1"/>
+          <rect x="0" width="5" height="5" rx="1" fill="gold"/>
+        </svg>
+      </td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">2023</th>
+      <td class="govuk-table__cell">18.9
+        <svg viewBox="0 0 50 10" xmlns="http://www.w3.org/2000/svg">
+          <rect x="0" width="50" height="5" rx="1" fill="#FFF" stroke="#e1e1e1"/>
+          <rect x="0" width="10" height="5" rx="1" fill="gold"/>
+        </svg>
+      </td>
+    </tr>
+  </table>
+  <a href="../data-pages/population-disability"><button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+    View data
+  </button></a>
+</div>
+ <div class="govuk-grid-column-one-half">
+  <h3>Overall satisfaction</h3>
+  <p>The overall satisfaction of clients with their care and support.</p>
+  <table class="govuk-table">
+    <caption><h3 class="govuk-heading-s" style="text-align:left">Suffolk County Council</h3></caption>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">2017</th>
+      <td class="govuk-table__cell">68.8
+        <svg viewBox="0 0 50 10" xmlns="http://www.w3.org/2000/svg">
+          <rect x="0" width="50" height="5" rx="1" fill="#FFF" stroke="#e1e1e1"/>
+          <rect x="0" width="25" height="5" rx="1" fill="gold"/>
+        </svg>
+      </td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">2018</th>
+      <td class="govuk-table__cell">67.4
+        <svg viewBox="0 0 50 10" xmlns="http://www.w3.org/2000/svg">
+          <rect x="0" width="50" height="5" rx="1" fill="#FFF" stroke="#e1e1e1"/>
+          <rect x="0" width="50" height="5" rx="1" fill="gold"/>
+        </svg>
+      </td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">2019</th>
+      <td class="govuk-table__cell">69.1
+        <svg viewBox="0 0 50 10" xmlns="http://www.w3.org/2000/svg">
+          <rect x="0" width="50" height="5" rx="1" fill="#FFF" stroke="#e1e1e1"/>
+          <rect x="0" width="50" height="5" rx="1" fill="gold"/>
+        </svg>
+      </td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">2020</th>
+      <td class="govuk-table__cell">62.8
+        <svg viewBox="0 0 50 10" xmlns="http://www.w3.org/2000/svg">
+          <rect x="0" width="50" height="5" rx="1" fill="#FFF" stroke="#e1e1e1"/>
+          <rect x="0" width="50" height="5" rx="1" fill="gold"/>
+        </svg>
+      </td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">2021</th>
+      <td class="govuk-table__cell">Null
+      </td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">2022</th>
+      <td class="govuk-table__cell">65.1
+        <svg viewBox="0 0 50 10" xmlns="http://www.w3.org/2000/svg">
+          <rect x="0" width="50" height="5" rx="1" fill="#FFF" stroke="#e1e1e1"/>
+          <rect x="0" width="5" height="5" rx="1" fill="gold"/>
+        </svg>
+      </td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">2023</th>
+      <td class="govuk-table__cell">67.4
+        <svg viewBox="0 0 50 10" xmlns="http://www.w3.org/2000/svg">
+          <rect x="0" width="50" height="5" rx="1" fill="#FFF" stroke="#e1e1e1"/>
+          <rect x="0" width="10" height="5" rx="1" fill="gold"/>
+        </svg>
+      </td>
+    </tr>
+  </table>
+  <a href="../data-pages/population-disability"><button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+    View data
+  </button></a>
+ </div>
+ </div>
+
+<div class="govuk-width-container">
+  <h2 class="govuk-heading-l" style="color:#FFF">
+    .
   </h2>
   <!-- 
   
   QOL scores 
   
   -->
-  <!-- <div class="govuk-grid-column-one-half">
-    <h3>Client quality of life scores</h3>
-    <p>Social care-related quality of life scores for clients.</p>
-    <table class="govuk-table">
-      <caption><h3 class="govuk-heading-s" style="text-align:left">Suffolk County Council</h3></caption>
-      <tr class="govuk-table__row">
-        <th scope="row" class="govuk-table__header">2017</th>
-        <td class="govuk-table__cell">19.2
-          <svg viewBox="0 0 50 10" xmlns="http://www.w3.org/2000/svg">
-            <rect x="0" width="50" height="5" rx="1" fill="#FFF" stroke="#e1e1e1"/>
-            <rect x="0" width="25" height="5" rx="1" fill="gold"/>
-          </svg>
-        </td>
-      </tr>
-      <tr class="govuk-table__row">
-        <th scope="row" class="govuk-table__header">2018</th>
-        <td class="govuk-table__cell">19.7
-          <svg viewBox="0 0 50 10" xmlns="http://www.w3.org/2000/svg">
-            <rect x="0" width="50" height="5" rx="1" fill="#FFF" stroke="#e1e1e1"/>
-            <rect x="0" width="50" height="5" rx="1" fill="gold"/>
-          </svg>
-        </td>
-      </tr>
-      <tr class="govuk-table__row">
-        <th scope="row" class="govuk-table__header">2019</th>
-        <td class="govuk-table__cell">19.4
-          <svg viewBox="0 0 50 10" xmlns="http://www.w3.org/2000/svg">
-            <rect x="0" width="50" height="5" rx="1" fill="#FFF" stroke="#e1e1e1"/>
-            <rect x="0" width="35" height="5" rx="1" fill="gold"/>
-          </svg>
-        </td>
-      </tr>
-      <tr class="govuk-table__row">
-        <th scope="row" class="govuk-table__header">2020</th>
-        <td class="govuk-table__cell">19.7
-          <svg viewBox="0 0 50 10" xmlns="http://www.w3.org/2000/svg">
-            <rect x="0" width="50" height="5" rx="1" fill="#FFF" stroke="#e1e1e1"/>
-            <rect x="0" width="50" height="5" rx="1" fill="gold"/>
-          </svg>
-        </td>
-      </tr>
-      <tr class="govuk-table__row">
-        <th scope="row" class="govuk-table__header">2021</th>
-        <td class="govuk-table__cell">Null
-        </td>
-      </tr>
-      <tr class="govuk-table__row">
-        <th scope="row" class="govuk-table__header">2022</th>
-        <td class="govuk-table__cell">18.8
-          <svg viewBox="0 0 50 10" xmlns="http://www.w3.org/2000/svg">
-            <rect x="0" width="50" height="5" rx="1" fill="#FFF" stroke="#e1e1e1"/>
-            <rect x="0" width="5" height="5" rx="1" fill="gold"/>
-          </svg>
-        </td>
-      </tr>
-      <tr class="govuk-table__row">
-        <th scope="row" class="govuk-table__header">2023</th>
-        <td class="govuk-table__cell">18.9
-          <svg viewBox="0 0 50 10" xmlns="http://www.w3.org/2000/svg">
-            <rect x="0" width="50" height="5" rx="1" fill="#FFF" stroke="#e1e1e1"/>
-            <rect x="0" width="10" height="5" rx="1" fill="gold"/>
-          </svg>
-        </td>
-      </tr>
-    </table>
-    <a href="../data-pages/population-disability"><button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
-      View data
-    </button></a>
+ <div class="govuk-grid-column-one-half">
+   
 </div>
-<div class="govuk-grid-column-one-half">xxx</div>
+ <div class="govuk-grid-column-one-half">
+   
 </div>
-</div> -->
+
+</div> 
 
 {% endblock %}
