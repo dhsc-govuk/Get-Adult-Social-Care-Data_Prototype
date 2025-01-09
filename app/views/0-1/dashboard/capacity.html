@@ -95,8 +95,20 @@
         <h3>Total beds</h3>
         <p>The total number of beds recorded by care providers across health and adult social care. </p>
         <ul class="govuk-list">
-        <li><span style="background-color:green; padding:0 0.25em; margin-right: 1em"> </span>Total beds - Suffolk County Council</li>
-        <li><span style="background-color:red; padding:0 0.25em; margin-right: 1em"> </span>Residential beds - Suffolk County Council</li>
+        <li>
+          <svg height="5" width="50" xmlns="http://www.w3.org/2000/svg">
+            <g fill="none">
+                <line x1="0" y1="0" x2="50" y2="0" style="stroke:green;stroke-width:10" />
+            </g>
+          </svg>
+          Total beds - Suffolk County Council</li>
+        <li>
+          <svg height="5" width="50" xmlns="http://www.w3.org/2000/svg">
+            <g fill="none">
+                <line x1="0" y1="0" x2="50" y2="0" style="stroke:red;stroke-width:10" stroke-dasharray="5,5"/>
+            </g>
+          </svg> 
+          Residential beds - Suffolk County Council</li>
       </ul>
         {% include "./_beds-line-chart.html" %}
         <a href="../data-pages/beds-total"><button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
