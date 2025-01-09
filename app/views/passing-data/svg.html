@@ -18,7 +18,7 @@
 </div>
 <style>
   .govuk-heading-xl{margin-top:0.2em}
-  .bar:hover{background:yellow}
+  .bar:hover{fill:gold}
 </style>
 <div class="govuk-grid-row">
   <h2>Table with bars: applications per month</h2>
@@ -57,7 +57,7 @@
         <svg width="200" height="20" xmlns="http://www.w3.org/2000/svg">
           <!-- Add a title, for accessibility -->
           <title>{{item.month}} - {{item.apps}}</title>
-          <rect width={{ item.apps / 10 }} height="10" x="10" y="10" rx="2" ry="2" fill="#12436d" />
+          <rect width={{ item.apps / 10 }} height="10" x="10" y="10" rx="2" ry="2" fill="#12436d" class="bar"/>
         </svg> 
       </td>
       <td class="govuk-!-text-align-right">{{ item.onHold }}</td>
@@ -73,6 +73,23 @@
     <p>This would display if the 'item' collection were empty</p>
     {% endfor %}
   </table>
+  <h3>Vertical bar chart version</h3>
+      <!-- 
+    
+    Horizontal version 
+    
+    -->
+    <style>
+      .vertical-svg{margin:0; padding:0}
+      .vertical-bar:hover{fill:gold}
+    </style>
+    {% for item in items %}
+    <svg width="5" height="150" xmlns="http://www.w3.org/2000/svg" class="vertical-svg">
+      <!-- Add a title, for accessibility -->
+      <title>{{item.month}} - {{item.apps}}</title>
+      <rect width="5" height={{ item.apps / 10 }} x="0" y={{150 - (item.apps / 10) }} fill="#e1e1e1" class="vertical-bar"/>
+    </svg> 
+    {% endfor %}
   <h3>Applications by country and region</h3>
   <p>You might want to see where your applications came from, within the UK. </p>
   <p>This example uses SVG to draw an abstract map of the UK and populate it with some more Nunjucks data.</p>
