@@ -1,0 +1,39 @@
+  <!-- 
+  
+  Chart  
+  
+  -->
+  <svg height="250" width="320" xmlns="http://www.w3.org/2000/svg" transform="translate(20,0)">
+    <defs>
+      <style>
+        text{font-family: 'Helvetica Neue', sans-serif; }
+      </style>
+    </defs>
+    
+    <!-- 	Y Scale -->
+    <text class="axis-text"x="0" y="50" fill="#666">20,000</text>
+    <text class="axis-text"x="0" y="125" fill="#666">10,000</text>
+    <text class="axis-text"x="42" y="200" fill="#666">0</text>
+    
+    <g transform="translate(20,0)">
+      <!-- 		Axes -->
+      <line x1="50" y1="0" x2="50" y2="200" style="stroke:#666;stroke-width:2" />
+      <line x1="50" y1="200" x2="600" y2="200" style="stroke:#666;stroke-width:2" />
+      <rect width="600" height="2" x="50" y="50" fill="#e1e1e1" />
+      <rect width="600" height="2" x="50" y="120" fill="#e1e1e1" />
+      
+      <!-- 		X Scale -->
+      <text class="axis-text"x="50" y="220" fill="#666">2021</text>
+      <text class="axis-text"x="150" y="220" fill="#666">2022</text>
+      <text class="axis-text"x="250" y="220" fill="#666">2023</text>
+      
+      <!-- 		Lines -->
+      <g transform="translate(-70,0) scale(0.8 1)">
+        <!-- Total beds - Suffolk -->
+        <polyline points="150,99 200,91 250,89 300,87 350,82 400,65, 450,80"
+        style="fill:none;stroke:green;stroke-width:3" />
+        <!-- Residential - Suffolk -->
+        <polyline points="150,195 200,196 250,192 300,188 350,190 400,182 450,175"
+        style="fill:none;stroke:red;stroke-width:3" stroke-dasharray="5,5"/>
+      </g>
+    </svg>
