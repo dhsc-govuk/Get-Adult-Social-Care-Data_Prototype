@@ -71,7 +71,7 @@
                     <div class="moj-datepicker" data-module="moj-date-picker">
                         <div class="govuk-form-group">
                             <label class="govuk-label" for="date">
-                                Date range: from 
+                                Start date 
                             </label>
                             <input class="govuk-input moj-js-datepicker-input " id="date" name="date" type="text" aria-describedby="date-hint" autocomplete="off" value="1/04/2021">
                         </div>
@@ -86,7 +86,7 @@
                     <div class="moj-datepicker" data-module="moj-date-picker">
                         <div class="govuk-form-group">
                             <label class="govuk-label" for="date">
-                                Date range: to
+                                End date
                             </label>
                             <input class="govuk-input moj-js-datepicker-input " id="date" name="date" type="text" aria-describedby="date-hint" autocomplete="off" value="1/11/2023">
                         </div>
@@ -209,13 +209,13 @@
                 
                 -->
                 <div class="govuk-grid-column-two-thirds">
-                    <h2 class="govuk-heading-l">Output</h2>
+                    <!--<h2 class="govuk-heading-l">Output</h2>-->
                       <div class="govuk-form-group">
                         <fieldset class="govuk-fieldset" aria-describedby="changedName-hint">
                             <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-                                <h1 class="govuk-fieldset__heading">
+                                <h2 class="govuk-fieldset__heading">
                                     Chart type
-                                </h1>
+                                </h2>
                             </legend>
                             <div class="govuk-radios govuk-radios--inline govuk-radios--small" data-module="govuk-radios">
                                 <div class="govuk-radios__item">
@@ -233,7 +233,7 @@
                             </div>
                         </fieldset>
                     </div>
-                    <h2>Total beds</h2>
+                    <h2 class="govuk-heading-m">Total beds</h2>
                     <ul class="govuk-list">
                         <li>
                             <svg height="5" width="50" xmlns="http://www.w3.org/2000/svg">
@@ -309,8 +309,8 @@
                                 style="fill:none;stroke:violet;stroke-width:3" stroke-dasharray="5,5"/>
                             </g>
                         </svg>
-                        <p>Source: <a href="#">Capacity tracker</a></p>
-                        <h3>Outputs</h3>
+                        <p>Source: Capacity tracker</p>
+                        <h3>Download options</h3>
                         <ul>
                         <li><a href="" class="govuk-link">Download chart image (PNG)</a></li>
                         <li><a href="" class="govuk-link">Download data (CSV)</a></li>
@@ -356,8 +356,6 @@
                             Not helpful
                         </button>
                         -->
-                        <a href="get-data"><button type="submit" class="govuk-button" data-module="govuk-button">
-                            Exit
-                        </button>
-                    </a>
+                       <p class="govuk-body"><a class="govuk-link" href="#">Back </a></p>
+
                     {% endblock%}
