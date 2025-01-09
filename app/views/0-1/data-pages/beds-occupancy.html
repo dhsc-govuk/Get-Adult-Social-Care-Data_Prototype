@@ -71,7 +71,7 @@
                     <div class="moj-datepicker" data-module="moj-date-picker">
                         <div class="govuk-form-group">
                             <label class="govuk-label" for="date">
-                                Date range: from 
+                                Start date 
                             </label>
                             <input class="govuk-input moj-js-datepicker-input " id="date" name="date" type="text" aria-describedby="date-hint" autocomplete="off" value="24/12/2024">
                         </div>
@@ -86,7 +86,7 @@
                     <div class="moj-datepicker" data-module="moj-date-picker">
                         <div class="govuk-form-group">
                             <label class="govuk-label" for="date">
-                                Date range: to
+                                End date
                             </label>
                             <input class="govuk-input moj-js-datepicker-input " id="date" name="date" type="text" aria-describedby="date-hint" autocomplete="off" value="24/12/2024">
                         </div>
@@ -202,8 +202,8 @@
                 
                 -->
                 <div class="govuk-grid-column-two-thirds">
-                    <h2 class="govuk-heading-l">Output</h2>
-                    <h3>Bed occupancy rate for Suffolk County Council: 85%</h3>
+                    <!--<h2 class="govuk-heading-l">Output</h2>-->
+                    <h2 class="govuk-heading-m">Bed occupancy rate for Suffolk County Council: 85%</h2>
                     <p>12,158 beds out of 14,200 were occupied in December 24, 2024.</p>
                     <style>
                         #percentage-bar{width:25%}
@@ -459,6 +459,8 @@
                         </tbody>
                         </table>
                         <p></p>
+                        <p>Source: Capacity tracker</a></p>
+    
                         <h2 class="govuk-heading-m"><!--&#10024; -->Smart insights (experimental)</h2>
                         <div class="govuk-inset-text">
                             These insights are powered by artificial intelligence (AI), which can sometimes be inaccurate. Verify the information with primary sources before sharing or using it. <a class="@ovuk-link" href="">Learn more about smart insights</a>
@@ -488,9 +490,7 @@
                             </li>
                             <li><strong>Enhance service coordination:</strong> Explore partnerships with other providers to manage overflow and ensure continuity of care for clients in these critical categories.</li>
                         </ul>
-                        <p>&nbsp;</p>
-                        <a href="get-data"><button type="submit" class="govuk-button" data-module="govuk-button">
-                            Exit
-                        </button>
-                    </a>
+                        
+                         <p class="govuk-body"><a class="govuk-link" href="#">Back</a></p>
+                    
                     {% endblock%}

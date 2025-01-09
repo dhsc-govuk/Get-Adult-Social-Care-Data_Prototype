@@ -37,7 +37,7 @@
                                 Local authority
                             </label>
                         </h1>
-                        <input class="govuk-input govuk-input--width-20" id="event-name" name="eventName" type="text" value="Suffolk">
+                        <input class="govuk-input govuk-input--width-20" id="event-name" name="eventName" type="text" value="Suffolk County Council">
                     </div>
                 </div>
                 <div class="govuk-grid-column-one-third">
@@ -149,7 +149,7 @@
                 
                 -->
                 <div class="govuk-grid-column-two-thirds">
-                    <h2 class="govuk-heading-l">Output</h2>
+                    <!--<h2 class="govuk-heading-l">Output</h2>-->
                     <!-- <div class="govuk-form-group">
                         <fieldset class="govuk-fieldset" aria-describedby="changedName-hint">
                             <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
@@ -174,7 +174,7 @@
                         </fieldset>
                     </div>
                     <hr style="color:#e1e1e1"> -->
-                    <h2>{{pageName}} - proportions</h2>
+                    <h2>{{pageName}} - Percentage</h2>
 <style>
     .comparison-table{
         text-align: left;
@@ -382,15 +382,13 @@
     </tbody>
     </table>
     <p>&nbsp;</p>
-                <div class="govuk-button-group">
-                        <a href="get-data"><button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
-                            Export chart
-                        </button>
-                    </a>
-                    <a href="dashboard"><button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
-                        Download data
-                    </button></a>
-                </div>
+
+                <p>Source: Adult Social Care Outcomes Framwework (ASCOF)</a></p>
+                <h3>Download options</h3>
+                <ul>
+                <li><a href="" class="govuk-link">Download chart image (PNG)</a></li>
+                <li><a href="" class="govuk-link">Download data (CSV)</a></li>
+                </ul>
                 
                 <h2 class="govuk-heading-m"><!--&#10024; -->Smart insights (experimental)</h2>
                 <div class="govuk-inset-text">
@@ -419,8 +417,6 @@
                     <li><strong>Enhance services for older clients:</strong> Tailor support to address specific needs of clients aged 65 and over, such as improving accessibility and fostering greater engagement.</li>
                     <li><strong>Analyse age-specific feedback:</strong>  Collect and compare feedback from different age groups to identify targeted strategies for increasing satisfaction among older adults.</li>
                 </ul>
-                <a href="get-data"><button type="submit" class="govuk-button" data-module="govuk-button">
-                    Exit
-                </button>
-            </a>
+                <p class="govuk-body"><a class="govuk-link" href="#">Back</a></p>
+                    
             {% endblock%}
