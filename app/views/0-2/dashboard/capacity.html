@@ -102,13 +102,13 @@
             </g>
           </svg>
           Total beds - Suffolk County Council</li>
-        <li>
+        <!-- <li>
           <svg height="5" width="50" xmlns="http://www.w3.org/2000/svg">
             <g fill="none">
                 <line x1="0" y1="0" x2="50" y2="0" style="stroke:red;stroke-width:10" stroke-dasharray="5,5"/>
             </g>
           </svg> 
-          General residential - Suffolk County Council</li>
+          General residential - Suffolk County Council</li> -->
       </ul>
         {% include "./_beds-line-chart.html" %}
         <a href="../data-pages/beds-total"><button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
@@ -133,6 +133,52 @@
           View data
         </button></a>
       </div>
+      <div class="govuk-grid-column-one-half">
+        <h3>Care provider locations by size</h3>
+        <table class="govuk-table">
+          <caption><h3 class="govuk-heading-s" style="text-align:left">Suffolk County Council</h3></caption>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Small</th>
+            <td class="govuk-table__cell">35
+              <svg viewBox="0 0 50 10" xmlns="http://www.w3.org/2000/svg">
+                
+                <rect x="0" width="17.5" height="5" rx="1" fill="gold"/>
+              </svg>
+            </td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Medium</th>
+            <td class="govuk-table__cell">87
+              <svg viewBox="0 0 50 10" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="0" width="43.5" height="5" rx="1" fill="gold"/>
+              </svg>
+            </td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Large</th>
+            <td class="govuk-table__cell">69
+              <svg viewBox="0 0 50 10" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="0" width="34.5" height="5" rx="1" fill="gold"/>
+              </svg>
+            </td>
+          </tr>
+          </table>
+        <a href="../data-pages/care-provider-location-by-size"><button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+          View data
+        </button></a>
+      </div>
+      <div class="govuk-grid-column-one-half">
+        <h3>Fee rate</h3>
+        <a href="../data-pages/beds-occupancy"><button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+          View data
+        </button></a>
+        </div>
+        <div class="govuk-grid-column-one-half">
+          <h3>Unit cost</h3>
+          <a href="../data-pages/beds-occupancy"><button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+            View data
+          </button></a>
+        </div>
     </div>
   </div>
   <!-- 
@@ -144,6 +190,12 @@
     <h2 class="govuk-heading-l">
       Present demand
     </h2>
+    <div class="govuk-grid-column-one-half">
+      <h3>Population age</h3>
+      <a href="../data-pages/beds-occupancy"><button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+        View data
+      </button></a>
+    </div>
     <div class="govuk-grid-column-one-half">
       <h3>Population with disabilities</h3>
       <p>The percentage of the population in England who are considered disabled.</p>
