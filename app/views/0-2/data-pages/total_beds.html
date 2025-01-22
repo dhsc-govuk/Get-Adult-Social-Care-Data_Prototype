@@ -1,0 +1,335 @@
+{% extends "layouts/main.html" %}
+
+{% set pageName="Total beds" %}
+
+{% block content %} 
+<a href="../dashboard/capacity" class="govuk-back-link">Back</a>
+<!-- {{ govukBreadcrumbs({
+  items: [
+  {
+    text: "Home",
+    href: "../dashboard/index"
+  },
+  {
+    text: "Get data",
+    href: "../dashboard/get-data"
+  },
+  {
+    text: "Demand and capacity",
+    href: "../dashboard/capacity"
+  }
+  ,
+  {
+    text: pageName
+  }
+  ]
+}) }} -->
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <!-- <span class="govuk-caption-l">Demand and capacity</span> -->
+    <h1 class="govuk-heading-l">{{pageName}}</h1>
+    <p class="govuk-body">
+      This indicator shows the total number of beds recorded by care providers across health and adult social care.
+    </p>
+    <!-- 
+      
+      LA picker  
+      
+    -->
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Local authorities to compare
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Suffolk, Cambridgeshire
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> name</span></a>
+        </dd>
+      </div>
+    </dl>
+    <h3>Contents</h3>
+    <ul>
+      <li><a href="#summary">Summary</a></li>
+      <li><a href="#timeseries">Time series</a></li>
+      <li><a href="#filters">Filters</a></li>
+      <li><a href="#smartinsights">Smart insights</a></li>
+    </ul>
+    
+    <!-- 
+      
+      Main content
+      
+    -->
+    <style>
+      h2{margin-top:4em}
+    </style>
+    <h2 id="summary">Summary: total beds at 24 December 2024</h2>
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Suffolk
+        </dt>
+        <dd class="govuk-summary-list__value" style="text-align:right">
+          14,200
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Cambridgeshire
+        </dt>
+        <dd class="govuk-summary-list__value" style="text-align:right">
+          12,345
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          East of England
+        </dt>
+        <dd class="govuk-summary-list__value" style="text-align:right">
+          123,345
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          All of England
+        </dt>
+        <dd class="govuk-summary-list__value" style="text-align:right">
+          1,233,345
+        </dd>
+      </div>
+    </dl>
+    <!-- 
+      
+      Time series 
+      
+    -->
+    <h2 id="summary">Total beds: time series</h2>
+    <!-- 
+      
+      Date picker 
+      
+    -->
+    <style>
+      .date-pickers{
+        margin-bottom:3em;
+        display: grid;
+        grid-template-columns: 35% 35%;
+        column-gap: 2em
+      }
+    </style>
+    <div class="date-pickers">
+      <div class="moj-datepicker" data-module="moj-date-picker">
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="date">
+            Date range: from 
+          </label>
+          <input class="govuk-input moj-js-datepicker-input " id="date" name="date" type="text" aria-describedby="date-hint" autocomplete="off" value="1/04/2021">
+        </div>
+      </div>
+      
+      <div class="moj-datepicker" data-module="moj-date-picker">
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="date">
+            Date range: to
+          </label>
+          <input class="govuk-input moj-js-datepicker-input " id="date" name="date" type="text" aria-describedby="date-hint" autocomplete="off" value="1/11/2023">
+        </div>
+      </div>
+      <form action="total_beds-edit.html">
+      <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+        Edit time series
+      </button>
+    </form>
+    </div>
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Chart type
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Line chart
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> name</span></a>
+        </dd>
+      </div>
+    </dl>
+    {% include "./_total_beds.html" %}
+    <h3>Download options</h3>
+    <ul>
+      <li><a href="" class="govuk-link">Download chart image (PNG)</a></li>
+      <li><a href="" class="govuk-link">Download data (CSV)</a></li>
+    </ul>
+    <!-- 
+      
+      Filters 
+    
+    -->
+    <h2 id="filters">Total beds with filters, 24 December 2024</h2>
+    
+    <table class="govuk-table">
+      <thead class="govuk-table__head">
+        <th scope="col" class="govuk-table__header">Care setting</th>
+        <th scope="col" class="govuk-table__header">Filter</th>
+        <th scope="col" class="govuk-table__header">Beds - Suffolk</th>
+        <th scope="col" class="govuk-table__header">Beds - Cambridgeshire</th>
+      </thead>
+      <tbody>
+       <tr class="govuk-table__row">
+      <td class="govuk-table__cell" rowspan="4">Community</td>
+      <td class="govuk-table__cell">Commuity support</td>
+      <td class="govuk-table__cell">136</td>
+      <td class="govuk-table__cell">-</td>
+      </tr>
+       <tr class="govuk-table__row">
+      <td class="govuk-table__cell">Community rehabilitation - NHS or LA funded</td>
+      <td class="govuk-table__cell">276</td>
+      <td class="govuk-table__cell">134</td>
+      </tr>
+       <tr class="govuk-table__row">
+      <td class="govuk-table__cell">Children's community contacts</td>
+      <td class="govuk-table__cell">228</td>
+      <td class="govuk-table__cell">22</td>
+      </tr>
+       <tr class="govuk-table__row">
+      <td class="govuk-table__cell">Adult community contacts</td>
+      <td class="govuk-table__cell">1,788</td>
+      <td class="govuk-table__cell">-</td>
+      </tr>
+       <tr class="govuk-table__row">
+      <td class="govuk-table__cell" rowspan="4">Nursing</td>
+      <td class="govuk-table__cell">Mental health</td>
+      <td class="govuk-table__cell">136</td>
+      <td class="govuk-table__cell">148</td>
+      </tr>
+       <tr class="govuk-table__row">
+      <td class="govuk-table__cell">Learning Disability</td>
+      <td class="govuk-table__cell">20</td>
+      <td class="govuk-table__cell">34</td>
+      </tr>
+       <tr class="govuk-table__row">
+      <td class="govuk-table__cell">General</td>
+      <td class="govuk-table__cell">1,832</td>
+      <td class="govuk-table__cell">1,258</td>
+      </tr>
+       <tr class="govuk-table__row">
+      <td class="govuk-table__cell">Dementia</td>
+      <td class="govuk-table__cell">932</td>
+      <td class="govuk-table__cell">712</td>
+      </tr>
+       <tr class="govuk-table__row">
+      <td class="govuk-table__cell" rowspan="4">Residential</td>
+      <td class="govuk-table__cell">Mental health</td>
+      <td class="govuk-table__cell">122</td>
+      <td class="govuk-table__cell">100</td>
+      </tr>
+       <tr class="govuk-table__row">
+      <td class="govuk-table__cell">Learning Disability</td>
+      <td class="govuk-table__cell">466</td>
+      <td class="govuk-table__cell">308</td>
+      </tr>
+       <tr class="govuk-table__row">
+      <td class="govuk-table__cell">General</td>
+      <td class="govuk-table__cell">4,124</td>
+      <td class="govuk-table__cell">2,432</td>
+      </tr>
+       <tr class="govuk-table__row">
+      <td class="govuk-table__cell">Dementia</td>
+      <td class="govuk-table__cell">3,776</td>
+      <td class="govuk-table__cell">2,294</td>
+      </tr>
+       <tr class="govuk-table__row">
+      <td class="govuk-table__cell" rowspan="8">Other</td>
+      <td class="govuk-table__cell">YPD young physically disabled</td>
+      <td class="govuk-table__cell">2</td>
+      <td class="govuk-table__cell">32</td>
+      </tr>
+       <tr class="govuk-table__row">
+      <td class="govuk-table__cell">Transitional</td>
+      <td class="govuk-table__cell">30</td>
+      <td class="govuk-table__cell">8</td>
+      </tr>
+       <tr class="govuk-table__row">
+      <td class="govuk-table__cell">End of life</td>
+      <td class="govuk-table__cell">98</td>
+      <td class="govuk-table__cell">-</td>
+      </tr>
+       <tr class="govuk-table__row">
+      <td class="govuk-table__cell">Community rehabilitation - private funded</td>
+      <td class="govuk-table__cell">-</td>
+      <td class="govuk-table__cell">-</td>
+      </tr>
+       <tr class="govuk-table__row">
+      <td class="govuk-table__cell">Children's inpatient</td>
+      <td class="govuk-table__cell">4</td>
+      <td class="govuk-table__cell">4</td>
+      </tr>
+       <tr class="govuk-table__row">
+      <td class="govuk-table__cell">Children's hospice at home</td>
+      <td class="govuk-table__cell">10</td>
+      <td class="govuk-table__cell">10</td>
+      </tr>
+       <tr class="govuk-table__row">
+      <td class="govuk-table__cell">Adult impatient</td>
+      <td class="govuk-table__cell">56</td>
+      <td class="govuk-table__cell">38</td>
+      </tr>
+       <tr class="govuk-table__row">
+      <td class="govuk-table__cell">Adult hospice at home beds</td>
+      <td class="govuk-table__cell">164</td>
+      <td class="govuk-table__cell">90</td>
+      </tr>
+       <tr class="govuk-table__row">
+      <td class="govuk-table__cell">Total</td>
+      <td class="govuk-table__cell">-</td>
+      <td class="govuk-table__cell">14,200</td>
+      <td class="govuk-table__cell">7,624</td>
+      </tr>
+      </tbody>
+      </table>
+    <!-- 
+      
+      Smart insights 
+      
+    -->
+    <h2 id="smartinsights">Smart insights (experimental)</h2>
+    <div class="govuk-inset-text">
+      These insights are powered by artificial intelligence (AI), which can sometimes be inaccurate. Verify the information with primary sources before sharing or using it. <a class="@ovuk-link" href="">Learn more about smart insights</a>
+    </div>
+    <h3 class="govuk-heading-s">Insight 1</h3>
+    <p class="govuk-body">Total care home bed capacity for Suffolk, Cambridgeshire and Peterborough has steadily increased since 2021, with Suffolk maintaining a slightly higher capacity. This growth suggests these areas are expanding their care home infrastructure to meet rising demand.</p>
+    <h3 class="govuk-heading-s">How you might use this insight:</h3>
+    <ul class="govuk-list govuk-list--bullet">
+      <li><strong>Assess local demand trends:</strong> Ensure growth in capacity aligns with population trends and care needs.</li>
+      <li><strong>Identify growth opportunities:</strong> Use regional data to explore potential for new facilities or expanding existing ones in underserved locations.</li>
+    </ul>
+    <!---
+      <p class="govuk-body"><strong>Rate this smart insight</strong></p>
+      <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+        Helpful
+      </button>&nbsp;&nbsp;&nbsp;
+      <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+        Not helpful
+      </button>
+    -->
+    <h3 class="govuk-heading-s">Insight 2</h3>
+    <p class="govuk-body">General residential care bed numbers in these areas remains significantly lower than total bed capacity but shows a slight increase over time. This may indicate a shift toward more specailised services or a growing gap in general residential care availability.</p>
+    <h3 class="govuk-heading-s">How you might use this insight:</h3>
+    <ul class="govuk-list govuk-list--bullet">
+      <li><strong>Review residential care provision:</strong> Determine if the current supply of general residential care beds aligns with local demand, particularly for older adults needing basic care.</li>
+      <li><strong>Diversify care offerings:</strong> Consider expanding general residential care services if demand in this category is expected to rise.</li>
+    </ul>
+    <!---
+      <p class="govuk-body"><strong>Rate this smart insight</strong></p>
+      <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+        Helpful
+      </button>&nbsp;&nbsp;&nbsp;
+      <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+        Not helpful
+      </button>
+    -->
+    <p class="govuk-body"><a class="govuk-link" href="#">Back </a></p>
+    
+    {% endblock%}

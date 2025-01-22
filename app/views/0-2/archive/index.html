@@ -1,16 +1,8 @@
-{#
-For guidance on how to use layouts see:
-https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
-#}
+{% extends "layouts/main.html" %}
 
-{% extends "govuk-prototype-kit/layouts/govuk-branded.njk" %}
-<script src="https://d3js.org/d3.v4.js"></script>
+{% set pageName="Your dashboard" %}
+
 {% block header %}
-<style>
-  .gov-width-container{
-    max-width:1400px
-  }
-  </style>
 <header class="govuk-header govuk-header--full-width-border" data-module="govuk-header">
   <div class="govuk-header__container govuk-width-container">
     <div class="govuk-header__logo">
@@ -53,16 +45,16 @@ https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
 {{ govukServiceNavigation({
   navigation: [
   {
-    href: "../dashboard/index",
-    text: "Home"
-  },
-  {
-    href: "../dashboard/get-data",
-    text: "Get data",
+    href: "index",
+    text: "Home",
     active: true
   },
   {
-    href: "../dashboard/dashboard",
+    href: "get-data",
+    text: "Get data"
+  },
+  {
+    href: "dashboard",
     text: "Your dashboard"
   },
   {
@@ -72,3 +64,78 @@ https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
   ]
 }) }}
 {% endblock %}
+
+{% block content %}
+
+<!-- <a href="#" class="govuk-back-link">Back</a> -->
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <h1 class="govuk-heading-l">
+      Access data and insights for adult social care in England
+    </h1>
+   <p class="govuk-body-l">Plan services and improve outcomes with the latest information, all in one place</p>
+   <div class="govuk-button-group">
+    <a href="get-data"><button type="submit" class="govuk-button" data-module="govuk-button">
+      Explore data
+    </button>
+  </a>
+    <a href="dashboard"><button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+      Go to your dashboard
+    </button></a>
+  </div>
+  </div>
+  <div class="govuk-grid-column-two-thirds">
+<h2>Latest updates</h2>
+<dl class="govuk-summary-list">
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key govuk-!-width-one-half">
+      <a class="govuk-link" href="#">Total beds</a>
+      <!-- ../data-pages/beds-total.html -->
+    </dt>
+    <dd class="govuk-summary-list__value">
+      10 January 2025
+    </dd>
+    <!-- <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="#">View<span class="govuk-visually-hidden"> name</span></a>
+    </dd> -->
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key govuk-!-width-one-half">
+      <a class="govuk-link" href="#">Overall client satisfaction</a>
+      <!-- ../data-pages/ascof-overall-satisfaction.html -->
+
+    </dt>
+    <dd class="govuk-summary-list__value">
+      6 January 2025
+    </dd>
+    <!-- <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="#">View<span class="govuk-visually-hidden"> name</span></a>
+    </dd> -->
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key govuk-!-width-one-half">
+      <a class="govuk-link" href="#">Bed occupancy rate</a>
+      <!-- ../data-pages/beds-occupancy.html -->
+    </dt>
+    <dd class="govuk-summary-list__value">
+      7 January 2025
+    </dd>
+    <!-- <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="#">View<span class="govuk-visually-hidden"> name</span></a>
+    </dd> -->
+  </div> 
+</dl>
+<p><a href="#">View all updates</a></p>    
+  </div>
+</div>
+  <!-- <div class="govuk-grid-column-one-half">
+        </div>
+        <div class="govuk-grid-column-one-half">
+          <h3>Index of Multiple Deprivation</h3>
+          
+        </div>
+      </div>
+    </div>
+  </div> -->
+  {% endblock %}
+  

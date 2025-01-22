@@ -1,16 +1,8 @@
-{#
-For guidance on how to use layouts see:
-https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
-#}
+{% extends "layouts/main.html" %}
 
-{% extends "govuk-prototype-kit/layouts/govuk-branded.njk" %}
-<script src="https://d3js.org/d3.v4.js"></script>
+{% set pageName="Get data" %}
+
 {% block header %}
-<style>
-  .gov-width-container{
-    max-width:1400px
-  }
-  </style>
 <header class="govuk-header govuk-header--full-width-border" data-module="govuk-header">
   <div class="govuk-header__container govuk-width-container">
     <div class="govuk-header__logo">
@@ -30,7 +22,7 @@ https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
     </a>
   </div>
   <div class="govuk-header__content">
-    <a href="/" class="govuk-header__link govuk-header__service-name">
+    <a href="#" class="govuk-header__link govuk-header__service-name">
       {{serviceName}}
     </a>
     <p style="float:right"><a href="#" style="color:white; text-decoration:none">Manage account | Sign out</a></p>
@@ -50,19 +42,19 @@ https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
 </div>
 {% from "govuk/components/service-navigation/macro.njk" import govukServiceNavigation %}
 
-{{ govukServiceNavigation({
+<!-- {{ govukServiceNavigation({
   navigation: [
   {
-    href: "../dashboard/index",
+    href: "index",
     text: "Home"
   },
   {
-    href: "../dashboard/get-data",
+    href: "get-data",
     text: "Get data",
     active: true
   },
   {
-    href: "../dashboard/dashboard",
+    href: "dashboard",
     text: "Your dashboard"
   },
   {
@@ -70,5 +62,107 @@ https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
     text: "Help"
   }
   ]
-}) }}
+}) }} -->
 {% endblock %}
+
+{% block content %}
+
+<!-- <a href="capacity" class="govuk-back-link">Back</a> -->
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <h1 class="govuk-heading-xl">
+      {{pageName}}
+    </h1>
+
+  <style>
+    
+table {
+margin: 2em 0;
+text-align: left;
+vertical-align: top;
+border-collapse: collapse;
+font-family: "GDS Transport", arial, sans-serif;
+}
+
+.companies-table{
+display:block;
+min-width:600px
+}
+
+caption {
+text-align: left;
+font-size: 1.4em;
+}
+
+th,
+td {
+/*   border: 1px solid #666; */
+padding: 1em;
+}
+
+th {
+background-color: #acbcd5;
+/*     #a15dbc; */
+color: #000;
+font-weight: normal;
+}
+
+tr{box-shadow: 0 3px 3px rgb(0 0 0 / 0.1);}
+
+tr:nth-child(odd) {
+background-color: #fff;
+}
+
+tr:nth-child(even) {
+background-color: #f2f2f2;
+} 
+
+#search-queries{
+font-family: "GDS Transport", arial, sans-serif;
+border: none;
+}
+
+.search-queries-label{display: block;}
+
+.search-queries-input{padding:1em; margin-top:0.5em; width: 40em; border-radius: 5px;}
+
+</style>
+  <fieldset id="search-queries">
+    <label class="search-queries-label" for="first-name"><h3>Search indicators</h3>By name, description or dataset</label>
+    <input class="search-queries-input " type="text" id="first-name" name="first-name">
+  </fieldset>
+  {% set queries = [
+    { indicator:"Total beds", amount: "1,592,662", description: "Beds recorded by care providers across health and adult social care.", filters:"23", topic:"Capacity planning - Current market profile", dataset: "Capacity tracker" },
+    { indicator:"Occupancy rate", amount: "1,234,567", description: "Occupied beds as a proportion of all available beds.", filters:"16", topic:"Capacity planning - Current market profile", dataset: "Capacity tracker" },
+    { indicator:"Client longterm support", amount: "1,654,321", description: "Clients accessing long-term support during the year.", filters:"23", topic:"Capacity planning - Current market profile", dataset: "Capacity tracker" }
+     ] %}
+  <table class="companies-table">
+    <!-- <caption>All indicators</caption> -->
+    <tr>
+     <th scope="col">Indicator</th>
+      <th scope="col">Amount</th>
+      <th scope="col">Description</th>
+      <th scope="col">Available filters</th>
+      <th scope="col">Topic</th>
+      <th scope="col">Dataset</th>
+      <th scope="col">View / edit</th>
+    </tr>
+
+
+        {% for item in queries %}
+        <tr scope="row">
+        <td>{{ item.indicator }}</td>
+        <td>{{ item.amount }}</td>
+        <td>{{ item.description }}</td>
+        <td>{{ item.filters }}</td>
+        <td>{{ item.topic }}</td>
+        <td>{{ item.dataset }}</td>
+        <td><a href="../data-pages/total_beds">Open</a></td>
+      </tr>
+        {% else %}
+          This would display if the 'item' collection were empty
+        {% endfor %}
+  </table>
+
+  {% endblock %}
+  

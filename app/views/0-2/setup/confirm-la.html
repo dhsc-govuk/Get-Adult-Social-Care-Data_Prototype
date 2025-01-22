@@ -42,7 +42,7 @@
 </div>
 {% from "govuk/components/service-navigation/macro.njk" import govukServiceNavigation %}
 
-{{ govukServiceNavigation({
+<!-- {{ govukServiceNavigation({
   navigation: [
   {
     href: "index",
@@ -62,7 +62,7 @@
     text: "Help"
   }
   ]
-}) }}
+}) }} -->
 {% endblock %}
 
 {% block content %}
@@ -74,9 +74,24 @@
     <h1 class="govuk-heading-l">
       {{pageName}}
     </h1>
-
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Suffolk
+        </dt>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="choose-la">Change<span class="govuk-visually-hidden"> name</span></a>
+        </dd>
+      </div>
+    </dl>
     <div class="govuk-button-group">
-    <a href="get-data"><button type="submit" class="govuk-button" data-module="govuk-button">
+      <a href="confirm-la"><button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+        Add another
+      </button>
+    </a>
+    </div>
+    <div class="govuk-button-group">
+    <a href="indicators"><button type="submit" class="govuk-button" data-module="govuk-button">
       Continue
     </button>
   </a>
