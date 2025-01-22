@@ -28,33 +28,18 @@
   <div class="govuk-grid-column-two-thirds">
     <!-- <span class="govuk-caption-l">Demand and capacity</span> -->
     <h1 class="govuk-heading-l">{{pageName}}</h1>
-    <p class="govuk-body">
-      This indicator shows the total number of beds recorded by care providers across health and adult social care.
-    </p>
     <!-- 
       
       LA picker  
       
     -->
-    <dl class="govuk-summary-list">
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Local authorities to compare
-        </dt>
-        <dd class="govuk-summary-list__value">
-          Suffolk, Cambridgeshire
-        </dd>
-        <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> name</span></a>
-        </dd>
-      </div>
-    </dl>
     <h3>Contents</h3>
     <ul>
       <li><a href="#summary">Summary</a></li>
-      <li><a href="#timeseries">Time series</a></li>
-      <li><a href="#filters">Filters</a></li>
-      <li><a href="#smartinsights">Smart insights</a></li>
+      <li><a href="#settings">Page settings</a></li>
+      <li><a href="#total">Totals</a></li>
+      <li><a href="#timeseries">Chart</a></li>
+      <li><a href="#filters">Table</a></li>
     </ul>
     
     <!-- 
@@ -65,7 +50,39 @@
     <style>
       h2{margin-top:4em}
     </style>
-    <h2 id="summary">Summary: total beds at 24 December 2024</h2>
+    <h2 id="summary">Summary</h2>
+    <p class="govuk-body">
+      This indicator shows the total number of beds recorded by care providers across health and adult social care.
+    </p>
+    <ul class="govuk-list">
+      <li>Detailed explanation of the indicator:</li>
+      <li>How it's calculated</li>
+      <li>Source</li>
+      <li>Time range</li>
+      <li>Last update / Next update</li>
+      <li>Dataset</li>
+      <li>Available filters</li>
+      </ul>
+        <h2>Page settings</h2>
+        <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Local authorities and regions
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Suffolk, Cambridgeshire, East of England
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> name</span></a>
+            </dd>
+          </div>
+        </dl>
+    <h2 id="total">Total beds at 24 December 2024</h2>
+    <form action="total_beds-edit.html">
+      <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+        Edit list
+      </button>
+    </form>
     <dl class="govuk-summary-list">
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
@@ -105,7 +122,7 @@
       Time series 
       
     -->
-    <h2 id="summary">Total beds: time series</h2>
+    <h2 id="summary">Chart: Total beds over time</h2>
     <!-- 
       
       Date picker 
@@ -119,7 +136,7 @@
         column-gap: 2em
       }
     </style>
-    <div class="date-pickers">
+    <!-- <div class="date-pickers">
       <div class="moj-datepicker" data-module="moj-date-picker">
         <div class="govuk-form-group">
           <label class="govuk-label" for="date">
@@ -136,14 +153,13 @@
           </label>
           <input class="govuk-input moj-js-datepicker-input " id="date" name="date" type="text" aria-describedby="date-hint" autocomplete="off" value="1/11/2023">
         </div>
-      </div>
+      </div> -->
       <form action="total_beds-edit.html">
       <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
-        Edit time series
+        Edit chart
       </button>
     </form>
-    </div>
-    <dl class="govuk-summary-list">
+    <!-- <dl class="govuk-summary-list">
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
           Chart type
@@ -155,7 +171,7 @@
           <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> name</span></a>
         </dd>
       </div>
-    </dl>
+    </dl> -->
     {% include "./_total_beds.html" %}
     <h3>Download options</h3>
     <ul>
@@ -167,8 +183,15 @@
       Filters 
     
     -->
-    <h2 id="filters">Total beds with filters, 24 December 2024</h2>
-    
+    <h2 id="filters">Table: total beds, 24 December 2024</h2>
+    <!-- <p>You can edit the care setting, filter, age, Local Authority
+      or region. 
+    </p> -->
+    <form action="total_beds-edit.html">
+      <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+        Edit table
+      </button>
+    </form>
     <table class="govuk-table">
       <thead class="govuk-table__head">
         <th scope="col" class="govuk-table__header">Care setting</th>
@@ -289,47 +312,6 @@
       </tr>
       </tbody>
       </table>
-    <!-- 
-      
-      Smart insights 
-      
-    -->
-    <h2 id="smartinsights">Smart insights (experimental)</h2>
-    <div class="govuk-inset-text">
-      These insights are powered by artificial intelligence (AI), which can sometimes be inaccurate. Verify the information with primary sources before sharing or using it. <a class="@ovuk-link" href="">Learn more about smart insights</a>
-    </div>
-    <h3 class="govuk-heading-s">Insight 1</h3>
-    <p class="govuk-body">Total care home bed capacity for Suffolk, Cambridgeshire and Peterborough has steadily increased since 2021, with Suffolk maintaining a slightly higher capacity. This growth suggests these areas are expanding their care home infrastructure to meet rising demand.</p>
-    <h3 class="govuk-heading-s">How you might use this insight:</h3>
-    <ul class="govuk-list govuk-list--bullet">
-      <li><strong>Assess local demand trends:</strong> Ensure growth in capacity aligns with population trends and care needs.</li>
-      <li><strong>Identify growth opportunities:</strong> Use regional data to explore potential for new facilities or expanding existing ones in underserved locations.</li>
-    </ul>
-    <!---
-      <p class="govuk-body"><strong>Rate this smart insight</strong></p>
-      <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
-        Helpful
-      </button>&nbsp;&nbsp;&nbsp;
-      <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
-        Not helpful
-      </button>
-    -->
-    <h3 class="govuk-heading-s">Insight 2</h3>
-    <p class="govuk-body">General residential care bed numbers in these areas remains significantly lower than total bed capacity but shows a slight increase over time. This may indicate a shift toward more specailised services or a growing gap in general residential care availability.</p>
-    <h3 class="govuk-heading-s">How you might use this insight:</h3>
-    <ul class="govuk-list govuk-list--bullet">
-      <li><strong>Review residential care provision:</strong> Determine if the current supply of general residential care beds aligns with local demand, particularly for older adults needing basic care.</li>
-      <li><strong>Diversify care offerings:</strong> Consider expanding general residential care services if demand in this category is expected to rise.</li>
-    </ul>
-    <!---
-      <p class="govuk-body"><strong>Rate this smart insight</strong></p>
-      <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
-        Helpful
-      </button>&nbsp;&nbsp;&nbsp;
-      <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
-        Not helpful
-      </button>
-    -->
     <p class="govuk-body"><a class="govuk-link" href="#">Back </a></p>
     
     {% endblock%}
