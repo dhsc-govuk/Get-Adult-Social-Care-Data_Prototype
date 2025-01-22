@@ -55,6 +55,7 @@
       <li><a href="#timeseries">Time series</a></li>
       <li><a href="#filters">Filters</a></li>
       <li><a href="#smartinsights">Smart insights</a></li>
+      <li><a href="#about">About this data</a></li>
     </ul>
     
     <!-- 
@@ -105,7 +106,7 @@
       Time series 
       
     -->
-    <h2 id="summary">Total beds: time series</h2>
+    <h2 id="summary">Total beds: Time series</h2>
     <!-- 
       
       Date picker 
@@ -123,7 +124,7 @@
       <div class="moj-datepicker" data-module="moj-date-picker">
         <div class="govuk-form-group">
           <label class="govuk-label" for="date">
-            Date range: from 
+            Start date 
           </label>
           <input class="govuk-input moj-js-datepicker-input " id="date" name="date" type="text" aria-describedby="date-hint" autocomplete="off" value="1/04/2021">
         </div>
@@ -132,7 +133,7 @@
       <div class="moj-datepicker" data-module="moj-date-picker">
         <div class="govuk-form-group">
           <label class="govuk-label" for="date">
-            Date range: to
+            End date
           </label>
           <input class="govuk-input moj-js-datepicker-input " id="date" name="date" type="text" aria-describedby="date-hint" autocomplete="off" value="1/11/2023">
         </div>
@@ -296,14 +297,16 @@
     -->
     <h2 id="smartinsights">Smart insights (experimental)</h2>
     <div class="govuk-inset-text">
-      These insights are powered by artificial intelligence (AI), which can sometimes be inaccurate. Verify the information with primary sources before sharing or using it. <a class="@ovuk-link" href="">Learn more about smart insights</a>
+      Smart insights use artificial intelligence (AI) to analyse this data, highlighting trends and patterns to support your own analysis. As this is experimental, verify the insights to check they are appropriate and meet your needs. <a class="@ovuk-link" href="">Learn more about smart insights</a>
     </div>
-    <h3 class="govuk-heading-s">Insight 1</h3>
-    <p class="govuk-body">Total care home bed capacity for Suffolk, Cambridgeshire and Peterborough has steadily increased since 2021, with Suffolk maintaining a slightly higher capacity. This growth suggests these areas are expanding their care home infrastructure to meet rising demand.</p>
+    <h3 class="govuk-heading-s">Summary of key trends</h3>
+    <p class="govuk-body">Suffolk has a higher total care home bed capacity (14,200 beds) compared to Cambridgeshire (7,624 beds) as of 24 December 2024. Suffolk leads in general residential beds (4,124 compared to 2,432), while Cambridgeshire has higher capacity in specialised categories like young physically disabled (32 beds compared to 2) and mental health nursing (148 beds compared to 136).</p>
+    <h3 class="govuk-heading-s">Insight: Growth in bed capacity</h3>
+    <p class="govuk-body">Both Suffolk and Cambridgeshire have expanded their care home infrastructure in recent years, with Suffolk leading in total capacity (14,200 beds). However, Cambridgeshire shows targeted growth in specialsied categories such as young physically disabled care (32 beds) and transitional care (8 beds compared to 30 in Suffolk).</p>
     <h3 class="govuk-heading-s">How you might use this insight:</h3>
     <ul class="govuk-list govuk-list--bullet">
-      <li><strong>Assess local demand trends:</strong> Ensure growth in capacity aligns with population trends and care needs.</li>
-      <li><strong>Identify growth opportunities:</strong> Use regional data to explore potential for new facilities or expanding existing ones in underserved locations.</li>
+    <li><strong>Monitor regional disparities:</strong> Compare growth patterns across Suffolk and Cambridgeshire to identify areas requiring additional investment.
+    <li><strong>Target specialised care: <strong>Focus on expanding capacity in under-resourced care types, such as transitional or young physically disabled care.
     </ul>
     <!---
       <p class="govuk-body"><strong>Rate this smart insight</strong></p>
@@ -315,11 +318,11 @@
       </button>
     -->
     <h3 class="govuk-heading-s">Insight 2</h3>
-    <p class="govuk-body">General residential care bed numbers in these areas remains significantly lower than total bed capacity but shows a slight increase over time. This may indicate a shift toward more specailised services or a growing gap in general residential care availability.</p>
+    <p class="govuk-body">General residential beds account for a substantial proportion of residential care in both Suffolk (4,124 beds) and Cambridgeshire (2,432 beds). However, they represent a smaller proportion of the overall capacity, with other categories such as dementia residential (3,776 in Suffolk, 2,294 in Cambridgeshire) occupying significant shares.</p>
     <h3 class="govuk-heading-s">How you might use this insight:</h3>
     <ul class="govuk-list govuk-list--bullet">
-      <li><strong>Review residential care provision:</strong> Determine if the current supply of general residential care beds aligns with local demand, particularly for older adults needing basic care.</li>
-      <li><strong>Diversify care offerings:</strong> Consider expanding general residential care services if demand in this category is expected to rise.</li>
+      <li><strong>Optimise bed allocation:</strong> Determine whether current general residential capacity matches the needs of specific demographics, such as older adults.</li>
+      <li><strong>Develop flexible care options:</strong> Explore hybrid care solutions that bridge gaps between general residential and other specialised categories.</li>
     </ul>
     <!---
       <p class="govuk-body"><strong>Rate this smart insight</strong></p>
@@ -330,6 +333,20 @@
         Not helpful
       </button>
     -->
-    <p class="govuk-body"><a class="govuk-link" href="#">Back </a></p>
+
+    <h2 id="about">About this data</h2>
+
+    <h3 class="govuk-heading-s">Source</h3>
+
+    <p class="govuk-body"><a href="https://www.necsu.nhs.uk/digital-applications/capacity-tracker/" class="govuk-link" target="_blank">Capacity Tracker (opens in new tab)</a></p>
+
+    <h3 class="govuk-heading-s">Last updated</h3>
+
+    <p class="govuk-body">22 January 2025</p>
+
+    <h3 class="govuk-heading-s">Next update</h3>
+    <p class="govuk-body">22 February 2025</p>
+
+    <p class="govuk-body"><strong></strong><a class="govuk-link" href="#">Back </a></p>
     
     {% endblock%}
