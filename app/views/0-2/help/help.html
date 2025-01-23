@@ -1,0 +1,358 @@
+{% extends "layouts/main.html" %}
+
+{% set pageName="Help" %}
+
+{% block header %}
+<header class="govuk-header govuk-header--full-width-border" data-module="govuk-header">
+  <div class="govuk-header__container govuk-width-container">
+    <div class="govuk-header__logo">
+      <a href="/" class="govuk-header__link govuk-header__link--homepage">
+        <svg
+        focusable="false"
+        role="img"
+        class="govuk-header__logotype"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 148 30"
+        height="30"
+        width="148"
+        aria-label="GOV.UK">
+        <title>GOV.UK</title>
+        <path d="M22.6 10.4c-1 .4-2-.1-2.4-1-.4-.9.1-2 1-2.4.9-.4 2 .1 2.4 1s-.1 2-1 2.4m-5.9 6.7c-.9.4-2-.1-2.4-1-.4-.9.1-2 1-2.4.9-.4 2 .1 2.4 1s-.1 2-1 2.4m10.8-3.7c-1 .4-2-.1-2.4-1-.4-.9.1-2 1-2.4.9-.4 2 .1 2.4 1s0 2-1 2.4m3.3 4.8c-1 .4-2-.1-2.4-1-.4-.9.1-2 1-2.4.9-.4 2 .1 2.4 1s-.1 2-1 2.4M17 4.7l2.3 1.2V2.5l-2.3.7-.2-.2.9-3h-3.4l.9 3-.2.2c-.1.1-2.3-.7-2.3-.7v3.4L15 4.7c.1.1.1.2.2.2l-1.3 4c-.1.2-.1.4-.1.6 0 1.1.8 2 1.9 2.2h.7c1-.2 1.9-1.1 1.9-2.1 0-.2 0-.4-.1-.6l-1.3-4c-.1-.2 0-.2.1-.3m-7.6 5.7c.9.4 2-.1 2.4-1 .4-.9-.1-2-1-2.4-.9-.4-2 .1-2.4 1s0 2 1 2.4m-5 3c.9.4 2-.1 2.4-1 .4-.9-.1-2-1-2.4-.9-.4-2 .1-2.4 1s.1 2 1 2.4m-3.2 4.8c.9.4 2-.1 2.4-1 .4-.9-.1-2-1-2.4-.9-.4-2 .1-2.4 1s0 2 1 2.4m14.8 11c4.4 0 8.6.3 12.3.8 1.1-4.5 2.4-7 3.7-8.8l-2.5-.9c.2 1.3.3 1.9 0 2.7-.4-.4-.8-1.1-1.1-2.3l-1.2 4c.7-.5 1.3-.8 2-.9-1.1 2.5-2.6 3.1-3.5 3-1.1-.2-1.7-1.2-1.5-2.1.3-1.2 1.5-1.5 2.1-.1 1.1-2.3-.8-3-2-2.3 1.9-1.9 2.1-3.5.6-5.6-2.1 1.6-2.1 3.2-1.2 5.5-1.2-1.4-3.2-.6-2.5 1.6.9-1.4 2.1-.5 1.9.8-.2 1.1-1.7 2.1-3.5 1.9-2.7-.2-2.9-2.1-2.9-3.6.7-.1 1.9.5 2.9 1.9l.4-4.3c-1.1 1.1-2.1 1.4-3.2 1.4.4-1.2 2.1-3 2.1-3h-5.4s1.7 1.9 2.1 3c-1.1 0-2.1-.2-3.2-1.4l.4 4.3c1-1.4 2.2-2 2.9-1.9-.1 1.5-.2 3.4-2.9 3.6-1.9.2-3.4-.8-3.5-1.9-.2-1.3 1-2.2 1.9-.8.7-2.3-1.2-3-2.5-1.6.9-2.2.9-3.9-1.2-5.5-1.5 2-1.3 3.7.6 5.6-1.2-.7-3.1 0-2 2.3.6-1.4 1.8-1.1 2.1.1.2.9-.3 1.9-1.5 2.1-.9.2-2.4-.5-3.5-3 .6 0 1.2.3 2 .9l-1.2-4c-.3 1.1-.7 1.9-1.1 2.3-.3-.8-.2-1.4 0-2.7l-2.9.9C1.3 23 2.6 25.5 3.7 30c3.7-.5 7.9-.8 12.3-.8m28.3-11.6c0 .9.1 1.7.3 2.5.2.8.6 1.5 1 2.2.5.6 1 1.1 1.7 1.5.7.4 1.5.6 2.5.6.9 0 1.7-.1 2.3-.4s1.1-.7 1.5-1.1c.4-.4.6-.9.8-1.5.1-.5.2-1 .2-1.5v-.2h-5.3v-3.2h9.4V28H55v-2.5c-.3.4-.6.8-1 1.1-.4.3-.8.6-1.3.9-.5.2-1 .4-1.6.6s-1.2.2-1.8.2c-1.5 0-2.9-.3-4-.8-1.2-.6-2.2-1.3-3-2.3-.8-1-1.4-2.1-1.8-3.4-.3-1.4-.5-2.8-.5-4.3s.2-2.9.7-4.2c.5-1.3 1.1-2.4 2-3.4.9-1 1.9-1.7 3.1-2.3 1.2-.6 2.6-.8 4.1-.8 1 0 1.9.1 2.8.3.9.2 1.7.6 2.4 1s1.4.9 1.9 1.5c.6.6 1 1.3 1.4 2l-3.7 2.1c-.2-.4-.5-.9-.8-1.2-.3-.4-.6-.7-1-1-.4-.3-.8-.5-1.3-.7-.5-.2-1.1-.2-1.7-.2-1 0-1.8.2-2.5.6-.7.4-1.3.9-1.7 1.5-.5.6-.8 1.4-1 2.2-.3.8-.4 1.9-.4 2.7zM71.5 6.8c1.5 0 2.9.3 4.2.8 1.2.6 2.3 1.3 3.1 2.3.9 1 1.5 2.1 2 3.4s.7 2.7.7 4.2-.2 2.9-.7 4.2c-.4 1.3-1.1 2.4-2 3.4-.9 1-1.9 1.7-3.1 2.3-1.2.6-2.6.8-4.2.8s-2.9-.3-4.2-.8c-1.2-.6-2.3-1.3-3.1-2.3-.9-1-1.5-2.1-2-3.4-.4-1.3-.7-2.7-.7-4.2s.2-2.9.7-4.2c.4-1.3 1.1-2.4 2-3.4.9-1 1.9-1.7 3.1-2.3 1.2-.5 2.6-.8 4.2-.8zm0 17.6c.9 0 1.7-.2 2.4-.5s1.3-.8 1.7-1.4c.5-.6.8-1.3 1.1-2.2.2-.8.4-1.7.4-2.7v-.1c0-1-.1-1.9-.4-2.7-.2-.8-.6-1.6-1.1-2.2-.5-.6-1.1-1.1-1.7-1.4-.7-.3-1.5-.5-2.4-.5s-1.7.2-2.4.5-1.3.8-1.7 1.4c-.5.6-.8 1.3-1.1 2.2-.2.8-.4 1.7-.4 2.7v.1c0 1 .1 1.9.4 2.7.2.8.6 1.6 1.1 2.2.5.6 1.1 1.1 1.7 1.4.6.3 1.4.5 2.4.5zM88.9 28 83 7h4.7l4 15.7h.1l4-15.7h4.7l-5.9 21h-5.7zm28.8-3.6c.6 0 1.2-.1 1.7-.3.5-.2 1-.4 1.4-.8.4-.4.7-.8.9-1.4.2-.6.3-1.2.3-2v-13h4.1v13.6c0 1.2-.2 2.2-.6 3.1s-1 1.7-1.8 2.4c-.7.7-1.6 1.2-2.7 1.5-1 .4-2.2.5-3.4.5-1.2 0-2.4-.2-3.4-.5-1-.4-1.9-.9-2.7-1.5-.8-.7-1.3-1.5-1.8-2.4-.4-.9-.6-2-.6-3.1V6.9h4.2v13c0 .8.1 1.4.3 2 .2.6.5 1 .9 1.4.4.4.8.6 1.4.8.6.2 1.1.3 1.8.3zm13-17.4h4.2v9.1l7.4-9.1h5.2l-7.2 8.4L148 28h-4.9l-5.5-9.4-2.7 3V28h-4.2V7zm-27.6 16.1c-1.5 0-2.7 1.2-2.7 2.7s1.2 2.7 2.7 2.7 2.7-1.2 2.7-2.7-1.2-2.7-2.7-2.7z"></path>
+      </svg>
+    </a>
+  </div>
+  <div class="govuk-header__content">
+    <a href="#" class="govuk-header__link govuk-header__service-name">
+      {{serviceName}}
+    </a>
+    <p style="float:right"><a href="#" style="color:white; text-decoration:none">Manage account | Sign out</a></p>
+    
+  </div>
+</div>
+</header>
+<div class="govuk-phase-banner govuk-width-container">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      Beta
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service. Help us improve it and <a class="govuk-link" href="#">give your feedback (opens in new tab)</a>.
+    </span>
+  </p>
+</div>
+{% from "govuk/components/service-navigation/macro.njk" import govukServiceNavigation %}
+
+{{ govukServiceNavigation({
+  navigation: [
+  {
+    href: "../dashboard/index",
+    text: "Home"
+  },
+  {
+    href: "../dashboard/get-data",
+    text: "Get data"
+  },
+  {
+    href: "../dashboard/dashboard",
+    text: "Your dashboard"
+  },
+  {
+    href: "help",
+    text: "Help",
+    active: true
+  }
+  ]
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<a href="javascript:history.back()" class="govuk-back-link">Back</a>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-third">      
+          <nav class="moj-side-navigation" aria-label="Side navigation">
+            <h4 class="govuk-heading-m">Topics</h4>
+            <ul class="moj-side-navigation__list">
+              <li class="moj-side-navigation__item moj-side-navigation__item--active">
+                <a href="#about" aria-current="location">About this service</a>
+              </li>
+
+              <li class="moj-side-navigation__item">
+                <a href="#quick-guide">Available data</a>
+              </li>
+      
+              <li class="moj-side-navigation__item">
+                <a href="#quick-guide">Data sources</a>
+              </li>
+
+              <li class="moj-side-navigation__item">
+                <a href="#data-sources">Quick guide</a>
+              </li>
+      
+              <li class="moj-side-navigation__item">
+                <a href="#smart-insights">Smart insights</a>
+              </li>
+
+              <li class="moj-side-navigation__item">
+                <a href="#smart-insights">Contact us</a>
+              </li>
+
+            </ul>
+          </nav>
+  </div>
+
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">
+      Help
+    </h1>
+    <h2 id="demand-and-capacity" class="govuk-heading-m">
+      About this service
+    </h2>
+
+    <p>Get adult social care data is a digital insight tool that provides access to a wide range of datasets relevant to adult social care in England.</p>
+
+    <p>The service brings together data from the Care Quality Commission, Office for National Statistics, NHS England, Capacity Tracker and other sources. <a href="#data-sources" class="govuk-link">Learn more about the data sources.</a><p>
+
+    <p>When new data is published, the service updates automatically so you can get insights based on the most current information.</p>
+ 
+    <p>You can use this service to:</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li><strong>access data and track indicators</strong> across a range of topics, using the latest available information</li>
+      <li><strong>explore and visualise data</strong> with interactive tools that help you to identify patterns, trends and insights</li>
+      <li><strong>support decision-making and strategic planning</strong> by downloading datasets and charts in formats you can integrate into your own analyses</li>
+    </ul>
+
+    <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+
+    <h2 id="data-sources" class="govuk-heading-m">
+      Available data
+    </h2>
+
+     <p>The service includes data for over 50 indicators across England, covering key topics in adult social care.</p>
+
+     <p>These include:</p>
+
+     <ul class="govuk-list govuk-list--bullet">
+      <li><strong>Demand and capacity:</strong> The demand for adult social care services and the market's capacity to meet those needs</li>
+      <li><strong>Care quality and improvement:</strong> The quality of care services and impact of strategies to improve outcomes and standards</li>
+      <li><strong>Finance and economy:</strong> funding, spending patterns, and economic factors shaping adult social care</li>
+      <li><strong>Workforce:</strong> staffing trends and challenges in the adult social care sector</li>
+      <li><strong>Market sustainability:</strong> the stability, resilience and long-term viability of the care provider market</li>
+      </ul>
+
+     <p>To explore what is avialable, <a href="../dashboard/all-indicators.html">view the full list of indicators</a>.</p>
+
+     <p>The availability of detailed data depends on the source datasets. Some indicators provide data at the national (England) level, while others include more granular data at regional or local authority levels.</p>
+
+     <p>For more information about the datasets behind these indicators, <a href="" class="govuk-link">view the detailed guide to the datasets.</a></p> 
+
+    <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+    <h2 id="data-sources" class="govuk-heading-m">Data sources</h2>
+
+    <p>Get adult social care data uses the following public and private data sources.</p>
+
+    <h3 class="govuk-heading-s">Public data sources</h3>
+
+    <ul class="govuk-list govuk-list--bullet">
+      <li>Adult Social Care Statistics (Department for Health and Social Care)</li>
+      <li>Adult Social Care Outcomes Framwork (ASCOF) (NHS England)</li>
+      <li>Adult Social Care Report (Department for Health and Social Care)</li>
+      <li>Care Quality Commission (CQC) Care Directory</li>
+      <li>Office for National Statistics collection</li>
+      <li>Short and Long Term Return (SALT) (NHS England)</li>
+      </ul>
+
+      <h3 class="govuk-heading-s">Private data sources</h3>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>Capacity Tracker</li>
+        <li>Skills for Care</li>
+        <li>Client Level Data (CLD)</li>
+        </ul>
+
+    <p>For a deeper understanding of the source datasets, including how they are compiled and updated,, <a href="" class="govuk-link">view the detailed guide to the datasets.</a></p> 
+
+      <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+    <h2 id="quick-guide" class="govuk-heading-m">
+      Quick guide
+    </h2>
+
+    <p>To access indicators, start by selecting <a href="get-data">Get data</a>.</p>
+    <p class="govuk-body">You can explore indicators by topic:</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li><a href="capacity" class="govuk-link">Demand and capacity</a></li>
+      <li><a href="#" class="govuk-link">Care quality and improvement</a></li>
+      <li><a href="#" class="govuk-link">Finance and economy</a></li>
+      <li><a href="#" class="govuk-link">Demand and capacity</a></li>
+      <li><a href="#" class="govuk-link">Market sustainability</a></li>
+      </ul>
+
+    <p class="govuk-body">You can also <a class="govuk-link" href="all-indicators">view all indicators in one place</a>.</p>
+
+    <p>For quick access, save your preferred indicators to <a href="dashboard" class="govuk-link">your dashboard</a>.  
+
+    <h3 class="govuk-heading-s">How to save an indicator to your dashboard</h3>  
+    <p>Follow these steps:</p>
+    <ol class="govuk-list govuk-list--number">
+        <li>Select an indicator to view its details</li>
+        <li>Tick the checkbox for 'Show this indicator on your dashboard'.</li>
+    </ol>
+
+    <p>To remove the indicator, untick the checkbox.</p>  
+
+    <p class="govuk-body"></p>
+
+    <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+    <h2 id="smart-insights" class="govuk-heading-m">
+      Smart insights (experimental)
+    </h2>
+
+    <p class="govuk-body">Smart insights is a feature that uses artificial intelligence (AI) to help analyse data and identify key trends and patterns.
+
+    <p class="govuk-body">This is designed to support - but not replace - your own analysis of the data.</p>
+    
+    <p class="govuk-body">As it's experimental, there are some limitations to keep in mind..</p>
+
+    <h3 class="govuk-heading-s">How it works</h3>
+
+    <p class="govuk-body">Smart insights uses AI models trained on large datasets to identify relationships within the data.</p>
+    
+    <p class="govuk-body">These models generate summaries and interpretations designed to simplify complex information and help you uncover useful insights.</p>
+
+    <h3 class="govuk-heading-s">Limitations</h3>
+
+    <p class="govuk-body">AI-generated insights are generally reliable, but may not always be complete, reflect the most recent policy changes, or capture important context.</p>
+    
+    <p class="govuk-body">Sometimes, AI might misinterpret data, producing insights that do not fully align with the underlying trends or patterns.</p>
+
+    <h3 class="govuk-heading-s">Best practices</h3>
+
+    <p class="govuk-body">Always cross-check the AI-generated insights with other data sources to get a fuller picture.</p>
+    
+    <p class="govuk-body">Review the insights carefully, and verify they are correct and appropriate for your needs before sharing or using them.</p>
+
+    <p class="govuk-body">To help us refine and improve this feature, please <a href="" class="govuk-link">share your feedback</a>.</p>
+    
+    <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+    <h2 id="contact" class="govuk-heading-m">
+      Contact us
+    </h2>
+
+    <p class="govuk-body">If you need further support with using the Get adult social care data service, email <a href="https://www.gov.uk/guidance/get-an-hmrc-agent-services-account" class="mailto:asc.data@dhsc.gov.uk">ascd.enquiries@dhsc.gov.uk</a>.</p>
+
+    <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+  </div>
+</div>
+
+<!---
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <h1 class="govuk-heading-xl">
+      All indicators
+    </h1>
+  {% set queries = [
+    { date: "1 April", query:"Capacity where number of beds is greater than 5", user: "Made by you", tags:"Capacity planning", datasets: "Occupancy visiting workforce" },
+    { date: "30 March", query:"Suffolk nursing homes: CQC ratings", user: "Made by you", tags:"Quality of care", datasets: "CQC ratings" }, 
+    { date: "29 March", query:"Capacity where Number of Beds (vacant) accepting admissions is greater than 10", user: "Made by you", tags:"Capacity planning", datasets: "Occupancy visiting workforce" }, 
+    { date: "29 March", query:"Number of directly employed registered nurses absent, not COVID-19 related", user: "Template", tags:"Capacity planning", datasets: "Occupancy visiting workforce" },
+    { date: "28 March", query:"Total headcount of directly employed registered nurses", user: "Made by you", tags:"Capacity planning",datasets: "Occupancy visiting workforce" }, 
+    { date: "25 March", query:"Capacity where number of beds is greater than 5", user: "Template", tags:"Capacity planning", datasets: "Occupancy visiting workforce"},
+    { date: "25 March", query:"Capacity where number of beds is greater than 5", user: "Made by you", tags:"Capacity planning", datasets: "Occupancy visiting workforce" }, 
+    { date: "24 March", query:"Capacity where number of beds is greater than 5", user: "Made by you" , tags:"Capacity planning", datasets: "Occupancy visiting workforce"}
+  ] %}
+  <style>
+    
+table {
+margin: 2em 0;
+text-align: left;
+vertical-align: top;
+border-collapse: collapse;
+font-family: "GDS Transport", arial, sans-serif;
+}
+
+.companies-table{
+display:block;
+min-width:600px
+}
+
+caption {
+text-align: left;
+font-size: 1.4em;
+}
+
+th,
+td {
+/*   border: 1px solid #666; */
+padding: 1em;
+}
+
+th {
+background-color: #acbcd5;
+/*     #a15dbc; */
+color: #000;
+font-weight: normal;
+}
+
+tr{box-shadow: 0 3px 3px rgb(0 0 0 / 0.1);}
+
+tr:hover {
+text-decoration: underline;
+}
+
+tr:nth-child(odd) {
+background-color: #fff;
+}
+
+tr:nth-child(even) {
+background-color: #f2f2f2;
+} 
+
+#search-queries{
+font-family: "GDS Transport", arial, sans-serif;
+border: none;
+}
+
+.search-queries-label{display: block;}
+
+.search-queries-input{padding:1em; margin-top:0.5em; width: 40em; border-radius: 5px;}
+
+</style>
+  <fieldset id="search-queries">
+    <label class="search-queries-label" for="first-name"><h3>Search indicators</h3>By name, filter or dataset</label>
+    <input class="search-queries-input " type="text" id="first-name" name="first-name">
+  </fieldset>
+  <table class="companies-table">
+    <caption>All indicators</caption>
+    <tr>
+      <th scope="col"><i class="fa-solid fa-chevron-down"></i>Last updated</th>
+      <th scope="col">Name</th>
+      <th scope="col">Type</th>
+      <th scope="col">Topic</th>
+      <th scope="col">Datasets</th>
+      <th scope="col">View / edit</th>
+    </tr>
+
+
+        {% for item in queries %}
+        <tr scope="row">
+        <td>{{ item.date }}</td>
+        <td>{{ item.query }}</td>
+        <td>{{ item.user }}</td>
+        <td>{{ item.tags }}</td>
+        <td>{{ item.datasets }}</td>
+        <td><a href="#">Open</a></td>
+      </tr>
+        {% else %}
+          This would display if the 'item' collection were empty
+        {% endfor %}
+  </table>
+-->
+  {% endblock %}
+  
