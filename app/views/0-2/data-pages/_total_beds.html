@@ -1,16 +1,17 @@
 <h3>Total beds over time: 1 April 2021 to 1 November 2023</h3>
 <ul class="govuk-list">
     <li>
+        {% set x = "5" %}
         <svg height="5" width="50" xmlns="http://www.w3.org/2000/svg">
             <g fill="none">
-                <line x1="0" y1="0" x2="50" y2="0" style="stroke:green;stroke-width:10" />
+                <line x1="0" y1="0" x2="50" y2="0" stroke="green" stroke-width={{x}} />
             </g>
           </svg> 
         Suffolk</li>
     <li>
         <svg height="5" width="50" xmlns="http://www.w3.org/2000/svg">
             <g fill="none">
-                <line x1="0" y1="0" x2="50" y2="0" style="stroke:gold;stroke-width:10" />
+                <line x1="0" y1="0" x2="50" y2="0" stroke="gold" stroke-width="10" />
             </g>
           </svg> 
         Cambridgeshire</li>
