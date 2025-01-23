@@ -136,31 +136,43 @@
         grid-template-columns: 35% 35%;
         column-gap: 2em
       }
-    </style>
-
-      <form action="total_beds-edit.html">
-      <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
-        Edit chart
-      </button>
-    </form>
-    <!-- <dl class="govuk-summary-list">
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Chart type
-        </dt>
-        <dd class="govuk-summary-list__value">
-          Line chart
-        </dd>
-        <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> name</span></a>
-        </dd>
+      </style>
+    <h3>Edit chart settings</h3>
+    <details class="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          Date range: 1 April 2023 to 1 November 2024
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+        Time settings go here 
       </div>
-    </dl> -->
+    </details>
+    <details class="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          Filter: Total beds
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+        Fitler controls go here
+      </div>
+    </details>
+    <details class="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          Chart type: line chart
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+        Chart settings go here 
+      </div>
+    </details>
     {% include "./_total_beds.html" %}
     <h3>Download options</h3>
     <ul>
-      <li><a href="" class="govuk-link">Download chart image (PNG)</a></li>
-      <li><a href="" class="govuk-link">Download data (CSV)</a></li>
+      <li><a href="#" class="govuk-link">Download chart image (PNG)</a></li>
+      <li><a href="#" class="govuk-link">Download data (CSV)</a></li>
     </ul>
     <!-- 
       
