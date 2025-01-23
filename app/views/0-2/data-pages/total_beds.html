@@ -35,11 +35,13 @@
     -->
     <h3>Contents</h3>
     <ul>
-      <li><a href="#summary">Summary</a></li>
-      <li><a href="#settings">Page settings</a></li>
+      <li><a href="#introduction">Introduction</a></li>
+      <li><a href="#settings">Your page settings</a></li>
       <li><a href="#total">Totals</a></li>
       <li><a href="#timeseries">Chart</a></li>
       <li><a href="#filters">Table</a></li>
+      <li><a href="#smart-insights">Smart insights (experimental)</a></li>
+      <li><a href="#about">About this data</a></li>
     </ul>
     
     <!-- 
@@ -50,24 +52,22 @@
     <style>
       h2{margin-top:4em}
     </style>
-    <h2 id="summary">Summary</h2>
+    <h2 id="summary">Introduction</h2>
     <p class="govuk-body">
       This indicator shows the total number of beds recorded by care providers across health and adult social care.
     </p>
-    <ul class="govuk-list">
-      <li>Detailed explanation of the indicator:</li>
-      <li>How it's calculated</li>
-      <li>Source</li>
-      <li>Time range</li>
-      <li>Last update / Next update</li>
-      <li>Dataset</li>
-      <li>Available filters</li>
-      </ul>
-        <h2>Page settings</h2>
+    <p class="govuk-body">
+      You can find more information about how this data is compiled, updated, and time ranges it covers in <a href="#about" class="govuk-link">about this data</a>.
+    </p>
+
+        <h2>Your page settings</h2>
+
+        <p class="govuk-body">You can change these settings to view data for specific areas.</p>
+
         <dl class="govuk-summary-list">
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-              Local authorities and regions
+              Selected local authorities and regions
             </dt>
             <dd class="govuk-summary-list__value">
               Suffolk, Cambridgeshire, East of England
@@ -122,7 +122,7 @@
       Time series 
       
     -->
-    <h2 id="summary">Chart: Total beds over time</h2>
+    <h2 id="summary">Chart: total beds over time</h2>
     <!-- 
       
       Date picker 
@@ -317,7 +317,7 @@
       Smart insights 
       
     -->
-    <h2 id="smartinsights">Smart insights (experimental)</h2>
+    <h2 id="smart-insights">Smart insights (experimental)</h2>
     <div class="govuk-inset-text">
       Smart insights use artificial intelligence (AI) to analyse this data, highlighting trends and patterns to support your own analysis. As this is experimental, verify the insights to check they are appropriate and meet your needs. <a class="@ovuk-link" href="">Learn more about smart insights</a>
     </div>
@@ -366,9 +366,52 @@
 
     <p class="govuk-body">22 January 2025</p>
 
-    <h3 class="govuk-heading-s">Next update</h3>
+    <h3 class="govuk-heading-s">Next update expected</h3>
+
     <p class="govuk-body">22 February 2025</p>
 
-    <p class="govuk-body"><strong></strong><a class="govuk-link" href="#">Back </a></p>
+    <h3 class="govuk-heading-s">Time range covered</h3>
+
+    <p class="govuk-body">Data is available from 2019 onwards.</p>
+
+    <h3 class="govuk-heading-s">Methodology</h3>
+
+    <details class="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          View methodology
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+
+        <p class="govuk-body">The total number of beds is the number of beds reported by care providers, including those in use and those available for new admissions.</p>
+        <p class="govuk-body">Care providers update this information daily or whenever changes occur using the Capacity Tracker tool. They report how many beds are available and occupied in care settings such as nursing homes, residential care, and community care.</p>
+        <p class="govuk-body">Beds are sorted into categories such as mental health, learning disabilities, and end-of-life care.</p>
+        <p class="govuk-body">The data is grouped by local areas, regions, and nationally so it is easier to compare. The information is checked and updated regularly to make sure it is as accurate as possible.</p>
+     
+      </div>
+      </details>
+
+
+    <h3 class="govuk-heading-s">Definitions</h3>
+
+    <details class="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          View data definitions
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+      
+        <p class="govuk-body">The source dataset does not include definitions for this data.</p>
+        
+        <p class="govuk-body">For more information, you may need to contact the data provider.
+        </p>
+
+      </div>
+    </details>
+
+
+    <p class="govuk-body"><a class="govuk-link" href="#">Back </a></p>
     
     {% endblock%}
