@@ -1,6 +1,6 @@
 {% extends "layouts/main.html" %}
 
-{% set pageName="Bed occupancy rate" %}
+{% set pageName="Total beds" %}
 
 {% block content %} 
 <a href="../dashboard/all-indicators" class="govuk-back-link">Back</a>
@@ -57,15 +57,14 @@
     </style>
     <h2 id="summary">Introduction</h2>
     <p class="govuk-body">
-      This indicator shows the number of occupied beds as a proportion of all available beds.
+      This indicator shows the total number of beds recorded by care providers across health and adult social care.
+    </p>
     <p class="govuk-body">
       You can find information about this data, including how it is compiled, updated, and the time ranges it covers in <a href="#about" class="govuk-link">About this data</a>.
     </p>
 
         <h2>Your page settings</h2>
-
         <p class="govuk-body">You can change these settings to view data for specific areas.</p>
-
         <dl class="govuk-summary-list">
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
@@ -79,7 +78,7 @@
             </dd>
           </div>
         </dl>
-    <h2 id="total">{{pageName}} at 24 December 2024</h2>
+    <h2 id="total">Total beds at 24 December 2024</h2>
     <form action="total_beds-edit.html">
       <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
         Edit list
@@ -91,7 +90,7 @@
           Suffolk
         </dt>
         <dd class="govuk-summary-list__value" style="text-align:right">
-          86%
+          14,200
         </dd>
       </div>
       <div class="govuk-summary-list__row">
@@ -99,7 +98,7 @@
           Cambridgeshire
         </dt>
         <dd class="govuk-summary-list__value" style="text-align:right">
-          85%
+          12,345
         </dd>
       </div>
       <div class="govuk-summary-list__row">
@@ -107,7 +106,7 @@
           East of England
         </dt>
         <dd class="govuk-summary-list__value" style="text-align:right">
-          84%
+          123,345
         </dd>
       </div>
       <div class="govuk-summary-list__row">
@@ -115,7 +114,7 @@
           All of England
         </dt>
         <dd class="govuk-summary-list__value" style="text-align:right">
-          82%
+          1,233,345
         </dd>
       </div>
     </dl>
@@ -124,7 +123,7 @@
       Time series 
       
     -->
-    <h2 id="timeseries">Chart: {{pageName}} over time</h2>
+    <h2 id="timeseries">Chart: total beds over time</h2>
     <!-- 
       
       Date picker 
@@ -137,24 +136,50 @@
         grid-template-columns: 35% 35%;
         column-gap: 2em
       }
-    </style>
-      <form action="total_beds-edit.html">
-      <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
-        Edit chart
-      </button>
-    </form>
+      </style>
+    <h3>Edit chart settings</h3>
+    <details class="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          Date range: 1 April 2023 to 1 November 2024
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+        Time settings go here 
+      </div>
+    </details>
+    <details class="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          Filter: Total beds
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+        Fitler controls go here
+      </div>
+    </details>
+    <details class="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          Chart type: line chart
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+        Chart settings go here 
+      </div>
+    </details>
     {% include "./_total_beds.html" %}
     <h3>Download options</h3>
     <ul>
-      <li><a href="" class="govuk-link">Download chart image (PNG)</a></li>
-      <li><a href="" class="govuk-link">Download data (CSV)</a></li>
+      <li><a href="#" class="govuk-link">Download chart image (PNG)</a></li>
+      <li><a href="#" class="govuk-link">Download data (CSV)</a></li>
     </ul>
     <!-- 
       
       Filters 
     
     -->
-    <h2 id="filters">Table: {{pageName}}, 24 December 2024</h2>
+    <h2 id="filters">Table: total beds, 24 December 2024</h2>
     <!-- <p>You can edit the care setting, filter, age, Local Authority
       or region. 
     </p> -->

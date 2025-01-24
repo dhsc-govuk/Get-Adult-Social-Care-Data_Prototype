@@ -49,22 +49,6 @@
     <h1 class="govuk-heading-l">{{pageName}}</h1>
     <!-- 
       
-      LA picker  
-      
-    -->
-    <h3>Contents</h3>
-    <ul>
-      <li><a href="#introduction">Introduction</a></li>
-      <li><a href="#settings">Your page settings</a></li>
-      <li><a href="#total">Totals</a></li>
-      <li><a href="#timeseries">Chart</a></li>
-      <li><a href="#filters">Table</a></li>
-      <li><a href="#smart-insights">Smart insights (experimental)</a></li>
-      <li><a href="#about">About this data</a></li>
-    </ul>
-    
-    <!-- 
-      
       Main content
       
     -->
@@ -80,9 +64,7 @@
     </p>
 
         <h2>Your page settings</h2>
-
         <p class="govuk-body">You can change these settings to view data for specific areas.</p>
-
         <dl class="govuk-summary-list">
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
@@ -141,7 +123,7 @@
       Time series 
       
     -->
-    <h2 id="summary">Chart: total beds over time</h2>
+    <h2 id="timeseries">Chart: total beds over time</h2>
     <!-- 
       
       Date picker 
@@ -155,24 +137,7 @@
         column-gap: 2em
       }
     </style>
-    <!-- <div class="date-pickers">
-      <div class="moj-datepicker" data-module="moj-date-picker">
-        <div class="govuk-form-group">
-          <label class="govuk-label" for="date">
-            Start date 
-          </label>
-          <input class="govuk-input moj-js-datepicker-input " id="date" name="date" type="text" aria-describedby="date-hint" autocomplete="off" value="1/04/2021">
-        </div>
-      </div>
-      
-      <div class="moj-datepicker" data-module="moj-date-picker">
-        <div class="govuk-form-group">
-          <label class="govuk-label" for="date">
-            End date
-          </label>
-          <input class="govuk-input moj-js-datepicker-input " id="date" name="date" type="text" aria-describedby="date-hint" autocomplete="off" value="1/11/2023">
-        </div>
-      </div> -->
+
       <form action="total_beds-edit.html">
       <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
         Edit chart
