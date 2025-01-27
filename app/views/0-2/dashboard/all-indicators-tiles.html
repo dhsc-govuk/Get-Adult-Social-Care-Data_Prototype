@@ -149,15 +149,28 @@
 .tile p{
   margin-bottom: 1em
 }
+.data-bar{
+  height:1em;
+}
     </style>
 <div class="tiles-container">
   <div class="tile">
     <p class="govuk-body"><a class="govuk-link" href="">Population by age</a></p>
     <p>Age distribution of the population in England, including percentage of people aged 65 and over.</p>
+    <p>18% of people in England are aged over 65.</p>
+    <svg viewBox="0 0 50 5" xmlns="http://www.w3.org/2000/svg" class="data-bar">
+      <rect x="0" width="50" height="5" rx="1" fill="#FFF" stroke="#e1e1e1"/>
+      <rect x="0" width="9" height="5" rx="1" fill="gold"/>
+    </svg>
   </div>
   <div class="tile">
     <p class="govuk-body"><a class="govuk-link" href="../data-pages/population-disability.html">Population with disabilities</a></p>
     <p>Percentage of the population in England who are considered disabled.</p>
+    <p>17.7% of people in England are considered disabled.</p>
+    <svg viewBox="0 0 50 5" xmlns="http://www.w3.org/2000/svg" class="data-bar">
+      <rect x="0" width="50" height="5" rx="1" fill="#FFF" stroke="#e1e1e1"/>
+      <rect x="0" width="9" height="5" rx="1" fill="gold"/>
+    </svg>
     </div>
     <div class="tile">
     <p class="govuk-body"><a class="govuk-link" href="">Clients accessing long-term support (in year)</a></p>
