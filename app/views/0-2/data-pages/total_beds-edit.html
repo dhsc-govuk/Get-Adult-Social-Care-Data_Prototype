@@ -58,8 +58,59 @@
         </div>
       </div>
    <h2>Filters</h2>
-   <p>You have 21 available for Total beds.</p>
-   <dl class="govuk-summary-list">
+   <table class="govuk-table">
+    <!-- <caption class="govuk-table__caption govuk-table__caption--l">Months and rates</caption> -->
+    <thead class="govuk-table__head">
+      <tr class="govuk-table__row">
+        <th scope="col" class="govuk-table__header">Filters</th>
+        <th scope="col" class="govuk-table__header">Active (2)</th>
+        <th scope="col" class="govuk-table__header">Available (21)</th>
+        <th>Change</th>
+      </tr>
+    </thead>
+    <tbody class="govuk-table__body">
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header">General</th>
+        <td class="govuk-table__cell">Total beds</td>
+        <td class="govuk-table__cell">
+          <ul class="govuk-list">
+            <li>Residential</li>
+            <li>Nursing</li>
+            <li>General</li>
+              <li>Dementia</li>
+              <li>Mental health</li>
+              <li>Learning disability</li>
+              <li>Adult community contacts </li>
+              <li>Adult hospice at home beds </li>
+              <li>Adult impatient</li>
+              <li>Child community contacts </li>
+              <li>Child hospice at home beds </li>
+              <li>Child impatient</li>
+              <li>Community rehabilitation - NHS or LA funded </li>
+              <li>Community rehabilitation - private funded </li>
+              <li>Commuity support </li>
+              <li>End of life </li>
+              <li>Transitional</li>
+              <li>YPD young physically disabled </li>
+          </ul>
+        </td>
+        <td class="govuk-table__cell"><a href="total_beds-edit-filters">Change</a></td>
+      </tr>
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header">Age ranges</th>
+        <td class="govuk-table__cell">All ages</td>
+        <td class="govuk-table__cell">
+          <ul class="govuk-list">
+            <li>18 to 65</li>
+            <li>65 and over</li>
+          </ul>
+        </td>
+        <td class="govuk-table__cell"><a href="total_beds-edit-filters">Change</a></td>
+
+      </tr>
+    </tbody>
+  </table>
+   <!-- <dl class="govuk-summary-list">
     <div class="govuk-summary-list__row">
       <dt class="govuk-summary-list__key">
         Filter by
@@ -82,8 +133,8 @@
           <a class="govuk-link" href="total_beds-edit-filters">Change<span class="govuk-visually-hidden"> name</span></a>
         </dd>
       </div>
-    </dl>
-  </dl>
+    </dl> -->
+
       <form action="total_beds#timeseries">
     <button type="submit" class="govuk-button" data-module="govuk-button">
       Continue

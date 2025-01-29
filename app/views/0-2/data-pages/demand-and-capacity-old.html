@@ -1,6 +1,6 @@
 {% extends "layouts/main.html" %}
 
-{% set pageName="Total beds" %}
+{% set pageName="Current demand" %}
 
 {% block content %} 
 <a href="../dashboard/all-indicators" class="govuk-back-link">Back</a>
@@ -33,14 +33,19 @@
     <div class="govuk-grid-column-one-third">      
       <nav class="moj-side-navigation" aria-label="Side navigation">
         <h3>Contents</h3>
+        {% set items = [
+          { link: "#settings", heading: "Settings" },
+          { link: "#total", heading: "Totals" },
+          { link: "#timeseries", heading: "Time series" },
+          { link: "#filters", heading: "Filters" },
+          { link: "#smart-insights", heading: "Smart insights" },
+          { link: "#about", heading: "About" }
+        ] %}
         <ul class="moj-side-navigation__list">
           <li class="moj-side-navigation__item moj-side-navigation__item--active"><a href="#introduction">Introduction</a></li class="moj-side-navigation__item">
-          <li class="moj-side-navigation__item"><a href="#settings">Your page settings</a></li class="moj-side-navigation__item">
-          <li class="moj-side-navigation__item"><a href="#total">Totals</a></li class="moj-side-navigation__item">
-          <li class="moj-side-navigation__item"><a href="#timeseries">Chart</a></li class="moj-side-navigation__item">
-          <li class="moj-side-navigation__item"><a href="#filters">Table</a></li class="moj-side-navigation__item">
-          <!-- <li class="moj-side-navigation__item"><a href="#smart-insights">Smart insights (experimental)</a></li class="moj-side-navigation__item">
-          <li class="moj-side-navigation__item"><a href="#about">About this data</a></li class="moj-side-navigation__item"> -->
+         {% for item in items %}
+            <li class="moj-side-navigation__item"><a href="{{item.link}}">{{item.heading}}</a></li class="moj-side-navigation__item">
+         {% endfor %}
         </ul>
       </nav>
 </div>
@@ -57,13 +62,10 @@
     </style>
     <h2 id="summary">Introduction</h2>
     <p class="govuk-body">
-      This indicator shows the total number of beds recorded by care providers across health and adult social care.
-    </p>
-    <p class="govuk-body">
-      You can find information about this data, including how it is compiled, updated, and the time ranges it covers in <a href="#about" class="govuk-link">About this data</a>.
+      This page shows what care might be needed in your area.
     </p>
 
-        <h2>Your page settings</h2>
+        <h2 id="settings">Your page settings</h2>
         <p class="govuk-body">You can change these settings to view data for specific areas.</p>
         <dl class="govuk-summary-list">
           <div class="govuk-summary-list__row">
@@ -78,19 +80,25 @@
             </dd>
           </div>
         </dl>
-    <h2 id="total">Total beds at 24 December 2024</h2>
+        <!-- 
+        
+        Age and disability
+        
+        -->
+    <h2 id="total">Age and disability</h2>
     <form action="total_beds-edit.html">
       <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
         Edit list
       </button>
     </form>
+    <h3>Percentage of people aged over 65</h3>
     <dl class="govuk-summary-list">
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
           Suffolk
         </dt>
         <dd class="govuk-summary-list__value" style="text-align:right">
-          14,200
+          18%
         </dd>
       </div>
       <div class="govuk-summary-list__row">
@@ -98,7 +106,7 @@
           Cambridgeshire
         </dt>
         <dd class="govuk-summary-list__value" style="text-align:right">
-          12,345
+          17%
         </dd>
       </div>
       <div class="govuk-summary-list__row">
@@ -106,15 +114,95 @@
           East of England
         </dt>
         <dd class="govuk-summary-list__value" style="text-align:right">
-          123,345
+          18%
         </dd>
       </div>
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
-          All of England
+          Average for England
         </dt>
         <dd class="govuk-summary-list__value" style="text-align:right">
-          1,233,345
+          12%
+        </dd>
+      </div>
+    </dl>
+    <!-- 
+    
+    Disability rates 
+    
+    -->
+    <h3>Disability rates for over 65s</h3>
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Suffolk
+        </dt>
+        <dd class="govuk-summary-list__value" style="text-align:right">
+          14%
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Cambridgeshire
+        </dt>
+        <dd class="govuk-summary-list__value" style="text-align:right">
+          15%
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          East of England
+        </dt>
+        <dd class="govuk-summary-list__value" style="text-align:right">
+          15%
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Average for England
+        </dt>
+        <dd class="govuk-summary-list__value" style="text-align:right">
+          12%
+        </dd>
+      </div>
+    </dl>
+     <!-- 
+    
+    Disability rates 
+    
+    -->
+    <h3>Total beds per 100,000 people for over-65s</h3>
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Suffolk
+        </dt>
+        <dd class="govuk-summary-list__value" style="text-align:right">
+          1,040
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Cambridgeshire
+        </dt>
+        <dd class="govuk-summary-list__value" style="text-align:right">
+          998
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          East of England
+        </dt>
+        <dd class="govuk-summary-list__value" style="text-align:right">
+          1,104
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Average for England
+        </dt>
+        <dd class="govuk-summary-list__value" style="text-align:right">
+          765
         </dd>
       </div>
     </dl>
@@ -301,7 +389,7 @@
       Smart insights 
       
     -->
-    <!-- <h2 id="smart-insights">Smart insights (experimental)</h2>
+    <h2 id="smart-insights">Smart insights (experimental)</h2>
     <div class="govuk-inset-text">
       Smart insights use artificial intelligence (AI) to analyse this data, highlighting trends and patterns to support your own analysis. As this is experimental, verify the insights to check they are appropriate and meet your needs. <a class="@ovuk-link" href="">Learn more about smart insights</a>
     </div>
@@ -313,7 +401,7 @@
     <ul class="govuk-list govuk-list--bullet">
     <li><strong>Monitor regional disparities:</strong> Compare growth patterns across Suffolk and Cambridgeshire to identify areas requiring additional investment.
     <li><strong>Target specialised care: </strong>Focus on expanding capacity in under-resourced care types, such as transitional or young physically disabled care.
-    </ul> -->
+    </ul>
     <!---
       <p class="govuk-body"><strong>Rate this smart insight</strong></p>
       <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
@@ -323,13 +411,13 @@
         Not helpful
       </button>
     -->
-    <!-- <h3 class="govuk-heading-s">Insight: proportion of general residential beds</h3>
+    <h3 class="govuk-heading-s">Insight: proportion of general residential beds</h3>
     <p class="govuk-body">General residential beds account for a substantial proportion of residential care in both Suffolk (4,124 beds) and Cambridgeshire (2,432 beds). However, they represent a smaller proportion of the overall capacity, with other categories such as dementia residential (3,776 in Suffolk, 2,294 in Cambridgeshire) occupying larger shares.</p>
     <h3 class="govuk-heading-s">How you might use this insight:</h3>
     <ul class="govuk-list govuk-list--bullet">
       <li><strong>Optimise bed allocation:</strong> Determine whether current general residential capacity matches the needs of specific demographics, such as older adults.</li>
       <li><strong>Develop flexible care options:</strong> Explore hybrid care solutions that bridge gaps between general residential and other specialised categories.</li>
-    </ul> -->
+    </ul>
     <!---
       <p class="govuk-body"><strong>Rate this smart insight</strong></p>
       <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
