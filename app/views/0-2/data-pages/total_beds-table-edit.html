@@ -1,15 +1,17 @@
 {% extends "layouts/main.html" %}
 
-{% set pageName="Edit list" %}
+{% set pageName="Customise view" %}
 
 {% block content %} 
-<a href="../dashboard/capacity" class="govuk-back-link">Back</a>
+<a href="javascript:history.back()" class="govuk-back-link">Back</a>
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <span class="govuk-caption-m">Total beds</span>
+       <!--<span class="govuk-caption-m">Total beds</span>-->
     <h1 class="govuk-heading-l">{{pageName}}</h1>
-    
+
+    <p class="govuk-body">Choose a time period and filter the data to view the insights you need.</p>
+
     <h2>Time period</h2>
         <div class="date-pickers">
       <div class="moj-datepicker" data-module="moj-date-picker">
@@ -37,7 +39,7 @@
         <th scope="col" class="govuk-table__header">Filters</th>
         <th scope="col" class="govuk-table__header">Active (2)</th>
         <th scope="col" class="govuk-table__header">Available (21)</th>
-        <th>Change</th>
+        <th scope="col" class="govuk-table__header">Action</th>
       </tr>
     </thead>
     <tbody class="govuk-table__body">
@@ -115,7 +117,7 @@
 
       <form action="total_beds#timeseries">
     <button type="submit" class="govuk-button" data-module="govuk-button">
-      Continue
+      Apply changes
     </button>
     </form>
   </div>
