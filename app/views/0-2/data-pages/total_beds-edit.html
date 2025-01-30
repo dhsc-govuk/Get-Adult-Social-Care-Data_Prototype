@@ -1,14 +1,15 @@
 {% extends "layouts/data.html" %}
 
-{% set pageName="Edit chart" %}
+{% set pageName="Customise view" %}
 
 {% block content %} 
-<a href="total_beds" class="govuk-back-link">Back</a>
+<a href="javascript:history.back()" class="govuk-back-link">Back</a>
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <span class="govuk-caption-m">Total beds</span>
+    <!--<span class="govuk-caption-m">Total beds</span>-->
     <h1 class="govuk-heading-l">{{pageName}}</h1>
+    <p class="govuk-body">Select a chart type, choose a time period, and filter the data to explore different views.</p>
     <div class="govuk-form-group">
       <fieldset class="govuk-fieldset" aria-describedby="changedName-hint">
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
@@ -65,7 +66,7 @@
         <th scope="col" class="govuk-table__header">Filters</th>
         <th scope="col" class="govuk-table__header">Active (2)</th>
         <th scope="col" class="govuk-table__header">Available (21)</th>
-        <th>Change</th>
+        <th scope="col" class="govuk-table__header">Action</th>
       </tr>
     </thead>
     <tbody class="govuk-table__body">
@@ -143,7 +144,7 @@
 
       <form action="total_beds#timeseries">
     <button type="submit" class="govuk-button" data-module="govuk-button">
-      Continue
+      Apply changes
     </button>
     </form>
   </div>
