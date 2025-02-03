@@ -1,6 +1,6 @@
 {% extends "layouts/data.html" %}
 
-{% set pageName="Total beds per 100,000 people" %}
+{% set pageName="Total beds per 1,000 people" %}
 
 {% block content %} 
 <a href="../data-pages/present-demand" class="govuk-back-link">Back</a>
@@ -59,7 +59,7 @@
     </style>
     <h2 id="summary">Introduction</h2>
     <p class="govuk-body">
-      This indicator shows the total number of beds recorded by care providers across health and adult social care, adjusted to a rate of 100,000 people in the population.
+      This indicator shows the total number of beds recorded by care providers across health and adult social care, adjusted to a rate of 1,000 people in the population.
     </p>
     <p class="govuk-body">
       You can find information about this data, including how it is compiled, updated, and the time ranges it covers in <a href="#about" class="govuk-link">About this data</a>.
@@ -80,7 +80,7 @@
             </dd>
           </div>
         </dl>
-    <h2 id="total">Total beds at 24 December 2024</h2>
+    <h2 id="total">Total beds per 1,000 people at 24 December 2024</h2>
     <form action="total_beds-table-edit.html">
       <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
         Edit list
@@ -92,7 +92,8 @@
           Suffolk
         </dt>
         <dd class="govuk-summary-list__value" style="text-align:right">
-          14,200
+          18.4 
+          <!-- (14,200) -->
         </dd>
       </div>
       <div class="govuk-summary-list__row">
@@ -100,15 +101,16 @@
           Cambridgeshire
         </dt>
         <dd class="govuk-summary-list__value" style="text-align:right">
-          12,345
+          10.9 
+          <!-- (7,224) -->
         </dd>
       </div>
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
-          East of England
+          East of England average
         </dt>
         <dd class="govuk-summary-list__value" style="text-align:right">
-          123,345
+          12.4
         </dd>
       </div>
       <div class="govuk-summary-list__row">
@@ -116,7 +118,7 @@
           All of England
         </dt>
         <dd class="govuk-summary-list__value" style="text-align:right">
-          1,233,345
+          13.4
         </dd>
       </div>
     </dl>
@@ -345,12 +347,12 @@
     <h2 id="about">About this data</h2>
 
     <table class="govuk-table">
-      <caption class="govuk-table__caption govuk-table__caption--s">Details for Beds per 100,000 people</caption>
+      <caption class="govuk-table__caption govuk-table__caption--s">Details for Beds per 1,000 people</caption>
 
       <thead class="govuk-table__head">
         <tr class="govuk-table__row">
           <th scope="row" class="govuk-table__header govuk-!-width-one-quarter">What this measures</td>
-          <td class="govuk-table__cell">The total number of beds recorded by care providers across health and adult social care, adjusted to a rate of 100,000 people in the population.</td>
+          <td class="govuk-table__cell">The total number of beds recorded by care providers across health and adult social care, adjusted to a rate of 1,000 people in the population.</td>
         </tr>
       </thead>
       <tbody class="govuk-table__body">
