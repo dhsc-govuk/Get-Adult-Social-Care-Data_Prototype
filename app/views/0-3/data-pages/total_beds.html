@@ -1,6 +1,6 @@
 {% extends "layouts/data.html" %}
 
-{% set pageName="Total beds per 1,000 population" %}
+{% set pageName="Total beds per 1,000 people" %}
 
 {% block content %} 
 <a href="../data-pages/present-demand" class="govuk-back-link">Back</a>
@@ -35,8 +35,8 @@
         <h3>Contents</h3>
         <ul class="moj-side-navigation__list">
           <li class="moj-side-navigation__item moj-side-navigation__item--active"><a href="#introduction">Introduction</a></li class="moj-side-navigation__item">
-          <!-- <li class="moj-side-navigation__item"><a href="#settings">Your selected locations</a></li class="moj-side-navigation__item"> -->
-          <!-- <li class="moj-side-navigation__item"><a href="#total">Totals</a></li class="moj-side-navigation__item"> -->
+          <li class="moj-side-navigation__item"><a href="#settings">Your page settings</a></li class="moj-side-navigation__item">
+          <li class="moj-side-navigation__item"><a href="#total">Totals</a></li class="moj-side-navigation__item">
           <li class="moj-side-navigation__item"><a href="#timeseries">Chart</a></li class="moj-side-navigation__item">
           <li class="moj-side-navigation__item"><a href="#filters">Table</a></li class="moj-side-navigation__item">
           <!-- <li class="moj-side-navigation__item"><a href="#smart-insights">Smart insights (experimental)</a></li class="moj-side-navigation__item">
@@ -59,42 +59,69 @@
     </style>
     <h2 id="summary">Introduction</h2>
     <p class="govuk-body">
-      This indicator shows the total number of beds per 1,000 population recorded by care providers across health and adult social care.
+      This indicator shows the total number of beds recorded by care providers across health and adult social care, adjusted to a rate of 1,000 people in the population.
     </p>
     <p class="govuk-body">
       You can find information about this data, including how it is compiled, updated, and the time ranges it covers in <a href="#about" class="govuk-link">About this data</a>.
     </p>
-    <h2 id="total">Total beds per 1,000 population at 24 December 2024</h2>
 
-      <form action="total_beds-table-edit">
-        <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
-          Edit table
-        </button>
-      </form>
-    <table class="govuk-table">
-      <thead class="govuk-table__head">
-        <th scope="col" class="govuk-table__header">Location</th>
-        <th scope="col" class="govuk-table__header">Beds per 1,000 population, 18+</th>
-        <th scope="col" class="govuk-table__header">Beds occupied</th>
-      </thead>
-      <tbody>
-       <tr class="govuk-table__row">
-      <td class="govuk-table__cell">Suffolk</td>
-      <td class="govuk-table__cell">18.4</td>
-      <td class="govuk-table__cell">85%</td>
-      </tr>
-      <tr class="govuk-table__row">
-        <td class="govuk-table__cell">Cambridgeshire</td>
-        <td class="govuk-table__cell">10.9</td>
-        <td class="govuk-table__cell">85%</td>
-        </tr>
-      <tr class="govuk-table__row">
-        <td class="govuk-table__cell">East of England</td>
-        <td class="govuk-table__cell">12.2</td>
-        <td class="govuk-table__cell">77%</td>
-        </tr>
-      </tbody>
-      </table>
+        <h2>Your selected locations</h2>
+        <p class="govuk-body">Select locations to view and compare data.</p>
+        <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Selected locations
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Suffolk, East of England
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="present-demand-locations">Change<span class="govuk-visually-hidden"> name</span></a>
+            </dd>
+          </div>
+        </dl>
+    <h2 id="total">Total beds per 1,000 people at 24 December 2024</h2>
+    <form action="total_beds-table-edit.html">
+      <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+        Edit list
+      </button>
+    </form>
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Suffolk
+        </dt>
+        <dd class="govuk-summary-list__value" style="text-align:right">
+          18.4 
+          <!-- (14,200) -->
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Cambridgeshire
+        </dt>
+        <dd class="govuk-summary-list__value" style="text-align:right">
+          10.9 
+          <!-- (7,224) -->
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          East of England average
+        </dt>
+        <dd class="govuk-summary-list__value" style="text-align:right">
+          12.4
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          All of England
+        </dt>
+        <dd class="govuk-summary-list__value" style="text-align:right">
+          13.4
+        </dd>
+      </div>
+    </dl>
     <!-- 
       
       Time series 
@@ -120,6 +147,19 @@
         Edit chart
       </button>
     </form>
+    <!-- <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Chart type
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Line chart
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> name</span></a>
+        </dd>
+      </div>
+    </dl> -->
     {% include "./_total_beds.html" %}
     <h3>Download options</h3>
     <ul>

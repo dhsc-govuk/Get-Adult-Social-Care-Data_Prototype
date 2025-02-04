@@ -17,12 +17,19 @@
       <div class="moj-datepicker" data-module="moj-date-picker">
         <div class="govuk-form-group">
           <label class="govuk-label" for="date">
-            Date
+            Start date 
           </label>
-          <p class="govuk-hint">Pick a date, going back to 1 April 2024</p>
           <input class="govuk-input moj-js-datepicker-input " id="date" name="date" type="text" aria-describedby="date-hint" autocomplete="off" value="1/04/2021">
         </div>
       </div>
+      
+      <div class="moj-datepicker" data-module="moj-date-picker">
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="date">
+            End date
+          </label>
+          <input class="govuk-input moj-js-datepicker-input " id="date" name="date" type="text" aria-describedby="date-hint" autocomplete="off" value="1/11/2023">
+        </div>
       </div>
    <h2>Filters</h2>
    <table class="govuk-table">
@@ -30,8 +37,8 @@
     <thead class="govuk-table__head">
       <tr class="govuk-table__row">
         <th scope="col" class="govuk-table__header">Filters</th>
-        <th scope="col" class="govuk-table__header">Active</th>
-        <th scope="col" class="govuk-table__header">Available</th>
+        <th scope="col" class="govuk-table__header">Active (2)</th>
+        <th scope="col" class="govuk-table__header">Available (21)</th>
         <th scope="col" class="govuk-table__header">Action</th>
       </tr>
     </thead>
@@ -41,15 +48,18 @@
         <td class="govuk-table__cell">Total beds</td>
         <td class="govuk-table__cell">
           <ul class="govuk-list">
-            <li>Adult community contacts </li>
-            <li>Adult hospice at home beds </li>
-            <li>Adult inpatient</li>
+            <li>Residential</li>
+            <li>Nursing</li>
+            <li>General</li>
               <li>Dementia</li>
               <li>Mental health</li>
               <li>Learning disability</li>
+              <li>Adult community contacts </li>
+              <li>Adult hospice at home beds </li>
+              <li>Adult inpatient</li>
               <li>Community rehabilitation - NHS or LA funded </li>
               <li>Community rehabilitation - private funded </li>
-              <li>Commuity support </li>
+              <li>Community support </li>
               <li>End of life </li>
               <li>Transitional</li>
               <li>YPD young physically disabled </li>
@@ -59,7 +69,7 @@
       </tr>
       <tr class="govuk-table__row">
         <th scope="row" class="govuk-table__header">Local authorities</th>
-        <td class="govuk-table__cell">Suffolk, Cambridgeshire</td>
+        <td class="govuk-table__cell">Suffolk</td>
         <td class="govuk-table__cell">
 152 available
         </td>
@@ -93,7 +103,7 @@
       </div>
     </dl> -->
 
-      <form action="total_beds#total">
+      <form action="total_beds#timeseries">
     <button type="submit" class="govuk-button" data-module="govuk-button">
       Apply changes
     </button>
