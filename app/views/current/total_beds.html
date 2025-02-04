@@ -64,6 +64,38 @@
     <p class="govuk-body">
       You can find information about this data, including how it is compiled, updated, and the time ranges it covers in <a href="#about" class="govuk-link">About this data</a>.
     </p>
+    
+    <!-- 
+      
+      Time series 
+      
+    -->
+    <h2 id="timeseries">Chart: total beds per 1,000 population over time</h2>
+    <!-- 
+      
+      Date picker 
+      
+    -->
+    <style>
+      .date-pickers{
+        margin-bottom:3em;
+        display: grid;
+        grid-template-columns: 35% 35%;
+        column-gap: 2em
+      }
+    </style>
+
+      <form action="total_beds-edit.html">
+      <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+        Edit chart
+      </button>
+    </form>
+    {% include "./_total_beds.html" %}
+    <h3>Download options</h3>
+    <ul>
+      <li><a href="" class="govuk-link">Download chart image (PNG)</a></li>
+      <li><a href="" class="govuk-link">Download data (CSV)</a></li>
+    </ul>
     <h2 id="total">Total beds per 1,000 population at 24 December 2024</h2>
     <form>
       <form action="total_beds-table-edit">
@@ -90,7 +122,7 @@
         <td class="govuk-table__cell">85%</td>
         </tr>
       <tr class="govuk-table__row">
-        <td class="govuk-table__cell">East of England</td>
+        <td class="govuk-table__cell">East of England region</td>
         <td class="govuk-table__cell">12.2</td>
         <td class="govuk-table__cell">77%</td>
         </tr>
@@ -122,45 +154,14 @@
         </table>
     <!-- 
       
-      Time series 
-      
-    -->
-    <h2 id="timeseries">Chart: total beds over time</h2>
-    <!-- 
-      
-      Date picker 
-      
-    -->
-    <style>
-      .date-pickers{
-        margin-bottom:3em;
-        display: grid;
-        grid-template-columns: 35% 35%;
-        column-gap: 2em
-      }
-    </style>
-
-      <form action="total_beds-edit.html">
-      <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
-        Edit chart
-      </button>
-    </form>
-    {% include "./_total_beds.html" %}
-    <h3>Download options</h3>
-    <ul>
-      <li><a href="" class="govuk-link">Download chart image (PNG)</a></li>
-      <li><a href="" class="govuk-link">Download data (CSV)</a></li>
-    </ul>
-    <!-- 
-      
       Filters 
     
     -->
-    <h2 id="filters">Table: total beds, 24 December 2024</h2>
+    <!-- <h2 id="filters">Table: total beds, 24 December 2024</h2> -->
     <!-- <p>You can edit the care setting, filter, age, Local Authority
       or region. 
     </p> -->
-    <form action="total_beds-edit.html">
+    <!-- <form action="total_beds-edit.html">
       <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
         Edit table
       </button>
@@ -284,13 +285,13 @@
       <td class="govuk-table__cell">7,624</td>
       </tr>
       </tbody>
-      </table>
+      </table> -->
     <!-- 
       
       Smart insights 
       
     -->
-    <!-- <h2 id="smart-insights">Smart insights (experimental)</h2>
+    <h2 id="smart-insights">Smart insights (experimental)</h2>
     <div class="govuk-inset-text">
       Smart insights use artificial intelligence (AI) to analyse this data, highlighting trends and patterns to support your own analysis. As this is experimental, verify the insights to check they are appropriate and meet your needs. <a class="@ovuk-link" href="">Learn more about smart insights</a>
     </div>
@@ -302,7 +303,7 @@
     <ul class="govuk-list govuk-list--bullet">
     <li><strong>Monitor regional disparities:</strong> Compare growth patterns across Suffolk and Cambridgeshire to identify areas requiring additional investment.
     <li><strong>Target specialised care: </strong>Focus on expanding capacity in under-resourced care types, such as transitional or young physically disabled care.
-    </ul> -->
+    </ul>
     <!---
       <p class="govuk-body"><strong>Rate this smart insight</strong></p>
       <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
@@ -327,12 +328,16 @@
       <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
         Not helpful
       </button>
-    -->
+   
+<!-- 
+    
+About this data 
 
+-->
     <h2 id="about">About this data</h2>
 
     <table class="govuk-table">
-      <caption class="govuk-table__caption govuk-table__caption--s">Details for Beds per 1,000 people</caption>
+      <caption class="govuk-table__caption govuk-table__caption--s">Details for Beds per 1,000 population</caption>
 
       <thead class="govuk-table__head">
         <tr class="govuk-table__row">
