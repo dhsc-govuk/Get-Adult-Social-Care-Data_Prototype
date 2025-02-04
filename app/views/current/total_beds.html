@@ -70,7 +70,7 @@
       Time series 
       
     -->
-    <h2 id="timeseries">Chart: total beds per 1,000 population over time</h2>
+    <h2 id="timeseries">Chart</h2>
     <!-- 
       
       Date picker 
@@ -85,7 +85,7 @@
       }
     </style>
 
-      <form action="total_beds-edit.html">
+      <form action="total_beds-edit">
       <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
         Edit chart
       </button>
@@ -93,18 +93,17 @@
     {% include "./_total_beds.html" %}
     <h3>Download options</h3>
     <ul>
-      <li><a href="" class="govuk-link">Download chart image (PNG)</a></li>
-      <li><a href="" class="govuk-link">Download data (CSV)</a></li>
+      <li><a href="#" class="govuk-link">Download chart image (PNG)</a></li>
+      <li><a href="#" class="govuk-link">Download data (CSV)</a></li>
     </ul>
-    <h2 id="total">Total beds per 1,000 population at 24 December 2024</h2>
-    <form>
+    <h2 id="total">Table</h2>
       <form action="total_beds-table-edit">
         <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
           Edit table
         </button>
       </form>
-    </form>
     <table class="govuk-table">
+      <caption class="govuk-table__caption govuk-table__caption--m">Total beds per 1,000 population at 24 December 2024</caption>
       <thead class="govuk-table__head">
         <th scope="col" class="govuk-table__header">Location</th>
         <th scope="col" class="govuk-table__header">Beds per 1,000 population, 18+</th>
@@ -129,6 +128,7 @@
       </tbody>
       </table>
       <table class="govuk-table">
+        <caption class="govuk-table__caption govuk-table__caption--m">Residential dementia beds per 1,000 population at 24 December 2024</caption>
         <thead class="govuk-table__head">
           <th scope="col" class="govuk-table__header">Location</th>
           <th scope="col" class="govuk-table__header">Residential dementia beds per 1,000 population, 18+</th>
