@@ -39,8 +39,8 @@
           <!-- <li class="moj-side-navigation__item"><a href="#total">Totals</a></li class="moj-side-navigation__item"> -->
           <li class="moj-side-navigation__item"><a href="#timeseries">Chart</a></li class="moj-side-navigation__item">
           <li class="moj-side-navigation__item"><a href="#filters">Table</a></li class="moj-side-navigation__item">
-          <!-- <li class="moj-side-navigation__item"><a href="#smart-insights">Smart insights (experimental)</a></li class="moj-side-navigation__item">
-          <li class="moj-side-navigation__item"><a href="#about">About this data</a></li class="moj-side-navigation__item"> -->
+          <li class="moj-side-navigation__item"><a href="#smart-insights">Smart insights (experimental)</a></li class="moj-side-navigation__item">
+          <li class="moj-side-navigation__item"><a href="#about">About this data</a></li class="moj-side-navigation__item">
         </ul>
       </nav>
 </div>
@@ -65,12 +65,13 @@
       You can find information about this data, including how it is compiled, updated, and the time ranges it covers in <a href="#about" class="govuk-link">About this data</a>.
     </p>
     <h2 id="total">Total beds per 1,000 population at 24 December 2024</h2>
-
+    <form>
       <form action="total_beds-table-edit">
         <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
           Edit table
         </button>
       </form>
+    </form>
     <table class="govuk-table">
       <thead class="govuk-table__head">
         <th scope="col" class="govuk-table__header">Location</th>
@@ -95,6 +96,30 @@
         </tr>
       </tbody>
       </table>
+      <table class="govuk-table">
+        <thead class="govuk-table__head">
+          <th scope="col" class="govuk-table__header">Location</th>
+          <th scope="col" class="govuk-table__header">Residential dementia beds per 1,000 population, 18+</th>
+          <th scope="col" class="govuk-table__header">Residential dementia beds occupied</th>
+        </thead>
+        <tbody>
+         <tr class="govuk-table__row">
+        <td class="govuk-table__cell">Suffolk</td>
+        <td class="govuk-table__cell">18.4</td>
+        <td class="govuk-table__cell">85%</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Cambridgeshire</td>
+          <td class="govuk-table__cell">10.9</td>
+          <td class="govuk-table__cell">85%</td>
+          </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">East of England</td>
+          <td class="govuk-table__cell">12.2</td>
+          <td class="govuk-table__cell">77%</td>
+          </tr>
+        </tbody>
+        </table>
     <!-- 
       
       Time series 
