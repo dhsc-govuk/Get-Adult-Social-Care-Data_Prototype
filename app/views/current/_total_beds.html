@@ -1,5 +1,5 @@
-<h2>
-       Total beds over time: 1 April 2021 to 1 November 2023</h2>
+<h3>
+       Total beds per 1,000 population over time: 1 April 2021 to 1 November 2023</h3>
 <ul class="govuk-list">
     <li>
         {% set x = "5" %}
@@ -21,9 +21,12 @@
 <!-- 
 
 Chart  
-
+ 
 -->
-<svg height="250" width="600" xmlns="http://www.w3.org/2000/svg" transform="translate(40,0)">
+<style>
+    .data-chart{width:100%;width:600px}
+</style>
+<svg height="250" width="600" xmlns="http://www.w3.org/2000/svg" transform="translate(40,0)" class="data-chart">
     <defs>
         <style>
             text{font-family: 'Helvetica Neue', sans-serif; }
