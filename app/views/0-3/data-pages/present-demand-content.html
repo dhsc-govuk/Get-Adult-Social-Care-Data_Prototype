@@ -1,6 +1,6 @@
 {% extends "layouts/data.html" %}
 
-{% set pageName="Present demand" %}
+{% set pageName="Current demand" %}
 
 {% block content %} 
 <a href="../dashboard/get-data" class="govuk-back-link">Back</a>
@@ -16,10 +16,10 @@
         {% set items = [
           { link: "#settings", heading: "Indicator definitions and supporting information" },
           { link: "#settings", heading: "Your selected locations" },
+          { link: "#ai", heading: "Data insights using artifical intelligence (AI)" },
           { link: "#current", heading: "Current demand" },
           { link: "#drivers", heading: "Drivers of demand" },
           { link: "#capacity", heading: "Care provision and capacity" },
-          { link: "#smart-insights", heading: "Smart insights" },
           { link: "#about", heading: "About this data" }
         ] %}
         <ul class="moj-side-navigation__list">
@@ -43,21 +43,23 @@
     </style>
     <h2 class="govuk-heading-m" id="summary">Introduction</h2>
     <p class="govuk-body">
-      Understanding present demand for adult social care services helps identify where needs are being met and where gaps may exist. Here you can find insights into both met and unmet demand, as well as factors that drive this.
+      Understanding current demand for adult social care services helps identify where needs are being met and where gaps may exist.</p>
+      
+    <p class="govuk-body">
+      Here you can find insights into both met and unmet demand, as well as factors that drive this.
     </p>
+
 
     <h2 id="settings">Indicator definitions and supporting information</h2>
 
     <p class="govuk-body">
-      Find definitions and supporting information for each indicator, including how it is complied, update schedules and the time range it covers:
+      Find detailed information about each indicator, including data definitions, data source, update schedule, and any limitations to be aware of being using the data.
     </p>
     <ul class="govuk-list govuk-list--bullet">
       <li><a href="" class="govuk-link">Total beds per 1,000 people</a></li>
       <li><a href="" class="govuk-link">Population age and disability</a></li>
       <li><a href="" class="govuk-link">Care provider locations by size </a></li>
       </ul>
-
-
 
         <h2 id="settings">Your selected locations</h2>
         <p class="govuk-body">Select locations to view and compare data.</p>
@@ -75,12 +77,24 @@
           </div>
         </dl>
 
+        
 
-              <!--Smart insights-->
+         <!-- 
+        
+        Age and disability
+        
+        -->
 
-      <h2 id="smart-insights">Smart insights (experimental)</h2>
+        <!--Smart insights-->
+
+      <div style="background-color:#f8f8f8; padding: 20px; margin: 100px -20px 20px -20px; border-radius: 5px;">
+
+
+      <h2 class="govuk-heading-m" id="ai">Data insights using artificial intelligence (AI) <strong class="govuk-tag govuk-tag--light-blue">
+        Experimental </strong></h2>
+    
       <div class="govuk-inset-text">
-        Smart insights use artificial intelligence (AI) to analyse this data, highlighting trends and patterns to support your own analysis. As this is experimental, verify the insights to check they are appropriate and meet your needs. <a class="govuk-link" href="">Learn more about smart insights</a>
+        These insights in this section use AI to analyse the data, highlighting trends and patterns to support your own analysis. As this is experimental, verify the insights to check they are appropriate and meet your needs. <a class="govuk-link" href="">Learn more about AI insights</a>
       </div>
 
 
@@ -104,14 +118,9 @@
        <li>A potential strategy might include implementing more comprehensive community-based services and support systems that address the specific needs of individuals with disabilities, ensuring they have access to day-to-day activities and health services.</li>
        <li>Investing in training for adult social care professionals on best practices in disability management might improve the quality of care and outcomes for people with disabilities in these regions.</li>
     </ul>
-
-
-
-         <!-- 
-        
-        Age and disability
-        
-        -->
+  </div>
+    
+  
 
       <h2 id="current">
       <!--<span class="govuk-caption-m">Current demand</span>-->
@@ -162,9 +171,13 @@
       </table>
        
       <p class="govuk-body"><a href="" class="govuk-link">Download table data (CSV)</a>
-  
- 
-          
+
+        <p class="govuk-body">Source: Capacity Tracker, 5 February 2025.<br>
+          <a href="" class="govuk-link">View supporting information for this data</a></p>
+
+        <!--
+        <p class="govuk-body"><a href="#chart1" class="govuk-link">Notes for this dataset</a>
+        -->
 
       <h2 id="drivers">
         <!--<span class="govuk-caption-m">Current demand</span>-->
@@ -216,8 +229,12 @@
       </table>
 
       <p class="govuk-body"><a href="" class="govuk-link">Download table data (CSV)</a>
-        
-        
+
+        <p class="govuk-body">Source: Capacity Tracker, 5 February 2025<br>
+        <a href="" class="govuk-link">View supporting information for this data</a></p>
+        <!--
+      <p class="govuk-body"><a href="#chart2" class="govuk-link">Notes for this dataset</a>
+      -->
      <!-- 
       
       CPs in Suffolk
@@ -285,9 +302,9 @@
       </table>
 
       <p class="govuk-body"><a href="" class="govuk-link">Download table data (CSV)</a>
-       
- 
-
+   
+      <p class="govuk-body">Source: Capacity Tracker, 5 February 2025.<br>
+      <a href="" class="govuk-link">View supporting information for this data</a></p>
 
     <p class="govuk-body"><a class="govuk-link" href="#">Back </a></p>
     
