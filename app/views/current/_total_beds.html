@@ -1,21 +1,28 @@
 <h3>
-       Total beds per 1,000 population over time: 1 April 2021 to 1 November 2023</h3>
+       Total beds per 100,000 population over time: 1 April 2021 to 1 November 2023</h3>
 <ul class="govuk-list">
     <li>
-        {% set x = "5" %}
+        {% set x = "10" %}
         <svg height="5" width="50" xmlns="http://www.w3.org/2000/svg">
             <g fill="none">
-                <line x1="0" y1="0" x2="50" y2="0" stroke="green" stroke-width={{x}} />
+                <line x1="0" y1="0" x2="50" y2="0" stroke="purple" stroke-width={{10}} />
             </g>
           </svg> 
-        Suffolk</li>
+        Total</li>
     <li>
         <svg height="5" width="50" xmlns="http://www.w3.org/2000/svg">
             <g fill="none">
                 <line x1="0" y1="0" x2="50" y2="0" stroke="gold" stroke-width="10" />
             </g>
           </svg> 
-        Cambridgeshire</li>
+        Dementia nursing</li>
+        <li>
+            <svg height="5" width="50" xmlns="http://www.w3.org/2000/svg">
+                <g fill="none">
+                    <line x1="0" y1="0" x2="50" y2="0" stroke="orange" stroke-width="10" />
+                </g>
+              </svg> 
+            Dementia residential</li>
  
 </ul>
 <!-- 
@@ -34,8 +41,8 @@ Chart
     </defs>
     
     <!-- 	Y Scale -->
-    <text class="axis-text"x="0" y="50" fill="#666">20,000</text>
-    <text class="axis-text"x="0" y="125" fill="#666">10,000</text>
+    <text class="axis-text"x="0" y="50" fill="#666">2,400</text>
+    <text class="axis-text"x="0" y="125" fill="#666">1,200</text>
     <text class="axis-text"x="42" y="200" fill="#666">0</text>
     
     <g transform="translate(20,0)">
@@ -52,13 +59,17 @@ Chart
         
         <!-- 		Lines -->
         <g transform="translate(-250,0) scale (2 1)">
-            <!-- Total beds - Suffolk -->
-            <polyline points="150,150 200,140 250,143 300,110 350,82 400,65, 450,80"
-            style="fill:none;stroke:green;stroke-width:3" />
+            <!-- Total beds -->
+            <polyline points="150,110 200,90 250,80 300,90 350,82 400,65, 450,80"
+            style="fill:none;stroke:purple;stroke-width:3" />
 
-            <!-- Total beds - Cambridgeshire -->
-            <polyline points="150,159 200,153 250,157 300,121 350,93 400,79, 450,89"
+            <!-- Dementia residential -->
+            <polyline points="150,169 200,173 250,152 300,158 350,143 400,154, 450,158"
             style="fill:none;stroke:gold;stroke-width:3" />
+
+            <!-- Dementia nursing -->
+            <polyline points="150,194 200,193 250,179 300,191 350,193 400,189, 450,195"
+            style="fill:none;stroke:orange;stroke-width:3" />
 
         </g>
     </svg>

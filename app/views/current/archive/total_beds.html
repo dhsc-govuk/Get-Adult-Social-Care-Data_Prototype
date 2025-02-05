@@ -97,46 +97,61 @@
       <li><a href="#" class="govuk-link">Download data (CSV)</a></li>
     </ul>
     <h2 id="total">Table</h2>
-    <p>Click 'edit table' to change the filters.</p>
       <form action="total_beds-table-edit">
         <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
           Edit table
         </button>
       </form>
     <table class="govuk-table">
-      <caption class="govuk-table__caption govuk-table__caption--s">Total beds per 100,000 population at 24 December 2024</caption>
+      <caption class="govuk-table__caption govuk-table__caption--m">Total beds per 1,000 population at 24 December 2024</caption>
       <thead class="govuk-table__head">
-        <style>
-          td:nth-child(2), td:nth-child(3), td:nth-child(4){text-align: right;}
-          th:nth-child(2), th:nth-child(3), th:nth-child(4){text-align: right;}
-        </style>
-        <th scope="col" class="govuk-table__header">Filter</th>
-        <th scope="col" class="govuk-table__header">Suffolk</th>
-        <th scope="col" class="govuk-table__header">East of England region</th>
-        <th scope="col" class="govuk-table__header">All England</th>
+        <th scope="col" class="govuk-table__header">Location</th>
+        <th scope="col" class="govuk-table__header">Beds per 1,000 population, 18+</th>
+        <th scope="col" class="govuk-table__header">Beds occupied</th>
       </thead>
       <tbody>
        <tr class="govuk-table__row">
-      <td class="govuk-table__cell">Total beds</td>
-      <td class="govuk-table__cell">2,398.4</td>
-      <td class="govuk-table__cell">1,969.5</td>
-      <td class="govuk-table__cell">2,088.2</td>
+      <td class="govuk-table__cell">Suffolk</td>
+      <td class="govuk-table__cell">18.4</td>
+      <td class="govuk-table__cell">85%</td>
       </tr>
       <tr class="govuk-table__row">
-        <td class="govuk-table__cell">Dementia nursing</td>
-        <td class="govuk-table__cell">160.1</td>
-        <td class="govuk-table__cell">126.0</td>
-        <td class="govuk-table__cell">182.1</td>
+        <td class="govuk-table__cell">Cambridgeshire</td>
+        <td class="govuk-table__cell">10.9</td>
+        <td class="govuk-table__cell">85%</td>
         </tr>
       <tr class="govuk-table__row">
-        <td class="govuk-table__cell">Dementia residential</td>
-        <td class="govuk-table__cell">648.8</td>
-        <td class="govuk-table__cell">486.6</td>
-        <td class="govuk-table__cell">432.8</td>
+        <td class="govuk-table__cell">East of England region</td>
+        <td class="govuk-table__cell">12.2</td>
+        <td class="govuk-table__cell">77%</td>
         </tr>
       </tbody>
       </table>
-      
+      <table class="govuk-table">
+        <caption class="govuk-table__caption govuk-table__caption--m">Residential dementia beds per 1,000 population at 24 December 2024</caption>
+        <thead class="govuk-table__head">
+          <th scope="col" class="govuk-table__header">Location</th>
+          <th scope="col" class="govuk-table__header">Residential dementia beds per 1,000 population, 18+</th>
+          <th scope="col" class="govuk-table__header">Residential dementia beds occupied</th>
+        </thead>
+        <tbody>
+         <tr class="govuk-table__row">
+        <td class="govuk-table__cell">Suffolk</td>
+        <td class="govuk-table__cell">18.4</td>
+        <td class="govuk-table__cell">85%</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Cambridgeshire</td>
+          <td class="govuk-table__cell">10.9</td>
+          <td class="govuk-table__cell">85%</td>
+          </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">East of England</td>
+          <td class="govuk-table__cell">12.2</td>
+          <td class="govuk-table__cell">77%</td>
+          </tr>
+        </tbody>
+        </table>
     <!-- 
       
       Filters 
