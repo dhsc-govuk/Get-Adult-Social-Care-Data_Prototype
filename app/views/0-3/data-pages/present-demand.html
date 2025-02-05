@@ -16,9 +16,9 @@
         {% set items = [
           { link: "#definition", heading: "Indicator definition and supporting information" },
           { link: "#settings", heading: "Your selected locations" },
-          { link: "#current", heading: "Current demand" },
           { link: "#drivers", heading: "Drivers of demand" },
-          { link: "#capacity", heading: "Care provision and capacity" },
+          { link: "#provision", heading: "Current provision" },
+          { link: "#capacity", heading: "Care provider capacity" },
           { link: "#smart-insights", heading: "Smart insights (experimental)" }
         ] %}
         <ul class="moj-side-navigation__list">
@@ -49,7 +49,7 @@
     </p>
 
 
-    <h2 id="indicator-definitions">Indicator definition and supporting information</h2>
+    <h2 id="definition">Indicator definition and supporting information</h2>
 
     <p class="govuk-body">
       Find detailed information about each indicator, including data definitions, data source, update schedule, and any limitations to be aware of being using the data.
@@ -83,60 +83,6 @@
         
         -->
 
-      <h2 id="current">
-      <!--<span class="govuk-caption-m">Current demand</span>-->
-      Current demand</h2>
-
-      <p class="govuk-body">The number of care beds per 1,000 people allows you to compare care provision between different areas. A higher number may suggest greater demand, particularly when occupancy rates are high.</p>
-      <p class="govuk-body">Demand can also be shaped by population need. <a href="#drivers">Learn about drivers of demand</a>.</p>
-        
-      <p class="govuk-body">Care homes in Suffolk have <strong>18.4 beds per 1,000 people</strong> - 31% more than the East of England average (12.2).</p>
-        
-      <p class="govuk-body">Despite this higher provision, Suffolk care homes are <strong>operating at 85% occupancy</strong>, indicating that capacity may still be constrained.</p>
-      
-      <p class="govuk-body">In comparison, the East of England's <strong>77% occupancy rate</strong> suggests some areas have slightly more capacity to meet demand.</p>
-    <h3 class="govuk-heading-m">
-      <!--<span class="govuk-caption-m">Capacity</span>-->
-      Explore the data: total beds per 1,000 people</h3>
-    <p>You can filter this data by local authority, care setting or type of care. 
-    </p>
-    <form action="total_beds.html">
-      <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
-        Explore data
-      </button>
-    </form>
-    <table class="govuk-table">
-      <thead class="govuk-table__head">
-        <th scope="col" class="govuk-table__header">Location</th>
-        <th scope="col" class="govuk-table__header">Beds per 1,000 people</th>
-        <!-- <th scope="col" class="govuk-table__header">Aged 18 - 65</th> -->
-        <th scope="col" class="govuk-table__header">People aged 65 and over</th>
-        <th scope="col" class="govuk-table__header">Beds occupied</th>
-      </thead>
-      <tbody>
-       <tr class="govuk-table__row">
-      <td class="govuk-table__cell">Suffolk</td>
-      <td class="govuk-table__cell">18.4</td>
-      <!-- <td class="govuk-table__cell">35%</td> -->
-      <td class="govuk-table__cell">24%</td>
-      <td class="govuk-table__cell">85%</td>
-      </tr>
-      <tr class="govuk-table__row">
-        <td class="govuk-table__cell">East of England</td>
-        <td class="govuk-table__cell">12.2</td>
-        <!-- <td class="govuk-table__cell">39%</td> -->
-        <td class="govuk-table__cell">18%</td>
-        <td class="govuk-table__cell">77%</td>
-        </tr>
-      </tbody>
-      </table>
-       
-      <p class="govuk-body"><a href="" class="govuk-link">Download table data (CSV)</a></p>
-   
-      <p class="govuk-body">Source: Capacity Tracker<br>
-        Data last updated by source: 5 February 2025<br>
-      <a href="../0-3/help/total-beds-per-1000-people.html" class="govuk-link">View supporting information for this data</a></p>
- 
 
       <h2 id="drivers">
         <!--<span class="govuk-caption-m">Current demand</span>-->
@@ -199,9 +145,63 @@
     
     -->
    
+    <h2 id="current">
+      Current provision</h2>
+
+      <p class="govuk-body">The number of care beds per 1,000 people allows you to compare care provision between different areas. A higher number may suggest greater demand, particularly when occupancy rates are high.</p>
+      
+      <p class="govuk-body">Demand can also be shaped by population need. <a href="#drivers">Learn about drivers of demand</a>.</p>
+        
+      <p class="govuk-body">Care homes in Suffolk have <strong>18.4 beds per 1,000 people</strong> - 49% more than the East of England regional average (12.2).</p>
+        
+      <p class="govuk-body">Despite this higher provision, Suffolk care homes are <strong>operating at 85% occupancy</strong>, which is higher than the East of England regional average (77%). This suggests a lower capacity to meet demand.</p>
+      
+    <h3 class="govuk-heading-m">
+      Explore the data: total beds per 1,000 people</h3>
+    <p>You can filter this data by local authority, care setting or type of care. 
+    </p>
+    <form action="total_beds.html">
+      <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+        Explore data
+      </button>
+    </form>
+    <table class="govuk-table">
+      <thead class="govuk-table__head">
+        <th scope="col" class="govuk-table__header">Location</th>
+        <th scope="col" class="govuk-table__header">Beds per 1,000 people</th>
+        <!-- <th scope="col" class="govuk-table__header">Aged 18 - 65</th> -->
+        <th scope="col" class="govuk-table__header">People aged 65 and over</th>
+        <th scope="col" class="govuk-table__header">Beds occupied</th>
+      </thead>
+      <tbody>
+       <tr class="govuk-table__row">
+      <td class="govuk-table__cell">Suffolk</td>
+      <td class="govuk-table__cell">18.4</td>
+      <!-- <td class="govuk-table__cell">35%</td> -->
+      <td class="govuk-table__cell">24%</td>
+      <td class="govuk-table__cell">85%</td>
+      </tr>
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">East of England region</td>
+        <td class="govuk-table__cell">12.2</td>
+        <!-- <td class="govuk-table__cell">39%</td> -->
+        <td class="govuk-table__cell">18%</td>
+        <td class="govuk-table__cell">77%</td>
+        </tr>
+      </tbody>
+      </table>
+       
+      <p class="govuk-body"><a href="" class="govuk-link">Download table data (CSV)</a></p>
+   
+      <p class="govuk-body">Source: Capacity Tracker<br>
+        Data last updated by source: 5 February 2025<br>
+      <a href="../0-3/help/total-beds-per-1000-people.html" class="govuk-link">View supporting information for this data</a></p>
+ 
+
+
     <h2 id="capacity">
       <!--<span class="govuk-caption-m">Current demand</span>-->
-      Care provision and capacity</h2>
+      Care provider capacity</h2>
 
       <p class="govuk-body">While regional data shows overall demand, examining individual care providers offers insight into how capacity is distributed across different settings.</p>
 
