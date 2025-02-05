@@ -16,11 +16,10 @@
         {% set items = [
           { link: "#settings", heading: "Indicator definitions and supporting information" },
           { link: "#settings", heading: "Your selected locations" },
-          { link: "#ai", heading: "Data insights using artifical intelligence (AI)" },
           { link: "#current", heading: "Current demand" },
           { link: "#drivers", heading: "Drivers of demand" },
           { link: "#capacity", heading: "Care provision and capacity" },
-          { link: "#about", heading: "About this data" }
+          { link: "#smart-insights", heading: "Smart insights (experimental)" }
         ] %}
         <ul class="moj-side-navigation__list">
           <li class="moj-side-navigation__item moj-side-navigation__item--active"><a href="#introduction">Introduction</a></li class="moj-side-navigation__item">
@@ -57,7 +56,8 @@
     </p>
     <ul class="govuk-list govuk-list--bullet">
       <li><a href="../help/total-beds-per-1000-people.html" class="govuk-link">Total beds per 1,000 people</a></li>
-      <li><a href="" class="govuk-link">Population age and disability</a></li>
+      <li><a href="" class="govuk-link">Population by age</a></li>
+      <li><a href="" class="govuk-link">Population by disability</a></li>
       <li><a href="" class="govuk-link">Care provider locations by size </a></li>
       </ul>
 
@@ -84,43 +84,6 @@
         Age and disability
         
         -->
-
-        <!--Smart insights-->
-
-      <div style="background-color:#f8f8f8; padding: 20px; margin: 100px -20px 20px -20px; border-radius: 5px;">
-
-
-      <h2 class="govuk-heading-m" id="ai">Data insights using artificial intelligence (AI) <strong class="govuk-tag govuk-tag--light-blue">
-        Experimental </strong></h2>
-    
-      <div class="govuk-inset-text">
-        These insights in this section use AI to analyse the data, highlighting trends and patterns to support your own analysis. As this is experimental, verify the insights to check they are appropriate and meet your needs. <a class="govuk-link" href="">Learn more about AI insights</a>
-      </div>
-
-
-      <h3 class="govuk-heading-s">Summary of key trends</h3>
-      <p>Within the provided data, it is clear that Suffolk has a higher rate of hospital beds per 1,000 people (18.0) compared to the East of England (12.2). Also notable is the higher rate of bed occupancy in the 65 and over age group in Suffolk (75%) relative to the East of England (61%). Suffolk also shows a higher overall bed occupancy rate (82%) compared to the East of England (78%). Disability rates across both areas remain at 9%, higher than the national average of 6% for all of England.
-
-      <h3 class="govuk-heading-s">Insight 1: High Bed Occupancy in Older Adults in Suffolk</h3>
-      <p>Suffolk shows an elevated bed occupancy rate of 75% for individuals aged 65 and over, which is higher compared to the East of England’s 61%. This suggests that the demand for care services for older adults in Suffolk is relatively high.</p>
-      <h4 class="govuk-heading-s">How you might use this insight</h4>
-      
-      <ul class="govuk-list govuk-list--bullet">
-        <li>Planning for increased capacity in adult social care services specifically targeting the elderly could be vital in Suffolk. This could involve investing in more residential care homes or additional supportive housing aimed at seniors.</li>
-        <li>Developing specialised health and wellness programmes aimed at maintaining the health and independence of older adults might help in reducing the high bed occupancy rates.</li>
-     </ul>
-
-     <h3 class="govuk-heading-s">Insight 2: Disability Rates Consistent with Region but Higher than National Average</h3>
-     <p>Disability rates in Suffolk and the East of England are both at 9%, which is consistent within the region but higher than the national average of 6% for all of England. This could indicate a need for targeted support for disabled adults within these regions.</p>
-     <h4 class="govuk-heading-s">How you might use this insight</h4>
-     
-     <ul class="govuk-list govuk-list--bullet">
-       <li>A potential strategy might include implementing more comprehensive community-based services and support systems that address the specific needs of individuals with disabilities, ensuring they have access to day-to-day activities and health services.</li>
-       <li>Investing in training for adult social care professionals on best practices in disability management might improve the quality of care and outcomes for people with disabilities in these regions.</li>
-    </ul>
-  </div>
-    
-  
 
       <h2 id="current">
       <!--<span class="govuk-caption-m">Current demand</span>-->
@@ -172,7 +135,8 @@
        
       <p class="govuk-body"><a href="" class="govuk-link">Download table data (CSV)</a>
 
-        <p class="govuk-body">Source: Capacity Tracker, 5 February 2025<br>
+        <p class="govuk-body">Source:<br>
+          Data last updated by source: 5 February 2025<br>
           <a href="" class="govuk-link">View supporting information for this data</a></p>
 
         <!--
@@ -230,7 +194,8 @@
 
       <p class="govuk-body"><a href="" class="govuk-link">Download table data (CSV)</a>
 
-        <p class="govuk-body">Source: Capacity Tracker, 5 February 2025<br>
+        <p class="govuk-body">Source: Capacity Tracker<br>
+           Data last updated by source: 5 February 2025<br>
         <a href="" class="govuk-link">View supporting information for this data</a></p>
         <!--
       <p class="govuk-body"><a href="#chart2" class="govuk-link">Notes for this dataset</a>
@@ -303,9 +268,48 @@
 
       <p class="govuk-body"><a href="" class="govuk-link">Download table data (CSV)</a>
    
-      <p class="govuk-body">Source: Capacity Tracker, 5 February 2025.<br>
+        <p class="govuk-body">Source: Capacity Tracker<br>
+          Data last updated by source: 5 February 2025<br>
       <a href="" class="govuk-link">View supporting information for this data</a></p>
 
+
+            <!--Smart insights-->
+
+            <!---
+            <div style="background-color:#f8f8f8; padding: 20px; margin: 100px -20px 20px -20px; border-radius: 5px;">
+            -->
+
+              <h2 id="smart-insights">Smart insights (experimental)</h2>
+            
+              <div class="govuk-inset-text">
+                These insights in this section use artificial intelligence (AI) to analyse the data, highlighting trends and patterns to support your own analysis. As this is experimental, verify the insights to check they are appropriate and meet your needs. <a class="govuk-link" href="">Learn more about AI insights</a>
+              </div>
+        
+        
+              <h3 class="govuk-heading-s">Summary of key trends</h3>
+              <p>Within the provided data, it is clear that Suffolk has a higher rate of hospital beds per 1,000 people (18.0) compared to the East of England (12.2). Also notable is the higher rate of bed occupancy in the 65 and over age group in Suffolk (75%) relative to the East of England (61%). Suffolk also shows a higher overall bed occupancy rate (82%) compared to the East of England (78%). Disability rates across both areas remain at 9%, higher than the national average of 6% for all of England.
+        
+              <h3 class="govuk-heading-s">Insight 1: High Bed Occupancy in Older Adults in Suffolk</h3>
+              <p>Suffolk shows an elevated bed occupancy rate of 75% for individuals aged 65 and over, which is higher compared to the East of England’s 61%. This suggests that the demand for care services for older adults in Suffolk is relatively high.</p>
+              <h4 class="govuk-heading-s">How you might use this insight</h4>
+              
+              <ul class="govuk-list govuk-list--bullet">
+                <li>Planning for increased capacity in adult social care services specifically targeting the elderly could be vital in Suffolk. This could involve investing in more residential care homes or additional supportive housing aimed at seniors.</li>
+                <li>Developing specialised health and wellness programmes aimed at maintaining the health and independence of older adults might help in reducing the high bed occupancy rates.</li>
+             </ul>
+        
+             <h3 class="govuk-heading-s">Insight 2: Disability Rates Consistent with Region but Higher than National Average</h3>
+             <p>Disability rates in Suffolk and the East of England are both at 9%, which is consistent within the region but higher than the national average of 6% for all of England. This could indicate a need for targeted support for disabled adults within these regions.</p>
+             <h4 class="govuk-heading-s">How you might use this insight</h4>
+             
+             <ul class="govuk-list govuk-list--bullet">
+               <li>A potential strategy might include implementing more comprehensive community-based services and support systems that address the specific needs of individuals with disabilities, ensuring they have access to day-to-day activities and health services.</li>
+               <li>Investing in training for adult social care professionals on best practices in disability management might improve the quality of care and outcomes for people with disabilities in these regions.</li>
+            </ul>
+            <!---
+          </div>
+        -->
+          
     <p class="govuk-body"><a class="govuk-link" href="#">Back </a></p>
     
     {% endblock%}
