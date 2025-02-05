@@ -10,16 +10,15 @@
        <!--<span class="govuk-caption-m">Total beds</span>-->
     <h1 class="govuk-heading-l">{{pageName}}</h1>
 
-    <p class="govuk-body">Choose a time period and filter the data to view the insights you need.</p>
+    <p class="govuk-body">Choose a date and filter the data to view the insights you need.</p>
 
-    <h2>Time period</h2>
         <div class="date-pickers">
       <div class="moj-datepicker" data-module="moj-date-picker">
         <div class="govuk-form-group">
-          <label class="govuk-label" for="date">
-            Date
+          <label class="govuk-label govuk-label--m" for="date">
+            Date to view
           </label>
-          <p class="govuk-hint">Pick a date, going back to 1 April 2024</p>
+          <p class="govuk-hint">Select a date on or after 1 April 2024.</p>
           <input class="govuk-input moj-js-datepicker-input " id="date" name="date" type="text" aria-describedby="date-hint" autocomplete="off" value="1/04/2021">
         </div>
       </div>
