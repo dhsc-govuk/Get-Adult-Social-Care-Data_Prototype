@@ -1,6 +1,6 @@
 {% extends "layouts/data.html" %}
 
-{% set pageName="Present demand" %}
+{% set pageName="Current demand" %}
 
 {% block content %} 
 <a href="../dashboard/get-data" class="govuk-back-link">Back</a>
@@ -14,12 +14,12 @@
       <nav class="moj-side-navigation" aria-label="Side navigation">
         <h3>Contents</h3>
         {% set items = [
+          { link: "#definition", heading: "Indicator definition and supporting information" },
           { link: "#settings", heading: "Your selected locations" },
-          { link: "#current", heading: "Current demand" },
           { link: "#drivers", heading: "Drivers of demand" },
-          { link: "#capacity", heading: "Care provision and capacity" },
-          { link: "#smart-insights", heading: "Smart insights" },
-          { link: "#about", heading: "About this data" }
+          { link: "#provision", heading: "Current provision" },
+          { link: "#capacity", heading: "Care provider capacity" },
+          { link: "#smart-insights", heading: "Smart insights (experimental)" }
         ] %}
         <ul class="moj-side-navigation__list">
           <li class="moj-side-navigation__item moj-side-navigation__item--active"><a href="#introduction">Introduction</a></li class="moj-side-navigation__item">
@@ -42,13 +42,27 @@
     </style>
     <h2 class="govuk-heading-m" id="summary">Introduction</h2>
     <p class="govuk-body">
-      Understanding present demand for adult social care services helps identify where needs are being met and where gaps may exist. Here you can find insights into both met and unmet demand, as well as factors that drive this.
-    </p>
-    <p>
-      For more information about this data, including how it is compiled, updated, and the date period it covers, see <a href="#about" class="govuk-link">About this data</a>.
+      Understanding current demand for adult social care services helps identify where needs are being met and where gaps may exist.</p>
+      
+    <p class="govuk-body">
+      Here you can find insights into both met and unmet demand, as well as factors that drive this.
     </p>
 
-        <h2 id="settings">Your selected locations</h2>
+
+    <h2 id="definition">Indicator definition and supporting information</h2>
+
+    <p class="govuk-body">
+      Find detailed information about each indicator, including data definitions, data source, update schedule, and any limitations to be aware of being using the data.
+    </p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li><a href="../help/total-beds-per-1000-people.html" class="govuk-link">Total beds per 1,000 people</a></li>
+      <li><a href="" class="govuk-link">Population by age</a></li>
+      <li><a href="" class="govuk-link">Population by disability</a></li>
+      <li><a href="" class="govuk-link">Care provider locations by size </a></li>
+      </ul>
+
+
+    <h2 id="indicator-definitions">Your selected locations</h2>
         <p class="govuk-body">Select locations to view and compare data.</p>
         <dl class="govuk-summary-list">
           <div class="govuk-summary-list__row">
@@ -69,57 +83,6 @@
         
         -->
 
-      <h2 id="current">
-      <!--<span class="govuk-caption-m">Current demand</span>-->
-      Current demand</h2>
-
-      <p class="govuk-body">The number of care beds per 1,000 people allows you to compare care provision between different areas. A higher number may suggest greater demand, particularly when occupancy rates are high.</p>
-      <p class="govuk-body">Demand can also be shaped by population need. <a href="#drivers">Learn about drivers of demand</a>.</p>
-        
-      <p class="govuk-body">Care homes in Suffolk have <strong>18.4 beds per 1,000 people</strong> - 31% more than the East of England average (12.2).</p>
-        
-      <p class="govuk-body">Despite this higher provision, Suffolk care homes are <strong>operating at 85% occupancy</strong>, indicating that capacity may still be constrained.</p>
-      
-      <p class="govuk-body">In comparison, the East of England's <strong>77% occupancy rate</strong> suggests some areas have slightly more capacity to meet demand.</p>
-    <h3 class="govuk-heading-m">
-      <!--<span class="govuk-caption-m">Capacity</span>-->
-      Explore the data: total beds per 1,000 people</h3>
-    <p>You can filter this data by local authority, care setting or type of care. 
-    </p>
-    <form action="total_beds.html">
-      <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
-        Explore data
-      </button>
-    </form>
-    <table class="govuk-table">
-      <thead class="govuk-table__head">
-        <th scope="col" class="govuk-table__header">Location</th>
-        <th scope="col" class="govuk-table__header">Beds per 1,000 people</th>
-        <!-- <th scope="col" class="govuk-table__header">Aged 18 - 65</th> -->
-        <th scope="col" class="govuk-table__header">People aged 65 and over</th>
-        <th scope="col" class="govuk-table__header">Beds occupied</th>
-      </thead>
-      <tbody>
-       <tr class="govuk-table__row">
-      <td class="govuk-table__cell">Suffolk</td>
-      <td class="govuk-table__cell">18.4</td>
-      <!-- <td class="govuk-table__cell">35%</td> -->
-      <td class="govuk-table__cell">24%</td>
-      <td class="govuk-table__cell">85%</td>
-      </tr>
-      <tr class="govuk-table__row">
-        <td class="govuk-table__cell">East of England</td>
-        <td class="govuk-table__cell">12.2</td>
-        <!-- <td class="govuk-table__cell">39%</td> -->
-        <td class="govuk-table__cell">18%</td>
-        <td class="govuk-table__cell">77%</td>
-        </tr>
-      </tbody>
-      </table>
-       
-      <p class="govuk-body"><a href="" class="govuk-link">Download table data (CSV)</a>
-        <p class="govuk-body"><a href="#chart1" class="govuk-link">Notes for this dataset</a>
- 
 
       <h2 id="drivers">
         <!--<span class="govuk-caption-m">Current demand</span>-->
@@ -170,8 +133,11 @@
       </tbody>
       </table>
 
-      <p class="govuk-body"><a href="" class="govuk-link">Download table data (CSV)</a>
-      <p class="govuk-body"><a href="#chart2" class="govuk-link">Notes for this dataset</a>
+      <p class="govuk-body"><a href="" class="govuk-link">Download table data (CSV)</a></p>
+
+      <p class="govuk-body">Source:<br>
+        Data last updated by source:<br>
+        <a href="" class="govuk-link">View supporting information for this data</a></p>
  
      <!-- 
       
@@ -179,9 +145,63 @@
     
     -->
    
+    <h2 id="current">
+      Current provision</h2>
+
+      <p class="govuk-body">The number of care beds per 1,000 people allows you to compare care provision between different areas. A higher number may suggest greater demand, particularly when occupancy rates are high.</p>
+      
+      <p class="govuk-body">Demand can also be shaped by population need. <a href="#drivers">Learn about drivers of demand</a>.</p>
+        
+      <p class="govuk-body">Care homes in Suffolk have <strong>18.4 beds per 1,000 people</strong> - 49% more than the East of England regional average (12.2).</p>
+        
+      <p class="govuk-body">Despite this higher provision, Suffolk care homes are <strong>operating at 85% occupancy</strong>, which is higher than the East of England regional average (77%). This suggests a lower capacity to meet demand.</p>
+      
+    <h3 class="govuk-heading-m">
+      Explore the data: total beds per 1,000 people</h3>
+    <p>You can filter this data by local authority, care setting or type of care. 
+    </p>
+    <form action="total_beds.html">
+      <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+        Explore data
+      </button>
+    </form>
+    <table class="govuk-table">
+      <thead class="govuk-table__head">
+        <th scope="col" class="govuk-table__header">Location</th>
+        <th scope="col" class="govuk-table__header">Beds per 1,000 people</th>
+        <!-- <th scope="col" class="govuk-table__header">Aged 18 - 65</th> -->
+        <th scope="col" class="govuk-table__header">People aged 65 and over</th>
+        <th scope="col" class="govuk-table__header">Beds occupied</th>
+      </thead>
+      <tbody>
+       <tr class="govuk-table__row">
+      <td class="govuk-table__cell">Suffolk</td>
+      <td class="govuk-table__cell">18.4</td>
+      <!-- <td class="govuk-table__cell">35%</td> -->
+      <td class="govuk-table__cell">24%</td>
+      <td class="govuk-table__cell">85%</td>
+      </tr>
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">East of England region</td>
+        <td class="govuk-table__cell">12.2</td>
+        <!-- <td class="govuk-table__cell">39%</td> -->
+        <td class="govuk-table__cell">18%</td>
+        <td class="govuk-table__cell">77%</td>
+        </tr>
+      </tbody>
+      </table>
+       
+      <p class="govuk-body"><a href="" class="govuk-link">Download table data (CSV)</a></p>
+   
+      <p class="govuk-body">Source: Capacity Tracker<br>
+        Data last updated by source: 5 February 2025<br>
+      <a href="../0-3/help/total-beds-per-1000-people.html" class="govuk-link">View supporting information for this data</a></p>
+ 
+
+
     <h2 id="capacity">
       <!--<span class="govuk-caption-m">Current demand</span>-->
-      Care provision and capacity</h2>
+      Care provider capacity</h2>
 
       <p class="govuk-body">While regional data shows overall demand, examining individual care providers offers insight into how capacity is distributed across different settings.</p>
 
@@ -239,13 +259,16 @@
       </tbody>
       </table>
 
-      <p class="govuk-body"><a href="" class="govuk-link">Download table data (CSV)</a>
-        <p class="govuk-body"><a href="#chart3" class="govuk-link">Notes for this dataset</a>
+      <p class="govuk-body"><a href="" class="govuk-link">Download table data (CSV)</a></p>
+
+      <p class="govuk-body">Source: Capacity Tracker<br>
+        Data last updated by source: 5 February 2025<br>
+      <a href="../0-3/help/total-beds-per-1000-people.html" class="govuk-link">View supporting information for this data</a></p>
  
     
       <!--Smart insights-->
 
-      <h2 id="smart-insights">Smart insights</h2>
+      <h2 id="smart-insights">Smart insights (experimental)</h2>
       <div class="govuk-inset-text">
         Smart insights use artificial intelligence (AI) to analyse this data, highlighting trends and patterns to support your own analysis. As this is experimental, verify the insights to check they are appropriate and meet your needs. <a class="govuk-link" href="">Learn more about smart insights</a>
       </div>
@@ -272,8 +295,7 @@
        <li>Investing in training for adult social care professionals on best practices in disability management might improve the quality of care and outcomes for people with disabilities in these regions.</li>
     </ul>
     
-
-      <!--About this data-->
+    <!--
       <h2 id="about">About this data</h2>
      
      <p class="govuk-body">Find detailed information about each dataset.</p>
@@ -466,7 +488,7 @@
             </table>
         </div>
       </details>
-
+    -->
 
     <p class="govuk-body"><a class="govuk-link" href="#">Back </a></p>
     

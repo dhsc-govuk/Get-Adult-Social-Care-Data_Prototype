@@ -1,6 +1,6 @@
 {% extends "layouts/main.html" %}
 
-{% set pageName="Your dashboard" %}
+{% set pageName="Help" %}
 
 {% block header %}
 <header class="govuk-header govuk-header--full-width-border" data-module="govuk-header">
@@ -45,150 +45,92 @@
 {{ govukServiceNavigation({
   navigation: [
   {
-    href: "index",
+    href: "../dashboard/index",
     text: "Home"
   },
   {
-    href: "get-data",
-    text: "Get data",
-    active: true
+    href: "../dashboard/get-data",
+    text: "Get data"
   },
   {
-    href: "dashboard",
+    href: "../dashboard/dashboard",
     text: "Your dashboard"
   },
   {
-    href: "../help/topics",
-    text: "Help"
+    href: "topics",
+    text: "Help",
+    active: true
   }
   ]
 }) }}
 {% endblock %}
 
 {% block content %}
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-full">
-    <h1 class="govuk-heading-l">
-      Get data
-    </h1>
-    
-    <style>
-      table {
-        margin: 2em 0;
-        text-align: left;
-        vertical-align: top;
-        border-collapse: collapse;
-        font-family: "GDS Transport", arial, sans-serif;
-      }
-      
-      .companies-table{
-        display:block;
-        min-width:600px
-      }
-      
-      caption {
-        text-align: left;
-        font-size: 1.4em;
-      }
-      
-      th,
-      td {
-        /*   border: 1px solid #666; */
-        padding: 1em;
-      }
-      
-      th {
-        background-color: #acbcd5;
-        /*     #a15dbc; */
-        color: #000;
-        font-weight: normal;
-      }
-      
-      tr{box-shadow: 0 3px 3px rgb(0 0 0 / 0.1);}
-      
-      tr:hover {
-        text-decoration: underline;
-      }
-      
-      tr:nth-child(odd) {
-        background-color: #fff;
-      }
-      
-      tr:nth-child(even) {
-        background-color: #f2f2f2;
-      } 
-      
-      #search-queries{
-        font-family: "GDS Transport", arial, sans-serif;
-        border: none;
-        margin-bottom:1.5em
-      }
-      
-      .search-queries-label{display: block;}
-      
-      .search-queries-input{padding:1em; margin-top:0.5em; width: 40em; border-radius: 5px;}
-      
-      .govuk-grid-column-one-half{
-        background: #f3f2f1;
-        border:0.5em solid white
-      }
-    </style>
-    
-    <!-- 
-    
-    Search box 
-    
-    -->
-    <!-- <fieldset id="search-queries">
-      <label class="search-queries-label" for="first-name"><h3>Search indicators</h3><p>By name, filter or dataset</p></label>
-      <input class="search-queries-input " type="text" id="first-name" name="first-name">
-    </fieldset> -->
-    
-    <!-- 
-    
-    Topics 
-    
-   
-    <h2>Topics</h2>
-     -->
-    <p class="govuk-body">We'll be adding more topics over time. Tell us which topics would be most useful to you – <a href="">give your feedback</a>.</p>
 
-    <h2 class="govuk-heading-m">Demand and capacity</h2>
-    <!---
-    <p>Explore a range of indicators across different topics, or <a href="all-indicators">view all indicators</a>.
-    --> 
-    </p>
-    <div class="govuk-grid-row">
-      <a href="../data-pages/present-demand">
-      <div class="govuk-grid-column-one-half">
-        <h2>
-          Current demand
-        </h2>
-        <p>
-          Identify the current demand for care, including met and unmet needs, service capacity, and factors driving demand.
-        </p>
-      </div>
-    </a>
-    <a href="#">
-      <div class="govuk-grid-column-one-half">
-        <h2>
-          Future demand
-        </h2>
-        <p>
-          Understand the likely demand for care, including projected needs by care type, with high-level and detailed data.
-        </p>
-      </div>
-    </a>
-    <a href="#">
-      <div class="govuk-grid-column-one-half">
-        <h2>
-          Current market
-        </h2>
-        <p>
-          Assess the local care market, including provider availability, occupancy levels, service performance and fee rates.
-        </p>
-      </div>
-      </a>
-    </div>
-    {% endblock %}
+<a href="javascript:history.back()" class="govuk-back-link">Back</a>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-third">      
+          <nav class="moj-side-navigation" aria-label="Side navigation">
+            <h4 class="govuk-heading-m">Topics</h4>
+            <ul class="moj-side-navigation__list">
+
+              <li class="moj-side-navigation__item">
+                <a href="walkthroughs">Step-by-step walkthroughs</a>
+              </li>
+
+              <li class="moj-side-navigation__item">
+                <a href="quick-guides">Quick guides</a>
+              </li>
+
+              <li class="moj-side-navigation__item">
+                <a href="about" aria-current="location">About this service</a>
+              </li>
+
+              <li class="moj-side-navigation__item">
+                <a href="indicator-definitions">Indicator definitions and supporting information</a>
+              </li>
+
+              <li class="moj-side-navigation__item">
+                <a href="data-sources">Data sources</a>
+              </li>
+      
+              <li class="moj-side-navigation__item">
+                <a href="smart-insights">About smart insights (experimental)</a>
+              </li>
+
+              <li class="moj-side-navigation__item moj-side-navigation__item--active">
+                <a href="news-archive" aria-current="location">News archive</a>
+              </li>
+
+              <li class="moj-side-navigation__item">
+                <a href="contact-us">Contact us</a>
+              </li>
+
+            </ul>
+          </nav>
+  </div>
+
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">
+      News archive
+    </h1>
+    <p class="govuk-body">Find news and updates for Get adult social care data.</p>
+
+    <h2 class="govuk-heading-m">March 2025</h2>
+
+    <p class="govuk-body">
+      The Get adult social care data service is now live. Our first data release focuses on <strong>demand and capacity</strong> in adult social care, helping you:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li><strong>understand present demand</strong> – view data on population needs, service capacity and unmet demand</li>
+          <li><strong>plan for future demand</strong> – get insights into projected care needs and trends by care type</li>
+            <li><strong>assess the current market</strong> – explore provider availability, occupancy levels and service performance</li>
+          </ul>
+    <p class="govuk-link"><a href="../dashboard/get-data.html" class="govuk-link">Start exploring the data now</a></p>
+
+    <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
     
+  {% endblock %}
+  

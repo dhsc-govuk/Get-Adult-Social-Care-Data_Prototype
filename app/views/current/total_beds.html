@@ -34,26 +34,28 @@
       <nav class="moj-side-navigation" aria-label="Side navigation">
         <h3>Contents</h3>
         <ul class="moj-side-navigation__list">
-          <li class="moj-side-navigation__item moj-side-navigation__item--active"><a href="#introduction">Introduction</a></li class="moj-side-navigation__item">
+          <!---<li class="moj-side-navigation__item moj-side-navigation__item--active"><a href="#introduction">Introduction</a></li class="moj-side-navigation__item">-->
           <!-- <li class="moj-side-navigation__item"><a href="#settings">Your selected locations</a></li class="moj-side-navigation__item"> -->
           <!-- <li class="moj-side-navigation__item"><a href="#total">Totals</a></li class="moj-side-navigation__item"> -->
+          <li class="moj-side-navigation__item"><a href="#definition">Indicator definition and supporting information</a></li class="moj-side-navigation__item">
           <li class="moj-side-navigation__item"><a href="#timeseries">Chart</a></li class="moj-side-navigation__item">
           <li class="moj-side-navigation__item"><a href="#filters">Table</a></li class="moj-side-navigation__item">
-          <li class="moj-side-navigation__item"><a href="#smart-insights">Smart insights (experimental)</a></li class="moj-side-navigation__item">
-          <li class="moj-side-navigation__item"><a href="#about">About this data</a></li class="moj-side-navigation__item">
+         <!--- <li class="moj-side-navigation__item"><a href="#smart-insights">Smart insights (experimental)</a></li class="moj-side-navigation__item"> -->
+         <!----<li class="moj-side-navigation__item"><a href="#about">About this data</a></li class="moj-side-navigation__item"> -->
         </ul>
       </nav>
 </div>
   <div class="govuk-grid-column-two-thirds">
     <!-- <span class="govuk-caption-l">Demand and capacity</span> -->
     <h1 class="govuk-heading-l">
-      <span class="govuk-caption-m">Demand</span>
+     <!-- <span class="govuk-caption-m">Demand</span> -->
       {{pageName}}</h1>
     <!-- 
       
       Main content
       
     -->
+      <!--
     <style>
       h2{margin-top:4em}
     </style>
@@ -65,6 +67,19 @@
       You can find information about this data, including how it is compiled, updated, and the time ranges it covers in <a href="#about" class="govuk-link">About this data</a>.
     </p>
     
+  -->
+    <style>
+      h2{margin-top:4em}
+    </style>
+    <h2 id="definition">Indicator definition and supporting information</h2>
+    <p class="govuk-body">
+      The total number of beds recorded by care providers across health and adult social care, adjusted to a rate of 1,000 people in the population.
+    </p>
+    <p class="govuk-body">
+      For detailed information about this indicator, including data definitions, data source, update schedule and limitations to be aware of being using this data, go to
+       <a href="../0-3/help/total-beds-per-1000-people.html" class="govuk-link">supporting information for this data</a>.</li>
+    </p>
+
     <!-- 
       
       Time series 
@@ -91,11 +106,19 @@
       </button>
     </form>
     {% include "./_total_beds.html" %}
-    <h3>Download options</h3>
-    <ul>
-      <li><a href="#" class="govuk-link">Download chart image (PNG)</a></li>
-      <li><a href="#" class="govuk-link">Download data (CSV)</a></li>
-    </ul>
+
+    <p class="govuk-body">
+      
+      <p class="govuk-body"><a href="" class="govuk-link">Download chart image (PNG)</a><br>
+        <a href="" class="govuk-link">Download table data (CSV)</a>
+
+        <p class="govuk-body">Source: Capacity Tracker<br>
+          Data last updated by source: 5 February 2025<br>
+        <a href="../0-3/help/total-beds-per-1000-people.html" class="govuk-link">View supporting information for this data</a></p>
+
+
+
+ 
     <h2 id="total">Table</h2>
     <p>Click 'edit table' to change the filters.</p>
       <form action="total_beds-table-edit">
@@ -276,6 +299,7 @@
       Smart insights 
       
     -->
+      <!--
     <h2 id="smart-insights">Smart insights (experimental)</h2>
     <div class="govuk-inset-text">
       Smart insights use artificial intelligence (AI) to analyse this data, highlighting trends and patterns to support your own analysis. As this is experimental, verify the insights to check they are appropriate and meet your needs. <a class="@ovuk-link" href="">Learn more about smart insights</a>
@@ -289,6 +313,7 @@
     <li><strong>Monitor regional disparities:</strong> Compare growth patterns across Suffolk and Cambridgeshire to identify areas requiring additional investment.
     <li><strong>Target specialised care: </strong>Focus on expanding capacity in under-resourced care types, such as transitional or young physically disabled care.
     </ul>
+  -->
     <!---
       <p class="govuk-body"><strong>Rate this smart insight</strong></p>
       <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
@@ -319,6 +344,7 @@
 About this data 
 
 -->
+<!--
     <h2 id="about">About this data</h2>
 
     <table class="govuk-table">
@@ -371,7 +397,7 @@ About this data
         </tr>
       </tbody>
     </table>
-
+  -->
 
     <p class="govuk-body"><a class="govuk-link" href="#">Back </a></p>
     

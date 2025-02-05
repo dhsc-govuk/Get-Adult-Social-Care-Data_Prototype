@@ -1,0 +1,318 @@
+{% extends "layouts/data.html" %}
+
+{% set pageName="Current demand" %}
+
+{% block content %} 
+<a href="../dashboard/get-data" class="govuk-back-link">Back</a>
+<div class="govuk-grid-row">
+      <!-- 
+      
+      Left column 
+      
+    -->
+    <div class="govuk-grid-column-one-third">      
+      <nav class="moj-side-navigation" aria-label="Side navigation">
+        <h3>Contents</h3>
+        {% set items = [
+          { link: "#settings", heading: "Indicator definitions and supporting information" },
+          { link: "#settings", heading: "Your selected locations" },
+          { link: "#current", heading: "Current demand" },
+          { link: "#drivers", heading: "Drivers of demand" },
+          { link: "#capacity", heading: "Care provision and capacity" },
+          { link: "#smart-insights", heading: "Smart insights (experimental)" }
+        ] %}
+        <ul class="moj-side-navigation__list">
+          <li class="moj-side-navigation__item moj-side-navigation__item--active"><a href="#introduction">Introduction</a></li class="moj-side-navigation__item">
+         {% for item in items %}
+            <li class="moj-side-navigation__item"><a href="{{item.link}}">{{item.heading}}</a></li class="moj-side-navigation__item">
+         {% endfor %}
+        </ul>
+      </nav>
+</div>
+  <div class="govuk-grid-column-two-thirds">
+    <!-- <span class="govuk-caption-l">Demand and capacity</span> -->
+    <h1 class="govuk-heading-l">{{pageName}}</h1>
+    <!-- 
+      
+      Main content
+      
+    -->
+    <style>
+      h2{margin-top:4em}
+    </style>
+    <h2 class="govuk-heading-m" id="summary">Introduction</h2>
+    <p class="govuk-body">
+      Understanding current demand for adult social care services helps identify where needs are being met and where gaps may exist.</p>
+      
+    <p class="govuk-body">
+      Here you can find insights into both met and unmet demand, as well as factors that drive this.
+    </p>
+
+
+    <h2 id="settings">Indicator definitions and supporting information</h2>
+
+    <p class="govuk-body">
+      Find detailed information about each indicator, including data definitions, data source, update schedule, and any limitations to be aware of being using the data.
+    </p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li><a href="../help/total-beds-per-1000-people.html" class="govuk-link">Total beds per 1,000 people</a></li>
+      <li><a href="" class="govuk-link">Population by age</a></li>
+      <li><a href="" class="govuk-link">Population by disability</a></li>
+      <li><a href="" class="govuk-link">Care provider locations by size </a></li>
+      </ul>
+
+        <h2 id="settings">Your selected locations</h2>
+        <p class="govuk-body">Select locations to view and compare data.</p>
+        <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Selected locations
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Greenfields Care, Suffolk, East of England
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="present-demand-locations">Change<span class="govuk-visually-hidden"> name</span></a>
+            </dd>
+          </div>
+        </dl>
+
+        
+
+         <!-- 
+        
+        Age and disability
+        
+        -->
+
+      <h2 id="current">
+      <!--<span class="govuk-caption-m">Current demand</span>-->
+      Current demand</h2>
+
+      <p class="govuk-body">The number of care beds per 1,000 people allows you to compare care provision between different areas. A higher number may suggest greater demand, particularly when occupancy rates are high.</p>
+      <p class="govuk-body">Demand can also be shaped by population need. <a href="#drivers">Learn about drivers of demand</a>.</p>
+        
+      <p class="govuk-body">Care homes in Suffolk have <strong>18.4 beds per 1,000 people</strong> - 31% more than the East of England average (12.2).</p>
+        
+      <p class="govuk-body">Despite this higher provision, Suffolk care homes are <strong>operating at 85% occupancy</strong>, indicating that capacity may still be constrained.</p>
+      
+      <p class="govuk-body">In comparison, the East of England's <strong>77% occupancy rate</strong> suggests some areas have slightly more capacity to meet demand.</p>
+    <h3 class="govuk-heading-m">
+      <!--<span class="govuk-caption-m">Capacity</span>-->
+      Explore the data: total beds per 1,000 people</h3>
+    <p>You can filter this data by local authority, care setting or type of care. 
+    </p>
+    <form action="total_beds.html">
+      <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+        Explore data
+      </button>
+    </form>
+    <table class="govuk-table">
+      <thead class="govuk-table__head">
+        <th scope="col" class="govuk-table__header">Location</th>
+        <th scope="col" class="govuk-table__header">Beds per 1,000 people</th>
+        <!-- <th scope="col" class="govuk-table__header">Aged 18 - 65</th> -->
+        <th scope="col" class="govuk-table__header">People aged 65 and over</th>
+        <th scope="col" class="govuk-table__header">Beds occupied</th>
+      </thead>
+      <tbody>
+       <tr class="govuk-table__row">
+      <td class="govuk-table__cell">Suffolk</td>
+      <td class="govuk-table__cell">18.4</td>
+      <!-- <td class="govuk-table__cell">35%</td> -->
+      <td class="govuk-table__cell">24%</td>
+      <td class="govuk-table__cell">85%</td>
+      </tr>
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">East of England</td>
+        <td class="govuk-table__cell">12.2</td>
+        <!-- <td class="govuk-table__cell">39%</td> -->
+        <td class="govuk-table__cell">18%</td>
+        <td class="govuk-table__cell">77%</td>
+        </tr>
+      </tbody>
+      </table>
+       
+
+
+      <p class="govuk-body"><a href="" class="govuk-link">Download table data (CSV)</a>
+
+        <p class="govuk-body">Source: Capacity Tracker<br>
+          Data last updated by source: 5 February 2025<br>
+       <a href="" class="govuk-link">View supporting information for this data</a></p>
+
+
+        <!--
+        <p class="govuk-body"><a href="#chart1" class="govuk-link">Notes for this dataset</a>
+        -->
+
+      <h2 id="drivers">
+        <!--<span class="govuk-caption-m">Current demand</span>-->
+        Drivers of demand</h2>
+
+        <p class="govuk-body">Demand for adult social care is influenced by a range of factors, including the age and disability profile of your population. Areas with a higher proportion of older adults or people with disabilities typically experience greater pressure on services.</p>
+
+        <p class="govuk-body">Suffolk has a <strong>larger proportion of people aged 65 and over (18%) compared to the national average (7%)</strong>. This suggests demand for care services in this local authority would be higher than average.</p>
+      
+    <h3 class="govuk-heading-m">Explore the data: population age and disability</h3>
+
+    <p>You can filter this data by age, disability, and location.</p>
+    <form action="total_beds-edit.html">
+      <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+        Explore data
+      </button>
+    </form>
+    <table class="govuk-table">
+      <thead class="govuk-table__head">
+        <th scope="col" class="govuk-table__header">Location</th>
+        <th scope="col" class="govuk-table__header">Population</th>
+        <th scope="col" class="govuk-table__header">Aged 18-65</th>
+        <th scope="col" class="govuk-table__header">Aged 65 and over</th>
+        <th scope="col" class="govuk-table__header">Disability rates</th>
+      </thead>
+      <tbody>
+       <tr class="govuk-table__row">
+      <td class="govuk-table__cell">Suffolk</td>
+      <td class="govuk-table__cell">400,123</td>
+      <td class="govuk-table__cell">45%</td>
+      <td class="govuk-table__cell">18%</td>
+      <td class="govuk-table__cell">9%</td>
+      </tr>
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">East of England</td>
+        <td class="govuk-table__cell">5.1 million</td>
+        <td class="govuk-table__cell">41%</td>
+        <td class="govuk-table__cell">8%</td>
+        <td class="govuk-table__cell">9%</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">All England</td>
+          <td class="govuk-table__cell">56 million</td>
+          <td class="govuk-table__cell">32%</td>
+          <td class="govuk-table__cell">7%</td>
+          <td class="govuk-table__cell">6%</td>
+          </tr>
+      </tbody>
+      </table>
+
+      <p class="govuk-body"><a href="" class="govuk-link">Download table data (CSV)</a>
+
+        <p class="govuk-body">Source:<br>
+          Data last updated by source: 5 February 2025<br>
+          <a href="" class="govuk-link">View supporting information for this data</a></p>
+        <!--
+      <p class="govuk-body"><a href="#chart2" class="govuk-link">Notes for this dataset</a>
+      -->
+     <!-- 
+      
+      CPs in Suffolk
+    
+    -->
+   
+    <h2 id="capacity">
+      <!--<span class="govuk-caption-m">Current demand</span>-->
+      Care provision and capacity</h2>
+
+      <p class="govuk-body">While regional data shows overall demand, examining individual care providers offers insight into how capacity is distributed across different settings.</p>
+
+      <p class="govuk-body"><strong>Greenfields Care has only 2 unoccupied beds</strong>, suggesting limited availability for new admissions.</p>
+      
+      <p class="govuk-body"><strong>Smaller providers in Suffolk typically have fewer beds</strong>, meaning capacity constraints may be more pronounced compared to larger providers.</p>
+      
+    <h3 class="govuk-heading-m">
+      Explore the data: residential care providers in Suffolk</h3>
+    <p>You can filter this data by care settings and type of care. For confidentiality, names of other care providers are not shown. </p>
+    <form action="total_beds-edit.html">
+      <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+        Explore data
+      </button>
+    </form>
+  </form>
+    <table class="govuk-table">
+      <thead class="govuk-table__head">
+        <th scope="col" class="govuk-table__header">Care provider</th>
+        <th scope="col" class="govuk-table__header">Size</th>
+        <th scope="col" class="govuk-table__header">Total beds</th>
+        <th scope="col" class="govuk-table__header">Occupied beds</th>
+      </thead>
+      <tbody>
+       <tr class="govuk-table__row">
+      <td class="govuk-table__cell">Greenfields Care</td>
+      <td class="govuk-table__cell">Small</td>
+      <td class="govuk-table__cell">20</td>
+      <td class="govuk-table__cell">18</td>
+      </tr>
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">Care Provider 2</td>
+        <td class="govuk-table__cell">Medium</td>
+        <td class="govuk-table__cell">43</td>
+        <td class="govuk-table__cell">35</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Care Provider 3</td>
+          <td class="govuk-table__cell">Large</td>
+          <td class="govuk-table__cell">85</td>
+          <td class="govuk-table__cell">71</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">Care Provider 4</td>
+            <td class="govuk-table__cell">Small</td>
+            <td class="govuk-table__cell">15</td>
+            <td class="govuk-table__cell">15</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">Care Provider 5</td>
+              <td class="govuk-table__cell">Small</td>
+              <td class="govuk-table__cell">12</td>
+              <td class="govuk-table__cell">12</td>
+              </tr>
+      </tbody>
+      </table>
+
+      <p class="govuk-body"><a href="" class="govuk-link">Download table data (CSV)</a></p>
+   
+        <p class="govuk-body">Source: Capacity Tracker<br>
+          Data last updated by source: 5 February 2025<br>
+      <a href="" class="govuk-link">View supporting information for this data</a></p>
+
+
+            <!--Smart insights-->
+
+            <!---
+            <div style="background-color:#f8f8f8; padding: 20px; margin: 100px -20px 20px -20px; border-radius: 5px;">
+            -->
+
+              <h2 id="smart-insights">Smart insights (experimental)</h2>
+            
+              <div class="govuk-inset-text">
+                These insights in this section use artificial intelligence (AI) to analyse the data, highlighting trends and patterns to support your own analysis. As this is experimental, verify the insights to check they are appropriate and meet your needs. <a class="govuk-link" href="">Learn more about AI insights</a>
+              </div>
+        
+        
+              <h3 class="govuk-heading-s">Summary of key trends</h3>
+              <p>Within the provided data, it is clear that Suffolk has a higher rate of hospital beds per 1,000 people (18.0) compared to the East of England (12.2). Also notable is the higher rate of bed occupancy in the 65 and over age group in Suffolk (75%) relative to the East of England (61%). Suffolk also shows a higher overall bed occupancy rate (82%) compared to the East of England (78%). Disability rates across both areas remain at 9%, higher than the national average of 6% for all of England.
+        
+              <h3 class="govuk-heading-s">Insight 1: High Bed Occupancy in Older Adults in Suffolk</h3>
+              <p>Suffolk shows an elevated bed occupancy rate of 75% for individuals aged 65 and over, which is higher compared to the East of England’s 61%. This suggests that the demand for care services for older adults in Suffolk is relatively high.</p>
+              <h4 class="govuk-heading-s">How you might use this insight</h4>
+              
+              <ul class="govuk-list govuk-list--bullet">
+                <li>Planning for increased capacity in adult social care services specifically targeting the elderly could be vital in Suffolk. This could involve investing in more residential care homes or additional supportive housing aimed at seniors.</li>
+                <li>Developing specialised health and wellness programmes aimed at maintaining the health and independence of older adults might help in reducing the high bed occupancy rates.</li>
+             </ul>
+        
+             <h3 class="govuk-heading-s">Insight 2: Disability Rates Consistent with Region but Higher than National Average</h3>
+             <p>Disability rates in Suffolk and the East of England are both at 9%, which is consistent within the region but higher than the national average of 6% for all of England. This could indicate a need for targeted support for disabled adults within these regions.</p>
+             <h4 class="govuk-heading-s">How you might use this insight</h4>
+             
+             <ul class="govuk-list govuk-list--bullet">
+               <li>A potential strategy might include implementing more comprehensive community-based services and support systems that address the specific needs of individuals with disabilities, ensuring they have access to day-to-day activities and health services.</li>
+               <li>Investing in training for adult social care professionals on best practices in disability management might improve the quality of care and outcomes for people with disabilities in these regions.</li>
+            </ul>
+            <!---
+          </div>
+        -->
+          
+    <p class="govuk-body"><a class="govuk-link" href="#">Back </a></p>
+    
+    {% endblock%}
