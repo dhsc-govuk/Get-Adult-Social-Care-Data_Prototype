@@ -31,9 +31,18 @@
      </p>
 
 
-       {% set thisData=[["Suffolk",239,16,64,0],
-       ["Cambridgeshire",200,16,45,1],
-       ["Essex",172,20,84,2]
+       {% set thisData=[
+        ["Suffolk",239,16,64,0],
+       ["Peterborough",200,16,45,1],
+       ["Luton",239,16,64,2],
+       ["Southend on sea",200,16,45,3],
+       ["Thurrock",239,16,64,4],
+       ["Bedford",200,16,45,5],
+       ["Central Bedfordshire",200,16,45,6],
+       ["Cambridgeshire",239,16,64,7],
+       ["Hertfordshire",200,16,45,8],
+       ["Essex",172,20,84,9],
+       ["Norfolk",172,20,84,10]
        ]  %}
        <!-- <p>{{thisData[1][1]}} works</p> -->
 <ul class="govuk-list" style="margin-top:2em">
@@ -44,7 +53,7 @@
     <li>
 
 <p>
-        <svg height="360" width="500" xmlns="http://www.w3.org/2000/svg" class="svg-bar">
+        <svg height="1200" width="500" xmlns="http://www.w3.org/2000/svg" class="svg-bar">
 
             <text x="200" y="20">0</text>
             <text x="450" y="20">2,400</text>
@@ -57,14 +66,17 @@
             <text x="10" y={{55 + q * 100}}>{{x}}</text>
 
             <g fill="none">
+                <title>Total beds per 100,000 in {{x}} - {{y}}</title>
                 <line x1="200" y1={{ 50 + q * 100}} x2={{ y + 200}} y2={{ 50 + q * 100}} stroke="purple" stroke-width="20" />
             </g>
   
                 <g fill="none">
+                    <title>Dementia residential in {{x}} - {{z}}</title>
                     <line x1="200" y1={{ 75 + q * 100}} x2={{z + 200}} y2={{ 75 + q * 100}} stroke="gold" stroke-width="20" />
                 </g>
 
                     <g fill="none">
+                        <title>Dementia nursing in {{x}} - {{p}}</title>
                         <line x1="200" y1={{100 + q * 100}} x2={{p + 200}} y2={{ 100 + q * 100}} stroke="orange" stroke-width="20" />
                     </g>
                     {% endfor %}

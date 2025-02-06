@@ -86,19 +86,6 @@
       
     -->
     <h2 id="timeseries">Chart</h2>
-    <!-- 
-      
-      Date picker 
-      
-    -->
-    <style>
-      .date-pickers{
-        margin-bottom:3em;
-        display: grid;
-        grid-template-columns: 35% 35%;
-        column-gap: 2em
-      }
-    </style>
 
       <form action="total_beds-edit">
       <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
@@ -115,10 +102,11 @@
         <p class="govuk-body">Source: Capacity Tracker<br>
           Data last updated by source: 24 December 2024<br>
         <a href="../0-3/help/total-beds-per-1000-people.html" class="govuk-link">View supporting information for this data</a></p>
+<!-- 
+        
+Table 
 
-
-
- 
+-->
     <h2 id="total">Table</h2>
     <table class="govuk-table">
       <caption class="govuk-table__caption govuk-table__caption--s">Total beds per 100,000 population at 24 December 2024</caption>
@@ -181,9 +169,21 @@
                   Map
                 </a>
               </li>
+              <li class="govuk-tabs__list-item">
+                <a class="govuk-tabs__tab" href="#past-week">
+                  Table
+                </a>
+              </li>
               </ul>
               <div class="govuk-tabs__panel" id="past-day">
   {% include "./_beds_by_la.html" %}
+  <p class="govuk-body"><a href="" class="govuk-link">Download chart image (PNG)</a><br>
+    <a href="" class="govuk-link">Download table data (CSV)</a>
+
+    <p class="govuk-body">Source: Capacity Tracker<br>
+      Data last updated by source: 24 December 2024<br>
+    <a href="../0-3/help/total-beds-per-1000-people.html" class="govuk-link">View supporting information for this data</a></p>
+
 </div>
 <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="past-week">
 </div>
