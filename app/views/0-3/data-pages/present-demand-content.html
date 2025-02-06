@@ -312,7 +312,28 @@
             <!---
           </div>
         -->
-          
+           <!-- Feedback Section -->
+
+           <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+      
+<div id="feedback-section" style="display: flex; align-items: baseline; gap: 20px;">
+  <p class="govuk-body">Was this page useful?</p>
+  <button class="govuk-button govuk-button--secondary" onclick="handleFeedback()">Yes</button>
+  <button class="govuk-button govuk-button--secondary" onclick="handleFeedback()">No</button>
+</div>
+
+<script>
+  function handleFeedback() {
+      const feedbackSection = document.getElementById('feedback-section');
+      if (feedbackSection) {
+          feedbackSection.innerHTML = `
+              <p style="font-weight: bold;">Thank you for your feedback.</p>
+          `;
+      }
+  }
+</script>
+
+
     <p class="govuk-body"><a class="govuk-link" href="#">Back </a></p>
     
     {% endblock%}
