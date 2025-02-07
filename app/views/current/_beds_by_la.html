@@ -33,10 +33,10 @@
 
        {% set thisData=[
         ["Suffolk",239,16,64,0],
-       ["Peterborough",200,16,45,1],
-       ["Luton",239,16,64,2],
+       ["Peterborough",200,21,45,1],
+       ["Luton",239,18,59,2],
        ["Southend on sea",200,16,45,3],
-       ["Thurrock",239,16,64,4],
+       ["Thurrock",239,12,74,4],
        ["Bedford",200,16,45,5],
        ["Central Bedfordshire",200,16,45,6],
        ["Cambridgeshire",239,16,64,7],
@@ -68,16 +68,20 @@
             <g fill="none">
                 <title>Total beds per 100,000 in {{x}} - {{y}}</title>
                 <line x1="200" y1={{ 50 + q * 100}} x2={{ y + 200}} y2={{ 50 + q * 100}} stroke="purple" stroke-width="20" />
+                <!-- Uncomment the following lines to add text values to each bar: -->
+                <!-- <text x={{ y + 210}} y={{ 55 + q * 100}} fill="black">{{y}}</text> -->
             </g>
   
                 <g fill="none">
                     <title>Dementia residential in {{x}} - {{z}}</title>
                     <line x1="200" y1={{ 75 + q * 100}} x2={{z + 200}} y2={{ 75 + q * 100}} stroke="gold" stroke-width="20" />
+                    <!-- <text x={{ z + 210}} y={{ 80 + q * 100}} fill="black">{{z}}</text> -->
                 </g>
 
                     <g fill="none">
                         <title>Dementia nursing in {{x}} - {{p}}</title>
                         <line x1="200" y1={{100 + q * 100}} x2={{p + 200}} y2={{ 100 + q * 100}} stroke="orange" stroke-width="20" />
+                        <!-- <text x={{ p + 210}} y={{ 105 + q * 100}} fill="black">{{p}}</text> -->
                     </g>
                     {% endfor %}
                   </svg> 
