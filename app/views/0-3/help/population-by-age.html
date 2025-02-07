@@ -92,17 +92,17 @@
               </li>
 
                 <ul id="submenu-2" class="moj-side-navigation__sub-list">
-                  <li class="moj-side-navigation__item moj-side-navigation__item--active">
+                  <li class="moj-side-navigation__item">
                     <a href="beds-per-100000-people">Adult social care beds per 100,000 adult population</a>
                   </li>
-                  <li class="moj-side-navigation__item">
+                  <li class="moj-side-navigation__item moj-side-navigation__item--active">
                     <a href="population-by-age">Population by age</a>
                   </li>
                   <li class="moj-side-navigation__item">
-                    <a href="#2-3">Population by disability</a>
+                    <a href="population-by-disability">Population by disability</a>
                   </li>
                   <li class="moj-side-navigation__item">
-                    <a href="#2-3">Care provider locations by size</a>
+                    <a href="care-provider-locations-by-size">Care provider locations by size</a>
                   </li>
                   <li class="moj-side-navigation__item">
                     <a href="#2-3">Indicator 5</a>
@@ -145,78 +145,57 @@
           </nav>
   </div>
 
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const toggleButton = document.querySelector(".moj-side-navigation__toggle");
-      const submenu = document.getElementById("submenu-2");
-  
-      toggleButton.addEventListener("click", function () {
-        const isExpanded = toggleButton.getAttribute("aria-expanded") === "true";
-  
-        toggleButton.setAttribute("aria-expanded", !isExpanded);
-        submenu.hidden = isExpanded;
-      });
-    });
-  </script>
-
-
   <div class="govuk-grid-column-two-thirds">
 
     <h1 class="govuk-heading-l">
-      Indicator definition and supporting information: adult social care beds per 100,000 adult population
+      Indicator definition and supporting information: population by age
     </h1>
 
     <p class="govuk-body-l">Find detailed information about this indicator.</p>
 
-    <p class="govuk-body"><a href="../../current/total_beds.html" class="govuk-link">View data for this indicator</a></p>
+    <p class="govuk-body"><a href="" class="govuk-link">View data for this indicator</a></p>
 
     <table class="govuk-table">
-      <caption class="govuk-table__caption govuk-table__caption--s">Details for adult social care beds per 1,000 adult population</caption>
+      <caption class="govuk-table__caption govuk-table__caption--s">Details for population by age</caption>
 
       <thead class="govuk-table__head">
         <tr class="govuk-table__row">
           <th scope="row" class="govuk-table__header govuk-!-width-one-third">What this measures</td>
-          <td class="govuk-table__cell">The total number of beds recorded by care providers across health and adult social care, adjusted to a rate of 100,000 adults (aged 18 and over) in the local authority population.</td>
+          <td class="govuk-table__cell"></td>
         </tr>
       </thead>
       <tbody class="govuk-table__body">
         <tr class="govuk-table__row">
           <th scope="row" class="govuk-table__header">Source</th>
-          <td class="govuk-table__cell"><a href="#" class="govuk-link" target="_blank">Capacity Tracker (opens in new tab)</td>
+          <td class="govuk-table__cell"><a href="#" class="govuk-link" target="_blank">Office for National Statistics</td>
         </tr>
         <tr class="govuk-table__row">
           <th scope="row" class="govuk-table__header">Data correct as of</th>
-          <td class="govuk-table__cell">7 February 2025</td>
+          <td class="govuk-table__cell">1 January 2025</td>
         </tr>
         <tr class="govuk-table__row">
           <th scope="row" class="govuk-table__header">Update frequency</th>
-          <td class="govuk-table__cell">Daily</td>
+          <td class="govuk-table__cell">Monthly</td>
         </tr>
 
         <tr class="govuk-table__row">
           <th scope="row" class="govuk-table__header">Data available for</th>
-          <td class="govuk-table__cell">30 September 2017 to 7 February 2025</td>
+          <td class="govuk-table__cell">30 September 2017 to 1 January 2025</td>
         </tr>
 
         <tr class="govuk-table__row">
           <th scope="row" class="govuk-table__header">Methodology</th>
-          <td class="govuk-table__cell">The total number of beds is the number of beds reported by care providers, including those in use and those available for new admissions. 
-            <br> <br>
-            Total beds includes mental health, learning disabilities, and end-of-life care beds in residential and nursing care homes.The data covers both self-funded and local authority-funded beds.
-            <br> <br>
-            Care providers update this information daily or whenever changes occur using the Capacity Tracker tool. They report how many beds are available and occupied in care settings such as nursing homes, residential care, and community care.
-            <br> <br>
-            The data is grouped by local areas, regions, and nationally so it is easier to compare.</td>
+          <td class="govuk-table__cell"></td>
         </tr>
 
         <tr class="govuk-table__row">
           <th scope="row" class="govuk-table__header">Limitations</th>
-          <td class="govuk-table__cell">Capacity Tracker data is self-reported by care providers, who update it at different times throughout the month. This means the data does not provide a snapshot of all providers at the same point in time. Instead, it represents the most recent information available from each provider when the data was retrieved.</td>
+          <td class="govuk-table__cell"></td>
         </tr>
 
         <tr class="govuk-table__row">
           <th scope="row" class="govuk-table__header">Data definitions</th>
-          <td class="govuk-table__cell">Definitions are currently not available. You may need to contact the data provider.</td>
+          <td class="govuk-table__cell"></td>
         </tr>
       </tbody>
     </table>
