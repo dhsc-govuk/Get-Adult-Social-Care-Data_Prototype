@@ -86,7 +86,9 @@
         <!--<span class="govuk-caption-m">Current demand</span>-->
         Drivers of demand</h2>
 
-        <p class="govuk-body">Demand for adult social care is influenced by a range of factors, including the age and disability profile of your population. Areas with a higher proportion of older adults or people with disabilities typically experience greater pressure on services.</p>
+        <p class="govuk-body">Demand for adult social care is influenced by a range of factors, including the age structure, disability profile and rate of dementia diagnosis in your population.</p>
+
+        <p class="govuk-body">Areas with a higher proportion of older adults, people with disabilities or rates of dementia diagnosis typically experience greater pressure on services.</p>
 
         <p class="govuk-body">Suffolk has a <strong>larger proportion of people aged 65 and over (18%) compared to the national average (7%)</strong>. This suggests demand for care services adjusted by population size in this local authority may be higher than average.</p>
       
@@ -100,11 +102,12 @@
     </form>
     <table class="govuk-table">
       <thead class="govuk-table__head">
-        <th scope="col" class="govuk-table__header">Location</th>
-        <th scope="col" class="govuk-table__header">Population</th>
-        <th scope="col" class="govuk-table__header">Aged 18-65</th>
-        <th scope="col" class="govuk-table__header">Aged 65 and over</th>
-        <th scope="col" class="govuk-table__header">Disability rates</th>
+        <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Location</th>
+        <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Population</th>
+        <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Aged 18-65</th>
+        <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Aged 65 and over</th>
+        <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Disability rates</th>
+        <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Registered dementia patients per 100,000</th>
       </thead>
       <tbody>
        <tr class="govuk-table__row">
@@ -113,6 +116,7 @@
       <td class="govuk-table__cell">45%</td>
       <td class="govuk-table__cell">18%</td>
       <td class="govuk-table__cell">9%</td>
+      <td class="govuk-table__cell">X</td>
       </tr>
       <tr class="govuk-table__row">
         <td class="govuk-table__cell">East of England</td>
@@ -120,6 +124,7 @@
         <td class="govuk-table__cell">41%</td>
         <td class="govuk-table__cell">8%</td>
         <td class="govuk-table__cell">9%</td>
+        <td class="govuk-table__cell">Y</td>
         </tr>
         <tr class="govuk-table__row">
           <td class="govuk-table__cell">All England</td>
@@ -127,6 +132,7 @@
           <td class="govuk-table__cell">32%</td>
           <td class="govuk-table__cell">7%</td>
           <td class="govuk-table__cell">6%</td>
+          <td class="govuk-table__cell">Z</td>
           </tr>
       </tbody>
       </table>
@@ -158,32 +164,32 @@
       Explore the data: adult social care beds per 100,000 adult population and occupancy</h3>
     <p>You can filter this data by type of beds. 
     </p>
-    <form action="total_beds.html">
+    <form action="total_beds-edit.html">
       <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
         Explore data
       </button>
     </form>
     <table class="govuk-table">
       <thead class="govuk-table__head">
-        <th scope="col" class="govuk-table__header">Location</th>
-        <th scope="col" class="govuk-table__header">Beds per 100,000 adult population </th>
+        <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Location</th>
+        <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Adult social care bed type</th>
+        <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Beds per 100,000 adult population </th>
         <!-- <th scope="col" class="govuk-table__header">Aged 18 - 65</th> -->
-        <th scope="col" class="govuk-table__header">People aged 65 and over</th>
-        <th scope="col" class="govuk-table__header">Beds occupied</th>
+        <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Beds occupied</th>
       </thead>
       <tbody>
        <tr class="govuk-table__row">
       <td class="govuk-table__cell">Suffolk</td>
+      <td class="govuk-table__cell">All types</td>
       <td class="govuk-table__cell">18.4</td>
       <!-- <td class="govuk-table__cell">35%</td> -->
-      <td class="govuk-table__cell">24%</td>
       <td class="govuk-table__cell">85%</td>
       </tr>
       <tr class="govuk-table__row">
         <td class="govuk-table__cell">East of England region</td>
+        <td class="govuk-table__cell">All types</td>
         <td class="govuk-table__cell">12.2</td>
         <!-- <td class="govuk-table__cell">39%</td> -->
-        <td class="govuk-table__cell">18%</td>
         <td class="govuk-table__cell">77%</td>
         </tr>
       </tbody>
@@ -220,7 +226,7 @@
         <th scope="col" class="govuk-table__header">Care provider</th>
         <th scope="col" class="govuk-table__header">Size</th>
         <th scope="col" class="govuk-table__header">Total beds</th>
-        <th scope="col" class="govuk-table__header">Occupancy rate</th>
+        <th scope="col" class="govuk-table__header">Beds occupied</th>
       </thead>
       <tbody>
        <tr class="govuk-table__row">
