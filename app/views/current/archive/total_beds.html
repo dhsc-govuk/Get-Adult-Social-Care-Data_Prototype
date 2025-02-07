@@ -1,6 +1,6 @@
 {% extends "layouts/data.html" %}
 
-{% set pageName="Total beds per 100,000 population" %}
+{% set pageName="Adult social care beds per 100,000 adult population" %}
 
 {% block content %} 
 <a href="../data-pages/present-demand" class="govuk-back-link">Back</a>
@@ -34,26 +34,28 @@
       <nav class="moj-side-navigation" aria-label="Side navigation">
         <h3>Contents</h3>
         <ul class="moj-side-navigation__list">
-          <li class="moj-side-navigation__item moj-side-navigation__item--active"><a href="#introduction">Introduction</a></li class="moj-side-navigation__item">
+          <!---<li class="moj-side-navigation__item moj-side-navigation__item--active"><a href="#introduction">Introduction</a></li class="moj-side-navigation__item">-->
           <!-- <li class="moj-side-navigation__item"><a href="#settings">Your selected locations</a></li class="moj-side-navigation__item"> -->
           <!-- <li class="moj-side-navigation__item"><a href="#total">Totals</a></li class="moj-side-navigation__item"> -->
+          <li class="moj-side-navigation__item"><a href="#definition">Indicator definition and supporting information</a></li class="moj-side-navigation__item">
           <li class="moj-side-navigation__item"><a href="#timeseries">Chart</a></li class="moj-side-navigation__item">
           <li class="moj-side-navigation__item"><a href="#filters">Table</a></li class="moj-side-navigation__item">
-          <li class="moj-side-navigation__item"><a href="#smart-insights">Smart insights (experimental)</a></li class="moj-side-navigation__item">
-          <li class="moj-side-navigation__item"><a href="#about">About this data</a></li class="moj-side-navigation__item">
+         <!--- <li class="moj-side-navigation__item"><a href="#smart-insights">Smart insights (experimental)</a></li class="moj-side-navigation__item"> -->
+         <!----<li class="moj-side-navigation__item"><a href="#about">About this data</a></li class="moj-side-navigation__item"> -->
         </ul>
       </nav>
 </div>
   <div class="govuk-grid-column-two-thirds">
     <!-- <span class="govuk-caption-l">Demand and capacity</span> -->
     <h1 class="govuk-heading-l">
-      <span class="govuk-caption-m">Demand</span>
+     <!-- <span class="govuk-caption-m">Demand</span> -->
       {{pageName}}</h1>
     <!-- 
       
       Main content
       
     -->
+      <!--
     <style>
       h2{margin-top:4em}
     </style>
@@ -65,25 +67,25 @@
       You can find information about this data, including how it is compiled, updated, and the time ranges it covers in <a href="#about" class="govuk-link">About this data</a>.
     </p>
     
+  -->
+    <style>
+      h2{margin-top:4em}
+    </style>
+    <h2 id="definition">Indicator definition and supporting information</h2>
+    <p class="govuk-body">
+      The total number of beds recorded by care providers across health and adult social care, adjusted to a rate of 100,000 adults in the local authority population.
+    </p>
+    <p class="govuk-body">
+      For detailed information about this indicator, including data definitions, data source, update schedule and limitations to be aware of being using this data, go to
+       <a href="../0-3/help/beds-per-100000-people.html" class="govuk-link">supporting information for this data</a>.</li>
+    </p>
+
     <!-- 
       
       Time series 
       
     -->
     <h2 id="timeseries">Chart</h2>
-    <!-- 
-      
-      Date picker 
-      
-    -->
-    <style>
-      .date-pickers{
-        margin-bottom:3em;
-        display: grid;
-        grid-template-columns: 35% 35%;
-        column-gap: 2em
-      }
-    </style>
 
       <form action="total_beds-edit">
       <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
@@ -91,67 +93,101 @@
       </button>
     </form>
     {% include "./_total_beds.html" %}
-    <h3>Download options</h3>
-    <ul>
-      <li><a href="#" class="govuk-link">Download chart image (PNG)</a></li>
-      <li><a href="#" class="govuk-link">Download data (CSV)</a></li>
-    </ul>
+
+    <p class="govuk-body">
+      
+      <p class="govuk-body"><a href="" class="govuk-link">Download chart image (PNG)</a><br>
+        <a href="" class="govuk-link">Download table data (CSV)</a>
+
+        <p class="govuk-body">Source: Capacity Tracker<br>
+          Data correct as of 24 December 2024<br>
+        <a href="../0-3/help/beds-per-100000-people.html" class="govuk-link">View supporting information for this data</a></p>
+<!-- 
+        
+Table 
+
+-->
     <h2 id="total">Table</h2>
-      <form action="total_beds-table-edit">
-        <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
-          Edit table
-        </button>
-      </form>
     <table class="govuk-table">
-      <caption class="govuk-table__caption govuk-table__caption--m">Total beds per 1,000 population at 24 December 2024</caption>
+      <caption class="govuk-table__caption govuk-table__caption--s">Total beds per 100,000 adult population at 24 December 2024</caption>
       <thead class="govuk-table__head">
+        <style>
+          th:nth-child(2),th:nth-child(3), th:nth-child(4), td:nth-child(2),td:nth-child(3), td:nth-child(4) {
+  text-align: right;
+}
+        </style>
         <th scope="col" class="govuk-table__header">Location</th>
-        <th scope="col" class="govuk-table__header">Beds per 1,000 population, 18+</th>
-        <th scope="col" class="govuk-table__header">Beds occupied</th>
+        <th scope="col" class="govuk-table__header">Suffolk</th>
+        <th scope="col" class="govuk-table__header">East of England region</th>
+        <th scope="col" class="govuk-table__header">All England</th>
       </thead>
       <tbody>
        <tr class="govuk-table__row">
-      <td class="govuk-table__cell">Suffolk</td>
-      <td class="govuk-table__cell">18.4</td>
-      <td class="govuk-table__cell">85%</td>
+      <td class="govuk-table__cell">Total beds</td>
+      <td class="govuk-table__cell">2,398.4</td>
+      <td class="govuk-table__cell">1,969.5</td>
+      <td class="govuk-table__cell">2,088.2</td>
       </tr>
       <tr class="govuk-table__row">
-        <td class="govuk-table__cell">Cambridgeshire</td>
-        <td class="govuk-table__cell">10.9</td>
-        <td class="govuk-table__cell">85%</td>
+        <td class="govuk-table__cell">Dementia nursing</td>
+        <td class="govuk-table__cell">160.1</td>
+        <td class="govuk-table__cell">126.0</td>
+        <td class="govuk-table__cell">182.1</td>
         </tr>
       <tr class="govuk-table__row">
-        <td class="govuk-table__cell">East of England region</td>
-        <td class="govuk-table__cell">12.2</td>
-        <td class="govuk-table__cell">77%</td>
+        <td class="govuk-table__cell">Dementia residential</td>
+        <td class="govuk-table__cell">648.8</td>
+        <td class="govuk-table__cell">486.6</td>
+        <td class="govuk-table__cell">432.8</td>
         </tr>
       </tbody>
       </table>
-      <table class="govuk-table">
-        <caption class="govuk-table__caption govuk-table__caption--m">Residential dementia beds per 1,000 population at 24 December 2024</caption>
-        <thead class="govuk-table__head">
-          <th scope="col" class="govuk-table__header">Location</th>
-          <th scope="col" class="govuk-table__header">Residential dementia beds per 1,000 population, 18+</th>
-          <th scope="col" class="govuk-table__header">Residential dementia beds occupied</th>
-        </thead>
-        <tbody>
-         <tr class="govuk-table__row">
-        <td class="govuk-table__cell">Suffolk</td>
-        <td class="govuk-table__cell">18.4</td>
-        <td class="govuk-table__cell">85%</td>
-        </tr>
-        <tr class="govuk-table__row">
-          <td class="govuk-table__cell">Cambridgeshire</td>
-          <td class="govuk-table__cell">10.9</td>
-          <td class="govuk-table__cell">85%</td>
-          </tr>
-        <tr class="govuk-table__row">
-          <td class="govuk-table__cell">East of England</td>
-          <td class="govuk-table__cell">12.2</td>
-          <td class="govuk-table__cell">77%</td>
-          </tr>
-        </tbody>
-        </table>
+        <p class="govuk-body">
+          <a href="" class="govuk-link">Download table data (CSV)</a>
+  
+        <p class="govuk-body">Source: Capacity Tracker<br>
+          Data correct as of 24 December 2024<br>
+          <a href="../0-3/help/beds-per-100000-people.html" class="govuk-link">View supporting information for this data</a></p>
+  <!-- 
+          
+  Local authorities 
+  
+  -->
+          <h2>Local authorities</h2>
+          <div class="govuk-tabs" data-module="govuk-tabs">
+            <h2 class="govuk-tabs__title">
+              Contents
+            </h2>
+            <ul class="govuk-tabs__list">
+              <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+                <a class="govuk-tabs__tab" href="#past-day">
+                  Bar chart
+                </a>
+              </li>
+              <li class="govuk-tabs__list-item">
+                <a class="govuk-tabs__tab" href="#past-week">
+                  Map
+                </a>
+              </li>
+              <li class="govuk-tabs__list-item">
+                <a class="govuk-tabs__tab" href="#past-week">
+                  Table
+                </a>
+              </li>
+              </ul>
+              <div class="govuk-tabs__panel" id="past-day">
+  {% include "./_beds_by_la.html" %}
+  <p class="govuk-body"><a href="" class="govuk-link">Download chart image (PNG)</a><br>
+    <a href="" class="govuk-link">Download table data (CSV)</a>
+
+    <p class="govuk-body">Source: Capacity Tracker<br>
+      Data correct as of 24 December 2024<br>
+    <a href="../0-3/help/beds-per-100000-people.html" class="govuk-link">View supporting information for this data</a></p>
+
+</div>
+<div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="past-week">
+</div>
+  </div>
     <!-- 
       
       Filters 
@@ -291,6 +327,7 @@
       Smart insights 
       
     -->
+      <!--
     <h2 id="smart-insights">Smart insights (experimental)</h2>
     <div class="govuk-inset-text">
       Smart insights use artificial intelligence (AI) to analyse this data, highlighting trends and patterns to support your own analysis. As this is experimental, verify the insights to check they are appropriate and meet your needs. <a class="@ovuk-link" href="">Learn more about smart insights</a>
@@ -304,6 +341,7 @@
     <li><strong>Monitor regional disparities:</strong> Compare growth patterns across Suffolk and Cambridgeshire to identify areas requiring additional investment.
     <li><strong>Target specialised care: </strong>Focus on expanding capacity in under-resourced care types, such as transitional or young physically disabled care.
     </ul>
+  -->
     <!---
       <p class="govuk-body"><strong>Rate this smart insight</strong></p>
       <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
@@ -334,6 +372,7 @@
 About this data 
 
 -->
+<!--
     <h2 id="about">About this data</h2>
 
     <table class="govuk-table">
@@ -386,7 +425,7 @@ About this data
         </tr>
       </tbody>
     </table>
-
+  -->
 
     <p class="govuk-body"><a class="govuk-link" href="#">Back </a></p>
     
