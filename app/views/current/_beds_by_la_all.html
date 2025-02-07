@@ -1,5 +1,5 @@
 <h3>
-       Total beds per 100,000 adult population by local authority</h3>
+       Total beds per 100,000 population by local authority</h3>
        <form action="total_beds-edit">
         <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
           Edit region
@@ -61,17 +61,18 @@
             <line x1="200" y1="25" x2="500" y2="25" stroke="grey" stroke-width="2" />
             <!-- Vertical axis -->
             <line x1="200" y1="25" x2="200" y2="600" stroke="grey" stroke-width="2" />
-        
+            <text x="10" y="90">Suffolk</text>
             {% for x,y,z,p,q in thisData %}
-            <text x="10" y={{55 + q * 50}}>{{x}}</text>
+            
 
             <g fill="none">
             <title stroke-width="5">Total beds per 100,000 in {{x}} - {{y}}</title>
             {% if x == "Suffolk" %}
-                <rect x="0" y={{ 35 + q * 50}} width="500" height="30"stroke="black" stroke-width="2" stroke-dasharray="2,2"/>
-                <line x1="200" y1={{ 50 + q * 50}} x2={{ y + 200}} y2={{ 50 + q * 50}} stroke="red" stroke-width="20" />
+                
+                <line x1="0" y1={{ 55 + q * 10}} x2="500" y2={{ 55 + q * 10}} stroke="black" stroke-width="2" stroke-dasharray="2,2"/>
+                <line x1="200" y1={{ 50 + q * 10}} x2={{ y + 200}} y2={{ 50 + q * 10}} stroke="red" stroke-width="5" />
             {% else %}
-                <line x1="200" y1={{ 50 + q * 50}} x2={{ y + 200}} y2={{ 50 + q * 50}} stroke="purple" stroke-width="20" />
+                <line x1="200" y1={{ 50 + q * 10}} x2={{ y + 200}} y2={{ 50 + q * 10}} stroke="purple" stroke-width="5" />
             {% endif %}
         </g>
             
