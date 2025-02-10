@@ -28,7 +28,7 @@ text: pageName
   <div class="govuk-grid-column-two-thirds">
     <!-- <span class="govuk-caption-l">Demand and capacity</span> -->
     <h1 class="govuk-heading-l">
-      <span class="govuk-caption-m">Demand</span>
+      <!--<span class="govuk-caption-m">Demand</span>-->
       {{pageName}}</h1>
       <!-- 
       
@@ -71,7 +71,7 @@ text: pageName
         <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
             <h1 class="govuk-fieldset__heading">
-              East of England
+              East of England region
             </h1>
           </legend>
           <div class="govuk-checkboxes" data-module="govuk-checkboxes">
@@ -148,7 +148,9 @@ text: pageName
 </button>
         <form action="present-demand">
           <button type="submit" class="govuk-button" data-module="govuk-button">
-            Continue
+            Apply changes
           </button>
         </form>
+
+        <p class="govuk-body"><a href="javascript:history.back()" class="govuk-link">Cancel and go back</a></p>
         {% endblock%}
