@@ -1,0 +1,39 @@
+{% extends "layouts/main.html" %}
+
+{% set pageName="D3 example" %}
+
+{% block content %}
+<!-- Test out loading data within the D3 file, not a separate CSV file -->
+
+<!-- Load d3.js -->
+<script src="https://d3js.org/d3.v4.js"></script>
+ 
+      <h1>{{pageName}}</h1>
+
+
+<!-- Create a div where the graph will take place -->
+<div id="my_dataviz"></div>
+
+
+<div class="d3_example" id="d3_svg_demo2">
+    <cite class="d3_example-text">Example output</cite>
+    <p></p>
+    <p></p>    
+    <p></p>    
+    <p></p>
+    </div>
+<script>
+   d3.csv("/public/csv/data.csv", function(data) {
+    console.log(data);
+});
+
+ </script>
+
+<!-- Working -->
+<!-- <script>
+   d3.csv("/public/csv/data.csv", function(data) {
+    console.log(data);
+
+});
+</script> -->
+{% endblock %}

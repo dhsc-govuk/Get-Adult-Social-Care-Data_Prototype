@@ -94,6 +94,27 @@ svg.append('path')
   <rect x="0" height="5" rx="1" fill="gold" id="gold-bar"/>
 </svg>
 
+<h2>Text and shapes with simple D3 transformations</h2>
+<!-- edit text -->
+<p class="d3_p"> hello world 1</p>
+<p class="d3_p"> hello world 2</p>
+<p class="d3_p"> hello world 3</p>
+
+<!-- edit svg -->
+<svg id="d3_svg_demo1">
+    <g transform="translate(50, 40)">
+      <circle r="30" />
+      <circle r="30" />
+      <circle r="30" />
+      </g>
+  </svg>
+
+  <div class="d3_fruit"></div>
+<script>
+d3.selectAll(".d3_p").style("color", "blue"); //edit text
+d3.selectAll("circle").attr('cx', ((d, i) => i * 20)); //edit svg
+</script>
+
 <!-- 
 
 Bar chart (broken) - see https://d3js.org/d3-shape/stack
