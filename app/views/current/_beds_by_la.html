@@ -39,15 +39,9 @@
         ["Essex",172,20,84,9],
         ["Norfolk",172,20,84,10]
         ]  %}
-        <!-- <p>{{thisData[1][1]}} works</p> -->
-        <ul class="govuk-list" style="margin-top:2em">
             <style>
-                .svg-bar{display:block}
+                .svg-bar{width:100%; overflow-x: auto;}
             </style>
-            
-            <li>
-                
-                <p>
                     <svg height="1200" width="500" xmlns="http://www.w3.org/2000/svg" class="svg-bar">
                         
                         <text x="200" y="20">0</text>
@@ -55,9 +49,9 @@
                         <!-- Horizontal axis -->
                         <line x1="200" y1="25" x2="500" y2="25" stroke="grey" stroke-width="2" />
                         <!-- Vertical axis -->
-                        <line x1="200" y1="25" x2="200" y2="360" stroke="grey" stroke-width="2" />
+                        <line x1="200" y1="25" x2="200" y2="1160" stroke="grey" stroke-width="2" />
                         
-                        {% for x,y,z,p,q in thisData %}
+                        {% for x, y, z, p, q in thisData %}
                         <text x="10" y={{55 + q * 100}}>{{x}}</text>
                         
                         <g fill="none">
@@ -80,11 +74,3 @@
                         </g>
                         {% endfor %}
                     </svg> 
-                    
-                </li>
-                
-                
-                
-            </ul>
-            
-            
