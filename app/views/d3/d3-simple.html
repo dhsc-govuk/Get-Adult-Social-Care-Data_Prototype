@@ -86,12 +86,12 @@ svg.append('path')
 {% set x = 47 %}
 <style>
   #gold-bar{
-    width:{{x}}px
+    /* width:{{x}}px -NB  this line breaks the VS code formatting */ 
   }
 </style>
 <svg viewBox="0 0 50 10" xmlns="http://www.w3.org/2000/svg" id="percentage-bar">
   <rect x="0" width="50" height="5" rx="1" fill="#FFF" stroke="#e1e1e1"/>
-  <rect x="0" width="1" height="5" rx="1" fill="gold" id="gold-bar"/>
+  <rect x="0" height="5" rx="1" fill="gold" id="gold-bar"/>
 </svg>
 
 <!-- 
@@ -99,11 +99,11 @@ svg.append('path')
 Bar chart (broken) - see https://d3js.org/d3-shape/stack
 
 -->
-<!-- <p>Bar chart, using data within the script:</p>
+<p>Bar chart, using data within the script:</p>
 <div id="bar-chart"></div>
 
 <script>
-  // create data
+  /* create data */
   const data = [
   {date: new Date("2015-01-01"), fruit: "apples", sales: 3840},
   {date: new Date("2015-01-01"), fruit: "bananas", sales: 1920},
@@ -123,16 +123,16 @@ Bar chart (broken) - see https://d3js.org/d3-shape/stack
   {date: new Date("2015-04-01"), fruit: "durians", sales: 400}
 ];
 
-// create svg element:
+/* create svg element */
 var svg = d3.select("#bar-chart").append("svg").attr("width", 800).attr("height", 200)
 
-//Index the data by date and fruit
+/* Index the data by date and fruit */
 const series = d3.stack()
     .keys(d3.union(data.map(d => d.fruit))) // apples, bananas, cherries, …
     .value(([, group], key) => group.get(key).sales)
   (d3.index(data, d => d.date, d => d.fruit));
 
-// create svg element:
+/* create svg element: */
 svg.append("g")
   .selectAll("g")
   .data(series)
@@ -145,7 +145,7 @@ svg.append("g")
     .attr("y", d => y(d[1]))
     .attr("height", d => y(d[0]) - y(d[1]))
     .attr("width", x.bandwidth());
-</script> -->
+</script>
     <!--
 
     End of Main section
