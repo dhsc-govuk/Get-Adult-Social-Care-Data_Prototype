@@ -1,6 +1,6 @@
 {% extends "layouts/main.html" %}
 
-{% set pageName="Edit page filters" %}
+{% set pageName="Edit filters" %}
 
 {% block content %} 
 <a href="../dashboard/capacity" class="govuk-back-link">Back</a>
@@ -9,7 +9,7 @@
   <div class="govuk-grid-column-two-thirds">
     <!-- <span class="govuk-caption-m">Total beds per 100,000 population</span>  -->
     <h1 class="govuk-heading-l">{{pageName}}</h1>
-    <p class="govuk-body">Select filters to update 'Total beds per 100,000 population'.</p>
+    <p class="govuk-body">Select filters to refine the data displayed.</p>
     <!-- 
     
     General  
@@ -39,8 +39,10 @@
             <input class="govuk-checkboxes__input" id="waste-2" name="waste" type="checkbox" value="mines">
             <label class="govuk-label govuk-checkboxes__label" for="waste-2">
               Transitional 
-              <p class="govuk-hint">The transition from children’s services to adult services</p>
             </label>
+            <div id="govuk-hint" class="govuk-hint govuk-checkboxes__hint">
+              For individuals moving from children's services to adult social care.
+            </div>
           </div>
           <div class="govuk-checkboxes__item">
             <input class="govuk-checkboxes__input" id="waste-2" name="waste" type="checkbox" value="mines">
@@ -131,9 +133,11 @@
     </fieldset>
   <form action="total_beds">
     <button type="submit" class="govuk-button" data-module="govuk-button">
-      Continue
+      Apply changes
     </button>
   </form>
+  <p class="govuk-body"><a href="javascript:history.back()" class="govuk-link">Cancel and go back</a></p>
+
 </div>
 
 {% endblock%}
