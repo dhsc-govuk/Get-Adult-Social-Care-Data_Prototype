@@ -25,12 +25,33 @@ text: pageName
 ]
 }) }} -->
 <div class="govuk-grid-row">
+        <!-- 
+      
+      Left nav column 
+      
+    -->
+    <div class="govuk-grid-column-one-third">      
+      <nav class="moj-side-navigation" aria-label="Side navigation">
+        <h3>Contents</h3>
+        {% set items = [
+          { link: "#definition", heading: "Indicator definition and supporting information" },
+          { link: "#settings", heading: "Your selected locations" },
+          { link: "#data", heading: "Data" },
+          { link: "#smart-insights", heading: "Smart insights" }
+                  ] %}
+        <ul class="moj-side-navigation__list">
+          <li class="moj-side-navigation__item moj-side-navigation__item--active"><a href="#introduction">Introduction</a></li class="moj-side-navigation__item">
+         {% for item in items %}
+            <li class="moj-side-navigation__item"><a href="{{item.link}}">{{item.heading}}</a></li class="moj-side-navigation__item">
+         {% endfor %}
+        </ul>
+      </nav>
+</div>
   <!-- 
   
-  Left column 
+  Main column 
   
-  -->
-  
+-->
   <div class="govuk-grid-column-two-thirds">
     <!-- <span class="govuk-caption-l">Demand and capacity</span> -->
     <h1 class="govuk-heading-l">
@@ -59,7 +80,6 @@ text: pageName
             <th scope="row" class="govuk-table__header">Locations</th>
             <td class="govuk-table__cell">
               <ul class="govuk-list" style="text-align: left;">
-                <li>Greenfields Care Home</li>
                 <li>Suffolk</li>
                 <li>East of England</li>
               </ul>
@@ -72,9 +92,10 @@ text: pageName
       </table>
       <!-- 
       
-      Local authorities 
+      Tabs
       
       -->
+      <h2 id="data">Data</h2>
       <div class="govuk-tabs" data-module="govuk-tabs">
         <h2 class="govuk-tabs__title">
           Contents
@@ -82,7 +103,7 @@ text: pageName
         <ul class="govuk-tabs__list">
           <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
             <a class="govuk-tabs__tab" href="#chart">
-              Chart
+              Bar chart
             </a>
           </li>
           <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
@@ -107,23 +128,21 @@ text: pageName
         
         -->
         <div class="govuk-tabs__panel" id="chart">
-          <h2>Chart</h2>
+          <h2>Bar chart</h2>
           <table class="govuk-table">
             <tbody class="govuk-table__body">
           <tr class="govuk-table__row">
-            <th scope="row" class="govuk-table__header">Filters</th>
+            <th scope="row" class="govuk-table__header">Filter</th>
             <td class="govuk-table__cell">
               <ul class="govuk-list" style="text-align: left;">
                 <li>Total beds</li>
-                <li>Dementia Nursing</li>
-                <li>Dementia Residential</li>
               </ul>
             </td>
           <td class="govuk-table__cell">
             <a href="total_beds-edit-filters">Change</a>
           </td>
         </tr>
-        <tr class="govuk-table__row">
+        <!-- <tr class="govuk-table__row">
           <th scope="row" class="govuk-table__header">Chart type</th>
           <td class="govuk-table__cell" style="text-align: left;">
             Bar chart
@@ -131,12 +150,12 @@ text: pageName
         <td class="govuk-table__cell">
           <a href="total_beds-edit-filters">Change</a>
         </td>
-      </tr>
+      </tr> -->
             </tbody>
           </table>
-          {% include "./_beds_by_la.html" %}
+          {% include "./_chart.html" %}
           <p class="govuk-body"><a href="" class="govuk-link">Download chart image (PNG)</a><br>
-            <a href="" class="govuk-link">Download table data (CSV)</a>
+            <a href="#" class="govuk-link">Download table data (CSV)</a>
             <p class="govuk-body">Source: Capacity Tracker<br>
               Data correct as of 24 December 2024<br>
               <a href="../0-3/help/beds-per-100000-people.html" class="govuk-link">View supporting information for this data</a></p>
