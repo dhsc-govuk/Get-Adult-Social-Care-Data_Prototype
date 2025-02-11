@@ -183,8 +183,8 @@
 
       <p class="govuk-body"><a href="" class="govuk-link">Download table data (CSV)</a></p>
 
-      <p class="govuk-body">Source: Office for National Statistics<br>
-        Data correct as of 1 January 2025<br>
+      <p class="govuk-body">Source: Office for National Statistics, NHS England<br>
+        Data correct as of 5 February 2025
         <!--
         <a href="../0-3/help/population-by-age.html" class="govuk-link">View supporting information for Population by age</a></br>
         <a href="../0-3/help/population-by-disability.html" class="govuk-link">View supporting information for Population by disability</a>-->
@@ -214,36 +214,42 @@
         Explore data
       </button>
     </form>
-    <table class="govuk-table">
-      <thead class="govuk-table__head">
-        <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Location</th>
-        <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Adult social care bed type</th>
-        <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Beds per 100,000 adult population </th>
-        <!-- <th scope="col" class="govuk-table__header">Aged 18 - 65</th> -->
-        <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Percentage of beds occupied</th>
-      </thead>
-      <tbody>
-       <tr class="govuk-table__row">
-      <td class="govuk-table__cell">Suffolk</td>
-      <td class="govuk-table__cell">All types</td>
-      <td class="govuk-table__cell">18.4</td>
-      <!-- <td class="govuk-table__cell">35%</td> -->
-      <td class="govuk-table__cell">85%</td>
-      </tr>
-      <tr class="govuk-table__row">
-        <td class="govuk-table__cell">East of England region</td>
+
+      <table class="govuk-table">
+        <thead class="govuk-table__head">
+          <th scope="col" class="govuk-table__header govuk-!-width-one-quarter"></th>
+          <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Suffolk</th>
+          <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">East of England region</th>
+          <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">All England</th>
+        </thead>
+        <tbody>
+        <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header">Adult social care bed type</th>
         <td class="govuk-table__cell">All types</td>
-        <td class="govuk-table__cell">12.2</td>
-        <!-- <td class="govuk-table__cell">39%</td> -->
-        <td class="govuk-table__cell">77%</td>
+        <td class="govuk-table__cell">All types</td>
+        <td class="govuk-table__cell">All types</td>
         </tr>
-      </tbody>
-      </table>
+        <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header">Beds per 100,000 adult population</th>
+        <td class="govuk-table__cell">18.4</td>
+        <td class="govuk-table__cell">12.2</td>
+        <td class="govuk-table__cell">X</td>
+        </tr>
+        <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header">Percentage of beds occupied</th>
+        <td class="govuk-table__cell">85%</td>
+        <td class="govuk-table__cell">77%</td>
+        <td class="govuk-table__cell">Y</td>
+        </tr>
+        </tr>
+        </tbody>
+        </table>
        
+
       <p class="govuk-body"><a href="" class="govuk-link">Download table data (CSV)</a></p>
    
       <p class="govuk-body">Source: Capacity Tracker<br>
-        Data correct as of 5 February 2025<br>
+        Data correct as of 5 February 2025<br></p>
       <!---  <a href="../0-3/help/beds-per-100000-people.html" class="govuk-link">View supporting information for this data</a></p>-->
  
 
@@ -253,59 +259,59 @@
 
       <p class="govuk-body">Examining individual care providers offers insight into how your provision compares with other care providers in your local authority, as well as regionally and nationally.</p>
 
-      <p class="govuk-body">Care Provider A is a small provider with <strong>20 total beds</strong>, compared to the median (53 beds) in Suffolk. The table provides more information on the breakdown of bed types provided by Care Provider A.</p>
+      <p class="govuk-body">Care Provider A is a small provider with <strong>20 total beds</strong>, compared to the median (53 beds) in Suffolk.</p>
       
       <p class="govuk-body">Care Provider A has <strong>90% occupancy</strong> for all adult social care beds compared to the median occupancy of all care homes in Suffolk (85%), suggesting limited availability for new admissions.</p>
       
     <h3 class="govuk-heading-m">
       Explore the data: care providers in Suffolk</h3>
-    <p>You can filter this data by bed types and change your comparator group.</p>
+    <p>You can explore the data to get information on the different bed types provided by Care Provider A, and change comparator group.</p>
     <form action="total_beds.html">
       <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
         Explore data
       </button>
     </form>
   </form>
-    <table class="govuk-table">
-      <thead class="govuk-table__head">
-        <th scope="col" class="govuk-table__header govuk-!-width-one-third">Location</th>
-        <th scope="col" class="govuk-table__header">Size</th>
-        <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Beds in care provider location</th>
-        <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Percentage of beds occupied</th>
-      </thead>
-      <tbody>
-       <tr class="govuk-table__row">
-      <td class="govuk-table__cell">Care Provider A</td>
-      <td class="govuk-table__cell">Small</td>
-      <td class="govuk-table__cell">20</td>
-      <td class="govuk-table__cell">90%</td>
-      </tr>
-      <tr class="govuk-table__row">
-        <td class="govuk-table__cell">Suffolk</td>
+      <table class="govuk-table">
+        <thead class="govuk-table__head">
+          <th scope="col" class="govuk-table__header govuk-!-width-one-quarter"></th>
+          <th scope="col" class="govuk-table__header">Care Provider A</th>
+          <th scope="col" class="govuk-table__header">Suffolk</th>
+          <th scope="col" class="govuk-table__header">East of England region</th>
+          <th scope="col" class="govuk-table__header">All England</th>
+
+        </thead>
+        <tbody>
+        <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header">Size</th>
+        <td class="govuk-table__cell">Small</td>
         <td class="govuk-table__cell">All</td>
-        <td class="govuk-table__cell">53 (median)</td>
-        <td class="govuk-table__cell">85% (median)</td>
+        <td class="govuk-table__cell">All</td>
+        <td class="govuk-table__cell">All</td>
         </tr>
         <tr class="govuk-table__row">
-          <td class="govuk-table__cell">East of England region</td>
-          <td class="govuk-table__cell">All</td>
-          <td class="govuk-table__cell"></td>
-          <td class="govuk-table__cell"></td>
-          </tr>
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell">All England</td>
-            <td class="govuk-table__cell">All</td>
-            <td class="govuk-table__cell"></td>
-            <td class="govuk-table__cell"></td>
-            </tr>
-      
-      </tbody>
-      </table>
+        <th scope="row" class="govuk-table__header">Beds in care provider location</th>
+        <td class="govuk-table__cell">20</td>
+        <td class="govuk-table__cell">53 (median)</td>
+        <td class="govuk-table__cell"></td>
+        <td class="govuk-table__cell"></td>
+        </tr>
+        <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header">Percentage of beds occupied</th>
+        <td class="govuk-table__cell">90%</td>
+        <td class="govuk-table__cell">85% (median)</td>
+        <td class="govuk-table__cell"></td>
+        <td class="govuk-table__cell"></td>
+        </tr>
+        </tr>
+        </tbody>
+        </table>
+
 
       <p class="govuk-body"><a href="" class="govuk-link">Download table data (CSV)</a></p>
 
       <p class="govuk-body">Source: Capacity Tracker<br>
-        Data correct as of 5 February 2025<br>
+        Data correct as of 5 February 2025<br></p>
       <!--- <a href="../0-3/help/beds-per-100000-people.html" class="govuk-link">View supporting information for this data</a></p>-->
  
       <!--Smart insights-->
