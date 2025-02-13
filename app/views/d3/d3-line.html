@@ -10,7 +10,6 @@
 <a href="d3" class="govuk-back-link">Back</a>
       <h1>{{pageName}}</h1>
 
-
 <!-- Create a div where the graph will take place -->
 <div id="my_dataviz"></div>
 
@@ -30,12 +29,16 @@
       .attr("transform",
             "translate(" + margin.left + "," + margin.top + ")");
   
-  //Read the data
-  d3.csv("https://raw.githubusercontent.com/holtzy/data_to_viz/master/Example_dataset/3_TwoNumOrdered_comma.csv",
+  //Read the data 
+ 
+//  original:
+//   d3.csv("https://raw.githubusercontent.com/holtzy/data_to_viz/master/Example_dataset/3_TwoNumOrdered_comma.csv",
   
+d3.csv("/public/csv/beds.csv",
     // When reading the csv, I must format variables:
     function(d){
-      return { date : d3.timeParse("%Y-%m-%d")(d.date), value : d.value }
+      //see https://d3js.org/d3-time-format
+      return { date : d3.timeParse("%d/%m/%y")(d.date), value : d.value }
     },
   
     // Now I can use this dataset:
