@@ -11,11 +11,19 @@
 <h1>{{pageName}}</h1>
 
 
+<style>
+  
+</style>
 <!-- Add a svg area, empty -->
 <div id="my_dataviz"></div>
 
 <style>
-  svg text{fill:black}
+  @media only screen and (max-width: 500px) {
+    #my_dataviz{
+      width:400px; 
+      overflow-x: scroll;
+    }
+  }
 </style>
 
 <!-- Based on the example https://d3-graph-gallery.com/intro_d3js.html -->
