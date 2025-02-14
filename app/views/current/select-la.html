@@ -1,0 +1,50 @@
+{% extends "layouts/data.html" %}
+
+{% set pageName="Select a Local Authority" %}
+
+{% block content %} 
+<a href="javascript:history.back()" class="govuk-back-link">Back</a>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <!--<span class="govuk-caption-m">Total beds</span>-->
+   
+    {{ xGovukAutocomplete({
+      id: "country",
+      name: "country",
+      allowEmpty: false,
+      label: {
+        classes: "govuk-label--l",
+        isPageHeading: true,
+        text: "Pick a Local Authority"
+      },
+      items: [
+      { text: "Hampshire" },
+      { text: "Oxfordshire" },
+      { text: "Surrey" },
+      { text: "West Sussex" },
+      { text: "Bath and North East Somerset" },
+      { text: "Bristol, City of" },
+      { text: "North Somerset" },
+      { text: "South Gloucestershire" },
+      { text: "Swindon" },
+      { text: "Plymouth" },
+      { text: "Torbay" },
+      { text: "Wiltshire" },
+      { text: "Isles of Scilly" },
+      { text: "Bournemouth, Christchurch and Poole" },
+      { text: "Cornwall" },
+      { text: "Dorset" },
+      { text: "Somerset" },
+      { text: "Devon" },
+      { text: "Gloucestershire" }
+      ]
+    }) }}
+      <form action="total_beds#timeseries">
+    <button type="submit" class="govuk-button" data-module="govuk-button">
+      Apply changes
+    </button>
+    </form>
+  </div>
+
+    {% endblock%}
