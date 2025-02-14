@@ -1,6 +1,6 @@
 {% extends "layouts/data.html" %}
 
-{% set pageName="Select a Local Authority" %}
+{% set pageName="Enter a local authority's name" %}
 
 {% block content %} 
 <a href="javascript:history.back()" class="govuk-back-link">Back</a>
@@ -16,7 +16,10 @@
       label: {
         classes: "govuk-label--l",
         isPageHeading: true,
-        text: "Pick a Local Authority"
+        text: "Enter a local authority's name"
+      },
+      hint: {
+        text: "Start typing for suggestions."
       },
       items: [
       { text: "Hampshire" },
