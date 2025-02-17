@@ -7,64 +7,91 @@
 
 <!-- Load d3.js -->
 <script src="https://d3js.org/d3.v4.js"></script>
- 
+
 <h1>{{pageName}}</h1>
 
+<!-- 
 
-<!-- Add a svg area, empty -->
-<div id="scatter_area"></div>
+See https://www.w3.org/WAI/tutorials/images/complex/ 
+
+-->
+<figure role="group">
+  <!-- Add a svg area, empty -->
+  <div id="scatter_area"></div>
+  <figcaption>
+    <h2>Overview</h2>
+    <p>The chart shows three local authorities and the number of occupied beds per 100,000 population in December 2024.</p>
+    <h2>Values</h2>
+    <table>
+      <caption>Local authorities and the number of occupied beds per 100,000 population in December 2024</caption>
+      <tr>
+        <td>Suffolk</td>
+        <td>2400</td>
+      </tr>
+      <tr>
+        <td>Essex</td>
+        <td>1800</td>
+      </tr>
+      <tr>
+        <td>Norfolk</td>
+        <td>2800</td>
+      </tr>
+    </table>
+  </figcaption>
+</figure>
 
 <!-- Based on the example https://d3-graph-gallery.com/intro_d3js.html -->
 <script>
-
-// set the dimensions and margins of the graph
-var margin = {top: 10, right: 40, bottom: 30, left: 30},
-    width = 450 - margin.left - margin.right,
-    height = 400 - margin.top - margin.bottom;
-
-// append the svg object to the body of the page
-var svG = d3.select("#scatter_area")
+  
+  // set the dimensions and margins of the graph
+  var margin = {top: 10, right: 40, bottom: 30, left: 30},
+  width = 450 - margin.left - margin.right,
+  height = 400 - margin.top - margin.bottom;
+  
+  // append the svg object to the body of the page
+  var svG = d3.select("#scatter_area")
   .append("svg")
-    .attr("width", width + margin.left + margin.right)
-    .attr("height", height + margin.top + margin.bottom)
+  .attr("width", width + margin.left + margin.right)
+  .attr("height", height + margin.top + margin.bottom)
   .append("g")
-    .attr("transform",
-          "translate(" + margin.left + "," + margin.top + ")");
-
-// Create data - wrap all the graph commands in this function:
-d3.csv("/public/csv/las.csv", function(data) {
-// this is the equivalent of eg var loaded = [ {x:10, y:20}, {x:40, y:90}, {x:80, y:50} ]
-
-// X scale and Axis
-var x = d3.scaleLinear()
+  .attr("transform",
+  "translate(" + margin.left + "," + margin.top + ")")
+  .attr("text", "Local authorities and beds per 100,000 population");
+  
+  // Create data - wrap all the graph commands in this function:
+  d3.csv("/public/csv/las.csv", function(data) {
+    // this is the equivalent of eg var loaded = [ {x:10, y:20}, {x:40, y:90}, {x:80, y:50} ]
+    
+    // X scale and Axis
+    var x = d3.scaleLinear()
     .domain([0, 100])         // This is the min and the max of the data: 0 to 100 if percentages
     .range([0, width]);       // This is the corresponding value I want in Pixel
-svG
-  .append('g')
-  .attr("transform", "translate(0," + height + ")")
-  .call(d3.axisBottom(x));
-
-// X scale and Axis
-var y = d3.scaleLinear()
+    svG
+    .append('g')
+    .attr("transform", "translate(0," + height + ")")
+    .call(d3.axisBottom(x));
+    
+    // X scale and Axis
+    var y = d3.scaleLinear()
     .domain([0, 100])         // This is the min and the max of the data: 0 to 100 if percentages
     .range([height, 0]);       // This is the corresponding value I want in Pixel
-svG
-  .append('g')
-  .call(d3.axisLeft(y));
-
-// Add 3 dots for 0, 50 and 100%
-svG
-  .selectAll("whatever")
-  .data(data)
-  .enter()
-  .append("rect")
+    svG
+    .append('g')
+    .call(d3.axisLeft(y));
+    
+    // Add 3 dots for 0, 50 and 100%
+    svG
+    .selectAll("whatever")
+    .data(data)
+    .enter()
+    .append("rect")
     .attr("x", 10 )
     .attr("y", function(d){ return y(d.LA) })
     .attr("width", function(d){ return x(d.Value) })
     .attr("height", 20)
-
-   //  Log the data
+    
+    //  Log the data
     console.log(data);
-   });
+  });
 </script>
 {% endblock %}

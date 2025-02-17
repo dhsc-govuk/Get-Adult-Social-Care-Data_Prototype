@@ -58,8 +58,7 @@
           { link: "#smart-insights", heading: "Smart insights (experimental)" }
                   ] %}
         <ul class="moj-side-navigation__list">
-          <li class="moj-side-navigation__item moj-side-navigation__item--active"><a href="#introduction">Introduction</a></li class="moj-side-navigation__item">
-         {% for item in items %}
+                  {% for item in items %}
             <li class="moj-side-navigation__item"><a href="{{item.link}}">{{item.heading}}</a></li class="moj-side-navigation__item">
          {% endfor %}
         </ul>
@@ -88,7 +87,7 @@
         For detailed information about this indicator, including data definitions, data source, update schedule and limitations to be aware of before using this data, go to
         <a href="../0-3/help/beds-per-100000-adult-population.html" class="govuk-link">supporting information for this data</a>.</li>
       </p>
-      <h2>
+      <h2 id="locations">
         Your selected locations
       </h2>
       <p>Select locations to view and compare data.</p>
