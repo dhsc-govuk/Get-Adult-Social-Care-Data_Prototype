@@ -70,6 +70,7 @@
 <a href="javascript:history.back()" class="govuk-back-link">Back</a>
 
 <div class="govuk-grid-row">
+  <!---
   <div class="govuk-grid-column-one-third">      
           <nav class="moj-side-navigation" aria-label="Side navigation">
             <h4 class="govuk-heading-m">Topics</h4>
@@ -90,11 +91,10 @@
               <li class="moj-side-navigation__item">
                 <a href="indicator-definitions">Indicator definitions and supporting information</a>
               </li>
-
-
+              
               <ul id="submenu-2" class="moj-side-navigation__sub-list">
 
-                <li class="moj-side-navigation__item">
+                <li class="moj-side-navigation__item moj-side-navigation__item--active">
                   <a href="beds-per-100000-adult-population.html">Adult social care beds per 100,000 adult population</a>
                 </li>
   
@@ -108,7 +108,7 @@
                 </li>
   
   
-                <li class="moj-side-navigation__item moj-side-navigation__item--active">
+                <li class="moj-side-navigation__item">
                   <a href="percentage-beds-occupied-care-provider-location">Percentage of adult social care beds occupied in care provider location</a>
                 </li>
 
@@ -122,8 +122,6 @@
                  </li>
 
                 </ul>
-
-
 
               <li class="moj-side-navigation__item">
                 <a href="data-sources">Data sources</a>
@@ -145,23 +143,38 @@
           </nav>
   </div>
 
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const toggleButton = document.querySelector(".moj-side-navigation__toggle");
+      const submenu = document.getElementById("submenu-2");
+  
+      toggleButton.addEventListener("click", function () {
+        const isExpanded = toggleButton.getAttribute("aria-expanded") === "true";
+  
+        toggleButton.setAttribute("aria-expanded", !isExpanded);
+        submenu.hidden = isExpanded;
+      });
+    });
+  </script>
+
+-->
   <div class="govuk-grid-column-two-thirds">
 
     <h1 class="govuk-heading-l">
-      Indicator definition and supporting information: percentage of adult social care beds occupied in care provider location
+      Indicator definition and supporting information: adult social care beds per 100,000 adult population
     </h1>
 
     <p class="govuk-body-l">Find detailed information about this indicator.</p>
 
+    <!--
     <p class="govuk-body"><a href="" class="govuk-link">View data for this indicator</a></p>
-
+    -->
     <table class="govuk-table">
-      <caption class="govuk-table__caption govuk-table__caption--s">Details for percentage of adult social care beds occupied in care provider location</caption>
-
+    
       <thead class="govuk-table__head">
         <tr class="govuk-table__row">
           <th scope="row" class="govuk-table__header govuk-!-width-one-third">What this measures</td>
-          <td class="govuk-table__cell">The percentage of adult social care beds reported as currently occupied in a specific care provider location.</td>
+          <td class="govuk-table__cell">The total number of adult social care beds recorded by care providers across health and adult social care, adjusted to a rate of 100,000 adults (aged 18 and over) in the local authority population.</td>
         </tr>
       </thead>
       <tbody class="govuk-table__body">
@@ -170,8 +183,8 @@
           <td class="govuk-table__cell"><a href="#" class="govuk-link" target="_blank">Capacity Tracker (opens in new tab)</td>
         </tr>
         <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header">Data correct as of</th>
-          <td class="govuk-table__cell">[Generated automatically]</td>
+          <th scope="row" class="govuk-table__header">Data available for</th>
+          <td class="govuk-table__cell">[Generated automatically, e.g. 5 February 2019 to 5 February 2025]</td>
         </tr>
         <tr class="govuk-table__row">
           <th scope="row" class="govuk-table__header">Update frequency</th>
@@ -185,7 +198,13 @@
 
         <tr class="govuk-table__row">
           <th scope="row" class="govuk-table__header">Methodology</th>
-          <td class="govuk-table__cell">The occupancy rate is calculated by dividing the number of occupied beds by the total number of available beds in each location. 'Beds' refers to registered adult social care beds, including those used for residential care, nursing care, and specialist services. 'Occupied beds' refers to beds reported as being in use at the time of data collection within the specified location.</td>
+          <td class="govuk-table__cell">This indicator counts all beds reported by care providers, including those in use and available for new admissions, that are related to adult social care.
+            <br> <br>
+            The data covers both self-funded and local authority-funded beds. It includes beds in residential and nursing care homes, covering services such as mental health support, learning disability care, and end-of-life care.
+            <br> <br>
+            Care providers update this information daily or whenever changes occur using the Capacity Tracker tool. They report how many beds are available and occupied in care settings such as nursing homes, residential care, and community care.
+            <br> <br>
+            The data is grouped by local areas, regions, and nationally so it is easier to compare.</td>
         </tr>
 
         <tr class="govuk-table__row">
@@ -198,7 +217,7 @@
             <br><br>
             The data is self-reported and not independently verified.</td>
         </tr>
-        
+
         <tr class="govuk-table__row">
           <th scope="row" class="govuk-table__header">Data definitions</th>
           <td class="govuk-table__cell">Definitions are currently not available. You may need to contact the data provider.</td>
@@ -208,10 +227,8 @@
 
     
   
-
+<!--
     <p class="govuk-body"><a href="indicator-definitions.html" class="govuk-link">Full list of indicator definitions and supporting information</a></p>
-
-    
-
+  -->
   {% endblock %}
   
