@@ -50,6 +50,10 @@
     active: true
   },
   {
+    href: "get-data",
+    text: "Get data"
+  },
+  {
     href: "../help/topics",
     text: "Help"
   }
@@ -81,277 +85,150 @@
 
       </div>
     </div>
+    <script>
+      document.getElementById('hide-banner').addEventListener('click', function (event) {
+        event.preventDefault(); // Prevent the default action of the link
+        const banner = document.getElementById('govuk-notification-banner');
+        banner.style.display = 'none'; // Hides the banner
+      });
+    </script>
 
-    <h1 class="govuk-heading-xl">
-      Get adult social care data
-    </h1>
-   <p class="govuk-body-l">Access adult social care data for England, all in one place</p>
 
-   <!--
-   <p class="govuk-body">Access the most current data from trusted sources, analyse trends, and uncover insights.</p>
+      <h2 class="govuk-heading-l">Featured topics</h2>
 
-      <div class="govuk-button-group">
-        <a href="get-data"><button type="submit" class="govuk-button" data-module="govuk-button">
-      Start here to get data
-        </button>
-      </a>
-   
-
-     
-       <a href="dashboard"><button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
-      Go to your dashboard
-      </button></a>
+     <style>
+    table {
+      margin: 2em 0;
+      text-align: left;
+      vertical-align: top;
+      border-collapse: collapse;
+      font-family: "GDS Transport", arial, sans-serif;
+    }
+    
+    .companies-table{
+      display:block;
+      min-width:600px
+    }
+    
+    caption {
+      text-align: left;
+      font-size: 1.4em;
+    }
+    
+    th,
+    td {
+      /*   border: 1px solid #666; */
+      padding: 1em;
+    }
+    
+    th {
+      background-color: #acbcd5;
+      /*     #a15dbc; */
+      color: #000;
+      font-weight: normal;
+    }
+    
+    tr{box-shadow: 0 3px 3px rgb(0 0 0 / 0.1);}
+    
+    tr:hover {
+      text-decoration: underline;
+    }
+    
+    tr:nth-child(odd) {
+      background-color: #fff;
+    }
+    
+    tr:nth-child(even) {
+      background-color: #f2f2f2;
+    } 
+    
+    #search-queries{
+      font-family: "GDS Transport", arial, sans-serif;
+      border: none;
+      margin-bottom:1.5em
+    }
+    
+    .search-queries-label{display: block;}
+    
+    .search-queries-input{padding:1em; margin-top:0.5em; width: 40em; border-radius: 5px;}
+    
+    .govuk-grid-column-one-half{
+      background: #f3f2f1;
+      border:0.5em solid white
+    }
+  </style>
   
-      </div>
-      -->
-
-      <!--What's new -->
-      <!---
-
-      <h2 class="govuk-heading-l">What's new</h2>
-
-      <h3 class="govuk-heading-s">March 2025</h3>
-
-      <p class="govuk-body">
-        The Get adult social care data service is now live. Our first update focuses on <strong>demand and capacity</strong> in adult social care, helping you:</p>
-
-        <ul class="govuk-list govuk-list--bullet">
-          <li><strong>understand current demand and provision</strong> – explore factors driving demand and get insights into current provision</li>
-            <li><strong>plan for future demand</strong> – analyse projected care needs and trends by care type</li>
-              <li><strong>assess the current market</strong> – review provider availability, occupancy levels and service performance</li>
-            </ul>
+  <!-- 
+  
+  Search box 
+  
+  -->
+  <!-- <fieldset id="search-queries">
+    <label class="search-queries-label" for="first-name"><h3>Search indicators</h3><p>By name, filter or dataset</p></label>
+    <input class="search-queries-input " type="text" id="first-name" name="first-name">
+  </fieldset> -->
+  
+  <!-- 
+  
+  Topics 
+  
  
-      <p class="govuk-body"><a href="../help/news-archive.html" class="govuk-link">View news archive</a></p>
+  <h2>Topics</h2>
+  <h2 class="govuk-heading-m">Demand and capacity</h2>
 
-      <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
-               -->
-      <!--
-      <h2 class="govuk-heading-m">Turn data into insight</h2>
-
-      <p class="govuk-body">Go beyond numbers. With this tool, you can uncover insights such as:
-
-        <ul class="govuk-list govuk-list--bullet">
-          <li>trends in demand for different types of care</li>
-          <li>areas where capacity is under pressure or services are over-provided</li>
-          <li>patterns in how services and care needs vary across different areas and indicators</li>
-        </ul>
-
-        <p class="govuk-body">To explore further, <a href="get-data" class="govuk-link">browse data by topic</a>.</p>
-
-        <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
-      -->
-       <!---
-        <h2 class="govuk-heading-m">Highlighted topics</h2>
-
-        <h3 class="govuk-heading-s"><a href="" class="govuk-link">Demand and capacity</a><h3>
-
-        <p class="govuk-body">Analyse demand for care services and the market's capacity to meet needs.</p>
-
-        <h3 class="govuk-heading-s"><a href="" class="govuk-link">Workforce</a><h3>
-
-          <p class="govuk-body">Identify trends and patterns in the adult social care workforce.</p>
-  
-        <h3 class="govuk-heading-s"><a href="" class="govuk-link">Finance and economy</a><h3>
-
-        <p class="govuk-body">Review funding, spending patterns, and financial pressures on the sector..</p>
-
-         <p class="govuk-body"><a href="" class="govuk-link">Explore all topics</a></p>
-
-        <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
---->
-        <!---
-        <h2 class="govuk-heading-m">How data is presented</h2>
-
-        <p class="govuk-body">Get more than just spreadsheets and static tables.
-
-          <ul class="govuk-list govuk-list--bullet">
-            <li><strong>Interactive charts:</strong> Explore data visually and filter it to meet your needs
-            <li><strong>Personalised dashboard</strong>: Save and share key data tailored to your goals
-            <li><strong>Stories in data:</strong> Contextualise numbers with insights to support action and decision-making
-          </ul>
-
-          <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
-
-        -->
-        <!--
-        <h2 class="govuk-heading-m">About Get adult social care data</h2>
-  
-        <p class="govuk-body">This digital tool gives you access to reliable, up-to-date data relevant to adult social care in England.</p>
-        
-        <p class="govuk-body">Bringing together data from multiple sources, it helps you uncover valuable insights and make informed decisions.</p>
-  
-        <h3 class="govuk-heading-s">What this service offers</h3>
-        
-        <ul class="govuk-list govuk-list--bullet">
-        <li><strong>Detailed data</strong> to help answer your key questions relating to adult social care</li>
-        <li><strong>Interactive tools</strong> to explore and analyse data, benchmark performance and identify trends</li>
-        <li><strong>Data-driven insights</strong> to help your organisation drive change and plan for the future</li>
-        </ul>
-  
-        <p class="govuk-body"><a href="../help/help.html" class="govuk-link">Learn more about Get adult social care data</a></p>
-  
-        <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
-      -->
-        
-      <script>
-        document.getElementById('hide-banner').addEventListener('click', function (event) {
-          event.preventDefault(); // Prevent the default action of the link
-          const banner = document.getElementById('govuk-notification-banner');
-          banner.style.display = 'none'; // Hides the banner
-        });
-      </script>
-
-
-        <h2 class="govuk-heading-l">Featured topics</h2>
-
-       <style>
-      table {
-        margin: 2em 0;
-        text-align: left;
-        vertical-align: top;
-        border-collapse: collapse;
-        font-family: "GDS Transport", arial, sans-serif;
-      }
-      
-      .companies-table{
-        display:block;
-        min-width:600px
-      }
-      
-      caption {
-        text-align: left;
-        font-size: 1.4em;
-      }
-      
-      th,
-      td {
-        /*   border: 1px solid #666; */
-        padding: 1em;
-      }
-      
-      th {
-        background-color: #acbcd5;
-        /*     #a15dbc; */
-        color: #000;
-        font-weight: normal;
-      }
-      
-      tr{box-shadow: 0 3px 3px rgb(0 0 0 / 0.1);}
-      
-      tr:hover {
-        text-decoration: underline;
-      }
-      
-      tr:nth-child(odd) {
-        background-color: #fff;
-      }
-      
-      tr:nth-child(even) {
-        background-color: #f2f2f2;
-      } 
-      
-      #search-queries{
-        font-family: "GDS Transport", arial, sans-serif;
-        border: none;
-        margin-bottom:1.5em
-      }
-      
-      .search-queries-label{display: block;}
-      
-      .search-queries-input{padding:1em; margin-top:0.5em; width: 40em; border-radius: 5px;}
-      
-      .govuk-grid-column-one-half{
-        background: #f3f2f1;
-        border:0.5em solid white
-      }
-    </style>
-    
-    <!-- 
-    
-    Search box 
-    
-    -->
-    <!-- <fieldset id="search-queries">
-      <label class="search-queries-label" for="first-name"><h3>Search indicators</h3><p>By name, filter or dataset</p></label>
-      <input class="search-queries-input " type="text" id="first-name" name="first-name">
-    </fieldset> -->
-    
-    <!-- 
-    
-    Topics 
-    
-   
-    <h2>Topics</h2>
-    <h2 class="govuk-heading-m">Demand and capacity</h2>
-  
-    <p>Explore a range of indicators across different topics, or <a href="all-indicators">view all indicators</a>.
-    --> 
-    </p>
-    <div class="govuk-grid-row">
-      <a href="../data-pages/present-demand">
-      <div class="govuk-grid-column-one-half">
-        <h2>
-          Current population need and provision
-        </h2>
-        <p>
-          Explore factors driving population need for adult social care services and get insights into current provision to meet that need.
-        </p>
-      </div>
-    </a>
-    <a href="#">
-      <div class="govuk-grid-column-one-half">
-        <h2>
-          Future population need
-        </h2>
-        <p>
-          Understand the likely need for care, including projected needs by care type, with high-level and detailed data.
-        </p>
-      </div>
-    </a>
-    <a href="#">
-      <div class="govuk-grid-column-one-half">
-        <h2>
-          Current market
-        </h2>
-        <p>
-          Assess the local care market, including provider availability, occupancy levels, service performance and fee rates.
-        </p>
-      </div>
-      </a>
+  <p>Explore a range of indicators across different topics, or <a href="all-indicators">view all indicators</a>.
+  --> 
+  </p>
+  <div class="govuk-grid-row">
+    <a href="../data-pages/present-demand">
+    <div class="govuk-grid-column-one-half">
+      <h2>
+        Current population needs and provision
+      </h2>
+      <p>
+        Explore factors driving population needs for adult social care services and get insights into current provision to meet these needs.
+      </p>
     </div>
+  </a>
+  <a href="#">
+    <div class="govuk-grid-column-one-half">
+      <h2>
+        Future population needs
+      </h2>
+      <p>
+        Understand the likely population needs for care, including projected needs by care type, with high-level and detailed data.
+      </p>
+    </div>
+  </a>
+  <a href="#">
+    <div class="govuk-grid-column-one-half">
+      <h2>
+        Current market
+      </h2>
+      <p>
+        Assess the local care market, including provider availability, occupancy levels, service performance and fee rates.
+      </p>
+    </div>
+    </a>
+  </div>
 
 
-    <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
-    
+  <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+  
 
-    <h2 class="govuk-heading-l">What's new</h2>
+  <h2 class="govuk-heading-l">What's new</h2>
 
-    <h3 class="govuk-heading-s">March 2025</h3>
+  <h3 class="govuk-heading-s">March 2025</h3>
+
+  <p class="govuk-body">
+    The Get adult social care data service is now live. Our first update focuses on data and insights to help you analyse and understand population needs and capacity issues.</p>
 
     <p class="govuk-body">
-      The Get adult social care data service is now live. Our first update focuses on data and insights to help you identify population need and capacity issues.</p>
+    We're working on adding more granular data, improved filtering options, and expanded indicators in future updates.</p>
 
-      <p class="govuk-body">
-      We're working on adding more granular data, improved filtering options, and expanded indicators in future updates.</p>
+  <p class="govuk-body"><a href="../help/news-archive.html" class="govuk-link">View news archive</a></p>
 
-    <p class="govuk-body"><a href="../help/news-archive.html" class="govuk-link">View news archive</a></p>
-
-    <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
-
-
-    </div>
-
-  <!--
-  <h2 class="govuk-heading-m">Latest data releases</h2>
-
-  <p class="govuk-body">New data is available for these indicators:</p>
-
-  <p class="govuk-body"><strong>22 January 2025</strong><br><li><a href="../data-pages/total_beds.html" class="govuk-link">Total beds</a></li></p>
-  <p class="govuk-body"><strong>7 January 2025</strong><br><li><a href="" class="govuk-link">Overall client satisfaction</a></li></p>
-  <p class="govuk-body"><strong>6 January 2025</strong><br><li><a href="" class="govuk-link">Bed occupancy rate</a></li></p>
-
-  <p class="govuk-body"><a href="" class="govuk-link">View all updates</a></p>
-  -->
+  <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
 
   
 </div>
