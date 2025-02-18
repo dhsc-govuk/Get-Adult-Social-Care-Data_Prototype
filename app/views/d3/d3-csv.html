@@ -10,10 +10,29 @@
 <a href="d3" class="govuk-back-link">Back</a>
 <h1>{{pageName}}</h1>
 
-
 <style>
-  
+  text{font-family:"GDS Transport", arial, sans-serif;font-size:1em}
 </style>
+<p>Here is an SVG with the size set to ems</p>
+<svg viewBox="0 0 20em 20em" height = "12em" width = 15em xmlns="http://www.w3.org/2000/svg">
+  <!-- X axis -->
+  <line x1 = "0" y1 = "0" x2 = "10em" y2 = "0" stroke="grey"></line>
+  <!-- Ticks -->
+  <line x1 = "10em" y1 = "0" x2 = "10em" y2 = "0.5em" stroke="grey"></line>
+  <!-- Labels -->
+  <text x = 0 y = "1em">0</text>
+  <text x = 10em y = "1.5em">2,400</text>
+
+  <!-- Bars -->
+  <text x = "0" y = 2.5em>Suffolk</text>
+  <rect x="0" y = "2.8em" width="5em" height="1em" rx="1" fill="green"/>
+  <text x = "0" y = "5.5em">Essex</text>
+  <rect x="0" y = "5.8em" width="3em" height="1em" rx="1" fill="green"/>
+  <text x = "0" y = "8.5em">Norfolk</text>
+  <rect x="0" y = "8.8em" width="9em" height="1em" rx="1" fill="green"/>
+</svg>
+
+<p>Here is an SVG created with D3.js</p>
 <!-- Add a svg area, empty -->
 <div id="my_dataviz"></div>
 
@@ -24,15 +43,18 @@
       overflow-x: scroll;
     }
   }
+  .legendTitle, .chartText{font-size:1.2em}
+  .chartAxis{font-size:1.5em}
+
 </style>
 
 <!-- Based on the example https://d3-graph-gallery.com/intro_d3js.html -->
 <script>
 
 // set the dimensions and margins of the graph
-var margin = {top: 20, right: 30, bottom: 40, left: 90},
-    width = 460 - margin.left - margin.right,
-    height = 200 - margin.top - margin.bottom;
+var margin = {top: 50, right: 300, bottom: 100, left: 100},
+    width = 800 - margin.left - margin.right,
+    height = 300 - margin.top - margin.bottom;
 
 // append the svg object to the body of the page
 var svg = d3.select("#my_dataviz")
@@ -56,15 +78,17 @@ var x = d3.scaleLinear()
     .call(d3.axisBottom(x))
     .selectAll("text")
       .attr("transform", "translate(-10,0)rotate(-45)")
-      .style("text-anchor", "end");
+      .style("text-anchor", "end")
+      .attr("class","chartAxis");
 
   // Y axis
   var y = d3.scaleBand()
     .range([ 0, height ])
     .domain(data.map(function(d) { return d.LA; }))
-    .padding(.1);
+    .padding(.6);
   svg.append("g")
-    .call(d3.axisLeft(y));
+    .call(d3.axisLeft(y))
+    .attr("class","chartText");
 
   //Bars
   svg.selectAll("myRect")
@@ -73,10 +97,19 @@ var x = d3.scaleLinear()
     .append("rect")
     .attr("x", x(0) )
     .attr("y", function(d) { return y(d.LA); })
-    .attr("width", function(d) { return x(d.Value); })
+    .attr("width", function(d) { return x (d.Value); })
     .attr("height", y.bandwidth() )
     .attr("fill", "#69b3a2");
 
+    svg.attr("transform",  "translate(150 50)")
+
+    // Add a legend
+const legend = svg.append("g");
+legend.append("text")
+	.text("Beds per 100,000 population")
+	.attr("x", 0)
+	.attr("y", -20)
+	.attr("class", "legendTitle");
    //  Log the data
     console.log(data);
    });
