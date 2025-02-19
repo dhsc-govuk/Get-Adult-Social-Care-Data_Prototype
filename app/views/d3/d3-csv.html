@@ -13,28 +13,39 @@
 <style>
   text{font-family:"GDS Transport", arial, sans-serif;font-size:1em}
 </style>
-<p>Here is an SVG with the size set to ems</p>
-<svg viewBox="0 0 20em 20em" height = "12em" width = 15em xmlns="http://www.w3.org/2000/svg">
+<p>Here is an SVG bar chart with the size set to ems:</p>
+<svg viewBox="0 0 20em 20em" height = "12em" width = 30em xmlns="http://www.w3.org/2000/svg">
   <!-- X axis -->
-  <line x1 = "0" y1 = "0" x2 = "10em" y2 = "0" stroke="grey"></line>
+  <line x1 = "0" y1 = "0" x2 = "20em" y2 = "0" stroke="grey"></line>
   <!-- Ticks -->
+  <line x1 = "0em" y1 = "0" x2 = "0em" y2 = "0.5em" stroke="grey"></line>
   <line x1 = "10em" y1 = "0" x2 = "10em" y2 = "0.5em" stroke="grey"></line>
+  <line x1 = "20em" y1 = "0" x2 = "20em" y2 = "0.5em" stroke="grey"></line>
+
   <!-- Labels -->
-  <text x = 0 y = "1em">0</text>
-  <text x = 10em y = "1.5em">2,400</text>
+  <text x = 0 y = "1.5em">0</text>
+  <text x = 10em y = "1.5em">1,500</text>
+  <text x = 20em y = "1.5em">3,000</text>
 
   <!-- Bars -->
-  <text x = "0" y = 2.5em>Suffolk</text>
-  <rect x="0" y = "2.8em" width="5em" height="1em" rx="1" fill="green"/>
-  <text x = "0" y = "5.5em">Essex</text>
-  <rect x="0" y = "5.8em" width="3em" height="1em" rx="1" fill="green"/>
-  <text x = "0" y = "8.5em">Norfolk</text>
-  <rect x="0" y = "8.8em" width="9em" height="1em" rx="1" fill="green"/>
+   <g>
+    <title>Suffolk - 1,500</title>
+  <text x = "0" y = 3em>Suffolk</text>
+  <rect x="0" y = "3.3em" width="10em" height="1em" rx="3"fill="#69b3a2"/>
+</g>
+<g>
+  <title>Cambridgeshire - 1,200</title>
+  <text x = "0" y = "6em">Cambridgeshire</text>
+  <rect x="0" y = "6.3em" width="6em" height="1em" rx="3"fill="#69b3a2"/>
+</g>
+<g>
+  <title>Norfolk - 2,800</title>
+  <text x = "0" y = "9em">Norfolk</text>
+  <rect x="0" y = "9.3em" width="18em" height="1em" rx="3"fill="#69b3a2"/>
+</g>
 </svg>
 
-<p>Here is an SVG created with D3.js</p>
-<!-- Add a svg area, empty -->
-<div id="my_dataviz"></div>
+<p>Here's an SVG bar chart created with D3.js:</p>
 
 <style>
   @media only screen and (max-width: 500px) {
@@ -47,6 +58,8 @@
   .chartAxis{font-size:1.5em}
 
 </style>
+<!-- Add a svg area, empty -->
+<div id="my_dataviz"></div>
 
 <!-- Based on the example https://d3-graph-gallery.com/intro_d3js.html -->
 <script>
@@ -114,4 +127,40 @@ legend.append("text")
     console.log(data);
    });
 </script>
+<p>Here's the same data shown in a table with conditional formatting:</p>
+<div class="govuk-grid-row">
+<div class="govuk-grid-column-one-half">
+  <h3>Total beds per 100,000 people</h3>
+    <table class="govuk-table">
+    <!-- <caption><h3 class="govuk-heading-s" style="text-align:left">Suffolk County Council</h3></caption>
+    <tr class="govuk-table__row"> -->
+      <th scope="row" class="govuk-table__header">Suffolk</th>
+      <td class="govuk-table__cell">1500
+        <svg viewBox="0 0 60 10" xmlns="http://www.w3.org/2000/svg">
+          <rect x="0" width="60" height="5" rx="1"stroke="#e1e1e1" fill="white"/>
+          <rect x="0" width="30" height="5" rx="1"fill="gold" stroke="grey"/>
+        </svg>
+      </td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Cambridgeshire</th>
+      <td class="govuk-table__cell">1,200
+        <svg viewBox="0 0 60 10" xmlns="http://www.w3.org/2000/svg">
+          <rect x="0" width="60" height="5" rx="1"stroke="#e1e1e1" fill="white"/>
+            <rect x="0" width="24" height="5" rx="1"fill="gold" stroke="grey"/>
+        </svg>
+      </td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Norfolk</th>
+      <td class="govuk-table__cell">2,800
+        <svg viewBox="0 0 60 10" xmlns="http://www.w3.org/2000/svg">
+          <rect x="0" width="60" height="5" rx="1"stroke="#e1e1e1" fill="white"/>
+              <rect x="0" width="53" height="5" rx="1"fill="gold" stroke="grey"/>
+        </svg>
+      </td>
+    </tr>
+    </table>
+    </div>
+    </div
 {% endblock %}
