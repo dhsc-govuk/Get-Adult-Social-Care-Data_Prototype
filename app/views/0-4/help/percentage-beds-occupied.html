@@ -159,7 +159,7 @@
       <thead class="govuk-table__head">
         <tr class="govuk-table__row">
           <th scope="row" class="govuk-table__header govuk-!-width-one-third">What this measures</td>
-          <td class="govuk-table__cell">The total number of beds recorded by care providers across health and adult social care, adjusted to a rate of 100,000 adults (aged 18 and over) in the local authority population.</td>
+          <td class="govuk-table__cell">The percentage of occupied beds in relevant bed types, in providers registered with the Care Quality Commision (CQC).</td>
         </tr>
       </thead>
       <tbody class="govuk-table__body">
@@ -183,7 +183,23 @@
 
         <tr class="govuk-table__row">
           <th scope="row" class="govuk-table__header">Methodology</th>
-          <td class="govuk-table__cell">The occupancy rate is calculated by dividing the number of occupied beds by the total number of available beds. 'Beds' refers to registered adult social care beds, including those used for residential care, nursing care, and specialist services.'Occupied beds' refers to beds reported as being in use at the time of data collection.</td>
+          <td class="govuk-table__cell">The occupancy rate is calculated by dividing the number of occupied beds by the total number of beds. 'Beds' refers to adult social care beds in care providers, and including the following categories:
+            <br> <br>
+            <ul class="govuk-list govuk-list--bullet">
+              <li>dementia nursing</li>
+              <li>general residential</li>
+              <li>learning disability residential</li>
+              <li>YPD - young physically disabled</li>
+              <li>learning disability nursing</li>
+              <li>community care</li>
+              <li>dementia residential</li>
+              <li>transitional</li>
+              <li>mental health residential</li>
+              <li>general nursing</li>
+            </ul>
+            'Occupied beds' refers to beds reported as being in use at the time of data collection.  
+            <br><br>
+            Small number supression is applied at standard procedures. We have surpressed occupied bed counts less than 5 and the corresponding percentages.</td>
         </tr>
 
         <tr class="govuk-table__row">
@@ -198,8 +214,44 @@
         </tr>
 
         <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Methodology</th>
+          <td class="govuk-table__cell">This indicator counts all beds reported by care providers that are related to adult social care, including:
+            <br> <br>
+            <ul class="govuk-list govuk-list--bullet">
+              <li>dementia nursing</li>
+              <li>general residential</li>
+              <li>learning disability residential</li>
+              <li>YPD - young physically disabled</li>
+              <li>learning disability nursing</li>
+              <li>community care</li>
+              <li>dementia residential</li>
+              <li>transitional</li>
+              <li>mental health residential</li>
+              <li>general nursing</li>
+            </ul>
+            The data covers both self-funded and local authority-funded beds.
+            <br> <br>
+            Care providers registered with the Care Quality Commission (CQC) must update this information at least monthly using the Capacity Tracker tool. The mandated reporting period is between the 8th and 14th every month, or the next working day if the 14th falls on a weekend or holiday.
+            <br> <br>
+            Small number supression is applied at standard procedures. We have rounded all bed counts in the local authority to the nearest 5.</td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Limitations</th>
+          <td class="govuk-table__cell">Care providers may update their Capacity Tracker data at different times outide the reporting period.
+            <br><br>
+            As a result, the data does not provide a snapshot of all providers at the same time. It reflects the most recent information available when the data was retrieved.
+            <br><br>
+            The data is self-reported and not independently verified.
+            <br><br>
+            When adult social care beds are vacant, they can be used flexibly across a range of bed types. We are exploring ways to reflect this in the data.
+            <br><br>
+            The current bed types are not clearly defined and may be interpreted differently by care providers submitting data. To improve consistency, we are working with Capacity Tracker to explore whether more detailed bed descriptions can be provided.</td>
+        </tr>
+
+        <tr class="govuk-table__row">
           <th scope="row" class="govuk-table__header">Data definitions</th>
-          <td class="govuk-table__cell">Definitions are currently not available. You may need to contact the data provider.</td>
+          <td class="govuk-table__cell">Refer to the Limitations section for details about work relating to bed type descriptions.</td>
         </tr>
       </tbody>
     </table>
