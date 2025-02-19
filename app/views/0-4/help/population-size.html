@@ -1,6 +1,6 @@
 {% extends "layouts/main.html" %}
 
-{% set pageName="Help" %}
+{% set pageName="Indicator definition and supporting information: population size" %}
 
 {% block header %}
 <header class="govuk-header govuk-header--full-width-border" data-module="govuk-header">
@@ -70,7 +70,7 @@
 <a href="javascript:history.back()" class="govuk-back-link">Back</a>
 
 <div class="govuk-grid-row">
-    <!---
+
   <div class="govuk-grid-column-one-third">      
           <nav class="moj-side-navigation" aria-label="Side navigation">
             <h4 class="govuk-heading-m">Topics</h4>
@@ -83,6 +83,7 @@
               <li class="moj-side-navigation__item">
                 <a href="quick-guide">Quick guide</a>
               </li>
+
               <li class="moj-side-navigation__item">
                 <a href="about" aria-current="location">About this service</a>
               </li>
@@ -112,16 +113,16 @@
                   <a href="percentage-beds-occupied-care-provider-location">Percentage of adult social care beds occupied in care provider location</a>
                 </li>
 
-                <li class="moj-side-navigation__item">
+                
+                <li class="moj-side-navigation__item moj-side-navigation__item--active">
                   <a href="population-age">Population age</a>
                 </li>
 
-                <li class="moj-side-navigation__item moj-side-navigation__item--active">
+                <li class="moj-side-navigation__item">
                     <a href="population-disability">Population disability</a>
                  </li>
 
                 </ul>
-
 
               <li class="moj-side-navigation__item">
                 <a href="data-sources">Data sources</a>
@@ -143,79 +144,70 @@
           </nav>
   </div>
 
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const toggleButton = document.querySelector(".moj-side-navigation__toggle");
-      const submenu = document.getElementById("submenu-2");
-  
-      toggleButton.addEventListener("click", function () {
-        const isExpanded = toggleButton.getAttribute("aria-expanded") === "true";
-  
-        toggleButton.setAttribute("aria-expanded", !isExpanded);
-        submenu.hidden = isExpanded;
-      });
-    });
-  </script>
--->
-
   <div class="govuk-grid-column-two-thirds">
 
     <h1 class="govuk-heading-l">
-      Indicator definition and supporting information: population disability
+      Indicator definition and supporting information: population size 
     </h1>
 
     <p class="govuk-body-l">Find detailed information about this indicator.</p>
-    <!---
+
+      <!---
     <p class="govuk-body"><a href="" class="govuk-link">View data for this indicator</a></p>
   -->
-  <table class="govuk-table">
+    <table class="govuk-table">
+   
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header govuk-!-width-one-third">What this measures</td>
+          <td class="govuk-table__cell">The number of individuals in the population.</td>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Source</th>
+          <td class="govuk-table__cell"><a href="https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationprojections/bulletins/subnationalpopulationprojectionsforengland/2018based" class="govuk-link" target="_blank">Office for National Statistics subnational population projections for England (opens in new tab)</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Data correct as of</th>
+          <td class="govuk-table__cell">[Generated automatically]</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Update frequency</th>
+          <td class="govuk-table__cell">Yearly (indicator), every 2 years (projection) </td>
+        </tr>
 
-    <thead class="govuk-table__head">
-      <tr class="govuk-table__row">
-        <th scope="row" class="govuk-table__header govuk-!-width-one-third">What this measures</td>
-        <td class="govuk-table__cell">The percentage of the population in England who are considered disabled.</td>
-      </tr>
-    </thead>
-    <tbody class="govuk-table__body">
-      <tr class="govuk-table__row">
-        <th scope="row" class="govuk-table__header">Source</th>
-        <td class="govuk-table__cell"><a href="https://www.ons.gov.uk/census/census2021dictionary/variablesbytopic/healthdisabilityandunpaidcarevariablescensus2021/disability" class="govuk-link" target="_blank">Office for National Statistics (opens in new tab)</td>
-      </tr>
-      <tr class="govuk-table__row">
-        <th scope="row" class="govuk-table__header">Data correct as of</th>
-        <td class="govuk-table__cell">[Generated automatically]</td>
-      </tr>
-      <tr class="govuk-table__row">
-        <th scope="row" class="govuk-table__header">Update frequency</th>
-        <td class="govuk-table__cell">Monthly</td>
-      </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Data available for</th>
+          <td class="govuk-table__cell">[Generated automatically, e.g. 5 February 2019 to 5 February 2025]</td>
+        </tr>
 
-      <tr class="govuk-table__row">
-        <th scope="row" class="govuk-table__header">Data available for</th>
-        <td class="govuk-table__cell">[Generated automatically, e.g. 5 February 2019 to 5 February 2025]</td>
-      </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Methodology</th>
+          <td class="govuk-table__cell">This data is derived from subnational population projections, which estimate future population size and age structure based on trends and assumptions about births, deaths, and migration.</td>
+        </tr>
 
-      <tr class="govuk-table__row">
-        <th scope="row" class="govuk-table__header">Methodology</th>
-        <td class="govuk-table__cell">Disability status is based on self-reported data from the 2021 Census results.</td>
-      </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Limitations</th>
+          <td class="govuk-table__cell">Subnational population projections make assumptions based on past demographic trends. They become increasingly uncertain the further they extend into the future.
+            <br><br>
+            The projections do not account for political or economic changes that could affect future population size.
+            <br><br>
+            Projections are usually superseded every 2 years when the next scheduled release is published. This can result in changes to historical data.</td>
+        </tr>
 
-      <tr class="govuk-table__row">
-        <th scope="row" class="govuk-table__header">Limitations</th>
-        <td class="govuk-table__cell">The data is based on survey responses, which may be subject to response bias.</td>
-      </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Data definitions</th>
+          <td class="govuk-table__cell">All ages are included in the population size.</td>
+        </tr>
+      </tbody>
+    </table>
 
-      <tr class="govuk-table__row">
-        <th scope="row" class="govuk-table__header">Data definitions</th>
-        <td class="govuk-table__cell">'People with disabilities' refers to individuals who report limitations in daily activities due to a long-term physical, mental, or illnesses.</td>
-      </tr>
-    </tbody>
-  </table>
-
+    
   
 <!--
     <p class="govuk-body"><a href="indicator-definitions.html" class="govuk-link">Full list of indicator definitions and supporting information</a></p>
   -->
-    
+
   {% endblock %}
   
