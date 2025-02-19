@@ -14,22 +14,27 @@
   text{font-family:"GDS Transport", arial, sans-serif;font-size:1em}
 </style>
 <p>Here is an SVG with the size set to ems</p>
-<svg viewBox="0 0 20em 20em" height = "12em" width = 15em xmlns="http://www.w3.org/2000/svg">
+<svg viewBox="0 0 20em 20em" height = "12em" width = 30em xmlns="http://www.w3.org/2000/svg">
   <!-- X axis -->
-  <line x1 = "0" y1 = "0" x2 = "10em" y2 = "0" stroke="grey"></line>
+  <line x1 = "0" y1 = "0" x2 = "20em" y2 = "0" stroke="grey"></line>
   <!-- Ticks -->
   <line x1 = "10em" y1 = "0" x2 = "10em" y2 = "0.5em" stroke="grey"></line>
+  <line x1 = "20em" y1 = "0" x2 = "20em" y2 = "0.5em" stroke="grey"></line>
+
   <!-- Labels -->
   <text x = 0 y = "1em">0</text>
-  <text x = 10em y = "1.5em">2,400</text>
+  <text x = 20em y = "1.5em">3,000</text>
 
   <!-- Bars -->
+   <g>
+    <title>Suffolk - 1,500</title>
   <text x = "0" y = 2.5em>Suffolk</text>
-  <rect x="0" y = "2.8em" width="5em" height="1em" rx="1" fill="green"/>
+  <rect x="0" y = "2.8em" width="10em" height="1em" rx="1" fill="#69b3a2"/>
+</g>
   <text x = "0" y = "5.5em">Essex</text>
-  <rect x="0" y = "5.8em" width="3em" height="1em" rx="1" fill="green"/>
+  <rect x="0" y = "5.8em" width="6em" height="1em" rx="1" fill="#69b3a2"/>
   <text x = "0" y = "8.5em">Norfolk</text>
-  <rect x="0" y = "8.8em" width="9em" height="1em" rx="1" fill="green"/>
+  <rect x="0" y = "8.8em" width="18em" height="1em" rx="1" fill="#69b3a2"/>
 </svg>
 
 <p>Here is an SVG created with D3.js</p>
