@@ -33,7 +33,7 @@
     ]  %}
     
     <!-- Set dimensions for the graph -->
-    {% set leftMargin = 20 %}
+    {% set leftMargin = 25 %}
     {% set barWidth = (100 / thisData.length) - 4 %}
         <style>
             .svg-bar{display:block; overflow-x: auto;}
@@ -43,10 +43,10 @@
                     <title>Beds per 100,000 by local authorities in the East of England</title>
 
                     <!-- Axis labels -->
-                    <text x="0" y="30">2,400</text>
-                    <text x="0" y="160">1,200</text>
-                    <text x="0" y="280">0</text>
-                    <text x = "{{leftMargin}}%" y="320">Local authorities in East of England</text>
+                    <text x="0" y="1em">2,400</text>
+                    <text x="0" y="50%">1,200</text>
+                    <text x="0" y="85%">0</text>
+                    <text x = "{{leftMargin}}%" y="95%">Local authorities</text>
 
                     <!-- Ticks -->
                     <line x1="{{leftMargin - barWidth / 2}}%" y1="30" x2 ="{{leftMargin + barWidth * thisData.length }}%" y2="30" stroke="grey" stroke-width="1" />
