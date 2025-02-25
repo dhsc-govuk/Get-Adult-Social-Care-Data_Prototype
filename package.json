@@ -11,6 +11,7 @@
     "govuk-frontend": "^5.8.0",
     "govuk-prototype-kit": "13.16.2",
     "hmrc-frontend": "^6.56.0",
+    "node": "^18.20.7",
     "nunjucks": "^3.2.4"
   }
 }
