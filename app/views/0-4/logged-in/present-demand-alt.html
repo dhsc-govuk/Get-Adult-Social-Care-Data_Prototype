@@ -14,12 +14,11 @@
       <nav class="moj-side-navigation" aria-label="Side navigation">
         <h3>Contents</h3>
         {% set items = [
-          { link: "#settings", heading: "Your selected locations" },
+          { link: "#settings", heading: "Settings" },
           { link: "#providers", heading: "Residential care providers in your local authority" },
           { link: "#population", heading: "Population needs" },
-          { link: "#capacity", heading: "Capacity" },
-                 { link: "#definition", heading: "Indicator definition and supporting information" }
-        ] %}
+          { link: "#capacity", heading: "Capacity" }
+                        ] %}
         <ul class="moj-side-navigation__list">
                    {% for item in items %}
             <li class="moj-side-navigation__item"><a href="{{item.link}}">{{item.heading}}</a></li class="moj-side-navigation__item">
@@ -38,6 +37,19 @@
     <style>
       h2{margin-top:4em}
     </style>
+    <h2 id="definition">Indicator definition and supporting information</h2>
+
+    <p class="govuk-body">
+      Find detailed information about each indicator, including data definitions, data source, update schedule, and any limitations to be aware of before using the data.
+    </p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li><a href="../help/population-age.html" class="govuk-link">Population age</a></li>
+      <li><a href="../help/population-disability.html" class="govuk-link">Population disability</a></li>
+      <li><a href="../help/beds-per-100000-adult-population.html" class="govuk-link">Adult social care beds per 100,000 adult population</a></li>
+      <li><a href="../help/percentage-beds-occupied" class="govuk-link">Percentage of adult social care beds occupied</a></li>
+      <li><a href="../help/beds-care-provider-location" class="govuk-link">Number of adult social care beds in care provider location</a></li>
+      <li><a href="../help/percentage-beds-occupied-care-provider-location" class="govuk-link">Percentage of adult social care beds occupied in care provider location</a></li>
+      </ul>
 
     <h2 id="settings">Settings</h2>
         <dl class="govuk-summary-list">
@@ -92,7 +104,7 @@
               General nursing 
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="present-demand-locations">Change<span class="govuk-visually-hidden"> name</span></a>
+              <a class="govuk-link" href="total_beds-edit-filters">Change<span class="govuk-visually-hidden"> name</span></a>
             </dd>
           </div>
         </dl>
@@ -103,57 +115,7 @@
         -->
 
 
-      <h2 id="providers">
-        <!--<span class="govuk-caption-m">Current demand</span>-->
-        Residential care providers in Suffolk</h2>
-
-        <p>You can filter this data by care settings and type of care. For confidentiality, names of other care providers are not shown. </p>
-        <form action="total_beds-edit.html">
-          <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
-            Explore data
-          </button>
-        </form>
-      </form>
-        <table class="govuk-table">
-          <thead class="govuk-table__head">
-            <th scope="col" class="govuk-table__header">Care provider</th>
-            <th scope="col" class="govuk-table__header">Size</th>
-            <th scope="col" class="govuk-table__header">Residential care beds</th>
-            <th scope="col" class="govuk-table__header">Occupied beds</th>
-          </thead>
-          <tbody>
-           <tr class="govuk-table__row">
-          <td class="govuk-table__cell">Greenfields Care</td>
-          <td class="govuk-table__cell">Small</td>
-          <td class="govuk-table__cell">20</td>
-          <td class="govuk-table__cell">18</td>
-          </tr>
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell">Care Provider 2</td>
-            <td class="govuk-table__cell">Medium</td>
-            <td class="govuk-table__cell">43</td>
-            <td class="govuk-table__cell">35</td>
-            </tr>
-            <tr class="govuk-table__row">
-              <td class="govuk-table__cell">Care Provider 3</td>
-              <td class="govuk-table__cell">Large</td>
-              <td class="govuk-table__cell">85</td>
-              <td class="govuk-table__cell">71</td>
-              </tr>
-              <tr class="govuk-table__row">
-                <td class="govuk-table__cell">Care Provider 4</td>
-                <td class="govuk-table__cell">Small</td>
-                <td class="govuk-table__cell">15</td>
-                <td class="govuk-table__cell">15</td>
-                </tr>
-                <tr class="govuk-table__row">
-                  <td class="govuk-table__cell">Care Provider 5</td>
-                  <td class="govuk-table__cell">Small</td>
-                  <td class="govuk-table__cell">12</td>
-                  <td class="govuk-table__cell">12</td>
-                  </tr>
-          </tbody>
-          </table>
+      
           <!-- 
           
           Demographic factors 
@@ -235,7 +197,7 @@
           <a href="#">Health &amp; wellbeing&nbsp</a>
           </th>
           <td class="govuk-table__cell">
-          <p>Residents in bad or very bed health conditions (%)</p>
+          <p>Residents in bad or very bad health conditions (%)</p>
           </td>
           <td class="govuk-table__cell">
           <p>1&nbsp;</p>
@@ -346,6 +308,18 @@
     <td class="govuk-table__cell">9</td>
     <td class="govuk-table__cell">9</td>
     </tr>
+    <!-- <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header"><a href="#">Homecare provision</a></th>
+      <td class="govuk-table__cell">9</td>
+      <td class="govuk-table__cell">9</td>
+      <td class="govuk-table__cell">9</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header"><a href="#">Residential care</a></th>
+      <td class="govuk-table__cell">9</td>
+      <td class="govuk-table__cell">9</td>
+      <td class="govuk-table__cell">9</td>
+    </tr> -->
         </tbody>
         </table>
 
@@ -463,19 +437,7 @@
 
       <p class="govuk-body">Source: Capacity Tracker<br>
         Data correct as of 5 February 2025<br></p>
-        <h2 id="definition">Indicator definition and supporting information</h2>
-
-        <p class="govuk-body">
-          Find detailed information about each indicator, including data definitions, data source, update schedule, and any limitations to be aware of before using the data.
-        </p>
-        <ul class="govuk-list govuk-list--bullet">
-          <li><a href="../help/population-age.html" class="govuk-link">Population age</a></li>
-          <li><a href="../help/population-disability.html" class="govuk-link">Population disability</a></li>
-          <li><a href="../help/beds-per-100000-adult-population.html" class="govuk-link">Adult social care beds per 100,000 adult population</a></li>
-          <li><a href="../help/percentage-beds-occupied" class="govuk-link">Percentage of adult social care beds occupied</a></li>
-          <li><a href="../help/beds-care-provider-location" class="govuk-link">Number of adult social care beds in care provider location</a></li>
-          <li><a href="../help/percentage-beds-occupied-care-provider-location" class="govuk-link">Percentage of adult social care beds occupied in care provider location</a></li>
-          </ul>
+        
 
     <p class="govuk-body"><a class="govuk-link" href="#">Back </a></p>
     
