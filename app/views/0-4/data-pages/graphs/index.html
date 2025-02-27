@@ -47,6 +47,7 @@
       
       -->
       <h2 id="data">Bar chart: show LAs in a region (narrow version)</h2>
+      <p>The following Chart is an SVG image. I made it using Nunjucks. It resizes if you change the browser width or text size. </p>
       {% include "./_chart_narrow.html" %}
       <!-- 
       
@@ -54,6 +55,10 @@
       
       -->
       <h2 id="data">Bar chart: show LAs in a region (longer version)</h2>
+      <p>The following Chart is an SVG image. I made it using Nunjucks. A horizontal scroll bar appears
+        if you change the browser to a narrow width. Unfortunately, if you change your browser text 
+        size the layout breaks. 
+      </p>
           {% include "./_chart.html" %}
           <p class="govuk-body"><a href="" class="govuk-link">Download chart image (PNG)</a><br>
             <a href="#" class="govuk-link">Download table data (CSV)</a>
@@ -67,6 +72,10 @@
             
             -->
             <h2>Time series: show three filters over time</h2>
+            <p>The following Chart is an SVG image. I made it using Nunjucks. A horizontal scroll bar appears
+              if you change the browser to a narrow width. If you change your browser text 
+              size to over 28 point, the text overlaps with the graph axes but it is still legible. 
+            </p>
             {% include "./_time-series.html" %}
             <!-- 
             
