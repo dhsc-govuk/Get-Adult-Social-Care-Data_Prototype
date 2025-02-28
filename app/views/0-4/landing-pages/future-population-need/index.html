@@ -153,44 +153,75 @@
                 <li><a class="govuk-link" href="#disabilities">disabilities</a></li>
             </ul>
 
-          <h3 id="population-age" class="govuk-heading-m govuk-!-padding-top-9">4.1 Population size</h3>
-
-          <p class="govuk-body-l">TIME SERIES GOES HERE INSTEAD OF TABLE</strong></p>
-
-        <table class="govuk-table">
-        <thead class="govuk-table__head">
-          <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Indicator</th>
-          <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Suffolk</th>
-          <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">East of England region</th>
-          <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">All England</th>
-          <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Suffolk compared to East of England</th>
-          <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Suffolk compared to All England</th>
-        </thead>
-        <tbody>
-        <tr class="govuk-table__row">
-        <td class="govuk-table__cell">Population aged 65 and over</td>
-        <td class="govuk-table__cell">21.4%</td>
-        <td class="govuk-table__cell">19.9%</td>
-        <td class="govuk-table__cell">18.7%</td>
-        <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--grey">Similar</strong></td>
-        <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--grey">Similar</strong></td>
-        </tr>
-        <tr class="govuk-table__row">
-        <td class="govuk-table__cell">Population aged 85 and over</td>
-        <td class="govuk-table__cell">13.4%</td>
-        <td class="govuk-table__cell">11.9%</td>
-        <td class="govuk-table__cell">10.7%</td>
-        <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--grey">Similar</strong></td>
-        <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--grey">Similar</strong></td>
-        </tr>
-       </tbody>
-       </table>
-
-       <p class="govuk-body">Source: Office for National Statistics<br>
-        Data correct as of 5 February 2025
-
-       <p class="govuk-body"><a href="" class="govuk-button govuk-button--secondary">Explore more population size data</a></p>
-
+            <h3 id="population-age" class="govuk-heading-m govuk-!-padding-top-9">4.1 Population age</h3>
+            <style>
+              th:nth-child(1),td:nth-child(1){text-align: left;}
+              td, th{text-align:right}
+            </style>
+            {% set totalPopulation = 
+              [
+              [2025,782040,6435995,58060237],
+              [2026,784775,6462667,58297239],
+              [2028,789924,6512372,58751641],
+              [2030,794839,6558594,59181801],
+              [2035,806986,6558594,60183923],
+              [2040,819173,6772234,61157877]
+              ]
+              %}
+              
+              {% include "./_future_population.html" %}
+    
+                <table class="govuk-table">
+                  <tbody>
+                    <tr class="govuk-table__row">
+                      <th scope="col" class="govuk-table__header">Year</th>
+                      <th scope="col" class="govuk-table__header govuk-!-text-align-right">Suffolk</th>
+                      <th scope="col" class="govuk-table__header govuk-!-text-align-right">East of England</th>
+                      <th scope="col" class="govuk-table__header govuk-!-text-align-right">All England</th>
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell govuk-table__cell--numeric">2025</td>
+                      <td class="govuk-table__cell govuk-table__cell--numeric">782,040</td>
+                      <td class="govuk-table__cell govuk-table__cell--numeric">6,435,995</td>
+                      <td class="govuk-table__cell govuk-table__cell--numeric">58,060,237</td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell govuk-table__cell--numeric">2026</td>
+                      <td class="govuk-table__cell govuk-table__cell--numeric">784,775</td>
+                      <td class="govuk-table__cell govuk-table__cell--numeric">6,462,667</td>
+                      <td class="govuk-table__cell govuk-table__cell--numeric">58,297,239</td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell govuk-table__cell--numeric">2028</td>
+                      <td class="govuk-table__cell govuk-table__cell--numeric">789,924</td>
+                      <td class="govuk-table__cell govuk-table__cell--numeric">6,512,372</td>
+                      <td class="govuk-table__cell govuk-table__cell--numeric">58,751,641</td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell govuk-table__cell--numeric">2030</td>
+                      <td class="govuk-table__cell govuk-table__cell--numeric">794,839</td>
+                      <td class="govuk-table__cell govuk-table__cell--numeric">6,558,594</td>
+                      <td class="govuk-table__cell govuk-table__cell--numeric">59,181,801</td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell govuk-table__cell--numeric">2035</td>
+                      <td class="govuk-table__cell govuk-table__cell--numeric">806,986</td>
+                      <td class="govuk-table__cell govuk-table__cell--numeric">6,558,594</td>
+                      <td class="govuk-table__cell govuk-table__cell--numeric">60,183,923</td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell govuk-table__cell--numeric">2040</td>
+                      <td class="govuk-table__cell govuk-table__cell--numeric">819,173</td>
+                      <td class="govuk-table__cell govuk-table__cell--numeric">6,772,234</td>
+                      <td class="govuk-table__cell govuk-table__cell--numeric">61,157,877</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <p>                        <a href="#" class="govuk-link">Download table data (CSV)</a></p>
+                <p class="govuk-body">Source: Capacity Tracker<br>
+                  Data correct as of 24 December 2024<br>
+                  <!--<a href="../0-3/help/beds-per-100000-people.html" class="govuk-link">View supporting information for this data</a>-->
+              </p>
 
        <h3 id="economic-factors" class="govuk-heading-m govuk-!-padding-top-9">4.2 Population aged 18 to 64</h2>
 
