@@ -165,24 +165,9 @@
           [2040,819173,6772234,61157877]
           ]
           %}
+          
           {% include "./_future_population.html" %}
-          <!-- <table class="govuk-table">
-            <tbody>
-              <tr>
-                <th>Year</th>
-                <th>Suffolk</th>
-                <th>East of England</th>
-                <th>All England</th>
-              </tr>
-              {% for item in totalPopulation %}
-              <tr>
-                <td>{{item[0]}}</td>
-                <td>{{item[1]}}</td>
-                <td>{{item[2]}}</td>
-                <td>{{item[3]}}</td>
-              </tr>
-              {% endfor %}
-            </table> -->
+
             <table class="govuk-table">
               <tbody>
                 <tr class="govuk-table__row">
@@ -229,8 +214,12 @@
                 </tr>
               </tbody>
             </table>
-            <p>&nbsp;</p>
-            <p>&nbsp;</p>
+            <p>                        <a href="#" class="govuk-link">Download table data (CSV)</a></p>
+            <p class="govuk-body">Source: Capacity Tracker<br>
+              Data correct as of 24 December 2024<br>
+              <!--<a href="../0-3/help/beds-per-100000-people.html" class="govuk-link">View supporting information for this data</a>-->
+          </p>
+          <h3>4.1.2 Population aged 18-64 </h3>
             <table class="govuk-table">
               <thead class="govuk-table__head">
                 <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Indicator</th>

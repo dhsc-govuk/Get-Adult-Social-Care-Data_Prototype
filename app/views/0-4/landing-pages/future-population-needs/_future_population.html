@@ -12,6 +12,7 @@
         <h3>
             Total population change
         </h3>
+
         <ul class="govuk-list">
             <li>
                 <svg height="5" width="50" xmlns="http://www.w3.org/2000/svg">
@@ -42,12 +43,15 @@
                 
                 -->
                 <style>
-                    .data-chart{width:100%; overflow-x: scroll;}
+                    .data-chart{width:100%; overflow-x: scroll;margin-bottom: 2em;}
                 </style>
                 {% set chartHeight = 400 %} 
                 {% set chartWidth = 600 %} 
                 {% set topMargin = 20 %}
                 {% set leftMargin = 40 %} 
+                {% set bottomMargin = 20 %}
+                {% set xAxis = chartWidth - leftMargin %}
+                {% set yAxis = chartHeight - bottomMargin %}
                 <svg height="{{chartHeight}}" width="{{chartWidth}}" xmlns="http://www.w3.org/2000/svg" class="data-chart">
                     <defs>
                         <style>
@@ -58,43 +62,38 @@
                     <title>Total beds per 100,000 population in Suffolk: 1 April 2021 to 1 November 2023</title>
                     
                     <!-- 	Y Scale -->
-                    <text class="axis-text"x="0" y="10%" fill="#666">8%</text>
-                    <text class="axis-text"x="0" y="30%" fill="#666">6%</text>
-                    <text class="axis-text"x="0" y="50%" fill="#666">4%</text>
+                    <text class="axis-text"x="0" y="10%" fill="#666">6%</text>
+                    <text class="axis-text"x="0" y="40%" fill="#666">4%</text>
                     <text class="axis-text"x="0" y="70%" fill="#666">2%</text>
-                    <text class="axis-text"x="0" y="90%" fill="#666">0</text>
+                    <text class="axis-text"x="0" y="95%" fill="#666">0</text>
                     
                     <g transform="translate(20,0)">
-                        <!-- 		Axes -->
-                        <line x1="{{leftMargin}}" y1="0" x2="{{leftMargin}}" y2="90%" style="stroke:#666;stroke-width:2" />
-                        <line x1="{{leftMargin}}" y1="90%" x2="600" y2="90%" style="stroke:#666;stroke-width:2" />
-
+                        <!-- Y Axis -->
+                        <line x1="{{leftMargin}}" y1="0" x2="{{leftMargin}}" y2="380" style="stroke:#666;stroke-width:2" />
                         
+                        <!-- X Axis -->
+                        <line x1="{{leftMargin}}" y1="380" x2="600" y2="380" style="stroke:#666;stroke-width:2" />
+
                         <!-- 		X Scale -->
-                        <text class="axis-text"x="{{leftMargin}}" y="95%" fill="#666">2025</text>
-                        <text class="axis-text"x="{{chartWidth / 2}}" y="95%" fill="#666">2032</text>
-                        <text class="axis-text"x="90%" y="95%" fill="#666">2040</text>
+                        <text class="axis-text"x="{{leftMargin}}" y="400" fill="#666">2025</text>
+                        <text class="axis-text"x="{{chartWidth / 2}}" y="400" fill="#666">2032</text>
+                        <text class="axis-text"x="90%" y="400" fill="#666">2040</text>
                         
                         <!-- 		Lines -->
-                        <g transform="translate(-250,0) scale (2 1)">
+                        <g transform="translate({{leftMargin}},0)">
                             <!-- Suffolk -->
-                            <polyline points="150,110 200,90 250,80 300,90 350,82 400,65, 450,80"
+                            <polyline points="0,380 37,357 112,316 186,276 373,117 560,79"
                             style="fill:none;stroke:purple;stroke-width:3" />
                             
                             <!-- East of England -->
-                            <polyline points="150,169 200,173 250,152 300,158 350,143 400,154, 450,158"
+                            <polyline points="0,380 37,353 112,304 186,259 373,259 560,49"
                             style="fill:none;stroke:gold;stroke-width:3" />
                             
                             <!-- England -->
-                            <polyline points="150,194 200,193 250,179 300,191 350,193 400,189, 450,195"
+                            <polyline points="0,380 37,354 112,304 186,257 373,148 560,42"
                             style="fill:none;stroke:orange;stroke-width:3" />
                             
                         </g>
                     </svg>                            
-                    <p class="govuk-body"><a href="#" class="govuk-link">Download chart image (PNG)</a><br>
-                        <a href="#" class="govuk-link">Download table data (CSV)</a>
-                    </p>
-                    <p class="govuk-body">Source: Capacity Tracker<br>
-                        Data correct as of 24 December 2024<br>
-                        <!--<a href="../0-3/help/beds-per-100000-people.html" class="govuk-link">View supporting information for this data</a>-->
+                    <p class="govuk-body"><a href="#" class="govuk-link">Download chart image (PNG)</a>
                     </p>
