@@ -3,7 +3,6 @@
 {% set pageName="Your dashboard" %}
 
 {% block content %}
-<!-- <a href="#" class="govuk-back-link">Back</a> -->
 <div class="govuk-grid-row">
 
   <div class="govuk-grid-column-full">
@@ -12,82 +11,80 @@
 
       <p class="govuk-body-l">Access the latest data relevant to adult social care in England.</p>
       <h2 class="govuk-heading-l">Featured topics</h2>
-  </p>
+
   <div class="govuk-grid-row">
-    <a href="../landing-pages/current-population-need-capacity">
+
     <div class="govuk-grid-column-one-half">
       <h2>
+        <a href="../landing-pages/current-population-need-capacity" class="govuk-link">
         Current population needs and overall capacity at local authority level
+        </a>
       </h2>
       <p>
         Explore factors driving population needs for adult social care services and get insights into current capacity to meet these needs.
       </p>
     </div>
-  </a>
-  <a href="#">
     <div class="govuk-grid-column-one-half">
       <h2>
+        <a href="#" class="govuk-link">
         Current market
+        </a>
       </h2>
       <p>
         Assess the local care market, including provider availability, occupancy levels, service performance and fee rates.
       </p>
     </div>
-  </a>
-  </div>
+  </div> <!-- Closes govuk-grid-row -->
 
   <div class="govuk-grid-row">
-  <a href="../landing-pages/future-population-needs">
-
     <div class="govuk-grid-column-one-half">
       <h2>
+        <a href="../landing-pages/future-population-needs" class="govuk-link">
         Future population needs
+        </a>
       </h2>
       <p>
         Understand the likely population needs for adult social care to help identify potential gaps between projected needs and provision.
       </p>
     </div>
-    </a>
-  </div>
+  </div> <!-- Closes govuk-grid-row -->
 
   <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
   
   <div class="govuk-grid-row">
-    <div class="govuk-grid-column-full-width">
+    <div class="govuk-grid-column-full">
+      <h2 class="govuk-heading-l">Supporting information</h2>
+
+      <h3 class="govuk-heading-m"><a href="">Data catalogue</a></h3>
+      <p class="govuk-body">View all of the data available in this service.</p>
+
+      <h3 class="govuk-heading-m"><a href="../help/user-guide.html">User guide</a></h3>
+      <p class="govuk-body">Need help getting started? Learn how to use this service and make the most of its features.</p>
+
+      <h3 class="govuk-heading-m"><a href="blog-article.html">Data in action blog</a></h3>
+      <p class="govuk-body">Explore ideas, insights and perspectives on how data can drive better collaboration and decision-making in adult social care.</p>
+    </div>
+  </div> <!-- Closes govuk-grid-row -->
+
+  <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
       <h2 class="govuk-heading-l">What's new</h2>
       <h3 class="govuk-heading-m">March 2025 update</h3>
 
       <p class="govuk-body">We’ve made several improvements to help you find and use data more easily:</p>
-        <ul class="govuk-list govuk-list--bullet">
+      <ul class="govuk-list govuk-list--bullet">
         <li><strong>More detailed data</strong> - Access more insights on local population needs and capacity.</li>
         <li><strong>Find data faster</strong> - Improved location and category filters make it easier to get relevant data.</li>
-        <li><strong>View smaller areas</strong> - You can now view demographic data below local authority level, where available</li>
-        </ul>
-      <p class="govuk-body">We're always looking to improve, so please <a href="" class="gov-link" target="_blank">share your feedback (opens in new tab)</a>.</p>
+        <li><strong>View smaller areas</strong> - You can now view demographic data below local authority level, where available.</li>
+      </ul>
+      <p class="govuk-body">We're always looking to improve, so please <a href="" class="govuk-link" target="_blank">share your feedback (opens in new tab)</a>.</p>
     </div>
- 
+  </div> <!-- Closes govuk-grid-row -->
 
-  <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
-  
+</div> <!-- Closes govuk-grid-column-full -->
 
-  <h2 class="govuk-heading-l">Supporting information</h2>
+</div> <!-- Closes govuk-grid-row -->
 
-  <h3 class="govuk-heading-m"><a href="">Data catalogue</a></h3>
-
-  <p class="govuk-body">View all of the data available in this service.</p>
-
-  <h3 class="govuk-heading-m"><a href="../help/user-guide.html">User guide</a></h3>
-
-  <p class="govuk-body">Need help getting started? Learn how to use this service and make the most of its features.</p>
-
-  <h3 class="govuk-heading-m"><a href="blog-article.html">Data in action blog</a></h3>
-
-  <p class="govuk-body">Explore ideas, insights and perspectives on how data can drive better collaboration and decision-making in adult social care.</p>
-
-
-    </div>
-
-</div>
-</div>
-
-  {% endblock %}
+{% endblock %}
