@@ -57,7 +57,7 @@ d3.csv("/public/csv/nomis_2025_02_21_121138.csv",
     function(data) {
   
       // Add X axis --> it is a date format
-      var x = d3.scaleTime()
+      var x = d3.scaleUtc()
         .domain(d3.extent(data, function(d) { return d.year; }))
         .range([ 0, width ]);
       svg.append("g")
