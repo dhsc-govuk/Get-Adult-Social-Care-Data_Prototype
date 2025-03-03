@@ -41,16 +41,13 @@
       .attr("width", width + margin.left + margin.right)
       .attr("height", height + margin.top + margin.bottom)
     .append("g")
-      .attr("transform",
+    .attr("transform",
             "translate(" + margin.left + "," + margin.top + ")");
   
   //Read the data 
  
-//  original:
-//   d3.csv("https://raw.githubusercontent.com/holtzy/data_to_viz/master/Example_dataset/3_TwoNumOrdered_comma.csv",
-  
 d3.csv("/public/csv/nomis_2025_02_21_121138.csv",
-    // When reading the csv, I must format variables:
+    // When reading the csv, format the variables:
     function(d){
       //see https://d3js.org/d3-time-format
       return { year : d.Year, suffolk : d.Suffolk, east : d.EastOfEngland, england : d.AllEngland }
@@ -60,7 +57,7 @@ d3.csv("/public/csv/nomis_2025_02_21_121138.csv",
     function(data) {
   
       // Add X axis --> it is a date format
-      var x = d3.scaleLinear()
+      var x = d3.scaleTime()
         .domain(d3.extent(data, function(d) { return d.year; }))
         .range([ 0, width ]);
       svg.append("g")
@@ -85,7 +82,7 @@ d3.csv("/public/csv/nomis_2025_02_21_121138.csv",
           .y(function(d) { return y(d.suffolk) })
           )
 
-          svg.append("path")
+        svg.append("path")
         .datum(data)
         .attr("fill", "none")
         .attr("stroke", "gold")

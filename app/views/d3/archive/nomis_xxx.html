@@ -33,10 +33,7 @@
             "translate(" + margin.left + "," + margin.top + ")");
   
   //Read the data 
- 
-//  original:
-//   d3.csv("https://raw.githubusercontent.com/holtzy/data_to_viz/master/Example_dataset/3_TwoNumOrdered_comma.csv",
-  
+   
 d3.csv("/public/csv/nomis_2025_02_21_121138.csv",
     // When reading the csv, I must format variables:
     function(d){
@@ -57,8 +54,8 @@ d3.csv("/public/csv/nomis_2025_02_21_121138.csv",
   
       // Add Y axis
       var y = d3.scaleLinear()
-        .domain([0, d3.max(data, function(d) { return +d.suffolk; })])
-        .range([ height, 0 ]);
+        .domain([d3.extent(data, function(d) { return +d.east; })])
+        .range([ height , 0 ]);
       svg.append("g")
         .call(d3.axisLeft(y));
   
