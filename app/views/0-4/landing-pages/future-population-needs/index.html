@@ -17,8 +17,7 @@
           { link: "#introduction", heading: "Introduction" },
           { link: "#definitions", heading: "Indicator definitions and supporting information" },
           { link: "#settings", heading: "Your page settings" },
-          { link: "#population", heading: "Demographic factors driving population needs" },
-          { link: "#capacity", heading: "Overall capacity at local authority level" }
+          { link: "#population", heading: "Demographic factors driving population needs" }
         ] %}
         <ol class="govuk-list govuk-list--number">
                    {% for item in items %}
@@ -61,13 +60,12 @@
   </summary>
   <div class="govuk-details__text">
     <p class="govuk-body">Go to the following links for details:</p>
-    <ol class="govuk-list govuk-list--bullet">
+    <ul class="govuk-list govuk-list--bullet">
       <li><a href="../../help/future-population-size.html" class="govuk-link">Future population size</a></li>
       <li><a href="../../help/population-age.html" class="govuk-link">Percentage of population in age group</a></li>
       <li><a href="../../help/disability-prevalence.html" class="govuk-link">Disability prevalence</a></li>
-      <li><a href="../../help/population-65-over-domestic-help" class="govuk-link">Population aged 65 and over needing domestic help</a></li>
-      <li><a href="../../help/population-65-over-self-care-help" class="govuk-link">Population aged 65 and over needing self-care help</a></li>
-   </ol>
+      <li><a href="../../help/population-65-over-domestic-help" class="govuk-link">Population aged 65 and over needing domestic or self-care help</a></li>
+   </ul>
   </div>
 </details>
 
@@ -227,37 +225,54 @@
 
        <h3 id="population-18-64" class="govuk-heading-m govuk-!-padding-top-9">4.2 Population aged 18 to 64</h2>
 
-        <p class="govuk-body-l">TIME SERIES GOES HERE INSTEAD OF TABLE</strong></p>
+        <p class="govuk-body-l">UPDATE TIME SERIES DATA</strong></p>
 
         <table class="govuk-table">
-        <thead class="govuk-table__head">
-          <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Indicator</th>
-          <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Suffolk</th>
-          <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">East of England region</th>
-          <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">All England</th>
-          <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Suffolk compared to East of England</th>
-          <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Suffolk compared to All England</th>
-        </thead>
-        <tbody>
-        <tr class="govuk-table__row">
-        <td class="govuk-table__cell">Geographical areas or population in the most deprived category</td>
-        <td class="govuk-table__cell">44%</td>
-        <td class="govuk-table__cell">44%</td>
-        <td class="govuk-table__cell">44%</td>
-        <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--grey">Similar</strong></td>
-        <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--grey">Similar</strong></td>
-        </tr>
-        <tr class="govuk-table__row">
-        <td class="govuk-table__cell">Homes owned outright</td>
-        <td class="govuk-table__cell">33%</td>
-        <td class="govuk-table__cell">33%</td>
-        <td class="govuk-table__cell">33%</td>
-        <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--grey">Similar</strong></td>
-        <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--grey">Similar</strong></td>
-
-        </tr>
-       </tbody>
-       </table>
+          <tbody>
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header">Year</th>
+              <th scope="col" class="govuk-table__header govuk-!-text-align-right">Suffolk</th>
+              <th scope="col" class="govuk-table__header govuk-!-text-align-right">East of England</th>
+              <th scope="col" class="govuk-table__header govuk-!-text-align-right">All England</th>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell govuk-table__cell--numeric">2025</td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">782,040</td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">6,435,995</td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">58,060,237</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell govuk-table__cell--numeric">2026</td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">784,775</td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">6,462,667</td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">58,297,239</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell govuk-table__cell--numeric">2028</td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">789,924</td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">6,512,372</td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">58,751,641</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell govuk-table__cell--numeric">2030</td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">794,839</td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">6,558,594</td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">59,181,801</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell govuk-table__cell--numeric">2035</td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">806,986</td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">6,558,594</td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">60,183,923</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell govuk-table__cell--numeric">2040</td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">819,173</td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">6,772,234</td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">61,157,877</td>
+            </tr>
+          </tbody>
+        </table>
 
        <p class="govuk-body">Source: Office for National Statistics<br>
         Data correct as of 5 February 2025
@@ -266,72 +281,108 @@
        -->
        <h3 id="population-65-over" class="govuk-heading-m govuk-!-padding-top-9">4.3 Population aged 65 and over</h2>
 
-        <p class="govuk-body-l">TIME SERIES GOES HERE INSTEAD OF TABLE</strong></p>
+        <p class="govuk-body-l">UPDATE TIME SERIES DATA</strong></p>
 
         <table class="govuk-table">
-        <thead class="govuk-table__head">
-          <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Indicator</th>
-          <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Suffolk</th>
-          <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">East of England region</th>
-          <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">All England</th>
-          <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Suffolk compared to East of England</th>
-          <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Suffolk compared to All England</th>
-        </thead>
-        <tbody>
-        <tr class="govuk-table__row">
-        <td class="govuk-table__cell">Geographical areas or population in the most deprived category</td>
-        <td class="govuk-table__cell">44%</td>
-        <td class="govuk-table__cell">44%</td>
-        <td class="govuk-table__cell">44%</td>
-        <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--grey">Similar</strong></td>
-        <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--grey">Similar</strong></td>
-        </tr>
-        <tr class="govuk-table__row">
-        <td class="govuk-table__cell">Homes owned outright</td>
-        <td class="govuk-table__cell">33%</td>
-        <td class="govuk-table__cell">33%</td>
-        <td class="govuk-table__cell">33%</td>
-        <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--grey">Similar</strong></td>
-        <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--grey">Similar</strong></td>
-        </tr>
-       </tbody>
-       </table>
+          <tbody>
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header">Year</th>
+              <th scope="col" class="govuk-table__header govuk-!-text-align-right">Suffolk</th>
+              <th scope="col" class="govuk-table__header govuk-!-text-align-right">East of England</th>
+              <th scope="col" class="govuk-table__header govuk-!-text-align-right">All England</th>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell govuk-table__cell--numeric">2025</td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">782,040</td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">6,435,995</td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">58,060,237</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell govuk-table__cell--numeric">2026</td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">784,775</td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">6,462,667</td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">58,297,239</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell govuk-table__cell--numeric">2028</td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">789,924</td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">6,512,372</td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">58,751,641</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell govuk-table__cell--numeric">2030</td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">794,839</td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">6,558,594</td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">59,181,801</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell govuk-table__cell--numeric">2035</td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">806,986</td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">6,558,594</td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">60,183,923</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell govuk-table__cell--numeric">2040</td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">819,173</td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">6,772,234</td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">61,157,877</td>
+            </tr>
+          </tbody>
+        </table>
       <!---
        <p class="govuk-body"><a href="" class="govuk-button govuk-button--secondary">Explore more XXXXX data</a></p>
       -->
 
        <h3 id="population-85-over" class="govuk-heading-m govuk-!-padding-top-9">4.3 Population aged 85 and over</h2>
 
-        <p class="govuk-body-l">TIME SERIES GOES HERE INSTEAD OF TABLE</strong></p>
+        <p class="govuk-body-l">UPDATE TIME SERIES DATA</strong></p>
 
         <table class="govuk-table">
-        <thead class="govuk-table__head">
-          <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Indicator</th>
-          <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Suffolk</th>
-          <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">East of England region</th>
-          <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">All England</th>
-          <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Suffolk compared to East of England</th>
-          <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Suffolk compared to All England</th>
-        </thead>
-        <tbody>
-        <tr class="govuk-table__row">
-        <td class="govuk-table__cell">Geographical areas or population in the most deprived category</td>
-        <td class="govuk-table__cell">44%</td>
-        <td class="govuk-table__cell">44%</td>
-        <td class="govuk-table__cell">44%</td>
-        <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--grey">Similar</strong></td>
-        <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--grey">Similar</strong></td>
-        </tr>
-        <tr class="govuk-table__row">
-        <td class="govuk-table__cell">Homes owned outright</td>
-        <td class="govuk-table__cell">33%</td>
-        <td class="govuk-table__cell">33%</td>
-        <td class="govuk-table__cell">33%</td>
-        <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--grey">Similar</strong></td>
-        <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--grey">Similar</strong></td>
-        </tr>
-       </tbody>
-       </table>
+          <tbody>
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header">Year</th>
+              <th scope="col" class="govuk-table__header govuk-!-text-align-right">Suffolk</th>
+              <th scope="col" class="govuk-table__header govuk-!-text-align-right">East of England</th>
+              <th scope="col" class="govuk-table__header govuk-!-text-align-right">All England</th>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell govuk-table__cell--numeric">2025</td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">782,040</td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">6,435,995</td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">58,060,237</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell govuk-table__cell--numeric">2026</td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">784,775</td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">6,462,667</td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">58,297,239</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell govuk-table__cell--numeric">2028</td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">789,924</td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">6,512,372</td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">58,751,641</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell govuk-table__cell--numeric">2030</td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">794,839</td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">6,558,594</td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">59,181,801</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell govuk-table__cell--numeric">2035</td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">806,986</td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">6,558,594</td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">60,183,923</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell govuk-table__cell--numeric">2040</td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">819,173</td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">6,772,234</td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">61,157,877</td>
+            </tr>
+          </tbody>
+        </table>
 
        <p class="govuk-body">Source: Office for National Statistics<br>
         Data correct as of 5 February 2025
@@ -342,36 +393,54 @@
        <h3 id="population-65-over-domestic-help" class="govuk-heading-m govuk-!-padding-top-9">4.4 Population aged 65 and over needing domestic help</h2>
         <p class="govuk-body">Domestic tasks are important for independent living but not essential for basic functioning. These include housework, shopping for food, managing paperwork or bills, and getting out of the house. These tasks are known as Instrumental Activities of Daily Living (IADLs).</p>
         <p class="govuk-body">For more details, see the <a href="https://digital.nhs.uk/data-and-information/publications/statistical/health-survey-for-england/2017" class="gov-link" target="_blank">NHS Health Survey for England (opens in new tab)</a>.</p>
-        <p class="govuk-body-l">TIME SERIES GOES HERE INSTEAD OF TABLE</strong></p>
+        <p class="govuk-body-l">UPDATE TIME SERIES DATA</strong></p>
 
         <table class="govuk-table">
-        <thead class="govuk-table__head">
-          <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Indicator</th>
-          <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Suffolk</th>
-          <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">East of England region</th>
-          <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">All England</th>
-          <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Suffolk compared to East of England</th>
-          <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Suffolk compared to All England</th>
-        </thead>
-        <tbody>
-        <tr class="govuk-table__row">
-        <td class="govuk-table__cell">Geographical areas or population in the most deprived category</td>
-        <td class="govuk-table__cell">44%</td>
-        <td class="govuk-table__cell">44%</td>
-        <td class="govuk-table__cell">44%</td>
-        <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--grey">Similar</strong></td>
-        <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--grey">Similar</strong></td>
-        </tr>
-        <tr class="govuk-table__row">
-        <td class="govuk-table__cell">Homes owned outright</td>
-        <td class="govuk-table__cell">33%</td>
-        <td class="govuk-table__cell">33%</td>
-        <td class="govuk-table__cell">33%</td>
-        <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--grey">Similar</strong></td>
-        <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--grey">Similar</strong></td>
-        </tr>
-       </tbody>
-       </table>
+          <tbody>
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header">Year</th>
+              <th scope="col" class="govuk-table__header govuk-!-text-align-right">Suffolk</th>
+              <th scope="col" class="govuk-table__header govuk-!-text-align-right">East of England</th>
+              <th scope="col" class="govuk-table__header govuk-!-text-align-right">All England</th>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell govuk-table__cell--numeric">2025</td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">782,040</td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">6,435,995</td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">58,060,237</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell govuk-table__cell--numeric">2026</td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">784,775</td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">6,462,667</td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">58,297,239</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell govuk-table__cell--numeric">2028</td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">789,924</td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">6,512,372</td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">58,751,641</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell govuk-table__cell--numeric">2030</td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">794,839</td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">6,558,594</td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">59,181,801</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell govuk-table__cell--numeric">2035</td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">806,986</td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">6,558,594</td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">60,183,923</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell govuk-table__cell--numeric">2040</td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">819,173</td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">6,772,234</td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">61,157,877</td>
+            </tr>
+          </tbody>
+        </table>
 
        <p class="govuk-body">Source: Office for National Statistics, NHS England<br>
         <!--
@@ -383,34 +452,55 @@
           Self-care tasks are essential daily activities related to personal care and mobility. These include bathing, dressing, using the toilet, eating, taking medication, and moving around indoors. These tasks are known as Activities of Daily Living (ADLs).
 
         <p class="govuk-body">For more details, see the <a href="https://digital.nhs.uk/data-and-information/publications/statistical/health-survey-for-england/2017" class="gov-link" target="_blank">NHS Health Survey for England (opens in new tab)</a>.</p>
+        
+        <p class="govuk-body-l">UPDATE TIME SERIES DATA</strong></p>
+
         <table class="govuk-table">
-        <thead class="govuk-table__head">
-          <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Indicator</th>
-          <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Suffolk</th>
-          <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">East of England region</th>A
-          <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">All England</th>
-          <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Suffolk compared to East of England</th>
-          <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Suffolk compared to All England</th>
-        </thead>
-        <tbody>
-        <tr class="govuk-table__row">
-        <td class="govuk-table__cell">Geographical areas or population in the most deprived category</td>
-        <td class="govuk-table__cell">44%</td>
-        <td class="govuk-table__cell">44%</td>
-        <td class="govuk-table__cell">44%</td>
-        <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--grey">Similar</strong></td>
-        <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--grey">Similar</strong></td>
-        </tr>
-        <tr class="govuk-table__row">
-        <td class="govuk-table__cell">Homes owned outright</td>
-        <td class="govuk-table__cell">33%</td>
-        <td class="govuk-table__cell">33%</td>
-        <td class="govuk-table__cell">33%</td>
-        <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--grey">Similar</strong></td>
-        <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--grey">Similar</strong></td>
-        </tr>
-       </tbody>
-       </table>
+          <tbody>
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header">Year</th>
+              <th scope="col" class="govuk-table__header govuk-!-text-align-right">Suffolk</th>
+              <th scope="col" class="govuk-table__header govuk-!-text-align-right">East of England</th>
+              <th scope="col" class="govuk-table__header govuk-!-text-align-right">All England</th>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell govuk-table__cell--numeric">2025</td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">782,040</td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">6,435,995</td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">58,060,237</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell govuk-table__cell--numeric">2026</td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">784,775</td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">6,462,667</td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">58,297,239</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell govuk-table__cell--numeric">2028</td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">789,924</td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">6,512,372</td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">58,751,641</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell govuk-table__cell--numeric">2030</td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">794,839</td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">6,558,594</td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">59,181,801</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell govuk-table__cell--numeric">2035</td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">806,986</td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">6,558,594</td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">60,183,923</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell govuk-table__cell--numeric">2040</td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">819,173</td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">6,772,234</td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">61,157,877</td>
+            </tr>
+          </tbody>
+        </table>
   
       <p class="govuk-body">Source: Office for National Statistics, NHS England
         <!--
