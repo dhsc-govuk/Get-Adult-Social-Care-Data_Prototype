@@ -1,6 +1,6 @@
 {% extends "layouts/main.html" %}
 
-{% set pageName="D3 example" %}
+{% set pageName="Population projections - local authority based by single year of age" %}
 
 {% block content %}
 <!-- Test out loading data within the D3 file, not a separate CSV file -->
@@ -9,7 +9,7 @@
 <script src="https://d3js.org/d3.v4.js"></script>
 <a href="d3" class="govuk-back-link">Back</a>
       <h1>{{pageName}}</h1>
-
+<p></p>
 <!-- Create a div where the graph will take place -->
 <div id="my_dataviz"></div>
 
@@ -38,7 +38,7 @@ d3.csv("/public/csv/nomis_2025_02_21_121138.csv",
     // When reading the csv, I must format variables:
     function(d){
       //see https://d3js.org/d3-time-format
-      return { year : d.Year, suffolk : d.Suffolk }
+      return { year : d.Year, suffolk : d.Suffolk, east : d.EastOfEngland, england : d.AllEngland }
     },
   
     // Now I can use this dataset:
@@ -64,17 +64,38 @@ d3.csv("/public/csv/nomis_2025_02_21_121138.csv",
         .datum(data)
         .attr("fill", "none")
         .attr("stroke", "steelblue")
-        .attr("stroke-width", 1.5)
+        .attr("stroke-width", 3)
         .attr("d", d3.line()
           .x(function(d) { return x(d.year) })
           .y(function(d) { return y(d.suffolk) })
           )
+
+          svg.append("path")
+        .datum(data)
+        .attr("fill", "none")
+        .attr("stroke", "gold")
+        .attr("stroke-width", 3)
+        .attr('stroke-dasharray', "5,5")
+        .attr("d", d3.line()
+          .x(function(d) { return x(d.year) })
+          .y(function(d) { return y(d.east) })
+          )
+
+          svg.append("path")
+        .datum(data)
+        .attr("fill", "none")
+        .attr("stroke", "purple")
+        .attr("stroke-width", 3)
+        .attr('stroke-dasharray', "20,5")
+        .attr("d", d3.line()
+          .x(function(d) { return x(d.year) })
+          .y(function(d) { return y(d.england) })
+          )
+
   
   })
   
   </script>
-
-
     <!--
 
     End of Main section
