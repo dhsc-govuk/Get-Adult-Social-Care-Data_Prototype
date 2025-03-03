@@ -12,18 +12,6 @@
       <h1>{{pageName}}</h1>
 <p></p>
 
-<!-- Add styles for the chart -->
-<style>
-  @media only screen and (max-width: 500px) {
-    #my_dataviz{
-      width:400px; 
-      overflow-x: scroll;
-    }
-  }
-  .legendTitle, .chartText{font-size:1.2em}
-  .chartAxis{font-size:1.5em}
-
-</style>
 
 <!-- Create a div where the graph will take place -->
 <div id="my_dataviz"></div>
@@ -60,7 +48,7 @@ d3.csv("/public/csv/nomis_2025_02_21_121138.csv",
     function(data) {
   
       // Add X axis --> it is a date format
-      var x = d3.scaleLinear()
+      var x = d3.scaleTime()
         .domain(d3.extent(data, function(d) { return d.year; }))
         .range([ 0, width ]);
       svg.append("g")
