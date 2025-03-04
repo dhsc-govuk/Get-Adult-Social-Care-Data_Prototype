@@ -1,4 +1,4 @@
-{% extends "layouts/data.html" %}
+{% extends "layouts/landing-page.html" %}
 
 {% set pageName="Future population needs" %}
 
@@ -232,7 +232,7 @@
        <h3 id="population-18-64" class="govuk-heading-m govuk-!-padding-top-9">4.2 Future population aged 18 to 64</h2>
 
         <p class="govuk-body">This data shows projected population changes for people aged 18 to 64 from 2025 to 2040.</p>
-
+        {% include "./_future_population.html" %}
         <table class="govuk-table">
           <tbody>
             <tr class="govuk-table__row">
@@ -290,7 +290,7 @@
        <h3 id="population-65-over" class="govuk-heading-m govuk-!-padding-top-9">4.3 Future population aged 65 and over</h2>
 
         <p class="govuk-body">This data shows projected population changes for people aged 65 and over from 2025 to 2040.</p>
-
+        {% include "./_future_population.html" %}
         <table class="govuk-table">
           <tbody>
             <tr class="govuk-table__row">
@@ -350,7 +350,7 @@
        <h3 id="population-85-over" class="govuk-heading-m govuk-!-padding-top-9">4.3 Future population aged 85 and over</h2>
 
         <p class="govuk-body">This data shows projected population changes for people aged 85 and over from 2025 to 2040.</p>
-
+        {% include "./_future_population.html" %}
         <table class="govuk-table">
           <tbody>
             <tr class="govuk-table__row">
@@ -411,7 +411,7 @@
         <!--<p class="govuk-body">For more details, see the <a href="https://digital.nhs.uk/data-and-information/publications/statistical/health-survey-for-england/2017" class="gov-link" target="_blank">NHS Health Survey for England (opens in new tab)</a>.</p>
        -->
          <p class="govuk-body">This data shows the projected number of people aged 65 and over needing domestic help from 2025 to 2040.</p>
-
+         {% include "./_future_population.html" %}
         <table class="govuk-table">
           <tbody>
             <tr class="govuk-table__row">
@@ -474,7 +474,7 @@
         <p class="govuk-body">For more details, see the <a href="https://digital.nhs.uk/data-and-information/publications/statistical/health-survey-for-england/2017" class="gov-link" target="_blank">NHS Health Survey for England (opens in new tab)</a>.</p>
         -->
         <p class="govuk-body">This data shows the projected number of people aged 65 and over needing self-care help from 2025 to 2040.</p>
-
+        {% include "./_future_population.html" %}
         <table class="govuk-table">
           <tbody>
             <tr class="govuk-table__row">
