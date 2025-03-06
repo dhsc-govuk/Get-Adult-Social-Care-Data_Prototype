@@ -9,7 +9,7 @@
 <script src="https://d3js.org/d3.v4.js"></script>
 
 <a href="d3" class="govuk-back-link">Back</a>
-      <h1>{{pageName}}</h1>
+<h1>{{pageName}}</h1>
 <p></p>
 
 <!-- Add styles for the chart -->
@@ -22,97 +22,105 @@
   }
   .legendTitle, .chartText{font-size:1.2em}
   .chartAxis{font-size:1.5em}
-
+  text {
+    font-family: "GDS Transport", arial, sans-serif;
+    font-size: 1.2em;
+  }
 </style>
 
 <!-- Create a div where the graph will take place -->
 <div id="my_dataviz"></div>
 
 <script>
-
+  
   // set the dimensions and margins of the graph
-  var margin = {top: 10, right: 30, bottom: 30, left: 60},
-      width = 460 - margin.left - margin.right,
-      height = 400 - margin.top - margin.bottom;
+  var margin = {top: 10, right: 30, bottom: 50, left: 60},
+  width = 460 - margin.left - margin.right,
+  height = 500 - margin.top - margin.bottom;
   
   // append the svg object to the body of the page
   var svg = d3.select("#my_dataviz")
-    .append("svg")
-      .attr("width", width + margin.left + margin.right)
-      .attr("height", height + margin.top + margin.bottom)
-    .append("g")
-    .attr("transform",
-            "translate(" + margin.left + "," + margin.top + ")");
+  .append("svg")
+  .attr("width", width + margin.left + margin.right)
+  .attr("height", height + margin.top + margin.bottom)
+  .append("g")
+  .attr("transform",
+  "translate(" + margin.left + "," + margin.top + ")");
   
   //Read the data 
- 
-d3.csv("/public/csv/nomis_2025_02_21_121138.csv",
-    // When reading the csv, format the variables:
-    function(d){
-      //see https://d3js.org/d3-time-format
-      return { year : d.Year, suffolk : d.Suffolk, east : d.EastOfEngland, england : d.AllEngland }
-    },
   
-    // Now I can use this dataset:
-    function(data) {
+  d3.csv("/public/csv/nomis_2025_02_21_121138.csv",
+  // When reading the csv, format the variables:
+  function(d){
+    //see https://d3js.org/d3-time-format
+    return { year : d.Year, suffolk : d.Suffolk, east : d.EastOfEngland, england : d.AllEngland }
+  },
   
-      // Add X axis 
-      var x = d3
-      .scaleLinear()
-        .domain(d3.extent(data, function(d) { return +d.year; }))
-        .range([ 0, width ]);
-      svg.append("g")
-        .attr("transform", "translate(0," + width + ")")
-        .call(d3.axisBottom(x));
+  // Now I can use this dataset:
+  function(data) {
+    
   
-      // Add Y axis
-      var y = d3.scaleLinear()
-        .domain([0, d3.max(data, function(d) { return +d.suffolk; })])
-        .range([ height, 0 ]);
-      svg.append("g")
-        .call(d3.axisLeft(y));
-  
-      // Add the line
-      svg.append("path")
-        .datum(data)
-        .attr("fill", "none")
-        .attr("stroke", "steelblue")
-        .attr("stroke-width", 3)
-        .attr("d", d3.line()
-          .x(function(d) { return x(d.year) })
-          .y(function(d) { return y(d.suffolk) })
-          )
-
-        svg.append("path")
-        .datum(data)
-        .attr("fill", "none")
-        .attr("stroke", "gold")
-        .attr("stroke-width", 3)
-        .attr('stroke-dasharray', "5,5")
-        .attr("d", d3.line()
-          .x(function(d) { return x(d.year) })
-          .y(function(d) { return y(d.east) })
-          )
-
-          svg.append("path")
-        .datum(data)
-        .attr("fill", "none")
-        .attr("stroke", "purple")
-        .attr("stroke-width", 3)
-        .attr('stroke-dasharray', "20,5")
-        .attr("d", d3.line()
-          .x(function(d) { return x(d.year) })
-          .y(function(d) { return y(d.england) })
-          )
-
-  
+    // Add X axis 
+    var x = d3
+    .scaleLinear()
+    .domain(d3.extent(data, function(d) { return +d.year; }))
+    .range([ 0, width ]);
+    svg.append("g")
+    .attr("transform", "translate(0," + height + ")")
+    .call(d3.axisBottom(x).tickFormat(d3.format("y")));
+    
+    // Add Y axis
+    var y = d3.scaleLinear()
+    .domain([0, d3.max(data, function(d) { return +d.suffolk; })])
+    .range([ height, 0 ]);
+    svg.append("g")
+    .call(d3.axisLeft(y));
+    
+    // Add the line
+    svg.append("path")
+    .datum(data)
+    .attr("fill", "none")
+    .attr("stroke", "steelblue")
+    .attr("stroke-width", 3)
+    .attr("d", d3.line()
+    .x(function(d) { return x(d.year) })
+    .y(function(d) { return y(d.suffolk) })
+    )
+    
+    svg.append("path")
+    .datum(data)
+    .attr("fill", "none")
+    .attr("stroke", "gold")
+    .attr("stroke-width", 3)
+    .attr('stroke-dasharray', "5,5")
+    .attr("d", d3.line()
+    .x(function(d) { return x(d.year) })
+    .y(function(d) { return y(d.east) })
+    )
+    
+    svg.append("path")
+    .datum(data)
+    .attr("fill", "none")
+    .attr("stroke", "purple")
+    .attr("stroke-width", 3)
+    .attr('stroke-dasharray', "20,5")
+    .attr("d", d3.line()
+    .x(function(d) { return x(d.year) })
+    .y(function(d) { return y(d.england) })
+    )
+    
+    svg.append("text")
+    .text("Year")
+    .attr("x", width / 2)
+    .attr("y", height + 40)
+    
   })
   
-  </script>
-    <!--
+</script>
+<!--
 
-    End of Main section
+End of Main section
 
-    -->
-  </main>
+-->
+</main>
 {% endblock %}
