@@ -1,0 +1,17 @@
+{% extends "layouts/main.html" %}
+
+{% set pageName="People over 85 in Mid Suffolk" %}
+
+{% block content %}
+<!-- Load d3.js -->
+<script src="https://d3js.org/d3.v4.js"></script>
+ 
+      <h1>{{pageName}}</h1>
+      <p>Source: <a href="https://www.ons.gov.uk/census/maps/choropleth/population/age/resident-age-11a/aged-85-years-and-over/?lad=E07000203" target="_blank">Office of National statistics</a></p>
+      <iframe height="600px" width="100%" title="ONS Census Maps" frameborder="0" src="https://www.ons.gov.uk/census/maps/choropleth/population/age/resident-age-11a/aged-85-years-and-over/?lad=E07000203&embed=true&embedInteractive=true&embedAreaSearch=false&embedCategorySelection=false&embedView=viewport&embedBounds=0.4518427976473447%2C51.95149998586203%2C1.7552472023533312%2C52.516917630727676" />    <!--
+
+    End of Main section
+
+    -->
+  </main>
+{% endblock %}

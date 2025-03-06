@@ -24,7 +24,7 @@
   .chartAxis{font-size:1.5em}
   text {
     font-family: "GDS Transport", arial, sans-serif;
-    font-size: 1.2em;
+    font-size: 1em;
   }
 </style>
 
@@ -34,8 +34,8 @@
 <script>
   
   // set the dimensions and margins of the graph
-  var margin = {top: 10, right: 30, bottom: 50, left: 60},
-  width = 460 - margin.left - margin.right,
+  var margin = {top: 60, right: 30, bottom: 50, left: 60},
+  width = 600 - margin.left - margin.right,
   height = 500 - margin.top - margin.bottom;
   
   // append the svg object to the body of the page
@@ -58,7 +58,6 @@
   
   // Now I can use this dataset:
   function(data) {
-    
   
     // Add X axis 
     var x = d3
@@ -71,7 +70,7 @@
     
     // Add Y axis
     var y = d3.scaleLinear()
-    .domain([0, d3.max(data, function(d) { return +d.suffolk; })])
+    .domain([0, d3.max(data, function(d) { return +d.england; })])
     .range([ height, 0 ]);
     svg.append("g")
     .call(d3.axisLeft(y));
@@ -109,10 +108,16 @@
     .y(function(d) { return y(d.england) })
     )
     
+    // X axis label
     svg.append("text")
     .text("Year")
     .attr("x", width / 2)
     .attr("y", height + 40)
+  
+  svg.append("text")
+  .text("Percentage change")
+    .attr("x", "-20")
+    .attr("y", "-20")
     
   })
   
