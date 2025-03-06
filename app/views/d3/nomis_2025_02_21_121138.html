@@ -56,12 +56,13 @@ d3.csv("/public/csv/nomis_2025_02_21_121138.csv",
     // Now I can use this dataset:
     function(data) {
   
-      // Add X axis --> it is a date format
-      var x = d3.scaleUtc()
-        .domain(d3.extent(data, function(d) { return d.year; }))
+      // Add X axis 
+      var x = d3
+      .scaleLinear()
+        .domain(d3.extent(data, function(d) { return +d.year; }))
         .range([ 0, width ]);
       svg.append("g")
-        .attr("transform", "translate(0," + height + ")")
+        .attr("transform", "translate(0," + width + ")")
         .call(d3.axisBottom(x));
   
       // Add Y axis
