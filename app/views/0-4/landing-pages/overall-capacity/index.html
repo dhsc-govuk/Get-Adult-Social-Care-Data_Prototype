@@ -1,6 +1,6 @@
 {% extends "layouts/landing-page.html" %}
 
-{% set pageName="Current population needs and overall capacity at local authority level" %}
+{% set pageName="Overall capacity at local authority level" %}
 
 {% block content %} 
 <a href="javascript:history.back()" class="govuk-back-link">Back</a>
@@ -41,9 +41,13 @@
 
 <h2 class="govuk-heading-m" id="summary">1. Introduction</h2>
 <p class="govuk-body">
-  Here you can explore factors driving local population needs and find insights into current capacity to meet those needs.</p>
+  
+  <p class="govuk-body">Adult social care provision includes different types of care, such as unpaid care, care homes and domiciliary care.</p>
+
+  <p class="govuk-body">Each type of care plays a role in meeting local care needs, and the level of pressure and availability may vary across different types of care.</p>
+
   <p class="govuk-body">
-  For more information on local population needs, check the latest Market Position Statement and Joint Strategic Needs Assessment documents. You will usually find these on the local authority's website.
+  For more information on capacity, check the latest Market Position Statement and Joint Strategic Needs Assessment documents. You will usually find these on the local authority's website.
 </p>
 
 <h2 id="definition">2. Indicator definition and supporting information</h2>
@@ -128,242 +132,8 @@
             </dd>
           </div>
         </dl>
-          <!-- 
-          
-          Demographic factors 
-          
-          -->
-          <h2>4. Demographic factors driving population needs</h2>
-
-          <p>Population needs for adult social care are shaped by a range of factors, including age, income levels, employment status, disability, long-term health conditions, and household composition.</p>
-          <p>Areas with higher proportions of older adults, people with disabilities, or long-term health conditions typically experience greater pressure on services.<p>
-          <p>Economic factors also play a significant role in determining the level and type of care individuals need.</p>
-          
-          <div class="govuk-inset-text">
-            <strong>Tip:</strong> Use the Explore more data option provided for each table to view smaller geographical areas than local authority level, where available. 
-          </div>
-          <p class="govuk-body">View data for:</p>
-              <ul class="govuk-list govuk-list--bullet">
-                <li><a class="govuk-link" href="#population-age">population age</a></li>
-                <li><a class="govuk-link" href="#economic-factors">economic factors</a></li>
-                <li><a class="govuk-link" href="#household-composition">household composition</a></li>
-                <li><a class="govuk-link" href="#health-wellbeing">health and well-being</a></li>
-            </ul>
-
-
-
-          <h3 id="population-age" class="govuk-heading-m govuk-!-padding-top-9">4.1 Population age</h3>
-
-        <table class="govuk-table">
-        <thead class="govuk-table__head">
-          <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Indicator</th>
-          <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Suffolk</th>
-          <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">East of England region</th>
-          <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">All England</th>
-          <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Suffolk compared to East of England</th>
-          <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Suffolk compared to All England</th>
-        </thead>
-        <tbody>
-        <tr class="govuk-table__row">
-        <td class="govuk-table__cell">Population aged 65 and over</td>
-        <td class="govuk-table__cell">21.4%</td>
-        <td class="govuk-table__cell">19.9%</td>
-        <td class="govuk-table__cell">18.7%</td>
-        <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--grey">Similar</strong></td>
-        <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--grey">Similar</strong></td>
-        </tr>
-        <tr class="govuk-table__row">
-        <td class="govuk-table__cell">Population aged 85 and over</td>
-        <td class="govuk-table__cell">3.1%</td>
-        <td class="govuk-table__cell">2.2%</td>
-        <td class="govuk-table__cell">2.4%</td>
-        <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--grey">Similar</strong></td>
-        <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--grey">Similar</strong></td>
-        </tr>
-       </tbody>
-       </table>
-       <p class="govuk-body"><a href="#" class="govuk-link">Explore more population age data</a></p>
-
-       <h3 id="economic-factors" class="govuk-heading-m govuk-!-padding-top-9">4.2 Economic factors</h2>
-
-        <table class="govuk-table">
-        <thead class="govuk-table__head">
-          <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Indicator</th>
-          <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Suffolk</th>
-          <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">East of England region</th>
-          <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">All England</th>
-          <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Suffolk compared to East of England</th>
-          <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Suffolk compared to All England</th>
-        </thead>
-        <tbody>
-        <tr class="govuk-table__row">
-        <td class="govuk-table__cell">Geographical areas in most deprived 10%</td>
-        <td class="govuk-table__cell">11.2%</td>
-        <td class="govuk-table__cell">12.1%</td>
-        <td class="govuk-table__cell">13.8%</td>
-        <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--grey">Similar</strong></td>
-        <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--grey">Similar</strong></td>
-        </tr>
-        <tr class="govuk-table__row">
-        <td class="govuk-table__cell">Homes owned outright</td>
-        <td class="govuk-table__cell">38.6%</td>
-        <td class="govuk-table__cell">34.6%</td>
-        <td class="govuk-table__cell">32.5%</td>
-        <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--grey">Similar</strong></td>
-        <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--grey">Similar</strong></td>
-
-        </tr>
-       </tbody>
-       </table>
-       <p class="govuk-body"><a href="#" class="govuk-link">Explore more economic factors data</a></p>
-
-       <h3 id="household-composition" class="govuk-heading-m govuk-!-padding-top-9">4.3 Household composition</h3>
-       <table class="govuk-table">
-        <thead class="govuk-table__head">
-          <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Indicator</th>
-          <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Suffolk</th>
-          <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">East of England region</th>
-          <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">All England</th>
-          <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Suffolk compared to East of England</th>
-          <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Suffolk compared to All England</th>
-        </thead>
-        <tbody>
-        <tr class="govuk-table__row">
-        <td class="govuk-table__cell">1-person households with resident aged over 66</td>
-        <td class="govuk-table__cell">17.4%</td>
-        <td class="govuk-table__cell">14.5%</td>
-        <td class="govuk-table__cell">13.9%</td>
-        <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--grey">Similar</strong></td>
-        <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--grey">Similar</strong></td>
-        </tr>
-       </tbody>
-       </table>
-       <p class="govuk-body"><a href="#" class="govuk-link">Explore more household composition data</a></p>
-
-
-       <h3 id="health-wellbeing" class="govuk-heading-m govuk-!-padding-top-9">4.4 Health and wellbeing</h3>
-       <table class="govuk-table">
-        <thead class="govuk-table__head">
-          <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Indicator</th>
-          <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Suffolk</th>
-          <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">East of England region</th>
-          <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">All England</th>
-          <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Suffolk compared to East of England</th>
-          <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Suffolk compared to All England</th>
-        </thead>
-
-        <td class="govuk-table__cell">
-          <p>Residents with bad or very bad health conditions</p>
-          </td>
-          <td class="govuk-table__cell">
-          <p>0.6%</p>
-          </td>
-          <td class="govuk-table__cell">
-          <p>1.0%</p>
-          </td>
-          <td class="govuk-table__cell">
-          <p>1.2%</p>
-          </td>
-          <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--yellow">Lower</strong></td>
-          <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--yellow">Lower</strong></td>
-          </tr>
-          <tr class="govuk-table__row" aria-rowindex="8">
-          <td class="govuk-table__cell">
-          <p>Disability prevalence</p>
-          </td>
-          <td class="govuk-table__cell">
-          <p>15.6%</p>
-          </td>
-          <td class="govuk-table__cell">
-            <p>14.2%</p>
-          </td>
-          <td class="govuk-table__cell">
-            <p>21.1%</p>
-          </td>
-          <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--grey">Similar</strong></td>
-          <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--grey">Similar</strong></td>
-          </tr>
-          <tr class="govuk-table__row" aria-rowindex="9">
-          <td class="govuk-table__cell">
-          <p>Registered people with learning disability per 100,000 population</p>
-          </td>
-          <td class="govuk-table__cell">
-          <p>247</p>
-          </td>
-          <td class="govuk-table__cell">
-          <p>248</p>
-          </td>
-          <td class="govuk-table__cell">
-          <p>264</p>
-          </td>
-          <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--grey">Similar</strong></td>
-          <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--yellow">Lower</strong></td>
-          </tr>
-          <!---
-          <tr class="govuk-table__row" aria-rowindex="10">
-          <td class="govuk-table__cell">
-          <p>Registered people with autism per 100,000 population</p>
-          </td>
-          <td class="govuk-table__cell">
-          <p>94</p>
-          </td>
-          <td class="govuk-table__cell">
-          <p>92</p>
-          </td>
-          <td class="govuk-table__cell">
-          <p>88</p>
-          </td>
-          <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--grey">Similar</strong></td>
-          <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--grey">Similar</strong></td>
-          </tr>
-         -->
-          <tr class="govuk-table__row" aria-rowindex="10">
-          <td class="govuk-table__cell">
-          <p>Estimated number of people over 65 with dementia per 100,000 population</p>
-          </td>
-          <td class="govuk-table__cell">
-          <p>943</p>
-          </td>
-          <td class="govuk-table__cell">
-          <p>893</p>
-          </td>
-          <td class="govuk-table__cell">
-          <p>793</p>
-          </td>
-          <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--grey">Similar</strong></td>
-          <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--orange">Higher</strong></td>
-          </tr>
-       </tbody>
-       </table>
-
-       <p class="govuk-body"><a href="#" class="govuk-link">Explore more health and wellbeing data</a></p>
-
-       
-
-      <p class="govuk-body">Source: Office for National Statistics, NHS England, Ministry of Housing, Communities and Local Government (MHCLG)<br>
-        Data correct as of 5 February 2025
-   
-        <!--
-        <a href="../0-3/help/population-by-age.html" class="govuk-link">View supporting information for Population by age</a></br>
-        <a href="../0-3/help/population-by-disability.html" class="govuk-link">View supporting information for Population by disability</a>-->
-      </p>
-
-      <h2>5. Overall capacity at local authority level</h2>
-
-      <p class="govuk-body">Adult social care provision includes different types of care, such as unpaid care, care homes and domiciliary care.</p>
-
-      <p class="govuk-body">Each type of care plays a role in meeting local care needs, and the level of pressure and availability may vary across different types of care.</p>
-
-     <p class="govuk-body">View data for:</p>
-      <ul class="govuk-list govuk-list--bullet">
-      <li><a href="#unpaid-care" class="govuk-link">unpaid care</a></li>
-      <li><a href="#care-home" class="govuk-link">capacity in care home sector</a></li>
-      <li><a href="#domiciliary-care" class="govuk-link">capacity in domiciliary care sector</a></li>
-      </ul>
-      </p> 
-
-      
-      <h3 id="unpaid-care" class="govuk-heading-m govuk-!-padding-top-9">5.1 Unpaid care</h3>
+     
+      <h3 id="unpaid-care" class="govuk-heading-m govuk-!-padding-top-9">4. Unpaid care</h3>
       <p>Unpaid care is provided for many reasons, including when formal adult social care services are unavailable or do not meet individual needs.</p>
       <p>This table shows the percentage of residents providing unpaid care at different levels each week.<p>
         <div class="govuk-inset-text">
@@ -418,7 +188,7 @@
     
     -->
    
-    <h3 id="care-home" class="govuk-heading-m govuk-!-padding-top-9">5.2 Capacity in care home sector</h3>
+    <h3 id="care-home" class="govuk-heading-m govuk-!-padding-top-9">6. Capacity in care home sector</h3>
 
       <p class="govuk-body">Adult social care beds and percentage of occupancy are used as measures of capacity in the care home sector.</p>
 
@@ -452,28 +222,28 @@
         <tbody>
           <tr class="govuk-table__row">
             <td class="govuk-table__cell">Adult social care beds per 100,000 adult population (all bed types)</th>
-            <td class="govuk-table__cell">1,157</td>
-            <td class="govuk-table__cell">1,030</td>
-            <td class="govuk-table__cell">988</td>
+            <td class="govuk-table__cell">811.9</td>
+            <td class="govuk-table__cell">253.6</td>
+            <td class="govuk-table__cell">1815.4</td>
             <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--red">Higher</strong></td>
-            <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--yellow">Higher</strong></td>
+            <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--yellow">Lower</strong></td>
             </tr>
 
         <tr class="govuk-table__row">
         <td class="govuk-table__cell">Dementia nursing beds per 100,000 adult population</th>
-        <td class="govuk-table__cell">95</td>
-        <td class="govuk-table__cell">77</td>
-        <td class="govuk-table__cell">112</td>
-        <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--red">Higher</strong></td>
+        <td class="govuk-table__cell">36</td>
+        <td class="govuk-table__cell">36</td>
+        <td class="govuk-table__cell">905</td>
         <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--grey">Similar</strong></td>
+        <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--yellow">Lower</strong></td>
         </tr>
         <tr class="govuk-table__row">
           <td class="govuk-table__cell">General nursing beds per 100,000 adult population</th>
-            <td class="govuk-table__cell">412</td>
-            <td class="govuk-table__cell">355</td>
-            <td class="govuk-table__cell">299</td>
-            <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--red">Higher</strong></td>
-            <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--yellow">Higher</strong></td>
+            <td class="govuk-table__cell">36</td>
+            <td class="govuk-table__cell">36</td>
+            <td class="govuk-table__cell">808</td>
+            <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--grey">Similar</strong></td>
+            <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--yellow">Lower</strong></td>
           </tr>
         </tr>
         </tbody>
@@ -541,7 +311,7 @@
           Data correct as of 5 February 2025<br></p>
 
 
-          <h3 id="domiciliary-care" class="govuk-heading-m govuk-!-padding-top-9">5.3 Capacity in domiciliary care sector</h3>
+          <h3 id="domiciliary-care" class="govuk-heading-m govuk-!-padding-top-9">7. Capacity in domiciliary care sector</h3>
 
           <p class="govuk-body">Domiciliary care capacity can be measured by the number of care provider locations providing domiciliary care, service users, paid workforce hours, and workers employed in the sector.</p>
           <p class="govuk-body">This is adjusted by the size of adult population for comparing between different geographical areas.</p>
@@ -558,37 +328,37 @@
             <tbody>
               <tr class="govuk-table__row">
                 <td class="govuk-table__cell">Domiciliary care providers per 100,000 adult population</th>
-                <td class="govuk-table__cell">24.2</td>
-                <td class="govuk-table__cell">21.0</td>
-                <td class="govuk-table__cell">19.5</td>
-                <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--red">Higher</strong></td>
-                <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--red">Higher</strong></td>
+                <td class="govuk-table__cell"></td>
+                <td class="govuk-table__cell"></td>
+                <td class="govuk-table__cell"></td>
+                <td class="govuk-table__cell"></td>
+                <td class="govuk-table__cell"></td>
                 </tr>
 
                 <tr class="govuk-table__row">
-                  <td class="govuk-table__cell">Population receiving domiciliary care per 100,000 adult population </th>
-                  <td class="govuk-table__cell">640</td>
-                  <td class="govuk-table__cell">691</td>
-                  <td class="govuk-table__cell">880</td>
-                  <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--grey">Similar</strong></td>
-                  <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--yellow">Lower</strong></td>
+                  <td class="govuk-table__cell">Service users per 100,000 adult population</th>
+                  <td class="govuk-table__cell"></td>
+                  <td class="govuk-table__cell"></td>
+                  <td class="govuk-table__cell"></td>
+                  <td class="govuk-table__cell"></td>
+                  <td class="govuk-table__cell"></td>
                   </tr>
     
             <tr class="govuk-table__row">
-            <td class="govuk-table__cell">Workforce hours paid per week (agency workers included) per person receiving domiciliary care </th>
-            <td class="govuk-table__cell">62.3</td>
-            <td class="govuk-table__cell">59.2</td>
-            <td class="govuk-table__cell">55.3</td>
-            <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--red">Higher</strong></td>
-            <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--red">Higher</strong></td>
+            <td class="govuk-table__cell">Workforce hours paid (agency workers included)</th>
+            <td class="govuk-table__cell"></td>
+            <td class="govuk-table__cell"></td>
+            <td class="govuk-table__cell"></td>
+            <td class="govuk-table__cell"></td>
+            <td class="govuk-table__cell"></td>
             </tr>
             <tr class="govuk-table__row">
               <td class="govuk-table__cell">Workers employed (agency workers included) in domiciliary care workforce per 100,000 adult population </th>
-                <td class="govuk-table__cell">1,293</td>
-                <td class="govuk-table__cell">1,220</td>
-                <td class="govuk-table__cell">1,443</td>
-                <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--grey">Similar</strong></td>
-                <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--yellow">Lower</strong></td>
+                <td class="govuk-table__cell"></td>
+                <td class="govuk-table__cell"></td>
+                <td class="govuk-table__cell"></td>
+                <td class="govuk-table__cell"></td>
+                <td class="govuk-table__cell"></td>
               </tr>
             </tr>
             </tbody>
