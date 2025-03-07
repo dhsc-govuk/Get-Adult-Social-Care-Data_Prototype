@@ -1,0 +1,134 @@
+{% extends "layouts/logged-in.html" %}
+
+{% set pageName="Your dashboard" %}
+
+{% block header %}
+<header class="govuk-header govuk-header--full-width-border" data-module="govuk-header">
+  <div class="govuk-header__container govuk-width-container">
+    <div class="govuk-header__logo">
+      <a href="/" class="govuk-header__link govuk-header__link--homepage">
+        <svg
+        focusable="false"
+        role="img"
+        class="govuk-header__logotype"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 148 30"
+        height="30"
+        width="148"
+        aria-label="GOV.UK">
+        <title>GOV.UK</title>
+        <path d="M22.6 10.4c-1 .4-2-.1-2.4-1-.4-.9.1-2 1-2.4.9-.4 2 .1 2.4 1s-.1 2-1 2.4m-5.9 6.7c-.9.4-2-.1-2.4-1-.4-.9.1-2 1-2.4.9-.4 2 .1 2.4 1s-.1 2-1 2.4m10.8-3.7c-1 .4-2-.1-2.4-1-.4-.9.1-2 1-2.4.9-.4 2 .1 2.4 1s0 2-1 2.4m3.3 4.8c-1 .4-2-.1-2.4-1-.4-.9.1-2 1-2.4.9-.4 2 .1 2.4 1s-.1 2-1 2.4M17 4.7l2.3 1.2V2.5l-2.3.7-.2-.2.9-3h-3.4l.9 3-.2.2c-.1.1-2.3-.7-2.3-.7v3.4L15 4.7c.1.1.1.2.2.2l-1.3 4c-.1.2-.1.4-.1.6 0 1.1.8 2 1.9 2.2h.7c1-.2 1.9-1.1 1.9-2.1 0-.2 0-.4-.1-.6l-1.3-4c-.1-.2 0-.2.1-.3m-7.6 5.7c.9.4 2-.1 2.4-1 .4-.9-.1-2-1-2.4-.9-.4-2 .1-2.4 1s0 2 1 2.4m-5 3c.9.4 2-.1 2.4-1 .4-.9-.1-2-1-2.4-.9-.4-2 .1-2.4 1s.1 2 1 2.4m-3.2 4.8c.9.4 2-.1 2.4-1 .4-.9-.1-2-1-2.4-.9-.4-2 .1-2.4 1s0 2 1 2.4m14.8 11c4.4 0 8.6.3 12.3.8 1.1-4.5 2.4-7 3.7-8.8l-2.5-.9c.2 1.3.3 1.9 0 2.7-.4-.4-.8-1.1-1.1-2.3l-1.2 4c.7-.5 1.3-.8 2-.9-1.1 2.5-2.6 3.1-3.5 3-1.1-.2-1.7-1.2-1.5-2.1.3-1.2 1.5-1.5 2.1-.1 1.1-2.3-.8-3-2-2.3 1.9-1.9 2.1-3.5.6-5.6-2.1 1.6-2.1 3.2-1.2 5.5-1.2-1.4-3.2-.6-2.5 1.6.9-1.4 2.1-.5 1.9.8-.2 1.1-1.7 2.1-3.5 1.9-2.7-.2-2.9-2.1-2.9-3.6.7-.1 1.9.5 2.9 1.9l.4-4.3c-1.1 1.1-2.1 1.4-3.2 1.4.4-1.2 2.1-3 2.1-3h-5.4s1.7 1.9 2.1 3c-1.1 0-2.1-.2-3.2-1.4l.4 4.3c1-1.4 2.2-2 2.9-1.9-.1 1.5-.2 3.4-2.9 3.6-1.9.2-3.4-.8-3.5-1.9-.2-1.3 1-2.2 1.9-.8.7-2.3-1.2-3-2.5-1.6.9-2.2.9-3.9-1.2-5.5-1.5 2-1.3 3.7.6 5.6-1.2-.7-3.1 0-2 2.3.6-1.4 1.8-1.1 2.1.1.2.9-.3 1.9-1.5 2.1-.9.2-2.4-.5-3.5-3 .6 0 1.2.3 2 .9l-1.2-4c-.3 1.1-.7 1.9-1.1 2.3-.3-.8-.2-1.4 0-2.7l-2.9.9C1.3 23 2.6 25.5 3.7 30c3.7-.5 7.9-.8 12.3-.8m28.3-11.6c0 .9.1 1.7.3 2.5.2.8.6 1.5 1 2.2.5.6 1 1.1 1.7 1.5.7.4 1.5.6 2.5.6.9 0 1.7-.1 2.3-.4s1.1-.7 1.5-1.1c.4-.4.6-.9.8-1.5.1-.5.2-1 .2-1.5v-.2h-5.3v-3.2h9.4V28H55v-2.5c-.3.4-.6.8-1 1.1-.4.3-.8.6-1.3.9-.5.2-1 .4-1.6.6s-1.2.2-1.8.2c-1.5 0-2.9-.3-4-.8-1.2-.6-2.2-1.3-3-2.3-.8-1-1.4-2.1-1.8-3.4-.3-1.4-.5-2.8-.5-4.3s.2-2.9.7-4.2c.5-1.3 1.1-2.4 2-3.4.9-1 1.9-1.7 3.1-2.3 1.2-.6 2.6-.8 4.1-.8 1 0 1.9.1 2.8.3.9.2 1.7.6 2.4 1s1.4.9 1.9 1.5c.6.6 1 1.3 1.4 2l-3.7 2.1c-.2-.4-.5-.9-.8-1.2-.3-.4-.6-.7-1-1-.4-.3-.8-.5-1.3-.7-.5-.2-1.1-.2-1.7-.2-1 0-1.8.2-2.5.6-.7.4-1.3.9-1.7 1.5-.5.6-.8 1.4-1 2.2-.3.8-.4 1.9-.4 2.7zM71.5 6.8c1.5 0 2.9.3 4.2.8 1.2.6 2.3 1.3 3.1 2.3.9 1 1.5 2.1 2 3.4s.7 2.7.7 4.2-.2 2.9-.7 4.2c-.4 1.3-1.1 2.4-2 3.4-.9 1-1.9 1.7-3.1 2.3-1.2.6-2.6.8-4.2.8s-2.9-.3-4.2-.8c-1.2-.6-2.3-1.3-3.1-2.3-.9-1-1.5-2.1-2-3.4-.4-1.3-.7-2.7-.7-4.2s.2-2.9.7-4.2c.4-1.3 1.1-2.4 2-3.4.9-1 1.9-1.7 3.1-2.3 1.2-.5 2.6-.8 4.2-.8zm0 17.6c.9 0 1.7-.2 2.4-.5s1.3-.8 1.7-1.4c.5-.6.8-1.3 1.1-2.2.2-.8.4-1.7.4-2.7v-.1c0-1-.1-1.9-.4-2.7-.2-.8-.6-1.6-1.1-2.2-.5-.6-1.1-1.1-1.7-1.4-.7-.3-1.5-.5-2.4-.5s-1.7.2-2.4.5-1.3.8-1.7 1.4c-.5.6-.8 1.3-1.1 2.2-.2.8-.4 1.7-.4 2.7v.1c0 1 .1 1.9.4 2.7.2.8.6 1.6 1.1 2.2.5.6 1.1 1.1 1.7 1.4.6.3 1.4.5 2.4.5zM88.9 28 83 7h4.7l4 15.7h.1l4-15.7h4.7l-5.9 21h-5.7zm28.8-3.6c.6 0 1.2-.1 1.7-.3.5-.2 1-.4 1.4-.8.4-.4.7-.8.9-1.4.2-.6.3-1.2.3-2v-13h4.1v13.6c0 1.2-.2 2.2-.6 3.1s-1 1.7-1.8 2.4c-.7.7-1.6 1.2-2.7 1.5-1 .4-2.2.5-3.4.5-1.2 0-2.4-.2-3.4-.5-1-.4-1.9-.9-2.7-1.5-.8-.7-1.3-1.5-1.8-2.4-.4-.9-.6-2-.6-3.1V6.9h4.2v13c0 .8.1 1.4.3 2 .2.6.5 1 .9 1.4.4.4.8.6 1.4.8.6.2 1.1.3 1.8.3zm13-17.4h4.2v9.1l7.4-9.1h5.2l-7.2 8.4L148 28h-4.9l-5.5-9.4-2.7 3V28h-4.2V7zm-27.6 16.1c-1.5 0-2.7 1.2-2.7 2.7s1.2 2.7 2.7 2.7 2.7-1.2 2.7-2.7-1.2-2.7-2.7-2.7z"></path>
+      </svg>
+    </a>
+  </div>
+  <div class="govuk-header__content">
+    <a href="/" class="govuk-header__link govuk-header__service-name">
+      {{serviceName}}
+    </a>
+    <p style="float:right"><a href="#" style="color:white; text-decoration:none">Manage account | Sign out</a></p>
+    
+  </div>
+</div>
+</header>
+<div class="govuk-phase-banner govuk-width-container">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      Beta
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service. Help us improve it and <a class="govuk-link" href="#">give your feedback (opens in new tab)</a>.
+    </span>
+  </p>
+</div>
+{% from "govuk/components/service-navigation/macro.njk" import govukServiceNavigation %}
+
+{{ govukServiceNavigation({
+  navigation: [
+  {
+    href: "index",
+    text: "Home",
+    active: true
+  },
+  {
+    href: "get-data",
+    text: "Get data"
+  },
+  {
+    href: "../help/topics",
+    text: "Help"
+  }
+  ]
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<a href="index.html" class="govuk-back-link">Back</a>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <span class="govuk-caption-m">Data in action blog</span> 
+          <h1 class="govuk-heading-l">Using data to strengthen collaboration in adult social care</h1>
+
+          <p class="govuk-body-l">Find out how bringing together adult social care data can help care providers and local authorities collaborate more effectively, make informed decisions, and improve services for the communities they support.</p>
+          
+          <p class="govuk-body govuk-!-padding-bottom-6"><strong>By Emily Taylor, Head of Data and Insights for Adult Social Care on 28 February 2025</strong></p>
+
+          <h2 class="govuk-heading-m">Why collaboration needs shared insight</h2>
+
+          <p class="govuk-body">Adult social care is evolving. As the landscape changes, local authorities and care providers must work together to ensure services remain high quality, sustainable to responsive to the needs of communities.</p>
+          
+          <p class="govuk-body">But meaningful collaboration requires more than good intentions - it requires shared insight.</p>
+
+          <p class="govuk-body"><strong>Get adult social care data</strong> is designed to bridge that gap. By consolidating data from multiple sources, it provides a clearer picture of care needs, workforce trends, financial pressures, and service quality.</p>
+          
+          <p class="govuk-body">However, data alone is not enough. The real impact comes when it informs discussion, decision-making, and joint action.</p>
+
+          <h2 class="govuk-heading-m">Beyond accessing data: building a holistic response</h2>
+
+          <p class="govuk-body">One of the key strengths of this tool is not just that it allows you to access data - it provides a starting point for care providers and local authorities to work together.</p>
+          <p class="govuk-body">Whether it’s identifying emerging gaps in provision, planning workforce strategies, or tackling market sustainability, the data available here can help inform smarter, more collaborative decision-making.</p>
+          
+          <h2 class="govuk-heading-m">Using data to tackle workforce challenges</h2>
+          
+          <p class="govuk-body">Take workforce challenges, for example. If data shows rising vacancy rates in domiciliary care, and care providers report increasing difficulty in recruitment, this tool can provide a shared evidence base.</p>
+          <p class="govuk-body">Rather than each organisation working in isolation, the data can help frame conversations about potential solutions - whether that means joint recruitment initiatives, training partnerships, or better workforce planning.</p>
+          <p class="govuk-body">Similarly, financial and market data can help care providers understand local authority commissioning intentions and pressures, fostering transparency and proactive engagement rather than reactive responses.</p>
+
+          <h2 class="govuk-heading-m">How you might use this data</h2>
+
+          <ul class="govuk-list govuk-list--bullet">
+            <li><strong>Spot opportunities for collaboration</strong> – see where challenges align and work together on solutions, rather than competing for resources.</li>
+            <li><strong>Support evidence-based discussion</strong> – use shared data to ensure that conversations between local authorities and providers are grounded in facts, making decision-making more effective.</li>
+            <li><strong>Plan ahead</strong> – anticipate trends and pressures before they become crises, helping create a more stable and sustainable care market.</li>
+            </ul>
+
+          <h2 class="govuk-heading-m">A shared vision for the future</h2>
+
+          <p class="govuk-body">The purpose of this service is not just to make data available but to make it useful. We want to enable care providers and local authorities to move beyond numbers and create meaningful action.</p>
+          <p class="govuk-body">As this service develops, we'll continue to explore how we can best support collaboration — whether that’s through case studies, guidance, or more interactive ways to use the data. If you have thoughts on what would help, we’d love to hear from you.</p>
+          <p class="govuk-body">Data alone doesn’t transform services — but the right people, using the right insights, can.</p>
+
+
+          <h2 class="govuk-heading-m">About the author</h2>
+
+          <p class="govuk-body">Emily Taylor is the Head of Data and Insights for Adult Social Care, focusing on using data to improve collaboration between care providers and local authorities.</p>
+
+
+    </div>
+
+    <div class="govuk-grid-column-one-third">
+      <h2 class="govuk-heading-m govuk-!-padding-top-6">Recent blog posts</h2>
+
+      <ul class="govuk-list govuk-list--bullet govuk-list--spaced">
+        <li><a href="" class="govuk-link">Using data to support care market sustainability</a>, 15 February 2025</li>
+        <li><a href="" class="govuk-link">Workforce insights: understanding trends in adult social care in England</a>, 8 February 2025</li>
+        <li><a href="" class="govuk-link">Financial data in adult social care: what it can tell us</a>, 24 January 2025</li>
+ </ul>
+
+      </div>
+
+
+</div>
+
+{% endblock %}
