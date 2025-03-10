@@ -15,9 +15,9 @@
         <h3>Contents</h3>
         {% set items = [
           { link: "#introduction", heading: "Introduction" },
-          { link: "#definitions", heading: "Indicator definitions and supporting information" },
-          { link: "#settings", heading: "Your page settings" },
-          { link: "#demographics", heading: "Demographic factors driving population needs" }
+          { link: "#preferences", heading: "Your page settings" },
+          { link: "#demographics", heading: "Demographic factors driving population needs" },
+          { link: "#footnotes", heading: "Footnoes" }
         ] %}
         <ol class="govuk-list govuk-list--number">
                    {% for item in items %}
@@ -47,29 +47,8 @@
   For more information on local population needs, check the latest Market Position Statement and Joint Strategic Needs Assessment documents. You will usually find these on the local authority's website.
 </p>
 
-<h2 id="definition">2. Indicator definition and supporting information</h2>
-
-<p class="govuk-body">
-  Find detailed information about each indicator, including data definitions, data source, update schedule, and any limitations to be aware of before using the data.
-</p>
-<details class="govuk-details">
-  <summary class="govuk-details__summary">
-    <span class="govuk-details__summary-text">
-      Show list of indicator definitions and supporting information
-    </span>
-  </summary>
-  <div class="govuk-details__text">
-    <p class="govuk-body">Go to the following links for details:</p>
-    <ul class="govuk-list govuk-list--bullet">
-      <li><a href="../../0-4/help/population-size.html" class="govuk-link">Population size</a></li>
-      <li><a href="../../0-4/help/population-age.html" class="govuk-link">Percentage of population in age group</a></li>
-      <li><a href="../../0-4/help/population-65-over-help" class="govuk-link">Population aged 65 and over needing domestic or self-care help</a></li>
-   </ul>
-  </div>
-</details>
-
-    <h2 id="settings">3. Your page settings</h2>
-    <p class="govuk-body">You can update these settings to change the data shown.</p>
+    <h2 id="settings">2. Choose your data preferences</h2>
+    <p class="govuk-body">Change these to update the data shown.</p>
         <dl class="govuk-summary-list">
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
@@ -134,7 +113,7 @@
           Demographic factors 
           
           -->
-          <h2 id="demographics">4. Demographic factors driving population needs</h2>
+          <h2 id="demographics">3. Demographic factors driving population needs</h2>
 
           <p>Population needs for adult social care are shaped by a range of factors, including age, income levels, employment status, disability, long-term health conditions, and household composition.</p>
           <p>Areas with higher proportions of older adults, people with disabilities, or long-term health conditions typically experience greater pressure on services.</p>
@@ -154,7 +133,7 @@
                 <li><a class="govuk-link" href="#population-65-over-self-care-help">future population aged 65 and over needing self-care help</a></li>
             </ul>
 
-            <h3 id="population-size" class="govuk-heading-m govuk-!-padding-top-9">4.1 Future population size</h3>
+            <h3 id="population-size" class="govuk-heading-m govuk-!-padding-top-9">3.1 Future population size</h3>
             
             <p class="govuk-body">This data shows projected population changes from 2025 to 2040.</p>
 
@@ -229,7 +208,7 @@
                   <!--<a href="../0-3/help/beds-per-100000-people.html" class="govuk-link">View supporting information for this data</a>-->
               </p>
 
-       <h3 id="population-18-64" class="govuk-heading-m govuk-!-padding-top-9">4.2 Future population aged 18 to 64</h2>
+       <h3 id="population-18-64" class="govuk-heading-m govuk-!-padding-top-9">3.2 Future population aged 18 to 64</h2>
 
         <p class="govuk-body">This data shows projected population changes for people aged 18 to 64 from 2025 to 2040.</p>
         {% include "./_future_population.html" %}
@@ -287,7 +266,7 @@
       <!---
        <p class="govuk-body"><a href="" class="govuk-button govuk-button--secondary">Explore more XXXXX data</a></p>
        -->
-       <h3 id="population-65-over" class="govuk-heading-m govuk-!-padding-top-9">4.3 Future population aged 65 and over</h2>
+       <h3 id="population-65-over" class="govuk-heading-m govuk-!-padding-top-9">3.3 Future population aged 65 and over</h2>
 
         <p class="govuk-body">This data shows projected population changes for people aged 65 and over from 2025 to 2040.</p>
         {% include "./_future_population.html" %}
@@ -347,7 +326,7 @@
        <p class="govuk-body"><a href="" class="govuk-button govuk-button--secondary">Explore more XXXXX data</a></p>
       -->
 
-       <h3 id="population-85-over" class="govuk-heading-m govuk-!-padding-top-9">4.3 Future population aged 85 and over</h2>
+       <h3 id="population-85-over" class="govuk-heading-m govuk-!-padding-top-9">3.4 Future population aged 85 and over</h2>
 
         <p class="govuk-body">This data shows projected population changes for people aged 85 and over from 2025 to 2040.</p>
         {% include "./_future_population.html" %}
@@ -406,7 +385,7 @@
        <p class="govuk-body"><a href="" class="govuk-button govuk-button--secondary">Explore more XXXXX data</a></p>
        -->
 
-       <h3 id="population-65-over-domestic-help" class="govuk-heading-m govuk-!-padding-top-9">4.4 Future population aged 65 and over needing domestic help</h2>
+       <h3 id="population-65-over-domestic-help" class="govuk-heading-m govuk-!-padding-top-9">3.5 Future population aged 65 and over needing domestic help</h2>
         <p class="govuk-body">Domestic tasks are important for independent living but not essential for basic functioning. These include housework, shopping for food, managing paperwork or bills, and getting out of the house. These tasks are known as Instrumental Activities of Daily Living (IADLs).</p>
         <!--<p class="govuk-body">For more details, see the <a href="https://digital.nhs.uk/data-and-information/publications/statistical/health-survey-for-england/2017" class="gov-link" target="_blank">NHS Health Survey for England (opens in new tab)</a>.</p>
        -->
@@ -466,7 +445,7 @@
        <p class="govuk-body"><a href="" class="govuk-button govuk-button--secondary">Explore more XXXXX data</a></p>
        -->
 
-       <h3 id="population-65-over-self-care-help" class="govuk-heading-m govuk-!-padding-top-9">4.5 Future population aged 65 and over needing self-care help</h2>
+       <h3 id="population-65-over-self-care-help" class="govuk-heading-m govuk-!-padding-top-9">3.6 Future population aged 65 and over needing self-care help</h2>
         <p class="govuk-body">
           Self-care tasks are essential daily activities related to personal care and mobility. These include bathing, dressing, using the toilet, eating, taking medication, and moving around indoors. These tasks are known as Activities of Daily Living (ADLs).
 
@@ -528,6 +507,27 @@
         <!--
         <p class="govuk-body"><a href="" class="govuk-button govuk-button--secondary">Explore more XXXX data</a></p>
       -->
+        
+      <h2 id="footnotes">4. Footnotes</h2>
+
+      <p class="govuk-body">
+        Find out how each indicator is defined, sourced, and updated.
+      </p>
+      <details class="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            Footnotes for each indicator
+          </span>
+        </summary>
+            <div class="govuk-details__text">
+              <p class="govuk-body">Select an indicator to view its footnotes:</p>
+              <ol class="govuk-list govuk-list--bullet">
+      <li><a href="../../0-4/help/population-size.html" class="govuk-link">Population size</a></li>
+      <li><a href="../../0-4/help/population-age.html" class="govuk-link">Percentage of population in age group</a></li>
+      <li><a href="../../0-4/help/population-65-over-help" class="govuk-link">Population aged 65 and over needing domestic or self-care help</a></li>
+   </ul>
+  </div>
+</details>
 
     <p class="govuk-body"><a class="govuk-link" href="#">Back</a></p>
     
