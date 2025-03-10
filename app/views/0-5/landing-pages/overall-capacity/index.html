@@ -15,10 +15,11 @@
         <h3>Contents</h3>
         {% set items = [
           { link: "#introduction", heading: "Introduction" },
-          { link: "#definitions", heading: "Indicator definitions and supporting information" },
-          { link: "#settings", heading: "Your page settings" },
-          { link: "#population", heading: "Demographic factors driving population needs" },
-          { link: "#capacity", heading: "Overall capacity at local authority level" }
+          { link: "#preferences", heading: "Choose your data preferences" },
+          { link: "#unpaid-care", heading: "Unpaid care" },
+          { link: "#care-home", heading: "Capacity in care home sector" },
+          { link: "#domiciliary-care", heading: "Capacity in domiciliary care sector" },
+          { link: "#footnotes", heading: "Footnoes" }
         ] %}
         <ol class="govuk-list govuk-list--number">
                    {% for item in items %}
@@ -50,32 +51,8 @@
   For more information on capacity, check the latest Market Position Statement and Joint Strategic Needs Assessment documents. You will usually find these on the local authority's website.
 </p>
 
-<h2 id="definition">2. Indicator definition and supporting information</h2>
-
-<p class="govuk-body">
-  Find detailed information about each indicator, including data definitions, data source, update schedule, and any limitations to be aware of before using the data.
-</p>
-<details class="govuk-details">
-  <summary class="govuk-details__summary">
-    <span class="govuk-details__summary-text">
-      Show list of indicator definitions and supporting information
-    </span>
-  </summary>
-  <div class="govuk-details__text">
-    <p class="govuk-body">Go to the following links for details:</p>
-    <ol class="govuk-list govuk-list--bullet">
-      <li><a href="../../help/population-size.html" class="govuk-link">Population size</a></li>
-      <li><a href="../../help/population-age.html" class="govuk-link">Percentage of population in age group</a></li>
-      <li><a href="../../help/disability-prevalence.html" class="govuk-link">Disability prevalence</a></li>
-      <li><a href="../../help/beds-per-100000-adult-population.html" class="govuk-link">Adult social care beds per 100,000 adult population</a></li>
-      <li><a href="../../help/percentage-beds-occupied" class="govuk-link">Percentage of adult social care beds occupied</a></li>
-      <li><a href="../../help/beds-care-provider-location" class="govuk-link">Number of adult social care beds in care provider location</a></li>
-    </ol>
-  </div>
-</details>
-
-    <h2 id="settings">3. Your page settings</h2>
-    <p class="govuk-body">You can update these settings to change the data shown.</p>
+    <h2 id="preferences">2. Choose your data preferences</h2>
+    <p class="govuk-body">Change these to update the data shown.</p>
         <dl class="govuk-summary-list">
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
@@ -110,7 +87,7 @@
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-              Service user age category
+              Service user age
             </dt>
             <dd class="govuk-summary-list__value">
               Aged 65 and over
@@ -133,7 +110,7 @@
           </div>
         </dl>
      
-      <h3 id="unpaid-care" class="govuk-heading-m govuk-!-padding-top-9">4. Unpaid care</h3>
+      <h3 id="unpaid-care" class="govuk-heading-m govuk-!-padding-top-9">3. Unpaid care</h3>
       <p>Unpaid care is provided for many reasons, including when formal adult social care services are unavailable or do not meet individual needs.</p>
       <p>This table shows the percentage of residents providing unpaid care at different levels each week.<p>
         <div class="govuk-inset-text">
@@ -188,7 +165,7 @@
     
     -->
    
-    <h3 id="care-home" class="govuk-heading-m govuk-!-padding-top-9">6. Capacity in care home sector</h3>
+    <h3 id="care-home" class="govuk-heading-m govuk-!-padding-top-9">4. Capacity in care home sector</h3>
 
       <p class="govuk-body">Adult social care beds and percentage of occupancy are used as measures of capacity in the care home sector.</p>
 
@@ -203,8 +180,8 @@
         
       <p class="govuk-body">Suffolk care homes are <strong>operating at 85% occupancy</strong>, which is higher than the regional average (77%). This suggests a more limited capacity to meet population needs than the regional average.</p>
         -->
-    <h4 id="asd-beds" class="govuk-heading-m govuk-!-padding-top-9">
-        Adult social care beds per 100,000 adult population</h4>
+    <h4 id="asc-beds" class="govuk-heading-m govuk-!-padding-top-9">
+        4.1 Adult social care beds per 100,000 adult population</h4>
 
 
       <p class="govuk-body">The number of adult social care beds per 100,000 adult population provides an indicator of current care capacity. A higher number usually suggests more sufficient capacity for locations with similar needs.</p>
@@ -259,7 +236,7 @@
         
 
       <h4 id="occupied-beds" class="govuk-heading-m govuk-!-padding-top-9">
-         Percentage of occupied adult social care beds</h4>
+         4.2 Percentage of occupied adult social care beds</h4>
          <p class="govuk-body">Bed occupancy levels can show how much current care capacity is being used. High occupancy may mean limited availability to meet needs.</p>
   
   
@@ -311,7 +288,7 @@
           Data correct as of 5 February 2025<br></p>
 
 
-          <h3 id="domiciliary-care" class="govuk-heading-m govuk-!-padding-top-9">7. Capacity in domiciliary care sector</h3>
+          <h3 id="domiciliary-care" class="govuk-heading-m govuk-!-padding-top-9">5. Capacity in domiciliary care sector</h3>
 
           <p class="govuk-body">Domiciliary care capacity can be measured by the number of care provider locations providing domiciliary care, service users, paid workforce hours, and workers employed in the sector.</p>
           <p class="govuk-body">This is adjusted by the size of adult population for comparing between different geographical areas.</p>
@@ -540,9 +517,34 @@
               <p class="govuk-body">Source: Capacity Tracker<br>
                 Data correct as of 5 February 2025<br></p>
               -->
-            
-                
+                       
 
-    <p class="govuk-body"><a class="govuk-link" href="#">Back </a></p>
+    
+  <h2 id="footnotes">6. Footnotes</h2>
+
+  <p class="govuk-body">
+    Find out how each indicator is defined, sourced, and updated.
+  </p>
+  <details class="govuk-details">
+    <summary class="govuk-details__summary">
+      <span class="govuk-details__summary-text">
+        Footnotes for each indicator
+      </span>
+    </summary>
+        <div class="govuk-details__text">
+          <p class="govuk-body">Select an indicator to view its footnotes:</p>
+          <ol class="govuk-list govuk-list--bullet">
+            <li><a href="../../help/population-size.html" class="govuk-link">Population size</a></li>
+            <li><a href="../../help/population-age.html" class="govuk-link">Percentage of population in age group</a></li>
+            <li><a href="../../help/disability-prevalence.html" class="govuk-link">Disability prevalence</a></li>
+            <li><a href="../../help/beds-per-100000-adult-population.html" class="govuk-link">Adult social care beds per 100,000 adult population</a></li>
+            <li><a href="../../help/percentage-beds-occupied" class="govuk-link">Percentage of adult social care beds occupied</a></li>
+            <li><a href="../../help/beds-care-provider-location" class="govuk-link">Number of adult social care beds in care provider location</a></li>
+          </ol>
+        </div>
+      </details>
+      
+
+  <p class="govuk-body"><a class="govuk-link" href="#">Back </a></p>
     
     {% endblock%}
