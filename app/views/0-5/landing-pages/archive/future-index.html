@@ -124,10 +124,6 @@
             </dd>
           </div>
         </dl>
-        </div>
-        </div>
-        <div class="govuk-grid-row">
-          <div class="govuk-grid-column-two-thirds">
           <!-- 
           
           Demographic factors 
@@ -229,53 +225,62 @@
 
        <h3 id="population-18-64" class="govuk-heading-m govuk-!-padding-top-9">2.2 Future population aged 18 to 64</h2>
 
-        <div class="govuk-tabs" data-module="govuk-tabs">
-          <h2 class="govuk-tabs__title">
-            Contents
-          </h2>
-          <ul class="govuk-tabs__list">
-            <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
-              <a class="govuk-tabs__tab" href="#past-day-b">
-               Chart
-              </a>
-            </li>
-            <li class="govuk-tabs__list-item">
-              <a class="govuk-tabs__tab" href="#past-wee-">
-                Table
-              </a>
-            </li>
-          </ul>
-          <div class="govuk-tabs__panel" id="past-day-b">
-            <!-- 
-            
-            Line chart 
-            
-            -->
-            {% include "./_nomis_2025_02_24_101258.html" %}
-            <p class="govuk-body"><a href="#" class="govuk-link">Download this chart (CSV)</a></p>
-            </div>
-            <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="past-week-b">
-              <h2 class="govuk-heading-l">Population change, all ages</h2>
-          <table class="govuk-table">
-            <tbody>
-              <tr class="govuk-table__row">
-                <th scope="col" class="govuk-table__header">Year</th>
-                <th scope="col" class="govuk-table__header govuk-!-width-one-third govuk-!-text-align-right">Suffolk</th>
-                <th scope="col" class="govuk-table__header govuk-!-width-one-third govuk-!-text-align-right">East of England</th>
-                <th scope="col" class="govuk-table__header govuk-!-width-one-third govuk-!-text-align-right">All England</th>
-              </tr>
-             {% for item in totalPopulation %}
-              <tr class="govuk-table__row">
-                <td class="govuk-table__cell govuk-table__cell--numeric">{{item[0]}}</td>
-                <td class="govuk-table__cell govuk-table__cell--numeric">{{item[1]|addcommas}}</td>
-                <td class="govuk-table__cell govuk-table__cell--numeric">{{item[2]|addcommas}}</td>
-                <td class="govuk-table__cell govuk-table__cell--numeric">{{item[3]|addcommas}}</td>
-              </tr>
-              {% endfor %}
-            </tbody>
-          </table>
-              </div>
-              </div>
+        <p class="govuk-body">This data shows projected population changes for people aged 18 to 64 from 2025 to 2040.</p>
+                          <!-- 
+                  
+                  Line chart 
+                  
+                  -->
+                  {% include "./_nomis_2025_02_21_121138.html" %}
+        <table class="govuk-table">
+          <tbody>
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header">Year</th>
+              <th scope="col" class="govuk-table__header govuk-!-width-one-third govuk-!-text-align-right">Suffolk</th>
+              <th scope="col" class="govuk-table__header govuk-!-width-one-third govuk-!-text-align-right">East of England</th>
+              <th scope="col" class="govuk-table__header govuk-!-width-one-third govuk-!-text-align-right">All England</th>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell govuk-table__cell--numeric">2025</td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">447,544</td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">3,859,731</td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">35,811,939</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell govuk-table__cell--numeric">2026</td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">447,217</td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">3,867,362</td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">35,880,054</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell govuk-table__cell--numeric">2028</td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">447,217</td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">3,879,818</td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">36,002,756</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell govuk-table__cell--numeric">2030</td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">444,063</td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">3,882,946</td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">36,043,209</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell govuk-table__cell--numeric">2035</td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">438,553</td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">3,883,055</td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">36,076,402</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell govuk-table__cell--numeric">2040</td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">437,438</td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">3,888,536</td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">36,163,365</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p class="govuk-body"><a href="#" class="govuk-link">Download this table (CSV)</a></p>
+
        <p class="govuk-body">Source: Office for National Statistics<br>
         Data correct as of 5 February 2025</p>
       <!---

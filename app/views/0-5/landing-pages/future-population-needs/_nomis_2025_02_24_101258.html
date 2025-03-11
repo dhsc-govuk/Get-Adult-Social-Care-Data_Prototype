@@ -22,7 +22,7 @@
 </style>
 
 <!-- Create a div where the graph will take place -->
-<div id="my_dataviz_a"></div>
+<div id="my_dataviz_b"></div>
 
 <script>
   
@@ -32,7 +32,7 @@
   height = 600 - margin.top - margin.bottom;
   
   // append the svg object to the body of the page
-  var svg1 = d3.select("#my_dataviz_a")
+  var svg2 = d3.select("#my_dataviz_b")
   .append("svg")
   .attr("width", width + margin.left + margin.right)
   .attr("height", height + margin.top + margin.bottom)
@@ -42,7 +42,7 @@
   
   //Read the data 
   
-  d3.csv("/public/csv/nomis_2025_02_21_121138.csv",
+  d3.csv("/public/csv/nomis_2025_02_24_101258.csv",
   // When reading the csv, format the variables:
   function(d){
     //see https://d3js.org/d3-time-format
@@ -57,20 +57,20 @@
     .scaleLinear()
     .domain(d3.extent(data, function(d) { return +d.year; }))
     .range([ 0, width ]);
-    svg1.append("g")
+    svg2.append("g")
     .attr("transform", "translate(0," + height + ")")
     .call(d3.axisBottom(x).tickFormat(d3.format("y")));
     
     // Add Y axis
     var y = d3.scaleLinear()
-    .domain([0, d3.max(data, function(d) { return +30; })])
+    .domain([d3.min(data, function(d) { return -3; }), d3.max(data, function(d) { return +3; })])
     // .domain([0, d3.max(data, function(d) { return +d.england; })]) - alternative domain
     .range([ height, 0 ]);
-    svg1.append("g")
+    svg2.append("g")
     .call(d3.axisLeft(y));
     
     // Add the line for Suffolk
-    svg1.append("path")
+    svg2.append("path")
     .datum(data)
     .attr("fill", "none")
     .attr("stroke", "steelblue")
@@ -82,7 +82,7 @@
     )
     
     // Add the line for east of England
-    svg1.append("path")
+    svg2.append("path")
     .datum(data)
     .attr("fill", "none")
     .attr("stroke", "orange")
@@ -93,7 +93,7 @@
     )
     
     // Add the line for all England
-    svg1.append("path")
+    svg2.append("path")
     .datum(data)
     .attr("fill", "none")
     .attr("stroke", "purple")
@@ -105,7 +105,7 @@
     )
 
     // Chart keys
-    svg1.append("line")
+    svg2.append("line")
     .attr("stroke", "steelblue")
     .attr('stroke-dasharray', "5,5")
     .attr("stroke-width", 3)
@@ -114,12 +114,12 @@
     .attr('y1', "-65")
     .attr('y2', "-65")
 
-    svg1.append("text")
+    svg2.append("text")
     .text("Suffolk")
     .attr("x", "5%")
     .attr("y", "-60")
 
-    svg1.append("line")
+    svg2.append("line")
     .attr("stroke", "orange")
     .attr("stroke-width", 3)
     .attr('x1', "30%")
@@ -127,12 +127,12 @@
     .attr('y1', "-65")
     .attr('y2', "-65")
 
-    svg1.append("text")
+    svg2.append("text")
     .text("East of England")
     .attr("x", "35%")
     .attr("y", "-60")
 
-    svg1.append("line")
+    svg2.append("line")
     .attr("stroke", "purple")
     .attr("stroke-width", 3)
     .attr('stroke-dasharray', "3,2")
@@ -141,25 +141,25 @@
     .attr('y1', "-65")
     .attr('y2', "-65")
 
-    svg1.append("text")
+    svg2.append("text")
     .text("England")
     .attr("x", "65%")
     .attr("y", "-60")
     
     
     // X axis legends
-    svg1.append("text")
+    svg2.append("text")
     .text("Year")
     .attr("x", width / 2)
     .attr("y", height + 40)
     
-    svg1.append("text")
-    .text("Population change by year, all ages")
+    svg2.append("text")
+    .text("Population change by year, aged 18 to 64")
     .attr("x", "-30")
     .attr("y", "-100")
     .attr("class","chart-title")
     
-    svg1.append("text")
+    svg2.append("text")
     .text("Population change (%)")
     .attr("x", "-20")
     .attr("y", "-20")
