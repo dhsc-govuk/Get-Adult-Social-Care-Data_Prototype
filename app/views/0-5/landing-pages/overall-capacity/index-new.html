@@ -5,80 +5,11 @@
 {% block content %} 
 <a href="javascript:history.back()" class="govuk-back-link">Back</a>
 <div class="govuk-grid-row">
+
+
   <div class="govuk-grid-column-full">
     <!--<span class="govuk-caption-l">Demand and capacity</span>-->
     <h1 class="govuk-heading-l">{{pageName}}</h1>
-    <p class="govuk-body-l">Understand local capacity to meet adult social care needs.</p>
-
-
-    <style>
-      /* Contents Box Styling */
-      .contents-box {
-          background-color: #f3f2f1; /* GOV.UK light grey */
-          padding: 20px;
-          margin-bottom: 20px;
-          max-width: 60%; /* Adjusted width for better spacing */
-      }
-    
-      /* Remove default list indentation */
-      .govuk-list--number {
-          counter-reset: main-counter;
-          list-style-type: none;
-          padding-left: 0; /* Remove padding */
-          margin-left: 0; /* Remove margin */
-      }
-    
-      .govuk-list--number > li {
-          counter-increment: main-counter;
-      }
-    
-      .govuk-list--number > li::before {
-          content: counter(main-counter) ". ";
-          font-weight: normal;
-      }
-    
-      /* Styling for the nested (child) ordered list */
-      .nested-list {
-          counter-reset: sub-counter;
-          list-style-type: none;
-          padding-left: 1.5rem; /* Align nested items properly */
-          margin-left: 0;
-      }
-    
-      .nested-list li {
-          counter-increment: sub-counter;
-      }
-    
-      .nested-list li::before {
-          content: counter(main-counter) "." counter(sub-counter) ". ";
-          font-weight: normal;
-      }
-    
-      /* Bridge Text Styling */
-      .bridge-text {
-          margin-top: 20px;
-          font-weight: bold;
-      }
-    </style>
-    
-    <!-- Contents Box -->
-    <div class="contents-box">
-      <h2 class="govuk-heading-m">Contents</h2>
-      <ol class="govuk-list govuk-list--number">
-          <li><a href="#factors" class="govuk-link">Choose your data preferences</a>
-          <li><a href="#unpaid-care" class="govuk-link">Unpaid care</a>
-          <li><a href="#carehome" class="govuk-link">Capacity in care home sector</a>
-              <ol class="govuk-list nested-list">
-                  <li><a class="govuk-link" href="#asc-beds">Adult social care beds per 100,000 adult population</a></li>
-                  <li><a class="govuk-link" href="#occupied-beds">Percentage of occupied adult social care beds</a></li>
-              </ol>
-          </li>
-          <li><a href="#factors" class="govuk-link">Capacity in domiciliary care sector</a>
-          <li><a href="#footnotes" class="govuk-link">Footnotes</a></li>
-          <li><a href="#related" class="govuk-link">Related information</a></li>
-      </ol>
-    </div>
-    
     <!-- 
       
       Main content
@@ -88,7 +19,18 @@
       h2{margin-top:4em}
     </style>
 
-    <h2 id="preferences">1. Choose your data preferences</h2>
+<h2 class="govuk-heading-m" id="summary">1. Introduction</h2>
+<p class="govuk-body">
+  
+  <p class="govuk-body">Adult social care provision includes different types of care, such as unpaid care, care homes and domiciliary care.</p>
+
+  <p class="govuk-body">Each type of care plays a role in meeting local care needs, and the level of pressure and availability may vary across different types of care.</p>
+
+  <p class="govuk-body">
+  For more information on capacity, check the latest Market Position Statement and Joint Strategic Needs Assessment documents. You will usually find these on the local authority's website.
+</p>
+
+    <h2 id="preferences">2. Choose your data preferences</h2>
     <p class="govuk-body">Change these to update the data shown.</p>
         <dl class="govuk-summary-list">
           <div class="govuk-summary-list__row">
@@ -147,29 +89,23 @@
           </div>
         </dl>
      
-      <h3 id="unpaid-care" class="govuk-heading-m govuk-!-padding-top-9">2. Unpaid care</h3>
+      <h3 id="unpaid-care" class="govuk-heading-m govuk-!-padding-top-9">3. Unpaid care</h3>
       <p>Unpaid care is provided for many reasons, including when formal adult social care services are unavailable or do not meet individual needs.</p>
       <p>This table shows the percentage of residents providing unpaid care at different levels each week.<p>
         <div class="govuk-inset-text">
           <strong>Tip:</strong> Use the Explore more data option to view smaller geographical areas than local authority level.
         </div>
 
-        <style>
-          .table-indicator { width: 29%; }
-          .table-percentage { width: 13%; }
-          .table-comparison { width: 16%; }
-       </style>
-
       <table class="govuk-table">
         <thead class="govuk-table__head">
-          <th scope="col" class="govuk-table__header table-indicator">Indicator</th>
-          <th scope="col" class="govuk-table__header table-percentage">Suffolk</th>
-          <th scope="col" class="govuk-table__header table-percentage">East of England</th>
-          <th scope="col" class="govuk-table__header table-percentage">All England</th>
-          <th scope="col" class="govuk-table__header table-comparison">Compared to East of England</th>
-          <th scope="col" class="govuk-table__header table-comparison">Compared to All England</th>
-      </thead>
-      <tbody>
+          <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Indicator</th>
+          <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Suffolk</th>
+          <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">East of England region</th>
+          <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">All England</th>
+          <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Suffolk compared to East of England</th>
+          <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Suffolk compared to All England</th>
+        </thead>
+        <tbody>
         <tr class="govuk-table__row">
         <td class="govuk-table__cell">Residents providing 19 hours or less unpaid care a week</td>
         <td class="govuk-table__cell">5.1%</td>
@@ -208,9 +144,15 @@
     
     -->
    
-    <h3 id="care-home" class="govuk-heading-m govuk-!-padding-top-9">3. Capacity in care home sector</h3>
+    <h3 id="care-home" class="govuk-heading-m govuk-!-padding-top-9">4. Capacity in care home sector</h3>
 
       <p class="govuk-body">Adult social care beds and percentage of occupancy are used as measures of capacity in the care home sector.</p>
+
+      <p class="govuk-body">View data for:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li><a class="govuk-link" href="#asc-beds">adult social care beds per 100,000 adult population </a></li>
+        <li><a class="govuk-link" href="#occupied-beds">percentage of occupied adult social care beds</a></li>
+    </ul>
 
       <!--
       <p class="govuk-body">Care homes in Suffolk have <strong>18.4 beds per 100,000 adult population</strong>, compared to the East of England regional average of 12.2 per 100,000.</p>
@@ -218,7 +160,7 @@
       <p class="govuk-body">Suffolk care homes are <strong>operating at 85% occupancy</strong>, which is higher than the regional average (77%). This suggests a more limited capacity to meet population needs than the regional average.</p>
         -->
     <h4 id="asc-beds" class="govuk-heading-m govuk-!-padding-top-9">
-        3.1 Adult social care beds per 100,000 adult population</h4>
+        4.1 Adult social care beds per 100,000 adult population</h4>
 
 
       <p class="govuk-body">The number of adult social care beds per 100,000 adult population provides an indicator of current care capacity. A higher number usually suggests more sufficient capacity for locations with similar needs.</p>
@@ -226,13 +168,13 @@
       <p class="govuk-body"><a href="bed-filters" class="govuk-class">Change bed types for this table</a></p>
       <table class="govuk-table">
         <thead class="govuk-table__head">
-          <th scope="col" class="govuk-table__header table-indicator">Indicator</th>
-          <th scope="col" class="govuk-table__header table-percentage">Suffolk</th>
-          <th scope="col" class="govuk-table__header table-percentage">East of England</th>
-          <th scope="col" class="govuk-table__header table-percentage">All England</th>
-          <th scope="col" class="govuk-table__header table-comparison">Compared to East of England</th>
-          <th scope="col" class="govuk-table__header table-comparison">Compared to All England</th>
-      </thead>
+          <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Indicator</th>
+          <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Suffolk</th>
+          <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">East of England region</th>
+          <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">All England</th>
+          <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Suffolk compared to East of England</th>
+          <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Suffolk compared to All England</th>
+        </thead>
         <tbody>
           <tr class="govuk-table__row">
             <td class="govuk-table__cell">Adult social care beds per 100,000 adult population (all bed types)</th>
@@ -273,20 +215,20 @@
         
 
       <h4 id="occupied-beds" class="govuk-heading-m govuk-!-padding-top-9">
-         3.2 Percentage of occupied adult social care beds</h4>
+         4.2 Percentage of occupied adult social care beds</h4>
          <p class="govuk-body">Bed occupancy levels can show how much current care capacity is being used. High occupancy may mean limited availability to meet needs.</p>
   
   
       <p class="govuk-body"><a href="bed-filters" class="govuk-class">Change bed types for this table</a></p>
         <table class="govuk-table">
           <thead class="govuk-table__head">
-            <th scope="col" class="govuk-table__header table-indicator">Indicator</th>
-            <th scope="col" class="govuk-table__header table-percentage">Suffolk</th>
-            <th scope="col" class="govuk-table__header table-percentage">East of England</th>
-            <th scope="col" class="govuk-table__header table-percentage">All England</th>
-            <th scope="col" class="govuk-table__header table-comparison">Compared to East of England</th>
-            <th scope="col" class="govuk-table__header table-comparison">Compared to All England</th>
-        </thead>
+            <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Indicator</th>
+            <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Suffolk</th>
+            <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">East of England region</th>
+            <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">All England</th>
+            <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Suffolk compared to East of England</th>
+            <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Suffolk compared to All England</th>
+          </thead>
           <tbody>
             <tr class="govuk-table__row">
               <td class="govuk-table__cell">Beds occupied (all bed types)</th>
@@ -331,14 +273,14 @@
           <p class="govuk-body">This is adjusted by the size of adult population for comparing between different geographical areas.</p>
 
         <table class="govuk-table">
-          <thead class="govuk-table__head">
-            <th scope="col" class="govuk-table__header table-indicator">Indicator</th>
-            <th scope="col" class="govuk-table__header table-percentage">Suffolk</th>
-            <th scope="col" class="govuk-table__header table-percentage">East of England</th>
-            <th scope="col" class="govuk-table__header table-percentage">All England</th>
-            <th scope="col" class="govuk-table__header table-comparison">Compared to East of England</th>
-            <th scope="col" class="govuk-table__header table-comparison">Compared to All England</th>
-        </thead>
+            <thead class="govuk-table__head">
+              <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Indicator</th>
+              <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Suffolk</th>
+              <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">East of England region</th>
+              <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">All England</th>
+              <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Suffolk compared to East of England</th>
+              <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Suffolk compared to All England</th>
+            </thead>
             <tbody>
               <tr class="govuk-table__row">
                 <td class="govuk-table__cell">Domiciliary care providers per 100,000 adult population</th>
@@ -556,29 +498,31 @@
               -->
                        
 
-    
-              <h2 id="footnotes">5. Footnotes</h2>
+ 
+      <h2 id="footnotes">5. Footnotes</h2>
 
-              <p class="govuk-body">
-                Find out how each indicator is defined, sourced, and updated.
-              </p>
-                  <p class="govuk-body">Select an indicator to view its footnotes:</p>
-                  <ol class="govuk-list govuk-list--bullet">
-                    <li><a href="../../help/population-size.html" class="govuk-link">Population size</a></li>
-                    <li><a href="../../help/population-age.html" class="govuk-link">Percentage of population in age group</a></li>
-                    <li><a href="../../help/disability-prevalence.html" class="govuk-link">Disability prevalence</a></li>
-                    <li><a href="../../help/beds-per-100000-adult-population.html" class="govuk-link">Adult social care beds per 100,000 adult population</a></li>
-                    <li><a href="../../help/percentage-beds-occupied" class="govuk-link">Percentage of adult social care beds occupied</a></li>
-                    <li><a href="../../help/beds-care-provider-location" class="govuk-link">Number of adult social care beds in care provider location</a></li>
-                  </ol>
-        
-        
-        
-              <h2 id="related">6. Related information</h2>
-        
-                <p class="govuk-body">
-                  For more information on capacity, check the latest Market Position Statement and Joint Strategic Needs Assessment. You will usually find these on the local authority's website.
-                </p>
+      <p class="govuk-body">
+        Find out how each indicator is defined, sourced, and updated.
+      </p>
+          <p class="govuk-body">Select an indicator to view its footnotes:</p>
+          <ol class="govuk-list govuk-list--bullet">
+            <li><a href="../../help/population-size.html" class="govuk-link">Population size</a></li>
+            <li><a href="../../help/population-age.html" class="govuk-link">Percentage of population in age group</a></li>
+            <li><a href="../../help/disability-prevalence.html" class="govuk-link">Disability prevalence</a></li>
+            <li><a href="../../help/beds-per-100000-adult-population.html" class="govuk-link">Adult social care beds per 100,000 adult population</a></li>
+            <li><a href="../../help/percentage-beds-occupied" class="govuk-link">Percentage of adult social care beds occupied</a></li>
+            <li><a href="../../help/beds-care-provider-location" class="govuk-link">Number of adult social care beds in care provider location</a></li>
+          </ol>
+
+
+
+      <h2 id="related">6. Related information</h2>
+
+        <p class="govuk-body">
+          For more information on capacity, check the latest Market Position Statement and Joint Strategic Needs Assessment. You will usually find these on the local authority's website.
+        </p>
+
+    <p class="govuk-body"><a class="govuk-link" href="#">Back </a></p>
 
   <p class="govuk-body"><a class="govuk-link" href="#">Back </a></p>
     
