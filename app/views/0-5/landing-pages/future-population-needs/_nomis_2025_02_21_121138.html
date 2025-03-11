@@ -4,7 +4,7 @@
 <!-- Add styles for the chart -->
 <style>
   @media only screen and (max-width: 500px) {
-    #my_dataviz{
+    #my_dataviz_a{
       width:400px; 
       overflow-x: scroll;
     }
@@ -22,7 +22,7 @@
 </style>
 
 <!-- Create a div where the graph will take place -->
-<div id="my_dataviz"></div>
+<div id="my_dataviz_a"></div>
 
 <script>
   
@@ -32,7 +32,7 @@
   height = 600 - margin.top - margin.bottom;
   
   // append the svg object to the body of the page
-  var svg = d3.select("#my_dataviz")
+  var svg = d3.select("#my_dataviz_a")
   .append("svg")
   .attr("width", width + margin.left + margin.right)
   .attr("height", height + margin.top + margin.bottom)
@@ -63,7 +63,8 @@
     
     // Add Y axis
     var y = d3.scaleLinear()
-    .domain([0, d3.max(data, function(d) { return +d.england; })])
+    .domain([0, d3.max(data, function(d) { return +30; })])
+    // .domain([0, d3.max(data, function(d) { return +d.england; })])
     .range([ height, 0 ]);
     svg.append("g")
     .call(d3.axisLeft(y));
