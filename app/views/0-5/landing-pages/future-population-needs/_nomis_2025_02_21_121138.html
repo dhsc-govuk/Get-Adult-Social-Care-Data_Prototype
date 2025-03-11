@@ -1,18 +1,5 @@
-{% extends "layouts/main.html" %}
-
-{% set pageName="Population projections - local authority based by single year of age" %}
-
-{% block content %}
-<!-- Test out loading data within the D3 file, not a separate CSV file -->
-
 <!-- Load d3.js -->
 <script src="https://d3js.org/d3.v4.js"></script>
-
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
-<a href="d3" class="govuk-back-link">Back</a>
-<h1>{{pageName}}</h1>
-<p></p>
 
 <!-- Add styles for the chart -->
 <style>
@@ -166,7 +153,7 @@
     .attr("y", height + 40)
     
     svg.append("text")
-    .text("Population change by year, 2024-2043")
+    .text("Population change by year, all ages")
     .attr("x", "-30")
     .attr("y", "-100")
     .attr("class","chart-title")
@@ -178,12 +165,3 @@
   })
   
 </script>
-<!--
-
-End of Main section
-
--->
-</div>
-</div>
-</main>
-{% endblock %}

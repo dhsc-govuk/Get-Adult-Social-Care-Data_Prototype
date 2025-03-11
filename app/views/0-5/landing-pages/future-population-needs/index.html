@@ -9,7 +9,7 @@
       
       Left column 
       
-    -->
+    --> 
     <div class="govuk-grid-column-one-third">      
       <nav class="moj-side-navigation" aria-label="Side navigation">
         <h3>Contents</h3>
@@ -81,32 +81,6 @@
               <a class="govuk-link" href="select-la">Change<span class="govuk-visually-hidden"> name</span></a>
             </dd>
           </div>
-         <!---
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Service user age category
-            </dt>
-            <dd class="govuk-summary-list__value">
-              Aged 65 and over
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="age-range">Change<span class="govuk-visually-hidden"> name</span></a>
-            </dd>
-          </div>
-   
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Bed types
-            </dt>
-            <dd class="govuk-summary-list__value">
-              Dementia nursing <br>
-              General nursing 
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="bed-filters">Change<span class="govuk-visually-hidden"> name</span></a>
-            </dd>
-          </div>
-          --->
         </dl>
           <!-- 
           
@@ -135,7 +109,7 @@
 
             <h3 id="population-size" class="govuk-heading-m govuk-!-padding-top-9">3.1 Future population size</h3>
             
-            <p class="govuk-body">This data shows projected population changes from 2025 to 2040.</p>
+            <p class="govuk-body">This data shows projected population changes from 2024 to 2043.</p>
 
             <style>
               th:nth-child(1),td:nth-child(1){text-align: left;}
@@ -143,17 +117,50 @@
             </style>
             {% set totalPopulation = 
               [
-              [2025,782040,6435995,58060237],
-              [2026,784775,6462667,58297239],
-              [2028,789924,6512372,58751641],
-              [2030,794839,6558594,59181801],
-              [2035,806986,6558594,60183923],
-              [2040,819173,6772234,61157877]
+              [2024,779183,57816882,6408246],
+              [2025,782040,58060237,6435995],
+              [2026,784775,58297239,6462667],
+              [2027,787378,58527723,6487936],
+              [2028,789924,58751641,6512372],
+              [2029,792430,58969497,6535934],
+              [2030,794839,59181801,6558594],
+              [2031,797274,59389107,6580495],
+              [2032,799729,59592211,6602100],
+              [2033,802180,59792008,6623523],
+              [2034,804624,59988994,6644617],
+              [2035,806986,60183923,6665145],
+              [2036,809391,60377811,6685789],
+              [2037,811800,60571671,6706745],
+              [2038,814261,60766251,6728389],
+              [2039,816726,60961810,6750247],
+              [2040,819173,61157877,6772234],
+              [2041,821617,61353966,6794437],
+              [2042,824051,61549624,6816861],
+              [2043,826481,61744108,6839413]
               ]
               %}
-              
-              {% include "./_future_population.html" %}
-    
+              <div class="govuk-tabs" data-module="govuk-tabs">
+                <h2 class="govuk-tabs__title">
+                  Contents
+                </h2>
+                <ul class="govuk-tabs__list">
+                  <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+                    <a class="govuk-tabs__tab" href="#past-day">
+                     Chart
+                    </a>
+                  </li>
+                  <li class="govuk-tabs__list-item">
+                    <a class="govuk-tabs__tab" href="#past-week">
+                      Table
+                    </a>
+                  </li>
+                </ul>
+                <div class="govuk-tabs__panel" id="past-day">
+                  {% include "./_nomis_2025_02_21_121138.html" %}
+                  <p class="govuk-body"><a href="#" class="govuk-link">Download this chart (CSV)</a></p>
+                  </div>
+                  <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="past-week">
+                    <h2 class="govuk-heading-l">Population change, all ages</h2>
                 <table class="govuk-table">
                   <tbody>
                     <tr class="govuk-table__row">
@@ -162,47 +169,18 @@
                       <th scope="col" class="govuk-table__header govuk-!-width-one-third govuk-!-text-align-right">East of England</th>
                       <th scope="col" class="govuk-table__header govuk-!-width-one-third govuk-!-text-align-right">All England</th>
                     </tr>
+                   {% for item in totalPopulation %}
                     <tr class="govuk-table__row">
-                      <td class="govuk-table__cell govuk-table__cell--numeric">2025</td>
-                      <td class="govuk-table__cell govuk-table__cell--numeric">782,040</td>
-                      <td class="govuk-table__cell govuk-table__cell--numeric">6,435,995</td>
-                      <td class="govuk-table__cell govuk-table__cell--numeric">58,060,237</td>
+                      <td class="govuk-table__cell govuk-table__cell--numeric">{{item[0]}}</td>
+                      <td class="govuk-table__cell govuk-table__cell--numeric">{{item[1]|addcommas}}</td>
+                      <td class="govuk-table__cell govuk-table__cell--numeric">{{item[2]|addcommas}}</td>
+                      <td class="govuk-table__cell govuk-table__cell--numeric">{{item[3]|addcommas}}</td>
                     </tr>
-                    <tr class="govuk-table__row">
-                      <td class="govuk-table__cell govuk-table__cell--numeric">2026</td>
-                      <td class="govuk-table__cell govuk-table__cell--numeric">784,775</td>
-                      <td class="govuk-table__cell govuk-table__cell--numeric">6,462,667</td>
-                      <td class="govuk-table__cell govuk-table__cell--numeric">58,297,239</td>
-                    </tr>
-                    <tr class="govuk-table__row">
-                      <td class="govuk-table__cell govuk-table__cell--numeric">2028</td>
-                      <td class="govuk-table__cell govuk-table__cell--numeric">789,924</td>
-                      <td class="govuk-table__cell govuk-table__cell--numeric">6,512,372</td>
-                      <td class="govuk-table__cell govuk-table__cell--numeric">58,751,641</td>
-                    </tr>
-                    <tr class="govuk-table__row">
-                      <td class="govuk-table__cell govuk-table__cell--numeric">2030</td>
-                      <td class="govuk-table__cell govuk-table__cell--numeric">794,839</td>
-                      <td class="govuk-table__cell govuk-table__cell--numeric">6,558,594</td>
-                      <td class="govuk-table__cell govuk-table__cell--numeric">59,181,801</td>
-                    </tr>
-                    <tr class="govuk-table__row">
-                      <td class="govuk-table__cell govuk-table__cell--numeric">2035</td>
-                      <td class="govuk-table__cell govuk-table__cell--numeric">806,986</td>
-                      <td class="govuk-table__cell govuk-table__cell--numeric">6,558,594</td>
-                      <td class="govuk-table__cell govuk-table__cell--numeric">60,183,923</td>
-                    </tr>
-                    <tr class="govuk-table__row">
-                      <td class="govuk-table__cell govuk-table__cell--numeric">2040</td>
-                      <td class="govuk-table__cell govuk-table__cell--numeric">819,173</td>
-                      <td class="govuk-table__cell govuk-table__cell--numeric">6,772,234</td>
-                      <td class="govuk-table__cell govuk-table__cell--numeric">61,157,877</td>
-                    </tr>
+                    {% endfor %}
                   </tbody>
                 </table>
-   
-                <p class="govuk-body"><a href="#" class="govuk-link">Download this table (CSV)</a></p>
-
+                    </div>
+                    </div>
                 <p class="govuk-body">Source: Office for National Statistics<br>
                   Data correct as of 5 February 2025</p>
                   <!--<a href="../0-3/help/beds-per-100000-people.html" class="govuk-link">View supporting information for this data</a>-->
@@ -390,7 +368,7 @@
         <!--<p class="govuk-body">For more details, see the <a href="https://digital.nhs.uk/data-and-information/publications/statistical/health-survey-for-england/2017" class="gov-link" target="_blank">NHS Health Survey for England (opens in new tab)</a>.</p>
        -->
          <p class="govuk-body">This data shows the projected number of people aged 65 and over needing domestic help from 2025 to 2040.</p>
-         {% include "./_future_population.html" %}
+
         <table class="govuk-table">
           <tbody>
             <tr class="govuk-table__row">
