@@ -1,4 +1,4 @@
-{% extends "layouts/logged-in-alt.html" %}
+{% extends "layouts/logged-in.html" %}
 
 {% set pageName="Current population needs" %}
 
@@ -87,11 +87,8 @@
       h2{margin-top:4em}
     </style>
 
-<h2 id="introduction">1. Demographic factors driving population needs</h2>
 
-
-<!--
-    <h2 id="preferences">2. Choose your data preferences</h2>
+    <h2 id="preferences">1. Choose your data preferences</h2>
     <p class="govuk-body">Change these to update the data shown.</p>
         <dl class="govuk-summary-list">
           <div class="govuk-summary-list__row">
@@ -137,23 +134,26 @@
             </dd>
           </div>
         </dl>
-
-      -->
           <!-- 
           
           Demographic factors 
           
           -->
+
+          <h2 id="introduction">2. Demographic factors driving population needs</h2>
+
+
           <p>Population needs for adult social care are shaped by a range of factors including age, income levels, employment status, disability, long-term health conditions, and household composition.</p>
           <p>Areas with higher proportions of older adults, people with disabilities, or long-term health conditions typically experience greater pressure on services.<p>
           <!--
             <p>Economic factors also have a role in determining the level and type of care individuals need.</p>
           -->
+
           <div class="govuk-inset-text">
             <strong>Tip:</strong> Use the Explore more data option provided for each table to view smaller geographical areas than local authority level, where available. 
           </div>
 
-          <h3 id="population-age" class="govuk-heading-m govuk-!-padding-top-9">1.1 Population age</h3>
+          <h3 id="population-age" class="govuk-heading-m govuk-!-padding-top-9">2.1 Population age</h3>
 
           <style>
             .table-indicator { width: 29%; }
@@ -191,7 +191,7 @@
        </table>
        <p class="govuk-body"><a href="#" class="govuk-link">Explore more population age data</a></p>
 
-       <h3 id="economic-factors" class="govuk-heading-m govuk-!-padding-top-9">1.2 Economic factors</h2>
+       <h3 id="economic-factors" class="govuk-heading-m govuk-!-padding-top-9">2.2 Economic factors</h2>
 
         <table class="govuk-table">
             <thead class="govuk-table__head">
@@ -223,7 +223,7 @@
        </table>
        <p class="govuk-body"><a href="#" class="govuk-link">Explore more economic factors data</a></p>
 
-       <h3 id="household-composition" class="govuk-heading-m govuk-!-padding-top-9">1.3 Household composition</h3>
+       <h3 id="household-composition" class="govuk-heading-m govuk-!-padding-top-9">2.3 Household composition</h3>
        <table class="govuk-table">
         <thead class="govuk-table__head">
           <th scope="col" class="govuk-table__header table-indicator">Indicator</th>
@@ -246,7 +246,7 @@
        <p class="govuk-body"><a href="#" class="govuk-link">Explore more household composition data</a></p>
 
 
-       <h3 id="health-wellbeing" class="govuk-heading-m govuk-!-padding-top-9">1.4 Health and wellbeing</h3>
+       <h3 id="health-wellbeing" class="govuk-heading-m govuk-!-padding-top-9">2.4 Health and wellbeing</h3>
        <table class="govuk-table">
         <thead class="govuk-table__head">
           <th scope="col" class="govuk-table__header table-indicator">Indicator</th>
@@ -353,7 +353,7 @@
         <a href="../0-3/help/population-by-disability.html" class="govuk-link">View supporting information for Population by disability</a>-->
       </p>
 
-      <h2 id="footnotes">2. Footnotes</h2>
+      <h2 id="footnotes">3. Footnotes</h2>
 
       <p class="govuk-body">
         Find out how each indicator is defined, sourced, and updated.
@@ -367,7 +367,7 @@
 
 
 
-      <h2 id="related">3. Related information</h2>
+      <h2 id="related">4. Related information</h2>
 
         <p class="govuk-body">
           For more information on local population needs, check the latest Market Position Statement and Joint Strategic Needs Assessment. You will usually find these on the local authority's website.
