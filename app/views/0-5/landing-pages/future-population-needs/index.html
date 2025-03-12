@@ -284,121 +284,108 @@
        <h3 id="population-65-over" class="govuk-heading-m govuk-!-padding-top-9">2.3 Future population aged 65 and over</h2>
 
         <p class="govuk-body">This data shows projected population changes for people aged 65 and over from 2025 to 2040.</p>
-        {% include "./_future_population.html" %}
-        <table class="govuk-table">
-          <tbody>
-            <tr class="govuk-table__row">
-              <th scope="col" class="govuk-table__header">Year</th>
-              <th scope="col" class="govuk-table__header govuk-!-width-one-third govuk-!-text-align-right">Suffolk</th>
-              <th scope="col" class="govuk-table__header govuk-!-width-one-third govuk-!-text-align-right">East of England</th>
-              <th scope="col" class="govuk-table__header govuk-!-width-one-third govuk-!-text-align-right">All England</th>
-            </tr>
-            <tr class="govuk-table__row">
-              <td class="govuk-table__cell govuk-table__cell--numeric">2025</td>
-              <td class="govuk-table__cell govuk-table__cell--numeric">199,085</td>
-              <td class="govuk-table__cell govuk-table__cell--numeric">1,360,803</td>
-              <td class="govuk-table__cell govuk-table__cell--numeric">11,449,358</td>
-            </tr>
-            <tr class="govuk-table__row">
-              <td class="govuk-table__cell govuk-table__cell--numeric">2026</td>
-              <td class="govuk-table__cell govuk-table__cell--numeric">203,100</td>
-              <td class="govuk-table__cell govuk-table__cell--numeric">1,386,580</td>
-              <td class="govuk-table__cell govuk-table__cell--numeric">11,677,597</td>
-            </tr>
-            <tr class="govuk-table__row">
-              <td class="govuk-table__cell govuk-table__cell--numeric">2028</td>
-              <td class="govuk-table__cell govuk-table__cell--numeric">211,292</td>
-              <td class="govuk-table__cell govuk-table__cell--numeric">1,442,298</td>
-              <td class="govuk-table__cell govuk-table__cell--numeric">12,175,690</td>
-            </tr>
-            <tr class="govuk-table__row">
-              <td class="govuk-table__cell govuk-table__cell--numeric">2030</td>
-              <td class="govuk-table__cell govuk-table__cell--numeric">220,303</td>
-              <td class="govuk-table__cell govuk-table__cell--numeric">1,501,594</td>
-              <td class="govuk-table__cell govuk-table__cell--numeric">12,696,976</td>
-            </tr>
-            <tr class="govuk-table__row">
-              <td class="govuk-table__cell govuk-table__cell--numeric">2035</td>
-              <td class="govuk-table__cell govuk-table__cell--numeric">239,924</td>
-              <td class="govuk-table__cell govuk-table__cell--numeric">1,631,417</td>
-              <td class="govuk-table__cell govuk-table__cell--numeric">13,815,492</td>
-            </tr>
-            <tr class="govuk-table__row">
-              <td class="govuk-table__cell govuk-table__cell--numeric">2040</td>
-              <td class="govuk-table__cell govuk-table__cell--numeric">251,367</td>
-              <td class="govuk-table__cell govuk-table__cell--numeric">1,717,776</td>
-              <td class="govuk-table__cell govuk-table__cell--numeric">14,527,047</td>
-            </tr>
-          </tbody>
-        </table>
-   
-        <p class="govuk-body"><a href="#" class="govuk-link">Download this table (CSV)</a></p>
-
-        <p class="govuk-body">Source: Office for National Statistics<br>
-          Data correct as of 5 February 2025</p>
-
-      <!---
-       <p class="govuk-body"><a href="" class="govuk-button govuk-button--secondary">Explore more XXXXX data</a></p>
-      -->
+        <div class="govuk-tabs" data-module="govuk-tabs">
+          <h2 class="govuk-tabs__title">
+            Contents
+          </h2>
+          <ul class="govuk-tabs__list">
+            <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+              <a class="govuk-tabs__tab" href="#past-day-c">
+               Chart
+              </a>
+            </li>
+            <li class="govuk-tabs__list-item">
+              <a class="govuk-tabs__tab" href="#past-week-c">
+                Table
+              </a>
+            </li>
+          </ul>
+          <div class="govuk-tabs__panel" id="past-day-c">
+            <!-- 
+            
+            Line chart 
+            
+            -->
+            {% include "./_nomis_2025_02_24_102519.html" %}
+            <p class="govuk-body"><a href="#" class="govuk-link">Download this chart (CSV)</a></p>
+            </div>
+            <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="past-week-c">
+              <h2 class="govuk-heading-l">Population change, all ages</h2>
+          <table class="govuk-table">
+            <tbody>
+              <tr class="govuk-table__row">
+                <th scope="col" class="govuk-table__header">Year</th>
+                <th scope="col" class="govuk-table__header govuk-!-width-one-third govuk-!-text-align-right">Suffolk</th>
+                <th scope="col" class="govuk-table__header govuk-!-width-one-third govuk-!-text-align-right">East of England</th>
+                <th scope="col" class="govuk-table__header govuk-!-width-one-third govuk-!-text-align-right">All England</th>
+              </tr>
+             {% for item in totalPopulation %}
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell govuk-table__cell--numeric">{{item[0]}}</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">{{item[1]|addcommas}}</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">{{item[2]|addcommas}}</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">{{item[3]|addcommas}}</td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+              </div>
+              </div>
+       <p class="govuk-body">Source: Office for National Statistics<br>
+        Data correct as of 5 February 2025</p>
 
        <h3 id="population-85-over" class="govuk-heading-m govuk-!-padding-top-9">2.4 Future population aged 85 and over</h2>
 
         <p class="govuk-body">This data shows projected population changes for people aged 85 and over from 2025 to 2040.</p>
-        {% include "./_future_population.html" %}
-        <table class="govuk-table">
-          <tbody>
-            <tr class="govuk-table__row">
-              <th scope="col" class="govuk-table__header">Year</th>
-              <th scope="col" class="govuk-table__header govuk-!-width-one-third govuk-!-text-align-right">Suffolk</th>
-              <th scope="col" class="govuk-table__header govuk-!-width-one-third govuk-!-text-align-right">East of England</th>
-              <th scope="col" class="govuk-table__header govuk-!-width-one-third govuk-!-text-align-right">All England</th>
-            </tr>
-            <tr class="govuk-table__row">
-              <td class="govuk-table__cell govuk-table__cell--numeric">2025</td>
-              <td class="govuk-table__cell govuk-table__cell--numeric">199,085</td>
-              <td class="govuk-table__cell govuk-table__cell--numeric">1,360,803</td>
-              <td class="govuk-table__cell govuk-table__cell--numeric">11,449,358</td>
-            </tr>
-            <tr class="govuk-table__row">
-              <td class="govuk-table__cell govuk-table__cell--numeric">2026</td>
-              <td class="govuk-table__cell govuk-table__cell--numeric">203,100</td>
-              <td class="govuk-table__cell govuk-table__cell--numeric">1,386,580</td>
-              <td class="govuk-table__cell govuk-table__cell--numeric">11,677,597</td>
-            </tr>
-            <tr class="govuk-table__row">
-              <td class="govuk-table__cell govuk-table__cell--numeric">2028</td>
-              <td class="govuk-table__cell govuk-table__cell--numeric">211,292</td>
-              <td class="govuk-table__cell govuk-table__cell--numeric">1,442,298</td>
-              <td class="govuk-table__cell govuk-table__cell--numeric">12,175,690</td>
-            </tr>
-            <tr class="govuk-table__row">
-              <td class="govuk-table__cell govuk-table__cell--numeric">2030</td>
-              <td class="govuk-table__cell govuk-table__cell--numeric">220,303</td>
-              <td class="govuk-table__cell govuk-table__cell--numeric">1,501,594</td>
-              <td class="govuk-table__cell govuk-table__cell--numeric">12,696,976</td>
-            </tr>
-            <tr class="govuk-table__row">
-              <td class="govuk-table__cell govuk-table__cell--numeric">2035</td>
-              <td class="govuk-table__cell govuk-table__cell--numeric">239,924</td>
-              <td class="govuk-table__cell govuk-table__cell--numeric">1,631,417</td>
-              <td class="govuk-table__cell govuk-table__cell--numeric">13,815,492</td>
-            </tr>
-            <tr class="govuk-table__row">
-              <td class="govuk-table__cell govuk-table__cell--numeric">2040</td>
-              <td class="govuk-table__cell govuk-table__cell--numeric">251,367</td>
-              <td class="govuk-table__cell govuk-table__cell--numeric">1,717,776</td>
-              <td class="govuk-table__cell govuk-table__cell--numeric">14,527,047</td>
-            </tr>
-          </tbody>
-        </table>
-
-        <p class="govuk-body"><a href="#" class="govuk-link">Download this table (CSV)</a></p>
-
+              <div class="govuk-tabs" data-module="govuk-tabs">
+          <h2 class="govuk-tabs__title">
+            Contents
+          </h2>
+          <ul class="govuk-tabs__list">
+            <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+              <a class="govuk-tabs__tab" href="#past-day-d">
+               Chart
+              </a>
+            </li>
+            <li class="govuk-tabs__list-item">
+              <a class="govuk-tabs__tab" href="#past-week-d">
+                Table
+              </a>
+            </li>
+          </ul>
+          <div class="govuk-tabs__panel" id="past-day-d">
+            <!-- 
+            
+            Line chart 
+            
+            -->
+            {% include "./_nomis_2025_02_24_1025191.html" %}
+            <p class="govuk-body"><a href="#" class="govuk-link">Download this chart (CSV)</a></p>
+            </div>
+            <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="past-week-d">
+              <h2 class="govuk-heading-l">Population change, all ages</h2>
+          <table class="govuk-table">
+            <tbody>
+              <tr class="govuk-table__row">
+                <th scope="col" class="govuk-table__header">Year</th>
+                <th scope="col" class="govuk-table__header govuk-!-width-one-third govuk-!-text-align-right">Suffolk</th>
+                <th scope="col" class="govuk-table__header govuk-!-width-one-third govuk-!-text-align-right">East of England</th>
+                <th scope="col" class="govuk-table__header govuk-!-width-one-third govuk-!-text-align-right">All England</th>
+              </tr>
+             {% for item in totalPopulation %}
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell govuk-table__cell--numeric">{{item[0]}}</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">{{item[1]|addcommas}}</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">{{item[2]|addcommas}}</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">{{item[3]|addcommas}}</td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+              </div>
+              </div>
        <p class="govuk-body">Source: Office for National Statistics<br>
         Data correct as of 5 February 2025</p>
-        <!--
-       <p class="govuk-body"><a href="" class="govuk-button govuk-button--secondary">Explore more XXXXX data</a></p>
-       -->
 
        <h3 id="population-65-over-domestic-help" class="govuk-heading-m govuk-!-padding-top-9">2.5 Future population aged 65 and over needing domestic help</h2>
         <p class="govuk-body">Domestic tasks are important for independent living but not essential for basic functioning. These include housework, shopping for food, managing paperwork or bills, and getting out of the house. These tasks are known as Instrumental Activities of Daily Living (IADLs).</p>
