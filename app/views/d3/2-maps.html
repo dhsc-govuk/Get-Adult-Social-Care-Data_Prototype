@@ -1,0 +1,30 @@
+{% extends "layouts/main.html" %}
+
+{% set pageName="More than one map" %}
+
+{% block content %}
+<h1>{{pageName}}</h1>
+<p>Source: <a href="https://www.ons.gov.uk/census/maps/choropleth/population/age/resident-age-11a/aged-85-years-and-over/?lad=E07000203" target="_blank">Office of National statistics</a></p>
+<div class="govuk-grid-row">
+<div class="govuk-grid-column-full-width">
+  {% include "./_cp-map.html" %}
+  </div>
+  </div>
+  <div class="govuk-grid-row">
+  <div class="govuk-grid-column-full-width">
+    <h1>Test</h1>
+    <p>Lorem ipsum</p>
+    </div>
+    </div>
+    <div class="govuk-grid-row">
+  <div class="govuk-grid-column-width-two-thirds">
+    {% include "./_map.html" %}
+  </div>
+  </div>
+
+  <h1>yes</h1>
+  <p>Content zxx</p>
+  </div>
+  </div>
+
+{% endblock %}
