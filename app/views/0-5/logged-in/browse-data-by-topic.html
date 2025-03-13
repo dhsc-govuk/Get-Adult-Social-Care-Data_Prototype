@@ -1,6 +1,6 @@
-{% extends "layouts/main.html" %}
+{% extends "layouts/logged-in.html" %}
 
-{% set pageName="Your dashboard" %}
+{% set pageName="Browse data by topic" %}
 
 {% block header %}
 <header class="govuk-header govuk-header--full-width-border" data-module="govuk-header">
@@ -54,12 +54,8 @@
     active: true
   },
   {
-    href: "dashboard",
-    text: "Your dashboard"
-  },
-  {
     href: "../help/topics",
-    text: "Help"
+    text: "User guide"
   }
   ]
 }) }}
@@ -69,7 +65,7 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
     <h1 class="govuk-heading-l">
-      Get data
+      Browse data by topic
     </h1>
     
     <style>
@@ -153,42 +149,56 @@
      -->
     <p class="govuk-body">We'll be adding more topics over time. Tell us which topics are most useful to you – <a href="" target="_blank">give feedback (opens in new tab)</a>.</p>
 
-    <h2 class="govuk-heading-m">Demand and capacity</h2>
     <!---
     <p>Explore a range of indicators across different topics, or <a href="all-indicators">view all indicators</a>.
     --> 
     </p>
     <div class="govuk-grid-row">
-      <a href="../data-pages/present-demand">
+
+    <a href="../landing-pages/current-population-needs/index.html">
       <div class="govuk-grid-column-one-half">
         <h2>
-          Current demand and provision
+          Current population needs
         </h2>
         <p>
-          Explore factors driving demand for adult social care services and get insights into current provision to meet that demand.
+          Explore factors shaping local population needs for adult social care.
         </p>
       </div>
     </a>
-    <a href="#">
+
+    <a href="../landing-pages/future-population-needs/index.html">
       <div class="govuk-grid-column-one-half">
         <h2>
-          Future demand
+          Future population needs
         </h2>
         <p>
-          Understand the likely demand for care, including projected needs by care type, with high-level and detailed data.
+          Identify the potential future needs for adult social care based on projected population changes.
+      </div>
+    </a>
+
+    <a href="../landing-pages/overall-capacity/index.html">
+      <div class="govuk-grid-column-one-half">
+        <h2>
+          Overall capacity at local authority level
+        </h2>
+        <p>
+          Understand the local capacity available to meet adult social care needs. 
         </p>
       </div>
     </a>
+
+
     <a href="#">
       <div class="govuk-grid-column-one-half">
         <h2>
-          Current market
+          Current market and provision
         </h2>
         <p>
-          Assess the local care market, including provider availability, occupancy levels, service performance and fee rates.
+          Assess the local care market, including provider availability, occupancy levels and service quality.
         </p>
       </div>
-      </a>
+    </a>
+
     </div>
     {% endblock %}
     
