@@ -63,7 +63,7 @@
     
     // Add Y axis
     var y = d3.scaleLinear()
-    .domain([d3.min(data, function(d) { return 0; }), d3.max(data, function(d) { return +100; })])
+    .domain([0, d3.max(data, function(d) { return +100; })])
     // .domain([0, d3.max(data, function(d) { return +d.england; })]) - alternative domain
     .range([ height, 0 ]);
     svg3.append("g")
@@ -160,7 +160,7 @@
     .attr("class","chart-title")
     
     svg3.append("text")
-    .text("Population change (%)")
+    .text("Projected change (%)")
     .attr("x", "-20")
     .attr("y", "-20")
   })
