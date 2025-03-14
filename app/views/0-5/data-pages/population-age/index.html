@@ -107,7 +107,146 @@
       
       -->
       <h2 id="smart-insights">2. Data</h2>
-      
+       <!-- 
+        
+        Panels 
+        
+        -->
+        <div class="govuk-tabs" data-module="govuk-tabs">
+          <h2 class="govuk-tabs__title">
+            Contents
+          </h2>
+          <ul class="govuk-tabs__list">
+            <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+              <a class="govuk-tabs__tab" href="#chart">
+                Ages map
+              </a>
+            </li>
+            <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+              <a class="govuk-tabs__tab" href="#time-series">
+                Time series
+              </a>
+            </li>
+
+            <li class="govuk-tabs__list-item">
+              <a class="govuk-tabs__tab" href="#table">
+                Table
+              </a>
+            </li>
+          </ul>
+        <div class="govuk-tabs__panel" id="chart">
+          <h3>Ages map</h3>
+          <p>Change the settings to see the ages your local area</p>
+          <table class="govuk-table">
+            <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Age range</th>
+            <td class="govuk-table__cell">
+              <ul class="govuk-list" style="text-align: left;">
+                <li>85 and over</li>
+              </ul>
+            </td>
+          <td class="govuk-table__cell">
+            <a href="total_beds-edit-single-filter">Change</a>
+          </td>
+        </tr>
+            </tbody>
+          </table>
+          <iframe width="100%" height="600px" title="ONS Census Maps" frameborder="0" src="https://www.ons.gov.uk/census/maps/choropleth/population/age/resident-age-11a/aged-85-years-and-over/?lad=E07000203&embed=true&embedInteractive=true&embedAreaSearch=false&embedCategorySelection=false&embedView=viewport&embedBounds=0.4518427976473447%2C51.95149998586203%2C1.7552472023533312%2C52.516917630727676" />    
+</iframe>
+          <p class="govuk-body"><a href="" class="govuk-link">Download chart image (PNG)</a><br>
+            <a href="#" class="govuk-link">Download table data (CSV)</a>
+            <p class="govuk-body">Source: ONS Census data<br>
+              Data correct as of 2021<br>
+             <!-- <a href="../0-3/help/beds-per-100000-people.html" class="govuk-link">View supporting information for this data</a></p>-->
+            </div>
+            <!-- 
+            
+            Time series 
+            
+            -->
+            <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="time-series">
+              <h3>Time series</h3>
+   {% include "./_time_series.html" %}
+            </div>
+            <!-- 
+            
+            Map 
+            
+            -->
+            <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="map">
+              <h2>
+                Map
+              </h2>
+              <p class="govuk-body">The map view is not yet available.</p>
+              <p class="govuk-body">We are working to introduce this feature to the service. In the meantime, you can explore the data by chart, time series or table.</p>
+              </p>
+            </div>
+            <!-- 
+            
+            Table 
+            
+            -->
+            <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="table">
+              <h3 id="total">Table</h3>
+              <table class="govuk-table">
+                <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Filters</th>
+                <td class="govuk-table__cell">
+                  <ul class="govuk-list" style="text-align: left;">
+                    <li>Total beds</li>
+                    <li>Dementia Nursing</li>
+                    <li>Dementia Residential</li>
+                  </ul>
+                </td>
+              <td class="govuk-table__cell">
+                <a href="total_beds-edit-table-filters">Change</a>
+              </td>
+            </tr>
+                </tbody>
+              </table>
+              <table class="govuk-table">
+                <caption class="govuk-table__caption govuk-table__caption--s">Adult social care beds per 100,000 adult population at 24 December 2024</caption>
+                <thead class="govuk-table__head">
+                  <style>
+                    th:nth-child(2),th:nth-child(3), th:nth-child(4), td:nth-child(2),td:nth-child(3), td:nth-child(4) {
+                      text-align: right;
+                    }
+                  </style>
+                  <th scope="col" class="govuk-table__header">Location</th>
+                  <th scope="col" class="govuk-table__header">Suffolk</th>
+                  <th scope="col" class="govuk-table__header">East of England region</th>
+                  <th scope="col" class="govuk-table__header">All England</th>
+                </thead>
+                <tbody>
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">Total beds</td>
+                    <td class="govuk-table__cell">2,398.4</td>
+                    <td class="govuk-table__cell">1,969.5</td>
+                    <td class="govuk-table__cell">2,088.2</td>
+                  </tr>
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">Dementia nursing</td>
+                    <td class="govuk-table__cell">160.1</td>
+                    <td class="govuk-table__cell">126.0</td>
+                    <td class="govuk-table__cell">182.1</td>
+                  </tr>
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">Dementia residential</td>
+                    <td class="govuk-table__cell">648.8</td>
+                    <td class="govuk-table__cell">486.6</td>
+                    <td class="govuk-table__cell">432.8</td>
+                  </tr>
+                </tbody>
+              </table>
+              <p class="govuk-body">
+                <a href="#" class="govuk-link">Download table data (CSV)</a>
+                <p class="govuk-body">Source: Capacity Tracker<br>
+                  Data correct as of 24 December 2024<br>
+                  <!-- <a href="../0-3/help/beds-per-100000-people.html" class="govuk-link">View supporting information for this data</a></p>-->
+                </div>
+              </div>
       <p class="govuk-body">Section for data visualisation etc.</p>
       <h2 id="smart-insights">3. Smart insights (experimental)</h2>
               <div class="govuk-inset-text">
