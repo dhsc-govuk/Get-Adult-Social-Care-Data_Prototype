@@ -1,0 +1,43 @@
+<div class="govuk-form-group">
+    <h1 class="govuk-label-wrapper">
+      <label class="govuk-label govuk-label--s" for="event-name">
+        Find locations
+      </label>
+    </h1>
+    <div id="event-name-hint" class="govuk-hint">
+      Search by care provider location, district, local authority or region
+    </div>
+    <input class="govuk-input" id="event-name" name="eventName" type="text">
+  </div>
+  <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+    Search
+  </button>
+  <div class="govuk-form-group">
+    <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+        <h1 class="govuk-fieldset__heading">
+          Selected locations
+        </h1>
+      </legend>
+      <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses" checked>
+          <label class="govuk-label govuk-checkboxes__label" for="waste">
+            Greenfields care (your location), East Suffolk 
+          </label>
+        </div>
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="waste-2" name="waste" type="checkbox" value="mines" checked>
+          <label class="govuk-label govuk-checkboxes__label" for="waste-2">
+            West Suffolk
+          </label>
+        </div>
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="waste-3" name="waste" type="checkbox" value="farm" checked>
+          <label class="govuk-label govuk-checkboxes__label" for="waste-3">
+            Cambridgeshire
+          </label>
+        </div>
+      </fieldset>
+    </div>
+  </div>
