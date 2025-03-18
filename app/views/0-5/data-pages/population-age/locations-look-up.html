@@ -1,37 +1,20 @@
 {% extends "layouts/data.html" %}
 
 {% set pageName="Edit locations" %}
-<script
-			  src="https://code.jquery.com/jquery-3.7.1.min.js"
-			  integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
-			  crossorigin="anonymous"></script>
+
 {% block content %} 
+{% from "govuk/components/input/macro.njk" import govukInput %}
 <a href="javascript:history.back()" class="govuk-back-link">Back</a>
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       <!--<span class="govuk-caption-l">Demand and capacity</span>-->
       <h1 class="govuk-heading-l">{{pageName}}</h1>
-      <div class="govuk-form-group">
-        <h1 class="govuk-label-wrapper">
-          <label class="govuk-label govuk-label--s" for="event-name">
-            Find locations
-          </label>
-        </h1>
-        <div id="event-name-hint" class="govuk-hint">
-          Search by care provider location, district, local authority or region
-        </div>
-        <input class="govuk-input" id="locations-search" name="eventName" type="text">
-      </div>
-      <script>
-      $.typeahead({
-        input: '#locations-search',
-        minLength: 0,
-        searchOnFocus: true,
-        source: {data: ["Afghanistan", "Albania", "Algeria", "Andorra"]}
-    });
-      </script>
+
+
+      {% include "./_locations.html" %}
+
       <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
-        Search
+        Add location
       </button>
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
@@ -61,6 +44,7 @@
             </div>
           </div>
         </fieldset>
+      </div>
       </div>
       <a href="index" type="submit" class="govuk-button" data-module="govuk-button">
         Continue
