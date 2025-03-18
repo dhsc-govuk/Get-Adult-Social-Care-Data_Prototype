@@ -1,0 +1,70 @@
+{% extends "layouts/data.html" %}
+
+{% set pageName="Edit locations" %}
+<script
+			  src="https://code.jquery.com/jquery-3.7.1.min.js"
+			  integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+			  crossorigin="anonymous"></script>
+{% block content %} 
+<a href="javascript:history.back()" class="govuk-back-link">Back</a>
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <!--<span class="govuk-caption-l">Demand and capacity</span>-->
+      <h1 class="govuk-heading-l">{{pageName}}</h1>
+      <div class="govuk-form-group">
+        <h1 class="govuk-label-wrapper">
+          <label class="govuk-label govuk-label--s" for="event-name">
+            Find locations
+          </label>
+        </h1>
+        <div id="event-name-hint" class="govuk-hint">
+          Search by care provider location, district, local authority or region
+        </div>
+        <input class="govuk-input" id="locations-search" name="eventName" type="text">
+      </div>
+      <script>
+      $.typeahead({
+        input: '#locations-search',
+        minLength: 0,
+        searchOnFocus: true,
+        source: {data: ["Afghanistan", "Albania", "Algeria", "Andorra"]}
+    });
+      </script>
+      <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+        Search
+      </button>
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+            <h1 class="govuk-fieldset__heading">
+              Selected locations
+            </h1>
+          </legend>
+          <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses" checked>
+              <label class="govuk-label govuk-checkboxes__label" for="waste">
+                Greenfields care (your location), East Suffolk 
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="waste-2" name="waste" type="checkbox" value="mines" checked>
+              <label class="govuk-label govuk-checkboxes__label" for="waste-2">
+                West Suffolk
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="waste-3" name="waste" type="checkbox" value="farm" checked>
+              <label class="govuk-label govuk-checkboxes__label" for="waste-3">
+                Cambridgeshire
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+      <button type="submit" class="govuk-button" data-module="govuk-button">
+        Continue
+      </button>
+    </div>
+ </div>
+      {% endblock %}

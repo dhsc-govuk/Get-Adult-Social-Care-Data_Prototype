@@ -1,6 +1,6 @@
 {% extends "layouts/logged-in.html" %}
 
-{% set pageName="Your dashboard" %}
+{% set pageName="Home | Get adult social care data" %}
 
 {% block content %}
 <div class="govuk-grid-row">
@@ -119,94 +119,17 @@ Panels
     <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
       Edit indicators
     </button>
-    <table class="govuk-table" style="width:80%">
-      <thead class="govuk-table__head">
-        <tr class="govuk-table__row">
-          <th scope="col" class="govuk-table__header">Location</th>
-          <th scope="col" class="govuk-table__header" style="text-align: right;">Population <br>aged 85 and <br>over (%)</th>
-          <th scope="col" class="govuk-table__header">Data bar</th>
-        </tr>
-      </thead>
-      <tbody class="govuk-table__body">
-        <tr class="govuk-table__row">
-          <td class="govuk-table__cell">East Suffolk</td>
-          <td class="govuk-table__cell govuk-table__cell--numeric">31.4</td>
-          <td class="govuk-table__cell">
-            <style>
-              .chart-bar{fill:purple; margin: 0}
-            </style>
-            <svg width="340" height="30">
-              <rect width="314" height="30" class="chart-bar"></rect>
-            </svg>
-          </td>
-        </tr>
-        <tr class="govuk-table__row">
-          <td class="govuk-table__cell">Suffolk</td>
-          <td class="govuk-table__cell govuk-table__cell--numeric">33.3</td>
-          <td class="govuk-table__cell">
-            <svg width="340" height="30">
-              <rect width="333" height="30" class="chart-bar"></rect>
-            </svg>
-          </td>
-        </tr>
-        <tr class="govuk-table__row">
-          <td class="govuk-table__cell">Cambridgeshire</td>
-          <td class="govuk-table__cell govuk-table__cell--numeric">35.1</td>
-          <td class="govuk-table__cell">
-            <svg width="340" height="30">
-              <rect width="351" height="30" class="chart-bar"></rect>
-            </svg>
-          </td>
-        </tr>
-        <tr class="govuk-table__row">
-          <td class="govuk-table__cell">East of England, mean</td>
-          <td class="govuk-table__cell govuk-table__cell--numeric">29.8</td>
-          <td class="govuk-table__cell">
-            <svg width="340" height="30">
-              <rect width="298" height="30" class="chart-bar"></rect>
-            </svg>
-          </td>
-        </tr>
-        <tr class="govuk-table__row">
-          <td class="govuk-table__cell">England, mean</td>
-          <td class="govuk-table__cell govuk-table__cell--numeric">29.9</td>
-          <td class="govuk-table__cell">
-            <svg width="340" height="30">
-              <rect width="299" height="30" class="chart-bar"></rect>
-            </svg>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+   {% include "./_locations-bar-chart.html" %}
   </div>
   <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="past-year">
     <h2 class="govuk-heading-l">Time series</h2>
-    <table class="govuk-table">
-      <thead class="govuk-table__head">
-        <tr class="govuk-table__row">
-          <th scope="col" class="govuk-table__header">Case manager</th>
-          <th scope="col" class="govuk-table__header">Cases opened</th>
-          <th scope="col" class="govuk-table__header">Cases closed</th>
-        </tr>
-      </thead>
-      <tbody class="govuk-table__body">
-        <tr class="govuk-table__row">
-          <td class="govuk-table__cell">David Francis</td>
-          <td class="govuk-table__cell">1380</td>
-          <td class="govuk-table__cell">1472</td>
-        </tr>
-        <tr class="govuk-table__row">
-          <td class="govuk-table__cell">Paul Farmer</td>
-          <td class="govuk-table__cell">1129</td>
-          <td class="govuk-table__cell">1083</td>
-        </tr>
-        <tr class="govuk-table__row">
-          <td class="govuk-table__cell">Rita Patel</td>
-          <td class="govuk-table__cell">1539</td>
-          <td class="govuk-table__cell">1265</td>
-        </tr>
-      </tbody>
-    </table>
+    <button type="submit" style="margin-right:1em" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+      Edit locations
+    </button>
+    <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+      Edit indicators
+    </button>
+   {% include "./_time_series.html" %}
   </div>
 </div>
 

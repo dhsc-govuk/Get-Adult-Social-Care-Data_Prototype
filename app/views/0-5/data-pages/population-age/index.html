@@ -3,9 +3,9 @@
 {% set pageName="Population age" %}
 
 {% block content %} 
-<a href="../../logged-in/present-demand" class="govuk-back-link">Back</a>
+<a href="javascript:history.back()" class="govuk-back-link">Back</a>
 <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
+    <div class="govuk-grid-column-full-width">
       <!--<span class="govuk-caption-l">Demand and capacity</span>-->
       <h1 class="govuk-heading-l">{{pageName}}</h1>
       <p class="govuk-body-l">Percentage of the population in different age categories. Combined with other indicators, this reflects the population needs for adult social care.</p>
@@ -70,10 +70,9 @@
             <li><a href="#footnotes" class="govuk-link">Footnotes</a>
             </ol>
       </div>
-      
-    <!-- <span class="govuk-caption-l">Demand and capacity</span> -->
 
-    <!-- 
+      <!-- 
+
       Main content
       
       -->
@@ -123,11 +122,15 @@
               </a>
             </li>
             <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+              <a class="govuk-tabs__tab" href="#locations">
+                Compare locations
+              </a>
+            </li>
+            <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
               <a class="govuk-tabs__tab" href="#time-series">
                 Time series
               </a>
             </li>
-
             <li class="govuk-tabs__list-item">
               <a class="govuk-tabs__tab" href="#table">
                 Table
@@ -137,7 +140,7 @@
         <div class="govuk-tabs__panel" id="chart">
           <h3>Ages map</h3>
           <p>Change the settings to see the ages your local area</p>
-          <table class="govuk-table">
+          <table class="govuk-table" style="width:66%">
             <tbody class="govuk-table__body">
           <tr class="govuk-table__row">
             <th scope="row" class="govuk-table__header">Age range</th>
@@ -159,6 +162,23 @@
             <p class="govuk-body">Source: ONS Census data<br>
               Data correct as of 2021<br>
              <!-- <a href="../0-3/help/beds-per-100000-people.html" class="govuk-link">View supporting information for this data</a></p>-->
+            </div>
+            <!-- 
+            
+            Locations
+            
+            -->
+            <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="locations">
+              <h3>Compare locations</h3>
+              <form action="locations-look-up.html">
+                <button type="submit" style="margin-right:1em" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                  Edit locations
+                </button>
+              </form>
+              <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                Edit indicators
+              </button>
+              {% include "./_locations-bar-chart.html" %}
             </div>
             <!-- 
             
@@ -189,57 +209,12 @@
             -->
             <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="table">
               <h3 id="total">Table</h3>
-              <table class="govuk-table">
-                <tbody class="govuk-table__body">
-              <tr class="govuk-table__row">
-                <th scope="row" class="govuk-table__header">Filters</th>
-                <td class="govuk-table__cell">
-                  <ul class="govuk-list" style="text-align: left;">
-                    <li>Total beds</li>
-                    <li>Dementia Nursing</li>
-                    <li>Dementia Residential</li>
-                  </ul>
-                </td>
-              <td class="govuk-table__cell">
-                <a href="total_beds-edit-table-filters">Change</a>
-              </td>
-            </tr>
-                </tbody>
-              </table>
-              <table class="govuk-table">
-                <caption class="govuk-table__caption govuk-table__caption--s">Adult social care beds per 100,000 adult population at 24 December 2024</caption>
-                <thead class="govuk-table__head">
-                  <style>
-                    th:nth-child(2),th:nth-child(3), th:nth-child(4), td:nth-child(2),td:nth-child(3), td:nth-child(4) {
-                      text-align: right;
-                    }
-                  </style>
-                  <th scope="col" class="govuk-table__header">Location</th>
-                  <th scope="col" class="govuk-table__header">Suffolk</th>
-                  <th scope="col" class="govuk-table__header">East of England region</th>
-                  <th scope="col" class="govuk-table__header">All England</th>
-                </thead>
-                <tbody>
-                  <tr class="govuk-table__row">
-                    <td class="govuk-table__cell">Total beds</td>
-                    <td class="govuk-table__cell">2,398.4</td>
-                    <td class="govuk-table__cell">1,969.5</td>
-                    <td class="govuk-table__cell">2,088.2</td>
-                  </tr>
-                  <tr class="govuk-table__row">
-                    <td class="govuk-table__cell">Dementia nursing</td>
-                    <td class="govuk-table__cell">160.1</td>
-                    <td class="govuk-table__cell">126.0</td>
-                    <td class="govuk-table__cell">182.1</td>
-                  </tr>
-                  <tr class="govuk-table__row">
-                    <td class="govuk-table__cell">Dementia residential</td>
-                    <td class="govuk-table__cell">648.8</td>
-                    <td class="govuk-table__cell">486.6</td>
-                    <td class="govuk-table__cell">432.8</td>
-                  </tr>
-                </tbody>
-              </table>
+              <style>
+                th:nth-child(2),th:nth-child(3), th:nth-child(4), td:nth-child(2),td:nth-child(3), td:nth-child(4) {
+                  text-align: right;
+                }
+              </style>
+             {% include "./_locations-table.html" %}
               <p class="govuk-body">
                 <a href="#" class="govuk-link">Download table data (CSV)</a>
                 <p class="govuk-body">Source: Capacity Tracker<br>
