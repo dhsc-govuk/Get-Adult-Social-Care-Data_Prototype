@@ -31,12 +31,12 @@ crossorigin=""></script>
   }).addTo(map);
   
   var marker = L.marker([52.05, 0.72], 11).addTo(map);
-  marker.bindPopup("<b>Sudbury Care</b><br>Dementia beds: 8<br>All beds: 21");
+  marker.bindPopup("<b>Mid Suffolk</b><br>Population aged over 85: 3.1%<br>Beds occupied: 87%<br>Deprivation: low");
 
-  var marker2 = L.marker([52.07, 0.72], 11).addTo(map);
-  marker2.bindPopup("<b>Greenfields Care</b><br>Dementia beds: 6<br>All beds: 18").openPopup();
+  // var marker2 = L.marker([52.07, 0.72], 11).addTo(map);
+  // marker2.bindPopup("<b>Greenfields Care</b><br>Dementia beds: 6<br>All beds: 18").openPopup();
 
-  var marker = L.marker([52.05, 0.95], 11).addTo(map);
+  var marker = L.marker([52.15, 0.95], 11).addTo(map);
   marker.bindPopup("<b>Hadleigh Care</b><br>Dementia beds: 8<br>All beds: 21");
 
   var greenIcon = L.icon({
@@ -49,8 +49,8 @@ crossorigin=""></script>
     popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
 });
 
-L.marker([52.01, 0.95], {icon: greenIcon}).addTo(map).bindPopup("<b>Restful Meadows</b><br>Dementia beds: 7<br>All beds: 21");
-L.marker([52.1, 0.93], {icon: greenIcon}).addTo(map).bindPopup("<b>Vera Lynn Care</b><br>Dementia beds: 9<br>All beds: 21");
+L.marker([52.01, 0.71], {icon: greenIcon}).addTo(map).bindPopup("<b>Restful Meadows</b><br>Dementia beds: 7<br>All beds: 21");
+L.marker([52.1, 0.74], {icon: greenIcon}).addTo(map).bindPopup("<b>Vera Lynn Care</b><br>Dementia beds: 9<br>All beds: 21");
 
 
 </script>
