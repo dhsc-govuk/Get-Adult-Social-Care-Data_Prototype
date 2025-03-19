@@ -4,7 +4,7 @@
 
 {% block content %}
 <div class="govuk-grid-row">
-  <div class="govuk-grid-column-half-width">
+  <div class="govuk-grid-column-two-thirds">
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
 integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
 crossorigin=""/>
@@ -15,12 +15,52 @@ integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
 crossorigin=""></script>
 
 <style>
-  #map { height: 420px; width:66%}
+  #map { height: 420px; width:100%}
 </style>
 
 <h1>{{pageName}}</h1>
-<p>Source: <a href="https://capacitytracker.com/" target="_blank">Capacity Tracker</a></p>
-<p><img src="/public/images/house-user.svg" style="width:1.2em; margin-right: 0.5em;">Your locations</p>
+<table class="govuk-table">
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Map labels</th>
+      <td class="govuk-table__cell">
+        <ul class="govuk-list" style="text-align: left;">
+          <li>Population aged 85+ (%)</li>
+          <li>Beds occupied (%)</li>
+          <li>Deprivation rating (low to high)</li>
+        </ul>
+      </td>
+      <td class="govuk-table__cell">
+        <a href="present-demand-locations">Change</a>
+      </td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Care provider - labels</th>
+      <td class="govuk-table__cell">
+        <ul class="govuk-list" style="text-align: left;">
+          <li>CQC rating</li>
+          <li>Types of care</li>
+        </ul>
+      </td>
+      <td class="govuk-table__cell">
+        <a href="present-demand-locations">Change</a>
+      </td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Indicators</th>
+      <td class="govuk-table__cell">
+        <ul class="govuk-list" style="text-align: left;">
+          <li>Care type: residential</li>
+          <li>Dementia care</li>
+        </ul>
+      </td>
+      <td class="govuk-table__cell">
+        <a href="present-demand-locations">Change</a>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<p><img src="/public/images/house-user.svg" style="width:1.2em; margin-right: 0.5em;">Your locations <img src="/public/images/house-user-purple.svg" style="width:1.2em; margin-left:1em; margin-right: 0.5em;">Other care provider locations</p>
 <div id="map"></div>
 <script>
   var map = L.map('map').setView([52.05, 0.72], 11);
@@ -49,17 +89,22 @@ crossorigin=""></script>
     popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
 });
 
+var purpleIcon = L.icon({
+    iconUrl: '/public/images/house-user-purple.svg',
+
+    iconSize:     [38, 95], // size of the icon
+    shadowSize:   [50, 64], // size of the shadow
+    iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
+    shadowAnchor: [4, 62],  // the same for the shadow
+    popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+});
+
 L.marker([52.01, 0.71], {icon: greenIcon}).addTo(map).bindPopup("<b>Restful Meadows</b><br>Dementia beds: 7<br>All beds: 21");
-L.marker([52.1, 0.74], {icon: greenIcon}).addTo(map).bindPopup("<b>Vera Lynn Care</b><br>Dementia beds: 9<br>All beds: 21");
+L.marker([52.1, 0.74], {icon: purpleIcon}).addTo(map).bindPopup("<b>Vera Lynn Care</b><br>CQC rating: 5 (high)<br>Type of care: residential, dementia");
 
 
 </script>
 
-<div class="govuk-grid-column-two-thirds">
-  <h2>Title</h2>
-  
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-</div>
 <!--
 
 End of Main section
