@@ -115,10 +115,6 @@
             
             -->
             <h2 id="smart-insights">2. Data</h2>
-            <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="time-series">
-              <h3>Trends over time</h3>
-   {% include "./_time_series.html" %}
-            </div>
             <!-- 
             
             Panels 
@@ -202,14 +198,14 @@
                 
                 -->
                 <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="time-series">
-                  <h3>Time series</h3>
-                  <a href="locations-look-up.html" type="submit" style="margin-right:1em" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                  <h2 class="govuk-heading-m">Time series</h2>
+                  <button type="submit" style="margin-right:1em" class="govuk-button govuk-button--secondary" data-module="govuk-button">
                     Edit locations
-                  </a>
-                  <a href="indicators-look-up" type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                  </button>
+                  <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
                     Edit indicators
-                  </a>
-                  {% include "./_time_series.html" %}
+                  </button>
+                 {% include "./_time-series.html" %}
                 </div>
                 <!-- 
                 
