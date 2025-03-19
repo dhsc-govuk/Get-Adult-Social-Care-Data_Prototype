@@ -92,7 +92,7 @@
             <h2 id="preferences">
               1. Choose your data preferences
             </h2>
-            <p>Change these to update the data shown.</p>
+            <p>Change your selected locations to view data for a different area.</p>
             <table class="govuk-table">
               <tbody class="govuk-table__body">
                 <tr class="govuk-table__row">
@@ -131,7 +131,7 @@
               <ul class="govuk-tabs__list">
                 <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
                   <a class="govuk-tabs__tab" href="#chart">
-                    Ages map
+                    Map
                   </a>
                 </li>
                 <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
@@ -141,7 +141,7 @@
                 </li>
                 <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
                   <a class="govuk-tabs__tab" href="#time-series">
-                    Time series
+                    Trends over time
                   </a>
                 </li>
                 <li class="govuk-tabs__list-item">
@@ -156,12 +156,12 @@
                 </li>
               </ul>
               <div class="govuk-tabs__panel" id="chart">
-                <h3>Ages map</h3>
-                <p>Change the settings to see the ages your local area</p>
+                <h3>Map</h3>
+                <p>This map shows data for the selected age group. Change the age group to update the map.</p>
                 <table class="govuk-table" style="width:66%">
                   <tbody class="govuk-table__body">
                     <tr class="govuk-table__row">
-                      <th scope="row" class="govuk-table__header">Age range</th>
+                      <th scope="row" class="govuk-table__header">Age group</th>
                       <td class="govuk-table__cell">
                         <ul class="govuk-list" style="text-align: left;">
                           <li>85 and over</li>
@@ -175,10 +175,9 @@
                 </table>
                 <iframe width="100%" height="600px" title="ONS Census Maps" frameborder="0" src="https://www.ons.gov.uk/census/maps/choropleth/population/age/resident-age-11a/aged-85-years-and-over/?lad=E07000203&embed=true&embedInteractive=true&embedAreaSearch=false&embedCategorySelection=false&embedView=viewport&embedBounds=0.4518427976473447%2C51.95149998586203%2C1.7552472023533312%2C52.516917630727676" />    
               </iframe>
-              <p class="govuk-body"><a href="" class="govuk-link">Download chart image (PNG)</a><br>
-                <a href="#" class="govuk-link">Download table data (CSV)</a>
-                <p class="govuk-body">Source: ONS Census data<br>
-                  Data correct as of 2021<br>
+              <p class="govuk-body"><a href="" class="govuk-link">Download chart image (PNG)</a></p>
+                <p class="govuk-body">Source: Office for National Statistics<br>
+                  Data correct as of 21 March 2021</p>
                   <!-- <a href="../0-3/help/beds-per-100000-people.html" class="govuk-link">View supporting information for this data</a></p>-->
                 </div>
                 <!-- 
@@ -230,10 +229,9 @@
                     }
                   </style>
                   {% include "./_locations-table.html" %}
-                  <p class="govuk-body">
-                    <a href="#" class="govuk-link">Download table data (CSV)</a>
-                    <p class="govuk-body">Source: Capacity Tracker<br>
-                      Data correct as of 24 December 2024<br>
+                  <p class="govuk-body"><a href="" class="govuk-link">Download this table (CSV)</a></p>
+                  <p class="govuk-body">Source: Office for National Statistics<br>
+                    Data correct as of 21 March 2021</p>
                       <!-- <a href="../0-3/help/beds-per-100000-people.html" class="govuk-link">View supporting information for this data</a></p>-->
                     </div>
 
