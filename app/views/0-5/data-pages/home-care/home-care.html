@@ -1,6 +1,6 @@
 {% extends "layouts/data.html" %}
 
-{% set pageName="Home care" %}
+{% set pageName="Community care" %}
 
 {% block content %} 
 <a href="javascript:history.back()" class="govuk-back-link">Back</a>
@@ -8,7 +8,7 @@
   <div class="govuk-grid-column-full-width">
     <!--<span class="govuk-caption-l">Demand and capacity</span>-->
     <h1 class="govuk-heading-l">{{pageName}}</h1>
-    <p class="govuk-body-l">Intro goes here.</p>
+    <p class="govuk-body-l">Domiciliary care capacity can be measured by the number of care provider locations providing domiciliary care, service users, paid workforce hours, and workers employed in the sector.</p>
             <!-- 
             
             Tabs
@@ -21,17 +21,17 @@
               <ul class="govuk-tabs__list">
                 <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
                   <a class="govuk-tabs__tab" href="#chart">
-                    Map
-                  </a>
-                </li>
-                <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
-                  <a class="govuk-tabs__tab" href="#locations">
-                    Compare locations
+                    Map view
                   </a>
                 </li>
                 <li class="govuk-tabs__list-item">
                   <a class="govuk-tabs__tab" href="#table">
                     Care providers
+                  </a>
+                </li>
+                <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+                  <a class="govuk-tabs__tab" href="#locations">
+                    Local authorities
                   </a>
                 </li>
                 <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
@@ -47,16 +47,37 @@
               </ul>
               <div class="govuk-tabs__panel" id="chart">
                 <h3>Map: domiciliary care in your area</h3>
-                <button type="submit" style="margin-right:1em" class="govuk-button govuk-button--secondary" data-module="govuk-button">
-                  Edit locations
-                </button>
-                <a href="indicators-look-up" type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
-                  Edit map settings
-                </a>
+                <table class="govuk-table" style="width:66%">
+                  <tbody class="govuk-table__body">
+                    <tr class="govuk-table__row">
+                      <th scope="row" class="govuk-table__header">Service type</th>
+                      <td class="govuk-table__cell">
+                        <ul class="govuk-list" style="text-align: left;">
+                          <li>Domiciliary care</li>
+                          <li>Supported living</li>
+                        </ul>
+                      </td>
+                      <td class="govuk-table__cell">
+                        <a href="present-demand-locations">Change</a>
+                      </td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <th scope="row" class="govuk-table__header">Indicators</th>
+                      <td class="govuk-table__cell">
+                        <ul class="govuk-list" style="text-align: left;">
+                          <li>CQC ratings</li>
+                        </ul>
+                      </td>
+                      <td class="govuk-table__cell">
+                        <a href="present-demand-locations">Change</a>
+                      </td>
+                    </tr>
+                    </tbody>
+                    </table>
                {% include "./_cp-map.html" %}
                           
               <p class="govuk-body"><a href="" class="govuk-link">Download chart image (PNG)</a></p>
-                <p class="govuk-body">Source: Office for National Statistics<br>
+                <p class="govuk-body">Source: Quality Care Commission<br>
                   Data correct as of 21 March 2021</p>
                   <!-- <a href="../0-3/help/beds-per-100000-people.html" class="govuk-link">View supporting information for this data</a></p>-->
                 </div>
@@ -66,7 +87,7 @@
                 
                 -->
                 <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="locations">
-                  <h3>Compare locations</h3>
+                  <h3>Compare local authorities</h3>
                   <a href="locations-look-up.html" type="submit" style="margin-right:1em" class="govuk-button govuk-button--secondary" data-module="govuk-button">
                     Edit locations
                   </a>
@@ -96,7 +117,7 @@
                 
                 -->
                 <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="table">
-                  <h3 id="total">Care providers</h3>
+                  <h3 id="total">Compare care providers</h3>
                   <a href="locations-look-up.html" type="submit" style="margin-right:1em" class="govuk-button govuk-button--secondary" data-module="govuk-button">
                     Edit care providers
                   </a>
@@ -110,7 +131,7 @@
                   </style>
                   {% include "./_cp-bar-chart.html" %}
                   <p class="govuk-body"><a href="" class="govuk-link">Download this table (CSV)</a></p>
-                  <p class="govuk-body">Source: Office for National Statistics<br>
+                  <p class="govuk-body">Source: Care Quality Commission<br>
                     Data correct as of 21 March 2021</p>
                       <!-- <a href="../0-3/help/beds-per-100000-people.html" class="govuk-link">View supporting information for this data</a></p>-->
                     </div>

@@ -12,20 +12,6 @@ crossorigin=""></script>
   #map { height: 420px; width:100%}
 </style>
 
-<div class="govuk-form-group">
-  <h1 class="govuk-label-wrapper">
-    <label class="govuk-label govuk-label--s" for="event-name">
-      Find locations
-    </label>
-  </h1>
-  <div id="event-name-hint" class="govuk-hint">
-    Search by care provider location, district, local authority or region
-  </div>
-  <input class="govuk-input" id="event-name" name="eventName" type="text">
-</div>
-<button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
-  Search
-</button>
 <p><img src="/public/images/house-user.svg" style="width:1.2em; margin-right: 0.5em;">Your locations <img src="/public/images/house-user-purple.svg" style="width:1.2em; margin-left:1em; margin-right: 0.5em;">Other care provider locations</p>
 <div id="map"></div>
 <script>
@@ -62,9 +48,9 @@ var purpleIcon = L.icon({
     popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
 });
 
-L.marker([52.01, 0.71], {icon: greenIcon}).addTo(map).bindPopup("<b>Sudleigh home care</b>");
-L.marker([52.1, 0.74], {icon: purpleIcon}).addTo(map).bindPopup("<b>Vera Lynn Care</b><br>CQC rating: 5 (high)<br>Type of care: xxx");
-L.marker([52.15, 0.95], {icon: purpleIcon}).addTo(map).bindPopup("<b>Stowmarket home Care</b><br>CQC rating: 5 (high)<br>Type of care: xxx");;
-marker.bindPopup("<b>Hadleigh Care");
+L.marker([52.01, 0.71], {icon: greenIcon}).addTo(map).bindPopup("<b>Sudleigh home care</b><br>Your care location");
+L.marker([52.1, 0.74], {icon: purpleIcon}).addTo(map).bindPopup("<b>Vera Lynn Care</b><br>CQC rating: 5 (high)<br>Type: domiciliary care");
+L.marker([52.15, 0.95], {icon: purpleIcon}).addTo(map).bindPopup("<b>Stowmarket supported living</b><br>CQC rating: 5 (high)<br>Type: supported living");;
+marker.bindPopup("<b>Your pin</b><br>Click the map to change your location");
 
 </script>
