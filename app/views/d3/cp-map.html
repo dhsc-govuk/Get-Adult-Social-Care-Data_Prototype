@@ -102,6 +102,11 @@ var purpleIcon = L.icon({
 L.marker([52.01, 0.71], {icon: greenIcon}).addTo(map).bindPopup("<b>Restful Meadows</b><br>Dementia beds: 7<br>All beds: 21");
 L.marker([52.1, 0.74], {icon: purpleIcon}).addTo(map).bindPopup("<b>Vera Lynn Care</b><br>CQC rating: 5 (high)<br>Type of care: residential, dementia");
 
+var polygon = L.polygon([
+[52.01, 0.71],
+[52.503, -0.1],
+[51.51, -0.047]
+]).addTo(map);
 
 </script>
 
