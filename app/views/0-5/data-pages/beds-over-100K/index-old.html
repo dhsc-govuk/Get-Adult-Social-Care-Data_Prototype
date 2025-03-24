@@ -5,86 +5,54 @@
 {% block content %} 
 <a href="../../logged-in/present-demand" class="govuk-back-link">Back</a>
 <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-      <!--<span class="govuk-caption-l">Demand and capacity</span>-->
-      <h1 class="govuk-heading-l">{{pageName}}</h1>
-      <p class="govuk-body-l">The total number of beds recorded by care providers across health and adult social care, adjusted to a rate of 100,000 adults in the local authority population.</p>
+        <!-- 
+      
+      Left nav column 
+      
+    -->
+    <div class="govuk-grid-column-one-third">      
+      <nav class="moj-side-navigation" aria-label="Side navigation">
+        <h3>Contents</h3>
+        {% set items = [
+          { link: "#definition", heading: "Indicator definition and supporting information" },
+          { link: "#settings", heading: "Your selected locations" },
+          { link: "#data", heading: "Data" },
+          { link: "#smart-insights", heading: "Smart insights (experimental)" }
+                  ] %}
+        <ul class="moj-side-navigation__list">
+                  {% for item in items %}
+            <li class="moj-side-navigation__item"><a href="{{item.link}}">{{item.heading}}</a></li class="moj-side-navigation__item">
+         {% endfor %}
+        </ul>
+      </nav>
+</div>
+  <!-- 
   
-      <style>
-        /* Contents Box Styling */
-        .contents-box {
-            background-color: #f3f2f1; /* GOV.UK light grey */
-            padding: 20px;
-            margin-bottom: 20px;
-            max-width: 63%; /* Adjusted width for better spacing */
-        }
-      
-        /* Remove default list indentation */
-        .govuk-list--number {
-            counter-reset: main-counter;
-            list-style-type: none;
-            padding-left: 0; /* Remove padding */
-            margin-left: 0; /* Remove margin */
-        }
-      
-        .govuk-list--number > li {
-            counter-increment: main-counter;
-        }
-      
-        .govuk-list--number > li::before {
-            content: counter(main-counter) ". ";
-            font-weight: normal;
-        }
-      
-        /* Styling for the nested (child) ordered list */
-        .nested-list {
-            counter-reset: sub-counter;
-            list-style-type: none;
-            padding-left: 1.5rem; /* Align nested items properly */
-            margin-left: 0;
-        }
-      
-        .nested-list li {
-            counter-increment: sub-counter;
-        }
-      
-        .nested-list li::before {
-            content: counter(main-counter) "." counter(sub-counter) ". ";
-            font-weight: normal;
-        }
-      
-        /* Bridge Text Styling */
-        .bridge-text {
-            margin-top: 20px;
-            font-weight: bold;
-        }
-      </style>
-      
-      <!-- Contents Box -->
-      <div class="contents-box">
-        <h2 class="govuk-heading-m">Contents</h2>
-        <ol class="govuk-list govuk-list--number">
-            <li><a href="#preferences" class="govuk-link">Choose your data preferences</a>
-            <li><a href="#data" class="govuk-link">Data</a>
-            <li><a href="#smart-insights" class="govuk-link">Smart insights (experimental)</a>
-            <li><a href="#footnotes" class="govuk-link">Footnotes</a>
-            </ol>
-      </div>
-      
+  Main column 
+  
+-->
+  <div class="govuk-grid-column-two-thirds">
     <!-- <span class="govuk-caption-l">Demand and capacity</span> -->
-
-    <!-- 
+    <h1 class="govuk-heading-l">
+      <!-- <span class="govuk-caption-m">Demand</span> -->
+      {{pageName}}</h1>
+      <!-- 
+      
       Main content
       
       -->
-      <style>
-        h2{margin-top:4em}
-      </style>
-
-      <h2 id="preferences">
-        1. Choose your data preferences
+      <h2 id="definition">Indicator definition and supporting information</h2>
+      <p class="govuk-body">
+        The total number of beds recorded by care providers across health and adult social care, adjusted to a rate of 100,000 adults in the local authority population.
+      </p>
+      <p class="govuk-body">
+        For detailed information about this indicator, including data definitions, data source, update schedule and limitations to be aware of before using this data, go to
+        <a href="../current/help/beds-per-100000-adult-population.html" class="govuk-link">supporting information for this data</a>.</li>
+      </p>
+      <h2 id="locations">
+        Your selected locations
       </h2>
-      <p>Change these to update the data shown.</p>
+      <p>Select locations to view and compare data.</p>
       <table class="govuk-table">
         <tbody class="govuk-table__body">
           <tr class="govuk-table__row">
@@ -106,7 +74,7 @@
       Tabs
       
       -->
-      <h2 id="data">2. Data</h2>
+      <h2 id="data">Data</h2>
       <div class="govuk-tabs" data-module="govuk-tabs">
         <h2 class="govuk-tabs__title">
           Contents
@@ -139,8 +107,8 @@
         
         -->
         <div class="govuk-tabs__panel" id="chart">
-          <h3 class="govuk-heading-m">Bar chart</h3>
-          <p>This chart shows data for all local authorities in the South East region.</p>
+          <h2>Bar chart</h2>
+          <p>This chart shows data for all local authorities in Suffolk.</p>
           <table class="govuk-table">
             <tbody class="govuk-table__body">
           <tr class="govuk-table__row">
@@ -169,7 +137,7 @@
             
             -->
             <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="time-series">
-              <h3 class="govuk-heading-m">Time series</h3>
+              <h2>Time series</h2>
               {% include "./_time-series.html" %}
             </div>
             <!-- 
@@ -178,7 +146,7 @@
             
             -->
             <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="map">
-              <h2 class="govuk-heading-m">
+              <h2>
                 Map
               </h2>
               <p class="govuk-body">The map view is not yet available.</p>
@@ -191,7 +159,7 @@
             
             -->
             <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="table">
-              <h3 class="govuk-heading-m" id="total">Table</h3>
+              <h2 id="total">Table</h2>
               <table class="govuk-table">
                 <tbody class="govuk-table__body">
               <tr class="govuk-table__row">
@@ -251,9 +219,9 @@
                 </div>
               </div>
 
-              <h2 id="smart-insights">3. Smart insights (experimental)</h2>
+              <h2 id="smart-insights">Smart insights (experimental)</h2>
               <div class="govuk-inset-text">
-                Smart insights use artificial intelligence (AI) to analyse this data, highlighting trends and patterns to support your own analysis. As this is experimental, verify the insights to check they are appropriate and meet your needs. <a class="govuk-link" href="./../../help/smart-insights.html">Learn more about smart insights</a>
+                Smart insights use artificial intelligence (AI) to analyse this data, highlighting trends and patterns to support your own analysis. As this is experimental, verify the insights to check they are appropriate and meet your needs. <a class="govuk-link" href="../0-3/help/smart-insights.html">Learn more about smart insights</a>
               </div>
         
               <h3 class="govuk-heading-s">Summary of key trends</h3>
@@ -279,19 +247,6 @@
                <li>Consider whether individuals with complex dementia care needs have sufficient access to specialised nursing care locally.</li>
             </ul>
 
-            <h2 id="footnotes">4. Footnotes</h2>
-
-            <p class="govuk-body">
-              Find out how this indicator is defined, sourced, and updated.
-            </p>
-
-            <p class="govuk-body">
-              <a href="../../help/beds-per-100000-adult-population.html" class="govuk-link">View footnotes</a>
-            </p>
- 
-      
             <p class="govuk-body"><a href="javascript:history.back()" class="govuk-link">Back</a></p>
 
-            </div>
-       </div>
               {% endblock%}
