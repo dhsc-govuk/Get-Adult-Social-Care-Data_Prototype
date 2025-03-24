@@ -9,10 +9,44 @@
     <!--<span class="govuk-caption-l">Demand and capacity</span>-->
     <h1 class="govuk-heading-l">{{pageName}}</h1>
     <p class="govuk-body-l">Domiciliary care capacity can be measured by the number of care provider locations providing domiciliary care, service users, paid workforce hours, and workers employed in the sector.</p>
-            <style>
-              h2{margin-top:3em}
-            </style>
-                <h2>Map: domiciliary care in your area</h2>
+            <!-- 
+            
+            Tabs
+            
+            -->
+            <div class="govuk-tabs" data-module="govuk-tabs">
+              <h2 class="govuk-tabs__title">
+                Contents
+              </h2>
+              <ul class="govuk-tabs__list">
+                <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+                  <a class="govuk-tabs__tab" href="#chart">
+                    Map view
+                  </a>
+                </li>
+                <!-- <li class="govuk-tabs__list-item">
+                  <a class="govuk-tabs__tab" href="#table">
+                    Care providers
+                  </a>
+                </li> -->
+                <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+                  <a class="govuk-tabs__tab" href="#locations">
+                    Local authorities
+                  </a>
+                </li>
+                <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+                  <a class="govuk-tabs__tab" href="#time-series">
+                    Trends over time
+                  </a>
+                </li>
+                <li class="govuk-tabs__list-item">
+                  <a class="govuk-tabs__tab" href="#smart-insights">
+                    Smart insights
+                  </a>
+                </li>
+              </ul>
+              <div class="govuk-tabs__panel" id="chart">
+                <h3>Map: domiciliary care in your area</h3>
                 <table class="govuk-table" style="width:66%">
                   <tbody class="govuk-table__body">
                     <tr class="govuk-table__row">
@@ -51,7 +85,8 @@
                 Locations
                 
                 -->
-                  <h2>Compare local authorities</h2>
+                <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="locations">
+                  <h3>Compare local authorities</h3>
                   <a href="locations-look-up.html" type="submit" style="margin-right:1em" class="govuk-button govuk-button--secondary" data-module="govuk-button">
                     Edit locations
                   </a>
