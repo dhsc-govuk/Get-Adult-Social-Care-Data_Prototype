@@ -1,0 +1,33 @@
+{% extends "layouts/main.html" %}
+
+{% set pageName="JSON sandpit" %}
+
+{% block content %}
+<!-- Load d3.js -->
+<script src="https://d3js.org/d3.v4.js"></script>
+ 
+      <h1>{{pageName}}</h1>
+<p>JSON is a useful format, so this page is an experiment about making JSON work with nunjucks and D3.</p>
+
+<p>It's easy to load JSON using 'set':</p>
+<!-- Example adapted from https://www.w3schools.com/whatis/whatis_json.asp -->
+<!-- This example defines an employees object: an array of 3 employee records (objects): -->
+{%
+ set employees = [
+    {"firstName":"John", "lastName":"Doe"},
+    {"firstName":"Anna", "lastName":"Smith"},
+    {"firstName":"Peter", "lastName":"Jones"}
+]
+  %}
+
+  {% for item in employees %}
+{{item.firstName}} {{item.lastName}} ... 
+{% endfor %}
+
+    <!--
+
+    End of Main section
+
+    -->
+  </main>
+{% endblock %}
