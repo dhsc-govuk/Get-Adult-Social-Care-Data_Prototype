@@ -1,0 +1,56 @@
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+crossorigin=""/>
+
+<!-- Make sure you put this AFTER Leaflet's CSS -->
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+crossorigin=""></script>
+
+<style>
+  #map { height: 420px; width:100%}
+</style>
+
+<p><img src="/public/images/house-user.svg" style="width:1.2em; margin-right: 0.5em;">Your locations <img src="/public/images/house-user-purple.svg" style="width:1.2em; margin-left:1em; margin-right: 0.5em;">Other care provider locations</p>
+<div id="map"></div>
+<script>
+  var map = L.map('map').setView([52.05, 0.72], 11);
+  
+  L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+  }).addTo(map);
+  
+  var marker = L.marker([52.05, 0.72], 11).addTo(map);
+  marker.bindPopup("<b>Mid Suffolk</b><br>Population aged over 85: 3.1%<br>Deprivation: low");
+
+  // var marker2 = L.marker([52.07, 0.72], 11).addTo(map);
+  // marker2.bindPopup("<b>Greenfields Care</b><br>Dementia beds: 6<br>All beds: 18").openPopup();
+
+  var greenIcon = L.icon({
+    iconUrl: '/public/images/house-user.svg',
+
+    iconSize:     [38, 95], // size of the icon
+    shadowSize:   [50, 64], // size of the shadow
+    iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
+    shadowAnchor: [4, 62],  // the same for the shadow
+    popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+});
+
+var purpleIcon = L.icon({
+    iconUrl: '/public/images/house-user-purple.svg',
+
+    iconSize:     [38, 95], // size of the icon
+    shadowSize:   [50, 64], // size of the shadow
+    iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
+    shadowAnchor: [4, 62],  // the same for the shadow
+    popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+});
+
+L.marker([52.01, 0.71], {icon: greenIcon}).addTo(map).bindPopup("<b>Sudleigh home care</b><br>Your care location");
+L.marker([52.1, 0.74], {icon: purpleIcon}).addTo(map).bindPopup("<b>Vera Lynn Care</b><br>CQC rating: 5 (high)<br>Type: domiciliary care");
+L.marker([52.15, 0.95], {icon: purpleIcon}).addTo(map).bindPopup("<b>Stowmarket supported living</b><br>CQC rating: 5 (high)<br>Type: supported living");;
+marker.bindPopup("<b>Your pin</b><br>Click the map to change your location");
+
+</script>
