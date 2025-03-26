@@ -111,6 +111,11 @@
           </div>
           <div class="govuk-tabs__panel" id="map-table">
             <h3>Care homes near Greenfields Care Home, Suffolk</h3>
+            <a type="submit" style="margin-right:1em" class="govuk-button govuk-button--secondary" data-module="govuk-button" href="map-settings">
+              Edit indicators
+            </a>
+
+            {% include "./_locations-table.html" %}
             </div>
         </div>
       </div>
@@ -139,6 +144,12 @@
         </div>
         <div class="govuk-grid-column-width-full">
           <h2 id="charts">3. Charts</h2>
+          <a type="submit" style="margin-right:1em" class="govuk-button govuk-button--secondary" data-module="govuk-button" href="map-settings">
+            Edit locations
+          </a>
+          <a type="submit" style="margin-right:1em" class="govuk-button govuk-button--secondary" data-module="govuk-button" href="map-settings">
+            Edit indicators
+          </a>
           {% include "./_locations-bar-chart.html" %}
         </div>
         
