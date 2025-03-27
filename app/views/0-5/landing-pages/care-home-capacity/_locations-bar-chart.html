@@ -1,60 +1,73 @@
 <style>
-    .chart-bar{fill:purple; margin: 0}
-  </style>
-<table class="govuk-table" style="width:80%">
+  .chart-bar{fill:purple; margin: 0}
+</style>
+{% set las = 
+  [
+  ["Cambridgeshire",2387,89],
+  ["Southend On Sea",2376,87],
+  ["Cambridgeshire",2354,91],
+  ["Suffolk",2349,89],
+  ["Central Bedfordshire",2317,82],
+  ["Hertfordshire",2295,92],
+  ["East of England, mean",2299,80],
+  ["Thurrock",2204,85],
+  ["All of England, mean",2145,87],
+  ["Peterborough",2086,93],
+  ["Norfolk",2079,81],
+  ["Bedford",2067,84],
+  ["Luton",2017,90]
+  ]
+  %}
+  
+  <h3 class="govuk-heading-m">East of England: Residential care beds per 100K population | Capacity</h3>
+  <table class="govuk-table">
     <thead class="govuk-table__head">
       <tr class="govuk-table__row">
-        <th scope="col" class="govuk-table__header">Location</th>
-        <th scope="col" class="govuk-table__header" style="text-align: right;">Care home capacity xxx </th>
-        <th scope="col" class="govuk-table__header" style="text-align: left; padding-left:2.5em">Data bar</th>
+        <th scope="col" class="govuk-table__header" style="min-width:12em">Location</th>
+        <th scope="col" class="govuk-table__header" style="min-width:8em; text-align: right;">Residential care beds per 100K</th>
+        <th scope="col" class="govuk-table__header">Data bar</th>
+        <th scope="col" class="govuk-table__header" style="text-align: right;">Care home capacity</th>
+        <th scope="col" class="govuk-table__header">Data bar</th>
+        
       </tr>
     </thead>
-      <tr class="govuk-table__row">
-        <td class="govuk-table__cell">Cambridgeshire</td>
-        <td class="govuk-table__cell govuk-table__cell--numeric">35.1%</td>
-        <td class="govuk-table__cell">
-          <svg width="340" height="30">
-            <rect width="351" height="30" class="chart-bar"></rect>
-          </svg>
-        </td>
-      </tr>
-      <tr class="govuk-table__row">
-        <td class="govuk-table__cell"><strong>Suffolk</strong></td>
-        <td class="govuk-table__cell govuk-table__cell--numeric">33.3%</td>
-        <td class="govuk-table__cell">
-          <svg width="340" height="30">
-            <rect width="333" height="30" class="chart-bar" style="fill:orange"></rect>
-          </svg>
-        </td>
-      </tr>
-      <tbody class="govuk-table__body">
-        <tr class="govuk-table__row">
-          <td class="govuk-table__cell"><strong>East Suffolk</strong></td>
-          <td class="govuk-table__cell govuk-table__cell--numeric">31.4%</td>
-          <td class="govuk-table__cell">
-            <svg width="340" height="30">
-              <rect width="314" height="30" class="chart-bar" style="fill:orange"></rect>
-            </svg>
-          </td>
-        </tr>
-        <tr class="govuk-table__row">
-          <td class="govuk-table__cell">East of England</td>
-          <td class="govuk-table__cell govuk-table__cell--numeric">29.8%</td>
-          <td class="govuk-table__cell">
-            <svg width="340" height="30">
-              <rect width="298" height="30" class="chart-bar"></rect>
-            </svg>
-          </td>
-        </tr>
-      <tr class="govuk-table__row">
-        <td class="govuk-table__cell">England</td>
-        <td class="govuk-table__cell govuk-table__cell--numeric">29.9%</td>
-        <td class="govuk-table__cell">
-          <svg width="340" height="30">
-            <rect width="299" height="30" class="chart-bar"></rect>
-          </svg>
-        </td>
-      </tr>
-
-    </tbody>
-  </table>
+    {% for item in las %}
+    {% if item[0] == "Suffolk" %} 
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"><strong>Suffolk</strong></td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">2,245</td>
+      <td class="govuk-table__cell">
+        <svg width="340" height="25">
+          <rect width="235" height="25" class="chart-bar" style="fill:orange"></rect>
+        </svg>
+      </td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">89%</td>
+      <td class="govuk-table__cell">
+        <svg width="340" height="25">
+          <rect width="200" height="25" class="chart-bar" style="fill:white; stroke-width:2;stroke:#e1e1e1"></rect>
+          <rect width="178" height="25" class="chart-bar" style="fill:orange"></rect>
+        </svg>
+      </td>
+    </tr>
+    {% else %}
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">{{item[0]}}</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">{{item[1]|addcommas}}</td>
+      <td class="govuk-table__cell">
+        <svg width="340" height="25">
+          <rect width="{{item[1]/10}}" height="25" class="chart-bar"></rect>
+        </svg>
+      </td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">{{item[2]}}%</td>
+      <td class="govuk-table__cell">
+        <svg width="340" height="25">
+          <rect width="200" height="25" class="chart-bar" style="fill:white; stroke-width:2;stroke:#e1e1e1"></rect>
+          <rect width="{{item[2] * 2}}" height="28" y="1" x ="1" class="chart-bar" style="fill:gold"></rect>
+        </svg>
+      </td>
+    </tr>
+    {% endif %}
+    {% endfor %}
+  </tbody>
+</table>
+<p><a href="#">Export table as PNG</a></p>
