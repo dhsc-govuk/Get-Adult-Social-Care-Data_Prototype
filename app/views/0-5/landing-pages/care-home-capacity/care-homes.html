@@ -109,6 +109,9 @@
                   Edit map settings
                 </a>
                 {% include "./_cp-map.html" %}
+                <p style="margin-top:1em"><strong>Suffolk:</strong> Population aged over 85: 3.1% | 
+                  Beds occupied: 89% | 
+                  Deprivation: low</p>
           </div>
           <div class="govuk-tabs__panel" id="map-table">
             <h3>Care homes near Greenfields Care Home, Suffolk</h3>
@@ -141,20 +144,20 @@
         </div>
         <div class="govuk-grid-column-full">
           {% include "./_las-table.html" %}
-          
           <p class="govuk-body">Source: Capacity Tracker<br>
             Data correct as of 5 February 2025</p>
             
           </div>
         </div>
-        <div class="govuk-grid-column-width-full">
           <h2 id="charts">3. Charts</h2>
+          <div class="govuk-grid-column-full">
           <a type="submit" style="margin-right:1em" class="govuk-button govuk-button--secondary" data-module="govuk-button" href="map-settings">
             Edit locations
           </a>
           <a type="submit" style="margin-right:1em" class="govuk-button govuk-button--secondary" data-module="govuk-button" href="map-settings">
             Edit indicators
           </a>
+          </div>
           {% include "./_locations-bar-chart.html" %}
         </div>
         

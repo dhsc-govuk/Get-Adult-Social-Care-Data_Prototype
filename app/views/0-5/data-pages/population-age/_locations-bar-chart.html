@@ -3,19 +3,18 @@
 </style>
 {% set las = 
   [
-  ["Cambridgeshire",2387,89],
-  ["Southend On Sea",2376,87],
-  ["Cambridgeshire",2354,91],
-  ["Suffolk",2349,89],
-  ["Central Bedfordshire",2317,82],
-  ["Hertfordshire",2295,92],
-  ["East of England, mean",2299,80],
-  ["Thurrock",2204,85],
-  ["All of England, mean",2145,87],
-  ["Peterborough",2086,93],
-  ["Norfolk",2079,81],
-  ["Bedford",2067,84],
-  ["Luton",2017,90]
+  ["Essex",1506300,89],
+  ["Cambridgeshire",1048712,89],
+  ["Luton",1001728,90],
+  ["Cambridgeshire",935421,91],
+  ["Suffolk",763400,89],
+  ["Central Bedfordshire",631756,82],
+  ["Hertfordshire",529512,92],
+  ["Thurrock",220454,85],
+  ["Peterborough",208667,93],
+  ["Norfolk",207967,81],
+  ["Bedford",106754,84],
+  ["Southend On Sea",87634,87]
   ]
   %}
   
@@ -33,10 +32,10 @@
     {% if item[0] == "Suffolk" %} 
     <tr class="govuk-table__row">
       <td class="govuk-table__cell"><strong>Suffolk</strong></td>
-      <td class="govuk-table__cell govuk-table__cell--numeric">2,245</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">763,400</td>
       <td class="govuk-table__cell">
         <svg width="340" height="25">
-          <rect width="235" height="25" class="chart-bar" style="fill:orange"></rect>
+          <rect width="71" height="25" class="chart-bar" style="fill:orange"></rect>
         </svg>
       </td>
     </tr>
@@ -46,7 +45,7 @@
       <td class="govuk-table__cell govuk-table__cell--numeric">{{item[1]|addcommas}}</td>
       <td class="govuk-table__cell">
         <svg width="340" height="25">
-          <rect width="{{item[1]/10}}" height="25" class="chart-bar"></rect>
+          <rect width="{{item[1]/10000}}" height="25" class="chart-bar"></rect>
         </svg>
       </td>
     </tr>

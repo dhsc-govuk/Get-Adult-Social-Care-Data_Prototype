@@ -18,17 +18,16 @@
   ["Luton",2017,90]
   ]
   %}
-  
-  <h3 class="govuk-heading-m">East of England: Residential care beds per 100K population | Capacity</h3>
+<div class="govuk-grid-column-two-thirds">
+  <h3 class="govuk-heading-m">East of England: Residential care beds per 100K population</h3>
   <table class="govuk-table">
     <thead class="govuk-table__head">
       <tr class="govuk-table__row">
         <th scope="col" class="govuk-table__header" style="min-width:12em">Location</th>
         <th scope="col" class="govuk-table__header" style="min-width:8em; text-align: right;">Residential care beds per 100K</th>
-        <th scope="col" class="govuk-table__header">Data bar</th>
-        <th scope="col" class="govuk-table__header" style="text-align: right;">Care home capacity</th>
-        <th scope="col" class="govuk-table__header">Data bar</th>
-        
+        <th scope="col" class="govuk-table__header"><span class="govuk-visually-hidden">Data bars</span></span></th>
+        <!-- <th scope="col" class="govuk-table__header" style="text-align: right;">Care home capacity</th>
+        <th scope="col" class="govuk-table__header">Data bar</th> -->
       </tr>
     </thead>
     {% for item in las %}
@@ -41,13 +40,13 @@
           <rect width="235" height="25" class="chart-bar" style="fill:orange"></rect>
         </svg>
       </td>
-      <td class="govuk-table__cell govuk-table__cell--numeric">89%</td>
+      <!-- <td class="govuk-table__cell govuk-table__cell--numeric">89%</td>
       <td class="govuk-table__cell">
         <svg width="340" height="25">
           <rect width="200" height="25" class="chart-bar" style="fill:white; stroke-width:2;stroke:#e1e1e1"></rect>
           <rect width="178" height="25" class="chart-bar" style="fill:orange"></rect>
         </svg>
-      </td>
+      </td> -->
     </tr>
     {% else %}
     <tr class="govuk-table__row">
@@ -58,16 +57,17 @@
           <rect width="{{item[1]/10}}" height="25" class="chart-bar"></rect>
         </svg>
       </td>
-      <td class="govuk-table__cell govuk-table__cell--numeric">{{item[2]}}%</td>
+      <!-- <td class="govuk-table__cell govuk-table__cell--numeric">{{item[2]}}%</td>
       <td class="govuk-table__cell">
         <svg width="340" height="25">
           <rect width="200" height="25" class="chart-bar" style="fill:white; stroke-width:2;stroke:#e1e1e1"></rect>
           <rect width="{{item[2] * 2}}" height="28" y="1" x ="1" class="chart-bar" style="fill:gold"></rect>
         </svg>
-      </td>
+      </td> -->
     </tr>
     {% endif %}
     {% endfor %}
   </tbody>
 </table>
 <p><a href="#">Export table as PNG</a></p>
+</div>
