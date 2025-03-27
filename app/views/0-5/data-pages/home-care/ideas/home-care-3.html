@@ -1,6 +1,6 @@
 {% extends "layouts/data.html" %}
 
-{% set pageName="Capacity of community-based social care services" %}
+{% set pageName="Capacity of community social care services" %}
 
 {% block content %} 
 <a href="javascript:history.back()" class="govuk-back-link">Back</a>
@@ -8,7 +8,7 @@
   <div class="govuk-grid-column-full">
     <!--<span class="govuk-caption-l">Demand and capacity</span>-->
     <h1 class="govuk-heading-l">{{pageName}}</h1>
-    <p class="govuk-body-l">Explore data about the capacity of domiciliary care, extra care housing, supporting living and Shared Lives schemes to meet adult social care needs.</p>
+    <p class="govuk-body-l">Explore data about the capacity of domiciliary care, extra care housing, supporting living and Shared Lives schemes to meet adult social care needs. This data only covers providers registered with the Care Quality Commission (CQC).</p>
     <style>
       /* Contents Box Styling */
       .contents-box {
@@ -129,8 +129,8 @@
           </label>
         </div>
         <div id="signIn-item-hint" class="govuk-hint govuk-radios__hint">
-          Visiting care provided to someone living in single-household accommodation they own or occupy. The home is not part of the care service.
-        </div>
+          Visiting care provided to the person with care needs in their own home. The home is not part of the care service.
+          </div>
         <div class="govuk-radios__item">
           <input class="govuk-radios__input" id="changedName-2" name="changedName" type="radio" value="year">
           <label class="govuk-label govuk-radios__label" for="changedName-2">
@@ -138,7 +138,7 @@
           </label>
         </div>
         <div id="signIn-item-hint" class="govuk-hint govuk-radios__hint">
-          Purpose-built or adapted accomodation for one household, usually with on-site care available. These schemes are sometimes called sheltered housing, assisted living or retirement homes.
+          Purpose-built or adapted accommodation with on-site care, often referred to as sheltered housing, assisted living, or retirement homes.
         </div>
         <div class="govuk-radios__item">
           <input class="govuk-radios__input" id="changedName-2" name="changedName" type="radio" value="year">
@@ -147,7 +147,7 @@
           </label>
         </div>
         <div id="signIn-item-hint" class="govuk-hint govuk-radios__hint">
-          Personal care provided to people living in their own homes, with care arranged separately to their housing.
+          Personal care provided to individuals in their own homes, with housing and care services arranged separately. The accommodation may be shared or single occupancy.
         </div>
         <div class="govuk-radios__item">
           <input class="govuk-radios__input" id="changedName-2" name="changedName" type="radio" value="year">
@@ -161,14 +161,17 @@
         <div class="govuk-radios__item">
           <input class="govuk-radios__input" id="changedName-2" name="changedName" type="radio" value="year">
           <label class="govuk-label govuk-radios__label" for="changedName-2">
-            Other community-based social care services
+            Other
           </label>
+        </div>
+        <div id="signIn-item-hint" class="govuk-hint govuk-radios__hint">
+          Services that fall outside the above categories but are still community-based.
         </div>
         <div class="govuk-radios__divider">or</div>
         <div class="govuk-radios__item">
           <input class="govuk-radios__input" id="changedName-2" name="changedName" type="radio" value="year">
           <label class="govuk-label govuk-radios__label" for="changedName-2">
-            All community-based social care services
+            All community social care services
           </label>
         </div>
       </div>
@@ -184,6 +187,9 @@
           Select indicator
         </h1>
       </legend>
+      <div id="signIn-item-hint" class="govuk-hint">
+        These indicators can reflect capacity in community social care services.
+      </div>
       <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
         <div class="govuk-radios__item">
           <input class="govuk-radios__input" id="changedName" name="changedName" type="radio" value="month">
@@ -200,17 +206,17 @@
         <div class="govuk-radios__item">
           <input class="govuk-radios__input" id="changedName-2" name="changedName" type="radio" value="year">
           <label class="govuk-label govuk-radios__label" for="changedName-2">
-            Number of care employees (agency workers included) 
+            Number of care hours provided
           </label>
         </div>
-        <!--
         <div class="govuk-radios__item">
           <input class="govuk-radios__input" id="changedName-2" name="changedName" type="radio" value="year">
           <label class="govuk-label govuk-radios__label" for="changedName-2">
-            Hours of care provided per service user
+            Number of care workers (agency included) 
           </label>
         </div>
-      -->
+
+
       </div>
     </fieldset>
   </div>
@@ -224,7 +230,7 @@
          Select how the data should be shown</h1>
         </legend>
         <div id="signIn-item-hint" class="govuk-hint">
-          This adjusts the data for better comparison between areas.
+          This adjusts the data for better comparison of areas with different population sizes.
         </div>
       <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
         <div class="govuk-radios__item">
@@ -290,7 +296,7 @@
                <img src="/public/images/surrey.jpg" style="width:100%">
                           
               <p class="govuk-body"><a href="" class="govuk-link">Download map image (PNG)</a></p>
-                <p class="govuk-body">Source: Quality Care Commission<br>
+                <p class="govuk-body">Source: Capacity Tracker<br>
                   Data correct as of 21 March 2021</p>
                   <!-- <a href="../0-3/help/beds-per-100000-people.html" class="govuk-link">View supporting information for this data</a></p>-->
 
