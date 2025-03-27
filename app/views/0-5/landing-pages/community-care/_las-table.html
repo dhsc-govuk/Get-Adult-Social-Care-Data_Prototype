@@ -1,0 +1,39 @@
+<table class="govuk-table">
+    <thead class="govuk-table__head">
+      <tr class="govuk-table__row">
+        <th scope="col" class="govuk-table__header">Location</th>
+        <th scope="col" class="govuk-table__header">Community social care provider locations </th>
+        <th scope="col" class="govuk-table__header">Service users</th>
+        <th scope="col" class="govuk-table__header">Hours of care provided</th>
+        <th scope="col" class="govuk-table__header">CQC workers employed per 100K adults</th>
+      </tr>
+    </thead>
+    {% set laTables = 
+      [
+      ["Cambridgeshire",2150,80123,1234567,24512],
+      ["Southend On Sea",2150,80123,1234567,24512],
+      ["Cambridgeshire",2150,80123,1234567,24512],
+      ["Suffolk",2150,80123,1234567,24512],
+      ["Central Bedfordshire",2150,80123,1234567,24512],
+      ["Hertfordshire",2150,80123,1234567,24512],
+      ["East of England, mean",2150,80123,1234567,24512],
+      ["Thurrock",2150,80123,1234567,24512],
+      ["All of England, mean",2150,80123,1234567,24512],
+      ["Peterborough",2150,80123,1234567,24512],
+      ["Norfolk",2150,80123,1234567,24512],
+      ["Bedford",2150,80123,1234567,24512],
+      ["Luton",2150,80123,1234567,24512]
+      ]
+    %}
+    <tbody class="govuk-table__body">
+      {% for item in laTables %}
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">{{item[0]}}</td>
+        <td class="govuk-table__cell">{{item[1]|addcommas}}</td>
+        <td class="govuk-table__cell">{{item[2]|addcommas}}</td>
+        <td class="govuk-table__cell">{{item[3]|addcommas}}</td>
+        <td class="govuk-table__cell">{{item[4]|addcommas}}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
