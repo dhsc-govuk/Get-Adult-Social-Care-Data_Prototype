@@ -1,6 +1,6 @@
 {% extends "layouts/data.html" %}
 
-{% set pageName="Community-based care services capacity" %}
+{% set pageName="Capacity of community-based social care services" %}
 
 {% block content %} 
 <a href="javascript:history.back()" class="govuk-back-link">Back</a>
@@ -80,7 +80,7 @@
   <h2 id="preferences">
     1. Choose your data preferences
   </h2>
-  <p>Select a location, service type, indicator and age group to view tailored data.</p>
+  <p>Select a location, service type, indicator and (tbc) to view tailored data.</p>
 
     <div class="govuk-form-group">
       <fieldset class="govuk-fieldset">
@@ -158,6 +158,19 @@
         <div id="signIn-item-hint" class="govuk-hint govuk-radios__hint">
           Schemes where the person who needs care is matched with an approved Shared Lives carer.
         </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="changedName-2" name="changedName" type="radio" value="year">
+          <label class="govuk-label govuk-radios__label" for="changedName-2">
+            Other community-based social care services
+          </label>
+        </div>
+        <div class="govuk-radios__divider">or</div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="changedName-2" name="changedName" type="radio" value="year">
+          <label class="govuk-label govuk-radios__label" for="changedName-2">
+            All community-based social care services
+          </label>
+        </div>
       </div>
     </fieldset>
   </div>
@@ -190,12 +203,14 @@
             Number of care employees (agency workers included) 
           </label>
         </div>
+        <!--
         <div class="govuk-radios__item">
           <input class="govuk-radios__input" id="changedName-2" name="changedName" type="radio" value="year">
           <label class="govuk-label govuk-radios__label" for="changedName-2">
             Hours of care provided per service user
           </label>
         </div>
+      -->
       </div>
     </fieldset>
   </div>
@@ -209,8 +224,8 @@
          Show indicator value
         </h1>
         </legend>
-        <div id="signIn-item-hint" class="govuk-hint govuk-radios__hint">
-          Add help text to explain why we showing the following options.
+        <div id="signIn-item-hint" class="govuk-hint">
+          Explain why we are showing the options below.
         </div>
       <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
         <div class="govuk-radios__item">
