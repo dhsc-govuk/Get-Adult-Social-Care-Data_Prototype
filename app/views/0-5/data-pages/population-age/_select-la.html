@@ -1,0 +1,35 @@
+    {{ xGovukAutocomplete({
+      id: "country",
+      classes: "govuk-input--width-20",
+      name: "country",
+      allowEmpty: false,
+      label: {
+        classes: "govuk-label--s",
+        isPageHeading: true,
+        text: "Search for locations"
+      },
+      hint: {
+        text: "Start typing for suggestions on local authorities and districts"
+      },
+      items: [
+      { text: "Hampshire" },
+      { text: "Oxfordshire" },
+      { text: "Surrey" },
+      { text: "West Sussex" },
+      { text: "Bath and North East Somerset" },
+      { text: "Bristol, City of" },
+      { text: "North Somerset" },
+      { text: "South Gloucestershire" },
+      { text: "Swindon" },
+      { text: "Plymouth" },
+      { text: "Torbay" },
+      { text: "Wiltshire" },
+      { text: "Isles of Scilly" },
+      { text: "Bournemouth, Christchurch and Poole" },
+      { text: "Cornwall" },
+      { text: "Dorset" },
+      { text: "Somerset" },
+      { text: "Devon" },
+      { text: "Gloucestershire" }
+      ]
+    }) }}
