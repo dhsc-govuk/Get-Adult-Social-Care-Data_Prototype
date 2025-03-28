@@ -85,6 +85,24 @@
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-width-full">
           <h3 id="unpaid-care" class="govuk-heading-m govuk-!-padding-top-9">1. Map: population by area</h3>
+          <!-- Tab start -->
+          <div class="govuk-tabs" data-module="govuk-tabs">
+            <h2 class="govuk-tabs__title">
+              Contents
+            </h2>
+            <ul class="govuk-tabs__list">
+              <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+                <a class="govuk-tabs__tab" href="#care-homes-map">
+                  Map
+                </a>
+              </li>
+              <li class="govuk-tabs__list-item">
+                <a class="govuk-tabs__tab" href="#map-table">
+                  Table
+                </a>
+              </li>
+              </ul>
+              <div class="govuk-tabs__panel" id="care-homes-map">
                 <h3>Map</h3>
                 <p>Default location: Greenfields Care, Mid Suffolk, Suffolk, East of England</p>
                 <a type="submit" style="margin-right:1em" class="govuk-button govuk-button--secondary" data-module="govuk-button" href="edit-locations">
@@ -125,6 +143,16 @@
                 <iframe width="100%" height="600px" title="ONS Census Maps" frameborder="0" src="https://www.ons.gov.uk/census/maps/choropleth/population/age/resident-age-11a/aged-85-years-and-over/?lad=E07000203&embed=true&embedInteractive=true&embedAreaSearch=false&embedCategorySelection=false&embedView=viewport&embedBounds=0.4518427976473447%2C51.95149998586203%2C1.7552472023533312%2C52.516917630727676" />    
               </iframe>
           </div>
+          <div class="govuk-tabs__panel" id="map-table">
+            <h3>Population by area</h3>
+            <a type="submit" style="margin-right:1em" class="govuk-button govuk-button--secondary" data-module="govuk-button" href="edit-locations">
+              Edit locations
+            </a>
+            <a type="submit" style="margin-right:1em" class="govuk-button govuk-button--secondary" data-module="govuk-button" href="edit-indicators">
+              Edit indicators
+            </a>
+            {% include "./_locations-table-short.html" %}
+            </div>
         </div>
       </div>
       <div class="govuk-grid-row">
@@ -136,7 +164,7 @@
           
           -->
           
-          <h3 id="care-home" class="govuk-heading-m govuk-!-padding-top-9">2. Table: population by age</h3>
+          <h3 id="care-home" class="govuk-heading-m govuk-!-padding-top-9">2. Table: Population by age</h3>
           <a type="submit" style="margin-right:1em" class="govuk-button govuk-button--secondary" data-module="govuk-button" href="edit-locations">
             Edit locations
           </a>
