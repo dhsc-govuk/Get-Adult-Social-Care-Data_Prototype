@@ -1,0 +1,18 @@
+    {{ xGovukAutocomplete({
+      id: "country",
+      classes: "govuk-input--width-20",
+      name: "country",
+      allowEmpty: false,
+      label: {
+        classes: "govuk-label--s",
+        isPageHeading: true,
+        text: "Search for indicators"
+      },
+      hint: {
+        text: "Start typing for suggestions - by indicator or filter"
+      },
+      items: [
+      { text: "Adult care beds per 100K population | Residential care | Mental health" },
+      { text: "Adult care beds per 100K population | Nursing care | Mental health" }
+      ]
+    }) }}
