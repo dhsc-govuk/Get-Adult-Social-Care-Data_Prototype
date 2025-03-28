@@ -11,6 +11,7 @@
   ["East of England",631756,2.8],
   ["Hertfordshire",529512,2.7],
   ["Thurrock",220454,2.6],
+  ["All England",631756,2.5],
   ["Peterborough",208667,2.4],
   ["Luton",1001728,2.2],
   ["Bedford",106754,2.0],
@@ -40,9 +41,9 @@
         </svg>
       </td>
     </tr>
-    {% elseif item[0] == "East of England" %} 
+    {% elseif item[0] == "East of England" or item[0] == "All England" %} 
     <tr class="govuk-table__row">
-      <td class="govuk-table__cell"><strong>East of England, mean</strong></td>
+      <td class="govuk-table__cell"><strong>{{item[0]}}</strong></td>
       <td class="govuk-table__cell govuk-table__cell--numeric">{{item[2]}}%</td>
       <td class="govuk-table__cell">
         <svg width="340" height="25">
