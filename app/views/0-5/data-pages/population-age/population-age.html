@@ -8,7 +8,7 @@
   <div class="govuk-grid-column-full">
     <!--<span class="govuk-caption-l">Demand and capacity</span>-->
     <h1 class="govuk-heading-l">{{pageName}}</h1>
-    <p class="govuk-body-l">Understand local capacity to meet adult social care needs.</p>
+    <p class="govuk-body-l">View the different age ranges in English local authorities and districts. </p>
     
     
     <style>
@@ -104,19 +104,51 @@
               </ul>
               <div class="govuk-tabs__panel" id="care-homes-map">
                 <h3>Map</h3>
-                <p>Showing populaton for people aged 85+</p>
-                <a type="submit" style="margin-right:1em" class="govuk-button govuk-button--secondary" data-module="govuk-button" href="map-settings">
-                  Edit map settings
+                <p>Default location: Mid Suffolk</p>
+                <a type="submit" style="margin-right:1em" class="govuk-button govuk-button--secondary" data-module="govuk-button" href="edit-map-settings">
+                  Edit locations
                 </a>
+                <div class="govuk-form-group">
+                  <fieldset class="govuk-fieldset" aria-describedby="changedName-hint">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                      <h1 class="govuk-fieldset__heading">
+                        Age range
+                      </h1>
+                    </legend>
+                    <!-- <div id="changedName-hint" class="govuk-hint">
+                      This includes changing your last name or spelling your name differently
+                    </div> -->
+                    <div class="govuk-radios govuk-radios--inline govuk-radios--small" data-module="govuk-radios">
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="changedName" name="changedName" type="radio" value="18to64">
+                        <label class="govuk-label govuk-radios__label" for="changedName">
+                          18 to 64
+                        </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="changedName-2" name="changedName" type="radio" value="65andover">
+                        <label class="govuk-label govuk-radios__label" for="changedName-2">
+                          65 and over
+                        </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="changedName-2" name="changedName" type="radio" value="85andover" checked>
+                        <label class="govuk-label govuk-radios__label" for="changedName-2">
+                          85 and over
+                        </label>
+                      </div>
+                    </div>
+                  </fieldset>
+                </div>
                 <iframe width="100%" height="600px" title="ONS Census Maps" frameborder="0" src="https://www.ons.gov.uk/census/maps/choropleth/population/age/resident-age-11a/aged-85-years-and-over/?lad=E07000203&embed=true&embedInteractive=true&embedAreaSearch=false&embedCategorySelection=false&embedView=viewport&embedBounds=0.4518427976473447%2C51.95149998586203%2C1.7552472023533312%2C52.516917630727676" />    
               </iframe>
           </div>
           <div class="govuk-tabs__panel" id="map-table">
             <h3>Population</h3>
-            <a type="submit" style="margin-right:1em" class="govuk-button govuk-button--secondary" data-module="govuk-button" href="map-settings">
+            <a type="submit" style="margin-right:1em" class="govuk-button govuk-button--secondary" data-module="govuk-button" href="edit-map-settings">
               Edit locations
             </a>
-            <a type="submit" style="margin-right:1em" class="govuk-button govuk-button--secondary" data-module="govuk-button" href="map-settings">
+            <a type="submit" style="margin-right:1em" class="govuk-button govuk-button--secondary" data-module="govuk-button" href="edit-map-settings">
               Edit indicators
             </a>
             {% include "./_locations-table-short.html" %}
@@ -133,10 +165,10 @@
           -->
           
           <h3 id="care-home" class="govuk-heading-m govuk-!-padding-top-9">2. Table: Population by age</h3>
-          <a type="submit" style="margin-right:1em" class="govuk-button govuk-button--secondary" data-module="govuk-button" href="map-settings">
+          <a type="submit" style="margin-right:1em" class="govuk-button govuk-button--secondary" data-module="govuk-button" href="edit-map-settings">
             Edit locations
           </a>
-          <a type="submit" style="margin-right:1em" class="govuk-button govuk-button--secondary" data-module="govuk-button" href="map-settings">
+          <a type="submit" style="margin-right:1em" class="govuk-button govuk-button--secondary" data-module="govuk-button" href="edit-map-settings">
             Edit indicators
           </a>
         </div>
@@ -150,10 +182,10 @@
         </div>
         <div class="govuk-grid-column-two-thirds">
           <h2 id="charts">3. Charts</h2>
-          <a type="submit" style="margin-right:1em" class="govuk-button govuk-button--secondary" data-module="govuk-button" href="map-settings">
+          <a type="submit" style="margin-right:1em" class="govuk-button govuk-button--secondary" data-module="govuk-button" href="edit-map-settings">
             Edit locations
           </a>
-          <a type="submit" style="margin-right:1em" class="govuk-button govuk-button--secondary" data-module="govuk-button" href="map-settings">
+          <a type="submit" style="margin-right:1em" class="govuk-button govuk-button--secondary" data-module="govuk-button" href="edit-map-settings">
             Edit indicators
           </a>
           {% include "./_locations-bar-chart.html" %}
@@ -161,7 +193,7 @@
         
         <div class="govuk-grid-column-two-thirds">
           <h2 id="time-series">4. Time series</h2>
-          <a type="submit" style="margin-right:1em" class="govuk-button govuk-button--secondary" data-module="govuk-button" href="map-settings">
+          <a type="submit" style="margin-right:1em" class="govuk-button govuk-button--secondary" data-module="govuk-button" href="edit-map-settings">
             Edit indicators
           </a>
           {% include "./_time-series.html" %}

@@ -1,6 +1,6 @@
 {% extends "layouts/main.html" %}
 
-{% set pageName="Map: care home locations near you - settings" %}
+{% set pageName="Location settings" %}
 
 {% block content %} 
 <a href="javascript:history.back()" class="govuk-back-link">Back</a>
@@ -8,17 +8,15 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <h1>
-    <span class="govuk-caption-m">Care home capacity</span> 
+    <span class="govuk-caption-m">Population age</span> 
 {{pageName}}</h1>
     <table class="govuk-table">
       <tbody class="govuk-table__body">
         <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header">Map labels</th>
+          <th scope="row" class="govuk-table__header">Map colour</th>
           <td class="govuk-table__cell">
             <ul class="govuk-list" style="text-align: left;">
               <li>Population aged 85+ (%)</li>
-              <li>Beds occupied (%)</li>
-              <li>Deprivation rating (low to high)</li>
             </ul>
           </td>
           <td class="govuk-table__cell">
@@ -26,23 +24,10 @@
           </td>
         </tr>
         <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header">Care provider - labels</th>
+          <th scope="row" class="govuk-table__header">Default location</th>
           <td class="govuk-table__cell">
             <ul class="govuk-list" style="text-align: left;">
-              <li>CQC rating</li>
-              <li>Types of care</li>
-            </ul>
-          </td>
-          <td class="govuk-table__cell">
-            <a href="present-demand-locations">Change</a>
-          </td>
-        </tr>
-        <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header">Filters</th>
-          <td class="govuk-table__cell">
-            <ul class="govuk-list" style="text-align: left;">
-              <li>Care type: residential</li>
-              <li>Dementia care</li>
+              <li>East Sussex, Sussex, East of England</li>
             </ul>
           </td>
           <td class="govuk-table__cell">
@@ -52,12 +37,12 @@
       </tbody>
     </table>
    
-      <form action="care-homes">
+      <form action="population-age">
         <div class="govuk-button-group">
     <button type="submit" class="govuk-button" data-module="govuk-button">
       Apply changes
     </button>
-    <a class="govuk-link" href="care-homes">Cancel and go back</a>
+    <a class="govuk-link" href="population-age">Cancel and go back</a>
   </div>
     </form>
   </div>
