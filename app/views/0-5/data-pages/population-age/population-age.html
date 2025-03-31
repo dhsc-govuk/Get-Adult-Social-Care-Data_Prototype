@@ -141,9 +141,45 @@
         <a type="submit" style="margin-right:1em" class="govuk-button govuk-button--secondary" data-module="govuk-button" href="edit-locations">
           Edit locations
         </a>
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" aria-describedby="age-group-hint">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+              <h4 class="govuk-fieldset__heading">
+                Select age group
+              </h4>
+            </legend>
+        
+            <div class="govuk-radios govuk-radios--inline govuk-radios--small" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="age-group-1" name="age-group" type="radio" value="18to64">
+                <label class="govuk-label govuk-radios__label" for="age-group-1">
+                  Aged&nbsp;18&nbsp;to&nbsp;64
+                </label>
+              </div>
+        
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="age-group-2" name="age-group" type="radio" value="65andover">
+                <label class="govuk-label govuk-radios__label" for="age-group-2">
+                  Aged&nbsp;65&nbsp;and&nbsp;over
+                </label>
+              </div>
+        
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="age-group-3" name="age-group" type="radio" value="85andover" checked>
+                <label class="govuk-label govuk-radios__label" for="age-group-3">
+                  Aged&nbsp;85&nbsp;and&nbsp;over
+                </label>
+              </div>
+            </div>
+            <button class="govuk-button govuk-button--secondary govuk-!-margin-top-2">Update age group</button>
+          </fieldset>
+        </div>
+        <!--
         <a type="submit" style="margin-right:1em" class="govuk-button govuk-button--secondary" data-module="govuk-button" href="edit-locations">
           Edit indicators
         </a>
+      -->
         {% include "./_locations-bar-chart.html" %}
       </div>
     </div>
@@ -158,9 +194,11 @@
           <a type="submit" style="margin-right:1em" class="govuk-button govuk-button--secondary" data-module="govuk-button" href="edit-locations">
             Edit locations
           </a>
+         
           <a type="submit" style="margin-right:1em" class="govuk-button govuk-button--secondary" data-module="govuk-button" href="edit-indicators">
             Edit indicators
           </a>
+         
         </div>
         <div class="govuk-grid-column-full">
           {% include "./_locations-table.html" %}
