@@ -8,9 +8,9 @@
   <div class="govuk-grid-column-full">
     <!--<span class="govuk-caption-l">Demand and capacity</span>-->
     <h1 class="govuk-heading-l">{{pageName}}</h1>
-    <p class="govuk-body-l">View the different age ranges in English local authorities and districts. </p>
+    <p class="govuk-body-l">Explore population data by age group across local authorities and districts in England. </p>
     
-    
+  
     <style>
       /* Contents Box Styling */
       .contents-box {
@@ -65,10 +65,11 @@
     <div class="contents-box">
       <h2 class="govuk-heading-m">Contents</h2>
       <ol class="govuk-list govuk-list--number">
-        <li><a href="#preferences" class="govuk-link">Map: Population by area</a>
-          <li><a href="#carehome" class="govuk-link">Table: Population by age</a></li>
-          <li><a href="#carehome" class="govuk-link">Charts</a></li>
-          <li><a href="#time-series" class="govuk-link">Time series</a></li>
+        <li><a href="#map" class="govuk-link">Map: population by age group</a></li>
+        <li><a href="#chart" class="govuk-link">Chart: compare population age groups by area</a></li>
+          <li><a href="#table" class="govuk-link">Table: compare population age groups by area</a></li>
+
+          <li><a href="#trends class="govuk-link">Trends over time</a></li>
           <li><a href="#footnotes" class="govuk-link">Footnotes</a></li>
           <li><a href="#related" class="govuk-link">Related information</a></li>
         </ol>
@@ -82,61 +83,78 @@
       <style>
         h2{margin-top:4em}
       </style>
+         <!--Map-->
       <div class="govuk-grid-row">
-        <div class="govuk-grid-column-width-full">
-          <h3 id="unpaid-care" class="govuk-heading-m govuk-!-padding-top-9">1. Map: population by area</h3>
-                <h3>Map</h3>
-                <p>Default location: Greenfields Care, Mid Suffolk, Suffolk, East of England</p>
+        <div class="govuk-grid-column-full">
+          <h2 id="map" class="govuk-heading-m govuk-!-padding-top-9">1. Map: population by age group</h2>
+                <p class="govuk-body"><strong>Location:</strong> Greenfields Care, Mid Suffolk, Suffolk, East of England</p>
                 <a type="submit" style="margin-right:1em" class="govuk-button govuk-button--secondary" data-module="govuk-button" href="edit-locations">
-                  Edit locations
+                  Change location
                 </a>
                 <div class="govuk-form-group">
-                  <fieldset class="govuk-fieldset" aria-describedby="changedName-hint">
+                  <fieldset class="govuk-fieldset" aria-describedby="age-group-hint">
                     <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-                      <h1 class="govuk-fieldset__heading">
-                        Age range
-                      </h1>
+                      <h4 class="govuk-fieldset__heading">
+                        Select age group
+                      </h4>
                     </legend>
-                    <!-- <div id="changedName-hint" class="govuk-hint">
-                      This includes changing your last name or spelling your name differently
-                    </div> -->
+                
                     <div class="govuk-radios govuk-radios--inline govuk-radios--small" data-module="govuk-radios">
                       <div class="govuk-radios__item">
-                        <input class="govuk-radios__input" id="changedName" name="changedName" type="radio" value="18to64">
-                        <label class="govuk-label govuk-radios__label" for="changedName">
-                          18 to 64
+                        <input class="govuk-radios__input" id="age-group-1" name="age-group" type="radio" value="18to64">
+                        <label class="govuk-label govuk-radios__label" for="age-group-1">
+                          Aged&nbsp;18&nbsp;to&nbsp;64
                         </label>
                       </div>
+                
                       <div class="govuk-radios__item">
-                        <input class="govuk-radios__input" id="changedName-2" name="changedName" type="radio" value="65andover">
-                        <label class="govuk-label govuk-radios__label" for="changedName-2">
-                          65 and over
+                        <input class="govuk-radios__input" id="age-group-2" name="age-group" type="radio" value="65andover">
+                        <label class="govuk-label govuk-radios__label" for="age-group-2">
+                          Aged&nbsp;65&nbsp;and&nbsp;over
                         </label>
                       </div>
+                
                       <div class="govuk-radios__item">
-                        <input class="govuk-radios__input" id="changedName-2" name="changedName" type="radio" value="85andover" checked>
-                        <label class="govuk-label govuk-radios__label" for="changedName-2">
-                          85 and over
+                        <input class="govuk-radios__input" id="age-group-3" name="age-group" type="radio" value="85andover" checked>
+                        <label class="govuk-label govuk-radios__label" for="age-group-3">
+                          Aged&nbsp;85&nbsp;and&nbsp;over
                         </label>
                       </div>
                     </div>
+                    <button class="govuk-button govuk-button--secondary govuk-!-margin-top-2">Update age group</button>
                   </fieldset>
                 </div>
+
                 <iframe width="100%" height="600px" title="ONS Census Maps" frameborder="0" src="https://www.ons.gov.uk/census/maps/choropleth/population/age/resident-age-11a/aged-85-years-and-over/?lad=E07000203&embed=true&embedInteractive=true&embedAreaSearch=false&embedCategorySelection=false&embedView=viewport&embedBounds=0.4518427976473447%2C51.95149998586203%2C1.7552472023533312%2C52.516917630727676" />    
               </iframe>
+
           </div>
         </div>
+
+
+       <!--Chart-->
+       <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full">
+
+        <h2 id="chart">2. Chart:  compare population age groups by area</h2>
+        <p class="govuk-body">This chart compares data for local authorities in the East of England, with regional and national averages included.</p>
+        <a type="submit" style="margin-right:1em" class="govuk-button govuk-button--secondary" data-module="govuk-button" href="edit-locations">
+          Edit locations
+        </a>
+        <a type="submit" style="margin-right:1em" class="govuk-button govuk-button--secondary" data-module="govuk-button" href="edit-locations">
+          Edit indicators
+        </a>
+        {% include "./_locations-bar-chart.html" %}
       </div>
+    </div>
+
+       <!--Table-->
       <div class="govuk-grid-row">
-        <div class="govuk-grid-column-two-thirds">
+        <div class="govuk-grid-column-full">
           
-          <!-- 
           
-          CPs in Suffolk
-          
-          -->
-          
-          <h3 id="care-home" class="govuk-heading-m govuk-!-padding-top-9">2. Table: population by age</h3>
+          <h2 id="table" class="govuk-heading-m govuk-!-padding-top-9">3. Table: compare population age groups by area</h2>
+          <p class="govuk-body">This table shows the percentage of people in each age group and the total population for each area.</p>
           <a type="submit" style="margin-right:1em" class="govuk-button govuk-button--secondary" data-module="govuk-button" href="edit-locations">
             Edit locations
           </a>
@@ -150,25 +168,27 @@
           <p class="govuk-body">Source: Capacity Tracker<br>
             Data correct as of 5 February 2025</p>
             
-          </div>
         </div>
-        <div class="govuk-grid-column-two-thirds">
-          <h2 id="charts">3. Charts</h2>
-          <a type="submit" style="margin-right:1em" class="govuk-button govuk-button--secondary" data-module="govuk-button" href="edit-locations">
-            Edit locations
-          </a>
-          <a type="submit" style="margin-right:1em" class="govuk-button govuk-button--secondary" data-module="govuk-button" href="edit-locations">
-            Edit indicators
-          </a>
-          {% include "./_locations-bar-chart.html" %}
-        </div>
+      </div>
+
         
+       <!--Time series-->
+       <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
-          <h2 id="time-series">4. Time series</h2>
+          <h2 id="trends">4. Trends over time</h2>
+          <p class="govuk-body">This chart shows changes in the adult population from 2015 to 2023.</p>
+         
           <a type="submit" style="margin-right:1em" class="govuk-button govuk-button--secondary" data-module="govuk-button" href="edit-locations">
             Edit indicators
           </a>
           {% include "./_time-series.html" %}
+
+        </div>
+      </div>
+
+      <!--Related information and footnotes--> 
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full">
           <h2 id="footnotes">5. Footnotes</h2>
           
           <p class="govuk-body">
@@ -176,31 +196,22 @@
           </p>
           <p class="govuk-body">Select an indicator to view its footnotes:</p>
           <ol class="govuk-list govuk-list--bullet">
-            <!--
             <li><a href="../../help/population-size.html" class="govuk-link">Population size</a></li>
             <li><a href="../../help/population-age.html" class="govuk-link">Percentage of population in age group</a></li>
-            <li><a href="../../help/disability-prevalence.html" class="govuk-link">Disability prevalence</a></li>-->
-            <li><a href="../../help/" class="govuk-link">People providing unpaid care, by hours per week</a></li>
-            <li><a href="../../help/" class="govuk-link">Domiciliary care providers per 100,000 adult population</a></li>
-            <li><a href="../../help/" class="govuk-link">People receiving domiciliary care per 100,000 adult population</a></li>
-            <li><a href="../../help/" class="govuk-link">Workforce hours paid per person receiving domiciliary care</a></li>
-            <li><a href="../../help/" class="govuk-link">Domiciliary care workers per 100,000 adult population</a></li>
-            <li><a href="../../help/beds-per-100000-adult-population.html" class="govuk-link">Adult social care beds per 100,000 adult population</a></li>
-            <li><a href="../../help/percentage-beds-occupied" class="govuk-link">Percentage of adult social care beds occupied</a></li>
-            <li><a href="../../help/beds-care-provider-location" class="govuk-link">Number of adult social care beds in care provider location</a></li>
-            
+            <li><a href="../../help/disability-prevalence.html" class="govuk-link">Disability prevalence</a></li>
           </ol>
-          
-          
-          
+
+
           <h2 id="related">6. Related information</h2>
           
           <p class="govuk-body">
-            For more information on capacity, check the latest Market Position Statement and Joint Strategic Needs Assessment. You will usually find these on the local authority's website.
+            For more information on population age, check the latest Market Position Statement and Joint Strategic Needs Assessment. You will usually find these on the local authority's website.
           </p>
           
           <p class="govuk-body"><a class="govuk-link" href="#">Back </a></p>
-          
+        </div>
+        </div>
+
         </div>
       </div>
       {% endblock%}
