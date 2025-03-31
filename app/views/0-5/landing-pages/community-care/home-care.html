@@ -71,10 +71,75 @@
           <li><a href="#related" class="govuk-link">Related information</a></li>
         </ol>
       </div>
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
         <style>
               h2{margin-top:3em}
             </style>
-              <h3 id="unpaid-care" class="govuk-heading-m govuk-!-padding-top-9">1. Map: community care in your area</h3>
+            <h2 id="preferences">1. Choose your data preferences</h2>
+            <p class="govuk-body">Change these to update the data shown.</p>
+                <dl class="govuk-summary-list">
+                  <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                      Active location
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                      Alexis Homecare, Suffolk
+                    </dd>
+                    <dd class="govuk-summary-list__actions">
+                      <a class="govuk-link" href="locations-look-up">Change<span class="govuk-visually-hidden"> name</span></a>
+                    </dd>
+                  </div>
+                </dl>
+                <div class="govuk-form-group">
+                  <fieldset class="govuk-fieldset" aria-describedby="changedName-hint">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                      <h1 class="govuk-fieldset__heading">
+                        Type of care
+                      </h1>
+                    </legend>
+                    <!-- <div id="changedName-hint" class="govuk-hint">
+                      This includes changing your last name or spelling your name differently
+                    </div> -->
+                    <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="changedName" name="changedName" type="radio" value="18to64" checked>
+                        <label class="govuk-label govuk-radios__label" for="changedName">
+                          Domiciliary care
+                        </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="changedName-2" name="changedName" type="radio" value="65andover">
+                        <label class="govuk-label govuk-radios__label" for="changedName-2">
+                          Extra care housing
+                        </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="changedName-2" name="changedName" type="radio" value="85andover">
+                        <label class="govuk-label govuk-radios__label" for="changedName-2">
+                          Supported living
+                        </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="changedName-2" name="changedName" type="radio" value="85andover">
+                        <label class="govuk-label govuk-radios__label" for="changedName-2">
+                          Shared lives
+                        </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="changedName-2" name="changedName" type="radio" value="85andover">
+                        <label class="govuk-label govuk-radios__label" for="changedName-2">
+                          All community social care services
+                        </label>
+                      </div>
+                    </div>
+                  </fieldset>
+                </div>
+                <a href="#" type="submit" style="margin-right:1em" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                  Apply changes                </a>
+              </div>
+            </div>
+              <h3 id="unpaid-care" class="govuk-heading-m govuk-!-padding-top-9">2. Map: community social care in your area</h3>
              <div class="govuk-tabs" data-module="govuk-tabs">
               <h2 class="govuk-tabs__title">
                 Contents
@@ -129,20 +194,12 @@
                 <div class="govuk-tabs__panel" id="map-table">
                   
                 </div>
-                <h2 id="care-home" class="govuk-heading-m govuk-!-padding-top-9">2. Capacity in the comunity care sector</h2>
-                <a type="submit" style="margin-right:1em" class="govuk-button govuk-button--secondary" data-module="govuk-button" href="map-settings">
-                  Edit locations
-                </a>
-                <a type="submit" style="margin-right:1em" class="govuk-button govuk-button--secondary" data-module="govuk-button" href="map-settings">
-                  Edit indicators
-                </a>
-                {% include "./_las-table.html" %}
                 <!-- 
                 
                Chart
                 
                 -->
-                  <h2>3. Compare local authorities</h2>
+                  <h2>3. Chart: compare local authorities</h2>
                   <a href="locations-look-up.html" type="submit" style="margin-right:1em" class="govuk-button govuk-button--secondary" data-module="govuk-button">
                     Edit locations
                   </a>
@@ -151,13 +208,29 @@
                   </a>
                   {% include "./_locations-bar-chart.html" %}
                 </div>
+                <h2 id="care-home" class="govuk-heading-m govuk-!-padding-top-9">4. Table: capacity in the comunity care sector</h2>
+                <p>You can use the following indicators to work out the capacity in your selected 
+                  areas.
+                </p>
+                <a type="submit" style="margin-right:1em" class="govuk-button govuk-button--secondary" data-module="govuk-button" href="map-settings">
+                  Edit locations
+                </a>
+                <a type="submit" style="margin-right:1em" class="govuk-button govuk-button--secondary" data-module="govuk-button" href="map-settings">
+                  Edit indicators
+                </a>
+                <style>
+                  /* my-table th:nth-child(2),th:nth-child(3), th:nth-child(4), td:nth-child(2),td:nth-child(3), td:nth-child(4) {
+                    text-align: right;
+                  } */
+                </style>
+                {% include "./_las-table.html" %}
                 <!-- 
                 
                 Time series 
                 
                 -->
                 <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="time-series">
-                  <h2 class="govuk-heading-m">Trends over time</h2>
+                  <h2 class="govuk-heading-m">5. Trends over time</h2>
                   <button type="submit" style="margin-right:1em" class="govuk-button govuk-button--secondary" data-module="govuk-button">
                     Edit locations
                   </button>
@@ -172,18 +245,13 @@
                 
                 -->
                 <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="table">
-                  <h3 id="total">3. Charts</h3>
+                  <h3 id="total">6. Charts</h3>
                   <a href="locations-look-up.html" type="submit" style="margin-right:1em" class="govuk-button govuk-button--secondary" data-module="govuk-button">
                     Edit care providers
                   </a>
                   <a href="indicators-look-up" type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
                     Edit indicators
                   </a>
-                  <style>
-                    th:nth-child(2),th:nth-child(3), th:nth-child(4), td:nth-child(2),td:nth-child(3), td:nth-child(4) {
-                      text-align: right;
-                    }
-                  </style>
                   {% include "./_cp-bar-chart.html" %}
                   <p class="govuk-body"><a href="" class="govuk-link">Download this table (CSV)</a></p>
                   <p class="govuk-body">Source: Care Quality Commission<br>
@@ -227,7 +295,7 @@
             <p class="govuk-body">
               <a href="../../help/population-age.html" class="govuk-link">View footnotes</a>
             </p> -->
-            <h2 id="footnotes">4. Footnotes</h2>
+            <h2 id="footnotes">5. Footnotes</h2>
 
             <p class="govuk-body">
               Find out how each indicator is defined, sourced, and updated.
@@ -242,7 +310,7 @@
       
       
       
-            <h2 id="related">5. Related information</h2>
+            <h2 id="related">6. Related information</h2>
       
               <p class="govuk-body">
                 For more information on community social care capacity, check the latest Market Position Statement and Joint Strategic Needs Assessment. You will usually find these on the local authority's website.
