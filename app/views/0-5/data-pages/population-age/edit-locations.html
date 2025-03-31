@@ -45,6 +45,8 @@
         ]
       }) }}
       <h2>Add more locations</h2>
+      <p>You can add more local authorities or districts to compare the data.</p>
+      {% if data['new-location'] %}
       <table class="govuk-table">
         <caption class="govuk-table__caption govuk-table__caption--s"></caption>
         <thead class="govuk-table__head">
@@ -54,23 +56,23 @@
           </tr>
         </thead>
         <tbody class="govuk-table__body">
-          <tr class="govuk-table__row">
+          <!-- <tr class="govuk-table__row">
             <td scope="row" class="govuk-table__cell">East of England - all local authorities</td>
             <td class="govuk-table__cell"><a href="#">Remove</a></td>
-          </tr>
+          </tr> -->
           <tr class="govuk-table__row">
-            <td scope="row" class="govuk-table__cell">Torbay</td>
+            <td scope="row" class="govuk-table__cell">{{data['new-location']|default("Cambridgeshire")}}</td>
             <td class="govuk-table__cell"><a href="#">Remove</a></td>
           </tr>
-          <tr class="govuk-table__row">
+          <!-- <tr class="govuk-table__row">
             <td scope="row" class="govuk-table__cell">Bournemouth</td>
             <td class="govuk-table__cell"><a href="#">Remove</a></td>
-          </tr>
+          </tr> -->
           </tbody>
           </table>
-          {% include "./_select-la.html" %}
-          <p><a href="select-la" class="govuk-button govuk-button--secondary">Add this location</a></p>
-          <a href="population-age" class="govuk-button" data-module="govuk-button" style="margin-right:1em">
+          {% endif %}
+          <p><a href="edit-locations-search" class="govuk-button govuk-button--secondary">Add locations</a></p>
+          <a href="population-age?newLocation=true" class="govuk-button" data-module="govuk-button" style="margin-right:1em">
             Apply changes
           </a>
 <a href="javascript:history.back()" class="govuk-link govuk-body">Cancel and go back</a>
