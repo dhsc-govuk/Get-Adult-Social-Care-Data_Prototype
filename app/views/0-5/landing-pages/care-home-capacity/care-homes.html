@@ -66,8 +66,8 @@
       <h2 class="govuk-heading-m">Contents</h2>
       <ol class="govuk-list govuk-list--number">
         <li><a href="#preferences" class="govuk-link">Map: care homes in your area</a>
-          <li><a href="#carehome" class="govuk-link">Table: capacity in the care home sector</a></li>
           <li><a href="#carehome" class="govuk-link">Charts</a></li>
+          <li><a href="#carehome" class="govuk-link">Table: capacity in the care home sector</a></li>
           <li><a href="#time-series" class="govuk-link">Time series</a></li>
           <li><a href="#footnotes" class="govuk-link">Footnotes</a></li>
           <li><a href="#related" class="govuk-link">Related information</a></li>
@@ -132,24 +132,7 @@
           
           -->
           
-          <h3 id="care-home" class="govuk-heading-m govuk-!-padding-top-9">2. Capacity in the care home sector</h3>
-          <p class="govuk-body">Adult social care beds and percentage of occupancy are used as measures of capacity in the care home sector.</p>
-          <p class="govuk-body">The number of adult social care beds per 100,000 adult population provides an indicator of current care capacity. A higher number usually suggests more sufficient capacity for locations with similar needs.</p>
-          <a type="submit" style="margin-right:1em" class="govuk-button govuk-button--secondary" data-module="govuk-button" href="map-settings">
-            Edit locations
-          </a>
-          <a type="submit" style="margin-right:1em" class="govuk-button govuk-button--secondary" data-module="govuk-button" href="map-settings">
-            Edit indicators
-          </a>
-        </div>
-        <div class="govuk-grid-column-full">
-          {% include "./_las-table.html" %}
-          <p class="govuk-body">Source: Capacity Tracker<br>
-            Data correct as of 5 February 2025</p>
-            
-          </div>
-        </div>
-          <h2 id="charts">3. Charts</h2>
+          <h2 id="charts">2. Charts</h2>
           <div class="govuk-grid-column-full">
           <a type="submit" style="margin-right:1em" class="govuk-button govuk-button--secondary" data-module="govuk-button" href="map-settings">
             Edit locations
@@ -160,6 +143,24 @@
           </div>
           {% include "./_locations-bar-chart.html" %}
         </div>
+</div>
+        <h3 id="care-home" class="govuk-heading-m govuk-!-padding-top-9">3. Capacity in the care home sector</h3>
+        <p class="govuk-body">Adult social care beds and percentage of occupancy are used as measures of capacity in the care home sector.</p>
+        <p class="govuk-body">The number of adult social care beds per 100,000 adult population provides an indicator of current care capacity. A higher number usually suggests more sufficient capacity for locations with similar needs.</p>
+        <a type="submit" style="margin-right:1em" class="govuk-button govuk-button--secondary" data-module="govuk-button" href="map-settings">
+          Edit locations
+        </a>
+        <a type="submit" style="margin-right:1em" class="govuk-button govuk-button--secondary" data-module="govuk-button" href="map-settings">
+          Edit indicators
+        </a>
+      </div>
+      <div class="govuk-grid-column-full">
+        {% include "./_las-table.html" %}
+        <p class="govuk-body">Source: Capacity Tracker<br>
+          Data correct as of 5 February 2025</p>
+          
+        </div>
+      </div>
         
         <div class="govuk-grid-column-two-thirds">
           <h2 id="time-series">4. Time series</h2>

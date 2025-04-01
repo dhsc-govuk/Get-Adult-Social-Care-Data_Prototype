@@ -5,7 +5,7 @@
         <th scope="col" class="govuk-table__header govuk-table__cell--numeric">Domiciliary care providers per 100K adult population</th>
         <th scope="col" class="govuk-table__header govuk-table__cell--numeric">Service users per 100K people</th>
         <th scope="col" class="govuk-table__header govuk-table__cell--numeric">Hours of care provided</th>
-        <th scope="col" class="govuk-table__header govuk-table__cell--numeric">CQC workers employed per 100K adults</th>
+        <!-- <th scope="col" class="govuk-table__header govuk-table__cell--numeric">CQC workers employed per 100K adults</th> -->
       </tr>
     </thead>
     {% set laTables = 
@@ -22,7 +22,6 @@
         <td class="govuk-table__cell govuk-table__cell--numeric">{{item[1]|addcommas}}</td>
         <td class="govuk-table__cell govuk-table__cell--numeric">{{item[2]|addcommas}}</td>
         <td class="govuk-table__cell govuk-table__cell--numeric">{{item[3]|addcommas}}</td>
-        <td class="govuk-table__cell govuk-table__cell--numeric">{{item[4]|addcommas}}</td>
       </tr>
       {% endfor %}
     </tbody>
