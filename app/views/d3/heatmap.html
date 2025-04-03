@@ -19,51 +19,15 @@ crossorigin=""></script>
 </style>
 
 <h1>{{pageName}}</h1>
-<table class="govuk-table">
-  <tbody class="govuk-table__body">
-    <tr class="govuk-table__row">
-      <th scope="row" class="govuk-table__header">Map labels</th>
-      <td class="govuk-table__cell">
-        <ul class="govuk-list" style="text-align: left;">
-          <li>Population aged 85+ (%)</li>
-          <li>Beds occupied (%)</li>
-          <li>Deprivation rating (low to high)</li>
-        </ul>
-      </td>
-      <td class="govuk-table__cell">
-        <a href="present-demand-locations">Change</a>
-      </td>
-    </tr>
-    <tr class="govuk-table__row">
-      <th scope="row" class="govuk-table__header">Care provider - labels</th>
-      <td class="govuk-table__cell">
-        <ul class="govuk-list" style="text-align: left;">
-          <li>CQC rating</li>
-          <li>Types of care</li>
-        </ul>
-      </td>
-      <td class="govuk-table__cell">
-        <a href="present-demand-locations">Change</a>
-      </td>
-    </tr>
-    <tr class="govuk-table__row">
-      <th scope="row" class="govuk-table__header">Indicators</th>
-      <td class="govuk-table__cell">
-        <ul class="govuk-list" style="text-align: left;">
-          <li>Care type: residential</li>
-          <li>Dementia care</li>
-        </ul>
-      </td>
-      <td class="govuk-table__cell">
-        <a href="present-demand-locations">Change</a>
-      </td>
-    </tr>
-  </tbody>
-</table>
+
 <p><img src="/public/images/house-user.svg" style="width:1.2em; margin-right: 0.5em;">Your locations <img src="/public/images/house-user-purple.svg" style="width:1.2em; margin-left:1em; margin-right: 0.5em;">Other care provider locations</p>
 <div id="map"></div>
 <script>
   var map = L.map('map').setView([52.2186, 1.096], 11);
+
+  // Load the data for the map
+  {% include "./itla-2024.geojson" %};
+  L.geoJson(laData).addTo(map);
   
   L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19,
@@ -72,9 +36,6 @@ crossorigin=""></script>
   
   var marker = L.marker([52.05, 0.72], 11).addTo(map);
   marker.bindPopup("<b>Mid Suffolk</b><br>Population aged over 85: 3.1%<br>Beds occupied: 87%<br>Deprivation: low");
-
-  // var marker2 = L.marker([52.07, 0.72], 11).addTo(map);
-  // marker2.bindPopup("<b>Greenfields Care</b><br>Dementia beds: 6<br>All beds: 18").openPopup();
 
   var marker = L.marker([52.15, 0.95], 11).addTo(map);
   marker.bindPopup("<b>Hadleigh Care</b><br>Dementia beds: 8<br>All beds: 21");
@@ -101,12 +62,6 @@ var purpleIcon = L.icon({
 
 L.marker([52.01, 0.71], {icon: greenIcon}).addTo(map).bindPopup("<b>Restful Meadows</b><br>Dementia beds: 7<br>All beds: 21");
 L.marker([52.1, 0.74], {icon: purpleIcon}).addTo(map).bindPopup("<b>Vera Lynn Care</b><br>CQC rating: 5 (high)<br>Type of care: residential, dementia");
-
-var polygon = L.polygon([
-[52.01, 0.71],
-[52.503, -0.1],
-[51.51, -0.047]
-]).addTo(map);
 
 </script>
 
