@@ -1,0 +1,134 @@
+{% extends "layouts/main.html" %}
+
+{% set pageName = "Get data" %}
+
+{% set queries = [
+  { date: "1 April", query:"Capacity where number of beds is greater than 5", user: "rsmith" },
+  { date: "29 March", query:"Capacity where Number of Beds (vacant) accepting admissions is greater than 10", user: "rsmith" }, 
+  { date: "29 March", query:"Number of directly employed registered nurses absent, not COVID-19 related", user: "vsingh" },
+  { date: "28 March", query:"Total headcount of directly employed registered nurses", user: "rsmith" }, 
+  { date: "25 March", query:"Capacity where number of beds is greater than 5", user: "dmccabe"},
+  { date: "25 March", query:"Capacity where number of beds is greater than 5", user: "rsmith" }, 
+  { date: "24 March", query:"Capacity where number of beds is greater than 5", user: "rsmith" }
+] %}
+
+{% block header %}
+{% from "govuk/components/service-navigation/macro.njk" import govukServiceNavigation %}
+
+{{ govukServiceNavigation({
+  serviceName: "Get adult social care data",
+  serviceUrl: "/",
+  navigation: [
+    {
+      href: "index",
+      text: "Home"
+    },
+    {
+      href: "#",
+      text: "Get data",
+      active: true
+    },
+    {
+      href: "#",
+      text: "Dashboards"
+    },
+    {
+      href: "#",
+      text: "Help"
+    }
+  ]
+}) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    <h1 class="govuk-heading-xl">
+      {{ pageName }}
+    </h1>
+    <p>Browse queries and build your own.</p>
+    <button type="submit" class="govuk-button" data-module="govuk-button">
+      New query
+    </button>
+    <style>
+      
+table {
+  margin: 2em 0;
+  text-align: left;
+  vertical-align: top;
+  border-collapse: collapse;
+  font-family: "GDS Transport", arial, sans-serif;
+}
+
+.companies-table{
+  display:block;
+  min-width:600px
+}
+
+caption {
+  text-align: left;
+  font-size: 1.4em;
+}
+
+th,
+td {
+/*   border: 1px solid #666; */
+  padding: 1em;
+}
+
+th {
+  background-color: #acbcd5;
+  /*     #a15dbc; */
+  color: #000;
+  font-weight: normal;
+}
+
+tr{box-shadow: 0 3px 3px rgb(0 0 0 / 0.1);}
+
+tr:hover {
+  text-decoration: underline;
+}
+
+tr:nth-child(odd) {
+  background-color: #fff;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+} 
+
+#search-queries{
+  font-family: "GDS Transport", arial, sans-serif;
+  border: none;
+}
+
+.search-queries-label{display: block;}
+
+.search-queries-input{padding:1em; margin-top:0.5em; width: 40em; border-radius: 5px;}
+
+</style>
+    <fieldset id="search-queries">
+      <label class="search-queries-label" for="first-name"><h3>Search queries</h3>By data, user or filter</label>
+      <input class="search-queries-input " type="text" id="first-name" name="first-name">
+    </fieldset>
+    <table class="companies-table">
+      <tr>
+        <th scope="col"><i class="fa-solid fa-chevron-down"></i> Date</th>
+        <th scope="col">Query</th>
+        <th scope="col">User</th>
+      </tr>
+
+
+          {% for item in queries %}
+          <tr scope="row">
+          <td>{{ item.date }}</td>
+          <td>{{ item.query }}</td>
+          <td>{{ item.user }}</td>
+        </tr>
+          {% else %}
+            This would display if the 'item' collection were empty
+          {% endfor %}
+    </table>
+
+{% endblock %}

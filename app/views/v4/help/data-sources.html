@@ -1,0 +1,81 @@
+{% extends "layouts/help.html" %}
+
+{% set pageName = "Help" %}
+
+{% block content %}
+
+<a href="javascript:history.back()" class="govuk-back-link">Back</a>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-third">      
+    <nav class="moj-side-navigation" aria-label="Side navigation">
+      <h4 class="govuk-heading-m">Topics</h4>
+      <ul class="moj-side-navigation__list">
+
+        <li class="moj-side-navigation__item">
+          <a href="user-guide">User guide</a>
+        </li>
+
+        <li class="moj-side-navigation__item moj-side-navigation__item--active">
+          <a href="data-sources">Data sources</a>
+        </li>
+
+        <li class="moj-side-navigation__item">
+          <a href="indicator-definitions">Indicator definitions and supporting information</a>
+        </li>
+
+        <li class="moj-side-navigation__item">
+          <a href="about" aria-current="location">About this service</a>
+        </li>
+
+        <li class="moj-side-navigation__item">
+          <a href="smart-insights">About smart insights (experimental)</a>
+        </li>
+        <li class="moj-side-navigation__item">
+          <a href="news-archive" aria-current="location">News archive</a>
+        </li>
+
+        <li class="moj-side-navigation__item">
+          <a href="contact-us">Contact us</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">
+      Data sources
+    </h1>
+
+    <p class="govuk-body-l">Find out where the data is sourced from, including details of data providers and how updates are managed.
+    </p>
+
+    <p>Get adult social care data uses the following public and private data sources.</p>
+
+    <h3 class="govuk-heading-s">Public data sources</h3>
+
+    <ul class="govuk-list govuk-list--bullet">
+      <li>Adult Social Care Statistics (Department for Health and Social Care)</li>
+      <li>Adult Social Care Outcomes Framework (ASCOF) (NHS England)</li>
+      <li>Adult Social Care Report (Department for Health and Social Care)</li>
+      <li>Care Quality Commission (CQC) Care Directory</li>
+      <li>Office for National Statistics collection</li>
+      <li>Short and Long Term Return (SALT) (NHS England)</li>
+      </ul>
+
+      <h3 class="govuk-heading-s">Private data sources</h3>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>Capacity Tracker</li>
+        <li>Skills for Care</li>
+        <li>Client Level Data (CLD)</li>
+        </ul>
+
+    <p>For a deeper understanding of the source datasets, including how they are compiled and updated, <a href="indicator-definitions" class="govuk-link">check the indicator definitions and supporting information</a>.</p> 
+
+    <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+
+  {% endblock %}
+  

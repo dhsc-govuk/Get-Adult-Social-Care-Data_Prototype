@@ -1,0 +1,145 @@
+{% extends "layouts/help.html" %}
+
+{% set pageName = "Indicator " %}
+
+{% block content %}
+
+<a href="javascript:history.back()" class="govuk-back-link">Back</a>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-third">      
+    <nav class="moj-side-navigation" aria-label="Side navigation">
+      <h4 class="govuk-heading-m">Topics</h4>
+      <ul class="moj-side-navigation__list">
+
+        <li class="moj-side-navigation__item">
+          <a href="user-guide">User guide</a>
+        </li>
+
+        <li class="moj-side-navigation__item">
+          <a href="data-sources">Data sources</a>
+        </li>
+
+        <li class="moj-side-navigation__item">
+          <a href="indicator-definitions">Indicator definitions and supporting information</a>
+        </li>
+
+        <ul id="submenu-2" class="moj-side-navigation__sub-list">
+
+
+          <li class="moj-side-navigation__item">
+            <a href="population-size">Population size</a>
+          </li>
+
+          <li class="moj-side-navigation__item moj-side-navigation__item--active">
+            <a href="population-age">Population age</a>
+          </li>
+
+          <li class="moj-side-navigation__item">
+            <a href="disability-prevalence">Disability prevalence</a>
+          </li>
+
+          <li class="moj-side-navigation__item">
+            <a href="beds-per-100000-adult-population.html">Adult social care beds per 100,000 adult population</a>
+          </li>
+
+          <li class="moj-side-navigation__item">
+            <a href="percentage-beds-occupied">Percentage of adult social care beds occupied</a>
+          </li>
+
+          <li class="moj-side-navigation__item">
+            <a href="beds-care-provider-location.html">Number of adult social care beds in care provider location</a>
+          </li>
+
+          <li class="moj-side-navigation__item">
+            <a href="percentage-beds-occupied-care-provider-location.html">Percentage of adult social care beds occupied in care provider location</a>
+          </li>
+          </ul>
+
+        <li class="moj-side-navigation__item">
+            <a href="about" aria-current="location">About this service</a>
+          </li>
+
+        <li class="moj-side-navigation__item">
+          <a href="smart-insights">About smart insights (experimental)</a>
+        </li>
+
+        <li class="moj-side-navigation__item">
+          <a href="news-archive" aria-current="location">News archive</a>
+        </li>
+        
+        <li class="moj-side-navigation__item">
+          <a href="contact-us">Contact us</a>
+        </li>
+
+      </ul>
+    </nav>
+  </div>
+
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">
+      Indicator definition and supporting information: Population aged 65 and over needing domestic or self-care help
+    </h1>
+
+    <p class="govuk-body-l">Find detailed information about this indicator group.</p>
+
+    <table class="govuk-table">
+   
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header govuk-!-width-one-third">What this measures</td>
+          <td class="govuk-table__cell">
+            The number of individuals aged 65 and over who need domestic or self-care help.
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Source</th>
+          <td class="govuk-table__cell"><a href="https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/bulletins/populationestimatesforenglandandwales/mid2023" class="govuk-link" target="_blank">Office for National Statistics population estimates for England and Wales (opens in new tab)</a> and<br>
+          <a href="https://digital.nhs.uk/data-and-information/publications/statistical/health-survey-for-england/2017" class="govuk-link" target="_blank">NHS England - Health Survey for England 2017 (opens in new tab)</a></td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Data correct as of</th>
+          <td class="govuk-table__cell">[Generated automatically]</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Update frequency</th>
+          <td class="govuk-table__cell">Yearly</td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Data available for</th>
+          <td class="govuk-table__cell">[Generated automatically, e.g. 5 February 2019 to 5 February 2025]</td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Methodology</th>
+          <td class="govuk-table__cell">This data is from the Office for National Statistics mid-2023 population estimates for England and Wales.</td>
+        </tr>
+  
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Limitations</th>
+          <td class="govuk-table__cell">The data are not counts, but estimates produced by combining data from multiple sources. The accuracy of the estimates is subject to the coverage and errors associated with those sources.
+            <br><br>
+            These estimates reflect the mid-2023 population, not the current population. 
+            <br> <br>
+            Changes to methods and data sources may lead to regular revisions of these estimates.</td>
+        </tr>
+  
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Data definitions</th>
+          <td class="govuk-table__cell">Include individuals within the specified age group only.
+             </td>
+        </tr>
+      </tbody>
+    </table>
+    
+  
+
+    <p class="govuk-body"><a href="indicator-definitions.html" class="govuk-link">Full list of indicator definitions and supporting information</a></p>
+
+    
+
+  {% endblock %}
+  

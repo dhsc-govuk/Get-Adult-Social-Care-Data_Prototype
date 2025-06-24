@@ -6,19 +6,20 @@
 // Add extra styles here
 @import "node_modules/govuk-frontend/dist/govuk/index";
 
-h1,h2,h3,p,ul,ol{
-    font-family: "GDS Transport", arial, sans-serif;
+h1, h2, h3, p, ul, ol {
+  font-family: "GDS Transport", arial, sans-serif;
 }
 
-p,ul,ol{
-    font-size: 1.1875rem;
-    line-height: 1.3157894737;
-    color: #0b0c0c
+p, ul, ol {
+  font-size: 1.1875rem;
+  line-height: 1.3157894737;
+  color: #0b0c0c
 }
 
-.gov-width-container{
-  max-width:1400px
-}
+/* Chris Harding (24.06.25) - This was broken, but I have fixed and commented it out until I know it is safe for deletion */
+// .govuk-width-container {
+//   max-width: 1400px;
+// }
 
 .moj-side-navigation__sub-list {
   list-style: none;

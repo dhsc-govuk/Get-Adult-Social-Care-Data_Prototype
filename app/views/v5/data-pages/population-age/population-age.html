@@ -1,0 +1,255 @@
+{% extends "layouts/landing-page.html" %}
+
+{% set pageName = "Population age" %}
+
+{% block content %} 
+<a href="javascript:history.back()" class="govuk-back-link">Back</a>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <!--<span class="govuk-caption-l">Demand and capacity</span>-->
+    <h1 class="govuk-heading-l">{{pageName}}</h1>
+    <p class="govuk-body-l">Explore population data by age group across local authorities and districts in England. </p>
+    
+  
+    <style>
+      /* Contents Box Styling */
+      .contents-box {
+        background-color: #f3f2f1; /* GOV.UK light grey */
+        padding: 20px;
+        margin-bottom: 20px;
+        max-width: 63%; /* Adjusted width for better spacing */
+      }
+      
+      /* Remove default list indentation */
+      .govuk-list--number {
+        counter-reset: main-counter;
+        list-style-type: none;
+        padding-left: 0; /* Remove padding */
+        margin-left: 0; /* Remove margin */
+      }
+      
+      .govuk-list--number > li {
+        counter-increment: main-counter;
+      }
+      
+      .govuk-list--number > li::before {
+        content: counter(main-counter) ". ";
+        font-weight: normal;
+      }
+      
+      /* Styling for the nested (child) ordered list */
+      .nested-list {
+        counter-reset: sub-counter;
+        list-style-type: none;
+        padding-left: 1.5rem; /* Align nested items properly */
+        margin-left: 0;
+      }
+      
+      .nested-list li {
+        counter-increment: sub-counter;
+      }
+      
+      .nested-list li::before {
+        content: counter(main-counter) "." counter(sub-counter) ". ";
+        font-weight: normal;
+      }
+      
+      /* Bridge Text Styling */
+      .bridge-text {
+        margin-top: 20px;
+        font-weight: bold;
+      }
+    </style>
+    
+    <!-- Contents Box -->
+    <div class="contents-box">
+      <h2 class="govuk-heading-m">Contents</h2>
+      <ol class="govuk-list govuk-list--number">
+        <li><a href="#map" class="govuk-link">Map: population by age group</a></li>
+        <li><a href="#chart" class="govuk-link">Chart: compare population age groups by area</a></li>
+          <li><a href="#table" class="govuk-link">Table: compare population age groups by area</a></li>
+
+          <li><a href="#trends class="govuk-link">Trends over time</a></li>
+          <li><a href="#footnotes" class="govuk-link">Footnotes</a></li>
+          <li><a href="#related" class="govuk-link">Related information</a></li>
+        </ol>
+      </div>
+      
+      <!-- 
+      
+      Main content
+      
+      -->
+      <style>
+        h2{margin-top:4em}
+      </style>
+         <!--Map-->
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full">
+          <h2 id="map" class="govuk-heading-m govuk-!-padding-top-9">1. Map: population by age group</h2>
+                <p class="govuk-body"><strong>Location:</strong> Greenfields Care, Mid Suffolk, Suffolk, East of England</p>
+                <a type="submit" style="margin-right:1em" class="govuk-button govuk-button--secondary" data-module="govuk-button" href="edit-locations">
+                  Change location
+                </a>
+                <div class="govuk-form-group">
+                  <fieldset class="govuk-fieldset" aria-describedby="age-group-hint">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                      <h4 class="govuk-fieldset__heading">
+                        Select age group
+                      </h4>
+                    </legend>
+                
+                    <div class="govuk-radios govuk-radios--inline govuk-radios--small" data-module="govuk-radios">
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="age-group-1" name="age-group" type="radio" value="18to64">
+                        <label class="govuk-label govuk-radios__label" for="age-group-1">
+                          Aged&nbsp;18&nbsp;to&nbsp;64
+                        </label>
+                      </div>
+                
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="age-group-2" name="age-group" type="radio" value="65andover">
+                        <label class="govuk-label govuk-radios__label" for="age-group-2">
+                          Aged&nbsp;65&nbsp;and&nbsp;over
+                        </label>
+                      </div>
+                
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="age-group-3" name="age-group" type="radio" value="85andover" checked>
+                        <label class="govuk-label govuk-radios__label" for="age-group-3">
+                          Aged&nbsp;85&nbsp;and&nbsp;over
+                        </label>
+                      </div>
+                    </div>
+                    <button class="govuk-button govuk-button--secondary govuk-!-margin-top-2">Update age group</button>
+                  </fieldset>
+                </div>
+
+                <iframe width="100%" height="600px" title="ONS Census Maps" frameborder="0" src="https://www.ons.gov.uk/census/maps/choropleth/population/age/resident-age-11a/aged-85-years-and-over/?lad=E07000203&embed=true&embedInteractive=true&embedAreaSearch=false&embedCategorySelection=false&embedView=viewport&embedBounds=0.4518427976473447%2C51.95149998586203%2C1.7552472023533312%2C52.516917630727676" />    
+              </iframe>
+
+          </div>
+        </div>
+
+
+       <!--Chart-->
+       <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full">
+
+        <h2 id="chart">2. Chart:  compare population age groups by area</h2>
+        <p class="govuk-body">This chart compares data for local authorities in the East of England, with regional and national averages included.</p>
+        <a type="submit" style="margin-right:1em" class="govuk-button govuk-button--secondary" data-module="govuk-button" href="edit-locations">
+          Edit locations
+        </a>
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" aria-describedby="age-group-hint">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+              <h4 class="govuk-fieldset__heading">
+                Select age group
+              </h4>
+            </legend>
+        
+            <div class="govuk-radios govuk-radios--inline govuk-radios--small" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="age-group-1" name="age-group" type="radio" value="18to64">
+                <label class="govuk-label govuk-radios__label" for="age-group-1">
+                  Aged&nbsp;18&nbsp;to&nbsp;64
+                </label>
+              </div>
+        
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="age-group-2" name="age-group" type="radio" value="65andover">
+                <label class="govuk-label govuk-radios__label" for="age-group-2">
+                  Aged&nbsp;65&nbsp;and&nbsp;over
+                </label>
+              </div>
+        
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="age-group-3" name="age-group" type="radio" value="85andover" checked>
+                <label class="govuk-label govuk-radios__label" for="age-group-3">
+                  Aged&nbsp;85&nbsp;and&nbsp;over
+                </label>
+              </div>
+            </div>
+            <button class="govuk-button govuk-button--secondary govuk-!-margin-top-2">Update age group</button>
+          </fieldset>
+        </div>
+        <!--
+        <a type="submit" style="margin-right:1em" class="govuk-button govuk-button--secondary" data-module="govuk-button" href="edit-locations">
+          Edit indicators
+        </a>
+      -->
+        {% include "./_locations-bar-chart.html" %}
+      </div>
+    </div>
+
+       <!--Table-->
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full">
+          
+          
+          <h2 id="table" class="govuk-heading-m govuk-!-padding-top-9">3. Table: compare population age groups by area</h2>
+          <p class="govuk-body">This table shows the percentage of people in each age group and the total population for each area.</p>
+          <a type="submit" style="margin-right:1em" class="govuk-button govuk-button--secondary" data-module="govuk-button" href="edit-locations">
+            Edit locations
+          </a>
+         
+          <a type="submit" style="margin-right:1em" class="govuk-button govuk-button--secondary" data-module="govuk-button" href="edit-indicators">
+            Edit indicators
+          </a>
+         
+        </div>
+        <div class="govuk-grid-column-full">
+          {% include "./_locations-table.html" %}
+          
+          <p class="govuk-body">Source: Capacity Tracker<br>
+            Data correct as of 5 February 2025</p>
+            
+        </div>
+      </div>
+
+        
+       <!--Time series-->
+       <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+          <h2 id="trends">4. Trends over time</h2>
+          <p class="govuk-body">This chart shows changes in the adult population from 2015 to 2023.</p>
+         
+          <a type="submit" style="margin-right:1em" class="govuk-button govuk-button--secondary" data-module="govuk-button" href="edit-locations">
+            Edit indicators
+          </a>
+          {% include "./_time-series.html" %}
+
+        </div>
+      </div>
+
+      <!--Related information and footnotes--> 
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full">
+          <h2 id="footnotes">5. Footnotes</h2>
+          
+          <p class="govuk-body">
+            Find out how each indicator is defined, sourced, and updated.
+          </p>
+          <p class="govuk-body">Select an indicator to view its footnotes:</p>
+          <ol class="govuk-list govuk-list--bullet">
+            <li><a href="../../help/population-size.html" class="govuk-link">Population size</a></li>
+            <li><a href="../../help/population-age.html" class="govuk-link">Percentage of population in age group</a></li>
+            <li><a href="../../help/disability-prevalence.html" class="govuk-link">Disability prevalence</a></li>
+          </ol>
+
+
+          <h2 id="related">6. Related information</h2>
+          
+          <p class="govuk-body">
+            For more information on population age, check the latest Market Position Statement and Joint Strategic Needs Assessment. You will usually find these on the local authority's website.
+          </p>
+          
+          <p class="govuk-body"><a class="govuk-link" href="#">Back </a></p>
+        </div>
+        </div>
+
+        </div>
+      </div>
+      {% endblock %}

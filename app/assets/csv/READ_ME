@@ -1,6 +1,0 @@
-This folder contains .csv files for some of the data visualisations in the prototype.
-
-beds.csv - a set of dates with values, used for creating a Time series chart
-las.csv - a set of Local authorities with data next to them
-
-Anything in the 'archive' folder might be useful for other experiments. 

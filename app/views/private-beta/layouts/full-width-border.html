@@ -1,0 +1,46 @@
+{#
+  For guidance on how to use layouts see:
+  https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
+#}
+
+{% extends "govuk-prototype-kit/layouts/govuk-branded.njk" %}
+{% from "govuk/components/header/macro.njk" import govukHeader %}
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+{% from "govuk/components/footer/macro.njk" import govukFooter %}
+
+{% block header %}
+{{ govukHeader({
+  homepageUrl: "/",
+  serviceName: serviceName,
+  serviceUrl: "/",
+  classes: "govuk-header--full-width-border"
+}) }}
+
+<div class="govuk-width-container">
+  {{ govukPhaseBanner({
+    tag: {
+      text: "Beta"
+    },
+    html: 'This is a new service. Help us improve it and <a class="govuk-link" href="https://forms.office.com/e/s9FCDSibN0">give your feedback (opens in new tab)</a>.'
+  }) }}
+</div>
+{% endblock %}
+
+{% block footer %}
+{{ govukFooter({
+  meta: {
+    items: [
+      {
+        href: "disclaimer",
+        text: "Disclaimer"
+      }
+    ]
+  }
+}) }}
+{% endblock %}
+
+{% block scripts %}
+  {{ super() }}
+  <!-- D3 is a third party (OPEN SOURCE) JavaScript library for visualizing data (https://d3js.org)-->
+  <script src="https://d3js.org/d3.v4.js"></script>
+{% endblock %}

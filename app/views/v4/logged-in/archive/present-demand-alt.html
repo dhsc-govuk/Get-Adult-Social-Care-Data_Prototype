@@ -1,0 +1,444 @@
+{% extends "layouts/data.html" %}
+
+{% set pageName = "Greenfields Care and other providers in Suffolk" %}
+
+{% block content %} 
+<a href="get-data" class="govuk-back-link">Back</a>
+<div class="govuk-grid-row">
+      <!-- 
+      
+      Left column 
+      
+    -->
+    <div class="govuk-grid-column-one-third">      
+      <nav class="moj-side-navigation" aria-label="Side navigation">
+        <h3>Contents</h3>
+        {% set items = [
+          { link: "#settings", heading: "Settings" },
+          { link: "#providers", heading: "Residential care providers in your local authority" },
+          { link: "#population", heading: "Population needs" },
+          { link: "#capacity", heading: "Capacity" }
+                        ] %}
+        <ul class="moj-side-navigation__list">
+                   {% for item in items %}
+            <li class="moj-side-navigation__item"><a href="{{item.link}}">{{item.heading}}</a></li class="moj-side-navigation__item">
+         {% endfor %}
+        </ul>
+      </nav>
+</div>
+  <div class="govuk-grid-column-two-thirds">
+    <span class="govuk-caption-l">Demand and capacity</span>
+    <h1 class="govuk-heading-l">{{pageName}}</h1>
+    <!-- 
+      
+      Main content
+      
+    -->
+    <style>
+      h2{margin-top:4em}
+    </style>
+    <h2 id="definition">Indicator definition and supporting information</h2>
+
+    <p class="govuk-body">
+      Find detailed information about each indicator, including data definitions, data source, update schedule, and any limitations to be aware of before using the data.
+    </p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li><a href="../help/population-age.html" class="govuk-link">Population age</a></li>
+      <li><a href="../help/population-disability.html" class="govuk-link">Population disability</a></li>
+      <li><a href="../help/beds-per-100000-adult-population.html" class="govuk-link">Adult social care beds per 100,000 adult population</a></li>
+      <li><a href="../help/percentage-beds-occupied" class="govuk-link">Percentage of adult social care beds occupied</a></li>
+      <li><a href="../help/beds-care-provider-location" class="govuk-link">Number of adult social care beds in care provider location</a></li>
+      <li><a href="../help/percentage-beds-occupied-care-provider-location" class="govuk-link">Percentage of adult social care beds occupied in care provider location</a></li>
+      </ul>
+
+    <h2 id="settings">Settings</h2>
+        <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Active location
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Greenfields Care
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="present-demand-locations">Change<span class="govuk-visually-hidden"> name</span></a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Available locations
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Woodlands Care, Suffolk<br>
+              Seafront Home, Norfolk
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Local authorities
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Suffolk
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="present-demand-locations">Change<span class="govuk-visually-hidden"> name</span></a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Service user age category
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Adults 65 and over
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="present-demand-locations">Change<span class="govuk-visually-hidden"> name</span></a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Bed type
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Dementia nursing <br>
+              General nursing 
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="total_beds-edit-filters">Change<span class="govuk-visually-hidden"> name</span></a>
+            </dd>
+          </div>
+        </dl>
+         <!-- 
+        
+        Age and disability
+        
+        -->
+
+
+      
+          <!-- 
+          
+          Demographic factors 
+          
+          -->
+          <h2>Demographic factors</h2>
+      <table class="govuk-table">
+        <thead class="govuk-table__head">
+          <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Theme</th>
+          <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Indicator</th>
+          <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Suffolk</th>
+          <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">East of England region</th>
+          <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">All England</th>
+        </thead>
+        <tbody>
+        <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header" rowspan="2" scope="rowgroup"><a href="#">Population age</a></th>
+        <td class="govuk-table__cell">Population aged 65 and over (%)</td>
+        <td class="govuk-table__cell">40</td>
+        <td class="govuk-table__cell">40</td>
+        <td class="govuk-table__cell">40</td>
+        </tr>
+        <tr class="govuk-table__row">
+        <td class="govuk-table__cell">Population aged 85 and over (%)</td>
+        <td class="govuk-table__cell">33</td>
+        <td class="govuk-table__cell">33</td>
+        <td class="govuk-table__cell">33</td>
+        </tr>
+        <tr class="govuk-table__row" aria-rowindex="4">
+          <th scope="row" class="govuk-table__header" colspan="1" rowspan="2">
+          <a href="#">Economic factors</a>&nbsp;
+          </th>
+          <td class="govuk-table__cell">
+          <p>Geographical areas / population in the most deprived category (%)</p>
+          </td>
+          <td class="govuk-table__cell">
+          <p>44&nbsp;</p>
+          </td>
+          <td class="govuk-table__cell">
+          <p>44&nbsp;</p>
+          </td>
+          <td class="govuk-table__cell">
+          <p>44&nbsp;</p>
+          </td>
+          </tr>
+          <tr class="govuk-table__row" aria-rowindex="5">
+          <td class="govuk-table__cell">
+          <p>Homes owned outright (%)</p>
+          </td>
+          <td class="govuk-table__cell">
+          <p>42&nbsp;</p>
+          </td>
+          <td class="govuk-table__cell">
+          <p>42&nbsp;</p>
+          </td>
+          <td class="govuk-table__cell">
+          <p>42&nbsp;</p>
+          </td>
+          </tr>
+          <tr class="govuk-table__row" aria-rowindex="6">
+            <th scope="row" class="govuk-table__header">
+<a href="#">Household composition</a>
+          </th>
+          <td class="govuk-table__cell">
+          <p>Households with one-person older than 66 years old (%)</p>
+          </td>
+          <td class="govuk-table__cell">
+          <p>2&nbsp;</p>
+          </td>
+          <td class="govuk-table__cell">
+          <p>2&nbsp;</p>
+          </td>
+          <td class="govuk-table__cell">
+          <p>2&nbsp;</p>
+          </td>
+          </tr>
+          <tr class="govuk-table__row" aria-rowindex="7">
+          <th class="govuk-table__header" colspan="1" rowspan="5">
+          <a href="#">Health &amp; wellbeing&nbsp</a>
+          </th>
+          <td class="govuk-table__cell">
+          <p>Residents in bad or very bad health conditions (%)</p>
+          </td>
+          <td class="govuk-table__cell">
+          <p>1&nbsp;</p>
+          </td>
+          <td class="govuk-table__cell">
+          <p>1&nbsp;</p>
+          </td>
+          <td class="govuk-table__cell">
+          <p>1&nbsp;</p>
+          </td>
+          </tr>
+          <tr class="govuk-table__row" aria-rowindex="8">
+          <td class="govuk-table__cell">
+          <p>Population self-report disabled (%)</p>
+          </td>
+          <td class="govuk-table__cell">
+          <p>2&nbsp;</p>
+          </td>
+          <td class="govuk-table__cell">
+          <p>2&nbsp;</p>
+          </td>
+          <td class="govuk-table__cell">
+          <p>2&nbsp;</p>
+          </td>
+          </tr>
+          <tr class="govuk-table__row" aria-rowindex="9">
+          <td class="govuk-table__cell">
+          <p>Registered people with learning disability per 100,000 population&nbsp;</p>
+          </td>
+          <td class="govuk-table__cell">
+          <p>1&nbsp;</p>
+          </td>
+          <td class="govuk-table__cell">
+          <p>1&nbsp;</p>
+          </td>
+          <td class="govuk-table__cell">
+          <p>1&nbsp;</p>
+          </td>
+          </tr>
+          <tr class="govuk-table__row" aria-rowindex="10">
+          <td class="govuk-table__cell">
+          <p>Registered people with autism per 100,000 population&nbsp;</p>
+          </td>
+          <td class="govuk-table__cell">
+          <p>41&nbsp;</p>
+          </td>
+          <td class="govuk-table__cell">
+          <p>41&nbsp;</p>
+          </td>
+          <td class="govuk-table__cell">
+          <p>41&nbsp;</p>
+          </td>
+          </tr>
+          <tr class="govuk-table__row" aria-rowindex="11">
+          <td class="govuk-table__cell">
+          <p>Estimated number of people over 65 with dementia per 100,000 population&nbsp;</p>
+          </td>
+          <td class="govuk-table__cell">
+          <p>4543&nbsp;</p>
+          </td>
+          <td class="govuk-table__cell">
+          <p>4543&nbsp;</p>
+          </td>
+          <td class="govuk-table__cell">
+          <p>4543&nbsp;</p>
+          </td>
+          </tr>
+          </tbody>
+          </table>
+
+      <p class="govuk-body"><a href="" class="govuk-link">Download table data (CSV)</a></p>
+
+      <p class="govuk-body">Source: Office for National Statistics, NHS England<br>
+        Data correct as of 5 February 2025
+        <!--
+        <a href="../v3/help/population-by-age.html" class="govuk-link">View supporting information for Population by age</a></br>
+        <a href="../v3/help/population-by-disability.html" class="govuk-link">View supporting information for Population by disability</a>-->
+      </p>
+      <h2>Unpaid care</h2>
+      <p>Unpaid care is provided by anyone who cares for someone who is ill, disabled, older, has mental health concerns or is experiencing addiction and is not paid by a company or local authority to do this. Unpaid care can be given and received due to variety of reasons, including due to capacity for adult social care not meeting the demand for the individuals.</p>
+<p>For more information on how to support carers, see <a href="https://www.nhs.uk/conditions/social-care-and-support-guide/support-and-benefits-for-carers/">https://www.nhs.uk/conditions/social-care-and-support-guide/support-and-benefits-for-carers/</a>.</p>
+<p>The hours of unpaid care provided is shown here on the table for your local authority, region and nation. If you wish to explore data in smaller geographical areas than your local authority, data is available in explore the data pages.</p>
+      <table class="govuk-table">
+        <thead class="govuk-table__head">
+          <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Theme</th>
+          <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Indicator</th>
+          <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Suffolk</th>
+          <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">East of England region</th>
+          <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">All England</th>
+        </thead>
+        <tbody>
+        <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header" rowspan="3" scope="rowgroup"><a href="#">Unpaid care</a></th>
+        <td class="govuk-table__cell">Residents providing 19 hours or less unpaid care a week (%)</td>
+        <td class="govuk-table__cell">9</td>
+        <td class="govuk-table__cell">9</td>
+        <td class="govuk-table__cell">9</td>
+        </tr>
+        <tr class="govuk-table__row">
+                  <td class="govuk-table__cell">Residents providing 20 to 49 hours unpaid care a week (%)</td>
+          <td class="govuk-table__cell">9</td>
+          <td class="govuk-table__cell">9</td>
+          <td class="govuk-table__cell">9</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">Residents providing 50 or more hours unpaid care a week (%)</td>
+    <td class="govuk-table__cell">9</td>
+    <td class="govuk-table__cell">9</td>
+    <td class="govuk-table__cell">9</td>
+    </tr>
+    <!-- <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header"><a href="#">Homecare provision</a></th>
+      <td class="govuk-table__cell">9</td>
+      <td class="govuk-table__cell">9</td>
+      <td class="govuk-table__cell">9</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header"><a href="#">Residential care</a></th>
+      <td class="govuk-table__cell">9</td>
+      <td class="govuk-table__cell">9</td>
+      <td class="govuk-table__cell">9</td>
+    </tr> -->
+        </tbody>
+        </table>
+
+     <!-- 
+      
+      CPs in Suffolk
+    
+    -->
+   
+    <h2 id="capacity">
+      Current capacity in Suffolk</h2>
+
+      <p class="govuk-body">The number of adult social care beds per 100,000 adult population provides an indicator of current care capacity. A higher number suggests more sufficient capacity.</p>
+      
+      <p class="govuk-body">Care homes in Suffolk have <strong>18.4 beds per 100,000 adult population</strong>, compared to the East of England regional average of 12.2 per 100,000.</p>
+        
+      <p class="govuk-body">Suffolk care homes are <strong>operating at 85% occupancy</strong>, which is higher than the regional average (77%). This suggests a more limited capacity to meet population needs than the regional average.</p>
+      
+    <h3 class="govuk-heading-m">
+      Explore the data: adult social care beds per 100,000 adult population and occupancy</h3>
+    <p>To change the table below, <a href="#">edit the page settings</a> - or click on the indicator to explore the data.  
+    </p>
+
+      <table class="govuk-table">
+        <thead class="govuk-table__head">
+          <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Theme</th>
+          <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Indicators</th>
+          <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Suffolk</th>
+          <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">East of England region</th>
+          <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">All England</th>
+        </thead>
+        <tbody>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header" rowspan="3" scope="rowgroup"><a href="#">Adult social care beds per 100,000 population</a></th>
+        <td class="govuk-table__cell">Dementia nursing beds</th>
+        <td class="govuk-table__cell">18.4</td>
+        <td class="govuk-table__cell">12.2</td>
+        <td class="govuk-table__cell">10.6</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">General nursing beds</th>
+            <td class="govuk-table__cell">18.4</td>
+            <td class="govuk-table__cell">12.2</td>
+            <td class="govuk-table__cell">10.6</td>
+          </tr>
+        </tr>
+        </tbody>
+        </table>
+       
+
+      <p class="govuk-body"><a href="" class="govuk-link">Download table data (CSV)</a></p>
+   
+      <p class="govuk-body">Source: Capacity Tracker<br>
+        Data correct as of 5 February 2025<br></p>
+      <!---  <a href="../v3/help/beds-per-100000-people.html" class="govuk-link">View supporting information for this data</a></p>-->
+ 
+
+    <h2 id="capacity">
+      <!--<span class="govuk-caption-m">Current demand</span>-->
+      Current capacity - care homes: care provider-level insights</h2>
+
+      <p class="govuk-body">Examining individual care providers offers insight into how their capacity compares with other care providers at local authority, regional and national levels.</p>
+
+      <p class="govuk-body">Care Provider A is a small provider with <strong>20 total beds</strong>, compared to the median (53 beds) in Suffolk.</p>
+      
+      <p class="govuk-body">Care Provider A has <strong>90% occupancy</strong> for all adult social care beds compared to the median occupancy of all care homes in Suffolk (85%), suggesting limited availability for new admissions.</p>
+      
+    <h3 class="govuk-heading-m">
+      Explore the data: care providers in Suffolk</h3>
+      <!--
+    <p>You can explore the data to get information on the different bed types provided by Care Provider A, and change comparator group.</p>
+    -->
+    <!-- <form action="total_beds.html">
+      <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+        Explore data
+      </button>
+    </form> -->
+      <table class="govuk-table">
+        <thead class="govuk-table__head">
+          <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Filter</th>
+          <th scope="col" class="govuk-table__header">Care Provider A</th>
+          <th scope="col" class="govuk-table__header">Suffolk</th>
+          <th scope="col" class="govuk-table__header">East of England region</th>
+          <th scope="col" class="govuk-table__header">All England</th>
+
+        </thead>
+        <tbody>
+        <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header">Size</th>
+        <td class="govuk-table__cell">Small</td>
+        <td class="govuk-table__cell">All</td>
+        <td class="govuk-table__cell">All</td>
+        <td class="govuk-table__cell">All</td>
+        </tr>
+        <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header">Beds in care provider location</th>
+        <td class="govuk-table__cell">20</td>
+        <td class="govuk-table__cell">53 (median)</td>
+        <td class="govuk-table__cell"></td>
+        <td class="govuk-table__cell"></td>
+        </tr>
+        <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header">Percentage of beds occupied</th>
+        <td class="govuk-table__cell">90%</td>
+        <td class="govuk-table__cell">85% (median)</td>
+        <td class="govuk-table__cell"></td>
+        <td class="govuk-table__cell"></td>
+        </tr>
+        </tr>
+        </tbody>
+        </table>
+
+
+      <p class="govuk-body"><a href="" class="govuk-link">Download table data (CSV)</a></p>
+
+      <p class="govuk-body">Source: Capacity Tracker<br>
+        Data correct as of 5 February 2025<br></p>
+        
+
+    <p class="govuk-body"><a class="govuk-link" href="#">Back </a></p>
+    
+    {% endblock %}

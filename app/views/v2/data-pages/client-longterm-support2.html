@@ -1,0 +1,559 @@
+{% extends "layouts/data.html" %}
+
+{% set pageName = "Clients accessing long-term support (in year)" %}
+
+{% block content %} 
+<a href="../dashboard/capacity" class="govuk-back-link">Back</a>
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <span class="govuk-caption-l">Demand and capacity</span>
+        <h1 class="govuk-heading-l">{{pageName}}</h1>
+        <p>This indicator shows the number of clients accessing long-term support during the year.</p>
+        <p class="govuk-body">
+            Last updated: 15 December 2024
+        </p>
+        <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset">
+                <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                    <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc" checked>
+                        <label class="govuk-label govuk-checkboxes__label" for="organisation">
+                            Show this indicator on your dashboard
+                        </label>
+                    </div>
+                </div>
+            </fieldset>
+            <h2>Settings</h2>
+            <div class="govuk-grid-row" style="margin-bottom:4em">
+                <div class="govuk-grid-column-one-third">
+                    <!-- 
+                    
+                    LA picker  
+                    
+                    -->
+                    <div class="govuk-form-group">
+                        <h1 class="govuk-label-wrapper">
+                            <label class="govuk-label govuk-label--s" for="event-name">
+                                Local authority
+                            </label>
+                        </h1>
+                        <input class="govuk-input govuk-input--width-20" id="event-name" name="eventName" type="text" value="Suffolk County Council">
+                    </div>
+                </div>
+                <div class="govuk-grid-column-one-third">
+                    <!-- 
+                    
+                    Date range from
+                    
+                    -->
+                    <!-- <div class="moj-datepicker" data-module="moj-date-picker">
+                        <div class="govuk-form-group">
+                            <label class="govuk-label" for="date">
+                                Date range: from 
+                            </label>
+                            <input class="govuk-input moj-js-datepicker-input " id="date" name="date" type="text" aria-describedby="date-hint" autocomplete="off" value="1/04/2021">
+                        </div>
+                    </div> -->
+                </div>
+                <div class="govuk-grid-column-one-third">
+                    <!-- 
+                    
+                    Date range to
+                    
+                    -->
+                    <!-- <div class="moj-datepicker" data-module="moj-date-picker">
+                        <div class="govuk-form-group">
+                            <label class="govuk-label" for="date">
+                                Date range: to
+                            </label>
+                            <input class="govuk-input moj-js-datepicker-input " id="date" name="date" type="text" aria-describedby="date-hint" autocomplete="off" value="1/11/2023">
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+            <!-- 
+            
+            Filter column 
+            
+            -->
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-one-third">
+                    <div class="moj-filter">
+                        <div class="moj-filter__header">
+                            <div class="moj-filter__header-title">
+                                <h2 class="govuk-heading-m">Filter</h2>
+                            </div>
+                            <div class="moj-filter__header-action">
+                            </div>
+                        </div>
+                            <div class="moj-filter__options">
+                                <button type="submit" class="govuk-button" data-module="govuk-button" data-test-id="submit-button">
+                                    Apply filters
+                                </button>
+                                
+                                <div class="govuk-form-group">
+                                    <fieldset class="govuk-fieldset">
+                                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                                            Age range
+                                        </legend>
+                                        <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                                            <div class="govuk-checkboxes__item">
+                                                <input class="govuk-checkboxes__input" id="type" name="type" type="checkbox" value="1" checked>
+                                                <label class="govuk-label govuk-checkboxes__label" for="type">
+                                                    18 to 64
+                                                </label>
+                                            </div>
+                                            <div class="govuk-checkboxes__item">
+                                                <input class="govuk-checkboxes__input" id="type-2" name="type" type="checkbox" value="2">
+                                                <label class="govuk-label govuk-checkboxes__label" for="type-2">
+                                                    65 and over
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </fieldset>
+                                </div>
+                                <div class="govuk-form-group">
+                                    <fieldset class="govuk-fieldset">
+                                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                                           Support setting
+                                        </legend>
+                                        <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                                            <div class="govuk-checkboxes__item">
+                                                <input class="govuk-checkboxes__input" id="type" name="type" type="checkbox" value="1" checked>
+                                                <label class="govuk-label govuk-checkboxes__label" for="type">
+                                                    All support
+                                                </label>
+                                            </div>
+                                            <div class="govuk-checkboxes__item">
+                                                <input class="govuk-checkboxes__input" id="type" name="type" type="checkbox" value="1">
+                                                <label class="govuk-label govuk-checkboxes__label" for="type">
+                                                    Community
+                                                </label>
+                                            </div>
+                                            <div class="govuk-checkboxes__item">
+                                                <input class="govuk-checkboxes__input" id="type-2" name="type" type="checkbox" value="2">
+                                                <label class="govuk-label govuk-checkboxes__label" for="type-2">
+                                                    Nursing
+                                                </label>
+                                            </div>
+                                            <div class="govuk-checkboxes__item">
+                                                <input class="govuk-checkboxes__input" id="type" name="type" type="checkbox" value="1">
+                                                <label class="govuk-label govuk-checkboxes__label" for="type">
+                                                    Prison
+                                                </label>
+                                            </div>
+                                            <div class="govuk-checkboxes__item">
+                                                <input class="govuk-checkboxes__input" id="type-2" name="type" type="checkbox" value="2">
+                                                <label class="govuk-label govuk-checkboxes__label" for="type-2">
+                                                    Residential
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </fieldset>
+                                </div>
+                             
+                                <div class="govuk-form-group">
+                                    <fieldset class="govuk-fieldset">
+                                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                                           Support type
+                                        </legend>
+                                        <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                                            <div class="govuk-checkboxes__item">
+                                                <input class="govuk-checkboxes__input" id="type" name="type" type="checkbox" value="1" checked>
+                                                <label class="govuk-label govuk-checkboxes__label" for="type">
+                                                    Learning
+                                                </label>
+                                            </div>
+                                            <div class="govuk-checkboxes__item">
+                                                <input class="govuk-checkboxes__input" id="type" name="type" type="checkbox" value="1" checked>
+                                                <label class="govuk-label govuk-checkboxes__label" for="type">
+                                                    Memory
+                                                </label>
+                                            </div>
+                                            <div class="govuk-checkboxes__item">
+                                                <input class="govuk-checkboxes__input" id="type" name="type" type="checkbox" value="1" checked>
+                                                <label class="govuk-label govuk-checkboxes__label" for="type">
+                                                    Mental
+                                                </label>
+                                            </div>
+                                            <div class="govuk-checkboxes__item">
+                                                <input class="govuk-checkboxes__input" id="type" name="type" type="checkbox" value="1" checked>
+                                                <label class="govuk-label govuk-checkboxes__label" for="type">
+                                                    Physical access - mobility
+                                                </label>
+                                            </div>
+                                            <div class="govuk-checkboxes__item">
+                                                <input class="govuk-checkboxes__input" id="type" name="type" type="checkbox" value="1" checked>
+                                                <label class="govuk-label govuk-checkboxes__label" for="type">
+                                                    Physical - personal care
+                                                </label>
+                                            </div>
+                                            <div class="govuk-checkboxes__item">
+                                                <input class="govuk-checkboxes__input" id="type" name="type" type="checkbox" value="1" checked>
+                                                <label class="govuk-label govuk-checkboxes__label" for="type">
+                                                    Sensory - dual
+                                                </label>
+                                            </div>
+                                            <div class="govuk-checkboxes__item">
+                                                <input class="govuk-checkboxes__input" id="type" name="type" type="checkbox" value="1" checked>
+                                                <label class="govuk-label govuk-checkboxes__label" for="type">
+                                                    Sensory - hearing
+                                                </label>
+                                            </div>
+                                            <div class="govuk-checkboxes__item">
+                                                <input class="govuk-checkboxes__input" id="type" name="type" type="checkbox" value="1" checked>
+                                                <label class="govuk-label govuk-checkboxes__label" for="type">
+                                                    Social isolation
+                                                </label>
+                                            </div>
+                                            <div class="govuk-checkboxes__item">
+                                                <input class="govuk-checkboxes__input" id="type" name="type" type="checkbox" value="1" checked>
+                                                <label class="govuk-label govuk-checkboxes__label" for="type">
+                                                    Social substance
+                                                </label>
+                                            </div>
+                                            <div class="govuk-checkboxes__item">
+                                                <input class="govuk-checkboxes__input" id="type" name="type" type="checkbox" value="1" checked>
+                                                <label class="govuk-label govuk-checkboxes__label" for="type">
+                                                    Total
+                                                </label>
+                                            </div>
+                                            </div>
+                                            </fieldset>
+                                            </div>
+                                <!-- 
+                                
+                                Local authorities 
+                                
+                                -->
+                                <h2>Local authorities</h2>
+                                <div class="govuk-form-group">
+                                    <label class="govuk-label govuk-label--s" for="keywords">
+                                        Add local authority
+                                    </label>
+                                    <input class="govuk-input" id="keywords" name="keywords" type="text">
+                                </div>
+                                <div class="govuk-form-group">
+                                    <fieldset class="govuk-fieldset">
+                                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                                            Selected
+                                        </legend>
+                                        <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                                            <!-- <div class="govuk-checkboxes__item">
+                                                <input class="govuk-checkboxes__input" id="type" name="type" type="checkbox" value="1" checked>
+                                                <label class="govuk-label govuk-checkboxes__label" for="type">
+                                                    Norfolk
+                                                </label>
+                                            </div> -->
+                                            <div class="govuk-checkboxes__item">
+                                                <input class="govuk-checkboxes__input" id="type-2" name="type" type="checkbox" value="2" checked>
+                                                <label class="govuk-label govuk-checkboxes__label" for="type-2">
+                                                    Cambridgeshire and Peterborough
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </fieldset>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <!-- 
+                
+                Main panel 
+                
+                -->
+                <div class="govuk-grid-column-two-thirds">
+                    <h2>{{pageName}}</h2>
+<style>
+    .comparison-table{
+        text-align: left;
+        font-family: "GDS Transport", arial, sans-serif;
+        padding-bottom:2em;
+        border-collapse: collapse;
+    }
+    .comparison-table th{
+                            padding: 1em 2em 1em 1em;
+                            border: 1px solid grey;
+                            text-align: left;
+                        }
+    .comparison-table td{
+        vertical-align: top;
+        padding: 1em;
+        border: 1px solid grey
+    }
+     .comparison-table td{
+        text-align:right
+    }
+    .rowspan-comparison{
+        vertical-align: top;
+        border: 1px solid grey
+    }
+</style>
+<div class="govuk-tabs" data-module="govuk-tabs">
+    <h2 class="govuk-tabs__title">
+      Results
+    </h2>
+    <ul class="govuk-tabs__list">
+      <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+        <a class="govuk-tabs__tab" href="#past-day">
+           Table
+        </a>
+      </li>
+      <li class="govuk-tabs__list-item">
+        <a class="govuk-tabs__tab" href="#past-week">
+          Chart
+        </a>
+      </li>
+      <li class="govuk-tabs__list-item">
+        <a class="govuk-tabs__tab" href="#past-week">
+          Smart insights
+        </a>
+      </li>
+      </ul>
+      <!-- 
+      
+      First tab 
+      
+      -->
+      <div class="govuk-tabs__panel" id="past-day">
+<div class="govuk-form-group">
+    <label class="govuk-label" for="width-2">
+      Displaying rows:
+    </label>
+    <input class="govuk-input govuk-input--width-2" id="width-2" name="width2" type="text" value="42"> <span class="govuk-body"> of 42</span>
+  </div>
+  </div>
+<table class="comparison-table">
+    <tbody>
+    <tr style="height: 15.0pt;">
+    <th>Age range</th>
+    <th>Support setting</th>
+    <th>Support type</th>
+    <th>Year</th>
+    <th>Suffolk County Council</th>
+    </tr>
+    <tr style="height: 15.0pt;">
+        <td class="xl81" style="width: 81pt; height: 630.0pt;" rowspan="42" width="108" height="840">18 to 64</td>
+  
+    <td class="xl81" style="width: 81pt; height: 630.0pt;" rowspan="42" width="108" height="840">All support</td>
+    <td class="xl81" style="width: 155pt; height: 60.0pt;" rowspan="4" width="207" height="80">Learning</td>
+    <td class="xl21" align="right">2020</td>
+    <td class="xl21" align="right">2090</td>
+    </tr>
+    <tr style="height: 15.0pt;">
+    <td class="xl21" align="right">2021</td>
+    <td class="xl21" align="right">2060</td>
+    </tr>
+    <tr style="height: 15.0pt;">
+    <td class="xl21" align="right">2022</td>
+    <td class="xl21" align="right">2055</td>
+    </tr>
+    <tr style="height: 15.0pt;">
+    <td class="xl21" align="right">2023</td>
+    <td class="xl21" align="right">2035</td>
+    </tr>
+    <tr style="height: 15.0pt;">
+    <td class="xl81" style="width: 155pt; height: 60.0pt;" rowspan="4" width="207" height="80">Memory</td>
+    <td class="xl21" align="right">2020</td>
+    <td class="xl21" align="right">95</td>
+    </tr>
+    <tr style="height: 15.0pt;">
+    <td class="xl21" align="right">2023</td>
+    <td class="xl21" align="right">95</td>
+    </tr>
+    <tr style="height: 15.0pt;">
+    <td class="xl21" align="right">2021</td>
+    <td class="xl21" align="right">90</td>
+    </tr>
+    <tr style="height: 15.0pt;">
+    <td class="xl21" align="right">2022</td>
+    <td class="xl21" align="right">90</td>
+    </tr>
+    <tr style="height: 15.0pt;">
+    <td class="xl81" style="width: 155pt; height: 60.0pt;" rowspan="4" width="207" height="80">Mental</td>
+    <td class="xl21" align="right">2020</td>
+    <td class="xl21" align="right">285</td>
+    </tr>
+    <tr style="height: 15.0pt;">
+    <td class="xl21" align="right">2021</td>
+    <td class="xl21" align="right">290</td>
+    </tr>
+    <tr style="height: 15.0pt;">
+    <td class="xl21" align="right">2022</td>
+    <td class="xl21" align="right">325</td>
+    </tr>
+    <tr style="height: 15.0pt;">
+    <td class="xl21" align="right">2023</td>
+    <td class="xl21" align="right">395</td>
+    </tr>
+    <tr style="height: 15.0pt;">
+    <td class="xl81" style="width: 155pt; height: 60.0pt;" rowspan="4" width="207" height="80">Physical access - mobility</td>
+    <td class="xl21" align="right">2020</td>
+    <td class="xl21" align="right">100</td>
+    </tr>
+    <tr style="height: 15.0pt;">
+    <td class="xl21" align="right">2021</td>
+    <td class="xl21" align="right">100</td>
+    </tr>
+    <tr style="height: 15.0pt;">
+    <td class="xl21" align="right">2022</td>
+    <td class="xl21" align="right">100</td>
+    </tr>
+    <tr style="height: 15.0pt;">
+    <td class="xl21" align="right">2023</td>
+    <td class="xl21" align="right">105</td>
+    </tr>
+    <tr style="height: 15.0pt;">
+    <td class="xl81" style="width: 155pt; height: 60.0pt;" rowspan="4" width="207" height="80">Physical - personal care</td>
+    <td class="xl21" align="right">2020</td>
+    <td class="xl21" align="right">950</td>
+    </tr>
+    <tr style="height: 15.0pt;">
+    <td class="xl21" align="right">2022</td>
+    <td class="xl21" align="right">935</td>
+    </tr>
+    <tr style="height: 15.0pt;">
+    <td class="xl21" align="right">2021</td>
+    <td class="xl21" align="right">930</td>
+    </tr>
+    <tr style="height: 15.0pt;">
+    <td class="xl21" align="right">2023</td>
+    <td class="xl21" align="right">930</td>
+    </tr>
+    <tr style="height: 15.0pt;">
+    <td class="xl81" style="width: 155pt; height: 60.0pt;" rowspan="4" width="207" height="80">Sensory - dual</td>
+    <td class="xl21" align="right">2021</td>
+    <td class="xl21" align="right">15</td>
+    </tr>
+    <tr style="height: 15.0pt;">
+    <td class="xl21" align="right">2020</td>
+    <td class="xl21" align="right">10</td>
+    </tr>
+    <tr style="height: 15.0pt;">
+    <td class="xl21" align="right">2022</td>
+    <td class="xl21" align="right">10</td>
+    </tr>
+    <tr style="height: 15.0pt;">
+    <td class="xl21" align="right">2023</td>
+    <td class="xl21" align="right">10</td>
+    </tr>
+    <tr style="height: 15.0pt;">
+    <td class="xl81" style="width: 155pt; height: 60.0pt;" rowspan="4" width="207" height="80">Sensory - hearing</td>
+    <td class="xl21" align="right">2020</td>
+    <td class="xl21" align="right">10</td>
+    </tr>
+    <tr style="height: 15.0pt;">
+    <td class="xl21" align="right">2021</td>
+    <td class="xl21" align="right">10</td>
+    </tr>
+    <tr style="height: 15.0pt;">
+    <td class="xl21" align="right">2022</td>
+    <td class="xl21" align="right">10</td>
+    </tr>
+    <tr style="height: 15.0pt;">
+    <td class="xl21" align="right">2023</td>
+    <td class="xl21" align="right">5</td>
+    </tr>
+    <tr style="height: 15.0pt;">
+    <td class="xl81" style="width: 155pt; height: 60.0pt;" rowspan="4" width="207" height="80">Sensory - visual</td>
+    <td class="xl21" align="right">2020</td>
+    <td class="xl21" align="right">25</td>
+    </tr>
+    <tr style="height: 15.0pt;">
+    <td class="xl21" align="right">2021</td>
+    <td class="xl21" align="right">25</td>
+    </tr>
+    <tr style="height: 15.0pt;">
+    <td class="xl21" align="right">2022</td>
+    <td class="xl21" align="right">20</td>
+    </tr>
+    <tr style="height: 15.0pt;">
+    <td class="xl21" align="right">2023</td>
+    <td class="xl21" align="right">20</td>
+    </tr>
+    <tr style="height: 15.0pt;">
+    <td class="xl81" style="width: 155pt; height: 60.0pt;" rowspan="4" width="207" height="80">Social isolation</td>
+    <td class="xl21" align="right">2020</td>
+    <td class="xl21" align="right">200</td>
+    </tr>
+    <tr style="height: 15.0pt;">
+    <td class="xl21" align="right">2021</td>
+    <td class="xl21" align="right">170</td>
+    </tr>
+    <tr style="height: 15.0pt;">
+    <td class="xl21" align="right">2022</td>
+    <td class="xl21" align="right">155</td>
+    </tr>
+    <tr style="height: 15.0pt;">
+    <td class="xl21" align="right">2023</td>
+    <td class="xl21" align="right">145</td>
+    </tr>
+    <tr style="height: 15.0pt;">
+    <td class="xl81" style="width: 155pt; height: 30.0pt;" rowspan="2" width="207" height="40">Social substance</td>
+    <td class="xl21" align="right">2020</td>
+    <td class="xl21" align="right">5</td>
+    </tr>
+    <tr style="height: 15.0pt;">
+    <td class="xl21" align="right">2022</td>
+    <td class="xl21" align="right">5</td>
+    </tr>
+    <tr style="height: 15.0pt;">
+    <td class="xl81" style="width: 155pt; height: 60.0pt;" rowspan="4" width="207" height="80">Total</td>
+    <td class="xl21" align="right">2020</td>
+    <td class="xl21" align="right">3775</td>
+    </tr>
+    <tr style="height: 15.0pt;">
+    <td class="xl21" align="right">2021</td>
+    <td class="xl21" align="right">3690</td>
+    </tr>
+    <tr style="height: 15.0pt;">
+    <td class="xl21" align="right">2022</td>
+    <td class="xl21" align="right">3710</td>
+    </tr>
+    <tr style="height: 15.0pt;">
+    <td class="xl21" align="right">2023</td>
+    <td class="xl21" align="right">3750</td>
+    </tr>
+    </tbody>
+    </table>
+</div>
+<div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="past-week">
+    <h2 class="govuk-heading-l">Past week</h2>
+    </div>
+    <p>Source: <a href="#">SALT</a></p>
+    <h3>Download options</h3>
+    <ul>
+    <li><a href="" class="govuk-link">Download chart image (PNG)</a></li>
+    <li><a href="" class="govuk-link">Download table (CSV)</a></li>
+    <li><a href="" class="govuk-link">Download dataset (CSV)</a></li>
+    </ul>
+                <h2 class="govuk-heading-m"><!--&#10024; -->Smart insights (experimental)</h2>
+                <div class="govuk-inset-text">
+                    These insights are powered by artificial intelligence (AI), which can sometimes be inaccurate. Verify the information with primary sources before sharing or using it. <a class="@ovuk-link" href="">Learn more about smart insights</a>
+                </div>
+                <h3 class="govuk-heading-s">Insight 1</h3>
+                <p class="govuk-body">Total quality of life scores in Suffolk have gradually declined, dropping from 19.7 in 2018 to 18.9 in 2023. The 2022 score of 18.8 was the lowest recorded, highlighting a continued downward trend in recent years.</p>
+                <h3 class="govuk-heading-s">How you might use this insight:</h3>
+                <ul class="govuk-list govuk-list--bullet">
+                    <li><strong>Investigate contributing factors:</strong> Conduct in-depth analysis to identify specific issues impacting overall quality of life, such as access to services, social connections, or health support.</li>
+                    <li><strong>Focus on improvement initiatives:</strong> Develop targeted interventions to improve areas like social engagement, mental health support, and access to tailored care services.</li>
+                </ul>
+                <!---
+                <p class="govuk-body"><strong>Rate this smart insight</strong></p>
+                <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                    Helpful
+                </button>&nbsp;&nbsp;&nbsp;
+                <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                    Not helpful
+                </button>
+                -->
+                <h3 class="govuk-heading-s">Insight 2</h3>
+                <p class="govuk-body">The quality of life for individuals aged 65 and over has consistently been lower than for the 18 to 64 age group, with no improvement from 18.7 in both 2022 and 2023. This suggests older adults face persistent challenges in maintaining their quality of life compared to younger populations.</p>
+                <h3 class="govuk-heading-s">How you might use this insight:</h3>
+                <ul class="govuk-list govuk-list--bullet">
+                    <li><strong>Tailor services for older adults:</strong> Prioritise resources and programmes that address the specific needs of clients aged 65 and over, such as mobility assistance, health management, and social inclusion initiatives.</li>
+                    <li><strong>Gather targeted feedback:</strong> Engage older clients to understand their challenges and use this feedback to inform service improvements and policy adjustments.</li>
+                </ul>
+                <p class="govuk-body"><a class="govuk-link" href="#">Back</a></p>
+                    
+            {% endblock %}

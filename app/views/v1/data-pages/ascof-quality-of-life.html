@@ -1,0 +1,420 @@
+{% extends "layouts/data.html" %}
+
+{% set pageName = "Client quality of life scores" %}
+
+{% block content %} 
+<a href="../dashboard/capacity" class="govuk-back-link">Back</a>
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <span class="govuk-caption-l">Demand and capacity</span>
+        <h1 class="govuk-heading-l">{{pageName}}</h1>
+        <p>This indicator shows social care-related quality of life scores for clients.</p>
+        <p class="govuk-body">
+            Last updated: 15 December 2024
+        </p>
+        <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset">
+                <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                    <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc" checked>
+                        <label class="govuk-label govuk-checkboxes__label" for="organisation">
+                            Show this indicator on your dashboard
+                        </label>
+                    </div>
+                </div>
+            </fieldset>
+            <h2>Settings</h2>
+            <div class="govuk-grid-row" style="margin-bottom:4em">
+                <div class="govuk-grid-column-one-third">
+                    <!-- 
+                    
+                    LA picker  
+                    
+                    -->
+                    <div class="govuk-form-group">
+                        <h1 class="govuk-label-wrapper">
+                            <label class="govuk-label govuk-label--s" for="event-name">
+                                Local authority
+                            </label>
+                        </h1>
+                        <input class="govuk-input govuk-input--width-20" id="event-name" name="eventName" type="text" value="Suffolk County Council">
+                    </div>
+                </div>
+                <div class="govuk-grid-column-one-third">
+                    <!-- 
+                    
+                    Date range from
+                    
+                    -->
+                    <!-- <div class="moj-datepicker" data-module="moj-date-picker">
+                        <div class="govuk-form-group">
+                            <label class="govuk-label" for="date">
+                                Date range: from 
+                            </label>
+                            <input class="govuk-input moj-js-datepicker-input " id="date" name="date" type="text" aria-describedby="date-hint" autocomplete="off" value="1/04/2021">
+                        </div>
+                    </div> -->
+                </div>
+                <div class="govuk-grid-column-one-third">
+                    <!-- 
+                    
+                    Date range to
+                    
+                    -->
+                    <!-- <div class="moj-datepicker" data-module="moj-date-picker">
+                        <div class="govuk-form-group">
+                            <label class="govuk-label" for="date">
+                                Date range: to
+                            </label>
+                            <input class="govuk-input moj-js-datepicker-input " id="date" name="date" type="text" aria-describedby="date-hint" autocomplete="off" value="1/11/2023">
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+            <!-- 
+            
+            Filter column 
+            
+            -->
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-one-third">
+                    <div class="moj-filter">
+                        <div class="moj-filter__header">
+                            <div class="moj-filter__header-title">
+                                <h2 class="govuk-heading-m">Filter</h2>
+                            </div>
+                            <div class="moj-filter__header-action">
+                            </div>
+                        </div>
+                        <div class="moj-filter__content">
+                            <div class="moj-filter__selected">
+                                <div class="moj-filter__selected-heading">
+                                    <div class="moj-filter__heading-title">
+                                        <h2 class="govuk-heading-m">Selected filters</h2>
+                                    </div>
+                                    <div class="moj-filter__heading-action">
+                                        <p><a class="govuk-link govuk-link--no-visited-state" href="">Clear filters</a></p>
+                                    </div>
+                                </div>
+                                <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Compare other local authorities</h3>
+                                <ul class="moj-filter-tags">
+                                    <!-- <li><a class="moj-filter__tag" href="/path/to/remove/this"><span class="govuk-visually-hidden">Remove this filter</span> Norfolk</a></li> -->
+                                    <li><a class="moj-filter__tag" href="/path/to/remove/this"><span class="govuk-visually-hidden">Remove this filter</span> Cambridgeshire</a></li>
+                                </ul>
+                            </div>
+                            <div class="moj-filter__options">
+                                <button type="submit" class="govuk-button" data-module="govuk-button" data-test-id="submit-button">
+                                    Apply filters
+                                </button>
+                                <!-- 
+                                
+                                Local authorities 
+                                
+                                -->
+                                <h2>Local authorities</h2>
+                                <div class="govuk-form-group">
+                                    <label class="govuk-label govuk-label--s" for="keywords">
+                                        Add local authority
+                                    </label>
+                                    <input class="govuk-input" id="keywords" name="keywords" type="text">
+                                </div>
+                                <div class="govuk-form-group">
+                                    <fieldset class="govuk-fieldset">
+                                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                                            Selected
+                                        </legend>
+                                        <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                                            <!-- <div class="govuk-checkboxes__item">
+                                                <input class="govuk-checkboxes__input" id="type" name="type" type="checkbox" value="1" checked>
+                                                <label class="govuk-label govuk-checkboxes__label" for="type">
+                                                    Norfolk
+                                                </label>
+                                            </div> -->
+                                            <div class="govuk-checkboxes__item">
+                                                <input class="govuk-checkboxes__input" id="type-2" name="type" type="checkbox" value="2" checked>
+                                                <label class="govuk-label govuk-checkboxes__label" for="type-2">
+                                                    Cambridgeshire and Peterborough
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </fieldset>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 
+                
+                Main panel 
+                
+                -->
+                <div class="govuk-grid-column-two-thirds">
+                    <!--<h2 class="govuk-heading-l">Output</h2>-->
+                    <!-- <div class="govuk-form-group">
+                        <fieldset class="govuk-fieldset" aria-describedby="changedName-hint">
+                            <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                                <h1 class="govuk-fieldset__heading">
+                                    Chart type
+                                </h1>
+                            </legend>
+                            <div class="govuk-radios govuk-radios--inline govuk-radios--small" data-module="govuk-radios">
+                                <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="changedName" name="changedName" type="radio" value="yes" checked>
+                                    <label class="govuk-label govuk-radios__label" for="changedName">
+                                        Line
+                                    </label>
+                                </div>
+                                <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="changedName-2" name="changedName" type="radio" value="no">
+                                    <label class="govuk-label govuk-radios__label" for="changedName-2">
+                                        Bar
+                                    </label>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </div>
+                    <hr style="color:#e1e1e1"> -->
+                    <h2>{{pageName}}</h2>
+<style>
+    .comparison-table{
+        text-align: left;
+        font-family: "GDS Transport", arial, sans-serif;
+        padding-bottom:2em;
+        border-collapse: collapse;
+    }
+    .comparison-table th{
+        padding: 1em 2em 0 1em;
+    }
+    .comparison-table td{
+        padding: 1em;
+        border: 1px solid grey
+    }
+     .comparison-table td{
+        text-align:right
+    }
+    .rowspan-comparison{
+        vertical-align: top;
+        border: 1px solid grey
+    }
+</style>
+<table class="comparison-table">
+    <tbody>
+    <tr>
+    <th>Indicator</th>
+    <th>Year</th>
+    <th>Suffolk</th>
+    </tr>
+    <tr>
+    <th rowspan="7" class="rowspan-comparison">Total quality of life</th>
+    <td>2017</td>
+    <td>19.2</td>
+    </tr>
+    <tr>
+    
+    <td>2018</td>
+    <td>19.7</td>
+    </tr>
+    <tr>
+    
+    <td>2019</td>
+    <td>19.4</td>
+    </tr>
+    <tr>
+    
+    <td>2020</td>
+    <td>19.3</td>
+    </tr>
+    <tr>
+    
+    <td>2021</td>
+    <td>null</td>
+    </tr>
+    <tr>
+    
+    <td>2022</td>
+    <td>18.8</td>
+    </tr>
+    <tr>
+    
+    <td>2023</td>
+    <td>18.9</td>
+    </tr>
+    <tr>
+    <th rowspan="7" class="rowspan-comparison">Quality of life: 18 to 64</th>
+    <td>2017</td>
+    <td>19.7</td>
+    </tr>
+    <tr>
+    
+    <td>2018</td>
+    <td>20.3</td>
+    </tr>
+    <tr>
+    
+    <td>2019</td>
+    <td>19.7</td>
+    </tr>
+    <tr>
+    
+    <td>2020</td>
+    <td>19.7</td>
+    </tr>
+    <tr>
+    
+    <td>2021</td>
+    <td>null</td>
+    </tr>
+    <tr>
+    
+    <td>2022</td>
+    <td>19.1</td>
+    </tr>
+    <tr>
+    
+    <td>2023</td>
+    <td>19.4</td>
+    </tr>
+    <tr>
+        <th rowspan="7" class="rowspan-comparison">Quality of life: 65 and over</th>
+    <td>2017</td>
+    <td>18.9</td>
+    </tr>
+    <tr>
+    
+    <td>2018</td>
+    <td>19.2</td>
+    </tr>
+    <tr>
+    
+    <td>2019</td>
+    <td>19.3</td>
+    </tr>
+    <tr>
+    
+    <td>2020</td>
+    <td>19.1</td>
+    </tr>
+    <tr>
+    
+    <td>2021</td>
+    <td>null</td>
+    </tr>
+    <tr>
+    
+    <td>2022</td>
+    <td>18.7</td>
+    </tr>
+    <tr>
+    
+    <td>2023</td>
+    <td>18.7</td>
+    </tr>
+    <tr>
+        <th rowspan="7" class="rowspan-comparison">Quality of life: females</th>
+    <td>2017</td>
+    <td>19.2</td>
+    </tr>
+    <tr>
+
+    <td>2018</td>
+    <td>19.5</td>
+    </tr>
+    <tr>
+
+    <td>2019</td>
+    <td>19.4</td>
+    </tr>
+    <tr>
+
+    <td>2020</td>
+    <td>19.1</td>
+    </tr>
+    <tr>
+
+    <td>2021</td>
+    <td>null</td>
+    </tr>
+    <tr>
+
+    <td>2022</td>
+    <td>18.8</td>
+    </tr>
+    <tr>
+
+    <td>2023</td>
+    <td>18.9</td>
+    </tr>
+    <tr>
+        <th rowspan="7" class="rowspan-comparison">Quality of life: males</th>
+    <td>2020</td>
+    <td>19.6</td>
+    </tr>
+    <tr>
+    
+    <td>2017</td>
+    <td>19.2</td>
+    </tr>
+    <tr>
+    
+    <td>2018</td>
+    <td>19.9</td>
+    </tr>
+    <tr>
+    
+    <td>2019</td>
+    <td>19.6</td>
+    </tr>
+    <tr>
+    
+    <td>2021</td>
+    <td>null</td>
+    </tr>
+    <tr>
+    
+    <td>2022</td>
+    <td>18.8</td>
+    </tr>
+    <tr>
+    
+    <td>2023</td>
+    <td>19</td>
+    </tr>
+    </tbody>
+    </table>
+    <p>&nbsp;</p>
+    <p>Source: Adult Social Care Outcomes Framwework (ASCOF)</a></p>
+    <h3>Download options</h3>
+    <ul>
+    <li><a href="" class="govuk-link">Download chart image (PNG)</a></li>
+    <li><a href="" class="govuk-link">Download data (CSV)</a></li>
+    </ul>
+                <h2 class="govuk-heading-m"><!--&#10024; -->Smart insights (experimental)</h2>
+                <div class="govuk-inset-text">
+                    These insights are powered by artificial intelligence (AI), which can sometimes be inaccurate. Verify the information with primary sources before sharing or using it. <a class="@ovuk-link" href="">Learn more about smart insights</a>
+                </div>
+                <h3 class="govuk-heading-s">Insight 1</h3>
+                <p class="govuk-body">Total quality of life scores in Suffolk have gradually declined, dropping from 19.7 in 2018 to 18.9 in 2023. The 2022 score of 18.8 was the lowest recorded, highlighting a continued downward trend in recent years.</p>
+                <h3 class="govuk-heading-s">How you might use this insight:</h3>
+                <ul class="govuk-list govuk-list--bullet">
+                    <li><strong>Investigate contributing factors:</strong> Conduct in-depth analysis to identify specific issues impacting overall quality of life, such as access to services, social connections, or health support.</li>
+                    <li><strong>Focus on improvement initiatives:</strong> Develop targeted interventions to improve areas like social engagement, mental health support, and access to tailored care services.</li>
+                </ul>
+                <!---
+                <p class="govuk-body"><strong>Rate this smart insight</strong></p>
+                <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                    Helpful
+                </button>&nbsp;&nbsp;&nbsp;
+                <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                    Not helpful
+                </button>
+                -->
+                <h3 class="govuk-heading-s">Insight 2</h3>
+                <p class="govuk-body">The quality of life for individuals aged 65 and over has consistently been lower than for the 18 to 64 age group, with no improvement from 18.7 in both 2022 and 2023. This suggests older adults face persistent challenges in maintaining their quality of life compared to younger populations.</p>
+                <h3 class="govuk-heading-s">How you might use this insight:</h3>
+                <ul class="govuk-list govuk-list--bullet">
+                    <li><strong>Tailor services for older adults:</strong> Prioritise resources and programmes that address the specific needs of clients aged 65 and over, such as mobility assistance, health management, and social inclusion initiatives.</li>
+                    <li><strong>Gather targeted feedback:</strong> Engage older clients to understand their challenges and use this feedback to inform service improvements and policy adjustments.</li>
+                </ul>
+                <p class="govuk-body"><a class="govuk-link" href="#">Back</a></p>
+                    
+            {% endblock %}
