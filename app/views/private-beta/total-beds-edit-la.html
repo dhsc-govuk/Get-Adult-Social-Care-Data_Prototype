@@ -1,9 +1,9 @@
 {% extends "private-beta/layouts/full-width-border.html" %}
 
-{% set pageName = "Edit chart filter" %}
+{% set pageName = "Edit location" %}
 
 {% block content %} 
-<a href="total_beds" class="govuk-back-link">Back</a>
+<a href="total-beds" class="govuk-back-link">Back</a>
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
@@ -18,75 +18,70 @@
     {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
 {{ govukRadios({
-  name: "Filters",
+  name: "local-authority",
   fieldset: {
     legend: {
-      text: "Filters",
+      text: "Local authority",
       isPageHeading: true,
       classes: "govuk-fieldset__legend--m"
     }
   },
   items: [
     {
-      value: "All types",
-      text: "All types",
+      value: "Suffolk",
+      text: "Suffolk",
       checked: true
     },
     {
       value: "Community care",
-      text: "Community care"
+      text: "Bedford"
     },
     {
       value: "Transitional",
-      text: "Transitional",
-      hint: {
-        text:"For individuals moving from children's services to adult social care."
-      }
+      text: "Cambridgeshire"
     },
     {
       value: "Nursing - general",
-      text: "Nursing - general"
+      text: "Central Bedfordshire"
     },
     {
       value: "Nursing - dementia",
-      text: "Nursing - dementia"
+      text: "Essex"
     },
     {
       value: "Nursing - mental health",
-      text: "Nursing - mental health"
+      text: "Hertfordshire"
     },
     {
       value: "Nursing - learning disability",
-      text: "Nursing - learning disability"
+      text: "Luton"
     },
     {
       value: "Residential - general",
-      text: "Residential - general"
+      text: "Norfolk"
     },
     {
       value: "Residential - dementia",
-      text: "Residential - dementia"
+      text: "Peterborough"
     },
     {
       value: "Residential - mental health",
-      text: "Residential - mental health"
+      text: "Southend on Sea"
     },
     {
       value: "Residential - learning disability",
-      text: "Residential - learning disability"
+      text: "Thurrock"
     }
   ]
 }) }}
 
-  <form action="total_beds">
+<form action="total-beds">
           
-    <div class="govuk-button-group">
-      <button type="submit" class="govuk-button" data-module="govuk-button">Apply changes</button>
-      <a class="govuk-link" href="javascript:history.back()">Cancel and go back</a>
-    </div>
+  <div class="govuk-button-group">
+    <button type="submit" class="govuk-button" data-module="govuk-button">Apply changes</button>
+    <a class="govuk-link" href="javascript:history.back()">Cancel and go back</a>
+  </div>
 
-  </form>
-
-</div>
+</form>
 
 {% endblock %}
