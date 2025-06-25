@@ -31,6 +31,9 @@
   Main column 
   
 -->
+  <style>
+      h2{margin-top:4em}
+    </style>
   <div class="govuk-grid-column-two-thirds">
     <!-- <span class="govuk-caption-l">Demand and capacity</span> -->
     <h1 class="govuk-heading-l">
@@ -41,7 +44,7 @@
       Main content
       
       -->
-      <h2 id="definition">Indicator definition and supporting information</h2>
+      <h2 class="govuk-heading-m" id="definition">Indicator definition and supporting information</h2>
       <p class="govuk-body">
         The total number of beds recorded by care providers across health and adult social care, adjusted to a rate of 100,000 adults in the local authority population.
       </p>
@@ -107,7 +110,7 @@
         
         -->
         <div class="govuk-tabs__panel" id="chart">
-          <h2>Bar chart</h2>
+          <h3 class="govuk-heading-m">Bar chart</h3>
           <p>This chart shows data for all local authorities in Suffolk.</p>
           <table class="govuk-table">
             <tbody class="govuk-table__body">
@@ -125,7 +128,7 @@
             </tbody>
           </table>
           {% include "./_chart.html" %}
-          <p class="govuk-body"><a href="" class="govuk-link">Download chart image (PNG)</a><br>
+          <p class="govuk-body"><a href="#" class="govuk-link">Download chart image (PNG)</a><br>
             <a href="#" class="govuk-link">Download table data (CSV)</a>
             <p class="govuk-body">Source: Capacity Tracker<br>
               Data correct as of 24 December 2024<br>
@@ -137,7 +140,7 @@
             
             -->
             <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="time-series">
-              <h2>Time series</h2>
+              <h3 class="govuk-heading-m">Time series</h3>
               {% include "./_time-series.html" %}
             </div>
             <!-- 
@@ -146,9 +149,9 @@
             
             -->
             <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="map">
-              <h2>
+              <h3 class="govuk-heading-m">
                 Map
-              </h2>
+              </h3>
               <p class="govuk-body">The map view is not yet available.</p>
               <p class="govuk-body">We are working to introduce this feature to the service. In the meantime, you can explore the data by chart, time series or table.</p>
               </p>
@@ -159,7 +162,7 @@
             
             -->
             <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="table">
-              <h2 id="total">Table</h2>
+              <h3 class="govuk-heading-m" id="total">Table</h3>
               <table class="govuk-table">
                 <tbody class="govuk-table__body">
               <tr class="govuk-table__row">
