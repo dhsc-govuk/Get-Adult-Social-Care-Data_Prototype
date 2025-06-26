@@ -1,3 +1,8 @@
 {
-  "serviceName": "Get adult social care data"
+  "serviceName": "Get adult social care data",
+  "plugins": {
+    "govuk-frontend": {
+	    "rebrand": true
+    }
+  }
 }

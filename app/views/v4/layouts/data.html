@@ -1,6 +1,6 @@
 {#
-For guidance on how to use layouts see:
-https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
+  For guidance on how to use layouts see:
+  https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
 #}
 
 {% extends "govuk-prototype-kit/layouts/govuk-branded.njk" %}
@@ -33,12 +33,11 @@ https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
     <a href="/" class="govuk-header__link govuk-header__service-name">
       {{serviceName}}
     </a>
-    <p style="float:right"><a href="#" style="color:white; text-decoration:none">Manage account | Sign out</a></p>
+    <p style="float: right; margin: 19px 0 11px;"><a href="#" style="color: white; text-decoration: none;">Manage account | Sign out</a></p>
     
   </div>
 </div>
 </header>
-
 <div class="govuk-phase-banner govuk-width-container">
   <p class="govuk-phase-banner__content">
     <strong class="govuk-tag govuk-phase-banner__content__tag">
@@ -49,77 +48,24 @@ https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
     </span>
   </p>
 </div>
-
-<!--
 {% from "govuk/components/service-navigation/macro.njk" import govukServiceNavigation %}
 
 {{ govukServiceNavigation({
   navigation: [
   {
-    href: "index",
+    href: "../../logged-in/index",
     text: "Home"
   },
   {
-    href: "../help/topics",
-    text: "Data library"
+    href: "../../help/user-guide",
+    text: "User guide"
   },
   {
-    href: "../help/topics",
-    text: "Topics"
-  },
-  {
-    href: "download-full-datasets",
+    href: "../../logged-in/download-full-datasets",
     text: "Datasets"
   }
   ]
 }) }}
--->
-<div style="background-color: #1d70b8; padding: 10px 20px; color: white; position: relative;" 
-     aria-label="user-testing-banner" role="region">
-  <div class="govuk-width-container">
-    <div class="govuk-grid-row" 
-         style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap;">
-
-      <!-- Left side: Heading -->
-      <div class="govuk-grid-column-one-half">
-        <p class="govuk-!-font-weight-bold govuk-!-margin-bottom-1" style="color: white;">
-          Data preferences for Greenshields Care
-        </p>
-      </div>
-      <div class="govuk-grid-column-one-half govuk-!-text-align-right" 
-      style="align-self: flex-start; padding-right: 25px;">
-   <a class="govuk-link govuk-link--inverse" 
-      style="color: white; text-decoration: underline; font-size: 1rem;" 
-      href="YOUR_FEEDBACK_LINK">
-     Update preferences
-   </a>
- </div>
-
-      <!-- Two-column layout -->
-      <div class="govuk-grid-column-full" style="display: flex; gap: 10px; flex-wrap: wrap;">
-        <div style="flex: 1;">
-          <p class="govuk-!-margin-bottom-0" style="color: white;">
-            <strong>Locations:</strong> Suffolk and 5 others
-          </p>
-          <p class="govuk-!-margin-bottom-0" style="color: white;">
-            <strong>Care sectors:</strong> Residential and 1 other
-          </p>
-        </div>
-        <div style="flex: 1;">
-          <p class="govuk-!-margin-bottom-0" style="color: white;">
-            <strong>Service user age:</strong> 65 and over
-          </p>
-          <p class="govuk-!-margin-bottom-0" style="color: white;">
-            <strong>Bed types:</strong> Dementia residential and 1 other
-          </p>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</div>
-
-
 {% endblock %}
 
 {% block footer %}

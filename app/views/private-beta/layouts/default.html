@@ -5,15 +5,24 @@
 
 {% extends "govuk-prototype-kit/layouts/govuk-branded.njk" %}
 {% from "govuk/components/header/macro.njk" import govukHeader %}
+{% from "govuk/components/service-navigation/macro.njk" import govukServiceNavigation %}
 {% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
 {% from "govuk/components/footer/macro.njk" import govukFooter %}
 
+{% block stylesheets %}
+  {{super()}}
+  <link href="/public/css/private-beta/styles.css" rel="stylesheet" type="text/css" />
+  <link href="/public/css/private-beta/print.css" media="print" rel="stylesheet" type="text/css" />
+{% endblock %}
+
 {% block header %}
 {{ govukHeader({
-  homepageUrl: "/",
+  homepageUrl: "/"
+}) }}
+
+{{ govukServiceNavigation({
   serviceName: serviceName,
-  serviceUrl: "/",
-  classes: "govuk-header--full-width-border"
+  serviceUrl: "start"
 }) }}
 
 <div class="govuk-width-container">
@@ -34,7 +43,7 @@
   meta: {
     items: [
       {
-        href: "disclaimer",
+        href: "disclaimer?backLink",
         text: "Disclaimer"
       }
     ]
