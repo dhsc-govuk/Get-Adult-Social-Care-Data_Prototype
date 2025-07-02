@@ -1,0 +1,73 @@
+{% extends "govuk-prototype-kit/layouts/unbranded.html" %}
+
+{% set pageName = "All user journeys (" + version + ")" %}
+
+{% block content %}
+<div class="govuk-form-group">
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+</div>
+
+<h1 class="govuk-heading-xl">
+  <span class="govuk-caption-xl">{{version}}</span>
+  All user journeys
+</h1>
+
+<h2 class="govuk-heading-l heading-override">{{serviceName}}</h2>
+<ul class="govuk-list govuk-list--bullet">
+  <li><a href="registration/0-start">Request access (start)</a></li>
+  <li><a href="login-first-time/1-start">First time login (start)</a></li>
+  <li><a href="login/1-start">Return user and password reset journey (start)</a></li>
+  <li><a href="setup/index">Setup screen on login</a></li>
+  <li><a href="dashboard/index">Dashboard</a></li>
+  <li><a href="dashboard/get-data">Get data</a></li>
+  <li><a href="data-pages/present-demand">Present demand</a></li>
+</ul>
+
+<h3 class="govuk-heading-m heading-override">Email notifications</h3>
+<ul class="govuk-list govuk-list--bullet">
+  <li><i class="fa fa-envelope" aria-hidden="true"><span class="govuk-visually-hidden">Email</span></i> <a href="emails/security-code-email">DHSC security code</a></li>
+  <li><i class="fa fa-envelope" aria-hidden="true"><span class="govuk-visually-hidden">Email</span></i> <a href="emails/password-reset-email">Password reset confirmation</a></li>
+  <li><i class="fa fa-envelope" aria-hidden="true"><span class="govuk-visually-hidden">Email</span></i> <a href="emails/request-approved-email">Request approved</a></li>
+  <li><i class="fa fa-envelope" aria-hidden="true"><span class="govuk-visually-hidden">Email</span></i> <a href="emails/request-declined-email">Request declined</a></li>
+  <li><i class="fa fa-envelope" aria-hidden="true"><span class="govuk-visually-hidden">Email</span></i> <a href="emails/request-pending-email">Request needs more information</a></li>
+</ul>
+
+<h3 class="govuk-heading-m heading-override">Account permissions pages</h3>
+<ul class="govuk-list govuk-list--bullet">
+  <li><a href="login/13-account-locked">Account locked page</a></li>
+  <li><a href="system/access-denied-request-pending">Access denied - access request pending</a></li>
+  <li><a href="system/access-denied-request-denied">Access denied - access request denied</a></li>
+</ul>
+
+<h3 class="govuk-heading-m heading-override">System error pages</h3>
+<ul class="govuk-list govuk-list--bullet">
+  <li><a href="system/page-not-found">404 Not found: Page not found</a></li>
+  <li><a href="system/problem-with-service">500 Internal server error: Sorry, there is a problem with the service</a></li>
+</ul>
+
+<h3 class="govuk-heading-m heading-override">Service shutter pages</h3>
+<ul class="govuk-list govuk-list--bullet">
+  <li><a href="system/service-unavailable">503 Service unavailable: Sorry, the service is unavailable (generic message)</a></li>
+  <li><a href="system/service-unavailable-with-date">503 Service unavailable: Sorry, the service is unavailable (if date/time known)</a></li>
+</ul>
+
+<h3 class="govuk-heading-m heading-override">Session signout and timeout</h3>
+<ul class="govuk-list govuk-list--bullet">
+  <li><a href="system/timeout-warning">Timeout warning (modal window)</a></li>
+  <li><a href="system/timeout-warning-non-js">Timeout warning (non JavaScript alternative)</a></li>
+  <li><a href="system/signed-out">You have signed out</a></li>
+  <li><a href="system/session-expired">Your session has expired</a></li>
+</ul>
+
+<h3 class="govuk-heading-m heading-override">Footer pages</h3>
+<ul class="govuk-list govuk-list--bullet">
+  <li><a href="dashboard/accessibility-statement">Accessibility statement (example)</a></li>
+</ul>
+{% endblock %}
+
+{% block pageScripts %}
+<!-- Tooltip taken from Nicolas Hoffmann (https://a11y.nicolas-hoffmann.net/modal/) -->
+<script src="/public/javascripts/jquery-accessible-modal-window-aria.js"></script>
+<!-- Font Awesome 4 icons for the notifications -->
+<link href="/public/open-source/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+{% endblock %}

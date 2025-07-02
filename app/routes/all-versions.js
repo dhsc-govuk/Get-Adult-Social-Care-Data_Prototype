@@ -13,7 +13,7 @@ module.exports = function(router) {
     var version = req.params.version
 
     res.render(version + '/pages', {
-      'version' : version.substring(1)
+      'version' : version
 		})
   })
 

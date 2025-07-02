@@ -1,0 +1,53 @@
+{% extends "govuk-prototype-kit/layouts/unbranded.html" %}
+
+{% set pageName = "All user journeys (" + version + ")" %}
+
+{% block content %}
+<div class="govuk-form-group">
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+</div>
+
+<h1 class="govuk-heading-xl">
+  <span class="govuk-caption-xl">{{version}}</span>
+  All user journeys
+</h1>
+
+<h2 class="govuk-heading-l heading-override">{{serviceName}}</h2>
+<ul class="govuk-list govuk-list--bullet">
+  <li><a href="registration/0-start">Request access (start)</a></li>
+  <li><a href="login-first-time/1-start">First time login (start)</a></li>
+  <li><a href="login/1-start">Return user and password reset journey (start)</a></li>
+  <li><a href="dashboard/index">Dashboard</a></li>
+</ul>
+
+<h3 class="govuk-heading-m heading-override">Data pages</h3>
+<ul class="govuk-list govuk-list--bullet">
+  <li><a href="data-pages/beds-total">Total beds</a></li>
+  <li><a href="data-pages/beds-occupancy">Occupied beds</a></li>
+  <li><a href="data-pages/population-disability">Population disability</a></li>
+  <li><a href="data-pages/ascof-overall-satisfaction">ASCOF overall satisfaction</a></li>
+</ul>
+
+<h3 class="govuk-heading-m heading-override">Templates</h3>
+<ul class="govuk-list govuk-list--bullet">
+  <li><a href="../d3/d3">Data and D3 sandpits</a></li>
+  <li><a href="tools/passing-data/svg">SVG charts from Nunjucks data</a></li>
+  <li><a href="tools/passing-data/data">Data dashboard</a></li>
+  <li><a href="tools/passing-data/index?myURLdata=Parsnip">Data cheat sheet</a></li>
+</ul>
+
+<h3 class="govuk-heading-m heading-override">Early sketches</h3>
+<ul class="govuk-list govuk-list--bullet">
+  <li><a href="dashboard-sandpit/queries">View your queries and see collegues' queries</a></li>
+  <li><a href="tools/templates/index">Page examples</a></li>
+  <li><a href="tools/juggling-service/start">Juggling service</a></li>
+  <li><a href="tools/editable-pages/editor-radios">Editable pages</a></li>
+</ul>
+{% endblock %}
+
+{% block pageScripts %}
+<!-- Tooltip taken from Nicolas Hoffmann (https://a11y.nicolas-hoffmann.net/modal/) -->
+<script src="/public/javascripts/jquery-accessible-modal-window-aria.js"></script>
+<!-- Font Awesome 4 icons for the notifications -->
+<link href="/public/open-source/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+{% endblock %}

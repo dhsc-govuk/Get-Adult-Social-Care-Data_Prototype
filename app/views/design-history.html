@@ -1,0 +1,103 @@
+{% extends "govuk-prototype-kit/layouts/unbranded.html" %}
+
+{% set pageName = serviceName + " prototype" %}
+{% set bodyClasses = "extra-page-width-1400" %}
+
+{% block content %}
+<div class="govuk-form-group">
+  <a class="govuk-back-link" href="index">Back</a>
+</div>
+
+<h1 class="govuk-heading-xl">Design history</h1>
+
+<table class="govuk-table design-history">
+  <caption class="govuk-table__caption govuk-table__caption--m">All previous designs</caption>
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header">Name</th>
+      <th scope="col" class="govuk-table__header govuk-!-width-one-fifth">Dates</th>
+      <th scope="col" class="govuk-table__header">What we did</th>
+      <th scope="col" class="govuk-table__header">Why we did it</th>
+      <th scope="col" class="govuk-table__header govuk-!-width-one-fifth govuk-table__header--numeric">Status</th>
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header"><a href="v5/pages" class="govuk-link">v5</a></th>
+      <td class="govuk-table__cell">7 March 2025</td>
+      <td class="govuk-table__cell">
+        <ul class="govuk-list govuk-list--bullet">
+          <li>Iterated all related user journeys based on user insights from care providers and academic researchers, gathered during user research (Round 3: March 2025).</li>
+          <li>Added experimental designs for data visualisation (e.g. maps) across the data streams.</li>
+          <li>New designs for identified data items and their indicators (e.g. domiciliary care).</li>
+          <li>Applied the latest <a href="https://www.gov.uk/government/publications/govuk-brand-guidelines" target="_blank">GOV.UK brand guidelines and styles (opens in a new tab)</a>.</li>
+        </ul>
+      </td>
+      <td class="govuk-table__cell">
+        <ul class="govuk-list govuk-list--bullet">
+          <li>To meet user needs, key findings and design recommendations that came from the last round of user research (Round 3: March 2025).</li>
+          <li>Based on the outcome of a project team design review following the restart of the project.</li>
+        </ul>
+      </td>
+      <td class="govuk-table__cell govuk-table__cell--numeric"><strong class="govuk-tag govuk-tag--purple">Design in progress</strong></td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header"><a href="v4/pages" class="govuk-link">v4</a></th>
+      <td class="govuk-table__cell">18 February 2025 to 6 March 2025</td>
+      <td class="govuk-table__cell">
+        <ul class="govuk-list govuk-list--bullet">
+          <li>Iterations to the requesting access to the service, first time sign in plus returning user journeys.</li>
+          <li>Iterations to the designs for identified data items and their indicators.</li>
+          <li>New designs for identified data items and their indicators.</li>
+        </ul>
+      </td>
+      <td class="govuk-table__cell">Previous UCD team's work in the beta phase of this project.</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric"><strong class="govuk-tag govuk-tag--green">Complete</strong></td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header"><a href="v3/pages" class="govuk-link">v3</a></th>
+      <td class="govuk-table__cell">7 February 2025 to 17 February 2025</td>
+      <td class="govuk-table__cell">
+        <ul class="govuk-list govuk-list--bullet">
+          <li>Iterations to the requesting access to the service, first time sign in plus returning user journeys.</li>
+          <li>Iterations to the designs for identified data items and their indicators.</li>
+          <li>New designs for identified data items and their indicators.</li>
+          <li>Edges cases, error scenarios, account permissions pages plus HTTP access type screens added.</li>
+          <li>Content drafted for potential email notifications.</li>
+        </ul>
+      </td>
+      <td class="govuk-table__cell">Previous UCD team's work in the beta phase of this project.</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric"><strong class="govuk-tag govuk-tag--green">Complete</strong></td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header"><a href="v2/pages" class="govuk-link">v2</a></th>
+      <td class="govuk-table__cell">9 January 2025 to 6 February 2025</td>
+      <td class="govuk-table__cell">
+        <ul class="govuk-list govuk-list--bullet">
+          <li>Iterations to the requesting access to the service, first time sign in plus returning user journeys.</li>
+          <li>New 'dashboard' and landing page designs.</li>
+          <li>New designs for identified data items and their indicators.</li>
+        </ul>
+      </td>
+      <td class="govuk-table__cell">Previous UCD team's work in the beta phase of this project.</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric"><strong class="govuk-tag govuk-tag--green">Complete</strong></td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header"><a href="v1/pages" class="govuk-link">v1</a></th>
+      <td class="govuk-table__cell">4 December 2024 to 8 January 2025</td>
+      <td class="govuk-table__cell">
+        First conceptual designs, sketches and design work for {{serviceName}} including:
+        <br>
+        <br>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>requesting access to the service, first time sign in plus returning users</li>
+          <li>what users see after signing into the service</li>
+          <li>experimental data pages using <a href="https://d3js.org" target="_blank">D3.js (opens in a new tab)</a></li>
+        </ul>
+      </td>
+      <td class="govuk-table__cell">Previous UCD team's work in the beta phase of this project.</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric"><strong class="govuk-tag govuk-tag--green">Complete</strong></td>
+    </tr>
+  </tbody>
+</table>
+{% endblock %}

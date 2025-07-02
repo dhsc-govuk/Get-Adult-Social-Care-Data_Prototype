@@ -1,0 +1,34 @@
+{% extends "govuk-prototype-kit/layouts/unbranded.html" %}
+
+{% set pageName = "All user journeys (" + version + ")" %}
+{% set htmlClasses = "unbranded-fill-page" %}
+{% set bodyClasses = "unbranded-fill-page" %}
+
+{% block content %}
+<div class="govuk-form-group">
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+</div>
+
+<h1 class="govuk-heading-xl">
+  <span class="govuk-caption-xl">{{version}}</span>
+  All user journeys
+</h1>
+
+<h2 class="govuk-heading-l heading-override">{{serviceName}}</h2>
+<ul class="govuk-list govuk-list--bullet">
+  <li><a href="registration/0-start">Request access (start)</a></li>
+  <li><a href="login-first-time/1-start">First time login (start)</a></li>
+  <li><a href="login/1-start">Return user and password reset journey (start)</a></li>
+  <li><a href="setup/index">Setup screen on login</a></li>
+  <li><a href="dashboard/index">Dashboard</a></li>
+  <li><a href="dashboard/get-data">Get data</a></li>
+  <li><a href="data-pages/present-demand">Present demand</a></li>
+</ul>
+{% endblock %}
+
+{% block pageScripts %}
+<!-- Tooltip taken from Nicolas Hoffmann (https://a11y.nicolas-hoffmann.net/modal/) -->
+<script src="/public/javascripts/jquery-accessible-modal-window-aria.js"></script>
+<!-- Font Awesome 4 icons for the notifications -->
+<link href="/public/open-source/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+{% endblock %}

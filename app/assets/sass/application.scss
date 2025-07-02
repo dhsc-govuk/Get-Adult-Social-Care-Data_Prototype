@@ -4,29 +4,181 @@
 // 
 
 // Add extra styles here
-@import "node_modules/govuk-frontend/dist/govuk/index";
 
-h1, h2, h3, p, ul, ol {
+/* Override to force pages using the unbranded template to fill the page height */
+.unbranded-fill-page {
+  height: 100%;
+}
+
+/* Expansion on the GOV.UK width override classes (https://design-system.service.gov.uk/styles/layout/#width-override-classes) styles */
+.govuk-\!-width-one-fifth {
+  width: 100% !important;
+  @include govuk-media-query($from: tablet) {
+    width: 20% !important;
+  }
+}
+
+/* General prototype pages (not part of the service) */
+
+/* Extra spacing (for smaller devices) above the 'Private beta (MVP)' section on the index page */
+.index-padding {
+  padding-bottom: 15px;
+}
+@media (min-width: 40.0625em) {
+  .index-padding {
+    padding-bottom: initial;
+  }
+}
+
+/* Styling to distinguish any external service links from our service (e.g. GOV.UK One Login) */
+.externalService {
+  background: #f3f2f1;
+  padding-top: 20px;
+  padding-right: 20px;
+  padding-bottom: 10px;
+  padding-left: 20px;
+  margin-top: 30px;
+  margin-right: -20px;
+  margin-bottom: 30px;
+  margin-left: -20px;
+}
+
+/* Reduce whitespace beneath select section headings for better readability (i.e. sub-headings) */
+.heading-override {
+  margin-bottom: 5px;
+}
+
+/* Reduce whitespace beneath nested lists within lists for better readability */
+.list-override {
+  margin-bottom: 0;
+}
+@media (min-width: 48.0625em) {
+  .list-override{
+    margin-bottom: 5px;
+  }
+}
+
+/* Styling of a third party (OPEN SOURCE) accessible tooltip and modal which was taken from Nicolas Hoffmann (https://a11y.nicolas-hoffmann.net/modal/) */
+.js-modal:link, .js-modal:visited, .js-modal:hover, .js-modal:active, .js-modal:focus {
+  color: #0b0c0c;
+}
+
+.js-modal-bolder:link, .js-modal-bolder:visited, .js-modal-bolder:hover, .js-modal-bolder:active, .js-modal-bolder:focus {  
+  font-weight: bolder !important; // Expansion to make chosen links more distinguishable against the yellow GOV.UK tag component
+}
+
+dialog {
+  display: block;
+}
+
+.no-scroll-html {
+  overflow: hidden;
+}
+
+.no-scroll {
+  overflow: hidden;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: #000;
+  opacity: .8;
+  z-index: 666;
+  cursor: pointer;
+}
+
+.modal {
   font-family: "GDS Transport", arial, sans-serif;
+  font-weight: 400;
+  text-transform: none;
+  font-size: 16px;
+  line-height: 1.25;
+  -webkit-font-smoothing: antialiased;
+  position: fixed;
+  left: 0;
+  top: 25%;
+  width: 50%;
+  right: 0;
+  margin: 0 auto;
+  border: 1px solid #000;; 
+  background: #fff;
+  z-index: 667;
+  padding: 2em;
+  overflow: auto;
+}
+@media (min-width: 641px) {
+  .modal {
+    font-size: 19px;
+    line-height: 1.31579;
+  }
 }
 
-p, ul, ol {
-  font-size: 1.1875rem;
-  line-height: 1.3157894737;
-  color: #0b0c0c
+.modal-close {
+  -webkit-font-smoothing: antialiased;
+  background: none !important;
+  border: none;
+  padding: 0 !important;
+  color: #1d70b8;
+  cursor: pointer;
+}
+.modal-close:link {
+  color: #1d70b8;
+}
+.modal-close:visited {
+  color: #4c2c92;
+}
+.modal-close:hover {
+  color: #003078;
+}
+.modal-close:active {
+  color: #003078;
+}
+.modal-close:focus {
+  outline: 3px solid transparent;
+  color: #0b0c0c;
+  background-color: #ffdd00;
+  box-shadow: 0 -2px #ffdd00, 0 4px #0b0c0c;
+  text-decoration: none;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+  background: #ffdd00 !important;
 }
 
-/* Chris Harding (24.06.25) - This was broken, but I have fixed and commented it out until I know it is safe for deletion */
-// .govuk-width-container {
-//   max-width: 1400px;
-// }
-
-.moj-side-navigation__sub-list {
-  list-style: none;
-  padding-left: 1rem;
-  margin-top: 0.5rem;
+#modal-title {
+  margin-top: 15px;
+}
+@media (min-width: 641px) {
+  #modal-title {
+    margin-top: 20px;
+  }
 }
 
-.moj-side-navigation__sub-list li {
-  margin-bottom: 0.5rem;
+.modal__content p {
+  margin-bottom: 0;
+}
+
+/* Custom width for the main container (govuk-width-container) on the design history page */
+.extra-page-width-1400 .govuk-width-container {
+  max-width: 1400px;
+}
+
+// Design history styling to tags in the table
+.design-history .govuk-list {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.design-history .govuk-tag {
+  white-space: initial;
+  overflow: initial;
+}
+@media(min-width: 40.0625em) {
+  .design-history .govuk-tag {
+    white-space: nowrap;
+    overflow: hidden;
+  }
 }
