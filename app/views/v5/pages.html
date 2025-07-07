@@ -21,56 +21,104 @@
 
 <h3 class="govuk-heading-m heading-override">Request access</h3>
 <ul class="govuk-list govuk-list--bullet">
-  <li><a href="registration/0-start">Get adult social care data: sign in or request access (start)</a></li>
+  <li><a href="registration/start">Get adult social care data: sign in or request access (start)</a></li>
   <li><a href="registration/1-email">Sign in to Get adult social care data or request access</a></li>
+  <ul class="list-override govuk-list--bullet">
+    <li><i class="fa fa-envelope" aria-hidden="true"><span class="govuk-visually-hidden">Email</span></i> <a href="emails/email-security-code">DHSC security code (email security code)</a></li>
+  </ul>
   <li><a href="registration/2-confirm-code">Enter code to confirm your email address</a></li>
+  <ul class="list-override govuk-list--bullet">
+    <li><a href="registration/2b-resend-confirm-code">Enter code to confirm your email address</a></li>
+  </ul>
   <li><a href="registration/3-your-name">What is your name?</a></li>
   <li><a href="registration/4-job-title">What is your job title?</a></li>
   <li><a href="registration/5-organisation-type">What is your organisation type?</a></li>
   <li><a href="registration/6-organisation-name">Enter your organisation's name</a></li>
+  <ul class="list-override govuk-list--bullet">
+    <li>My organisation is not listed - <a href="registration/6a-organisation-name-manual">What is your organisation's name?</a></li>
+  </ul>
   <li><a href="registration/7-check-answers">Check your answers before submitting your request</a></li>
   <li><a href="registration/8-complete">Request for access submitted</a></li>
   <ul class="list-override govuk-list--bullet">
-    <li><i class="fa fa-envelope" aria-hidden="true"><span class="govuk-visually-hidden">Email</span></i> <a href="emails/request-approved-email">Request approved</a></li>
-    <li><i class="fa fa-envelope" aria-hidden="true"><span class="govuk-visually-hidden">Email</span></i> <a href="emails/request-declined-email">Request declined</a></li>
-    <li><i class="fa fa-envelope" aria-hidden="true"><span class="govuk-visually-hidden">Email</span></i> <a href="emails/request-pending-email">Request needs more information</a></li>
+    <li><i class="fa fa-envelope" aria-hidden="true"><span class="govuk-visually-hidden">Email</span></i> <a href="emails/request-approved">Your request to access Get adult social care data (request approved)</a></li>
+    <li><i class="fa fa-envelope" aria-hidden="true"><span class="govuk-visually-hidden">Email</span></i> <a href="emails/request-declined">Your request to access Get adult social care data (request declined)</a></li>
+    <li><i class="fa fa-envelope" aria-hidden="true"><span class="govuk-visually-hidden">Email</span></i> <a href="emails/request-pending">Your request to access Get adult social care data (request needs more information)</a></li>
   </ul>
 </ul>
 
 <h3 class="govuk-heading-m heading-override">Sign in (first time)</h3>
 <ul class="govuk-list govuk-list--bullet">
-  <li><a href="login-first-time/1-start">Get adult social care data: sign in or request access (start)</a></li>
+  <li><a href="login-first-time/start">Get adult social care data: sign in or request access (start)</a></li>
+  <li><a href="login-first-time/1-email">Sign in to Get adult social care data or request access</a></li>
+  <ul class="list-override govuk-list--bullet">
+    <li><i class="fa fa-envelope" aria-hidden="true"><span class="govuk-visually-hidden">Email</span></i> <a href="emails/email-security-code">DHSC security code (email security code)</a></li>
+  </ul>
+  <li><a href="login-first-time/2-confirm-code">Enter code to confirm your email address</a></li>
+  <ul class="list-override govuk-list--bullet">
+    <li><a href="login-first-time/2b-resend-confirm-code">Enter code to confirm your email address</a></li>
+  </ul>
+  <li><a href="login-first-time/3-create-password">Create your password</a></li>
+  <li><a href="login-first-time/4-account-created">Account created</a></li>
   <li><a href="setup/index">Setup screen on login</a> <strong class="govuk-tag govuk-tag--yellow"><a href="#" title="Question" class="js-modal js-modal-bolder" data-modal-text="Do we still need anything like this?" data-modal-title="Question" data-modal-close-text="Close" data-modal-close-title="Close this window" id="label_modal_1" aria-haspopup="dialog">Question</a></strong></li>
-  <li><a href="logged-in/index">Dashboard</a></li>
+  <li><a href="logged-in/index">Get adult social care data (signed in)</a></li>
 </ul>
 
 <h3 class="govuk-heading-m heading-override">Sign in (returning user)</h3>
 <ul class="govuk-list govuk-list--bullet">
-  <li><a href="login/1-start">Get adult social care data: sign in or request access (start)</a></li>
-  <li><a href="logged-in/index">Dashboard</a></li>
+  <li><a href="login/start">Get adult social care data: sign in or request access (start)</a></li>
+  <li><a href="login/1-email">Sign in to Get adult social care data or request access</a></li>
+  <ul class="list-override govuk-list--bullet">
+    <li><i class="fa fa-envelope" aria-hidden="true"><span class="govuk-visually-hidden">Email</span></i> <a href="emails/email-security-code">DHSC security code (email security code)</a></li>
+  </ul>
+  <li><a href="login/2-password">Enter your password</a></li>
+  <ul class="list-override govuk-list--bullet">
+    <li>I have forgotten my password - <a href="login/password-reset/2a-forgotten-details">Forgotten your details</a> <strong class="govuk-tag govuk-tag--red"><a href="#" title="Important" class="js-modal js-modal-bolder" data-modal-text="The entire password reset journey from this point is broken and insecure. This needs a complete overhaul." data-modal-title="Important" data-modal-close-text="Close" data-modal-close-title="Close this window" id="label_modal_1" aria-haspopup="dialog">Important</a></strong></li>
+    <li><a href="login/password-reset/2b-reset-password">Reset your password</a></li>
+    <li><a href="login/password-reset/2c-password-reset-confirmation">You have reset your password</a></li>
+    <ul class="list-override govuk-list--bullet">
+      <li><i class="fa fa-envelope" aria-hidden="true"><span class="govuk-visually-hidden">Email</span></i> <a href="emails/password-reset">Your password for Get adult social care data has been reset (password reset confirmation)</a></li>
+  </ul>
+  </ul>
+  <li><a href="login/3-confirm-code">Enter code to confirm your email address</a></li>
+  <ul class="list-override govuk-list--bullet">
+    <li><a href="login/3b-resend-confirm-code">Enter code to confirm your email address</a></li>
+  </ul>
+  <li><a href="logged-in/index">Get adult social care data (signed in)</a></li>
 </ul>
 
 <h3 class="govuk-heading-m heading-override">Care home capacity</h3>
 <ul class="govuk-list govuk-list--bullet">
   <li><a href="landing-pages/care-home-capacity/care-homes">Care home capacity</a></li>
   <ul class="list-override govuk-list--bullet">
-    <li>1. Map: care homes in your area - <a href="landing-pages/care-home-capacity/map-settings">Edit map settings (map)</a></li>
-    <li data-module="edge">1. Map: care homes in your area - <a href="#" data-message="Sorry, this hasn’t been designed yet">Edit indicators (table)</a></li>
-    <li data-module="edge">2. Charts - <a href="#" data-message="Sorry, this hasn’t been designed yet">Edit locations</a></li>
-    <li data-module="edge">2. Charts - <a href="#" data-message="Sorry, this hasn’t been designed yet">Edit indicators</a></li>
-    <li data-module="edge">3. Capacity in the care home sector - <a href="#" data-message="Sorry, this hasn’t been designed yet">Edit locations</a></li>
-    <li data-module="edge">3. Capacity in the care home sector - <a href="#" data-message="Sorry, this hasn’t been designed yet">Edit indicators</a></li>
-    <li data-module="edge">4. Time series - <a href="#" data-message="Sorry, this hasn’t been designed yet">Edit indicators</a></li>
+    <li>1. Map: care homes in your area</li>
+    <ul class="list-override govuk-list--bullet">
+      <li>Edit map settings (map) - <a href="landing-pages/care-home-capacity/map-settings">Map: care home locations near you - settings</a></li>
+      <li>Edit indicators (table) <strong class="govuk-tag">To do</strong></li>
+    </ul>
+    <li>2. Charts</li>
+    <ul class="list-override govuk-list--bullet">
+      <li>Edit locations <strong class="govuk-tag">To do</strong></li>
+      <li>Edit indicators <strong class="govuk-tag">To do</strong></li>
+    </ul>
+    <li>3. Capacity in the care home sector</li>
+    <ul class="list-override govuk-list--bullet">
+      <li>Edit locations <strong class="govuk-tag">To do</strong></li>
+      <li>Edit indicators <strong class="govuk-tag">To do</strong></li>
+    </ul>
+    <li>4. Time series</li>
+    <ul class="list-override govuk-list--bullet">
+      <li>Edit indicators <strong class="govuk-tag">To do</strong></li>
+    </ul>
   </ul>
 </ul>
 
 <h4 class="govuk-heading-s heading-override">Indicator definition and supporting information</h4>
 <ul class="govuk-list govuk-list--bullet">
-  <li data-module="edge"><a href="#" data-message="Sorry, this hasn’t been designed yet">People providing unpaid care, by hours per week</a></li>
-  <li data-module="edge"><a href="#" data-message="Sorry, this hasn’t been designed yet">Domiciliary care providers per 100,000 adult population</a></li>
-  <li data-module="edge"><a href="#" data-message="Sorry, this hasn’t been designed yet">People receiving domiciliary care per 100,000 adult population</a></li>
-  <li data-module="edge"><a href="#" data-message="Sorry, this hasn’t been designed yet">Workforce hours paid per person receiving domiciliary care</a></li>
-  <li data-module="edge"><a href="#" data-message="Sorry, this hasn’t been designed yet">Domiciliary care workers per 100,000 adult population</a></li>
+  <li>People providing unpaid care, by hours per week <strong class="govuk-tag">To do</strong></li>
+  <li>Domiciliary care providers per 100,000 adult population <strong class="govuk-tag">To do</strong></li>
+  <li>People receiving domiciliary care per 100,000 adult population <strong class="govuk-tag">To do</strong></li>
+  <li>Workforce hours paid per person receiving domiciliary care <strong class="govuk-tag">To do</strong></li>
+  <li>Domiciliary care workers per 100,000 adult population <strong class="govuk-tag">To do</strong></li>
   <li><a href="help/beds-per-100000-adult-population">Adult social care beds per 100,000 adult population</a></li>
   <li><a href="help/percentage-beds-occupied">Percentage of adult social care beds occupied</a></li>
   <li><a href="help/beds-care-provider-location">Number of adult social care beds in care provider location</a></li>
@@ -78,16 +126,106 @@
 
 <h3 class="govuk-heading-m heading-override">Community social care capacity</h3>
 <ul class="govuk-list govuk-list--bullet">
-  <li><a href="present-demand">Community social care capacity</a></li>
+  <li><a href="landing-pages/community-care/home-care">Community social care capacity</a></li>
   <ul class="list-override govuk-list--bullet">
-    <li><a href="present-demand-locations">Edit locations</a></li>
-    <li>Explore data - <a href="total-beds">Adult social care beds per 100,000 adult population</a></li>
+    <li>1. Choose your data preferences</li>
     <ul class="list-override govuk-list--bullet">
-      <li><a href="total-beds-edit-la">Edit locations</a></li>
-      <li><a href="total-beds-edit-single-filter">Edit chart filter (bar chart)</a></li>
-      <li><a href="total-beds-edit-filters">Edit time series filters (time series)</a></li>
-      <li><a href="total-beds-edit-table-filters">Edit table filters (table)</a></li>
-      <li><a href="help/smart-insights">About smart insights (experimental)</a></li>
+      <li>Change active location - <a href="landing-pages/community-care/locations-look-up">Edit locations</a></li>
+    </ul>
+    <li>2. Map: community social care in your area</li>
+    <ul class="list-override govuk-list--bullet">
+      <li>Change service type locations <strong class="govuk-tag">To do</strong></li>
+      <li>Change indicators <strong class="govuk-tag">To do</strong></li>
+    </ul>
+    <li>3. Chart: compare local authorities</li>
+    <ul class="list-override govuk-list--bullet">
+      <li>Edit locations - <a href="landing-pages/community-care/locations-look-up">Edit locations</a></li>
+      <li>Edit indicators - <a href="landing-pages/community-care/indicators-look-up">Edit indicators</a></li>
+    </ul>
+    <li>4. Table: capacity in the comunity care sector</li>
+    <ul class="list-override govuk-list--bullet">
+      <li>Edit locations - <a href="landing-pages/community-care/locations-look-up">Edit locations</a></li>
+      <li>Edit indicators <strong class="govuk-tag">To do</strong></li>
+    </ul>
+  </ul>
+</ul>
+
+<h4 class="govuk-heading-s heading-override">Indicator definition and supporting information</h4>
+<ul class="govuk-list govuk-list--bullet">
+  <li>Number of care provider locations <strong class="govuk-tag">To do</strong></li>
+  <li>Number of service users <strong class="govuk-tag">To do</strong></li>
+  <li>Number of care hours worked <strong class="govuk-tag">To do</strong></li>
+  <li>Number of care workers (agency included) <strong class="govuk-tag">To do</strong></li>
+</ul>
+
+<h3 class="govuk-heading-m heading-override">Current population needs</h3>
+<ul class="govuk-list govuk-list--bullet">
+  <li><a href="landing-pages/current-population-needs/index">Current population needs</a></li>
+  <ul class="list-override govuk-list--bullet">
+    <li>1. Choose your data preferences</li>
+    <ul class="list-override govuk-list--bullet">
+      <li>Change active location - <a href="landing-pages/community-care/locations-look-up">Edit locations</a></li>
+      <li>Change local authority - <a href="landing-pages/current-population-needs/select-la">Enter a local authority's name</a></li>
+      <li>Change service user age - <a href="landing-pages/current-population-needs/age-range">Edit age ranges</a></li>
+    </ul>
+    <li>2.1 Population age</li>
+    <ul class="list-override govuk-list--bullet">
+      <li>Explore data - <a href="data-pages/population-age/population-age">Population age</a></li>
+    </ul>
+    <li>2.2 Economic factors</li>
+    <ul class="list-override govuk-list--bullet">
+      <li>Explore data <strong class="govuk-tag">To do</strong></li>
+    </ul>
+    <li>2.3 Household composition</li>
+    <ul class="list-override govuk-list--bullet">
+      <li>Explore data <strong class="govuk-tag">To do</strong></li>
+    </ul>
+    <li>2.4 Health and wellbeing</li>
+    <ul class="list-override govuk-list--bullet">
+      <li>Explore data <strong class="govuk-tag">To do</strong></li>
+    </ul>
+  </ul>
+</ul>
+
+<h4 class="govuk-heading-s heading-override">Population age</h4>
+<ul class="govuk-list govuk-list--bullet">
+  <li><a href="data-pages/population-age/population-age">Population age</a></li>
+  <ul class="list-override govuk-list--bullet">
+    <li>1. Map: population by age group</li>
+      <ul class="list-override govuk-list--bullet">
+        <li>Change location - <a href="data-pages/population-age/edit-locations">Edit locations</a></li>
+      </ul>
+    <li>2. Chart: compare population age groups by area</li>
+      <ul class="list-override govuk-list--bullet">
+        <li>Edit locations - <a href="data-pages/population-age/edit-locations">Edit locations</a></li>
+      </ul>
+    <li>3. Table: compare population age groups by area</li>
+      <ul class="list-override govuk-list--bullet">
+        <li>Edit locations - <a href="data-pages/population-age/edit-locations">Edit locations</a></li>
+        <li>Edit indicators - <a href="data-pages/population-age/edit-indicators">Edit indicators</a></li>
+      </ul>
+    <li>4. Trends over time</li>
+      <ul class="list-override govuk-list--bullet">
+        <li>Edit indicators - <a href="data-pages/population-age/edit-indicators">Edit indicators</a></li>
+      </ul>
+  </ul>
+</ul>
+
+<h4 class="govuk-heading-s heading-override">Indicator definition and supporting information</h4>
+<ul class="govuk-list govuk-list--bullet">
+  <li><a href="help/population-size">Population size</a></li>
+  <li><a href="help/population-age">Percentage of population in age group</a></li>
+  <li><a href="help/disability-prevalence">Disability prevalence</a></li>
+</ul>
+
+<h3 class="govuk-heading-m heading-override">Future population needs</h3>
+<ul class="govuk-list govuk-list--bullet">
+  <li><a href="landing-pages/future-population-needs/index">Future population needs</a></li>
+  <ul class="list-override govuk-list--bullet">
+    <li>1. Choose your data preferences</li>
+    <ul class="list-override govuk-list--bullet">
+      <li>Edit locations <strong class="govuk-tag">To do</strong></li>
+      <li>Edit local authority <strong class="govuk-tag">To do</strong></li>
     </ul>
   </ul>
 </ul>
@@ -95,84 +233,24 @@
 <h4 class="govuk-heading-s heading-override">Indicator definition and supporting information</h4>
 <ul class="govuk-list govuk-list--bullet">
   <li><a href="help/population-size">Population size</a></li>
-  <li><a href="help/population-age">Percentage of population aged 18 to 64, or 65 and over</a></li>
-  <li><a href="help/disability-prevalence">Disability prevalence</a></li>
-  <li><a href="help/beds-per-100000-adult-population">Adult social care beds per 100,000 adult population</a></li>
-  <li><a href="help/percentage-beds-occupied.html">Percentage of adult social care beds occupied</a></li>
-  <li><a href="help/beds-care-provider-location">Number of adult social care beds in care provider location</a></li>
-  <li><a href="help/percentage-beds-occupied-care-provider-location">Percentage of adult social care beds occupied in care provider location</a></li>
-</ul>
-
-<h3 class="govuk-heading-m heading-override">Current population needs</h3>
-<ul class="govuk-list govuk-list--bullet">
-  <li><a href="">Current population needs</a></li>
-  <ul class="list-override govuk-list--bullet">
-    <li><a href="">Edit locations</a></li>
-    <li>Explore data - <a href="total-beds">Adult social care beds per 100,000 adult population</a></li>
-    <ul class="list-override govuk-list--bullet">
-      <li><a href="total-beds-edit-la">Edit locations</a></li>
-      <li><a href="total-beds-edit-single-filter">Edit chart filter (bar chart)</a></li>
-      <li><a href="total-beds-edit-filters">Edit time series filters (time series)</a></li>
-      <li><a href="total-beds-edit-table-filters">Edit table filters (table)</a></li>
-      <li><a href="help/smart-insights">About smart insights (experimental)</a></li>
-    </ul>
-  </ul>
-</ul>
-
-<h4 class="govuk-heading-s heading-override">Indicator definition and supporting information</h4>
-<ul class="govuk-list govuk-list--bullet">
-  <li><a href="">...</a></li>
-  <li><a href="">...</a></li>
-  <li><a href="">...</a></li>
-  <li><a href="">...</a></li>
-  <li><a href="">...</a></li>
-  <li><a href="">...</a></li>
-  <li><a href="">...</a></li>
-  <li><a href="">...</a></li>
-</ul>
-
-<h3 class="govuk-heading-m heading-override">Future population needs</h3>
-<ul class="govuk-list govuk-list--bullet">
-  <li><a href="">Future population needs</a></li>
-  <ul class="list-override govuk-list--bullet">
-    <li><a href="">Edit locations</a></li>
-    <li>Explore data - <a href="total-beds">Adult social care beds per 100,000 adult population</a></li>
-    <ul class="list-override govuk-list--bullet">
-      <li><a href="total-beds-edit-la">Edit locations</a></li>
-      <li><a href="total-beds-edit-single-filter">Edit chart filter (bar chart)</a></li>
-      <li><a href="total-beds-edit-filters">Edit time series filters (time series)</a></li>
-      <li><a href="total-beds-edit-table-filters">Edit table filters (table)</a></li>
-      <li><a href="help/smart-insights">About smart insights (experimental)</a></li>
-    </ul>
-  </ul>
-</ul>
-
-<h4 class="govuk-heading-s heading-override">Indicator definition and supporting information</h4>
-<ul class="govuk-list govuk-list--bullet">
-  <li><a href="">...</a></li>
-  <li><a href="">...</a></li>
-  <li><a href="">...</a></li>
-  <li><a href="">...</a></li>
-  <li><a href="">...</a></li>
-  <li><a href="">...</a></li>
-  <li><a href="">...</a></li>
-  <li><a href="">...</a></li>
+  <li><a href="help/population-age">Percentage of population in age group</a></li>
+  <li><a href="help/population-65-over-help">Population aged 65 and over needing domestic or self-care help</a></li>
 </ul>
 
 <h3 class="govuk-heading-m">Additional screens</h3>
 
 <h4 class="govuk-heading-s heading-override">Email notifications</h4>
 <ul class="govuk-list govuk-list--bullet">
-  <li><i class="fa fa-envelope" aria-hidden="true"><span class="govuk-visually-hidden">Email</span></i> <a href="emails/security-code-email">DHSC security code</a></li>
-  <li><i class="fa fa-envelope" aria-hidden="true"><span class="govuk-visually-hidden">Email</span></i> <a href="emails/password-reset-email">Password reset confirmation</a></li>
-  <li><i class="fa fa-envelope" aria-hidden="true"><span class="govuk-visually-hidden">Email</span></i> <a href="emails/request-approved-email">Request approved</a></li>
-  <li><i class="fa fa-envelope" aria-hidden="true"><span class="govuk-visually-hidden">Email</span></i> <a href="emails/request-declined-email">Request declined</a></li>
-  <li><i class="fa fa-envelope" aria-hidden="true"><span class="govuk-visually-hidden">Email</span></i> <a href="emails/request-pending-email">Request needs more information</a></li>
+  <li><i class="fa fa-envelope" aria-hidden="true"><span class="govuk-visually-hidden">Email</span></i> <a href="emails/email-security-code">DHSC security code (email security code)</a></li>
+  <li><i class="fa fa-envelope" aria-hidden="true"><span class="govuk-visually-hidden">Email</span></i> <a href="emails/password-reset">Your password for Get adult social care data has been reset (password reset confirmation)</a></li>
+  <li><i class="fa fa-envelope" aria-hidden="true"><span class="govuk-visually-hidden">Email</span></i> <a href="emails/request-approved">Your request to access Get adult social care data (request approved)</a></li>
+  <li><i class="fa fa-envelope" aria-hidden="true"><span class="govuk-visually-hidden">Email</span></i> <a href="emails/request-declined">Your request to access Get adult social care data (request declined)</a></li>
+  <li><i class="fa fa-envelope" aria-hidden="true"><span class="govuk-visually-hidden">Email</span></i> <a href="emails/request-pending">Your request to access Get adult social care data (request needs more information)</a></li>
 </ul>
 
 <h4 class="govuk-heading-s heading-override">Footer pages</h4>
 <ul class="govuk-list govuk-list--bullet">
-  <li><a href="dashboard/accessibility-statement">Accessibility statement</a> <strong class="govuk-tag">To do</strong></li>
+  <li><a href="logged-in/accessibility-statement">Accessibility statement</a></li>
 </ul>
 
 <h4 class="govuk-heading-s heading-override">Session sign out and timeout</h4>

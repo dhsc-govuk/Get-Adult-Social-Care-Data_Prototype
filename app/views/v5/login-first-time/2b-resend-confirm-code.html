@@ -17,7 +17,7 @@
       <p>We have sent a code to <strong>{{ data['email'] }}</strong></p>
       <p>The email contains a 6-digit security code. The code expires after 15 minutes.</p>
 
-      <form class="form" action="../dashboard/index" method="post">
+      <form class="form" action="3-create-password" method="post">
        
         {% from "govuk/components/input/macro.njk" import govukInput %}
 
@@ -33,16 +33,16 @@
         <details class="govuk-details">
           <summary class="govuk-details__summary">
             <span class="govuk-details__summary-text">
-              Problems with the code?
+              I did not receive the code
             </span>
           </summary>
           <div class="govuk-details__text">
             <p class="govuk-body">
-              If you did not receive the code, wait a few minutes and check your spam or junk mail folder. The subject of the email is 'DHSC security code'.
+           The email may take a few minutes to arrive. The subject of the email is 'DHSC security code'.
             </p>
-            <p class="govuk-body">
-              If the code has expired or has still not arrived, <a class="govuk-link" href="4-confirm-code">request a new code</a>.
-            </p>
+            <p class="govuk-body"></p>
+            If you still have not got the email, check your spam or junk mail folder. If it is not there, we can <a class="govuk-link" href="2b-resend-confirm-code">send the code again</a>.
+             </p>
           </div>
         </details>
        
