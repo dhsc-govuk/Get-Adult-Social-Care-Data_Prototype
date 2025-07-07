@@ -1,90 +1,92 @@
-{% extends "v5/layouts/landing-page.html" %}
+{% extends "v5/layouts/logged-in.html" %}
 
-{% set pageName = "Care home capacity" %}
+{% set pageName = "Care home provision" %}
 
-{% block content %} 
-<a href="javascript:history.back()" class="govuk-back-link">Back</a>
+{% block beforeContent %}
+<a href="javascript:window.history.back()" class="govuk-back-link" >Back</a>
+{% endblock %}
+
+{% block content %}
+<style>
+
+  /* Contents box styling */
+  .contents-box {
+    background-color: #f3f2f1; /* GOV.UK light grey */
+    padding: 20px;
+    margin-bottom: 20px;
+    max-width: 63%; /* Adjusted width for better spacing */
+  }
+  
+  /* Remove default list indentation */
+  .govuk-list--number {
+    counter-reset: main-counter;
+    list-style-type: none;
+    padding-left: 0; /* Remove padding */
+    margin-left: 0; /* Remove margin */
+  }
+  
+  .govuk-list--number > li {
+    counter-increment: main-counter;
+  }
+  
+  .govuk-list--number > li::before {
+    content: counter(main-counter) ". ";
+    font-weight: normal;
+  }
+  
+  /* Styling for the nested (child) ordered list */
+  .nested-list {
+    counter-reset: sub-counter;
+    list-style-type: none;
+    padding-left: 1.5rem; /* Align nested items properly */
+    margin-left: 0;
+  }
+  
+  .nested-list li {
+    counter-increment: sub-counter;
+  }
+  
+  .nested-list li:before {
+    content: counter(main-counter) "." counter(sub-counter) ". ";
+    font-weight: normal;
+  }
+  
+  /* Bridge Text Styling */
+  .bridge-text {
+    margin-top: 20px;
+    font-weight: bold;
+  }
+
+</style>
+
 <div class="govuk-grid-row">
+
   <div class="govuk-grid-column-full">
-    <!--<span class="govuk-caption-l">Demand and capacity</span>-->
+    <!-- <span class="govuk-caption-l">Demand and capacity</span> -->
     <h1 class="govuk-heading-l">{{pageName}}</h1>
     <p class="govuk-body-l">Understand local capacity to meet adult social care needs.</p>
     
-    
-    <style>
-      /* Contents Box Styling */
-      .contents-box {
-        background-color: #f3f2f1; /* GOV.UK light grey */
-        padding: 20px;
-        margin-bottom: 20px;
-        max-width: 63%; /* Adjusted width for better spacing */
-      }
-      
-      /* Remove default list indentation */
-      .govuk-list--number {
-        counter-reset: main-counter;
-        list-style-type: none;
-        padding-left: 0; /* Remove padding */
-        margin-left: 0; /* Remove margin */
-      }
-      
-      .govuk-list--number > li {
-        counter-increment: main-counter;
-      }
-      
-      .govuk-list--number > li::before {
-        content: counter(main-counter) ". ";
-        font-weight: normal;
-      }
-      
-      /* Styling for the nested (child) ordered list */
-      .nested-list {
-        counter-reset: sub-counter;
-        list-style-type: none;
-        padding-left: 1.5rem; /* Align nested items properly */
-        margin-left: 0;
-      }
-      
-      .nested-list li {
-        counter-increment: sub-counter;
-      }
-      
-      .nested-list li::before {
-        content: counter(main-counter) "." counter(sub-counter) ". ";
-        font-weight: normal;
-      }
-      
-      /* Bridge Text Styling */
-      .bridge-text {
-        margin-top: 20px;
-        font-weight: bold;
-      }
-    </style>
-    
-    <!-- Contents Box -->
     <div class="contents-box">
       <h2 class="govuk-heading-m">Contents</h2>
-      <ol class="govuk-list govuk-list--number">
-        <li><a href="#preferences" class="govuk-link">Map: care homes in your area</a>
-          <li><a href="#carehome" class="govuk-link">Charts</a></li>
-          <li><a href="#carehome" class="govuk-link">Table: capacity in the care home sector</a></li>
-          <li><a href="#time-series" class="govuk-link">Time series</a></li>
-          <li><a href="#footnotes" class="govuk-link">Footnotes</a></li>
-          <li><a href="#related" class="govuk-link">Related information</a></li>
-        </ol>
-      </div>
+      <ul class="govuk-list govuk-list--bullet">
+        <li><a href="#preferences" class="govuk-link">Care homes in your local authority</a>
+        <li><a href="#carehome" class="govuk-link">Charts</a></li>
+        <li><a href="#carehome" class="govuk-link">Table: capacity in the care home sector</a></li>
+        <li><a href="#time-series" class="govuk-link">Time series</a></li>
+        <li><a href="#footnotes" class="govuk-link">Footnotes</a></li>
+        <li><a href="#related" class="govuk-link">Related information</a></li>
+      </ul>
+    </div>
+
+    <style>
       
-      <!-- 
-      
-      Main content
-      
-      -->
-      <style>
-        h2{margin-top:4em}
-      </style>
-      <div class="govuk-grid-row">
-        <div class="govuk-grid-column-width-full">
-          <h3 id="unpaid-care" class="govuk-heading-m govuk-!-padding-top-9">1. Map: Care homes in your area</h3>
+      h2 {
+        margin-top: 4em;
+      }
+    
+    </style>
+
+          <h3 id="unpaid-care" class="govuk-heading-m govuk-!-padding-top-9">Care homes in your local authority</h3>
           <!-- Tab start -->
           <div class="govuk-tabs" data-module="govuk-tabs">
             <h2 class="govuk-tabs__title">
@@ -102,6 +104,7 @@
                 </a>
               </li>
               </ul> 
+              
               <div class="govuk-tabs__panel" id="care-homes-map">
                 <h3>Map</h3>
                 <p>Showing residential care homes near Greenfields Care Home, Suffolk</p>
@@ -112,18 +115,25 @@
                 <p style="margin-top:1em"><strong>Suffolk:</strong> Population aged over 85: 3.1% | 
                   Beds occupied: 89% | 
                   Deprivation: low</p>
-          </div>
-          <div class="govuk-tabs__panel" id="map-table">
-            <h3>Care homes near Greenfields Care Home, Suffolk</h3>
-            <a type="submit" style="margin-right:1em" class="govuk-button govuk-button--secondary" data-module="govuk-button" href="map-settings">
-              Edit indicators
-            </a>
+              </div>
 
-            {% include "./_locations-table.html" %}
+            <div class="govuk-tabs__panel" id="map-table">
+              <h3>Care homes near Greenfields Care Home, Suffolk</h3>
+              <a type="submit" style="margin-right:1em" class="govuk-button govuk-button--secondary" data-module="govuk-button" href="map-settings">
+              Edit indicators
+              </a>
+
+              {% include "./_locations-table.html" %}
             </div>
+
+          </div>
         </div>
+
       </div>
-      <div class="govuk-grid-row">
+
+
+<div class="govuk-grid-row">
+
         <div class="govuk-grid-column-two-thirds">
           
           <!-- 
@@ -132,8 +142,8 @@
           
           -->
           
-          <h2 id="charts">2. Charts</h2>
-          <div class="govuk-grid-column-full">
+          <h2 id="charts">Charts</h2>
+ 
           <a type="submit" style="margin-right:1em" class="govuk-button govuk-button--secondary" data-module="govuk-button" href="map-settings">
             Edit locations
           </a>
@@ -142,57 +152,64 @@
           </a>
           </div>
           {% include "./_locations-bar-chart.html" %}
-        </div>
 </div>
-        <h3 id="care-home" class="govuk-heading-m govuk-!-padding-top-9">3. Capacity in the care home sector</h3>
-        <p class="govuk-body">Adult social care beds and percentage of occupancy are used as measures of capacity in the care home sector.</p>
-        <p class="govuk-body">The number of adult social care beds per 100,000 adult population provides an indicator of current care capacity. A higher number usually suggests more sufficient capacity for locations with similar needs.</p>
-        <a type="submit" style="margin-right:1em" class="govuk-button govuk-button--secondary" data-module="govuk-button" href="map-settings">
-          Edit locations
-        </a>
-        <a type="submit" style="margin-right:1em" class="govuk-button govuk-button--secondary" data-module="govuk-button" href="map-settings">
-          Edit indicators
-        </a>
-      </div>
+
+<div class="govuk-grid-row">
+        
+  <div class="govuk-grid-column-two-thirds">
+          <h3 id="care-home" class="govuk-heading-m govuk-!-padding-top-9">Capacity in the care home sector</h3>
+          <p class="govuk-body">Adult social care beds and percentage of occupancy are used as measures of capacity in the care home sector.</p>
+          <p class="govuk-body">The number of adult social care beds per 100,000 adult population provides an indicator of current care capacity. A higher number usually suggests more sufficient capacity for locations with similar needs.</p>
+          <a type="submit" style="margin-right:1em" class="govuk-button govuk-button--secondary" data-module="govuk-button" href="map-settings">
+            Edit locations
+          </a>
+          <a type="submit" style="margin-right:1em" class="govuk-button govuk-button--secondary" data-module="govuk-button" href="map-settings">
+            Edit indicators
+          </a>
+  </div>
+
+</div>
+
+<div class="govuk-grid-row">
+
       <div class="govuk-grid-column-full">
         {% include "./_las-table.html" %}
         <p class="govuk-body">Source: Capacity Tracker<br>
           Data correct as of 5 February 2025</p>
           
-        </div>
       </div>
-        
-        <div class="govuk-grid-column-two-thirds">
-          <h2 id="time-series">4. Time series</h2>
-          <a type="submit" style="margin-right:1em" class="govuk-button govuk-button--secondary" data-module="govuk-button" href="map-settings">
-            Edit indicators
-          </a>
-          {% include "./_time-series.html" %}
-          <h2 id="footnotes">5. Footnotes</h2>
+  
+    </div>
+
+<div class="govuk-grid-row">
+<div class="govuk-grid-column-two-thirds">
+
+
+    <h2 class="govuk-heading-m" id="footnotes">Footnotes</h2>
+    
+    <p class="govuk-body">
+      Find out how each indicator is defined, sourced, and updated.
+    </p>
+    <p class="govuk-body">Select an indicator to view its footnotes:</p>
+    <ol class="govuk-list govuk-list--bullet">
+      <!--
+      <li><a href="../../help/population-size.html" class="govuk-link">Population size</a></li>
+      <li><a href="../../help/population-age.html" class="govuk-link">Percentage of population in age group</a></li>
+      <li><a href="../../help/disability-prevalence.html" class="govuk-link">Disability prevalence</a></li>-->
+      <li><a href="../../help/" class="govuk-link">People providing unpaid care, by hours per week</a></li>
+      <li><a href="../../help/" class="govuk-link">Domiciliary care providers per 100,000 adult population</a></li>
+      <li><a href="../../help/" class="govuk-link">People receiving domiciliary care per 100,000 adult population</a></li>
+      <li><a href="../../help/" class="govuk-link">Workforce hours paid per person receiving domiciliary care</a></li>
+      <li><a href="../../help/" class="govuk-link">Domiciliary care workers per 100,000 adult population</a></li>
+      <li><a href="../../help/beds-per-100000-adult-population.html" class="govuk-link">Adult social care beds per 100,000 adult population</a></li>
+      <li><a href="../../help/percentage-beds-occupied" class="govuk-link">Percentage of adult social care beds occupied</a></li>
+      <li><a href="../../help/beds-care-provider-location" class="govuk-link">Number of adult social care beds in care provider location</a></li>
+      
+    </ol>
           
-          <p class="govuk-body">
-            Find out how each indicator is defined, sourced, and updated.
-          </p>
-          <p class="govuk-body">Select an indicator to view its footnotes:</p>
-          <ol class="govuk-list govuk-list--bullet">
-            <!--
-            <li><a href="../../help/population-size.html" class="govuk-link">Population size</a></li>
-            <li><a href="../../help/population-age.html" class="govuk-link">Percentage of population in age group</a></li>
-            <li><a href="../../help/disability-prevalence.html" class="govuk-link">Disability prevalence</a></li>-->
-            <li><a href="../../help/" class="govuk-link">People providing unpaid care, by hours per week</a></li>
-            <li><a href="../../help/" class="govuk-link">Domiciliary care providers per 100,000 adult population</a></li>
-            <li><a href="../../help/" class="govuk-link">People receiving domiciliary care per 100,000 adult population</a></li>
-            <li><a href="../../help/" class="govuk-link">Workforce hours paid per person receiving domiciliary care</a></li>
-            <li><a href="../../help/" class="govuk-link">Domiciliary care workers per 100,000 adult population</a></li>
-            <li><a href="../../help/beds-per-100000-adult-population.html" class="govuk-link">Adult social care beds per 100,000 adult population</a></li>
-            <li><a href="../../help/percentage-beds-occupied" class="govuk-link">Percentage of adult social care beds occupied</a></li>
-            <li><a href="../../help/beds-care-provider-location" class="govuk-link">Number of adult social care beds in care provider location</a></li>
-            
-          </ol>
           
           
-          
-          <h2 id="related">6. Related information</h2>
+          <h2 class="govuk-heading-m" id="related">Related information</h2>
           
           <p class="govuk-body">
             For more information on capacity, check the latest Market Position Statement and Joint Strategic Needs Assessment. You will usually find these on the local authority's website.
