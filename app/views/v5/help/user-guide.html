@@ -1,11 +1,12 @@
-{% extends "v5/layouts/help.html" %}
+{% extends "v5/layouts/logged-in.html" %}
 
 {% set pageName = "User guide" %}
 
+{% block beforeContent %}
+<a href="javascript:window.history.back()" class="govuk-back-link" >Back</a>
+{% endblock %}
+
 {% block content %}
-
-<a href="javascript:history.back()" class="govuk-back-link">Back</a>
-
 <div class="govuk-grid-row">
   
   <div class="govuk-grid-column-two-thirds">
