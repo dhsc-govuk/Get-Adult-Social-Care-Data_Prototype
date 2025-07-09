@@ -1,12 +1,15 @@
-{% extends "v5/layouts/data.html" %}
+{% extends "v5/layouts/logged-in.html" %}
 
 {% set pageName = "Adult social care beds per 100,000 adult population" %}
 
+{% block beforeContent %}
+<a href="javascript:window.history.back()" class="govuk-back-link" >Back</a>
+{% endblock %}
+
 {% block content %} 
-<a href="../../logged-in/present-demand" class="govuk-back-link">Back</a>
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <!--<span class="govuk-caption-l">Demand and capacity</span>-->
+      <span class="govuk-caption-l">Care home provision</span>
       <h1 class="govuk-heading-l">{{pageName}}</h1>
       <p class="govuk-body-l">The total number of beds recorded by care providers across health and adult social care, adjusted to a rate of 100,000 adults in the local authority population.</p>
   

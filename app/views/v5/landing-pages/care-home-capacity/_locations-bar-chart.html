@@ -1,14 +1,14 @@
 <style>
   .chart-bar{fill:#955196; margin: 0}
 </style>
-{% set las = 
-  [
+
+{% set las = [
   ["Suffolk",2349,89],
   ["East of England, mean",2299,80],
   ["All of England, mean",2145,87]
-  ]
-  %}
-<div class="govuk-grid-column-two-thirds">
+] %}
+
+<div class="govuk-grid-column-full">
   <h3 class="govuk-heading-m">Residential care beds in the East of England</h3>
   <table class="govuk-table">
     <thead class="govuk-table__head">
@@ -58,6 +58,8 @@
     {% endif %}
     {% endfor %}
   </tbody>
-</table>
-<p><a href="#">Export table as PNG</a></p>
+  </table>
+
+  <p class="govuk-body"><a href="#" class="govuk-link">Export table as PNG</a></p>
+  <p class="govuk-body"><a href="../../data-pages/beds-over-100K/index" class="govuk-link">Explore more residential care bed data</a></p>
 </div>
