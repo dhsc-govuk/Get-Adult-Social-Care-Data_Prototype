@@ -1,0 +1,255 @@
+{% extends "v5/layouts/logged-in.html" %}
+
+{% set pageName = "User guide" %}
+
+{% block beforeContent %}
+<a href="javascript:window.history.back()" class="govuk-back-link" >Back</a>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">
+      User guide
+    </h1>
+    <p class="govuk-body-l">Learn how to use this service and make the most of its features.</p>
+
+    <style>
+      /* Contents Box Styling */
+      .contents-box {
+          background-color: #f3f2f1; /* GOV.UK light grey */
+          padding: 20px;
+          margin-bottom: 20px;
+      }
+    
+      /* Remove default list indentation */
+      .govuk-list--number {
+          counter-reset: main-counter;
+          list-style-type: none;
+          padding-left: 0; /* Remove padding */
+          margin-left: 0; /* Remove margin */
+      }
+    
+      .govuk-list--number > li {
+          counter-increment: main-counter;
+      }
+    
+      .govuk-list--number > li::before {
+          content: counter(main-counter) ". ";
+          font-weight: normal;
+      }
+    
+      /* Styling for the nested (child) ordered list */
+      .nested-list {
+          counter-reset: sub-counter;
+          list-style-type: none;
+          padding-left: 1.5rem; /* Align nested items properly */
+          margin-left: 0;
+      }
+    
+      .nested-list li {
+          counter-increment: sub-counter;
+      }
+    
+      .nested-list li::before {
+          content: counter(main-counter) "." counter(sub-counter) ". ";
+          font-weight: normal;
+      }
+    
+      /* Bridge Text Styling */
+      .bridge-text {
+          margin-top: 20px;
+          font-weight: bold;
+      }
+    </style>
+    
+    <style>
+      h2{margin-top:4em}
+    </style>
+
+
+    <!-- Contents Box -->
+    <div class="contents-box">
+      <h2 class="govuk-heading-m">Contents</h2>
+      <ol class="govuk-list govuk-list--number">
+          <li><a href="#about" class="govuk-link">About this service</a></li>
+          <li><a href="#guide" class="govuk-link">Help with finding data</a></li>
+          <li><a href="#guide" class="govuk-link">Data accuracy and completeness</a></li>
+          <li><a href="#data-sources" class="govuk-link">Data sources</a></li>
+          <li><a href="#data-sharing-reuse" class="govuk-link">Data sharing and reuse</a></li>
+          <li><a href="#data-sharing-reuse" class="govuk-link">Key terms and definitions</a></li>
+          <li><a href="#ai" class="govuk-link">How we use artificial intelligence (AI) in this service</a></li>
+          <li><a href="#news-archive" class="govuk-link">News archive</a></li>
+          <li><a href="#related" class="govuk-link">Contact us</a></li>
+      </ol>
+    </div>
+
+    <h2 id="about">About this service</h2>
+
+    <p class="govuk-body">Get adult social care data is a digital insight tool that provides access to a wide range of datasets relevant to adult social care in England.</p>
+
+    <p class="govuk-body">The service brings together data from the Care Quality Commission, Office for National Statistics, NHS England, Capacity Tracker and other sources. <a href="#data-sources" class="govuk-link">Learn more about the data sources.</a><p>
+
+      <p class="govuk-body">When new data is published, the service updates automatically so you can get insights based on the most current information.</p>
+ 
+      <p class="govuk-body">You can use this service to:</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li><strong>access data and track indicators</strong> across a range of topics, using the latest available information</li>
+      <li><strong>explore and visualise data</strong> with interactive tools that help you to identify patterns, trends and insights</li>
+      <li><strong>support decision-making and strategic planning</strong> by downloading datasets and charts in formats you can integrate into your own analyses</li>
+    </ul>
+
+    <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+    <h2 id="guide">Help with finding data</h2>
+
+    <p class="govuk-body">There are different ways to find data in this service:</p>
+
+    <p class="govuk-body">You can search across indicators and topics to find specific information. <a href="" class="govuk-link">Search for data now</a>.</p>
+
+    <p class="govuk-body">If you prefer to explore related data, you can <a href="" class="govuk-link">browse data by topic.</a></p>
+
+    <p class="govuk-body">On topic pages, you can adjust the data shown using the <strong>Change your data preferences</strong> option.</p>  
+
+    <p class="govuk-body">To access more detailed information about an indicator, use the Explore more data option on a topic page.</p>
+
+    <p class="govuk-body">If you need the raw data to explore with your own analytical tools, you can <a href="../logged-in/download-full-datasets.html">download full datasets</a>.</p>
+
+    <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+    <h2 id="guide">Data accuracy and completeness</h2>
+
+    <p class="govuk-body">The data in this service is sourced from established organisations. However, each dataset has been collected using different methods and may have gaps or variations in how data is recorded.</p>
+
+    <h3 class="govuk-heading-s">What to consider when using data</h3>
+
+    <p class="govuk-body">When using the data, you should be aware of:</p>
+
+    <ul class="govuk-list govuk-list--bullet">
+      <li>coverage – some datasets may not include all local authorities or demographic groups due to data availability.</li> 
+      <li>methodology differences – the way data is collected and categorised can vary across sources, which affects direct comparisons.</li> 
+      <li>timeliness – some datasets are updated more often than others, so there may be a delay between data collection and publication.</li> 
+      <li>confidence levels – some indicators are based on sample data or estimates rather than full counts, so figures should be treated as estimates.</li> 
+      </ul>
+
+    <h4 class="govuk-heading-s">Where to find more details</h4>
+
+    <p class="govuk-body">Each indicator includes footnotes explaining the limitations and methodology of each dataset used. These are highlighted on the relevant indicator's page.</p>
+    
+    <p class="govuk-body">You can also check the official documentation from the data provider, where available.</p>
+
+    <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+    <h2 id="data-sources">Data sources</h2>
+
+    <p class="govuk-body">Find out where the data is sourced from, including details of data providers and how updates are managed.
+    </p>
+
+    <p>Get adult social care data uses the following public and private data sources.</p>
+
+    <h3 class="govuk-heading-s">Public data sources</h3>
+
+    <ul class="govuk-list govuk-list--bullet">
+      <li>Adult Social Care Statistics (Department for Health and Social Care)</li>
+      <li>Adult Social Care Outcomes Framework (ASCOF) (NHS England)</li>
+      <li>Adult Social Care Report (Department for Health and Social Care)</li>
+      <li>Care Quality Commission (CQC) Care Directory</li>
+      <li>Office for National Statistics collection</li>
+      <li>Short and Long Term Return (SALT) (NHS England)</li>
+      </ul>
+
+      <h3 class="govuk-heading-s">Private data sources</h3>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>Capacity Tracker</li>
+        <li>Skills for Care</li>
+        <li>Client Level Data (CLD)</li>
+        </ul>
+
+    <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+    <h2 id="data-sharing-reuse">Data sharing and re-use</h2>
+
+    <p class="govuk-body">Unless stated otherwise, you may re-use this information (excluding logos) free of charge in any format or medium, under the terms of the <a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" target="_blank">Open Government Licence v.3.0 (opens in new tab)</a>.</p>
+      
+    <p class="govuk-body">If we have identified any third-party copyright information, you must get permission from the copyright holders to re-use it.</p>
+
+  <div class="govuk-warning-text">
+    <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+    <strong class="govuk-warning-text__text">
+      <span class="govuk-visually-hidden">Warning</span>
+      Any data from Capacity Tracker in this service is for private use only and must not be shared or published externally. By accessing this service, you agree to these conditions.
+    </strong>
+  </div>
+
+    <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+    <h2 id="news-archive">Key terms and definitions</h2>
+
+    <p class="govuk-body">You can find definitions and explanations of terms used in this service in the <a href="../logged-in/glossary.html">Glossary</a>.</p>
+
+    <p class="govuk-body">You can also access definitions and background information for each indicator in the footnotes provided. You can find links to these footnotes on the relevant topic and indicator pages.</p>
+
+    <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+    <h2 id="ai">How we use artificial intelligence (AI) in this service</h2>
+
+    <p class="govuk-body">Learn how AI is used in this service, including an overview of Smart insights, how it works, its limitations, and best practices for using it effectively.</p>
+
+    <h3 class="govuk-heading-s">Overview</h3>
+
+    <p class="govuk-body">Smart insights is a feature that uses AI to help analyse data and identify key trends and patterns.
+
+    <p class="govuk-body">This is designed to support - but not replace - your own analysis of the data.</p>
+    
+    <p class="govuk-body">As it's experimental, there are some limitations to keep in mind.</p>
+
+    <h3 class="govuk-heading-s">How it works</h3>
+
+    <p class="govuk-body">Smart insights uses AI models trained on large datasets to identify relationships within the data.</p>
+    
+    <p class="govuk-body">These models generate summaries and interpretations designed to simplify complex information and help you uncover useful insights.</p>
+
+    <h3 class="govuk-heading-s">Limitations</h3>
+
+    <p class="govuk-body">AI-generated insights are generally reliable, but may not always be complete, reflect the most recent policy changes, or capture important context.</p>
+    
+    <p class="govuk-body">Sometimes, AI might misinterpret data, producing insights that do not fully align with the underlying trends or patterns.</p>
+
+    <h3 class="govuk-heading-s">Best practices</h3>
+
+    <p class="govuk-body">Always cross-check the AI-generated insights with other data sources to get a fuller picture.</p>
+    
+    <p class="govuk-body">Review the insights carefully, and verify they are correct and appropriate for your needs before sharing or using them.</p>
+
+    <p class="govuk-body">To help us refine and improve this feature, please <a href="" class="govuk-link">share your feedback</a>.</p>
+    
+      
+    <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+    <h2 id="news-archive">News archive</h2>
+
+    <p class="govuk-body">Find news and updates for Get adult social care data.</p>
+
+    <p class="govuk-body"><a href="news-archive.html"class="govuk-link">View news archive</a></p>
+
+    <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+    <h2 id="contact-us">Contact us</h2>
+
+      <p class="govuk-body-m">Find out how to contact us if you have questions or feedback about Get adult social care data.</p>
+
+     <h3 class="govuk-heading-s">Get help using the service</h3>
+
+     <p class="govuk-body">If you need further support with using this service, email us at <a href="mailto:asc.data@dhsc.gov.uk" class="govjuk-link">gascd.enquiries@dhsc.gov.uk</a>.</p>
+
+     <h3 class="govuk-heading-s">Give feedback</h3>
+ 
+     <p class="govuk-body">We welcome your comments to help us improve Get adult social care data. Please <a href="" class="govuk-link">share your feedback (opens in new tab)</a>.</p>
+ 
+
+
+  {% endblock %}
+  
