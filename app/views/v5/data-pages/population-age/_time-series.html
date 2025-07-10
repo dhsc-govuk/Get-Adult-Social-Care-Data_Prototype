@@ -1,24 +1,34 @@
-<!-- Load d3.js -->
+<!-- Load D3.js -->
 <script src="https://d3js.org/d3.v4.js"></script>
 
 <!-- Add styles for the chart -->
 <style>
+  
   @media only screen and (max-width: 500px) {
-    #my_dataviz_a{
-      width:400px; 
+    #my_dataviz_a {
+      width: 100%;
       overflow-x: scroll;
     }
   }
-  .legendTitle, .chartText{font-size:1.2em}
-  .chartAxis{font-size:1.5em}
+
+  .legendTitle, .chartText {
+    font-size: 1.2em;
+  }
+
+  .chartAxis {
+    font-size: 1.5em;
+  }
+
   text {
     font-family: "GDS Transport", arial, sans-serif;
     font-size: 1em;
   }
-  .chart-title{
+
+  .chart-title {
     font-weight: bold;
     font-size: 1.2em;
   }
+  
 </style>
 
 <!-- Create a div where the graph will take place -->
@@ -26,12 +36,15 @@
 
 <script>
   
-  // set the dimensions and margins of the graph
-  var margin = {top: 120, right: 30, bottom: 50, left: 60},
-  width = 600 - margin.left - margin.right,
-  height = 600 - margin.top - margin.bottom;
+  // Set the dimensions and margins of the graph
+  // var margin = { top: 120, right: 30, bottom: 50, left: 60 },
+  // width = 600 - margin.left - margin.right,
+  // height = 600 - margin.top - margin.bottom;
+  var margin = { top: 120, right: 30, bottom: 40, left: 30 },
+  width = 960 - margin.left - margin.right,
+  height = 480 - margin.top - margin.bottom;
   
-  // append the svg object to the body of the page
+  // Append the svg object to the body of the page
   var svg1 = d3.select("#my_dataviz_a")
   .append("svg")
   .attr("width", width + margin.left + margin.right)
@@ -40,12 +53,11 @@
   .attr("transform",
   "translate(" + margin.left + "," + margin.top + ")");
   
-  //Read the data 
-  
+  // Read the data 
   d3.csv("/public/csv/population_change.csv",
   // When reading the csv, format the variables:
   function(d){
-    //see https://d3js.org/d3-time-format
+    // See https://d3js.org/d3-time-format
     return { year : d.Year, suffolk : d.Suffolk, east : d.EastOfEngland, england : d.AllEngland }
   },
   
@@ -145,7 +157,6 @@
     .text("85 and over")
     .attr("x", "65%")
     .attr("y", "-60")
-    
     
     // X axis legends
     svg1.append("text")
