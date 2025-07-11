@@ -1,158 +1,92 @@
-{% extends "v5/layouts/main.html" %}
+{% extends "v5/layouts/logged-in.html" %}
 
 {% set pageName = "Edit bed types" %}
 
+{% block beforeContent %}
+<a href="javascript:window.history.back()" class="govuk-back-link" >Back</a>
+{% endblock %}
+
 {% block content %} 
-<a href="javascript:history.back()" class="govuk-back-link">Back</a>
-
 <div class="govuk-grid-row">
+  
   <div class="govuk-grid-column-two-thirds">
-    <span class="govuk-caption-m">Current population needs and overall capacity at local authority level</span> 
-    <h1 class="govuk-heading-l">{{pageName}}</h1>
-    <p class="govuk-body">Select filters to refine the data displayed.</p>
-    <!-- 
-    
-    All types 
-    
-    -->
-    <div class="govuk-form-group">
-      <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
-        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-          <h1 class="govuk-fieldset__heading">
-            Total
-          </h1>
-        </legend>
-        <div class="govuk-checkboxes" data-module="govuk-checkboxes">
-          <div class="govuk-checkboxes__item">
-            <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
-            <label class="govuk-label govuk-checkboxes__label" for="waste">
-              All types
-            </label>
+
+    <form action="care-homes" method="post" novalidate>
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <span class="govuk-caption-l">Care home provision</span> 
+            <h1 class="govuk-fieldset__heading govuk-!-margin-bottom-7">{{pageName}}</h1>
+          </legend>
+          <p class="govuk-body">Select filters to refine the data displayed.</p>
+
+          <div class="govuk-radios" data-module="govuk-radios">
+            
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="bedType-1" name="bedType" type="radio" value="All types" checked>
+              <label class="govuk-label govuk-radios__label" for="bedType-1">All types</label>
+            </div>
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="bedType-2" name="bedType" type="radio" value="Community care">
+              <label class="govuk-label govuk-radios__label" for="bedType-2">Community care</label>
+            </div>
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="bedType-3" name="bedType" type="radio" value="Nursing - dementia">
+              <label class="govuk-label govuk-radios__label" for="bedType-3">Nursing - dementia</label>
+            </div>
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="bedType-4" name="bedType" type="radio" value="Nursing - general">
+              <label class="govuk-label govuk-radios__label" for="bedType-4">Nursing - general</label>
+            </div>
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="bedType-5" name="bedType" type="radio" value="Nursing - learning disability">
+              <label class="govuk-label govuk-radios__label" for="bedType-5">Nursing - learning disability</label>
+            </div>
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="bedType-6" name="bedType" type="radio" value="Residential - dementia">
+              <label class="govuk-label govuk-radios__label" for="bedType-6">Residential - dementia</label>
+            </div>
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="bedType-7" name="bedType" type="radio" value="Residential - general">
+              <label class="govuk-label govuk-radios__label" for="bedType-7">Residential - general</label>
+            </div>
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="bedType-8" name="bedType" type="radio" value="Residential - learning disability">
+              <label class="govuk-label govuk-radios__label" for="bedType-8">Residential - learning disability</label>
+            </div>
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="bedType-10" name="bedType" type="radio" value="Transitional" aria-describedby="bedType-10-hint">
+              <label class="govuk-label govuk-radios__label" for="bedType-10">Transitional</label>
+
+              <div id="bedType-10-hint" class="govuk-hint govuk-radios__hint">
+                For individuals moving from children's services to adult social care.
+              </div>
+
+            </div>
+
           </div>
-        </div>
-      </fieldset>
-    </div>
-    <!-- 
-    
-    General  
-    
-    -->
-    <div class="govuk-form-group">
-      <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
-        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-          <h1 class="govuk-fieldset__heading">
-            General
-          </h1>
-        </legend>
-        <!---
-        <div class="govuk-checkboxes__item">
-          <input class="govuk-checkboxes__input" id="waste-2" name="waste" type="checkbox" value="mines">
-          <label class="govuk-label govuk-checkboxes__label" for="waste-2">
-            Community care
-          </label>
-        </div>
-        -->
-        <div class="govuk-checkboxes__item">
-          <input class="govuk-checkboxes__input" id="waste-2" name="waste" type="checkbox" value="mines">
-          <label class="govuk-label govuk-checkboxes__label" for="waste-2">
-            Transitional 
-          </label>
-          <div id="govuk-hint" class="govuk-hint govuk-checkboxes__hint">
-            For individuals moving from children's services to adult social care.
-          </div>
-        </div>
-        <div class="govuk-checkboxes__item">
-          <input class="govuk-checkboxes__input" id="waste-2" name="waste" type="checkbox" value="mines">
-          <label class="govuk-label govuk-checkboxes__label" for="waste-2">
-            YPD - Young Physically Disabled
-          </label>
+
+        </fieldset>
+
       </div>
-    </fieldset>
+
+      <div class="govuk-button-group">
+        <button type="submit" class="govuk-button" data-module="govuk-button">Apply changes</button>
+        <a href="care-homes" class="govuk-link">Cancel and go back</a>
+      </div>
+
+    </form>
+
   </div>
-  <!-- 
-  
-  Nursing
-  
-  -->
-  <div class="govuk-form-group">
-    <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
-      <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-        <h1 class="govuk-fieldset__heading">
-          Nursing
-        </h1>
-      </legend>
-      <div class="govuk-checkboxes" data-module="govuk-checkboxes">      
-        <div class="govuk-checkboxes__item">
-          <input class="govuk-checkboxes__input" id="waste-2" name="waste" type="checkbox" value="mines" checked>
-          <label class="govuk-label govuk-checkboxes__label" for="waste-2">
-            General 
-          </label>
-        </div>
-        <div class="govuk-checkboxes__item">
-          <input class="govuk-checkboxes__input" id="waste-2" name="waste" type="checkbox" value="mines" checked>
-          <label class="govuk-label govuk-checkboxes__label" for="waste-2">
-            Dementia 
-          </label>
-        </div>
-        <div class="govuk-checkboxes__item">
-          <input class="govuk-checkboxes__input" id="waste-2" name="waste" type="checkbox" value="mines">
-          <label class="govuk-label govuk-checkboxes__label" for="waste-2">
-            Learning Disability 
-          </label>
-        </div>
-        <div class="govuk-checkboxes__item">
-          <input class="govuk-checkboxes__input" id="waste-2" name="waste" type="checkbox" value="mines">
-          <label class="govuk-label govuk-checkboxes__label" for="waste-2">
-            Mental Health 
-          </label>
-      </div>
-    </fieldset>
-  </div>
-  <!-- 
-  
-  Residential
-  
-  -->
-  <div class="govuk-form-group">
-    <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
-      <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-        <h1 class="govuk-fieldset__heading">
-          Residential
-        </h1>
-      </legend>
-      <div class="govuk-checkboxes__item">
-        <input class="govuk-checkboxes__input" id="waste-2" name="waste" type="checkbox" value="mines">
-        <label class="govuk-label govuk-checkboxes__label" for="waste-2">
-          General 
-        </label>
-      </div>  
-      <div class="govuk-checkboxes__item">
-        <input class="govuk-checkboxes__input" id="waste-2" name="waste" type="checkbox" value="mines">
-        <label class="govuk-label govuk-checkboxes__label" for="waste-2">
-          Dementia 
-        </label>
-      </div>
-      <div class="govuk-checkboxes__item">
-        <input class="govuk-checkboxes__input" id="waste-2" name="waste" type="checkbox" value="mines">
-        <label class="govuk-label govuk-checkboxes__label" for="waste-2">
-          Learning Disability 
-        </label>
-      </div>
-      <div class="govuk-checkboxes__item">
-        <input class="govuk-checkboxes__input" id="waste-2" name="waste" type="checkbox" value="mines">
-        <label class="govuk-label govuk-checkboxes__label" for="waste-2">
-          Mental Health 
-        </label>
-    </div>
-  </fieldset>
-</div>
-<form action="index">
-  <button type="submit" class="govuk-button" data-module="govuk-button">
-    Apply changes
-  </button>
-</form>
-<p class="govuk-body"><a href="javascript:history.back()" class="govuk-link">Cancel and go back</a></p>
 
 </div>
-
 {% endblock %}
