@@ -66,6 +66,7 @@
         <li><a href="#care-homes" class="govuk-link">Care homes in your local authority</a>
         <li><a href="#charts" class="govuk-link">Charts</a></li>
         <li><a href="#capacity" class="govuk-link">Capacity in the care home sector</a></li>
+        <li><a href="#care-providers" class="govuk-link">[THEME]</a></li>
         <li><a href="#footnotes" class="govuk-link">Footnotes</a></li>
         <li><a href="#related" class="govuk-link">Related information</a></li>
       </ul>
@@ -76,6 +77,8 @@
   <div class="govuk-grid-column-full">
     <h2 id="care-homes" class="govuk-heading-m govuk-!-margin-top-7">Care homes in your local authority</h2>
     <p class="govuk-body"><strong>Suffolk:</strong> Population aged over 85: 3.1% | Beds occupied: 89% | Deprivation: low</p>
+    <p class="govuk-body">Find out how <a href="#" class="govuk-link" data-message="Sorry, this hasn’t been designed yet">[DATA FOOTNOTE]</a> is defined, sourced, and updated.</p>
+    <a type="submit" style="margin-right: 1em;" class="govuk-button govuk-button--secondary" data-module="govuk-button" href="map-settings">Edit map settings</a>
 
     <div class="govuk-tabs" data-module="govuk-tabs">
       <h2 class="govuk-tabs__title">Contents</h2>
@@ -90,15 +93,24 @@
         
       <div class="govuk-tabs__panel" id="care-homes-map">
         <h3 class="govuk-heading-s">Map showing residential care homes near Greenfields Care Home, Suffolk</h3>
-        <a type="submit" style="margin-right:1em" class="govuk-button govuk-button--secondary" data-module="govuk-button" href="map-settings">Edit map settings</a>
         {% include "./_cp-map.html" %}
-        <!-- <p style="margin-top: 1em;"><strong>Suffolk:</strong> Population aged over 85: 3.1% | Beds occupied: 89% | Deprivation: low</p> -->
+        <p class="govuk-body">
+          Source: <a href="#" class="govuk-link" target="_blank" data-message="Sorry, this hasn’t been designed yet">[DATA SOURCE] (opens in new tab)</a>
+          <br>
+          Data correct as of 5 February 2025
+        </p>
       </div>
 
       <div class="govuk-tabs__panel" id="map-table">
-        <h3 class="govuk-heading-s">Care homes near Greenfields Care Home, Suffolk</h3>
-        <a type="submit" style="margin-right: 1em;" class="govuk-button govuk-button--secondary" data-module="govuk-button" href="map-settings">Edit indicators</a>
+        <!-- <h3 class="govuk-heading-s">Care homes near Greenfields Care Home, Suffolk</h3> -->
         {% include "./_locations-table.html" %}
+        <p class="govuk-body">
+          Source: <a href="#" class="govuk-link" target="_blank" data-message="Sorry, this hasn’t been designed yet">[DATA SOURCE] (opens in new tab)</a>
+          <br>
+          Data correct as of 24 December 2024
+          <br>
+          <a href="#" class="govuk-link" data-message="Sorry, this hasn’t been designed yet">Download table data (CSV)</a>
+        </p>
       </div>
 
     </div>
@@ -111,8 +123,9 @@
 
   <div class="govuk-grid-column-two-thirds">
     <h2 id="charts" class="govuk-heading-m govuk-!-margin-top-7">Charts</h2>
-    <a href="map-settings" class="govuk-button govuk-button--secondary" type="submit" style="margin-right: 1em;" data-module="govuk-button">Edit locations</a>
-    <a href="map-settings" class="govuk-button govuk-button--secondary" type="submit" style="margin-right: 1em;" data-module="govuk-button">Edit indicators</a>
+    <p class="govuk-body">Find out how <a href="#" class="govuk-link" data-message="Sorry, this hasn’t been designed yet">[DATA FOOTNOTE]</a> is defined, sourced, and updated.</p>
+    <a href="../../landing-pages/current-population-needs/select-la" class="govuk-button govuk-button--secondary" type="submit" style="margin-right: 1em;" data-module="govuk-button">Edit local authority</a>
+    <a href="../../landing-pages/care-home-capacity/bed-filters" class="govuk-button govuk-button--secondary" type="submit" style="margin-right: 1em;" data-module="govuk-button">Edit indicators</a>
   </div>
 
   {% include "./_locations-bar-chart.html" %}
@@ -124,8 +137,9 @@
     <h2 id="care-home" class="govuk-heading-m govuk-!-margin-top-7">Capacity in the care home sector</h2>
     <p class="govuk-body">Adult social care beds and percentage of occupancy are used as measures of capacity in the care home sector.</p>
     <p class="govuk-body">The number of adult social care beds per 100,000 adult population provides an indicator of current care capacity. A higher number usually suggests more sufficient capacity for locations with similar needs.</p>
-    <a type="submit" style="margin-right:1em" class="govuk-button govuk-button--secondary" data-module="govuk-button" href="map-settings">Edit locations</a>
-    <a type="submit" style="margin-right:1em" class="govuk-button govuk-button--secondary" data-module="govuk-button" href="map-settings">Edit indicators</a>
+    <p class="govuk-body">Find out how <a href="#" class="govuk-link" data-message="Sorry, this hasn’t been designed yet">[DATA FOOTNOTE]</a> is defined, sourced, and updated.</p>
+    <a href="#" type="submit" style="margin-right: 1em;" class="govuk-button govuk-button--secondary" data-module="govuk-button" data-message="Sorry, this hasn’t been designed yet">Edit locations</a>
+    <!-- <a type="submit" style="margin-right: 1em;" class="govuk-button govuk-button--secondary" data-module="govuk-button" href="map-settings">Edit indicators</a> -->
   </div>
 
 </div>
@@ -135,11 +149,29 @@
   <div class="govuk-grid-column-full">
     {% include "./_las-table.html" %}
     <p class="govuk-body">
-      Source: Capacity Tracker
+      Source: <a href="#" class="govuk-link" target="_blank" data-message="Sorry, this hasn’t been designed yet">Capacity Tracker (opens in new tab)</a>
       <br>
       Data correct as of 5 February 2025
+      <br>
+      <a href="#" class="govuk-link" data-message="Sorry, this hasn’t been designed yet">Download table data (CSV)</a>
     </p>
+  </div>
 
+</div>
+
+<div class="govuk-grid-row">
+        
+  <div class="govuk-grid-column-two-thirds">
+    <h2 id="care-providers" class="govuk-heading-m govuk-!-margin-top-7">[THEME TITLE]</h2>
+    <p class="govuk-body">Find out how <a href="#" class="govuk-link" data-message="Sorry, this hasn’t been designed yet">[DATA FOOTNOTE]</a> is defined, sourced, and updated.</p>
+    <a href="#" type="submit" style="margin-right: 1em;" class="govuk-button govuk-button--secondary" data-module="govuk-button" data-message="Sorry, this hasn’t been designed yet">Edit locations</a>
+  </div>
+
+</div>
+
+<div class="govuk-grid-row">
+        
+  <div class="govuk-grid-column-full">
     <table class="govuk-table">
     <caption class="govuk-table__caption govuk-table__caption-s">Explore the data: care providers in Suffolk</caption>
     <thead class="govuk-table__head">
@@ -177,12 +209,12 @@
     </table>
     
     <p class="govuk-body">
-      Source: Capacity Tracker
+      Source: <a href="#" class="govuk-link" target="_blank" data-message="Sorry, this hasn’t been designed yet">Capacity Tracker (opens in new tab)</a>
       <br>
       Data correct as of 5 February 2025
       <br>
+      <a href="#" class="govuk-link" data-message="Sorry, this hasn’t been designed yet">Download table data (CSV)</a>
     </p>
-    <p class="govuk-body"><a href="#" class="govuk-link">Download table data (CSV)</a></p>
   </div>
   
 </div>
@@ -194,11 +226,11 @@
     <p class="govuk-body">Find out how each indicator is defined, sourced, and updated.</p>
     <p class="govuk-body">Select an indicator to view its footnotes:</p>
     <ol class="govuk-list govuk-list--bullet">
-      <li><a href="../../help/" class="govuk-link">People providing unpaid care, by hours per week</a></li>
+      <!-- <li><a href="../../help/" class="govuk-link">People providing unpaid care, by hours per week</a></li>
       <li><a href="../../help/" class="govuk-link">Domiciliary care providers per 100,000 adult population</a></li>
       <li><a href="../../help/" class="govuk-link">People receiving domiciliary care per 100,000 adult population</a></li>
       <li><a href="../../help/" class="govuk-link">Workforce hours paid per person receiving domiciliary care</a></li>
-      <li><a href="../../help/" class="govuk-link">Domiciliary care workers per 100,000 adult population</a></li>
+      <li><a href="../../help/" class="govuk-link">Domiciliary care workers per 100,000 adult population</a></li> -->
       <li><a href="../../help/beds-per-100000-adult-population.html" class="govuk-link">Adult social care beds per 100,000 adult population</a></li>
       <li><a href="../../help/percentage-beds-occupied" class="govuk-link">Percentage of adult social care beds occupied</a></li>
       <li><a href="../../help/beds-care-provider-location" class="govuk-link">Number of adult social care beds in care provider location</a></li>
