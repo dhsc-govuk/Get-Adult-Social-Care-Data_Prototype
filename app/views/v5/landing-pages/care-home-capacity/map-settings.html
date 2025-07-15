@@ -1,55 +1,57 @@
 {% extends "v5/layouts/main.html" %}
 
-{% set pageName = "Map: care home locations near you - settings" %}
+{% set pageName = "Change settings for the care home locations map and table" %}
 
 {% block content %} 
 <a href="javascript:history.back()" class="govuk-back-link">Back</a>
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <h1>
-    <span class="govuk-caption-m">Care home capacity</span> 
-{{pageName}}</h1>
+    
+    <span class="govuk-caption-l">Care home capacity</span> 
+    <h1 class="govuk-heading-l">{{pageName}}</h1>
     <table class="govuk-table">
-      <tbody class="govuk-table__body">
-        <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header">Map labels</th>
-          <td class="govuk-table__cell">
-            <ul class="govuk-list" style="text-align: left;">
-              <li>Population aged 85+ (%)</li>
-              <li>Beds occupied (%)</li>
-              <li>Deprivation rating (low to high)</li>
-            </ul>
-          </td>
-          <td class="govuk-table__cell">
-            <a href="present-demand-locations">Change</a>
-          </td>
-        </tr>
-        <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header">Care provider - labels</th>
-          <td class="govuk-table__cell">
-            <ul class="govuk-list" style="text-align: left;">
-              <li>CQC rating</li>
-              <li>Types of care</li>
-            </ul>
-          </td>
-          <td class="govuk-table__cell">
-            <a href="present-demand-locations">Change</a>
-          </td>
-        </tr>
-        <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header">Filters</th>
-          <td class="govuk-table__cell">
-            <ul class="govuk-list" style="text-align: left;">
-              <li>Care type: residential</li>
-              <li>Dementia care</li>
-            </ul>
-          </td>
-          <td class="govuk-table__cell">
-            <a href="present-demand-locations">Change</a>
-          </td>
-        </tr>
-      </tbody>
+        <tbody class="govuk-table__body">
+
+            <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Care home information</th>
+                <td class="govuk-table__cell">
+                    <ul class="govuk-list" style="text-align: left;">
+                        <li>CQC rating</li>
+                        <li>Care services</li>
+                    </ul>
+                </td>
+                <td class="govuk-table__cell">
+                    <a href="present-demand-locations">Change</a>
+                </td>
+            </tr>
+            <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Filters</th>
+                <td class="govuk-table__cell">
+                    <ul class="govuk-list" style="text-align: left;">
+                        <li>Residential care homes</li>
+                        <li>Dementia care beds</li>
+                    </ul>
+                </td>
+                <td class="govuk-table__cell">
+                    <a href="present-demand-locations">Change</a>
+                </td>
+            </tr>
+            <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Additional indicators for the<br /> local authority district map</th>
+                <td class="govuk-table__cell">
+                    <ul class="govuk-list" style="text-align: left;">
+
+                        <li>Care bed occupancy</li>
+                        <li>Deprivation rating (low to high)</li>
+                        <li>Population aged 85 and over </li>
+                    </ul>
+                </td>
+                <td class="govuk-table__cell">
+                    <a href="present-demand-locations">Change</a>
+                </td>
+            </tr>
+        </tbody>
     </table>
    
       <form action="care-homes">
