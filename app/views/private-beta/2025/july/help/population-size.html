@@ -1,0 +1,66 @@
+{% extends "private-beta/2025/july/layouts/signed-in.html" %}
+
+{% set pageName = "Indicator definition and supporting information: population size" %}
+
+{% block content %}
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-two-thirds">
+    <a href="javascript:history.back()" class="govuk-back-link">Back</a>
+    <h1 class="govuk-heading-l">{{pageName}}</h1>
+    <p class="govuk-body-l">Find detailed information about this indicator.</p>
+    <dl class="govuk-summary-list">
+      
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">What this measures</dt>
+        <dd class="govuk-summary-list__value">The estimated number of individuals living in the selected administrative area within England.</dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Source</dt>
+        <dd class="govuk-summary-list__value"><a href="https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/bulletins/populationestimatesforenglandandwales/mid2023" class="govuk-link" target="_blank">Office for National Statistics population estimates for England and Wales (opens in new tab)</a></dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Data correct as of</dt>
+        <dd class="govuk-summary-list__value">{{"today" | govukDate}}</dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Update frequency</dt>
+        <dd class="govuk-summary-list__value">Yearly</dd>
+      </div>
+      
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Data available for</dt>
+        <dd class="govuk-summary-list__value">{{"today" | govukDate}} to {% set expirationDate = "today" | duration(5, "years") %}{{expirationDate | govukDate}}</dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Methodology</dt>
+        <dd class="govuk-summary-list__value">This data is from the Office for National Statistics mid-2023 population estimates for England and Wales.</dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Limitations</dt>
+        <dd class="govuk-summary-list__value">
+          The data are not counts, but estimates produced by combining data from multiple sources. The accuracy of the estimates is subject to the coverage and errors associated with those sources.
+          <br>
+          <br>
+          These estimates reflect the mid-2023 population, not the current population. 
+          <br>
+          <br>
+          Changes to methods and data sources may lead to regular revisions of these estimates.
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Data definitions</dt>
+        <dd class="govuk-summary-list__value">Refers to individuals within the specified age group only.</dd>
+      </div>
+      
+    </dl>
+  </div>
+
+</div>
+{% endblock %}

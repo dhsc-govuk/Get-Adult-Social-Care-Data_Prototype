@@ -1,0 +1,63 @@
+{% extends "private-beta/2025/july/layouts/signed-in.html" %}
+
+{% set pageName = "Indicator definition and supporting information: disability prevalence" %}
+
+{% block content %}
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-two-thirds">
+    <a href="javascript:history.back()" class="govuk-back-link">Back</a>
+    <h1 class="govuk-heading-l">{{pageName}}</h1>
+    <p class="govuk-body-l">Find detailed information about this indicator.</p>
+    <dl class="govuk-summary-list">
+      
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">What this measures</dt>
+        <dd class="govuk-summary-list__value">The percentage of the population in England who are considered disabled.</dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Source</dt>
+        <dd class="govuk-summary-list__value"><a href="https://www.ons.gov.uk/datasets/TS038/editions/2021/versions/3" class="govuk-link" target="_blank">Office for National Statistics Census 2021 Disability dataset (opens in new tab)</a></dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Data correct as of</dt>
+        <dd class="govuk-summary-list__value">{{"today" | govukDate}}</dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Update frequency</dt>
+        <dd class="govuk-summary-list__value">Every 10 years</dd>
+      </div>
+      
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Data available for</dt>
+        <dd class="govuk-summary-list__value">{{"today" | govukDate}} to {% set expirationDate = "today" | duration(5, "years") %}{{expirationDate | govukDate}}</dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Methodology</dt>
+        <dd class="govuk-summary-list__value">Disability status from self-reported data from the 2021 Census.</dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Limitations</dt>
+        <dd class="govuk-summary-list__value">
+          The data is based on survey responses, which may be subject to response bias.
+          <br>
+          <br>
+          These are disability prevalence estimates for Census Day (21 March 2021), not the present day.
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Data definitions</dt>
+        <dd class="govuk-summary-list__value">'People with disabilities' refers to individuals who report limitations in daily activities due to long-term physical or mental illnesses.</dd>
+      </div>
+      
+    </dl>
+  </div>
+
+</div>
+{% endblock %}

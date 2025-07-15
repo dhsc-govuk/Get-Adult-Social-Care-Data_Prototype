@@ -1,0 +1,432 @@
+{% extends "private-beta/2025/march/layouts/main.html" %}
+
+{% set pageName = "Adult social care beds per 100,000 adult population" %}
+
+{% block content %} 
+<a href="../data-pages/present-demand" class="govuk-back-link">Back</a>
+<!-- {{ govukBreadcrumbs({
+  items: [
+  {
+    text: "Home",
+    href: "../dashboard/index"
+  },
+  {
+    text: "Get data",
+    href: "../dashboard/get-data"
+  },
+  {
+    text: "Demand and capacity",
+    href: "../dashboard/capacity"
+  }
+  ,
+  {
+    text: pageName
+  }
+  ]
+}) }} -->
+<div class="govuk-grid-row">
+      <!-- 
+      
+      Left column 
+      
+    -->
+    <div class="govuk-grid-column-one-third">      
+      <nav class="moj-side-navigation" aria-label="Side navigation">
+        <h3>Contents</h3>
+        <ul class="moj-side-navigation__list">
+          <!---<li class="moj-side-navigation__item moj-side-navigation__item--active"><a href="#introduction">Introduction</a></li class="moj-side-navigation__item">-->
+          <!-- <li class="moj-side-navigation__item"><a href="#settings">Your selected locations</a></li class="moj-side-navigation__item"> -->
+          <!-- <li class="moj-side-navigation__item"><a href="#total">Totals</a></li class="moj-side-navigation__item"> -->
+          <li class="moj-side-navigation__item"><a href="#definition">Indicator definition and supporting information</a></li class="moj-side-navigation__item">
+          <li class="moj-side-navigation__item"><a href="#timeseries">Chart</a></li class="moj-side-navigation__item">
+          <li class="moj-side-navigation__item"><a href="#filters">Table</a></li class="moj-side-navigation__item">
+         <!--- <li class="moj-side-navigation__item"><a href="#smart-insights">Smart insights (experimental)</a></li class="moj-side-navigation__item"> -->
+         <!----<li class="moj-side-navigation__item"><a href="#about">About this data</a></li class="moj-side-navigation__item"> -->
+        </ul>
+      </nav>
+</div>
+  <div class="govuk-grid-column-two-thirds">
+    <!-- <span class="govuk-caption-l">Demand and capacity</span> -->
+    <h1 class="govuk-heading-l">
+     <!-- <span class="govuk-caption-m">Demand</span> -->
+      {{pageName}}</h1>
+    <!-- 
+      
+      Main content
+      
+    -->
+      <!--
+    <style>
+      h2{margin-top:4em}
+    </style>
+    <h2 id="summary">Introduction</h2>
+    <p class="govuk-body">
+      This indicator shows the total number of beds per 100,000 population recorded by care providers across health and adult social care.
+    </p>
+    <p class="govuk-body">
+      You can find information about this data, including how it is compiled, updated, and the time ranges it covers in <a href="#about" class="govuk-link">About this data</a>.
+    </p>
+    
+  -->
+    <style>
+      h2{margin-top:4em}
+    </style>
+    <h2 id="definition">Indicator definition and supporting information</h2>
+    <p class="govuk-body">
+      The total number of beds recorded by care providers across health and adult social care, adjusted to a rate of 100,000 adults in the local authority population.
+    </p>
+    <p class="govuk-body">
+      For detailed information about this indicator, including data definitions, data source, update schedule and limitations to be aware of being using this data, go to
+       <a href="../0-3/help/beds-per-100000-people.html" class="govuk-link">supporting information for this data</a>.</li>
+    </p>
+
+    <!-- 
+      
+      Time series 
+      
+    -->
+    <h2 id="timeseries">Chart</h2>
+
+      <form action="total_beds-edit">
+      <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+        Edit chart
+      </button>
+    </form>
+    {% include "./_total_beds.html" %}
+
+    <p class="govuk-body">
+      
+      <p class="govuk-body"><a href="" class="govuk-link">Download chart image (PNG)</a><br>
+        <a href="" class="govuk-link">Download table data (CSV)</a>
+
+        <p class="govuk-body">Source: Capacity Tracker<br>
+          Data correct as of 24 December 2024<br>
+        <a href="../0-3/help/beds-per-100000-people.html" class="govuk-link">View supporting information for this data</a></p>
+<!-- 
+        
+Table 
+
+-->
+    <h2 id="total">Table</h2>
+    <table class="govuk-table">
+      <caption class="govuk-table__caption govuk-table__caption--s">Total beds per 100,000 adult population at 24 December 2024</caption>
+      <thead class="govuk-table__head">
+        <style>
+          th:nth-child(2),th:nth-child(3), th:nth-child(4), td:nth-child(2),td:nth-child(3), td:nth-child(4) {
+  text-align: right;
+}
+        </style>
+        <th scope="col" class="govuk-table__header">Location</th>
+        <th scope="col" class="govuk-table__header">Suffolk</th>
+        <th scope="col" class="govuk-table__header">East of England region</th>
+        <th scope="col" class="govuk-table__header">All England</th>
+      </thead>
+      <tbody>
+       <tr class="govuk-table__row">
+      <td class="govuk-table__cell">Total beds</td>
+      <td class="govuk-table__cell">2,398.4</td>
+      <td class="govuk-table__cell">1,969.5</td>
+      <td class="govuk-table__cell">2,088.2</td>
+      </tr>
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">Dementia nursing</td>
+        <td class="govuk-table__cell">160.1</td>
+        <td class="govuk-table__cell">126.0</td>
+        <td class="govuk-table__cell">182.1</td>
+        </tr>
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">Dementia residential</td>
+        <td class="govuk-table__cell">648.8</td>
+        <td class="govuk-table__cell">486.6</td>
+        <td class="govuk-table__cell">432.8</td>
+        </tr>
+      </tbody>
+      </table>
+        <p class="govuk-body">
+          <a href="" class="govuk-link">Download table data (CSV)</a>
+  
+        <p class="govuk-body">Source: Capacity Tracker<br>
+          Data correct as of 24 December 2024<br>
+          <a href="../0-3/help/beds-per-100000-people.html" class="govuk-link">View supporting information for this data</a></p>
+  <!-- 
+          
+  Local authorities 
+  
+  -->
+          <h2>Local authorities</h2>
+          <div class="govuk-tabs" data-module="govuk-tabs">
+            <h2 class="govuk-tabs__title">
+              Contents
+            </h2>
+            <ul class="govuk-tabs__list">
+              <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+                <a class="govuk-tabs__tab" href="#past-day">
+                  Bar chart
+                </a>
+              </li>
+              <li class="govuk-tabs__list-item">
+                <a class="govuk-tabs__tab" href="#past-week">
+                  Map
+                </a>
+              </li>
+              <li class="govuk-tabs__list-item">
+                <a class="govuk-tabs__tab" href="#past-week">
+                  Table
+                </a>
+              </li>
+              </ul>
+              <div class="govuk-tabs__panel" id="past-day">
+  {% include "./_beds_by_la.html" %}
+  <p class="govuk-body"><a href="" class="govuk-link">Download chart image (PNG)</a><br>
+    <a href="" class="govuk-link">Download table data (CSV)</a>
+
+    <p class="govuk-body">Source: Capacity Tracker<br>
+      Data correct as of 24 December 2024<br>
+    <a href="../0-3/help/beds-per-100000-people.html" class="govuk-link">View supporting information for this data</a></p>
+
+</div>
+<div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="past-week">
+</div>
+  </div>
+    <!-- 
+      
+      Filters 
+    
+    -->
+    <!-- <h2 id="filters">Table: total beds, 24 December 2024</h2> -->
+    <!-- <p>You can edit the care setting, filter, age, Local Authority
+      or region. 
+    </p> -->
+    <!-- <form action="total_beds-edit.html">
+      <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+        Edit table
+      </button>
+    </form>
+    <table class="govuk-table">
+      <thead class="govuk-table__head">
+        <th scope="col" class="govuk-table__header">Care setting</th>
+        <th scope="col" class="govuk-table__header">Filter</th>
+        <th scope="col" class="govuk-table__header">Beds - Suffolk</th>
+        <th scope="col" class="govuk-table__header">Beds - Cambridgeshire</th>
+      </thead>
+      <tbody>
+       <tr class="govuk-table__row">
+      <td class="govuk-table__cell" rowspan="4">Community</td>
+      <td class="govuk-table__cell">Community support</td>
+      <td class="govuk-table__cell">136</td>
+      <td class="govuk-table__cell">-</td>
+      </tr>
+       <tr class="govuk-table__row">
+      <td class="govuk-table__cell">Community rehabilitation - NHS or local authority funded</td>
+      <td class="govuk-table__cell">276</td>
+      <td class="govuk-table__cell">134</td>
+      </tr>
+       <tr class="govuk-table__row">
+      <td class="govuk-table__cell">Children's community contacts</td>
+      <td class="govuk-table__cell">228</td>
+      <td class="govuk-table__cell">22</td>
+      </tr>
+       <tr class="govuk-table__row">
+      <td class="govuk-table__cell">Adult community contacts</td>
+      <td class="govuk-table__cell">1,788</td>
+      <td class="govuk-table__cell">-</td>
+      </tr>
+       <tr class="govuk-table__row">
+      <td class="govuk-table__cell" rowspan="4">Nursing</td>
+      <td class="govuk-table__cell">Mental health</td>
+      <td class="govuk-table__cell">136</td>
+      <td class="govuk-table__cell">148</td>
+      </tr>
+       <tr class="govuk-table__row">
+      <td class="govuk-table__cell">Learning Disability</td>
+      <td class="govuk-table__cell">20</td>
+      <td class="govuk-table__cell">34</td>
+      </tr>
+       <tr class="govuk-table__row">
+      <td class="govuk-table__cell">General</td>
+      <td class="govuk-table__cell">1,832</td>
+      <td class="govuk-table__cell">1,258</td>
+      </tr>
+       <tr class="govuk-table__row">
+      <td class="govuk-table__cell">Dementia</td>
+      <td class="govuk-table__cell">932</td>
+      <td class="govuk-table__cell">712</td>
+      </tr>
+       <tr class="govuk-table__row">
+      <td class="govuk-table__cell" rowspan="4">Residential</td>
+      <td class="govuk-table__cell">Mental health</td>
+      <td class="govuk-table__cell">122</td>
+      <td class="govuk-table__cell">100</td>
+      </tr>
+       <tr class="govuk-table__row">
+      <td class="govuk-table__cell">Learning Disability</td>
+      <td class="govuk-table__cell">466</td>
+      <td class="govuk-table__cell">308</td>
+      </tr>
+       <tr class="govuk-table__row">
+      <td class="govuk-table__cell">General</td>
+      <td class="govuk-table__cell">4,124</td>
+      <td class="govuk-table__cell">2,432</td>
+      </tr>
+       <tr class="govuk-table__row">
+      <td class="govuk-table__cell">Dementia</td>
+      <td class="govuk-table__cell">3,776</td>
+      <td class="govuk-table__cell">2,294</td>
+      </tr>
+       <tr class="govuk-table__row">
+      <td class="govuk-table__cell" rowspan="8">Other</td>
+      <td class="govuk-table__cell">YPD (young physically disabled)</td>
+      <td class="govuk-table__cell">2</td>
+      <td class="govuk-table__cell">32</td>
+      </tr>
+       <tr class="govuk-table__row">
+      <td class="govuk-table__cell">Transitional</td>
+      <td class="govuk-table__cell">30</td>
+      <td class="govuk-table__cell">8</td>
+      </tr>
+       <tr class="govuk-table__row">
+      <td class="govuk-table__cell">End of life</td>
+      <td class="govuk-table__cell">98</td>
+      <td class="govuk-table__cell">-</td>
+      </tr>
+       <tr class="govuk-table__row">
+      <td class="govuk-table__cell">Community rehabilitation - private funded</td>
+      <td class="govuk-table__cell">-</td>
+      <td class="govuk-table__cell">-</td>
+      </tr>
+       <tr class="govuk-table__row">
+      <td class="govuk-table__cell">Children's inpatient</td>
+      <td class="govuk-table__cell">4</td>
+      <td class="govuk-table__cell">4</td>
+      </tr>
+       <tr class="govuk-table__row">
+      <td class="govuk-table__cell">Children's hospice at home</td>
+      <td class="govuk-table__cell">10</td>
+      <td class="govuk-table__cell">10</td>
+      </tr>
+       <tr class="govuk-table__row">
+      <td class="govuk-table__cell">Adult inpatient</td>
+      <td class="govuk-table__cell">56</td>
+      <td class="govuk-table__cell">38</td>
+      </tr>
+       <tr class="govuk-table__row">
+      <td class="govuk-table__cell">Adult hospice at home beds</td>
+      <td class="govuk-table__cell">164</td>
+      <td class="govuk-table__cell">90</td>
+      </tr>
+       <tr class="govuk-table__row">
+      <td class="govuk-table__cell">Total</td>
+      <td class="govuk-table__cell">-</td>
+      <td class="govuk-table__cell">14,200</td>
+      <td class="govuk-table__cell">7,624</td>
+      </tr>
+      </tbody>
+      </table> -->
+    <!-- 
+      
+      Smart insights 
+      
+    -->
+      <!--
+    <h2 id="smart-insights">Smart insights (experimental)</h2>
+    <div class="govuk-inset-text">
+      Smart insights use artificial intelligence (AI) to analyse this data, highlighting trends and patterns to support your own analysis. As this is experimental, verify the insights to check they are appropriate and meet your needs. <a class="@ovuk-link" href="">Learn more about smart insights</a>
+    </div>
+    <h3 class="govuk-heading-s">Summary of key trends</h3>
+    <p class="govuk-body">Suffolk has a higher total care home bed capacity (14,200 beds) compared to Cambridgeshire (7,624 beds) as of 24 December 2024. Suffolk leads in general residential beds (4,124 compared to 2,432), while Cambridgeshire has higher capacity in specialised categories like young physically disabled (32 beds compared to 2) and mental health nursing (148 beds compared to 136).</p>
+    <h3 class="govuk-heading-s">Insight: Growth in bed capacity</h3>
+    <p class="govuk-body">Both Suffolk and Cambridgeshire have expanded their care home infrastructure in recent years, with Suffolk leading in total capacity (14,200 beds). However, Cambridgeshire shows targeted growth in specialised categories such as young physically disabled care (32 beds) and transitional care (8 beds compared to 30 in Suffolk).</p>
+    <h3 class="govuk-heading-s">How you might use this insight:</h3>
+    <ul class="govuk-list govuk-list--bullet">
+    <li><strong>Monitor regional disparities:</strong> Compare growth patterns across Suffolk and Cambridgeshire to identify areas requiring additional investment.
+    <li><strong>Target specialised care: </strong>Focus on expanding capacity in under-resourced care types, such as transitional or young physically disabled care.
+    </ul>
+  -->
+    <!---
+      <p class="govuk-body"><strong>Rate this smart insight</strong></p>
+      <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+        Helpful
+      </button>&nbsp;&nbsp;&nbsp;
+      <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+        Not helpful
+      </button>
+    -->
+    <!-- <h3 class="govuk-heading-s">Insight: proportion of general residential beds</h3>
+    <p class="govuk-body">General residential beds account for a substantial proportion of residential care in both Suffolk (4,124 beds) and Cambridgeshire (2,432 beds). However, they represent a smaller proportion of the overall capacity, with other categories such as dementia residential (3,776 in Suffolk, 2,294 in Cambridgeshire) occupying larger shares.</p>
+    <h3 class="govuk-heading-s">How you might use this insight:</h3>
+    <ul class="govuk-list govuk-list--bullet">
+      <li><strong>Optimise bed allocation:</strong> Determine whether current general residential capacity matches the needs of specific demographics, such as older adults.</li>
+      <li><strong>Develop flexible care options:</strong> Explore hybrid care solutions that bridge gaps between general residential and other specialised categories.</li>
+    </ul> -->
+    <!---
+      <p class="govuk-body"><strong>Rate this smart insight</strong></p>
+      <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+        Helpful
+      </button>&nbsp;&nbsp;&nbsp;
+      <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+        Not helpful
+      </button>
+   
+<!-- 
+    
+About this data 
+
+-->
+<!--
+    <h2 id="about">About this data</h2>
+
+    <table class="govuk-table">
+      <caption class="govuk-table__caption govuk-table__caption--s">Details for Beds per 1,000 population</caption>
+
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header govuk-!-width-one-quarter">What this measures</td>
+          <td class="govuk-table__cell">The total number of beds recorded by care providers across health and adult social care, adjusted to a rate of 1,000 people in the population.</td>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Data source</th>
+          <td class="govuk-table__cell"><a href="#" class="govuk-link" target="_blank">Capacity Tracker (opens in new tab)</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Data last updated</th>
+          <td class="govuk-table__cell">5 February 2025</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Update frequency</th>
+          <td class="govuk-table__cell">Daily</td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Date range</th>
+          <td class="govuk-table__cell">From 30 September 2017 to 5 February 2025.</td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Methodology</th>
+          <td class="govuk-table__cell">The total number of beds is the number of beds reported by care providers, including those in use and those available for new admissions. 
+            <br> <br>
+            Total beds includes mental health, learning disabilities, and end-of-life care beds in residential and nursing care homes.The data covers both self-funded and local authority-funded beds.
+            <br> <br>
+            Care providers update this information daily or whenever changes occur using the Capacity Tracker tool. They report how many beds are available and occupied in care settings such as nursing homes, residential care, and community care.
+            <br> <br>
+            The data is grouped by local areas, regions, and nationally so it is easier to compare. The information is checked and updated regularly to make sure it is as accurate as possible.</td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Limitations</th>
+          <td class="govuk-table__cell">Data is self-reported.</td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Data definitions</th>
+          <td class="govuk-table__cell">Definitions are not available. You may need to contact the data provider.</td>
+        </tr>
+      </tbody>
+    </table>
+  -->
+
+    <p class="govuk-body"><a class="govuk-link" href="#">Back </a></p>
+    
+    {% endblock %}

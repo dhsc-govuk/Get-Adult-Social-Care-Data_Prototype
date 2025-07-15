@@ -1,9 +1,47 @@
-{% extends "v5/layouts/data.html" %}
+{% extends "private-beta/2025/march/layouts/main.html" %}
 
 {% set pageName = "Current population needs and capacity" %}
 
+{% block header %}
+<header class="govuk-header govuk-header--full-width-border" data-module="govuk-header">
+  <div class="govuk-header__container govuk-width-container">
+    <div class="govuk-header__logo">
+      <a href="/" class="govuk-header__link govuk-header__link--homepage">
+        <svg
+        focusable="false"
+        role="img"
+        class="govuk-header__logotype"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 148 30"
+        height="30"
+        width="148"
+        aria-label="GOV.UK">
+        <title>GOV.UK</title>
+        <path d="M22.6 10.4c-1 .4-2-.1-2.4-1-.4-.9.1-2 1-2.4.9-.4 2 .1 2.4 1s-.1 2-1 2.4m-5.9 6.7c-.9.4-2-.1-2.4-1-.4-.9.1-2 1-2.4.9-.4 2 .1 2.4 1s-.1 2-1 2.4m10.8-3.7c-1 .4-2-.1-2.4-1-.4-.9.1-2 1-2.4.9-.4 2 .1 2.4 1s0 2-1 2.4m3.3 4.8c-1 .4-2-.1-2.4-1-.4-.9.1-2 1-2.4.9-.4 2 .1 2.4 1s-.1 2-1 2.4M17 4.7l2.3 1.2V2.5l-2.3.7-.2-.2.9-3h-3.4l.9 3-.2.2c-.1.1-2.3-.7-2.3-.7v3.4L15 4.7c.1.1.1.2.2.2l-1.3 4c-.1.2-.1.4-.1.6 0 1.1.8 2 1.9 2.2h.7c1-.2 1.9-1.1 1.9-2.1 0-.2 0-.4-.1-.6l-1.3-4c-.1-.2 0-.2.1-.3m-7.6 5.7c.9.4 2-.1 2.4-1 .4-.9-.1-2-1-2.4-.9-.4-2 .1-2.4 1s0 2 1 2.4m-5 3c.9.4 2-.1 2.4-1 .4-.9-.1-2-1-2.4-.9-.4-2 .1-2.4 1s.1 2 1 2.4m-3.2 4.8c.9.4 2-.1 2.4-1 .4-.9-.1-2-1-2.4-.9-.4-2 .1-2.4 1s0 2 1 2.4m14.8 11c4.4 0 8.6.3 12.3.8 1.1-4.5 2.4-7 3.7-8.8l-2.5-.9c.2 1.3.3 1.9 0 2.7-.4-.4-.8-1.1-1.1-2.3l-1.2 4c.7-.5 1.3-.8 2-.9-1.1 2.5-2.6 3.1-3.5 3-1.1-.2-1.7-1.2-1.5-2.1.3-1.2 1.5-1.5 2.1-.1 1.1-2.3-.8-3-2-2.3 1.9-1.9 2.1-3.5.6-5.6-2.1 1.6-2.1 3.2-1.2 5.5-1.2-1.4-3.2-.6-2.5 1.6.9-1.4 2.1-.5 1.9.8-.2 1.1-1.7 2.1-3.5 1.9-2.7-.2-2.9-2.1-2.9-3.6.7-.1 1.9.5 2.9 1.9l.4-4.3c-1.1 1.1-2.1 1.4-3.2 1.4.4-1.2 2.1-3 2.1-3h-5.4s1.7 1.9 2.1 3c-1.1 0-2.1-.2-3.2-1.4l.4 4.3c1-1.4 2.2-2 2.9-1.9-.1 1.5-.2 3.4-2.9 3.6-1.9.2-3.4-.8-3.5-1.9-.2-1.3 1-2.2 1.9-.8.7-2.3-1.2-3-2.5-1.6.9-2.2.9-3.9-1.2-5.5-1.5 2-1.3 3.7.6 5.6-1.2-.7-3.1 0-2 2.3.6-1.4 1.8-1.1 2.1.1.2.9-.3 1.9-1.5 2.1-.9.2-2.4-.5-3.5-3 .6 0 1.2.3 2 .9l-1.2-4c-.3 1.1-.7 1.9-1.1 2.3-.3-.8-.2-1.4 0-2.7l-2.9.9C1.3 23 2.6 25.5 3.7 30c3.7-.5 7.9-.8 12.3-.8m28.3-11.6c0 .9.1 1.7.3 2.5.2.8.6 1.5 1 2.2.5.6 1 1.1 1.7 1.5.7.4 1.5.6 2.5.6.9 0 1.7-.1 2.3-.4s1.1-.7 1.5-1.1c.4-.4.6-.9.8-1.5.1-.5.2-1 .2-1.5v-.2h-5.3v-3.2h9.4V28H55v-2.5c-.3.4-.6.8-1 1.1-.4.3-.8.6-1.3.9-.5.2-1 .4-1.6.6s-1.2.2-1.8.2c-1.5 0-2.9-.3-4-.8-1.2-.6-2.2-1.3-3-2.3-.8-1-1.4-2.1-1.8-3.4-.3-1.4-.5-2.8-.5-4.3s.2-2.9.7-4.2c.5-1.3 1.1-2.4 2-3.4.9-1 1.9-1.7 3.1-2.3 1.2-.6 2.6-.8 4.1-.8 1 0 1.9.1 2.8.3.9.2 1.7.6 2.4 1s1.4.9 1.9 1.5c.6.6 1 1.3 1.4 2l-3.7 2.1c-.2-.4-.5-.9-.8-1.2-.3-.4-.6-.7-1-1-.4-.3-.8-.5-1.3-.7-.5-.2-1.1-.2-1.7-.2-1 0-1.8.2-2.5.6-.7.4-1.3.9-1.7 1.5-.5.6-.8 1.4-1 2.2-.3.8-.4 1.9-.4 2.7zM71.5 6.8c1.5 0 2.9.3 4.2.8 1.2.6 2.3 1.3 3.1 2.3.9 1 1.5 2.1 2 3.4s.7 2.7.7 4.2-.2 2.9-.7 4.2c-.4 1.3-1.1 2.4-2 3.4-.9 1-1.9 1.7-3.1 2.3-1.2.6-2.6.8-4.2.8s-2.9-.3-4.2-.8c-1.2-.6-2.3-1.3-3.1-2.3-.9-1-1.5-2.1-2-3.4-.4-1.3-.7-2.7-.7-4.2s.2-2.9.7-4.2c.4-1.3 1.1-2.4 2-3.4.9-1 1.9-1.7 3.1-2.3 1.2-.5 2.6-.8 4.2-.8zm0 17.6c.9 0 1.7-.2 2.4-.5s1.3-.8 1.7-1.4c.5-.6.8-1.3 1.1-2.2.2-.8.4-1.7.4-2.7v-.1c0-1-.1-1.9-.4-2.7-.2-.8-.6-1.6-1.1-2.2-.5-.6-1.1-1.1-1.7-1.4-.7-.3-1.5-.5-2.4-.5s-1.7.2-2.4.5-1.3.8-1.7 1.4c-.5.6-.8 1.3-1.1 2.2-.2.8-.4 1.7-.4 2.7v.1c0 1 .1 1.9.4 2.7.2.8.6 1.6 1.1 2.2.5.6 1.1 1.1 1.7 1.4.6.3 1.4.5 2.4.5zM88.9 28 83 7h4.7l4 15.7h.1l4-15.7h4.7l-5.9 21h-5.7zm28.8-3.6c.6 0 1.2-.1 1.7-.3.5-.2 1-.4 1.4-.8.4-.4.7-.8.9-1.4.2-.6.3-1.2.3-2v-13h4.1v13.6c0 1.2-.2 2.2-.6 3.1s-1 1.7-1.8 2.4c-.7.7-1.6 1.2-2.7 1.5-1 .4-2.2.5-3.4.5-1.2 0-2.4-.2-3.4-.5-1-.4-1.9-.9-2.7-1.5-.8-.7-1.3-1.5-1.8-2.4-.4-.9-.6-2-.6-3.1V6.9h4.2v13c0 .8.1 1.4.3 2 .2.6.5 1 .9 1.4.4.4.8.6 1.4.8.6.2 1.1.3 1.8.3zm13-17.4h4.2v9.1l7.4-9.1h5.2l-7.2 8.4L148 28h-4.9l-5.5-9.4-2.7 3V28h-4.2V7zm-27.6 16.1c-1.5 0-2.7 1.2-2.7 2.7s1.2 2.7 2.7 2.7 2.7-1.2 2.7-2.7-1.2-2.7-2.7-2.7z"></path>
+      </svg>
+    </a>
+  </div>
+  <div class="govuk-header__content">
+    <a href="/" class="govuk-header__link govuk-header__service-name">
+      {{serviceName}}
+    </a>   
+  </div>
+</div>
+</header>
+<div class="govuk-phase-banner govuk-width-container">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      Beta
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service. Help us improve it and <a class="govuk-link" href="https://forms.office.com/e/s9FCDSibN0">give your feedback (opens in new tab)</a>.
+    </span>
+  </p>
+</div>
+{% endblock %}
+
 {% block content %} 
-<a href="get-data" class="govuk-back-link">Back</a>
+<a href="/" class="govuk-back-link">Back</a>
 <div class="govuk-grid-row">
       <!-- 
       
@@ -17,8 +55,8 @@
           { link: "#definition", heading: "Indicator definition and supporting information" },
           { link: "#settings", heading: "Your selected locations" },
           { link: "#drivers", heading: "Drivers of population needs" },
-          { link: "#capacity", heading: "Current capacity - care homes: local authority-level insights" },
-          { link: "#capacity", heading: "Current capacity - care homes: care provider-level insights" }
+          { link: "#capacity-la", heading: "Current capacity - care homes: local authority-level insights" },
+          { link: "#capacity-cp", heading: "Current capacity - care homes: care provider-level insights" }
         ] %}
         <ul class="moj-side-navigation__list">
           <li class="moj-side-navigation__item moj-side-navigation__item--active"><a href="#introduction">Introduction</a></li class="moj-side-navigation__item">
@@ -27,7 +65,7 @@
          {% endfor %}
         </ul>
       </nav>
-</div>
+  </div>
   <div class="govuk-grid-column-two-thirds">
     <!-- <span class="govuk-caption-l">Demand and capacity</span> -->
     <h1 class="govuk-heading-l">{{pageName}}</h1>
@@ -53,14 +91,15 @@
       Find detailed information about each indicator, including data definitions, data source, update schedule, and any limitations to be aware of before using the data.
     </p>
     <ul class="govuk-list govuk-list--bullet">
-      <li><a href="../private-beta/2025/june/help/population-size.html" class="govuk-link">Population size</a></li>
-      <li><a href="../private-beta/2025/june/help/population-age.html" class="govuk-link">Percentage of population aged 18 to 64, or 65 and over</a></li>
-      <li><a href="../private-beta/2025/june/help/disability-prevalence.html" class="govuk-link">Disability prevalence</a></li>
-      <li><a href="../help/beds-per-100000-adult-population.html" class="govuk-link">Adult social care beds per 100,000 adult population</a></li>
-      <li><a href="../help/percentage-beds-occupied" class="govuk-link">Percentage of adult social care beds occupied</a></li>
-      <li><a href="../help/beds-care-provider-location" class="govuk-link">Number of adult social care beds in care provider location</a></li>
-      <li><a href="../help/percentage-beds-occupied-care-provider-location" class="govuk-link">Percentage of adult social care beds occupied in care provider location</a></li>
-      </ul>
+        <li><a href="help/population-size.html" class="govuk-link">Population size</a></li>
+        <li><a href="help/population-age.html" class="govuk-link">Percentage of population aged 18 to 64, or 65 and over</a></li>
+        <li><a href="help/disability-prevalence.html" class="govuk-link">Disability prevalence</a></li>
+        <li><a href="help/beds-per-100000-adult-population.html" class="govuk-link">Adult social care beds per 100,000 adult population</a></li>
+        <li><a href="help/percentage-beds-occupied" class="govuk-link">Percentage of adult social care beds occupied</a></li>
+        <li><a href="help/beds-care-provider-location" class="govuk-link">Number of adult social care beds in care provider location</a></li>
+        <li><a href="help/percentage-beds-occupied-care-provider-location" class="govuk-link">Percentage of adult social care beds occupied in care provider location</a></li>
+        </ul>
+
     <h2 id="settings">Your selected locations</h2>
         <p class="govuk-body">Select locations to view and compare data.</p>
         <dl class="govuk-summary-list">
@@ -81,6 +120,7 @@
         Age and disability
         
         -->
+
 
       <h2 id="drivers">
         <!--<span class="govuk-caption-m">Current demand</span>-->
@@ -185,8 +225,8 @@
       <p class="govuk-body">Source: Office for National Statistics, NHS England<br>
         Data correct as of 5 February 2025
         <!--
-        <a href="../v3/help/population-by-age.html" class="govuk-link">View supporting information for Population by age</a></br>
-        <a href="../v3/help/population-by-disability.html" class="govuk-link">View supporting information for Population by disability</a>-->
+        <a href="../0-3/help/population-by-age.html" class="govuk-link">View supporting information for Population by age</a></br>
+        <a href="../0-3/help/population-by-disability.html" class="govuk-link">View supporting information for Population by disability</a>-->
       </p>
 
      <!-- 
@@ -195,7 +235,7 @@
     
     -->
    
-    <h2 id="capacity">
+    <h2 id="capacity-la">
       Current capacity - care homes: local authority-level insights</h2>
 
       <p class="govuk-body">The number of adult social care beds per 100,000 adult population provides an indicator of current care capacity. A higher number suggests more sufficient capacity.</p>
@@ -208,7 +248,7 @@
       Explore the data: adult social care beds per 100,000 adult population and occupancy</h3>
     <p>You can filter this data by type of beds. 
     </p>
-    <form action="../data-pages/beds-over-100K/index">
+    <form action="total_beds.html">
       <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
         Explore data
       </button>
@@ -249,14 +289,14 @@
    
       <p class="govuk-body">Source: Capacity Tracker<br>
         Data correct as of 5 February 2025<br></p>
-      <!---  <a href="../v3/help/beds-per-100000-people.html" class="govuk-link">View supporting information for this data</a></p>-->
+      <!---  <a href="../0-3/help/beds-per-100000-people.html" class="govuk-link">View supporting information for this data</a></p>-->
  
 
-    <h2 id="capacity">
+    <h2 id="capacity-cp">
       <!--<span class="govuk-caption-m">Current demand</span>-->
-      Current capacity - care homes: care provider-level insights</h2>
+      Current capacity – care homes: care provider-level insights</h2>
 
-      <p class="govuk-body">Examining individual care providers offers insight into how their capacity compares with other care providers at local authority, regional and national levels.</p>
+      <p class="govuk-body">Examining individual care providers offers insight into how their capacity compares with other care providers at local authority, regional and national level.</p>
 
       <p class="govuk-body">Care Provider A is a small provider with <strong>20 total beds</strong>, compared to the median (53 beds) in Suffolk.</p>
       
@@ -264,7 +304,7 @@
       
     <h3 class="govuk-heading-m">
       Explore the data: care providers in Suffolk</h3>
-      <!--
+      <!---
     <p>You can explore the data to get information on the different bed types provided by Care Provider A, and change comparator group.</p>
     -->
     <!-- <form action="total_beds.html">
@@ -312,7 +352,7 @@
 
       <p class="govuk-body">Source: Capacity Tracker<br>
         Data correct as of 5 February 2025<br></p>
-      <!--- <a href="../v3/help/beds-per-100000-people.html" class="govuk-link">View supporting information for this data</a></p>-->
+      <!--- <a href="../0-3/help/beds-per-100000-people.html" class="govuk-link">View supporting information for this data</a></p>-->
  
       <!--Smart insights-->
       <!---
@@ -536,7 +576,8 @@
         </div>
       </details>
     -->
+    <p class="govuk-body"><a class="govuk-link" href="#">Back</a></p>
+  </div>
 
-    <p class="govuk-body"><a class="govuk-link" href="#">Back </a></p>
-    
-    {% endblock %}
+</div>
+{% endblock %}

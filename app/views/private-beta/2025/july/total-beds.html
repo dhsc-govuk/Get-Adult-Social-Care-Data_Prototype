@@ -1,9 +1,9 @@
-{% extends "v5/layouts/data.html" %}
+{% extends "private-beta/2025/july/layouts/signed-in.html" %}
 
 {% set pageName = "Adult social care beds per 100,000 adult population" %}
 
 {% block content %} 
-<a href="../../logged-in/present-demand" class="govuk-back-link">Back</a>
+<a href="present-demand" class="govuk-back-link">Back</a>
 <div class="govuk-grid-row">
         <!-- 
       
@@ -15,7 +15,7 @@
         <h3>Contents</h3>
         {% set items = [
           { link: "#definition", heading: "Indicator definition and supporting information" },
-          { link: "#settings", heading: "Your selected locations" },
+          { link: "#locations", heading: "Your selected locations" },
           { link: "#data", heading: "Data" },
           { link: "#smart-insights", heading: "Smart insights (experimental)" }
                   ] %}
@@ -31,6 +31,9 @@
   Main column 
   
 -->
+  <style>
+      h2{margin-top:4em}
+    </style>
   <div class="govuk-grid-column-two-thirds">
     <!-- <span class="govuk-caption-l">Demand and capacity</span> -->
     <h1 class="govuk-heading-l">
@@ -41,13 +44,13 @@
       Main content
       
       -->
-      <h2 id="definition">Indicator definition and supporting information</h2>
+      <h2 class="govuk-heading-m" id="definition">Indicator definition and supporting information</h2>
       <p class="govuk-body">
         The total number of beds recorded by care providers across health and adult social care, adjusted to a rate of 100,000 adults in the local authority population.
       </p>
       <p class="govuk-body">
         For detailed information about this indicator, including data definitions, data source, update schedule and limitations to be aware of before using this data, go to
-        <a href="../private-beta/2025/june/help/beds-per-100000-adult-population.html" class="govuk-link">supporting information for this data</a>.</li>
+        <a href="help/beds-per-100000-adult-population.html" class="govuk-link">supporting information for this data</a>.</li>
       </p>
       <h2 id="locations">
         Your selected locations
@@ -64,7 +67,7 @@
               </ul>
             </td>
             <td class="govuk-table__cell">
-              <a href="present-demand-locations">Change</a>
+              <a href="total-beds-edit-la">Change</a>
             </td>
           </tr>
         </tbody>
@@ -107,7 +110,7 @@
         
         -->
         <div class="govuk-tabs__panel" id="chart">
-          <h2>Bar chart</h2>
+          <h3 class="govuk-heading-m">Bar chart</h3>
           <p>This chart shows data for all local authorities in Suffolk.</p>
           <table class="govuk-table">
             <tbody class="govuk-table__body">
@@ -119,13 +122,13 @@
               </ul>
             </td>
           <td class="govuk-table__cell">
-            <a href="total_beds-edit-single-filter">Change</a>
+            <a href="total-beds-edit-single-filter">Change</a>
           </td>
         </tr>
             </tbody>
           </table>
-          {% include "./_chart.html" %}
-          <p class="govuk-body"><a href="" class="govuk-link">Download chart image (PNG)</a><br>
+          {% include "private-beta/2025/july/layouts/_chart.html" %}
+          <p class="govuk-body"><a href="#" class="govuk-link">Download chart image (PNG)</a><br>
             <a href="#" class="govuk-link">Download table data (CSV)</a>
             <p class="govuk-body">Source: Capacity Tracker<br>
               Data correct as of 24 December 2024<br>
@@ -137,8 +140,8 @@
             
             -->
             <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="time-series">
-              <h2>Time series</h2>
-              {% include "./_time-series.html" %}
+              <h3 class="govuk-heading-m">Time series</h3>
+              {% include "private-beta/2025/july/layouts/_time-series.html" %}
             </div>
             <!-- 
             
@@ -146,9 +149,9 @@
             
             -->
             <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="map">
-              <h2>
+              <h3 class="govuk-heading-m">
                 Map
-              </h2>
+              </h3>
               <p class="govuk-body">The map view is not yet available.</p>
               <p class="govuk-body">We are working to introduce this feature to the service. In the meantime, you can explore the data by chart, time series or table.</p>
               </p>
@@ -159,7 +162,7 @@
             
             -->
             <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="table">
-              <h2 id="total">Table</h2>
+              <h3 class="govuk-heading-m" id="total">Table</h3>
               <table class="govuk-table">
                 <tbody class="govuk-table__body">
               <tr class="govuk-table__row">
@@ -172,7 +175,7 @@
                   </ul>
                 </td>
               <td class="govuk-table__cell">
-                <a href="total_beds-edit-table-filters">Change</a>
+                <a href="total-beds-edit-table-filters">Change</a>
               </td>
             </tr>
                 </tbody>
@@ -221,7 +224,7 @@
 
               <h2 id="smart-insights">Smart insights (experimental)</h2>
               <div class="govuk-inset-text">
-                Smart insights use artificial intelligence (AI) to analyse this data, highlighting trends and patterns to support your own analysis. As this is experimental, verify the insights to check they are appropriate and meet your needs. <a class="govuk-link" href="../v3/help/smart-insights.html">Learn more about smart insights</a>
+                Smart insights use artificial intelligence (AI) to analyse this data, highlighting trends and patterns to support your own analysis. As this is experimental, verify the insights to check they are appropriate and meet your needs. <a class="govuk-link" href="help/smart-insights.html">Learn more about smart insights</a>
               </div>
         
               <h3 class="govuk-heading-s">Summary of key trends</h3>
@@ -246,7 +249,20 @@
                <li>Explore whether demand for dementia nursing care in Suffolk is increasing and if additional provision is needed.</li>
                <li>Consider whether individuals with complex dementia care needs have sufficient access to specialised nursing care locally.</li>
             </ul>
+        
+    <!-- <p class="govuk-body"><a class="govuk-link" href="#">Back</a></p> -->
+    <!-- <p class="govuk-body govuk-!-margin-top-9"><a class="govuk-link" href="#">Get help with this page</a></p> -->
+    <details class="govuk-details govuk-!-margin-top-9">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">Get help with this page</span>
+      </summary>
+      
+      <div class="govuk-details__text">
+        If you have any issues using this service, email <a href="mailto:getadultsocialcaredata.team@dhsc.gov.uk" class="govuk-link">getadultsocialcaredata.team@dhsc.gov.uk</a>.
+      </div>
 
-            <p class="govuk-body"><a href="javascript:history.back()" class="govuk-link">Back</a></p>
+    </details>
+  </div>
 
-              {% endblock %}
+</div>
+{% endblock %}
