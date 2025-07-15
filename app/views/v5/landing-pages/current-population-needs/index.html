@@ -57,31 +57,31 @@
 
   <div class="govuk-grid-column-two-thirds">
     <!-- <span class="govuk-caption-l">Demand and capacity</span> -->
-    <h1 class="govuk-heading-l">{{pageName}}</h1>
-    <p class="govuk-body-l">Explore factors shaping local population needs.</p>
+    <h1 class="govuk-heading-xl">{{pageName}}</h1>
+    <p class="govuk-body-l">Assess data indicators on a range of factors shaping current population needs for adult social care.</p>
 
     <div class="contents-box">
       <h2 class="govuk-heading-m">Contents</h2>
       <ul class="govuk-list govuk-list--bullet">
         <li><a href="#preferences" class="govuk-link">Choose your data preferences</a>
         <li><a href="#factors" class="govuk-link">Demographic factors driving population needs</a></li>
-        <li><a href="#population-age" class="govuk-link" >Population age</a></li>
+        <li><a href="#population-age" class="govuk-link" >Population size and age</a></li>
         <li><a href="#economic-factors" class="govuk-link" >Economic factors</a></li>
         <li><a href="#household-composition" class="govuk-link" >Household composition</a></li>
         <li><a href="#health-conditions" class="govuk-link" >Long term health conditions and disability</a></li>
         <li><a href="#dementia" class="govuk-link" >Dementia</a></li>
-        <li><a href="#footnotes" class="govuk-link">Footnotes</a></li>
-        <li><a href="#related" class="govuk-link">Related information</a></li>
+        <li><a href="#indicators" class="govuk-link">Indicator definitions and data sources</a></li>
+        <li><a href="#market-position-statement" class="govuk-link">Market Position Statement for your local care market</a></li>
       </ul>
     </div>
 
-    <h2 id="preferences" class="govuk-heading-m govuk-!-margin-top-9">Choose your data preferences</h2>
-    <p class="govuk-body">Change these to update the data shown.</p>
+    <h2 id="preferences" class="govuk-heading-l govuk-!-margin-top-9">Choose your data preferences</h2>
+    <p class="govuk-body">Change these settings to update the data shown in the tables on this page.</p>
     <dl class="govuk-summary-list">
       
       <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">Active location</dt>
-        <dd class="govuk-summary-list__value">Greenfields Care</dd>
+        <dt class="govuk-summary-list__key">Your active location</dt>
+        <dd class="govuk-summary-list__value">Greenfields Care, Suffolk</dd>
         <dd class="govuk-summary-list__actions">
           <!-- <a class="govuk-link" href="present-demand-locations">Change<span class="govuk-visually-hidden"> name</span></a> -->
           <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> name</span></a>
@@ -89,7 +89,7 @@
       </div>
 
       <div class="govuk-summary-list__row govuk-summary-list__row--no-actions">
-        <dt class="govuk-summary-list__key">Available locations</dt>
+        <dt class="govuk-summary-list__key">Other available locations</dt>
         <dd class="govuk-summary-list__value">
           Woodlands Care, Suffolk
           <br>
@@ -117,262 +117,291 @@
 
     </dl>
 
-    <h2 id="factors" class="govuk-heading-m govuk-!-margin-top-9">Demographic factors driving population needs</h2>
-    <p class="govuk-body">Population needs for adult social care are shaped by a range of factors including age, income levels, employment status, disability, long-term health conditions, and household composition.</p>
-    <p class="govuk-body">Areas with higher proportions of older adults, people with disabilities, or long-term health conditions typically experience greater pressure on services.</p>
+    <h2 id="factors" class="govuk-heading-l govuk-!-margin-top-9">Demographic factors driving population needs</h2>
+    <p class="govuk-body">[Population needs for adult social care are shaped by a range of factors including age, income levels, employment status, disability, long-term health conditions, and household composition.</p>
+    <p class="govuk-body">Areas with higher proportions of older adults, people with disabilities, or long-term health conditions typically experience greater pressure on services.]</p>
     
-    <div class="govuk-inset-text">
-      <strong>Tip:</strong> Use the Explore more data option provided for each table to view smaller geographical areas than local authority level, where available. 
+    <!-- <div class="govuk-inset-text">
+      <strong>Tip:</strong> Use the Explore more data option provided for each table to view smaller geographical areas than local authority level, where available.] 
+    -->
+        </div>
+    
+  </div>
+
+</div>
+
+<div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-two-thirds">
+        <h2 id="population-age" class="govuk-heading-l govuk-!-margin-top-9">Population size and age</h2>
+        <p class="govuk-body">Learn about the definition, sourcing of data and methodology for the indicators <a href="../../help/population-size.html" class="govuk-link">population size</a> and <a href="../../help/population-age.html" class="govuk-link">percentage of population in age group</a>.</p>
+        <a href="select-la" class="govuk-button govuk-button--secondary govuk-!-margin-top-5" type="submit" style="margin-right: 1em;" data-module="govuk-button">Change local authority</a>
     </div>
-    
-  </div>
+    <div class="govuk-grid-column-full">
+        <table class="govuk-table">
+            <caption class="govuk-table__caption govuk-table__caption--m">Table comparing population size and age in Suffolk to regional and national statistics</caption>
+            <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                    <th scope="col" class="govuk-table__header">Area</th>
+                    <th scope="col" class="govuk-table__header govuk-table__header--numeric">Population size</th>
+                    <th scope="col" class="govuk-table__header govuk-table__header--numeric">Aged 18 to 64</th>
+                    <th scope="col" class="govuk-table__header govuk-table__header--numeric">Aged 65 and over</th>
+                    <th scope="col" class="govuk-table__header govuk-table__header--numeric">Aged 75 and over</th>
+                    <th scope="col" class="govuk-table__header govuk-table__header--numeric">Aged 85 and over</th>
+                </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header">Suffolk local authority</th>
+                    <td class="govuk-table__cell govuk-table__cell--numeric">810,000</td>
+                    <td class="govuk-table__cell govuk-table__cell--numeric">57%</td>
+                    <td class="govuk-table__cell govuk-table__cell--numeric">23%</td>
+                    <td class="govuk-table__cell govuk-table__cell--numeric">11%</td>
+                    <td class="govuk-table__cell govuk-table__cell--numeric">3%</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header">East of England</th>
+                    <td class="govuk-table__cell govuk-table__cell--numeric">6,700,000</td>
+                    <td class="govuk-table__cell govuk-table__cell--numeric">58%</td>
+                    <td class="govuk-table__cell govuk-table__cell--numeric">23%</td>
+                    <td class="govuk-table__cell govuk-table__cell--numeric">12%</td>
+                    <td class="govuk-table__cell govuk-table__cell--numeric">3%</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header">England</th>
+                    <td class="govuk-table__cell govuk-table__cell--numeric">59,000,000</td>
+                    <td class="govuk-table__cell govuk-table__cell--numeric">61%</td>
+                    <td class="govuk-table__cell govuk-table__cell--numeric">19%</td>
+                    <td class="govuk-table__cell govuk-table__cell--numeric">9%</td>
+                    <td class="govuk-table__cell govuk-table__cell--numeric">3%</td>
+                </tr>
 
-</div>
+            </tbody>
+        </table>
+    </div>
 
-<div class="govuk-grid-row">
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+            <p class="govuk-body">
+                <strong>Table data information</strong><br /> Data sources: <a href="#" class="govuk-link" target="_blank" data-message="Sorry, this hasn’t been designed yet">Office for National Statistics (ONS)</a>
+                <br>
+                Last checked for updates: 5 February 2025<br />
+            </p>
+            <p class="govuk-body">
+                <a href="#" class="govuk-link" data-message="Sorry, this hasn’t been designed yet">Export table data (CSV, 658 KB)</a>
+            </p>
+            <h3 class="govuk-heading-m govuk-!-margin-top-7">Explore more population data by age group across England</h3>
+            <p class="govuk-body"><a href="../../data-pages/population-age/population-age" class="govuk-link">Map of population data by age group</a></p>
 
-  <div class="govuk-grid-column-full">
-    <h2 id="population-age" class="govuk-heading-m govuk-!-margin-top-7">Population age</h2>
-    <p class="govuk-body">Find out how <a href="#" class="govuk-link" data-message="Sorry, this hasn’t been designed yet">[DATA FOOTNOTE]</a> is defined, sourced, and updated.</p>
 
-    <table class="govuk-table">
-      <caption class="govuk-table__caption govuk-table__caption--s">[DATA VIS COMPONENT HEADING]</caption>
-      <thead class="govuk-table__head">
-        <tr class="govuk-table__row">
-          <th scope="col" class="govuk-table__header">Indicator</th>
-          <th scope="col" class="govuk-table__header govuk-table__header--numeric">Suffolk</th>
-          <th scope="col" class="govuk-table__header govuk-table__header--numeric">East of England</th>
-          <th scope="col" class="govuk-table__header govuk-table__header--numeric">All England</th>
-        </tr>
-      </thead>
-      <tbody class="govuk-table__body">
-        <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header">Population aged 18 to 64</th>
-          <td class="govuk-table__cell govuk-table__cell--numeric">33.8%</td>
-          <td class="govuk-table__cell govuk-table__cell--numeric">24.9%</td>
-          <td class="govuk-table__cell govuk-table__cell--numeric">29.3%</td>
-        </tr>
-        <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header">Population aged 65 and over</th>
-          <td class="govuk-table__cell govuk-table__cell--numeric">21.4%</td>
-          <td class="govuk-table__cell govuk-table__cell--numeric">19.9%</td>
-          <td class="govuk-table__cell govuk-table__cell--numeric">18.7%</td>
-        </tr>
-        <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header">Population aged 75 and over</th>
-          <td class="govuk-table__cell govuk-table__cell--numeric">17.3%</td>
-          <td class="govuk-table__cell govuk-table__cell--numeric">11.6%</td>
-          <td class="govuk-table__cell govuk-table__cell--numeric">9.3%</td>
-        </tr>
-        <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header">Population aged 85 and over</th>
-          <td class="govuk-table__cell govuk-table__cell--numeric">3.1%</td>
-          <td class="govuk-table__cell govuk-table__cell--numeric">2.2%</td>
-          <td class="govuk-table__cell govuk-table__cell--numeric">2.4%</td>
-        </tr>
-      </tbody>
-    </table>
+            <h2 id="economic-factors" class="govuk-heading-l govuk-!-margin-top-9">Economic factors</h2>
+            <p class="govuk-body">[Suffolk is less deprived than other local authorities in the East of England.]</p>
+            <a href="select-la" class="govuk-button govuk-button--secondary govuk-!-margin-top-5" type="submit" style="margin-right: 1em;" data-module="govuk-button">Change local authority</a>
 
-    <p class="govuk-body">
-      Source: <a href="#" class="govuk-link" target="_blank" data-message="Sorry, this hasn’t been designed yet">[DATA SOURCE] (opens in new tab)</a>
-      <br>
-      Data correct as of 5 February 2025
-      <br>
-      <a href="#" class="govuk-link" data-message="Sorry, this hasn’t been designed yet">Download table data (CSV)</a>
-    </p>
+        </div>
+        <div class="govuk-grid-column-full">
+            <table class="govuk-table">
+                <caption class="govuk-table__caption govuk-table__caption--m">Table comparing economic indicators in Suffolk to regional and national statistics</caption>
+                <thead class="govuk-table__head">
+                    <tr class="govuk-table__row">
+                        <th scope="col" class="govuk-table__header">Area</th>
+                        <th scope="col" class="govuk-table__header govuk-table__header--numeric">Percentage of households that are deprived in 4 dimensions</th>
+                        <th scope="col" class="govuk-table__header govuk-table__header--numeric">Percentage of households where the property is owned outright</th>
 
-    <h3 class="govuk-heading-s">Further information</h3>
-    <p class="govuk-body"><a href="../../data-pages/population-age/population-age" class="govuk-link">Explore more population age data</a></p>
-    <!-- <h3 class="govuk-heading-m"><a href="../../data-pages/population-age/population-age" class="govuk-link">Explore more population age data</a></h3> -->
+                    </tr>
+                </thead>
+                <tbody class="govuk-table__body">
+                    <tr class="govuk-table__row">
+                        <th scope="row" class="govuk-table__header">Suffolk local authority</th>
+                        <td class="govuk-table__cell govuk-table__cell--numeric">14.2%</td>
+                        <td class="govuk-table__cell govuk-table__cell--numeric">23%</td>
 
-    <h2 id="economic-factors" class="govuk-heading-m govuk-!-margin-top-9">Economic factors</h2>
-    <p class="govuk-body">Suffolk is less deprived than other local authorities in the East of England.</p>
-    <p class="govuk-body">Find out how <a href="#" class="govuk-link" data-message="Sorry, this hasn’t been designed yet">[DATA FOOTNOTE]</a> is defined, sourced, and updated.</p>
+                    </tr>
+                    <tr class="govuk-table__row">
+                        <th scope="row" class="govuk-table__header">East of England</th>
+                        <td class="govuk-table__cell govuk-table__cell--numeric">9.3%</td>
+                        <td class="govuk-table__cell govuk-table__cell--numeric">27%</td>
 
-    <table class="govuk-table">
-      <caption class="govuk-table__caption govuk-table__caption--s">[DATA VIS COMPONENT HEADING]</caption>
-      <thead class="govuk-table__head">
-        <tr class="govuk-table__row">
-          <th scope="col" class="govuk-table__header">Indicator</th>
-          <th scope="col" class="govuk-table__header govuk-table__header--numeric">Suffolk</th>
-          <th scope="col" class="govuk-table__header govuk-table__header--numeric">East of England</th>
-          <th scope="col" class="govuk-table__header govuk-table__header--numeric">All England</th>
-        </tr>
-      </thead>
-      <tbody class="govuk-table__body">
-        <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header">Neighbourhoods in most deprived 10%</th>
-          <td class="govuk-table__cell govuk-table__cell--numeric">11.2%</td>
-          <td class="govuk-table__cell govuk-table__cell--numeric">12.1%</td>
-          <td class="govuk-table__cell govuk-table__cell--numeric">13.8%</td>
-        </tr>
-        <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header">Homes owned outright</th>
-          <td class="govuk-table__cell govuk-table__cell--numeric">38.6%</td>
-          <td class="govuk-table__cell govuk-table__cell--numeric">34.6%</td>
-          <td class="govuk-table__cell govuk-table__cell--numeric">32.5%</td>
-        </tr>
-      </tbody>
-    </table>
+                    </tr>
+                    <tr class="govuk-table__row">
+                        <th scope="row" class="govuk-table__header">England</th>
+                        <td class="govuk-table__cell govuk-table__cell--numeric">10.0%</td>
+                        <td class="govuk-table__cell govuk-table__cell--numeric">32%</td>
 
-    <p class="govuk-body">
-      Source: <a href="#" class="govuk-link" target="_blank" data-message="Sorry, this hasn’t been designed yet">[DATA SOURCE] (opens in new tab)</a>
-      <br>
-      Data correct as of 5 February 2025
-      <br>
-      <a href="#" class="govuk-link" data-message="Sorry, this hasn’t been designed yet">Download table data (CSV)</a>
-    </p>
+                    </tr>
+                </tbody>
+            </table>
 
-    <h3 class="govuk-heading-s">Further information</h3>
-    <p class="govuk-body"><a href="#" class="govuk-link" data-message="Sorry, this hasn’t been designed yet">Explore more economic factors data</a></p>
+            <p class="govuk-body">
+                <strong>Table data information</strong><br /> Data sources: <a href="#" class="govuk-link" target="_blank" data-message="Sorry, this hasn’t been designed yet">Office for National Statistics (ONS)</a>
+                <br>
+                Last checked for updates: 5 February 2025<br />
+            </p>
+            <p class="govuk-body">
+                <a href="#" class="govuk-link" data-message="Sorry, this hasn’t been designed yet">Export table data (CSV, 658 KB)</a>
+            </p>
+            <!--h3 class="govuk-heading-s">Further information</h3>
+    <p class="govuk-body"><a href="#" class="govuk-link" data-message="Sorry, this hasn’t been designed yet">Explore more economic factors data</a></p> -->
 
-    <h2 id="household-composition" class="govuk-heading-m govuk-!-margin-top-9">Household composition</h2>
-    <p class="govuk-body">Find out how <a href="#" class="govuk-link" data-message="Sorry, this hasn’t been designed yet">[DATA FOOTNOTE]</a> is defined, sourced, and updated.</p>
-      
-    <table class="govuk-table">
-      <caption class="govuk-table__caption govuk-table__caption--s">[DATA VIS COMPONENT HEADING]</caption>
-      <thead class="govuk-table__head">
-        <tr class="govuk-table__row">
-          <th scope="col" class="govuk-table__header">Indicator</th>
-          <th scope="col" class="govuk-table__header govuk-table__header--numeric">Suffolk</th>
-          <th scope="col" class="govuk-table__header govuk-table__header--numeric">East of England</th>
-          <th scope="col" class="govuk-table__header govuk-table__header--numeric">All England</th>
-        </tr>
-      </thead>
-      <tbody class="govuk-table__body">
-        <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header">1-person households with resident aged 66 or over</th>
-          <td class="govuk-table__cell govuk-table__cell--numeric">17.4%</td>
-          <td class="govuk-table__cell govuk-table__cell--numeric">14.5%</td>
-          <td class="govuk-table__cell govuk-table__cell--numeric">13.9%</td>
-        </tr>
-      </tbody>
-    </table>
+            <h2 id="household-composition" class="govuk-heading-l govuk-!-margin-top-9">Household composition</h2>
+            <a href="select-la" class="govuk-button govuk-button--secondary govuk-!-margin-top-5" type="submit" style="margin-right: 1em;" data-module="govuk-button">Change local authority</a>
 
-    <p class="govuk-body">
-      Source: <a href="#" class="govuk-link" target="_blank" data-message="Sorry, this hasn’t been designed yet">[DATA SOURCE] (opens in new tab)</a>
-      <br>
-      Data correct as of 5 February 2025
-      <br>
-      <a href="#" class="govuk-link" data-message="Sorry, this hasn’t been designed yet">Download table data (CSV)</a>
-    </p>
+            <table class="govuk-table">
+                <caption class="govuk-table__caption govuk-table__caption--m">Table comparing household composition in Suffolk to regional and national statistics</caption>
+                <thead class="govuk-table__head">
+                    <tr class="govuk-table__row">
+                        <th scope="col" class="govuk-table__header">Indicator</th>
+                        <th scope="col" class="govuk-table__header govuk-table__header--numeric">Percentage of one person households where the person is aged 65 or over</th>
+                        <th scope="col" class="govuk-table__header govuk-table__header--numeric">Percentage of people aged 5 or over who provide unpaid care</th>
 
-    <h3 class="govuk-heading-s">Further information</h3>
-    <p class="govuk-body"><a href="#" class="govuk-link" data-message="Sorry, this hasn’t been designed yet">Explore more household composition data</a></p>
+                    </tr>
+                </thead>
+                <tbody class="govuk-table__body">
+                    <tr class="govuk-table__row">
+                        <th scope="row" class="govuk-table__header">Suffolk local authority</th>
+                        <td class="govuk-table__cell govuk-table__cell--numeric">43.0%</td>
+                        <td class="govuk-table__cell govuk-table__cell--numeric">7.8%</td>
 
-    <h2 id="health-conditions" class="govuk-heading-m govuk-!-margin-top-9">Long term health conditions and disability</h2>
-    <p class="govuk-body">Find out how <a href="#" class="govuk-link" data-message="Sorry, this hasn’t been designed yet">[DATA FOOTNOTE]</a> is defined, sourced, and updated.</p>
-      
-    <table class="govuk-table">
-      <caption class="govuk-table__caption govuk-table__caption--s">[DATA VIS COMPONENT HEADING]</caption>
-      <thead class="govuk-table__head">
-        <tr class="govuk-table__row">
-          <th scope="col" class="govuk-table__header">Indicator</th>
-          <th scope="col" class="govuk-table__header govuk-table__header--numeric">Suffolk</th>
-          <th scope="col" class="govuk-table__header govuk-table__header--numeric">East of England</th>
-          <th scope="col" class="govuk-table__header govuk-table__header--numeric">All England</th>
-        </tr>
-      </thead>
-      <tbody class="govuk-table__body">
-        <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header">Percentage of people with long term health problems or disability</th>
-          <td class="govuk-table__cell govuk-table__cell--numeric">[DATA]</td>
-          <td class="govuk-table__cell govuk-table__cell--numeric">[DATA]</td>
-          <td class="govuk-table__cell govuk-table__cell--numeric">[DATA]</td>
-        </tr>
-        <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header">People with bad or very bad health conditions</th>
-          <td class="govuk-table__cell govuk-table__cell--numeric">[DATA]</td>
-          <td class="govuk-table__cell govuk-table__cell--numeric">[DATA]</td>
-          <td class="govuk-table__cell govuk-table__cell--numeric">[DATA]</td>
-        </tr>
-        <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header">Learning disability</th>
-          <td class="govuk-table__cell govuk-table__cell--numeric">[DATA]</td>
-          <td class="govuk-table__cell govuk-table__cell--numeric">[DATA]</td>
-          <td class="govuk-table__cell govuk-table__cell--numeric">[DATA]</td>
-        </tr>
-        <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header">Physical disability</th>
-          <td class="govuk-table__cell govuk-table__cell--numeric">[DATA]</td>
-          <td class="govuk-table__cell govuk-table__cell--numeric">[DATA]</td>
-          <td class="govuk-table__cell govuk-table__cell--numeric">[DATA]</td>
-        </tr>
-      </tbody>
-    </table>
+                    </tr>
+                    <tr class="govuk-table__row">
+                        <th scope="row" class="govuk-table__header">East of England</th>
+                        <td class="govuk-table__cell govuk-table__cell--numeric">35.9%</td>
+                        <td class="govuk-table__cell govuk-table__cell--numeric">7.0%</td>
 
-    <p class="govuk-body">
-      Source: <a href="#" class="govuk-link" target="_blank" data-message="Sorry, this hasn’t been designed yet">Office for National Statistics, NHS England, Ministry of Housing, Communities and Local Government (MHCLG) (opens in new tab)</a>
-      <br>
-      Data correct as of 5 February 2025
-      <br>
-      <a href="#" class="govuk-link" data-message="Sorry, this hasn’t been designed yet">Download table data (CSV)</a>
-    </p>
+                    </tr>
+                    <tr class="govuk-table__row">
+                        <th scope="row" class="govuk-table__header">England</th>
+                        <td class="govuk-table__cell govuk-table__cell--numeric">42.7%</td>
+                        <td class="govuk-table__cell govuk-table__cell--numeric">8.9%</td>
 
-    <h2 id="dementia" class="govuk-heading-m govuk-!-margin-top-9">Dementia</h2>
-    <p class="govuk-body">Find out how <a href="#" class="govuk-link" data-message="Sorry, this hasn’t been designed yet">[DATA FOOTNOTE]</a> is defined, sourced, and updated.</p>
-      
-    <table class="govuk-table">
-      <caption class="govuk-table__caption govuk-table__caption--s">[DATA VIS COMPONENT HEADING]</caption>
-      <thead class="govuk-table__head">
-        <tr class="govuk-table__row">
-          <th scope="col" class="govuk-table__header">Indicator</th>
-          <th scope="col" class="govuk-table__header govuk-table__header--numeric">Suffolk</th>
-          <th scope="col" class="govuk-table__header govuk-table__header--numeric">East of England</th>
-          <th scope="col" class="govuk-table__header govuk-table__header--numeric">All England</th>
-        </tr>
-      </thead>
-      <tbody class="govuk-table__body">
-        <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header">Dementia [prevalence]</th>
-          <td class="govuk-table__cell govuk-table__cell--numeric">[DATA]</td>
-          <td class="govuk-table__cell govuk-table__cell--numeric">[DATA]</td>
-          <td class="govuk-table__cell govuk-table__cell--numeric">[DATA]</td>
-        </tr>
-        <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header">Registered dementia patients per 100,000</th>
-          <td class="govuk-table__cell govuk-table__cell--numeric">[DATA]</td>
-          <td class="govuk-table__cell govuk-table__cell--numeric">[DATA]</td>
-          <td class="govuk-table__cell govuk-table__cell--numeric">[DATA]</td>
-        </tr>
-        <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header">People over 65 with dementia per 100,000</th>
-          <td class="govuk-table__cell govuk-table__cell--numeric">[DATA]</td>
-          <td class="govuk-table__cell govuk-table__cell--numeric">[DATA]</td>
-          <td class="govuk-table__cell govuk-table__cell--numeric">[DATA]</td>
-        </tr>
-      </tbody>
-    </table>
+                    </tr>
+                </tbody>
+            </table>
 
-    <p class="govuk-body">
-      Source: <a href="#" class="govuk-link" target="_blank" data-message="Sorry, this hasn’t been designed yet">Office for National Statistics, NHS England, Ministry of Housing, Communities and Local Government (MHCLG) (opens in new tab)</a>
-      <br>
-      Data correct as of 5 February 2025
-      <br>
-      <a href="#" class="govuk-link" data-message="Sorry, this hasn’t been designed yet">Download table data (CSV)</a>
-    </p>
+            <p class="govuk-body">
+                <strong>Table data information</strong><br /> Data sources: <a href="#" class="govuk-link" target="_blank" data-message="Sorry, this hasn’t been designed yet">Office for National Statistics (ONS)</a>
+                <br>
+                Last checked for updates: 5 February 2025<br />
+            </p>
+            <p class="govuk-body">
+                <a href="#" class="govuk-link" data-message="Sorry, this hasn’t been designed yet">Export table data (CSV, 658 KB)</a>
+            </p>
 
-    <h3 class="govuk-heading-s">Further information</h3>
-    <p class="govuk-body"><a href="#" class="govuk-link" data-message="Sorry, this hasn’t been designed yet">Explore more health and wellbeing data</a></p>
-  </div>
 
-</div>
+            <h2 id="health-conditions" class="govuk-heading-l govuk-!-margin-top-9">Long term health conditions and disability</h2>
+            <p class="govuk-body">Learn about the definition, sourcing of data and methodology for the indicator <a href="../../help/disability-prevalence.html" class="govuk-link">disability prevalence</a>.</p>
+            <a href="select-la" class="govuk-button govuk-button--secondary govuk-!-margin-top-5" type="submit" style="margin-right: 1em;" data-module="govuk-button">Change local authority</a>
 
-<div class="govuk-grid-row">
+            <table class="govuk-table">
+                <caption class="govuk-table__caption govuk-table__caption--m">Table comparing long term health conditions and disability prevalence in Suffolk to regional and national statistics</caption>
+                <thead class="govuk-table__head">
+                    <tr class="govuk-table__row">
+                        <th scope="col" class="govuk-table__header">Area</th>
+                        <th scope="col" class="govuk-table__header govuk-table__header--numeric">Percentage of people who are disabled under the Equality Act</th>
+                        <th scope="col" class="govuk-table__header govuk-table__header--numeric">Percentage of people with bad or very bad health conditions</th>
+                        <th scope="col" class="govuk-table__header govuk-table__header--numeric">Learning disability prevalence</th>
+                    </tr>
+                </thead>
+                <tbody class="govuk-table__body">
+                    <tr class="govuk-table__row">
+                        <th scope="row" class="govuk-table__header">Suffolk local authority</th>
+                        <td class="govuk-table__cell govuk-table__cell--numeric">17.8%</td>
+                        <td class="govuk-table__cell govuk-table__cell--numeric">13.0%</td>
+                        <td class="govuk-table__cell govuk-table__cell--numeric">2.0%</td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                        <th scope="row" class="govuk-table__header">East of England</th>
+                        <td class="govuk-table__cell govuk-table__cell--numeric">17.5%</td>
+                        <td class="govuk-table__cell govuk-table__cell--numeric">14.6%</td>
+                        <td class="govuk-table__cell govuk-table__cell--numeric">2.6%</td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                        <th scope="row" class="govuk-table__header">England</th>
+                        <td class="govuk-table__cell govuk-table__cell--numeric">17.5%</td>
+                        <td class="govuk-table__cell govuk-table__cell--numeric">14.0%</td>
+                        <td class="govuk-table__cell govuk-table__cell--numeric">2.2%</td>
+                    </tr>
 
-  <div class="govuk-grid-column-two-thirds">
-    <h2 id="footnotes" class="govuk-heading-m govuk-!-margin-top-9">Footnotes</h2>
-    <p class="govuk-body">Find out how each indicator is defined, sourced, and updated.</p>
-    <p class="govuk-body">Select an indicator to view its footnotes:</p>
-    <ul class="govuk-list govuk-list--bullet">
-      <li><a href="../../help/population-size.html" class="govuk-link">Population size</a></li>
-      <li><a href="../../help/population-age.html" class="govuk-link">Percentage of population in age group</a></li>
-      <li><a href="../../help/disability-prevalence.html" class="govuk-link">Disability prevalence</a></li>
-    </ul>
+                </tbody>
+            </table>
 
-    <h2 id="related" class="govuk-heading-m govuk-!-margin-top-7">Related information</h2>
-    <p class="govuk-body">For more information on local population needs, check the latest Market Position Statement and Joint Strategic Needs Assessment. You will usually find these on the local authority's website.</p>    
-  </div>
+            <p class="govuk-body">
+                <strong>Table data information</strong><br /> Data sources: <a href="#" class="govuk-link" target="_blank" data-message="Sorry, this hasn’t been designed yet">Office for National Statistics (ONS)</a>
+                <br>
+                Last checked for updates: 5 February 2025<br />
+            </p>
+            <p class="govuk-body">
+                <a href="#" class="govuk-link" data-message="Sorry, this hasn’t been designed yet">Export table data (CSV, 658 KB)</a>
+            </p>
 
-</div>
-{% endblock %}
+            <h2 id="dementia" class="govuk-heading-l govuk-!-margin-top-9">Dementia</h2>
+            <p class="govuk-body">Learn about the definition, sourcing of data and methodology for the indicator <a href="../../help/disability-prevalence.html" class="govuk-link">disability prevalence</a>.</p>
+            <a href="select-la" class="govuk-button govuk-button--secondary govuk-!-margin-top-5" type="submit" style="margin-right: 1em;" data-module="govuk-button">Change local authority</a>
+
+            <table class="govuk-table">
+                <caption class="govuk-table__caption govuk-table__caption--m">Table comparing dementia prevalence in Suffolk to regional and national statistics</caption>
+                <thead class="govuk-table__head">
+                    <tr class="govuk-table__row">
+                        <th scope="col" class="govuk-table__header">Area</th>
+                        <th scope="col" class="govuk-table__header govuk-table__header--numeric">Registered dementia patients over 65 per 100,000 adult population</th>
+                        <th scope="col" class="govuk-table__header govuk-table__header--numeric">Estimated number of people over 65 with dementia per 100,000 adult population</th>
+
+                    </tr>
+                </thead>
+                <tbody class="govuk-table__body">
+                    <tr class="govuk-table__row">
+                        <th scope="row" class="govuk-table__header">Suffolk local authority</th>
+                        <td class="govuk-table__cell govuk-table__cell--numeric">4,397</td>
+                        <td class="govuk-table__cell govuk-table__cell--numeric">7,700</td>
+
+                    </tr>
+                    <tr class="govuk-table__row">
+                        <th scope="row" class="govuk-table__header">East of England</th>
+                        <td class="govuk-table__cell govuk-table__cell--numeric">4,216</td>
+                        <td class="govuk-table__cell govuk-table__cell--numeric">7,200</td>
+
+                    </tr>
+                    <tr class="govuk-table__row">
+                        <th scope="row" class="govuk-table__header">England</th>
+                        <td class="govuk-table__cell govuk-table__cell--numeric">4,458</td>
+                        <td class="govuk-table__cell govuk-table__cell--numeric">7,400</td>
+
+                    </tr>
+                </tbody>
+            </table>
+
+            <p class="govuk-body">
+                <strong>Table data information</strong><br /> Data sources: <a href="#" class="govuk-link" target="_blank" data-message="Sorry, this hasn’t been designed yet">Office for National Statistics (ONS)</a>
+                <br>
+                Last checked for updates: 5 February 2025<br />
+            </p>
+            <p class="govuk-body">
+                <a href="#" class="govuk-link" data-message="Sorry, this hasn’t been designed yet">Export table data (CSV, 658 KB)</a>
+            </p>
+
+
+        </div>
+
+    </div>
+
+    <div class="govuk-grid-row">
+
+        <div class="govuk-grid-column-two-thirds">
+            <h2 id="indicators" class="govuk-heading-l govuk-!-margin-top-9">Indicator definitions and data sources</h2>
+            <p class="govuk-body">[Find out how each indicator is defined, sourced, and updated.</p>
+            <p class="govuk-body">Select an indicator to view its footnotes:]</p>
+            <ul class="govuk-list govuk-list--bullet">
+                <li><a href="../../help/population-size.html" class="govuk-link">Population size</a></li>
+                <li><a href="../../help/population-age.html" class="govuk-link">Percentage of population in age group</a></li>
+                <li><a href="../../help/disability-prevalence.html" class="govuk-link">Disability prevalence</a></li>
+            </ul>
+
+            <h2 id="market-position-statement" class="govuk-heading-l govuk-!-margin-top-9">Market Position Statement for your local care home market</h2>
+            <p class="govuk-body"><a href="#" class="govuk-link" data-message="Sorry, this hasn’t been designed yet">Market Position Statement for Mid Suffolk local authority district</a></p>
+            <p class="govuk-body">[For more information on capacity, check the latest Market Position Statement and Joint Strategic Needs Assessment. You will usually find these on the local authority's website.]</p>
+
+
+        </div>
+
+    </div>
+    {% endblock %}
