@@ -1,74 +1,75 @@
-{% extends "v5/layouts/help.html" %}
+{% extends "v5/layouts/logged-in.html" %}
 
-{% set pageName = "Indicator " %}
+{% set pageName = "Footnotes: population aged 65 and over needing domestic or self-care help" %}
+
+{% block beforeContent %}
+<a href="javascript:window.history.back()" class="govuk-back-link" >Back</a>
+{% endblock %}
 
 {% block content %}
-
-<a href="javascript:history.back()" class="govuk-back-link">Back</a>
-
 <div class="govuk-grid-row">
 
   <div class="govuk-grid-column-two-thirds">
-
-    <h1 class="govuk-heading-l">
-      Footnotes: population aged 65 and over needing domestic or self-care help
-    </h1>
-
+    <h1 class="govuk-heading-xl">{{pageName}}</h1>
     <p class="govuk-body-l">Find detailed information about this indicator group.</p>
+    <dl class="govuk-summary-list">
+      
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">What this measures</dt>
+        <dd class="govuk-summary-list__value">The percentage of the population in England who are considered disabled.</dd>
+      </div>
 
-    <table class="govuk-table">
-   
-      <thead class="govuk-table__head">
-        <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header govuk-!-width-one-third">What this measures</td>
-          <td class="govuk-table__cell">
-            The number of individuals aged 65 and over who need domestic or self-care help.
-        </tr>
-      </thead>
-      <tbody class="govuk-table__body">
-        <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header">Source</th>
-          <td class="govuk-table__cell"><a href="https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/bulletins/populationestimatesforenglandandwales/mid2023" class="govuk-link" target="_blank">Office for National Statistics population estimates for England and Wales (opens in new tab)</a> and<br>
-          <a href="https://digital.nhs.uk/data-and-information/publications/statistical/health-survey-for-england/2017" class="govuk-link" target="_blank">NHS England - Health Survey for England 2017 (opens in new tab)</a></td>
-        </tr>
-        <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header">Data correct as of</th>
-          <td class="govuk-table__cell">[Generated automatically]</td>
-        </tr>
-        <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header">Update frequency</th>
-          <td class="govuk-table__cell">Yearly</td>
-        </tr>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Source</dt>
+        <dd class="govuk-summary-list__value">
+          <a href="https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/bulletins/populationestimatesforenglandandwales/mid2023" class="govuk-link" target="_blank">Office for National Statistics population estimates for England and Wales (opens in new tab)</a>
+          <br>
+          and
+          <br>
+          <a href="https://digital.nhs.uk/data-and-information/publications/statistical/health-survey-for-england/2017" class="govuk-link" target="_blank">NHS England - Health Survey for England 2017 (opens in new tab)</a>
+        </dd>
+      </div>
 
-        <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header">Data available for</th>
-          <td class="govuk-table__cell">[Generated automatically, e.g. 5 February 2019 to 5 February 2025]</td>
-        </tr>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Data correct as of</dt>
+        <dd class="govuk-summary-list__value">{{"today" | govukDate}}</dd>
+      </div>
 
-        <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header">Methodology</th>
-          <td class="govuk-table__cell">This data is from the Office for National Statistics mid-2023 population estimates for England and Wales.</td>
-        </tr>
-  
-        <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header">Limitations</th>
-          <td class="govuk-table__cell">The data are not counts, but estimates produced by combining data from multiple sources. The accuracy of the estimates is subject to the coverage and errors associated with those sources.
-            <br><br>
-            These estimates reflect the mid-2023 population, not the current population. 
-            <br> <br>
-            Changes to methods and data sources may lead to regular revisions of these estimates.</td>
-        </tr>
-  
-        <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header">Data definitions</th>
-          <td class="govuk-table__cell">Include individuals within the specified age group only.
-             </td>
-        </tr>
-      </tbody>
-    </table>
-    
-  
-    
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Update frequency</dt>
+        <dd class="govuk-summary-list__value">Yearly</dd>
+      </div>
+      
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Data available for</dt>
+        <dd class="govuk-summary-list__value">{{"today" | govukDate}} to {% set expirationDate = "today" | duration(5, "years") %}{{expirationDate | govukDate}}</dd>
+      </div>
 
-  {% endblock %}
-  
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Methodology</dt>
+        <dd class="govuk-summary-list__value">This data is from the Office for National Statistics mid-2023 population estimates for England and Wales.</dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Limitations</dt>
+        <dd class="govuk-summary-list__value">
+          The data are not counts, but estimates produced by combining data from multiple sources. The accuracy of the estimates is subject to the coverage and errors associated with those sources.
+          <br>
+          <br>
+          These estimates reflect the mid-2023 population, not the current population.
+          <br>
+          <br>
+          Changes to methods and data sources may lead to regular revisions of these estimates.
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Data definitions</dt>
+        <dd class="govuk-summary-list__value">Include individuals within the specified age group only.</dd>
+      </div>
+      
+    </dl>
+  </div>
+
+</div>
+{% endblock %}  
