@@ -9,7 +9,7 @@
 
 {% set las =
   [
-    ["Mid Suffolk local authority district", 1152,89],
+    ["Suffolk local authority area", 1152,89],
     ["East of England (regional average)", 1094,80],
     ["England (national average)", 958,87]
   ]
@@ -18,7 +18,7 @@
 <div class="govuk-grid-column-full">
     <!-- <h3 class="govuk-heading-m">Residential care beds in the East of England</h3> -->
     <table class="govuk-table">
-        <caption class="govuk-table__caption govuk-table__caption--m">Chart comparing care home bed provision in Mid Suffolk to regional and national averages</caption>
+        <caption class="govuk-table__caption govuk-table__caption--m">Chart comparing care home bed provision in Suffolk to regional and national averages</caption>
         <thead class="govuk-table__head">
             <tr class="govuk-table__row">
                 <th scope="col" class="govuk-table__header" style="min-width:12em">Area</th>
@@ -31,7 +31,7 @@
         {% for item in las %}
         {% if item[0] == "Suffolk" %}
         <tr class="govuk-table__row">
-            <td class="govuk-table__cell">Mid Suffolk local authority district</td>
+            <td class="govuk-table__cell">Suffolk local authority area</td>
             <td class="govuk-table__cell govuk-table__cell--numeric">1,152</td>
             <td class="govuk-table__cell">
                 <svg width="340" height="25">
@@ -78,7 +78,7 @@
         <a href="#" class="govuk-link" data-message="Sorry, this hasn’t been designed yet">Download chart image (PNG, 1 MB)</a>
     </p>
 
-    <h3 class="govuk-heading-m govuk-!-margin-top-7">Compare care home bed provision across local authority districts in the region</h3>
-    <p class="govuk-body"><a href="../../data-pages/beds-over-100K/index" class="govuk-link">Chart of care home bed numbers for local authority districts in the East of England</a></p>
+    <h3 class="govuk-heading-m govuk-!-margin-top-7">Compare care home bed provision across local authorities in the region</h3>
+    <p class="govuk-body"><a href="../../data-pages/beds-over-100K/index" class="govuk-link">Chart of care home bed numbers for local authorities in the East of England</a></p>
     
 </div>
