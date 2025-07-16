@@ -1,0 +1,28 @@
+{#
+  For guidance on how to use layouts see:
+  https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
+#}
+
+{% extends "govuk-prototype-kit/layouts/govuk-branded.njk" %}
+{% from "govuk/components/header/macro.njk" import govukHeader %}
+
+{% block stylesheets %}
+{{super()}}
+<link href="/public/css/private-beta/2025/march/styles.css" rel="stylesheet" type="text/css" />
+<link href="/public/css/private-beta/2025/march/print.css" media="print" rel="stylesheet" type="text/css" />
+{% endblock %}
+
+{% block header %}
+{{ govukHeader({
+  homepageUrl: "/"
+}) }}
+
+<div class="govuk-width-container">
+  {{ govukPhaseBanner({
+    tag: {
+      text: "Beta"
+    },
+    html: 'This is a new service. Help us improve it and <a href="https://forms.office.com/e/s9FCDSibN0" class="govuk-link" rel="noreferrer noopener" target="_blank">give your feedback (opens in new tab)</a>.'
+  }) }}
+</div>
+{% endblock %}

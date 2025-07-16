@@ -1,0 +1,105 @@
+{% extends "private-beta/2025/march/layouts/main.html" %}
+
+{% set pageName = "Customise view" %}
+
+{% block content %} 
+<a href="javascript:history.back()" class="govuk-back-link">Back</a>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+       <!--<span class="govuk-caption-m">Total beds</span>-->
+    <h1 class="govuk-heading-l">{{pageName}}</h1>
+
+    <p class="govuk-body">Choose a date and filter the data to view the insights you need.</p>
+
+        <div class="date-pickers">
+      <div class="moj-datepicker" data-module="moj-date-picker">
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-label--m" for="date">
+            Date to view
+          </label>
+          <p class="govuk-hint">Select a date on or after 1 April 2021.</p>
+          <input class="govuk-input moj-js-datepicker-input " id="date" name="date" type="text" aria-describedby="date-hint" autocomplete="off" value="1/04/2021">
+        </div>
+      </div>
+      </div>
+   <h2>Filters</h2>
+   <table class="govuk-table">
+    <!-- <caption class="govuk-table__caption govuk-table__caption--l">Months and rates</caption> -->
+    <thead class="govuk-table__head">
+      <tr class="govuk-table__row">
+        <th scope="col" class="govuk-table__header">Filters</th>
+        <th scope="col" class="govuk-table__header">Active</th>
+        <th scope="col" class="govuk-table__header">Available</th>
+        <th scope="col" class="govuk-table__header">Action</th>
+      </tr>
+    </thead>
+    <tbody class="govuk-table__body">
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header">General</th>
+        <td class="govuk-table__cell">
+          <ul class="govuk-list">
+            <li>Total beds</li>
+            <li>Dementia Nursing</li>
+            <li>Dementia Residential</li>
+            </ul>
+          </td>
+        <td class="govuk-table__cell">
+          <ul class="govuk-list">
+            <li>Community Care</li>
+            <li>General Nursing</li>
+            <li>General Residential</li>
+            <li>Learning Disability Nursing</li>
+            <li>Learning Disability Residential</li>
+            <li>Mental Health Nursing</li>
+            <li>Mental Health Residential</li>
+            <li>Transitional (Transitional means the transition from children&rsquo;s services to adult services.)</li>
+            <li>YPD - Young Physically Disabled</li>
+          </ul>
+        </td>
+        <td class="govuk-table__cell"><a href="total_beds-edit-filters">Change</a></td>
+      </tr>
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header">Local authority</th>
+        <td class="govuk-table__cell">Suffolk</td>
+        <td class="govuk-table__cell">
+152 available
+        </td>
+        <td class="govuk-table__cell"><a href="total_beds-edit-filters">Change</a></td>
+
+      </tr>
+    </tbody>
+  </table>
+   <!-- <dl class="govuk-summary-list">
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Filter by
+      </dt>
+      <dd class="govuk-summary-list__value">
+        Total beds
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a class="govuk-link" href="total_beds-edit-filters">Change<span class="govuk-visually-hidden"> name</span></a>
+      </dd>
+    </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Age range
+        </dt>
+        <dd class="govuk-summary-list__value">
+          All ages
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="total_beds-edit-filters">Change<span class="govuk-visually-hidden"> name</span></a>
+        </dd>
+      </div>
+    </dl> -->
+
+      <form action="total_beds#total">
+    <button type="submit" class="govuk-button" data-module="govuk-button">
+      Apply changes
+    </button>
+    </form>
+  </div>
+
+    {% endblock %}

@@ -1,0 +1,60 @@
+{% extends "govuk-prototype-kit/layouts/unbranded.html" %}
+
+{% set pageName = "All screens (Private beta - June 2025)" %}
+{% set bodyClasses = "unbranded-fill-page" %}
+
+{% block content %}
+<div class="govuk-form-group">
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+</div>
+
+<h1 class="govuk-heading-xl">
+  <span class="govuk-caption-xl">Private beta (June 2025)</span>
+  All screens
+</h1>
+
+<h2 class="govuk-heading-l heading-override">Entry points into {{serviceName | lower}}</h2>
+<ol class="govuk-list govuk-list--number">
+  <li><a href="start">Get adult social care data (start)</a></li>
+</ol>
+
+<h2 class="govuk-heading-l">{{serviceName}}</h2>
+<h3 class="govuk-heading-m heading-override">Current population needs and capacity</h3>
+<ul class="govuk-list govuk-list--bullet">
+  <li><a href="present-demand">Current population needs and capacity</a></li>
+  <ul class="list-override govuk-list--bullet">
+    <li><a href="present-demand-locations">Edit locations</a></li>
+    <li>Explore data - <a href="total-beds">Adult social care beds per 100,000 adult population</a></li>
+    <ul class="list-override govuk-list--bullet">
+      <li><a href="total-beds-edit-la">Edit locations</a></li>
+      <li><a href="total-beds-edit-single-filter">Edit chart filter (bar chart)</a></li>
+      <li><a href="total-beds-edit-filters">Edit time series filters (time series)</a></li>
+      <li><a href="total-beds-edit-table-filters">Edit table filters (table)</a></li>
+      <li><a href="help/smart-insights">About smart insights (experimental)</a></li>
+    </ul>
+  </ul>
+</ul>
+
+<h4 class="govuk-heading-s heading-override">Indicator definition and supporting information</h4>
+<ul class="govuk-list govuk-list--bullet">
+  <li><a href="help/population-size">Population size</a></li>
+  <li><a href="help/population-age">Percentage of population aged 18 to 64, or 65 and over</a></li>
+  <li><a href="help/disability-prevalence">Disability prevalence</a></li>
+  <li><a href="help/beds-per-100000-adult-population">Adult social care beds per 100,000 adult population</a></li>
+  <li><a href="help/percentage-beds-occupied.html">Percentage of adult social care beds occupied</a></li>
+  <li><a href="help/beds-care-provider-location">Number of adult social care beds in care provider location</a></li>
+  <li><a href="help/percentage-beds-occupied-care-provider-location">Percentage of adult social care beds occupied in care provider location</a></li>
+</ul>
+
+<h3 class="govuk-heading-m heading-override">Additional screens</h3>
+<ul class="govuk-list govuk-list--bullet">
+  <li><a href="disclaimer">Disclaimer</a></li>
+</ul>
+{% endblock %}
+
+{% block pageScripts %}
+<!-- Tooltip taken from Nicolas Hoffmann (https://a11y.nicolas-hoffmann.net/modal/) -->
+<script src="/public/javascripts/jquery-accessible-modal-window-aria.js"></script>
+<!-- Font Awesome 4 icons for the notifications -->
+<link href="/public/open-source/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+{% endblock %}

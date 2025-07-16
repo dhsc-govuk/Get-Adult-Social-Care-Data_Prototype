@@ -1,0 +1,59 @@
+{#
+  For guidance on how to use layouts see:
+  https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
+#}
+
+{% extends "govuk-prototype-kit/layouts/govuk-branded.njk" %}
+{% from "govuk/components/header/macro.njk" import govukHeader %}
+{% from "govuk/components/service-navigation/macro.njk" import govukServiceNavigation %}
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+{% from "govuk/components/footer/macro.njk" import govukFooter %}
+
+{% block stylesheets %}
+{{super()}}
+<link href="/public/css/private-beta/2025/june/styles.css" rel="stylesheet" type="text/css" />
+<link href="/public/css/private-beta/2025/june/print.css" media="print" rel="stylesheet" type="text/css" />
+{% endblock %}
+
+{% block header %}
+{{ govukHeader({
+  homepageUrl: "/"
+}) }}
+
+{{ govukServiceNavigation({
+  serviceName: serviceName,
+  serviceUrl: "start"
+}) }}
+
+<div class="govuk-width-container">
+  {{ govukPhaseBanner({
+    tag: {
+      text: "Beta"
+    },
+    html: 'This is a new service. Help us improve it and <a href="https://forms.office.com/e/s9FCDSibN0" class="govuk-link" rel="noreferrer noopener" target="_blank">give your feedback (opens in new tab)</a>.'
+  }) }}
+</div>
+{% endblock %}
+
+{% block footer %}
+{% if data.interimRelease == "true" %}
+{{ govukFooter({}) }}
+{% else %}
+{{ govukFooter({
+  meta: {
+    items: [
+      {
+        href: "disclaimer?backLink",
+        text: "Disclaimer"
+      }
+    ]
+  }
+}) }}
+{% endif %}
+{% endblock %}
+
+{% block scripts %}
+  {{ super() }}
+  <!-- D3 is a third party (OPEN SOURCE) JavaScript library for visualizing data (https://d3js.org)-->
+  <script src="https://d3js.org/d3.v4.js"></script>
+{% endblock %}

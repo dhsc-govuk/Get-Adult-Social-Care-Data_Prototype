@@ -1,0 +1,55 @@
+{% extends "private-beta/2025/march/layouts/main.html" %}
+
+{% set pageName = "Edit locations" %}
+
+{% block content %} 
+<!-- This is an experimental page for check boxes -->
+<a href="../data-pages/present-demand" class="govuk-back-link">Back</a>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form action="#">
+    <!-- <span class="govuk-caption-l">Demand and capacity</span> -->
+    <h1 class="govuk-heading-l">
+      <span class="govuk-caption-m">Demand</span>
+      {{pageName}}</h1>
+      {% set myFilters = [{ id: 1, filter: "Total beds", name: "total-beds" }, 
+      { id: 2, filter: "Dementia residential", name: "demential-residential" },
+      { id: 3, filter: "Dementia nursing", name: "demential-nursing" }
+      ]
+      %}
+<!-- 
+      
+Data 
+
+-->
+        <h2>
+          Local authority
+        </h2>
+        <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+            <h1 class="govuk-fieldset__heading">
+              East of England
+            </h1>
+          </legend>
+          {% for item in myFilters %}
+          {{data['item.name']}}
+          <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id={{item.name + item.id}} name="filters" type="checkbox" value={{item.name}}>
+              <label class="govuk-label govuk-checkboxes__label" for="waste">
+                {{item.filter}}
+              </label>
+            </div>
+            {% endfor %}
+        </fieldset>
+</div>
+<button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+  View all local authorities
+</button>
+
+          <button type="submit" class="govuk-button" data-module="govuk-button">
+            Continue
+          </button>
+        </form>
+        {% endblock %}

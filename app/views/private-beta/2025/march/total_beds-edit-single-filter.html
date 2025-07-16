@@ -1,0 +1,89 @@
+{% extends "private-beta/2025/march/layouts/main.html" %}
+
+{% set pageName = "Edit chart filter" %}
+
+{% block content %} 
+<a href="total_beds" class="govuk-back-link">Back</a>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <span class="govuk-caption-m">Adult social care beds per 100,000 adult population</span> 
+    <h1 class="govuk-heading-l">{{pageName}}</h1>
+    <p class="govuk-body">Select the filter to refine the data displayed.</p>
+    <!-- 
+    
+    General  
+    
+    -->
+    {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+{{ govukRadios({
+  name: "Filters",
+  fieldset: {
+    legend: {
+      text: "Filters",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  items: [
+    {
+      value: "All types",
+      text: "All types",
+      checked: true
+    },
+    {
+      value: "Community care",
+      text: "Community care"
+    },
+    {
+      value: "Transitional",
+      text: "Transitional",
+      hint: {
+        text:"For individuals moving from children's services to adult social care."
+      }
+    },
+    {
+      value: "Nursing - general",
+      text: "Nursing - general"
+    },
+    {
+      value: "Nursing - dementia",
+      text: "Nursing - dementia"
+    },
+    {
+      value: "Nursing - mental health",
+      text: "Nursing - mental health"
+    },
+    {
+      value: "Nursing - learning disability",
+      text: "Nursing - learning disability"
+    },
+    {
+      value: "Residential - general",
+      text: "Residential - general"
+    },
+    {
+      value: "Residential - dementia",
+      text: "Residential - dementia"
+    },
+    {
+      value: "Residential - mental health",
+      text: "Residential - mental health"
+    },
+    {
+      value: "Residential - learning disability",
+      text: "Residential - learning disability"
+    }
+  ]
+}) }}
+  <form action="total_beds">
+    <button type="submit" class="govuk-button" data-module="govuk-button">
+      Apply changes
+    </button>
+  </form>
+  <p class="govuk-body"><a href="javascript:history.back()" class="govuk-link">Cancel and go back</a></p>
+
+</div>
+
+{% endblock %}

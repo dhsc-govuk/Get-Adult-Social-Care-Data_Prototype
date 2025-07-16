@@ -1,0 +1,87 @@
+{% extends "private-beta/2025/june/layouts/signed-in.html" %}
+
+{% set pageName = "Edit location" %}
+
+{% block content %} 
+<a href="total-beds" class="govuk-back-link">Back</a>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <span class="govuk-caption-m">Adult social care beds per 100,000 adult population</span> 
+    <h1 class="govuk-heading-l">{{pageName}}</h1>
+    <p class="govuk-body">Select the filter to refine the data displayed.</p>
+    <!-- 
+    
+    General  
+    
+    -->
+    {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+{{ govukRadios({
+  name: "local-authority",
+  fieldset: {
+    legend: {
+      text: "Local authority",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  items: [
+    {
+      value: "Suffolk",
+      text: "Suffolk",
+      checked: true
+    },
+    {
+      value: "Community care",
+      text: "Bedford"
+    },
+    {
+      value: "Transitional",
+      text: "Cambridgeshire"
+    },
+    {
+      value: "Nursing - general",
+      text: "Central Bedfordshire"
+    },
+    {
+      value: "Nursing - dementia",
+      text: "Essex"
+    },
+    {
+      value: "Nursing - mental health",
+      text: "Hertfordshire"
+    },
+    {
+      value: "Nursing - learning disability",
+      text: "Luton"
+    },
+    {
+      value: "Residential - general",
+      text: "Norfolk"
+    },
+    {
+      value: "Residential - dementia",
+      text: "Peterborough"
+    },
+    {
+      value: "Residential - mental health",
+      text: "Southend on Sea"
+    },
+    {
+      value: "Residential - learning disability",
+      text: "Thurrock"
+    }
+  ]
+}) }}
+
+<form action="total-beds">
+          
+  <div class="govuk-button-group">
+    <button type="submit" class="govuk-button" data-module="govuk-button">Apply changes</button>
+    <a class="govuk-link" href="javascript:history.back()">Cancel and go back</a>
+  </div>
+
+</form>
+
+{% endblock %}
