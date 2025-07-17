@@ -1,0 +1,35 @@
+{% set population = 
+  [
+    ["Mid Suffolk", 51, 22.3, 6.7, 3.2, 83241],
+    ["Suffolk", 52, 21.4, 0.6, 3.1, 173241],
+    
+    ["East of England", 49, 19.9, 3.4, 2.2, 5183241],
+    ["England", 57, 21.4, 5.4, 3.1, 55286249]
+  ]
+%}
+
+<table class="govuk-table govuk-table--small-text-until-tablet">
+  <caption class="govuk-table__caption govuk-table__caption--m  govuk-!-margin-top-5">Table comparing age group percentages and population size by area</caption>
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header">Area</th>
+      <th scope="col" class="govuk-table__header govuk-table__header--numeric">Aged 18 to 64</th>
+      <th scope="col" class="govuk-table__header govuk-table__header--numeric">Aged 65 and over</th>
+      <th scope="col" class="govuk-table__header govuk-table__header--numeric">Aged 75 and over</th>
+      <th scope="col" class="govuk-table__header govuk-table__header--numeric">Aged 85 and over</th>
+      <th scope="col" class="govuk-table__header govuk-table__header--numeric">Total population</th>
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+    {% for item in population %}
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">{{item[0]}}</th>
+      <td class="govuk-table__cell govuk-table__cell--numeric">{{item[1]}}%</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">{{item[2]}}%</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">{{item[3]}}%</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">{{item[4]}}%</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">{{item[5] | addcommas}}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>

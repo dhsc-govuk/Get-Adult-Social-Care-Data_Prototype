@@ -36,9 +36,6 @@
 {% endblock %}
 
 {% block footer %}
-{% if data.interimRelease == "true" %}
-{{ govukFooter({}) }}
-{% else %}
 {{ govukFooter({
   meta: {
     items: [
@@ -49,11 +46,4 @@
     ]
   }
 }) }}
-{% endif %}
-{% endblock %}
-
-{% block scripts %}
-  {{ super() }}
-  <!-- D3 is a third party (OPEN SOURCE) JavaScript library for visualizing data (https://d3js.org)-->
-  <script src="https://d3js.org/d3.v4.js"></script>
 {% endblock %}

@@ -32,7 +32,7 @@
 
 {{ govukServiceNavigation({
   serviceName: serviceName,
-  serviceUrl: "/private-beta/2025/july/present-demand",
+  serviceUrl: "/private-beta/2025/july/index",
   slots: {
     navigationEnd: signOutButton
   }
@@ -49,20 +49,16 @@
 {% endblock %}
 
 {% block footer %}
-{% if data.interimRelease == "true" %}
-{{ govukFooter({}) }}
-{% else %}
 {{ govukFooter({
   meta: {
     items: [
       {
-        href: "disclaimer",
+        href: "disclaimer?backLink",
         text: "Disclaimer"
       }
     ]
   }
 }) }}
-{% endif %}
 {% endblock %}
 
 {% block scripts %}

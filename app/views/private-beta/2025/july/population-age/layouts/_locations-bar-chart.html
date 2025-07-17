@@ -1,0 +1,70 @@
+<style>
+
+    .chart-bar {
+        fill: #955196;
+        margin: 0;
+    }
+</style>
+
+{% set las =
+  [
+    ["Southend-on-Sea", 87634, 4.2],
+    ["Norfolk", 207967, 3.9],
+    ["Cambridgeshire", 935421, 3.8],
+    ["Suffolk", 763400, 3.1],
+    ["Central Bedfordshire", 631756, 2.9],
+    ["East of England (regional average)", 631756, 2.8],
+    ["Hertfordshire", 529512, 2.7],
+    ["Thurrock", 220454, 2.6],
+    ["England (national average)", 631756, 2.5],
+    ["Peterborough", 208667, 2.4],
+    ["Luton", 1001728, 2.2],
+    ["Bedford", 106754, 2.0],
+    ["Essex", 1506300, 1.9]
+  ]
+%}
+
+<table class="govuk-table">
+    <caption class="govuk-table__caption govuk-table__caption--m govuk-!-margin-top-5">Population percentages by age group in the East of England (older age groups only)</caption>
+    <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header">Area</th>
+            <th scope="col" class="govuk-table__header govuk-table__header--numeric"><span class="govuk-visually-hidden">Data bar</span></th>
+            <th scope="col" class="govuk-table__header">Aged 85 and over (%)</th>
+        </tr>
+    </thead>
+    <tbody class="govuk-table__body">
+        {% for item in las %}
+        {% if item[0] == "Suffolk" %}
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><strong>Suffolk</strong></td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">{{item[2]}}</td>
+            <td class="govuk-table__cell">
+                <svg width="500" height="25">
+                    <rect width="{{item[2] * 100}}" height="25" class="chart-bar" style="fill: #DD5182"></rect>
+                </svg>
+            </td>
+        </tr>
+        {% else %}
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell">{{item[0]}}</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">{{item[2]}}</td>
+            <td class="govuk-table__cell">
+                <svg width="500" height="25">
+                    <rect width="{{item[2] * 100}}" height="25" class="chart-bar"></rect>
+                </svg>
+            </td>
+        </tr>
+        {% endif %}
+        {% endfor %}
+    </tbody>
+</table>
+
+<p class="govuk-body">
+    <strong>Chart data information</strong><br /> Data sources: <a href="#" class="govuk-link" target="_blank" data-message="Sorry, this hasn’t been designed yet">Office of National Statistics (ONS)</a> <br>
+    Last checked for updates: 5 February 2025<br />
+</p>
+<p class="govuk-body">
+    <a href="#" class="govuk-link" data-message="Sorry, this hasn’t been designed yet">Export chart data (CSV, 420 KB)</a><br />
+    <a href="#" class="govuk-link" data-message="Sorry, this hasn’t been designed yet">Download chart image (PNG, 1 MB)</a>
+</p>
