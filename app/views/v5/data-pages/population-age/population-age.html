@@ -62,18 +62,18 @@
 
   <div class="govuk-grid-column-two-thirds">
     <span class="govuk-caption-l">Current population needs</span>
-    <h1 class="govuk-heading-l">{{pageName}}</h1>
+    <h1 class="govuk-heading-xl">{{pageName}}</h1>
     <p class="govuk-body-l">Explore population data by age group across local authorities and districts in England.</p>
     
     <div class="contents-box">
       <h2 class="govuk-heading-m">Contents</h2>
       <ul class="govuk-list govuk-list--bullet">
-        <li><a href="#map" class="govuk-link">Map: population by age group</a></li>
-        <li><a href="#chart" class="govuk-link">Chart: compare population age groups by area</a></li>
-        <li><a href="#table" class="govuk-link">Table: compare population age groups by area</a></li>
-        <li><a href="#trends" class="govuk-link">Trends over time</a></li>
-        <li><a href="#footnotes" class="govuk-link">Footnotes</a></li>
-        <li><a href="#related" class="govuk-link">Related information</a></li>
+        <li><a href="#map" class="govuk-link">Map of population age by percentage</a></li>
+        <li><a href="#chart" class="govuk-link">Population age comparison between local authorities</a></li>
+        <li><a href="#table" class="govuk-link">Population size and age down to local authority district level</a></li>
+        <li><a href="#trends" class="govuk-link">Trends over time for population age</a></li>
+        <li><a href="#footnotes" class="govuk-link">Indicator definitions and data sources</a></li>
+        <li><a href="#related" class="govuk-link">Market Position Statement for your local care market</a></li>
       </ul>
     </div>
 
@@ -84,10 +84,10 @@
 <div class="govuk-grid-row">
   
   <div class="govuk-grid-column-full">
-    <h2 id="map" class="govuk-heading-m govuk-!-padding-top-9">Map: population by age group</h2>
-    <p class="govuk-body"><strong>Location:</strong> Greenfields Care, Mid Suffolk, Suffolk, East of England.</p>
-    <p class="govuk-body">Find out how <a href="../../help/population-age" class="govuk-link">percentage of population in age group</a> is defined, sourced, and updated.</p>
-    <a href="#" class="govuk-button govuk-button--secondary" type="submit"  data-module="govuk-button" data-message="Sorry, this hasn’t been designed yet">Change locations</a>
+      <h2 id="map" class="govuk-heading-l govuk-!-padding-top-9">Map of population age by percentage</h2>
+      <p class="govuk-body">Learn about the definition, sourcing of data and methodology for the indicators <a href="../../help/population-size.html" class="govuk-link">population size</a> and <a href="../../help/population-age.html" class="govuk-link">percentage of population in age group</a>.</p>
+    <p class="govuk-body govuk-!-margin-top-7"><strong>Your active care home location:</strong> Greenfields Care, Mid Suffolk, Suffolk</p>
+    <a href="edit-locations" class="govuk-button govuk-button--secondary" type="submit"  data-module="govuk-button">Change care home location</a>
 
     <form action="population-age#map" method="post" novalidate>
 
@@ -120,143 +120,147 @@
             </div>
           </div>
 
-          <button class="govuk-button govuk-button--secondary govuk-!-margin-top-2">Update age group</button>
+          <button class="govuk-button govuk-button--secondary govuk-!-margin-top-2">Apply age group filter</button>
         </fieldset>
       </div>
 
     </form>    
 
     <div class="govuk-form-group">
-      <h3 class="govuk-heading-s">[DATA VIS COMPONENT HEADING]</h3>
+        <h3 class="govuk-heading-m govuk-!-padding-top-5">Map of population age by percentage (older age groups only)</h3>
       <iframe width="100%" height="600px" title="ONS Census Maps" frameborder="0" src="https://www.ons.gov.uk/census/maps/choropleth/population/age/resident-age-11a/{% if data.mapAgeGroup == 'Aged 65 to 74' %}aged-65-to-74-years{% elif data.mapAgeGroup == 'Aged 75 to 84' %}aged-75-to-84-years{% else %}aged-85-years-and-over{% endif %}/?lad=E07000203&embed=true&embedInteractive=true&embedAreaSearch=false&embedCategorySelection=false&embedView=viewport&embedBounds=0.4518427976473447%2C51.95149998586203%2C1.7552472023533312%2C52.516917630727676"></iframe>
     </div>
     
-    <p class="govuk-body">
-      Source: <a href="https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/bulletins/populationestimatesforenglandandwales/mid2023" class="govuk-link" target="_blank">Office for National Statistics (opens in new tab)</a>
-      <br>
-      Data correct as of 5 February 2025
-    </p>
+        <p class="govuk-body">
+    <strong>Map data information</strong><br /> Data sources: <a href="#" class="govuk-link" target="_blank" data-message="Sorry, this hasn’t been designed yet">Office of National Statistics (ONS)</a>, <a href="#" class="govuk-link" target="_blank" data-message="Sorry, this hasn’t been designed yet">Open Street Map</a>
+    <br>
+    Last checked for updates: 5 February 2025<br />
+</p>
+
   </div>
   
 </div>
 
 <div class="govuk-grid-row">
   
-  <div class="govuk-grid-column-full">
-    <h2 class="govuk-heading-m govuk-!-margin-top-9" id="chart">Chart: compare population age groups by area</h2>
-    <p class="govuk-body">This chart compares data for local authorities in the East of England, with regional and national averages included.</p>
-    <p class="govuk-body">Find out how <a href="#" class="govuk-link" data-message="Sorry, this hasn’t been designed yet">[DATA FOOTNOTE]</a> is defined, sourced, and updated.</p>
-    <a href="#" class="govuk-button govuk-button--secondary" type="submit" data-module="govuk-button" data-message="Sorry, this hasn’t been designed yet">Edit locations</a>
-
-    <div class="govuk-form-block">
-      <fieldset class="govuk-fieldset">
-        <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-          <h3 class="govuk-fieldset__heading">Select age group</h3>
-        </legend>
+    <div class="govuk-grid-column-full">
+        <h2 class="govuk-heading-l govuk-!-margin-top-9" id="chart">Population age comparison between local authorities</h2>
     
-        <div class="govuk-radios govuk-radios--inline govuk-radios--small" data-module="govuk-radios">
-          
-          <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="chartAgeGroup-1" name="chartAgeGroup" type="radio" value="Aged 18 to 64">
-            <label class="govuk-label govuk-radios__label" for="chartAgeGroup-1">Aged 18 to 64</label>
-          </div>
-    
-          <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="chartAgeGroup-2" name="chartAgeGroup" type="radio" value="Aged 65 and over">
-            <label class="govuk-label govuk-radios__label" for="chartAgeGroup-2">Aged 65 and over</label>
-          </div>
+        <p class="govuk-body">Learn about the definition, sourcing of data and methodology for the indicator <a href="../../help/population-age.html" class="govuk-link">percentage of population in age group</a>.</p>
+        <a href="edit-locations" class="govuk-button govuk-button--secondary govuk-!-margin-top-5" type="submit" data-module="govuk-button">Change local authority</a>
 
-          <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id=" chartAgeGroup-3" name="chartAgeGroup" type="radio" value="Aged 75 and over">
-            <label class="govuk-label govuk-radios__label" for=" chartAgeGroup-3">Aged 75 and over</label>
-          </div>
-    
-          <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id=" chartAgeGroup-4" name="chartAgeGroup" type="radio" value="Aged 85 and over" checked>
-            <label class="govuk-label govuk-radios__label" for=" chartAgeGroup-4">Aged 85 and over</label>
-          </div>
+        <div class="govuk-form-block">
+            <fieldset class="govuk-fieldset">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                    <h3 class="govuk-fieldset__heading">Select age group</h3>
+                </legend>
 
+                <div class="govuk-radios govuk-radios--inline govuk-radios--small" data-module="govuk-radios">
+
+                    <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="chartAgeGroup-1" name="chartAgeGroup" type="radio" value="Aged 18 to 64">
+                        <label class="govuk-label govuk-radios__label" for="chartAgeGroup-1">Aged 18 to 64</label>
+                    </div>
+
+                    <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="chartAgeGroup-2" name="chartAgeGroup" type="radio" value="Aged 65 and over">
+                        <label class="govuk-label govuk-radios__label" for="chartAgeGroup-2">Aged 65 and over</label>
+                    </div>
+
+                    <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id=" chartAgeGroup-3" name="chartAgeGroup" type="radio" value="Aged 75 and over">
+                        <label class="govuk-label govuk-radios__label" for=" chartAgeGroup-3">Aged 75 and over</label>
+                    </div>
+
+                    <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id=" chartAgeGroup-4" name="chartAgeGroup" type="radio" value="Aged 85 and over" checked>
+                        <label class="govuk-label govuk-radios__label" for=" chartAgeGroup-4">Aged 85 and over</label>
+                    </div>
+
+                </div>
+
+                <button class="govuk-button govuk-button--secondary govuk-!-margin-top-2">Apply age group filter</button>
+            </fieldset>
         </div>
 
-        <!-- <button class="govuk-button govuk-button--secondary govuk-!-margin-top-2">Update age group</button> -->
-        <a href="#" class="govuk-button govuk-button--secondary govuk-!-margin-top-2" type="submit" data-module="govuk-button" data-message="Sorry, this hasn’t been designed yet">Update age group</a>
-      </fieldset>
+        {% include "./_locations-bar-chart.html" %}
     </div>
 
-    {% include "./_locations-bar-chart.html" %}
-  </div>
-
 </div>
 
 <div class="govuk-grid-row">
 
-  <div class="govuk-grid-column-two-thirds">
-    <h2 class="govuk-heading-m govuk-!-padding-top-9" id="table">Table: compare population age groups by area</h2>
-    <p class="govuk-body">This table shows the percentage of people in each age group and the total population for each area.</p>
-    <p class="govuk-body">Find out how <a href="#" class="govuk-link" data-message="Sorry, this hasn’t been designed yet">[DATA FOOTNOTE]</a> is defined, sourced, and updated.</p>
-    <a href="#" class="govuk-button govuk-button--secondary" type="submit" style="margin-right: 1em;"  data-module="govuk-button" data-message="Sorry, this hasn’t been designed yet">Edit locations</a>
-    <a href="#" class="govuk-button govuk-button--secondary" type="submit" style="margin-right: 1em;"  data-module="govuk-button" data-message="Sorry, this hasn’t been designed yet">Edit indicators</a>
-  </div>
+    <div class="govuk-grid-column-two-thirds">
+        <h2 class="govuk-heading-l govuk-!-margin-top-9" id="table">Population size and age down to local authority district level</h2>
+        <p class="govuk-body">This table shows the percentage of people in each age group and the total population for each area.</p>
+        <p class="govuk-body">Learn about the definition, sourcing of data and methodology for the indicators <a href="../../help/population-size.html" class="govuk-link">population size</a> and <a href="../../help/population-age.html" class="govuk-link">percentage of population in age group</a>.</p>
+        <p class="govuk-body govuk-!-margin-top-7"><strong>Your active care home location:</strong> Greenfields Care, Mid Suffolk, Suffolk</p>
 
-</div>
-
-<div class="govuk-grid-row">
-  
-  <div class="govuk-grid-column-full">
-    {% include "./_locations-table.html" %}      
-    <p class="govuk-body">
-      Source: <a href="#" class="govuk-link" target="_blank" data-message="Sorry, this hasn’t been designed yet">Capacity Tracker (opens in new tab)</a>
-      <br>
-      Data correct as of 5 February 2025
-      <br>
-      <a href="#" class="govuk-link" data-message="Sorry, this hasn’t been designed yet">Download table data (CSV)</a>
-    </p>
-  </div>
-
-</div>
-
-<div class="govuk-grid-row">
-
-  <div class="govuk-grid-column-two-thirds">
-    <h2 class="govuk-heading-m govuk-!-margin-top-9" id="trends">Trends over time</h2>
-    <p class="govuk-body">This chart shows changes in the adult population from 2015 to 2023.</p>
-    <p class="govuk-body">Find out how <a href="#" class="govuk-link" data-message="Sorry, this hasn’t been designed yet">[DATA FOOTNOTE]</a> is defined, sourced, and updated.</p>
-    <a href="#" class="govuk-button govuk-button--secondary" type="submit" style="margin-right: 1em;"  data-module="govuk-button" data-message="Sorry, this hasn’t been designed yet">Edit indicators</a>
-    
-  </div>
-
-</div>
-
-<div class="govuk-grid-row">
-
-  <div class="govuk-grid-column-full">
-    {% include "./_time-series.html" %}
-    <p class="govuk-body">
-      Source: <a href="#" class="govuk-link" target="_blank" data-message="Sorry, this hasn’t been designed yet">Capacity Tracker (opens in new tab)</a>
-      <br>
-      Data correct as of 5 February 2025
-      <br>
-      <a href="#" class="govuk-link" data-message="Sorry, this hasn’t been designed yet">Download chart image (PNG)</a>
-    </p>
-  </div>
+        <a href="edit-locations" class="govuk-button govuk-button--secondary" type="submit" style="margin-right: 1em;" data-module="govuk-button">Change care home location</a>
+        <a href="edit-indicators" class="govuk-button govuk-button--secondary" type="submit" style="margin-right: 1em;" data-module="govuk-button">Edit indicators</a>
+    </div>
 
 </div>
 
 <div class="govuk-grid-row">
   
-  <div class="govuk-grid-column-two-thirds">
-    <h2 class="govuk-heading-m govuk-!-margin-top-9" id="footnotes">Footnotes</h2>
-    <p class="govuk-body">Find out how each indicator is defined, sourced, and updated.</p>
-    <p class="govuk-body">Select an indicator to view its footnotes:</p>
-    <ul class="govuk-list govuk-list--bullet">
-      <li><a href="../../help/population-size" class="govuk-link">Population size</a></li>
-      <li><a href="../../help/population-age" class="govuk-link">Percentage of population in age group</a></li>
-      <li><a href="../../help/disability-prevalence" class="govuk-link">Disability prevalence</a></li>
-    </ul>
+    <div class="govuk-grid-column-full">
+        {% include "./_locations-table.html" %}
+        <p class="govuk-body">
+            <strong>Table data information</strong><br /> Data sources: <a href="#" class="govuk-link" target="_blank" data-message="Sorry, this hasn’t been designed yet">Office of National Statistics (ONS)</a> <br>
+            Last checked for updates: 5 February 2025<br />
+        </p>
+        <p class="govuk-body">
+            <a href="#" class="govuk-link" data-message="Sorry, this hasn’t been designed yet">Export table data (CSV, 420 KB)</a>
+            </p>
+    </div>
 
-    <h2 class="govuk-heading-m govuk-!-margin-top-7" id="related">Related information</h2>
-    <p class="govuk-body">For more information on population age, check the latest Market Position Statement and Joint Strategic Needs Assessment. You will usually find these on the local authority's website.</p>
-  </div>
+</div>
+
+<div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-two-thirds">
+        <h2 class="govuk-heading-l govuk-!-margin-top-9" id="trends">Trends over time for population age</h2>
+        <p class="govuk-body">This chart shows changes in the adult population from 2015 to 2023.</p>
+        <p class="govuk-body">Learn about the definition, sourcing of data and methodology for the indicators <a href="../../help/population-size.html" class="govuk-link">population size</a> and <a href="../../help/population-age.html" class="govuk-link">percentage of population in age group</a>.</p>
+        <a href="edit-indicators" class="govuk-button govuk-button--secondary govuk-!-margin-top-5" type="submit" style="margin-right: 1em;" data-module="govuk-button">Edit indicators</a>
+
+    </div>
+
+</div>
+
+<div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-full">
+        {% include "./_time-series.html" %}
+        <p class="govuk-body">
+            <strong>Graph data information</strong><br /> Data sources: <a href="#" class="govuk-link" target="_blank" data-message="Sorry, this hasn’t been designed yet">Office of National Statistics (ONS)</a> <br>
+            Last checked for updates: 5 February 2025<br />
+        </p>
+        <p class="govuk-body">
+            <a href="#" class="govuk-link" data-message="Sorry, this hasn’t been designed yet">Export graph data (CSV, 420 KB)</a><br />
+            <a href="#" class="govuk-link" data-message="Sorry, this hasn’t been designed yet">Download graph image (PNG, 1 MB)</a>
+        </p>
+    </div>
+
+</div>
+
+<div class="govuk-grid-row">
+  
+    <div class="govuk-grid-column-two-thirds">
+        <h2 class="govuk-heading-l govuk-!-margin-top-9" id="footnotes">Indicator definitions and data sources</h2>
+        <p class="govuk-body">[Find out how each indicator is defined, sourced, and updated.</p>
+        <p class="govuk-body">Select an indicator to view its footnotes:]</p>
+        <ul class="govuk-list govuk-list--bullet">
+            <li><a href="../../help/population-size" class="govuk-link">Population size</a></li>
+            <li><a href="../../help/population-age" class="govuk-link">Percentage of population in age group</a></li>
+            <li><a href="../../help/disability-prevalence" class="govuk-link">Disability prevalence</a></li>
+        </ul>
+
+        <h2 id="market-position-statement" class="govuk-heading-l govuk-!-margin-top-9">Market Position Statement for your local care market</h2>
+        <p class="govuk-body"><a href="#" class="govuk-link" data-message="Sorry, this hasn’t been designed yet">Market Position Statement for Suffolk local authority area</a></p>
+        <p class="govuk-body">[For more information on capacity, check the latest Market Position Statement and Joint Strategic Needs Assessment. You will usually find these on the local authority's website.]</p>
+    </div>
 
 </div>
 {% endblock %}
