@@ -1,78 +1,6 @@
 {% extends "v5/layouts/logged-in.html" %}
 
 {% block content %}
-<style>
-
-  table {
-    margin: 2em 0;
-    text-align: left;
-    vertical-align: top;
-    border-collapse: collapse;
-    font-family: "GDS Transport", arial, sans-serif;
-  }
-
-  .companies-table {
-    display: block;
-    min-width: 600px;
-  }
-
-  caption {
-    text-align: left;
-    font-size: 1.4em;
-  }
-
-  th, td {
-    /* border: 1px solid #666; */
-    padding: 1em;
-  }
-
-  th {
-    background-color: #acbcd5;
-    /* #a15dbc; */
-    color: #000;
-    font-weight: normal;
-  }
-
-  tr {
-    box-shadow: 0 3px 3px rgb(0 0 0 / 0.1);
-  }
-
-  tr:hover {
-    text-decoration: underline;
-  }
-
-  tr:nth-child(odd) {
-    background-color: #fff;
-  }
-
-  tr:nth-child(even) {
-    background-color: #f2f2f2;
-  } 
-
-  #search-queries {
-    font-family: "GDS Transport", arial, sans-serif;
-    border: none;
-    margin-bottom: 1.5em;
-  }
-
-  .search-queries-label {
-    display: block;
-  }
-
-  .search-queries-input {
-    padding: 1em;
-    margin-top: 0.5em;
-    width: 40em;
-    border-radius: 5px;
-  }
-
-  .govuk-grid-column-one-half {
-    background: #f3f2f1;
-    border: 0.5em solid white;
-  }
-
-</style>
-
 <div class="govuk-grid-row">
 
   <div class="govuk-grid-column-full">
@@ -84,74 +12,67 @@
 </div>
 
 <div class="govuk-grid-row">
-  <a href="../landing-pages/care-home-capacity/care-homes">
         
-    <div class="govuk-grid-column-one-half ">
-      <h2>Care home capacity data</h2>
-      <p>Find and compare capacity data for residential care homes and nursing homes.</p>
-    </div>
-
-  </a>
-
-  <a href="#">
+  <div class="govuk-grid-column-one-half">
+    <a href="../landing-pages/care-home-capacity/care-homes" class="app-card">
+      <h3 class="govuk-heading-m app-card__heading">Care home capacity data</h3>
+      <p class="govuk-body">Find and compare capacity data for residential care homes and nursing homes.</p>
+    </a>
+  </div>  
       
-    <div class="govuk-grid-column-one-half" data-message="Sorry, this hasn’t been designed yet">
-      <h2 data-message="Sorry, this hasn’t been designed yet">Domiciliary care capacity data</h2>
-      <p data-message="Sorry, this hasn’t been designed yet">Explore capacity data for home care, supported housing, supported living and shared lives schemes.</p>
-    </div>
+  <div class="govuk-grid-column-one-half" data-message="Sorry, this hasn’t been designed yet">
+    <a href="#" class="app-card">
+      <h3 class="govuk-heading-m app-card__heading" data-message="Sorry, this hasn’t been designed yet">Domiciliary care capacity data</h3>
+      <p class="govuk-body" data-message="Sorry, this hasn’t been designed yet">Explore capacity data for home care, supported housing, supported living and shared lives schemes.</p>
+    </a>
+  </div>
 
-  </a>
 </div>
 
 <!-- <div class="govuk-grid-row">
-  <a href="#">
     
-    <div class="govuk-grid-column-one-half">
-      <h2>Unpaid care</h2>
-      <p>Explore data and insights about people providing unpaid care to adults.</p>
-    </div>
+  <div class="govuk-grid-column-one-half">
+    <a href="#" class="app-card">
+      <h3 class="govuk-heading-m app-card__heading">Unpaid care</h3>
+      <p class="govuk-body">Explore data and insights about people providing unpaid care to adults.</p>
+    </a>
+  </div>  
+  
+  <div class="govuk-grid-column-one-half">
+    <a href="#" class="app-card">
+      <h3 class="govuk-heading-m app-card__heading">Current market and provision</h3>
+      <p class="govuk-body">Assess the local care market, including provider availability, occupancy levels and service quality.</p>
+    </a>
+  </div>
     
-  </a>
-
-  <a href="#">
-    
-    <div class="govuk-grid-column-one-half">
-      <h2>Current market and provision</h2>
-      <p>Assess the local care market, including provider availability, occupancy levels and service quality.</p>
-    </div>
-    
-  </a>
 </div> -->
 
 <div class="govuk-grid-row">
 
   <div class="govuk-grid-column-full">
-    <h2 class="govuk-heading-m govuk-!-margin-top-7" style="margin-top: 1em;">Population needs</h2>
+    <h2 class="govuk-heading-m govuk-!-margin-top-7">Population needs</h2>
   </div>
-  
-  <a href="../landing-pages/current-population-needs/index">
-  
-    <div class="govuk-grid-column-one-half">
-      <h2>Current population needs</h2>
-      <p>Assess data on a range of factors shaping current population needs for adult social care.</p>
-    </div>
-  
-  </a>
 
-  <a href="#">
+  <div class="govuk-grid-column-one-half">
+    <a href="../landing-pages/current-population-needs/index" class="app-card">
+      <h3 class="govuk-heading-m app-card__heading">Current population needs</h3>
+      <p class="govuk-body">Assess data on a range of factors shaping current population needs for adult social care.</p>
+    </a>
+  </div>  
       
-    <div class="govuk-grid-column-one-half" data-message="Sorry, this hasn’t been designed yet">
-      <h2 data-message="Sorry, this hasn’t been designed yet">Future population needs</h2>
-      <p data-message="Sorry, this hasn’t been designed yet">Identify potential future needs for adult social care services based on projected population changes.</p>
-    </div>
+  <div class="govuk-grid-column-one-half" data-message="Sorry, this hasn’t been designed yet">
+    <a href="#" class="app-card">
+      <h3 class="govuk-heading-m app-card__heading" data-message="Sorry, this hasn’t been designed yet">Future population needs</h3>
+      <p class="govuk-body" data-message="Sorry, this hasn’t been designed yet">Identify potential future needs for adult social care services based on projected population changes.</p>
+    </a>
+  </div>
 
-  </a>
 </div>
 
 <div class="govuk-grid-row">
   
   <div class="govuk-grid-column-two-thirds">
-    <h2 class="govuk-heading-m" style="margin-top: 2em;">Supporting information</h2>
+    <h2 class="govuk-heading-m govuk-!-margin-top-7">Supporting information</h2>
     <h3 class="govuk-heading-m"><a href="../help/user-guide">User guide</a></h3>
     <p class="govuk-body">Find out more about the service. Learn how data sources are used to create indicators for adult social care capacity and population needs.</p>
   </div>

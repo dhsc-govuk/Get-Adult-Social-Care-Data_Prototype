@@ -1,106 +1,31 @@
 {% extends "private-beta/2025/july/layouts/signed-in.html" %}
 
 {% block content %}
-<style>
-
-  table {
-    margin: 2em 0;
-    text-align: left;
-    vertical-align: top;
-    border-collapse: collapse;
-    font-family: "GDS Transport", arial, sans-serif;
-  }
-
-  .companies-table {
-    display: block;
-    min-width: 600px;
-  }
-
-  caption {
-    text-align: left;
-    font-size: 1.4em;
-  }
-
-  th, td {
-    /* border: 1px solid #666; */
-    padding: 1em;
-  }
-
-  th {
-    background-color: #acbcd5;
-    /* #a15dbc; */
-    color: #000;
-    font-weight: normal;
-  }
-
-  tr {
-    box-shadow: 0 3px 3px rgb(0 0 0 / 0.1);
-  }
-
-  tr:hover {
-    text-decoration: underline;
-  }
-
-  tr:nth-child(odd) {
-    background-color: #fff;
-  }
-
-  tr:nth-child(even) {
-    background-color: #f2f2f2;
-  } 
-
-  #search-queries {
-    font-family: "GDS Transport", arial, sans-serif;
-    border: none;
-    margin-bottom: 1.5em;
-  }
-
-  .search-queries-label {
-    display: block;
-  }
-
-  .search-queries-input {
-    padding: 1em;
-    margin-top: 0.5em;
-    width: 40em;
-    border-radius: 5px;
-  }
-
-  .govuk-grid-column-one-half {
-    background: #f3f2f1;
-    border: 0.5em solid white;
-  }
-
-</style>
-
 <div class="govuk-grid-row">
 
   <div class="govuk-grid-column-full">
     <h1 class="govuk-heading-xl">Get adult social care data</h1>
     <p class="govuk-body-l">Access the latest data on adult social care capacity and population needs across England.</p>
-    <h2 class="govuk-heading-m govuk-!-margin-top-7">Population needs</h2>
+    <h2 class="govuk-heading-m">Population needs</h2>
   </div>
 
 </div>
 
 <div class="govuk-grid-row">
-  
-  <a href="#">
-  
-    <div class="govuk-grid-column-one-half">
-      <h2>Current population needs</h2>
-      <p>Assess data indicators on a range of factors shaping current population needs for adult social care.</p>
-    </div>
-  
-  </a>
 
-  <a href="#">
-      
-    <div class="govuk-grid-column-one-half" data-message="Sorry, this hasn’t been designed yet">
-      <h2 data-message="Sorry, this hasn’t been designed yet">Population age</h2>
-      <p data-message="Sorry, this hasn’t been designed yet">[CONTENT]</p>
-    </div>
+  <div class="govuk-grid-column-one-half">
+    <a href="current-population-needs/present-demand" class="app-card">
+      <h2 class="govuk-heading-m app-card__heading">Current population needs</h2>
+      <p class="govuk-body">Assess data indicators on a range of factors shaping current population needs for adult social care.</p>
+    </a>
+  </div>
 
-  </a>
+  <div class="govuk-grid-column-one-half">
+    <a href="population-age/population-age" class="app-card">
+      <h2 class="govuk-heading-m app-card__heading">Population age</h2>
+      <p class="govuk-body">[CONTENT]</p>
+    </a>
+  </div>
+
 </div>
 {% endblock %}

@@ -44,3 +44,36 @@
   margin: 0;
   width: auto;
 }
+
+/* Card component taken from the HMRC Design System landing page (https://design.tax.service.gov.uk) */
+.app-card {
+  background-color: #f8f8f8;
+  margin-bottom: 20px;
+  padding: 20px;
+  text-decoration: none;
+}
+/* @media (min-width: 48.0625em) {
+  .app-card {
+    min-height: 160px;
+  }
+} */
+
+.app-card p:last-child {
+  margin-bottom: 0;
+}
+
+.app-card,.js-enabled .print-page {
+  display: block;
+}
+
+.app-card:hover {
+  background-color: #005ea5;
+  color: #fff;
+}
+.app-card:hover > * {
+  color: inherit;
+}
+
+.app-card__heading {
+  color: #005ea5;
+}

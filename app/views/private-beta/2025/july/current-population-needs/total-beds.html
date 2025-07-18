@@ -2,8 +2,11 @@
 
 {% set pageName = "Adult social care beds per 100,000 adult population" %}
 
-{% block content %} 
-<a href="present-demand" class="govuk-back-link">Back</a>
+{% block beforeContent %}
+<a href="present-demand" class="govuk-back-link" >Back</a>
+{% endblock %}
+
+{% block content %}
 <div class="govuk-grid-row">
         <!-- 
       
@@ -50,7 +53,7 @@
       </p>
       <p class="govuk-body">
         For detailed information about this indicator, including data definitions, data source, update schedule and limitations to be aware of before using this data, go to
-        <a href="help/beds-per-100000-adult-population.html" class="govuk-link">supporting information for this data</a>.</li>
+        <a href="../help/beds-per-100000-adult-population" class="govuk-link">supporting information for this data</a>.</li>
       </p>
       <h2 id="locations">
         Your selected locations
@@ -127,7 +130,7 @@
         </tr>
             </tbody>
           </table>
-          {% include "private-beta/2025/july/layouts/_chart.html" %}
+          {% include "private-beta/2025/july/current-population-needs/layouts/_chart.html" %}
           <p class="govuk-body"><a href="#" class="govuk-link">Download chart image (PNG)</a><br>
             <a href="#" class="govuk-link">Download table data (CSV)</a>
             <p class="govuk-body">Source: Capacity Tracker<br>
@@ -141,7 +144,7 @@
             -->
             <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="time-series">
               <h3 class="govuk-heading-m">Time series</h3>
-              {% include "private-beta/2025/july/layouts/_time-series.html" %}
+              {% include "private-beta/2025/july/current-population-needs/layouts/_time-series.html" %}
             </div>
             <!-- 
             
@@ -224,7 +227,7 @@
 
               <h2 id="smart-insights">Smart insights (experimental)</h2>
               <div class="govuk-inset-text">
-                Smart insights use artificial intelligence (AI) to analyse this data, highlighting trends and patterns to support your own analysis. As this is experimental, verify the insights to check they are appropriate and meet your needs. <a class="govuk-link" href="help/smart-insights.html">Learn more about smart insights</a>
+                Smart insights use artificial intelligence (AI) to analyse this data, highlighting trends and patterns to support your own analysis. As this is experimental, verify the insights to check they are appropriate and meet your needs. <a class="govuk-link" href="../help/smart-insights">Learn more about smart insights</a>
               </div>
         
               <h3 class="govuk-heading-s">Summary of key trends</h3>
