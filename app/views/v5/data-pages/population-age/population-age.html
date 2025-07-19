@@ -68,9 +68,9 @@
     <div class="contents-box">
       <h2 class="govuk-heading-m">Contents</h2>
       <ul class="govuk-list govuk-list--bullet">
-        <li><a href="#map" class="govuk-link">Map of population age by percentage</a></li>
+        <li><a href="#map" class="govuk-link">Map of population percentages for older age groups</a></li>
         <li><a href="#chart" class="govuk-link">Population age comparison between local authorities</a></li>
-        <li><a href="#table" class="govuk-link">Population size and age down to local authority district level</a></li>
+        <li><a href="#table" class="govuk-link">Population size and age to local authority district level</a></li>
         <li><a href="#trends" class="govuk-link">Trends over time for population age</a></li>
         <li><a href="#footnotes" class="govuk-link">Indicator definitions and data sources</a></li>
         <li><a href="#related" class="govuk-link">Market Position Statement for your local care market</a></li>
@@ -83,11 +83,11 @@
 
 <div class="govuk-grid-row">
   
-  <div class="govuk-grid-column-full">
-      <h2 id="map" class="govuk-heading-l govuk-!-padding-top-9">Map of population age by percentage</h2>
-      <p class="govuk-body">Learn about the definition, sourcing of data and methodology for the indicators <a href="../../help/population-size.html" class="govuk-link">population size</a> and <a href="../../help/population-age.html" class="govuk-link">percentage of population in age group</a>.</p>
-    <p class="govuk-body govuk-!-margin-top-7"><strong>Your active care home location:</strong> Greenfields Care, Mid Suffolk, Suffolk</p>
-    <a href="edit-locations" class="govuk-button govuk-button--secondary" type="submit"  data-module="govuk-button">Change care home location</a>
+      <div class="govuk-grid-column-two-thirds">
+      <h2 id="map" class="govuk-heading-l govuk-!-padding-top-9">Map of population percentages for older age groups</h2>
+        <p class="govuk-body govuk-!-margin-top-7 govuk-!-margin-bottom-7"><strong>Your care home location:</strong> <br />{Active care home name}, {Local authority area} <br /><a href="#" class="govuk-link">Reset map to this location</a></p>
+        
+    
 
     <form action="population-age#map" method="post" novalidate>
 
@@ -120,32 +120,36 @@
             </div>
           </div>
 
-          <button class="govuk-button govuk-button--secondary govuk-!-margin-top-2">Apply age group filter</button>
+          <button class="govuk-button govuk-button--secondary govuk-!-margin-top-2 govuk-!-margin-bottom-7">Apply age group filter</button>
         </fieldset>
       </div>
 
     </form>    
+        </div>
+
 
     <div class="govuk-form-group">
-        <h3 class="govuk-heading-m govuk-!-padding-top-5">Map of population age by percentage (older age groups only)</h3>
-      <iframe width="100%" height="600px" title="ONS Census Maps" frameborder="0" src="https://www.ons.gov.uk/census/maps/choropleth/population/age/resident-age-11a/{% if data.mapAgeGroup == 'Aged 65 to 74' %}aged-65-to-74-years{% elif data.mapAgeGroup == 'Aged 75 to 84' %}aged-75-to-84-years{% else %}aged-85-years-and-over{% endif %}/?lad=E07000203&embed=true&embedInteractive=true&embedAreaSearch=false&embedCategorySelection=false&embedView=viewport&embedBounds=0.4518427976473447%2C51.95149998586203%2C1.7552472023533312%2C52.516917630727676"></iframe>
-    </div>
-    
+        <div class="govuk-grid-column-full">
+            <h3 class="govuk-heading-m">Map showing population age group percentages at local authority district level and Middle Layer Super Output Area (MSOA) level  </h3>
+            <iframe width="100%" height="600px" title="ONS Census Maps" frameborder="0" src="https://www.ons.gov.uk/census/maps/choropleth/population/age/resident-age-11a/{% if data.mapAgeGroup == 'Aged 65 to 74' %}aged-65-to-74-years{% elif data.mapAgeGroup == 'Aged 75 to 84' %}aged-75-to-84-years{% else %}aged-85-years-and-over{% endif %}/?lad=E07000203&embed=true&embedInteractive=true&embedAreaSearch=false&embedCategorySelection=false&embedView=viewport&embedBounds=0.4518427976473447%2C51.95149998586203%2C1.7552472023533312%2C52.516917630727676"></iframe>
+        </div>
+</div>
+    <div class="govuk-grid-column-two-thirds">
         <p class="govuk-body">
-    <strong>Map data information</strong><br /> Data sources: <a href="#" class="govuk-link" target="_blank" data-message="Sorry, this hasn’t been designed yet">Office of National Statistics (ONS)</a>, <a href="#" class="govuk-link" target="_blank" data-message="Sorry, this hasn’t been designed yet">Open Street Map</a>
-    <br>
-    Last checked for updates: 5 February 2025<br />
-</p>
+            <strong>Map data information</strong><br /> Data sources: <a href="#" class="govuk-link" target="_blank" data-message="Sorry, this hasn’t been designed yet">Office of National Statistics (ONS)</a>, <a href="#" class="govuk-link" target="_blank" data-message="Sorry, this hasn’t been designed yet">Open Street Map</a>
+            <br>
+            Last checked for updates: 5 February 2025<br />
+        </p>
 
-  </div>
+    </div>
   
 </div>
 
 <div class="govuk-grid-row">
-  
-    <div class="govuk-grid-column-full">
+
+    <div class="govuk-grid-column-two-thirds">
         <h2 class="govuk-heading-l govuk-!-margin-top-9" id="chart">Population age comparison between local authorities</h2>
-    
+
         <p class="govuk-body">Learn about the definition, sourcing of data and methodology for the indicator <a href="../../help/population-age.html" class="govuk-link">percentage of population in age group</a>.</p>
         <a href="edit-locations" class="govuk-button govuk-button--secondary govuk-!-margin-top-5" type="submit" data-module="govuk-button">Change local authority</a>
 
@@ -182,6 +186,8 @@
                 <button class="govuk-button govuk-button--secondary govuk-!-margin-top-2">Apply age group filter</button>
             </fieldset>
         </div>
+    </div>
+    <div class="govuk-grid-column-full">
 
         {% include "./_locations-bar-chart.html" %}
     </div>
