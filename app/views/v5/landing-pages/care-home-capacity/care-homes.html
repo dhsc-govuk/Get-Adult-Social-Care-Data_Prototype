@@ -163,51 +163,81 @@
 
 <div class="govuk-grid-row">
   
-    <div class="govuk-grid-column-full">
-        <a href="#" type="submit" style="margin-right: 1em;" class="govuk-button govuk-button--secondary govuk-!-margin-top-7" data-module="govuk-button" data-message="Sorry, this hasn’t been designed yet">Change local authority</a>
+  <div class="govuk-grid-column-full">
+    <a href="#" type="submit" style="margin-right: 1em;" class="govuk-button govuk-button--secondary govuk-!-margin-top-7" data-module="govuk-button" data-message="Sorry, this hasn’t been designed yet">Change local authority</a>
 
-        <table class="govuk-table">
-            <caption class="govuk-table__caption govuk-table__caption--m">Table comparing your care home's provision and occupancy level to local, regional and national statistics <a href="#" class="govuk-link" data-message="Sorry, this hasn’t been designed yet">(calculated using median numbers)</a></caption>
-            <thead class="govuk-table__head">
-                <tr class="govuk-table__row">
-                    <th scope="col" class="govuk-table__header">Care home location or area</th>
-                    <th scope="col" class="govuk-table__header">Size of care home</th>
-                    <th scope="col" class="govuk-table__header govuk-table__header--numeric">Beds per care home</th>
-                    <th scope="col" class="govuk-table__header govuk-table__header--numeric">Occupancy level</th>
-                    <!-- <th scope="col" class="govuk-table__header">Nursing dementia beds per 100,000</th> -->
-                </tr>
-            </thead>
-            {% set laTables =
-            [
-            ["Greenfields care home", "Large", 85, 93, 242],
-            ["Suffolk local authority area (local medians)", "All sizes", 20, 87, 242],
-            ["East of England (regional medians)", "All sizes", 23, 89, 245],
-            ["England (national medians)", "All sizes", 25, 89, 242]
-            ]
-            %}
-            <tbody class="govuk-table__body">
-                {% for item in laTables %}
-                <tr class="govuk-table__row">
-                    <td class="govuk-table__cell">{{item[0]}}</td>
-                    <td class="govuk-table__cell">{{item[1]}}</td>
-                    <td class="govuk-table__cell govuk-table__cell--numeric">{{item[2] | addcommas}}</td>
-                    <td class="govuk-table__cell govuk-table__cell--numeric">{{item[3]}}%</td>
-                    <!-- <td class="govuk-table__cell">{{item[4]}}</td> -->
-                </tr>
-                {% endfor %}
-            </tbody>
-        </table>
+    <!-- <table class="govuk-table">
+      <caption class="govuk-table__caption govuk-table__caption--m">Table comparing your care home's provision and occupancy level to local, regional and national statistics <a href="#" class="govuk-link" data-message="Sorry, this hasn’t been designed yet">(calculated using median numbers)</a></caption>
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header">Care home location or area</th>
+          <th scope="col" class="govuk-table__header">Size of care home</th>
+          <th scope="col" class="govuk-table__header govuk-table__header--numeric">Beds per care home</th>
+          <th scope="col" class="govuk-table__header govuk-table__header--numeric">Occupancy level</th>
+        </tr>
+      </thead>
+      {% set laTables =
+        [
+          ["Greenfields care home", "Large", 85, 93, 242],
+          ["Suffolk local authority area (local medians)", "All sizes", 20, 87, 242],
+          ["East of England (regional medians)", "All sizes", 23, 89, 245],
+          ["England (national medians)", "All sizes", 25, 89, 242]
+        ]
+      %}
+      <tbody class="govuk-table__body">
+        {% for item in laTables %}
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">{{item[0]}}</td>
+          <td class="govuk-table__cell">{{item[1]}}</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric">{{item[2] | addcommas}}</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric">{{item[3]}}%</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table> -->
+    <table class="govuk-table">
+      <caption class="govuk-table__caption govuk-table__caption--m">Table comparing your care home's provision and occupancy level to local, regional and national statistics <a href="#" class="govuk-link" data-message="Sorry, this hasn’t been designed yet">(calculated using median numbers)</a></caption>
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header">Indicator</th>
+          <th scope="col" class="govuk-table__header">Greenfields care home</th>
+          <th scope="col" class="govuk-table__header">Suffolk local authority area (local medians)</th>
+          <th scope="col" class="govuk-table__header">East of England (regional medians)</th>
+          <th scope="col" class="govuk-table__header">England (national medians)</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Size of care home</td>
+          <td class="govuk-table__cell">Large</td>
+          <td class="govuk-table__cell">All sizes</td>
+          <td class="govuk-table__cell">All sizes</td>
+          <td class="govuk-table__cell">All sizes</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Beds per care home</td>
+          <td class="govuk-table__cell">85</td>
+          <td class="govuk-table__cell">20</td>
+          <td class="govuk-table__cell">23</td>
+          <td class="govuk-table__cell">25</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Occupancy level</td>
+          <td class="govuk-table__cell">93%</td>
+          <td class="govuk-table__cell">87%</td>
+          <td class="govuk-table__cell">89%</td>
+          <td class="govuk-table__cell">89%</td>
+        </tr>
+      </tbody>
+    </table>
 
-        <p class="govuk-body">
-            <strong>Table data information</strong><br /> Data source: <a href="#" class="govuk-link" target="_blank" data-message="Sorry, this hasn’t been designed yet">Capacity Tracker</a>
-            <br>
-            Last checked for updates: 21 June 2025<br />
-        </p>
-        <p class="govuk-body"><a href="#" class="govuk-link" data-message="Sorry, this hasn’t been designed yet">Export table data (CSV, 658 KB)</a></p>
-        
-        
-        
-</div>
+    <p class="govuk-body">
+      <strong>Table data information</strong><br /> Data source: <a href="#" class="govuk-link" target="_blank" data-message="Sorry, this hasn’t been designed yet">Capacity Tracker</a>
+      <br>
+      Last checked for updates: 21 June 2025<br />
+    </p>
+    <p class="govuk-body"><a href="#" class="govuk-link" data-message="Sorry, this hasn’t been designed yet">Export table data (CSV, 658 KB)</a></p>
+  </div>
 
 </div>
 
