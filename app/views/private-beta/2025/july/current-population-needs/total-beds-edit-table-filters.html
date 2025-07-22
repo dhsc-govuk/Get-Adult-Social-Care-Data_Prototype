@@ -19,7 +19,7 @@
         
         <div class="govuk-error-summary__body">
           <ul class="govuk-list govuk-error-summary__list">
-            <li><a href="#filters">You must select at least one filter</a></li>
+            <li><a href="#filters">Select one or more table filters</a></li>
           </ul>
         </div>
 
@@ -35,7 +35,7 @@
         <h1 class="govuk-heading-l">{{pageName}}</h1>
         <p class="govuk-body">Select filters to refine the data displayed.</p>
         {% if error %}
-        <p id="nationality-error" class="govuk-error-message"><span class="govuk-visually-hidden">Error:</span> You must select at least one filter</p>
+        <p id="nationality-error" class="govuk-error-message"><span class="govuk-visually-hidden">Error:</span> Select one or more table filters</p>
         {% endif %}
 
         <div class="govuk-form-group">
