@@ -88,3 +88,14 @@ p, ul, ol {
 .app-card__heading {
   color: #005ea5;
 }
+
+/* Hide the Open Government Licence (OGL) icon, content and link in the footer */
+.govuk-footer__inline-list {
+  margin-bottom: 0;
+}
+.govuk-footer__licence-logo {
+  display: none;
+}
+.govuk-footer__licence-description {
+  display: none;
+}
