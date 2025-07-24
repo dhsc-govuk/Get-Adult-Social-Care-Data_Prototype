@@ -33,7 +33,7 @@ stages:
         command: buildAndPush
         repository: $(imageRepository)
         dockerfile: $(dockerfilePath)
-        containerRegistry: $(acr_service_connection)
+        containerRegistry: $(dev_acr_connection)
         tags: |
           $(tag)
 - stage: Deploy
@@ -47,5 +47,5 @@ stages:
           inputs:
             appType: "webAppLinux"
             appName: "dapalpha-prototype-app"
-            azureSubscription: $(arm_service_connection)
+            azureSubscription: $(dev_arm_service_connection)
             containers: "$(containerRegistry)/$(imageRepository):$(tag)"
