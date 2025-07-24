@@ -3,12 +3,14 @@ FROM node:22
 RUN addgroup --system --gid 1001 prototype
 RUN adduser --system --uid 1001 prototype
 
-COPY package.json package-lock.json app/ /app/
-WORKDIR /app
+RUN mkdir /code
+COPY package.json package-lock.json /code/
+COPY app /code/app
+WORKDIR /code
 
 RUN npm install
 
-RUN chown -R prototype:prototype /app
+RUN chown -R prototype:prototype /code
 USER prototype
 
 EXPOSE 3000
