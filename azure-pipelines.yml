@@ -48,6 +48,6 @@ stages:
         - task: AzureWebAppContainer@1
           inputs:
             appType: "webAppLinux"
-            appName: "dapalpha-prototype-app"
+            appName: "gascd-prototype"
             azureSubscription: $(dev_arm_service_connections)
             containers: "$(containerRegistry)/$(imageRepository):$(tag)"
