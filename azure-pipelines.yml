@@ -47,5 +47,5 @@ stages:
           inputs:
             appType: "webAppLinux"
             appName: "dapalpha-prototype-app"
-            azureSubscription: $(dev_arm_service_connection)
+            azureSubscription: $(dev_arm_service_connections)
             containers: "$(containerRegistry)/$(imageRepository):$(tag)"
