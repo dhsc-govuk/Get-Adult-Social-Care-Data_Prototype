@@ -10,7 +10,7 @@
     "accessible-autocomplete": "^3.0.1",
     "govuk-frontend": "5.11.1",
     "govuk-prototype-kit": "13.17.0",
-    "hmrc-frontend": "6.76.0",
+    "hmrc-frontend": "6.78.0",
     "jquery": "3.7.1",
     "node": "^20.19.4",
     "nunjucks": "^3.2.4"
