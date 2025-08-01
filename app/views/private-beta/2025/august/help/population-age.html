@@ -2,11 +2,14 @@
 
 {% set pageName = "Indicator definition and supporting information: percentage of population aged 18 to 64, or 65 and over" %}
 
+{% block beforeContent %}
+<a href="javascript:history.back()" class="govuk-back-link" >Back</a>
+{% endblock %}
+
 {% block content %}
 <div class="govuk-grid-row">
 
   <div class="govuk-grid-column-two-thirds">
-    <a href="javascript:history.back()" class="govuk-back-link">Back</a>
     <h1 class="govuk-heading-l">{{pageName}}</h1>
     <p class="govuk-body-l">Find detailed information about this indicator.</p>
     <dl class="govuk-summary-list">
