@@ -1,0 +1,122 @@
+{% extends "private-beta/2025/august/layouts/signed-in.html" %}
+
+{% set pageName = "Population age percentages" %}
+
+{% block beforeContent %}
+<a href="../index" class="govuk-back-link" >Back</a>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-l">{{pageName}}</h1>
+    <p class="govuk-body-l">Use the map to view population percentages for older age groups at local levels in England.</p>
+  </div>
+
+</div>
+
+<div class="govuk-grid-row">
+    
+  <div class="govuk-grid-column-two-thirds">
+    <h2 id="map" class="govuk-heading-m govuk-!-padding-top-9">Map of population percentages for older age groups</h2>
+    
+    <div class="govuk-form-group">
+      <p class="govuk-body">
+        <strong>Your care home location:</strong>
+        <br>
+        <code>{Active care home name}, {Local authority area}</code>
+        <br>
+        <a href="#" class="govuk-link">Reset map to this location</a>
+      </p>
+    </div>
+
+    <form action="population-age#map" method="post" novalidate>
+
+      <div class="govuk-form-block">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+            <h3 class="govuk-fieldset__heading">Select age group</h3>
+          </legend>
+      
+          <div class="govuk-radios govuk-radios--inline govuk-radios--small" data-module="govuk-radios">
+            
+            <!-- <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="mapAgeGroup-1" name="mapAgeGroup" type="radio" value="Aged 18 to 64">
+              <label class="govuk-label govuk-radios__label" for="mapAgeGroup-1">Aged 18 to 64</label>
+            </div> -->
+      
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="mapAgeGroup-2" name="mapAgeGroup" type="radio" value="Aged 65 to 74"{% if data.mapAgeGroup == 'Aged 65 to 74' %} checked{% endif %}>
+              <label class="govuk-label govuk-radios__label" for="mapAgeGroup-2">Aged 65 to 74</label>
+            </div>
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id=" mapAgeGroup-3" name="mapAgeGroup" type="radio" value="Aged 75 to 84"{% if data.mapAgeGroup == 'Aged 75 to 84' %} checked{% endif %}>
+              <label class="govuk-label govuk-radios__label" for=" mapAgeGroup-3">Aged 75 to 84</label>
+            </div>
+      
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id=" mapAgeGroup-4" name="mapAgeGroup" type="radio" value="Aged 85 and over"{% if data.mapAgeGroup != 'Aged 65 to 74' and data.mapAgeGroup != 'Aged 75 to 84' %} checked{% endif %}>
+              <label class="govuk-label govuk-radios__label" for=" mapAgeGroup-4">Aged 85 and over</label>
+            </div>
+          </div>
+
+          <button class="govuk-button govuk-button--secondary govuk-!-margin-top-2 govuk-!-margin-bottom-7">Apply age group filter</button>
+        </fieldset>
+      </div>
+
+    </form>   
+
+  </div>
+
+  <div class="govuk-grid-column-full">
+    
+    <div class="govuk-form-group">
+      <h3 class="govuk-heading-s">Map showing population age group percentages at local authority district level and Middle Layer Super Output Area (MSOA) level  </h3>
+      <iframe width="100%" height="600px" title="ONS Census Maps" frameborder="0" src="https://www.ons.gov.uk/census/maps/choropleth/population/age/resident-age-11a/{% if data.mapAgeGroup == 'Aged 65 to 74' %}aged-65-to-74-years{% elif data.mapAgeGroup == 'Aged 75 to 84' %}aged-75-to-84-years{% else %}aged-85-years-and-over{% endif %}/?lad=E07000203&embed=true&embedInteractive=true&embedAreaSearch=false&embedCategorySelection=false&embedView=viewport&embedBounds=0.4518427976473447%2C51.95149998586203%2C1.7552472023533312%2C52.516917630727676"></iframe>
+    </div>
+    
+  </div>
+  
+  <div class="govuk-grid-column-two-thirds">
+    <p class="govuk-body">
+      Source: <a href="https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/bulletins/populationestimatesforenglandandwales/mid2023" class="govuk-link" target="_blank">Office for National Statistics (opens in new tab)</a>
+      <br>
+      Data correct as of <code>{DD Month YYYY}</code>
+    </p>
+  </div>
+  
+</div>
+
+<div class="govuk-grid-row">
+  
+  <div class="govuk-grid-column-two-thirds">
+    <h2 class="govuk-heading-m govuk-!-margin-top-9" id="footnotes">Footnotes</h2>
+    <p class="govuk-body">Find out how each indicator is defined, sourced, and updated.</p>
+    <p class="govuk-body">Select an indicator to view its footnotes:</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li><a href="../help/population-size" class="govuk-link">Population size</a></li>
+      <li><a href="../help/population-age" class="govuk-link">Percentage of population in age group</a></li>
+    </ul>
+
+    <div class="call-to-action govuk-!-margin-top-9">
+      <h2 class="govuk-heading-m">[Feedback]</h2>
+      <p class="govuk-body">[We'd like feedback from our users about how you use our products, how well these products meet your needs and how they could be improved.]</p>
+      <p class="govuk-body"><a href="https://forms.office.com/e/s9FCDSibN0" class="govuk-link" rel="noreferrer noopener" target="_blank">[Give your feedback (opens in new tab)]</a></p>
+    </div>
+
+    <details class="govuk-details govuk-!-margin-top-9">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">Get help with this page</span>
+      </summary>
+
+      <div class="govuk-details__text">
+        If you have any issues using this service, email <a href="mailto:getadultsocialcaredata.team@dhsc.gov.uk" class="govuk-link">getadultsocialcaredata.team@dhsc.gov.uk</a>.
+      </div>
+
+    </details>
+  </div>
+
+</div>
+{% endblock %}

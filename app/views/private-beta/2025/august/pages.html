@@ -1,0 +1,93 @@
+{% extends "govuk-prototype-kit/layouts/unbranded.html" %}
+
+{% set pageName = "All screens (Private beta - July 2025)" %}
+{% set bodyClasses = "unbranded-fill-page" %}
+
+{% block content %}
+<div class="govuk-form-group">
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+</div>
+
+<h1 class="govuk-heading-xl">
+  <span class="govuk-caption-xl">Private beta (July 2025)</span>
+  All screens
+</h1>
+
+<h2 class="govuk-heading-l heading-override">Entry points into {{serviceName | lower}}</h2>
+<ol class="govuk-list govuk-list--number">
+  <li><a href="start">Get adult social care data (start)</a></li>
+</ol>
+
+<h2 class="govuk-heading-l heading-override">{{serviceName}}</h2>
+<p class="govuk-body"><a href="index">Home (signed in)</a></p>
+
+<h3 class="govuk-heading-m heading-override">Current population needs and capacity</h3>
+<ul class="govuk-list govuk-list--bullet">
+  <li><a href="current-population-needs/present-demand">Current population needs and capacity</a></li>
+  <ul class="list-override govuk-list--bullet">
+    <li><a href="current-population-needs/present-demand-locations">Edit locations</a></li>
+    <li>Explore data - <a href="current-population-needs/total-beds">Adult social care beds per 100,000 adult population</a></li>
+    <ul class="list-override govuk-list--bullet">
+      <li><a href="current-population-needs/total-beds-edit-la">Edit locations</a></li>
+      <li><a href="current-population-needs/total-beds-edit-single-filter">Edit chart filter (bar chart)</a></li>
+      <li><a href="current-population-needs/total-beds-edit-filters">Edit time series filters (time series)</a></li>
+      <li><a href="current-population-needs/total-beds-edit-table-filters">Edit table filters (table)</a></li>
+      <li><a href="help/smart-insights">About smart insights (experimental)</a></li>
+    </ul>
+  </ul>
+</ul>
+
+<h4 class="govuk-heading-s heading-override">Indicator definition and supporting information</h4>
+<ul class="govuk-list govuk-list--bullet">
+  <li><a href="help/population-size">Population size</a></li>
+  <li><a href="help/population-age">Percentage of population aged 18 to 64, or 65 and over</a></li>
+  <li><a href="help/disability-prevalence">Disability prevalence</a></li>
+  <li><a href="help/beds-per-100000-adult-population">Adult social care beds per 100,000 adult population</a></li>
+  <li><a href="help/percentage-beds-occupied.html">Percentage of adult social care beds occupied</a></li>
+  <li><a href="help/beds-care-provider-location">Number of adult social care beds in care provider location</a></li>
+  <li><a href="help/percentage-beds-occupied-care-provider-location">Percentage of adult social care beds occupied in care provider location</a></li>
+</ul>
+
+<h3 class="govuk-heading-m heading-override">Population age percentages</h3>
+<ul class="govuk-list govuk-list--bullet">
+  <li><a href="population-age/population-age">Population age percentages</a></li>
+  <!-- <ul class="list-override govuk-list--bullet">
+    <li>1. Map: population by age group</li>
+      <ul class="list-override govuk-list--bullet">
+        <li>Change location - <a href="data-pages/population-age/edit-locations">Edit locations</a></li>
+      </ul>
+    <li>2. Chart: compare population age groups by area</li>
+      <ul class="list-override govuk-list--bullet">
+        <li>Edit locations - <a href="data-pages/population-age/edit-locations">Edit locations</a></li>
+      </ul>
+    <li>3. Table: compare population age groups by area</li>
+      <ul class="list-override govuk-list--bullet">
+        <li>Edit locations - <a href="data-pages/population-age/edit-locations">Edit locations</a></li>
+        <li>Edit indicators - <a href="data-pages/population-age/edit-indicators">Edit indicators</a></li>
+      </ul>
+    <li>4. Trends over time</li>
+      <ul class="list-override govuk-list--bullet">
+        <li>Edit indicators - <a href="data-pages/population-age/edit-indicators">Edit indicators</a></li>
+      </ul>
+  </ul> -->
+</ul>
+
+<h4 class="govuk-heading-s heading-override">Indicator definition and supporting information</h4>
+<ul class="govuk-list govuk-list--bullet">
+  <li><a href="help/population-size">Population size</a></li>
+  <li><a href="help/population-age">Percentage of population in age group</a></li>
+  <li><a href="help/disability-prevalence">Disability prevalence</a></li>
+</ul>
+
+<h3 class="govuk-heading-m heading-override">Additional screens</h3>
+<ul class="govuk-list govuk-list--bullet">
+  <li><a href="disclaimer">Disclaimer</a></li>
+</ul>
+{% endblock %}
+
+{% block pageScripts %}
+<!-- Tooltip taken from Nicolas Hoffmann (https://a11y.nicolas-hoffmann.net/modal/) -->
+<script src="/public/javascripts/jquery-accessible-modal-window-aria.js"></script>
+<!-- Font Awesome 4 icons for the notifications -->
+<link href="/public/open-source/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+{% endblock %}
