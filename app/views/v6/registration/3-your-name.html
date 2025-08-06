@@ -1,0 +1,55 @@
+{% extends "v6/layouts/main.html" %}
+
+{% set titleH1 = "What is your name?" %} {% block pageTitle %} {{titleH1}} - {{serviceName}} - GOV.UK {% endblock %}
+
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">What is your name?</h1>
+
+      <form class="form" action="4-job-title" method="post">
+
+
+        {% from "govuk/components/input/macro.njk" import govukInput %}
+
+{{ govukInput({
+  label: {
+    text: "First name"
+  },
+  id: "first-name",
+  name: "firstName",
+  classes:"govuk-input--width-20",
+  spellcheck: false,
+  value: data['firstName']
+}) }}
+
+{{ govukInput({
+  label: {
+    text: "Last name"
+  },
+  id: "last-name",
+  name: "lastName",
+  classes:"govuk-input--width-20",
+  spellcheck: false,
+  value: data['lastName']
+}) }}  
+       
+{{ govukButton({
+  text: "Continue"
+}) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

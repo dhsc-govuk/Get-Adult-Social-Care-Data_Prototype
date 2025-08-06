@@ -1,0 +1,37 @@
+<table class="govuk-table">
+    <caption class="govuk-table__caption govuk-table__caption--m">Table of CQC-registered care homes in Suffolk local authority area</caption>
+
+    <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header">Care home name</th>
+            <th scope="col" class="govuk-table__header">CQC rating</th>
+            <th scope="col" class="govuk-table__header">Care services</th>
+            <th scope="col" class="govuk-table__header">Dementia care beds</th>
+        </tr>
+    </thead>
+    {% set population =
+    [
+    ["Vera Lynn Care",5,"Nursing","Yes"],
+    ["Cloverfield Care",4,"Nursing","No"],
+    ["Elysium Care",3,"Residential care","Yes"],
+    ["Duckworth Care",3,"Residential care","Yes"],
+    ["Stowmarket Care",4,"Nursing","No"]
+    ]
+    %}
+    <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell">Greenfields Care Home<br />(your care home)</td>
+            <td class="govuk-table__cell">4</td>
+            <td class="govuk-table__cell">Residential care</td>
+            <td class="govuk-table__cell">Yes</td>
+        </tr>
+        {% for item in population %}
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell">{{item[0]}}</td>
+            <td class="govuk-table__cell">{{item[1]}}</td>
+            <td class="govuk-table__cell">{{item[2]}}</td>
+            <td class="govuk-table__cell">{{item[3]|addcommas}}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>

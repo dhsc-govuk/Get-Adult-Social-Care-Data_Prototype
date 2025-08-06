@@ -1,0 +1,114 @@
+{% extends "v6/layouts/logged-in.html" %}
+
+{% set pageName = "Current population needs" %}
+
+{% block content %} 
+
+<style>
+  .govuk-main-wrapper {
+    padding-top: 15px !important;
+  }
+</style>
+
+<div class="govuk-!-padding-5" style="background-color: #1d70b8; color: white;">
+
+  <div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-full">
+
+      <h2 class="govuk-heading-xl" style="color: white;">Get adult social care data</h2>
+
+      <p class="govuk-body-l" style="color: white;">Access the latest data relevant to adult social care in England.</p>
+
+      <div class="govuk-form-group govuk-!-margin-bottom-0">
+        <label class="govuk-label govuk-label--m" for="event-name" style="color: white;">
+          Search for data
+        </label>
+        <div id="event-hint" class="govuk-hint" style="color: white;">
+          For example, residential care, domiciliary care, workforce trends
+        </div>
+        <input class="govuk-input govuk-!-width-three-quarters govuk-!-margin-bottom-0" id="event-name" name="eventName" type="text">
+        <button type="submit" class="govuk-button govuk-button--inverse" data-module="govuk-button"  style="height: auto; padding: 10px 15px;">
+          Search
+        </button>
+      </div> <!-- End Form group-->
+
+    </div> <!-- End govuk-grid-column-full-->
+
+  </div>  <!-- govuk-grid-row-->
+
+</div>  <!-- End colour wrapper -->
+
+<div class="govuk-grid-row govuk-!-margin-top-9 govuk-!-padding-bottom-6">
+  <div class="govuk-grid-column-one-half">
+    <h3 class="govuk-heading-l">Browse data by topic</h3>
+    <p>Explore key areas of adult social care. Includes:</p>
+    <ul class="govuk-list govuk-list--bullet" style="padding-left: 40px;">
+      <li>overall capacity at local authority level</li>
+      <li>current market</li>
+      <li>current and future population needs</li>
+    </ul>
+    <a href="../browse-data-by-topic.html" role="button" draggable="false" class="govuk-button govuk-button--start" data-module="govuk-button">
+      Explore topics
+      <svg class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19" viewBox="0 0 33 40" aria-hidden="true" focusable="false">
+        <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z" />
+      </svg>
+    </a>
+  </div>
+
+  <div class="govuk-grid-column-one-half">
+    <h3 class="govuk-heading-l">Download full datasets</h3>
+    <p>Find large datasets to download and use. Includes:</p>
+    <ul class="govuk-list govuk-list--bullet" style="padding-left: 40px;">
+      <li>workforce and market information</li>
+      <li>care provision and service capacity</li>
+      <li>population and demographic data</li>
+    </ul>
+    <a href="../download-full-datasets.html" role="button" draggable="false" class="govuk-button govuk-button--start" data-module="govuk-button">
+      Download datasets
+      <svg class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19" viewBox="0 0 33 40" aria-hidden="true" focusable="false">
+        <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z" />
+      </svg>
+    </a>
+  </div>
+</div>
+
+
+<div class="govuk-!-padding-4" style="background-color: rgb(248, 248, 248);">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <h2 class="govuk-heading-l">Supporting information</h2>
+
+      <h3 class="govuk-heading-m"><a href="/0-5/help/user-guide.html">User guide</a></h3>
+      <p class="govuk-body">Need help getting started? Learn how to use this service and make the most of its features.</p>
+
+      <h3 class="govuk-heading-m"><a href="../glossary.html" class="govuk-link">Glossary</a></h3>
+      <p class="govuk-body">Browse our A to Z list of definitions for terms used across the data.</p>
+
+      <h3 class="govuk-heading-m"><a href="../blog-article.html">Adult social care data blog</a></h3>
+      <p class="govuk-body">Explore ideas, insights and perspectives on how data can drive better outcomes in adult social care.</p>
+    </div>
+  </div>
+</div>
+
+
+  <div class="govuk-grid-row govuk-!-margin-top-9">
+    <div class="govuk-grid-column-full">
+      <h2 class="govuk-heading-l">What's new</h2>
+      <h3 class="govuk-heading-m">March 2025 update</h3>
+
+      <p class="govuk-body">We’ve made it easier to find and use data, based on your feedback:</p>
+      <ul class="govuk-list govuk-list--bullet" style="padding-left: 40px;">
+        <li><strong>More detailed data</strong> - Get deeper insights into local population needs and capacity.</li>
+        <li><strong>Better filters</strong> -  Find relevant data faster.</li>
+        <li><strong>View smaller areas</strong> -  Access demographic data below local authority level, where available.</li>
+      </ul>
+      <p class="govuk-body"><a href="" class="govuk-link" target="_blank">Share your feedback (opens in new tab)</a>.</p>
+    </div>
+  </div> <!-- Closes govuk-grid-row -->
+
+</div> <!-- Closes govuk-grid-column-full -->
+
+</div> <!-- Closes govuk-grid-row -->
+
+{% endblock %}

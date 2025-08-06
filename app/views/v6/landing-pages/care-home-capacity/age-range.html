@@ -1,0 +1,70 @@
+{% extends "v6/layouts/main.html" %}
+
+{% set pageName = "Edit age ranges" %}
+
+{% block content %} 
+<a href="total_beds" class="govuk-back-link">Back</a>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <span class="govuk-caption-m">Current population needs and overal capacity at local authority level</span> 
+    <h1 class="govuk-heading-l">{{pageName}}</h1>
+    <p class="govuk-body">Select filters to refine the data displayed.</p>
+    <!-- 
+    
+    All types 
+    
+    -->
+    <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+          <h1 class="govuk-fieldset__heading">
+            Select age ranges
+          </h1>
+        </legend>
+        <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
+            <label class="govuk-label govuk-checkboxes__label" for="waste">
+              All ages
+            </label>
+          </div>
+        </div>
+        <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
+            <label class="govuk-label govuk-checkboxes__label" for="waste">
+              Aged 18 to 64
+            </label>
+          </div>
+        </div>
+        <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses" checked>
+            <label class="govuk-label govuk-checkboxes__label" for="waste">
+              Aged 65 and over
+            </label>
+          </div>
+        </div>
+        <!--
+        <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses" checked>
+            <label class="govuk-label govuk-checkboxes__label" for="waste">
+              Aged 85 and over
+            </label>
+          </div>
+        </div>
+      -->
+  </fieldset>
+</div>
+<form action="index">
+  <button type="submit" class="govuk-button" data-module="govuk-button">
+    Apply changes
+  </button>
+</form>
+<p class="govuk-body"><a href="javascript:history.back()" class="govuk-link">Cancel and go back</a></p>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,323 @@
+{% extends "v6/layouts/data.html" %}
+
+{% set pageName = "Community social care capacity" %}
+
+{% block content %} 
+<a href="javascript:history.back()" class="govuk-back-link">Back</a>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <!--<span class="govuk-caption-l">Demand and capacity</span>-->
+    <h1 class="govuk-heading-l">{{pageName}}</h1>
+    <p class="govuk-body-l">Explore data about the capacity of domiciliary care, extra care housing, supporting living and Shared Lives schemes to meet adult social care needs. This data only covers providers registered with the Care Quality Commission (CQC).</p>
+    <style>
+      /* Contents Box Styling */
+      .contents-box {
+        background-color: #f3f2f1; /* GOV.UK light grey */
+        padding: 20px;
+        margin-bottom: 20px;
+        max-width: 63%; /* Adjusted width for better spacing */
+      }
+      
+      /* Remove default list indentation */
+      .govuk-list--number {
+        counter-reset: main-counter;
+        list-style-type: none;
+        padding-left: 0; /* Remove padding */
+        margin-left: 0; /* Remove margin */
+      }
+      
+      .govuk-list--number > li {
+        counter-increment: main-counter;
+      }
+      
+      .govuk-list--number > li::before {
+        content: counter(main-counter) ". ";
+        font-weight: normal;
+      }
+      
+      /* Styling for the nested (child) ordered list */
+      .nested-list {
+        counter-reset: sub-counter;
+        list-style-type: none;
+        padding-left: 1.5rem; /* Align nested items properly */
+        margin-left: 0;
+      }
+      
+      .nested-list li {
+        counter-increment: sub-counter;
+      }
+      
+      .nested-list li::before {
+        content: counter(main-counter) "." counter(sub-counter) ". ";
+        font-weight: normal;
+      }
+      
+      /* Bridge Text Styling */
+      .bridge-text {
+        margin-top: 20px;
+        font-weight: bold;
+      }
+    </style>
+    
+    <!-- Contents Box -->
+    <div class="contents-box">
+      <h2 class="govuk-heading-m">Contents</h2>
+      <ol class="govuk-list govuk-list--number">
+        <li><a href="#preferences" class="govuk-link">Map: community care in your area</a>
+          <li><a href="#carehome" class="govuk-link">Table: capacity in the community care sector</a></li>
+          <li><a href="#carehome" class="govuk-link">Charts</a></li>
+          <li><a href="#time-series" class="govuk-link">Time series</a></li>
+          <li><a href="#footnotes" class="govuk-link">Footnotes</a></li>
+          <li><a href="#related" class="govuk-link">Related information</a></li>
+        </ol>
+      </div>
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+        <style>
+              h2{margin-top:3em}
+            </style>
+            <h2 id="preferences">1. Choose your data preferences</h2>
+            <p class="govuk-body">Change these to update the data shown.</p>
+                <dl class="govuk-summary-list">
+                  <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                      Active location
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                      Alexis Homecare, Suffolk
+                    </dd>
+                    <dd class="govuk-summary-list__actions">
+                      <a class="govuk-link" href="locations-look-up">Change<span class="govuk-visually-hidden"> name</span></a>
+                    </dd>
+                  </div>
+                </dl>
+                <div class="govuk-form-group">
+                  <fieldset class="govuk-fieldset" aria-describedby="changedName-hint">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                      <h1 class="govuk-fieldset__heading">
+                        Type of care
+                      </h1>
+                    </legend>
+                    <!-- <div id="changedName-hint" class="govuk-hint">
+                      This includes changing your last name or spelling your name differently
+                    </div> -->
+                    <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="changedName" name="changedName" type="radio" value="18to64" checked>
+                        <label class="govuk-label govuk-radios__label" for="changedName">
+                          Domiciliary care
+                        </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="changedName-2" name="changedName" type="radio" value="65andover">
+                        <label class="govuk-label govuk-radios__label" for="changedName-2">
+                          Extra care housing
+                        </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="changedName-2" name="changedName" type="radio" value="85andover">
+                        <label class="govuk-label govuk-radios__label" for="changedName-2">
+                          Supported living
+                        </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="changedName-2" name="changedName" type="radio" value="85andover">
+                        <label class="govuk-label govuk-radios__label" for="changedName-2">
+                          Shared lives
+                        </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="changedName-2" name="changedName" type="radio" value="85andover">
+                        <label class="govuk-label govuk-radios__label" for="changedName-2">
+                          All community social care services
+                        </label>
+                      </div>
+                    </div>
+                  </fieldset>
+                </div>
+                <a href="#" type="submit" style="margin-right:1em" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                  Apply changes                </a>
+              </div>
+            </div>
+              <h3 id="unpaid-care" class="govuk-heading-m govuk-!-padding-top-9">2. Map: community social care in your area</h3>
+             <div class="govuk-tabs" data-module="govuk-tabs">
+              <h2 class="govuk-tabs__title">
+                Contents
+              </h2>
+              <ul class="govuk-tabs__list">
+                <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+                  <a class="govuk-tabs__tab" href="#care-homes-map">
+                    Map
+                  </a>
+                </li>
+                <li class="govuk-tabs__list-item">
+                  <a class="govuk-tabs__tab" href="#map-table">
+                    Table
+                  </a>
+                </li>
+                </ul>
+                <div class="govuk-tabs__panel" id="care-homes-map">
+                <h3>Map: domiciliary care in your area</h3>
+                <table class="govuk-table" style="width:66%">
+                  <tbody class="govuk-table__body">
+                    <tr class="govuk-table__row">
+                      <th scope="row" class="govuk-table__header">Service type</th>
+                      <td class="govuk-table__cell">
+                        <ul class="govuk-list" style="text-align: left;">
+                          <li>Domiciliary care</li>
+                        </ul>
+                      </td>
+                      <td class="govuk-table__cell">
+                        <a href="present-demand-locations">Change</a>
+                      </td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <th scope="row" class="govuk-table__header">Indicators</th>
+                      <td class="govuk-table__cell">
+                        <ul class="govuk-list" style="text-align: left;">
+                          <li>Domiciliary care providers per 100,000 population</li>
+                        </ul>
+                      </td>
+                      <td class="govuk-table__cell">
+                        <a href="present-demand-locations">Change</a>
+                      </td>
+                    </tr>
+                    </tbody>
+                    </table>
+               <img src="/public/images/surrey.jpg" style="width:100%">
+                          
+              <p class="govuk-body"><a href="" class="govuk-link">Download chart image (PNG)</a></p>
+                <p class="govuk-body">Source: Quality Care Commission<br>
+                  Data correct as of 21 March 2021</p>
+                  <!-- <a href="../v3/help/beds-per-100000-people.html" class="govuk-link">View supporting information for this data</a></p>-->
+                </div>
+                <div class="govuk-tabs__panel" id="map-table">
+                  
+                </div>
+                <!-- 
+                
+               Chart
+                
+                -->
+                  <h2>3. Chart: compare local authorities</h2>
+                  <a href="locations-look-up.html" type="submit" style="margin-right:1em" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                    Edit locations
+                  </a>
+                  <a href="indicators-look-up" type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                    Edit indicators
+                  </a>
+                  {% include "./_locations-bar-chart.html" %}
+                </div>
+                <h2 id="care-home" class="govuk-heading-m govuk-!-padding-top-9">4. Table: capacity in the comunity care sector</h2>
+                <p>You can use the following indicators to work out the capacity in your selected 
+                  areas.
+                </p>
+                <a type="submit" style="margin-right:1em" class="govuk-button govuk-button--secondary" data-module="govuk-button" href="locations-look-up">
+                  Edit locations
+                </a>
+                <a type="submit" style="margin-right:1em" class="govuk-button govuk-button--secondary" data-module="govuk-button" href="map-settings">
+                  Edit indicators
+                </a>
+                <style>
+                  /* my-table th:nth-child(2),th:nth-child(3), th:nth-child(4), td:nth-child(2),td:nth-child(3), td:nth-child(4) {
+                    text-align: right;
+                  } */
+                </style>
+                {% include "./_las-table.html" %}
+                <!-- 
+                
+                Time series 
+                
+                -->
+                <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="time-series">
+                  <h2 class="govuk-heading-m">5. Trends over time</h2>
+                  <button type="submit" style="margin-right:1em" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                    Edit locations
+                  </button>
+                  <a href="indicators-look-up" type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                    Edit indicators
+                  </a>
+                 {% include "./_time-series.html" %}
+                </div>
+                <!-- 
+                
+                Table 
+                
+                -->
+                <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="table">
+                  <h3 id="total">6. Charts</h3>
+                  <a href="locations-look-up.html" type="submit" style="margin-right:1em" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                    Edit care providers
+                  </a>
+                  <a href="indicators-look-up" type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                    Edit indicators
+                  </a>
+                  {% include "./_cp-bar-chart.html" %}
+                  <p class="govuk-body"><a href="" class="govuk-link">Download this table (CSV)</a></p>
+                  <p class="govuk-body">Source: Care Quality Commission<br>
+                    Data correct as of 21 March 2021</p>
+                      <!-- <a href="../v3/help/beds-per-100000-people.html" class="govuk-link">View supporting information for this data</a></p>-->
+                    </div>
+                    <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="smart-insights">
+              <h3>Smart insights (experimental)</h2>
+              <div class="govuk-inset-text">
+                Smart insights use artificial intelligence (AI) to analyse this data, highlighting trends and patterns to support your own analysis. As this is experimental, verify the insights to check they are appropriate and meet your needs. <a class="govuk-link" href="./../../help/user-guide#ai">Learn more about smart insights</a>
+              </div>
+
+              <h3 class="govuk-heading-s">Summary of key trends</h3>
+              <p>The number of people aged 85 and over is increasing across England, with some areas seeing a much faster rise. Between 2015 and 2023, this age group grew by over 60% in parts of Suffolk, East Suffolk, and Cambridgeshire, compared to a national increase of around 30%. This trend suggests increasing need for adult social care services, particularly in regions with rapid population ageing.</p>
+
+              <h3 class="govuk-heading-s">Insight 1: Suffolk and Cambridgeshire have the highest proportions of people aged 85 and over</h3>
+              <p>Suffolk and Cambridgeshire stand out as having a greater proportion of older residents compared to the England average (3.1%) and the East of England average (2.9%). In Suffolk, 3.3% of the population is aged 85 and over, and in Cambridgeshire, it is slightly higher at 3.5%. This suggests that local social care services may need to adapt to meet the needs of an ageing population.</p>
+              <h4 class="govuk-heading-s">How you might use this insight</h4>
+              
+              <ul class="govuk-list govuk-list--bullet">
+                <li>Assess whether social care funding in Suffolk and Cambridgeshire reflects the higher proportion of older people.</li>
+                <li>Consider workforce planning to ensure there are enough care staff to support the increasing number of older residents.</li>
+             </ul>
+        
+             <h3 class="govuk-heading-s">Insight 2: The population aged 85 and over is growing fastest in parts of the East of England</h3>
+             <p>The number of people aged 85 and over has increased significantly in some parts of the East of England. Between 2015 and 2023, this age group grew by over 60% in Suffolk, East Suffolk, and Cambridgeshire—double the national growth rate of around 30%. This means these areas may see increasing pressure on services such as specialist care homes and community support.</p>
+             <h4 class="govuk-heading-s">How you might use this insight</h4>
+             
+             <ul class="govuk-list govuk-list--bullet">
+               <li>Check if social care provision in Suffolk, East Suffolk, and Cambridgeshire is keeping pace with the rapid growth of older populations.</li>
+               <li>Identify specific areas where investment in specialist care, such as dementia care and nursing homes, may be needed to meet rising demand.</li>
+            </ul>
+            </div>
+<!-- 
+            <h2 id="footnotes">4. Footnotes</h2>
+
+            <p class="govuk-body">
+              Find out how this indicator is defined, sourced, and updated.
+            </p>
+
+            <p class="govuk-body">
+              <a href="../../help/population-age.html" class="govuk-link">View footnotes</a>
+            </p> -->
+            <h2 id="footnotes">5. Footnotes</h2>
+
+            <p class="govuk-body">
+              Find out how each indicator is defined, sourced, and updated.
+            </p>
+                <p class="govuk-body">Select an indicator to view its footnotes:</p>
+                <ol class="govuk-list govuk-list--bullet">
+                  <li><a href="" class="govuk-link">Number of care provider locations</a></li>
+                  <li><a href="" class="govuk-link">Number of service users</a></li>
+                  <li><a href="" class="govuk-link">Number of care hours worked</a></li>
+                  <li><a href="" class="govuk-link">Number of care workers (agency included)</a></li>
+                </ol>
+      
+      
+      
+            <h2 id="related">6. Related information</h2>
+      
+              <p class="govuk-body">
+                For more information on community social care capacity, check the latest Market Position Statement and Joint Strategic Needs Assessment. You will usually find these on the local authority's website.
+              </p>
+              
+      
+            <p class="govuk-body"><a href="javascript:history.back()" class="govuk-link">Back</a></p>
+
+            </div>
+            {% endblock %}

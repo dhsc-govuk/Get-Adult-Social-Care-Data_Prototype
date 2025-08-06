@@ -1,0 +1,74 @@
+{% extends "v6/layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">Your details</h1>
+
+      <form class="form" action="4-organisation-type" method="post">
+
+
+        {% from "govuk/components/input/macro.njk" import govukInput %}
+
+{{ govukInput({
+  label: {
+    text: "First name"
+  },
+  id: "first-name",
+  name: "firstName",
+  classes:"govuk-input--width-20",
+  spellcheck: false
+}) }}
+
+{{ govukInput({
+  label: {
+    text: "Last name"
+  },
+  id: "last-name",
+  name: "lastName",
+  classes:"govuk-input--width-20",
+  spellcheck: false
+}) }}  
+
+{{ govukInput({
+  label: {
+    text: "Job title"
+  },
+  id: "job-title",
+  name: "jobTitle",
+  classes:"govuk-input--width-10",
+  spellcheck: false
+}) }}  
+
+{{ govukInput({
+  label: {
+    text: "Organisation"
+  },
+  id: "organisation",
+  name: "organisation",
+  classes:"govuk-input--width-10",
+  spellcheck: false
+}) }}  
+       
+{{ govukButton({
+  text: "Continue"
+}) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

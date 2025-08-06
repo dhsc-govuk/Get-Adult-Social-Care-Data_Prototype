@@ -1,0 +1,51 @@
+<!-- <table class="govuk-table">
+  <caption class="govuk-table__caption govuk-table__caption--m">Table comparing occupancy levels in Suffolk to regional and national averages</caption>
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header">Area</th>
+      <th scope="col" class="govuk-table__header govuk-table__header--numeric">Care home beds per 100,000 adult population</th>
+      <th scope="col" class="govuk-table__header govuk-table__header--numeric">Occupancy level</th>
+    </tr>
+  </thead>
+  {% set laTables = 
+    [
+      ["Suffolk local authority area", 3.3, 1152, 87, 242],
+      ["East of England (regional average)", 3.1, 1094, 89, 245],
+      ["England (national average)", 3.1, 958, 89, 242]
+    ]
+  %}
+  <tbody class="govuk-table__body">
+    {% for item in laTables %}
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">{{item[0]}}</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">{{item[2]|addcommas}}</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">{{item[3]}}%</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table> -->
+<table class="govuk-table">
+  <caption class="govuk-table__caption govuk-table__caption--m">Table comparing occupancy levels in Suffolk to regional and national averages</caption>
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header">Indicator</th>
+      <th scope="col" class="govuk-table__header govuk-table__header--numeric">Suffolk local authority area</th>
+      <th scope="col" class="govuk-table__header govuk-table__header--numeric">East of England (regional average)</th>
+      <th scope="col" class="govuk-table__header govuk-table__header--numeric">England (national average)</th>
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">Care home beds per 100,000 adult population</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">1,152</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">1,094</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">958</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">Occupancy level</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">87%</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">89%</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">89%</td>
+    </tr>
+  </tbody>
+</table>

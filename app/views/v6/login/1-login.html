@@ -1,0 +1,46 @@
+{% extends "v6/layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <!-- <h1 class="govuk-heading-xl">Sign in</h1> -->
+      <form class="form" action="3-password" method="post">
+
+<h1>Sign in to Get adult social care data or request access</h1>
+        {% from "govuk/components/input/macro.njk" import govukInput %}
+
+        {{ govukInput({
+          label: {
+            text: "Enter your email address"
+          },
+          
+          id: "email",
+          name: "email",
+          type: "email",
+          autocomplete: "email",
+          classes: "govuk-input--width-20",
+          spellcheck: false
+        }) }}
+       
+{{ govukButton({
+  text: "Continue"
+}) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,92 @@
+{% extends "v6/layouts/help.html" %}
+
+{% set pageName = "Help" %}
+
+{% block content %}
+
+<a href="javascript:history.back()" class="govuk-back-link">Back</a>
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">
+      Footnotes: percentage of adult social care beds occupied in care provider location
+    </h1>
+
+    <p class="govuk-body-l">Find detailed information about this indicator.</p>
+
+    <table class="govuk-table">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header govuk-!-width-one-third">What this measures</td>
+          <td class="govuk-table__cell">The percentage of adult social care beds reported as currently occupied in a specific care provider location.</td>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Source</th>
+          <td class="govuk-table__cell"><a href="https://www.necsu.nhs.uk/digital-applications/capacity-tracker/" class="govuk-link" target="_blank">Capacity Tracker (opens in new tab)</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Data correct as of</th>
+          <td class="govuk-table__cell">[Generated automatically]</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Update frequency</th>
+          <td class="govuk-table__cell">Daily</td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Data available for</th>
+          <td class="govuk-table__cell">[Generated automatically, e.g. 5 February 2019 to 5 February 2025]</td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Methodology</th>
+          <td class="govuk-table__cell">The occupancy rate is calculated by dividing the number of occupied beds by the total number of beds in each location.
+            <br><br>
+            The data reflects the number of beds recorded by care providers. 'Beds' refers to adult social care beds in care providers registered with the Care Quality Commission (CQC) and includes the following categories:
+            <br> <br>
+            <ul class="govuk-list govuk-list--bullet">
+              <li>general residential</li>
+              <li>general nursing</li>
+              <li>dementia residential</li>
+              <li>dementia nursing</li>
+               <li>mental health residential</li>
+               <li>mental health nursing</li>
+               <li>learning disability residential</li>
+               <li>learning disability nursing</li>
+               <li>transitional care</li>
+               <li>young physically disabled</li>
+            </ul>
+            'Occupied beds' refers to beds reported as being in use at the time of data collection within the specified location.  
+            <br><br>
+            Care providers registered with the Care Quality Commission (CQC) must update this information at least monthly using the Capacity Tracker tool. The mandated reporting period is between the 8th and 14th every month, or the next working day if the 14th falls on a weekend or holiday.
+          </td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Limitations</th>
+          <td class="govuk-table__cell">Care providers may update their Capacity Tracker data at different times outside the reporting period.
+            <br><br>
+            As a result, the data does not provide a snapshot of all providers at the same time. It reflects the most recent information available when the data was retrieved.
+            <br><br>
+            The data is self-reported and not independently verified.
+            <br><br>
+            When adult social care beds are vacant, they can be used flexibly across a range of bed types. We are exploring ways to reflect this in the data.
+            <br><br>
+            The current bed types are not clearly defined and may be interpreted differently by care providers submitting data. To improve consistency, we are working with Capacity Tracker to explore whether more detailed bed descriptions can be provided.</td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Data definitions</th>
+          <td class="govuk-table__cell">Refer to the Limitations section for details about work relating to bed type descriptions.</td>
+        </tr>
+      </tbody>
+    </table>
+
+  
+
+  {% endblock %}
+  

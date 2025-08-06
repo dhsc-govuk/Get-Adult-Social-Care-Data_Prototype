@@ -1,0 +1,59 @@
+{% extends "v6/layouts/logged-in.html" %}
+
+{% set pageName = "Enter a local authority's name" %}
+
+{% block content %}
+<a href="javascript:history.back()" class="govuk-back-link">Back</a>
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-two-thirds">
+
+    <div class="govuk-form-group">
+      <span class="govuk-caption-m">Current population needs and overall capacity at local authority level</span>
+      <h1 class="govuk-label-wrapper">
+        <label class="govuk-label govuk-label--l" for="country">Enter a local authority's name</label>
+      </h1>
+
+      <div id="country-hint" class="govuk-hint">
+        Start typing for suggestions.
+      </div>
+
+      <select class="govuk-select" id="la" name="la" aria-describedby="la-hint" data-module="autocomplete" data-autoselect="" data-display-menu="" data-min-length="" data-show-all-values="" data-show-no-options-found="">
+        <option value="" selected="" disabled="">Select an option</option>  
+        <option value="Hampshire">Hampshire</option>
+        <option value="Oxfordshire">Oxfordshire</option>
+        <option value="Surrey">Surrey</option>
+        <option value="West Sussex">West Sussex</option>
+        <option value="Bath and North East Somerset">Bath and North East Somerset</option>
+        <option value="Bristol, City of">Bristol, City of</option>
+        <option value="North Somerset">North Somerset</option>
+        <option value="South Gloucestershire">South Gloucestershire</option>
+        <option value="Swindon">Swindon</option>
+        <option value="Plymouth">Plymouth</option>
+        <option value="Torbay">Torbay</option>
+        <option value="Wiltshire">Wiltshire</option>
+        <option value="Isles of Scilly">Isles of Scilly</option>
+        <option value="Bournemouth, Christchurch and Poole">Bournemouth, Christchurch and Poole</option>
+        <option value="Cornwall">Cornwall</option>
+        <option value="Dorset">Dorset</option>
+        <option value="Somerset">Somerset</option>
+        <option value="Devon">Devon</option>
+        <option value="Gloucestershire">Gloucestershire</option>
+      </select>
+    </div>
+
+  </div>
+
+</div>
+    
+<form action="index">
+  <div class="govuk-button-group">
+    <button type="submit" class="govuk-button" data-module="govuk-button">
+      Apply changes
+    </button>
+    <a class="govuk-link" href="index">Cancel and go back</a>
+  </div>
+</form>
+</div>
+{% endblock %}
