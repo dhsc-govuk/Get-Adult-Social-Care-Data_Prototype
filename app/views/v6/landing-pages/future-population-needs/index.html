@@ -1,0 +1,547 @@
+{% extends "v6/layouts/landing-page.html" %}
+
+{% set pageName = "Future population needs" %}
+
+{% block content %} 
+<a href="javascript:history.back()" class="govuk-back-link">Back</a>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+  <h1 class="govuk-heading-l">{{pageName}}</h1>
+  <p class="govuk-body-l">Identify the potential future needs for adult social care.</p>
+
+  <style>
+    /* Contents Box Styling */
+    .contents-box {
+        background-color: #f3f2f1; /* GOV.UK light grey */
+        padding: 20px;
+        margin-bottom: 20px;
+        max-width: 64%; /* Adjusted width for better spacing */
+    }
+  
+    /* Remove default list indentation */
+    .govuk-list--number {
+        counter-reset: main-counter;
+        list-style-type: none;
+        padding-left: 0; /* Remove padding */
+        margin-left: 0; /* Remove margin */
+    }
+  
+    .govuk-list--number > li {
+        counter-increment: main-counter;
+    }
+  
+    .govuk-list--number > li::before {
+        content: counter(main-counter) ". ";
+        font-weight: normal;
+    }
+  
+    /* Styling for the nested (child) ordered list */
+    .nested-list {
+        counter-reset: sub-counter;
+        list-style-type: none;
+        padding-left: 1.5rem; /* Align nested items properly */
+        margin-left: 0;
+    }
+  
+    .nested-list li {
+        counter-increment: sub-counter;
+    }
+  
+    .nested-list li::before {
+        content: counter(main-counter) "." counter(sub-counter) ". ";
+        font-weight: normal;
+    }
+  
+    /* Bridge Text Styling */
+    .bridge-text {
+        margin-top: 20px;
+        font-weight: bold;
+    }
+  </style>
+  
+  <!-- Contents Box -->
+  <div class="contents-box">
+    <h2 class="govuk-heading-m">Contents</h2>
+    <ol class="govuk-list govuk-list--number">
+      <li><a href="#preferences" class="govuk-link">Choose your data preferences</a>
+        <li><a href="#factors" class="govuk-link">Demographic factors driving population needs</a>
+            <ol class="govuk-list nested-list">
+              <li><a class="govuk-link" href="#population-size">Future population size</a></li>
+              <li><a class="govuk-link" href="#population-18-64">Future population aged 18 to 64</a></li>
+              <li><a class="govuk-link" href="#population-65-over">Future population aged 65 and over</a></li>
+              <li><a class="govuk-link" href="#population-85-over">Future population aged 85 and over</a></li>
+              <li><a class="govuk-link" href="#population-65-over-domestic-help">Future population aged 65 and over needing domestic help</a></li>
+              <li><a class="govuk-link" href="#population-65-over-self-care-help">Future population aged 65 and over needing self-care help</a></li>
+            </ol>
+        </li>
+        <li><a href="#footnotes" class="govuk-link">Footnotes</a></li>
+        <li><a href="#related" class="govuk-link">Related information</a></li>
+    </ol>
+  </div>
+    <!-- 
+      
+      Main content
+      
+    -->
+    <style>
+      h2{margin-top:4em}
+    </style>
+
+    <h2 id="preferences">1. Choose your data preferences</h2>
+    <p class="govuk-body">Change these to update the data shown.</p>
+        <dl class="govuk-summary-list govuk-!-width-two-thirds">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Active location
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Greenfields Care
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="present-demand-locations">Change<span class="govuk-visually-hidden"> name</span></a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Available locations
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Woodlands Care, Suffolk<br>
+              Seafront Villas, Norfolk
+            </dd>
+            <dd class="govuk-summary-list__value">
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Local authority
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Suffolk
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="select-la">Change<span class="govuk-visually-hidden"> name</span></a>
+            </dd>
+          </div>
+        </dl>
+        </div>
+        </div>
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+          <!-- 
+          
+          Demographic factors 
+          
+          -->
+          <h2 id="factors">2. Demographic factors driving population needs</h2>
+
+          <p>Population needs for adult social care are shaped by a range of factors including age, income levels, employment status, disability, long-term health conditions, and household composition.</p>
+          <p>Areas with higher proportions of older adults, people with disabilities, or long-term health conditions typically experience greater pressure on services.<p>
+          
+          <!--
+          <div class="govuk-inset-text">
+            <strong>Tip:</strong> Use the Explore more data option provided for each table to view smaller geographical areas than local authority level, where available. 
+          </div>
+        -->
+            <h3 id="population-size" class="govuk-heading-m govuk-!-padding-top-9">2.1 Future population size, all ages</h3>
+            
+            <p class="govuk-body">This data shows projected population changes from 2024 to 2043.</p>
+
+            <style>
+              th:nth-child(1),td:nth-child(1){text-align: left;}
+              td, th{text-align:right}
+            </style>
+            {% set totalPopulation = 
+              [
+              [2024,779183,57816882,6408246],
+              [2025,782040,58060237,6435995],
+              [2026,784775,58297239,6462667],
+              [2027,787378,58527723,6487936],
+              [2028,789924,58751641,6512372],
+              [2029,792430,58969497,6535934],
+              [2030,794839,59181801,6558594],
+              [2031,797274,59389107,6580495],
+              [2032,799729,59592211,6602100],
+              [2033,802180,59792008,6623523],
+              [2034,804624,59988994,6644617],
+              [2035,806986,60183923,6665145],
+              [2036,809391,60377811,6685789],
+              [2037,811800,60571671,6706745],
+              [2038,814261,60766251,6728389],
+              [2039,816726,60961810,6750247],
+              [2040,819173,61157877,6772234],
+              [2041,821617,61353966,6794437],
+              [2042,824051,61549624,6816861],
+              [2043,826481,61744108,6839413]
+              ]
+              %}
+              <div class="govuk-tabs" data-module="govuk-tabs">
+                <h2 class="govuk-tabs__title">
+                  Contents
+                </h2>
+                <ul class="govuk-tabs__list">
+                  <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+                    <a class="govuk-tabs__tab" href="#past-day">
+                     Chart
+                    </a>
+                  </li>
+                  <li class="govuk-tabs__list-item">
+                    <a class="govuk-tabs__tab" href="#past-week">
+                      Table
+                    </a>
+                  </li>
+                </ul>
+                <div class="govuk-tabs__panel" id="past-day">
+                  <!-- 
+                  
+                  Line chart 
+                  
+                  -->
+                  {% include "./_nomis_2025_02_21_121138.html" %}
+                  <p class="govuk-body"><a href="#" class="govuk-link">Download this chart (CSV)</a></p>
+                  </div>
+                  <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="past-week">
+                    <h2 class="govuk-heading-l">Population change, all ages</h2>
+                <table class="govuk-table">
+                  <tbody>
+                    <tr class="govuk-table__row">
+                      <th scope="col" class="govuk-table__header">Year</th>
+                      <th scope="col" class="govuk-table__header govuk-!-width-one-third govuk-!-text-align-right">Suffolk</th>
+                      <th scope="col" class="govuk-table__header govuk-!-width-one-third govuk-!-text-align-right">East of England</th>
+                      <th scope="col" class="govuk-table__header govuk-!-width-one-third govuk-!-text-align-right">All England</th>
+                    </tr>
+                   {% for item in totalPopulation %}
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell govuk-table__cell--numeric">{{item[0]}}</td>
+                      <td class="govuk-table__cell govuk-table__cell--numeric">{{item[1]|addcommas}}</td>
+                      <td class="govuk-table__cell govuk-table__cell--numeric">{{item[2]|addcommas}}</td>
+                      <td class="govuk-table__cell govuk-table__cell--numeric">{{item[3]|addcommas}}</td>
+                    </tr>
+                    {% endfor %}
+                  </tbody>
+                </table>
+                    </div>
+                    </div>
+                <p class="govuk-body">Source: Office for National Statistics<br>
+                  Data correct as of 5 February 2025</p>
+                  <!--<a href="../v3/help/beds-per-100000-people.html" class="govuk-link">View supporting information for this data</a>-->
+              </p>
+
+       <h3 id="population-18-64" class="govuk-heading-m govuk-!-padding-top-9">2.2 Future population aged 18 to 64</h2>
+
+        <div class="govuk-tabs" data-module="govuk-tabs">
+          <h2 class="govuk-tabs__title">
+            Contents
+          </h2>
+          <ul class="govuk-tabs__list">
+            <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+              <a class="govuk-tabs__tab" href="#past-day-b">
+               Chart
+              </a>
+            </li>
+            <li class="govuk-tabs__list-item">
+              <a class="govuk-tabs__tab" href="#past-wee-">
+                Table
+              </a>
+            </li>
+          </ul>
+          <div class="govuk-tabs__panel" id="past-day-b">
+            <!-- 
+            
+            Line chart 
+            
+            -->
+            {% include "./_nomis_2025_02_24_101258.html" %}
+            <p class="govuk-body"><a href="#" class="govuk-link">Download this chart (CSV)</a></p>
+            </div>
+            <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="past-week-b">
+              <h2 class="govuk-heading-l">Population change, all ages</h2>
+          <table class="govuk-table">
+            <tbody>
+              <tr class="govuk-table__row">
+                <th scope="col" class="govuk-table__header">Year</th>
+                <th scope="col" class="govuk-table__header govuk-!-width-one-third govuk-!-text-align-right">Suffolk</th>
+                <th scope="col" class="govuk-table__header govuk-!-width-one-third govuk-!-text-align-right">East of England</th>
+                <th scope="col" class="govuk-table__header govuk-!-width-one-third govuk-!-text-align-right">All England</th>
+              </tr>
+             {% for item in totalPopulation %}
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell govuk-table__cell--numeric">{{item[0]}}</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">{{item[1]|addcommas}}</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">{{item[2]|addcommas}}</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">{{item[3]|addcommas}}</td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+              </div>
+              </div>
+       <p class="govuk-body">Source: Office for National Statistics<br>
+        Data correct as of 5 February 2025</p>
+      <!---
+       <p class="govuk-body"><a href="" class="govuk-button govuk-button--secondary">Explore more XXXXX data</a></p>
+       -->
+       <h3 id="population-65-over" class="govuk-heading-m govuk-!-padding-top-9">2.3 Future population aged 65 and over</h2>
+
+        <p class="govuk-body">This data shows projected population changes for people aged 65 and over from 2025 to 2040.</p>
+        <div class="govuk-tabs" data-module="govuk-tabs">
+          <h2 class="govuk-tabs__title">
+            Contents
+          </h2>
+          <ul class="govuk-tabs__list">
+            <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+              <a class="govuk-tabs__tab" href="#past-day-c">
+               Chart
+              </a>
+            </li>
+            <li class="govuk-tabs__list-item">
+              <a class="govuk-tabs__tab" href="#past-week-c">
+                Table
+              </a>
+            </li>
+          </ul>
+          <div class="govuk-tabs__panel" id="past-day-c">
+            <!-- 
+            
+            Line chart 
+            
+            -->
+            {% include "./_nomis_2025_02_24_102519.html" %}
+            <p class="govuk-body"><a href="#" class="govuk-link">Download this chart (CSV)</a></p>
+            </div>
+            <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="past-week-c">
+              <h2 class="govuk-heading-l">Population change, all ages</h2>
+          <table class="govuk-table">
+            <tbody>
+              <tr class="govuk-table__row">
+                <th scope="col" class="govuk-table__header">Year</th>
+                <th scope="col" class="govuk-table__header govuk-!-width-one-third govuk-!-text-align-right">Suffolk</th>
+                <th scope="col" class="govuk-table__header govuk-!-width-one-third govuk-!-text-align-right">East of England</th>
+                <th scope="col" class="govuk-table__header govuk-!-width-one-third govuk-!-text-align-right">All England</th>
+              </tr>
+             {% for item in totalPopulation %}
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell govuk-table__cell--numeric">{{item[0]}}</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">{{item[1]|addcommas}}</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">{{item[2]|addcommas}}</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">{{item[3]|addcommas}}</td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+              </div>
+              </div>
+       <p class="govuk-body">Source: Office for National Statistics<br>
+        Data correct as of 5 February 2025</p>
+
+        <!-- 
+        
+        Future population 
+        
+        -->
+       <h3 id="population-85-over" class="govuk-heading-m govuk-!-padding-top-9">2.4 Future population aged 85 and over</h2>
+
+        <p class="govuk-body">This data shows projected population changes for people aged 85 and over from 2025 to 2040.</p>
+        <div class="govuk-tabs" data-module="govuk-tabs">
+          <h2 class="govuk-tabs__title">
+            Contents
+          </h2>
+          <ul class="govuk-tabs__list">
+            <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+              <a class="govuk-tabs__tab" href="#past-day-d">
+               Chart
+              </a>
+            </li>
+            <li class="govuk-tabs__list-item">
+              <a class="govuk-tabs__tab" href="#past-week-d">
+                Table
+              </a>
+            </li>
+          </ul>
+          <div class="govuk-tabs__panel" id="past-day-d">
+            <!-- 
+            
+            Line chart 
+            
+            -->
+            {% include "./_nomis_2025_02_24_1025191.html" %}
+            <p class="govuk-body"><a href="#" class="govuk-link">Download this chart (CSV)</a></p>
+            </div>
+            <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="past-week-d">
+              <h2 class="govuk-heading-l">Population change, all ages</h2>
+          <table class="govuk-table">
+            <tbody>
+              <tr class="govuk-table__row">
+                <th scope="col" class="govuk-table__header">Year</th>
+                <th scope="col" class="govuk-table__header govuk-!-width-one-third govuk-!-text-align-right">Suffolk</th>
+                <th scope="col" class="govuk-table__header govuk-!-width-one-third govuk-!-text-align-right">East of England</th>
+                <th scope="col" class="govuk-table__header govuk-!-width-one-third govuk-!-text-align-right">All England</th>
+              </tr>
+             {% for item in totalPopulation %}
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell govuk-table__cell--numeric">{{item[0]}}</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">{{item[1]|addcommas}}</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">{{item[2]|addcommas}}</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">{{item[3]|addcommas}}</td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+              </div>
+              </div>
+       <p class="govuk-body">Source: Office for National Statistics<br>
+        Data correct as of 5 February 2025</p>
+<!-- 
+        
+Domestic tasks 
+
+-->
+       <h3 id="population-65-over-domestic-help" class="govuk-heading-m govuk-!-padding-top-9">2.5 Future population aged 65 and over needing domestic help</h2>
+        <p class="govuk-body">Domestic tasks are important for independent living but not essential for basic functioning. These include housework, shopping for food, managing paperwork or bills, and getting out of the house. These tasks are known as Instrumental Activities of Daily Living (IADLs).</p>
+         <p class="govuk-body">This data shows the projected number of people aged 65 and over needing domestic help from 2025 to 2040.</p>
+
+         <div class="govuk-tabs" data-module="govuk-tabs">
+          <h2 class="govuk-tabs__title">
+            Contents
+          </h2>
+          <ul class="govuk-tabs__list">
+            <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+              <a class="govuk-tabs__tab" href="#past-day-e">
+               Chart
+              </a>
+            </li>
+            <li class="govuk-tabs__list-item">
+              <a class="govuk-tabs__tab" href="#past-week-e">
+                Table
+              </a>
+            </li>
+          </ul>
+          <div class="govuk-tabs__panel" id="past-day-e">
+            <!-- 
+            
+            Line chart 
+            
+            -->
+            {% include "./_domestic_tasks_hampshire.html" %}
+            <p class="govuk-body"><a href="#" class="govuk-link">Download this chart (CSV)</a></p>
+            </div>
+            <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="past-week-e">
+              <h2 class="govuk-heading-l">Population change, all ages</h2>
+          <table class="govuk-table">
+            <tbody>
+              <tr class="govuk-table__row">
+                <th scope="col" class="govuk-table__header">Year</th>
+                <th scope="col" class="govuk-table__header govuk-!-width-one-third govuk-!-text-align-right">Suffolk</th>
+                <th scope="col" class="govuk-table__header govuk-!-width-one-third govuk-!-text-align-right">East of England</th>
+                <th scope="col" class="govuk-table__header govuk-!-width-one-third govuk-!-text-align-right">All England</th>
+              </tr>
+             {% for item in totalPopulation %}
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell govuk-table__cell--numeric">{{item[0]}}</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">{{item[1]|addcommas}}</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">{{item[2]|addcommas}}</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">{{item[3]|addcommas}}</td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+              </div>
+              </div>
+
+        <p class="govuk-body"><a href="#" class="govuk-link">Download this table (CSV)</a></p>
+
+       <p class="govuk-body">Source: Office for National Statistics, NHS England</p>
+
+       <!-- 
+       
+       Self-care tasks 
+       
+       -->
+       <h3 id="population-65-over-self-care-help" class="govuk-heading-m govuk-!-padding-top-9">2.6 Future population aged 65 and over needing self-care help</h2>
+        <p class="govuk-body">
+          Self-care tasks are essential daily activities related to personal care and mobility. These include bathing, dressing, using the toilet, eating, taking medication, and moving around indoors. These tasks are known as Activities of Daily Living (ADLs).
+
+          <!--
+        <p class="govuk-body">For more details, see the <a href="https://digital.nhs.uk/data-and-information/publications/statistical/health-survey-for-england/2017" class="gov-link" target="_blank">NHS Health Survey for England (opens in new tab)</a>.</p>
+        -->
+        <p class="govuk-body">This data shows the projected number of people aged 65 and over needing self-care help from 2025 to 2040.</p>
+        <div class="govuk-tabs" data-module="govuk-tabs">
+          <h2 class="govuk-tabs__title">
+            Contents
+          </h2>
+          <ul class="govuk-tabs__list">
+            <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+              <a class="govuk-tabs__tab" href="#past-day-f">
+               Chart
+              </a>
+            </li>
+            <li class="govuk-tabs__list-item">
+              <a class="govuk-tabs__tab" href="#past-week-f">
+                Table
+              </a>
+            </li>
+          </ul>
+          <div class="govuk-tabs__panel" id="past-day-f">
+            <!-- 
+            
+            Line chart 
+            
+            -->
+            {% include "./_self_care_hampshire.html" %}
+            <p class="govuk-body"><a href="#" class="govuk-link">Download this chart (CSV)</a></p>
+            </div>
+            <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="past-week-f">
+              <h2 class="govuk-heading-l">Population change, all ages</h2>
+          <table class="govuk-table">
+            <tbody>
+              <tr class="govuk-table__row">
+                <th scope="col" class="govuk-table__header">Year</th>
+                <th scope="col" class="govuk-table__header govuk-!-width-one-third govuk-!-text-align-right">Suffolk</th>
+                <th scope="col" class="govuk-table__header govuk-!-width-one-third govuk-!-text-align-right">East of England</th>
+                <th scope="col" class="govuk-table__header govuk-!-width-one-third govuk-!-text-align-right">All England</th>
+              </tr>
+             {% for item in totalPopulation %}
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell govuk-table__cell--numeric">{{item[0]}}</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">{{item[1]|addcommas}}</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">{{item[2]|addcommas}}</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">{{item[3]|addcommas}}</td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+              </div>
+              </div>
+  
+      <p class="govuk-body"><a href="#" class="govuk-link">Download this table (CSV)</a></p>
+
+      <p class="govuk-body">Source: Office for National Statistics, NHS England</p>
+        <!--
+        <p class="govuk-body"><a href="" class="govuk-button govuk-button--secondary">Explore more XXXX data</a></p>
+      -->
+        
+
+<h2 id="footnotes">3. Footnotes</h2>
+
+<p class="govuk-body">
+  Find out how each indicator is defined, sourced, and updated.
+</p>
+    <p class="govuk-body">Select an indicator to view its footnotes:</p>
+    <ol class="govuk-list govuk-list--bullet">
+      <li><a href="../../v4/help/population-size.html" class="govuk-link">Population size</a></li>
+      <li><a href="../../v4/help/population-age.html" class="govuk-link">Percentage of population in age group</a></li>
+      <li><a href="../../v4/help/population-65-over-help" class="govuk-link">Population aged 65 and over needing domestic or self-care help</a></li>
+    </ol>
+
+
+
+<h2 id="related">4. Related information</h2>
+
+  <p class="govuk-body">
+    For more information on local population needs, check the latest Market Position Statement and Joint Strategic Needs Assessment. You will usually find these on the local authority's website.
+  </p>
+
+    <p class="govuk-body"><a class="govuk-link" href="#">Back</a></p>
+</div>
+</div>
+    {% endblock %}

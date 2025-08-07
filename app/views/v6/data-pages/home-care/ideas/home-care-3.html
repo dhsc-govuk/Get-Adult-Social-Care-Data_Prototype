@@ -1,0 +1,393 @@
+{% extends "v6/layouts/data.html" %}
+
+{% set pageName = "Community social care capacity" %}
+
+{% block content %} 
+<a href="javascript:history.back()" class="govuk-back-link">Back</a>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+      <div class="govuk-notification-banner__header">
+        <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+          Success
+        </h2>
+      </div>
+      <div class="govuk-notification-banner__content">
+        <h3 class="govuk-notification-banner__heading">
+          Your data preferences have been updated.
+        </h3>
+     </div>
+    </div>
+
+    <!--<span class="govuk-caption-l">Demand and capacity</span>-->
+    <h1 class="govuk-heading-l">{{pageName}}</h1>
+    <p class="govuk-body-l">Explore data about the capacity of domiciliary care, extra care housing, supporting living and Shared Lives schemes to meet adult social care needs. This data only covers providers registered with the Care Quality Commission (CQC).</p>
+    <style>
+      /* Contents Box Styling */
+      .contents-box {
+          background-color: #f3f2f1; /* GOV.UK light grey */
+          padding: 20px;
+          margin-bottom: 20px;
+          max-width: 63%; /* Adjusted width for better spacing */
+      }
+    
+      /* Remove default list indentation */
+      .govuk-list--number {
+          counter-reset: main-counter;
+          list-style-type: none;
+          padding-left: 0; /* Remove padding */
+          margin-left: 0; /* Remove margin */
+      }
+    
+      .govuk-list--number > li {
+          counter-increment: main-counter;
+      }
+    
+      .govuk-list--number > li::before {
+          content: counter(main-counter) ". ";
+          font-weight: normal;
+      }
+    
+      /* Styling for the nested (child) ordered list */
+      .nested-list {
+          counter-reset: sub-counter;
+          list-style-type: none;
+          padding-left: 1.5rem; /* Align nested items properly */
+          margin-left: 0;
+      }
+    
+      .nested-list li {
+          counter-increment: sub-counter;
+      }
+    
+      .nested-list li::before {
+          content: counter(main-counter) "." counter(sub-counter) ". ";
+          font-weight: normal;
+      }
+    
+      /* Bridge Text Styling */
+      .bridge-text {
+          margin-top: 20px;
+          font-weight: bold;
+      }
+    </style>
+    
+    <!-- Contents Box -->
+    <div class="contents-box">
+      <h2 class="govuk-heading-m">Contents</h2>
+      <ol class="govuk-list govuk-list--number">
+          <li><a href="#preferences" class="govuk-link">Choose your data preferences</a>
+          <li><a href="#data" class="govuk-link">Map</a>
+          <li><a href="#data" class="govuk-link">Compare local authorities</a>
+          <li><a href="#data" class="govuk-link">Table</a>
+            <!--
+          <li><a href="#smart-insights" class="govuk-link">Smart insights (experimental)</a>
+          -->
+          <li><a href="#footnotes" class="govuk-link">Footnotes</a>
+            <li><a href="#footnotes" class="govuk-link">Related information</a>
+          </ol>
+    </div>
+    
+  <!-- <span class="govuk-caption-l">Demand and capacity</span> -->
+
+  <h2 id="preferences">
+    1. Choose your data preferences
+  </h2>
+  <p>Pick the data you want to view.</p>
+
+    <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+          <h1 class="govuk-fieldset__heading">
+            Select location
+          </h1>
+        </legend>
+        <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="changedName" name="changedName" type="radio" value="month">
+            <label class="govuk-label govuk-radios__label" for="changedName">
+              Location 1
+            </label>
+          </div>
+
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="changedName-2" name="changedName" type="radio" value="year">
+            <label class="govuk-label govuk-radios__label" for="changedName-2">
+              Location 2
+            </label>
+          </div>
+
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="changedName-2" name="changedName" type="radio" value="year">
+            <label class="govuk-label govuk-radios__label" for="changedName-2">
+              Location 3
+            </label>
+          </div>
+        </div>
+      </fieldset>
+    </div>
+
+  <div class="govuk-form-group">
+    <fieldset class="govuk-fieldset">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+        <h1 class="govuk-fieldset__heading">
+          Select a service type
+        </h1>
+      </legend>
+      <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="changedName" name="changedName" type="radio" value="month">
+          <label class="govuk-label govuk-radios__label" for="changedName">
+            Domiciliary care
+          </label>
+        </div>
+        <div id="signIn-item-hint" class="govuk-hint govuk-radios__hint">
+          Visiting care provided to people in their own home. The home is not part of the care service.
+          </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="changedName-2" name="changedName" type="radio" value="year">
+          <label class="govuk-label govuk-radios__label" for="changedName-2">
+            Extra care housing
+          </label>
+        </div>
+        <div id="signIn-item-hint" class="govuk-hint govuk-radios__hint">
+          Purpose-built or adapted housing, usually with on-site care. Often called sheltered housing, assisted living, or retirement homes.
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="changedName-2" name="changedName" type="radio" value="year">
+          <label class="govuk-label govuk-radios__label" for="changedName-2">
+            Supported living
+          </label>
+        </div>
+        <div id="signIn-item-hint" class="govuk-hint govuk-radios__hint">
+          Personal care provided to people in their own home, with housing and care arranged separately.
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="changedName-2" name="changedName" type="radio" value="year">
+          <label class="govuk-label govuk-radios__label" for="changedName-2">
+            Shared Lives
+          </label>
+        </div>
+        <div id="signIn-item-hint" class="govuk-hint govuk-radios__hint">
+          Schemes where the person who needs care is matched with an approved Shared Lives carer.
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="changedName-2" name="changedName" type="radio" value="year">
+          <label class="govuk-label govuk-radios__label" for="changedName-2">
+            Other community social care services
+          </label>
+        </div>
+        <div class="govuk-radios__divider">or</div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="changedName-2" name="changedName" type="radio" value="year">
+          <label class="govuk-label govuk-radios__label" for="changedName-2">
+            All community social care services
+          </label>
+        </div>
+      </div>
+    </fieldset>
+  </div>
+
+
+
+  <div class="govuk-form-group">
+    <fieldset class="govuk-fieldset">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+        <h1 class="govuk-fieldset__heading">
+          Select indicator
+        </h1>
+      </legend>
+      <div id="signIn-item-hint" class="govuk-hint">
+        These indicators can reflect capacity in community social care services.
+      </div>
+      <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="changedName" name="changedName" type="radio" value="month">
+          <label class="govuk-label govuk-radios__label" for="changedName">
+            Number of care provider locations
+          </label>
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="changedName-2" name="changedName" type="radio" value="year">
+          <label class="govuk-label govuk-radios__label" for="changedName-2">
+            Number of service users
+          </label>
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="changedName-2" name="changedName" type="radio" value="year">
+          <label class="govuk-label govuk-radios__label" for="changedName-2">
+            Number of care hours provided
+          </label>
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="changedName-2" name="changedName" type="radio" value="year">
+          <label class="govuk-label govuk-radios__label" for="changedName-2">
+            Number of care workers (agency included) 
+          </label>
+        </div>
+
+
+      </div>
+    </fieldset>
+  </div>
+
+
+
+  <div class="govuk-form-group">
+    <fieldset class="govuk-fieldset">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+        <h1 class="govuk-fieldset__heading">
+         Select how the data should be shown</h1>
+        </legend>
+        <div id="signIn-item-hint" class="govuk-hint">
+          This adjusts the data for better comparison of areas with different population sizes.
+        </div>
+      <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="changedName" name="changedName" type="radio" value="month">
+          <label class="govuk-label govuk-radios__label" for="changedName">
+            Per 100,000 people aged 18 and over
+          </label>
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="changedName-2" name="changedName" type="radio" value="year">
+          <label class="govuk-label govuk-radios__label" for="changedName-2">
+            Per 1,000 people aged 65 and over
+          </label>
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="changedName-2" name="changedName" type="radio" value="year">
+          <label class="govuk-label govuk-radios__label" for="changedName-2">
+            Per 1,000 people aged 85 and over 
+          </label>
+        </div>
+      </div>
+    </fieldset>
+  </div>
+
+  <button type="submit" class="govuk-button" data-module="govuk-button">
+    Update
+  </button>
+
+  
+            <style>
+              h2{margin-top:3em}
+            </style>
+                <h2>2. Map</h2>
+                <p class="govuk-body">This map shows...</p>
+                <!--
+                <table class="govuk-table" style="width:66%">
+                  <tbody class="govuk-table__body">
+                    <tr class="govuk-table__row">
+                      <th scope="row" class="govuk-table__header">Service type</th>
+                      <td class="govuk-table__cell">
+                        <ul class="govuk-list" style="text-align: left;">
+                          <li>Domiciliary care</li>
+                        </ul>
+                      </td>
+                      <td class="govuk-table__cell">
+                        <a href="present-demand-locations">Change</a>
+                      </td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <th scope="row" class="govuk-table__header">Indicators</th>
+                      <td class="govuk-table__cell">
+                        <ul class="govuk-list" style="text-align: left;">
+                          <li>Domiciliary care providers per 100,000 population</li>
+                        </ul>
+                      </td>
+                      <td class="govuk-table__cell">
+                        <a href="present-demand-locations">Change</a>
+                      </td>
+                    </tr>
+                    </tbody>
+                    </table>
+                  -->
+               <img src="/public/images/surrey.jpg" style="width:100%">
+                          
+              <p class="govuk-body"><a href="" class="govuk-link">Download map image (PNG)</a></p>
+                <p class="govuk-body">Source: Capacity Tracker<br>
+                  Data correct as of 21 March 2021</p>
+                  <!-- <a href="../v3/help/beds-per-100000-people.html" class="govuk-link">View supporting information for this data</a></p>-->
+
+                <!-- 
+                
+                Locations
+                
+                -->
+          
+                  <h2>2. Compare local authorities</h2>
+ 
+                <p class="govuk-body">Bar chart goes here</p>
+
+  
+
+                  <h2 id="introduction">3. Table</h2>
+
+
+          <p>This data shows... </p>
+          
+          <!--
+            <p>Economic factors also have a role in determining the level and type of care individuals need.</p>
+          -->
+
+          <style>
+            .table-indicator { width: 29%; }
+            .table-percentage { width: 13%; }
+            .table-comparison { width: 16%; }
+         </style>
+
+        <table class="govuk-table">
+          <thead class="govuk-table__head">
+            <th scope="col" class="govuk-table__header table-indicator">Indicator</th>
+            <th scope="col" class="govuk-table__header table-percentage">Suffolk</th>
+            <th scope="col" class="govuk-table__header table-percentage">East of England</th>
+            <th scope="col" class="govuk-table__header table-percentage">All England</th>
+            <!-- <th scope="col" class="govuk-table__header table-comparison">Suffolk compared to East of England</th>
+            <th scope="col" class="govuk-table__header table-comparison">Suffolk compared to All England</th> -->
+        </thead>
+        <tbody>
+        <tr class="govuk-table__row">
+        <td class="govuk-table__cell">XXXXX</td>
+        <td class="govuk-table__cell">21.4%</td>
+        <td class="govuk-table__cell">19.9%</td>
+        <td class="govuk-table__cell">18.7%</td>
+        <!-- <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--grey">Similar</strong></td>
+        <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--grey">Similar</strong></td> -->
+        </tr>
+        <tr class="govuk-table__row">
+        <td class="govuk-table__cell">XXXX</td>
+        <td class="govuk-table__cell">3.1%</td>
+        <td class="govuk-table__cell">2.2%</td>
+        <td class="govuk-table__cell">2.4%</td>
+        <!-- <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--grey">Similar</strong></td>
+        <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--grey">Similar</strong></td> -->
+        </tr>
+       </tbody>
+       </table>
+       <p class="govuk-body">Download and source links</p>
+
+
+            <h2 id="footnotes">4. Footnotes</h2>
+
+            <p class="govuk-body">
+              Find out how this indicator is defined, sourced, and updated.
+            </p>
+
+            <p class="govuk-body">
+              <a href="../../help/beds-per-100000-adult-population.html" class="govuk-link">View footnotes</a>
+            </p>
+ 
+            <h2 id="related">5. Related information</h2>
+
+  <p class="govuk-body">
+    For more information on local population needs, check the latest Market Position Statement and Joint Strategic Needs Assessment. You will usually find these on the local authority's website.
+  </p>
+
+      
+            <p class="govuk-body"><a href="javascript:history.back()" class="govuk-link">Back</a></p>
+          </div>
+            </div>
+          </div>
+        </div>
+            {% endblock %}

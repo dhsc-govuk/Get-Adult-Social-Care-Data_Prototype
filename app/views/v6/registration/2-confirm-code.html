@@ -1,0 +1,58 @@
+{% extends "v6/layouts/main.html" %}
+
+{% set titleH1 = "Enter code to confirm your email address" %} {% block pageTitle %} {{titleH1}} - {{serviceName}} - GOV.UK {% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">Enter code to confirm your email address</h1>
+      <p>We have sent a code to <strong>{{ data['email'] }}</strong></p>
+      <p>The email contains a 6-digit security code. The code expires after 15 minutes.</p>
+
+      <form class="form" action="3-your-name" method="post">
+       
+        {% from "govuk/components/input/macro.njk" import govukInput %}
+
+        {{ govukInput({
+          label: {
+            text: "Enter the 6 digit code"
+          },
+          classes: "govuk-input--width-10",
+          id: "width-10",
+          name: "width10"
+        }) }}
+
+        <details class="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              Problems with the code?
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+            <p class="govuk-body">
+              If you did not receive the code, wait a few minutes and check your spam or junk mail folder. The subject of the email is 'DHSC security code'.
+            </p>
+            <p class="govuk-body">
+              If the code has expired or has still not arrived, <a class="govuk-link" href="2b-resend-confirm-code">request a new code</a>.
+            </p>
+          </div>
+        </details>
+       
+{{ govukButton({
+  text: "Continue"
+}) }}
+
+      </form>
+
+    </div>
+  </div>
+<!-- <p style="position:relative; top:7em"><a href="1b-security-code-email" target="_blank">View email</a></p> -->
+{% endblock %}

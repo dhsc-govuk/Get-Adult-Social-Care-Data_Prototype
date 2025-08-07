@@ -1,0 +1,37 @@
+{% extends "v6/layouts/main.html" %}
+
+{% set titleH1 = "Request for access submitted" %} {% block pageTitle %} {{titleH1}} - {{serviceName}} - GOV.UK {% endblock %}
+
+{% set mainClasses = "govuk-main-wrapper--l" %}
+
+{% from "govuk/components/panel/macro.njk" import govukPanel %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      {{ govukPanel({
+        titleText: "Request for access submitted"
+      }) }}
+
+      <!---
+      <p class="govuk-body">We have sent you a confirmation email.</p>
+      ---->
+
+      <h2 class="govuk-heading-m">What happens next</h2>
+
+      <p class="govuk-body">
+        The Department for Health and Social Care (DHSC) will review your request to access the Get adult social care data service.
+      </p>
+      <p class="govuk-body">
+        DHSC will normally contact you within x working days to grant access or ask for more information. During busy periods, this may take longer.
+      </p>
+
+      <h2 class="govuk-heading-m">Help us improve this service</h2>
+
+      <p class="govuk-body">
+        <a href="#" class="govuk-link">Give your feedback</a> (takes 30 seconds)
+      </p>
+    </div>
+  </div>
+  <p style="position:relative; top:7em"><a href="../emails/request-approved-email">Next prototype page</a></p>
+{% endblock %}

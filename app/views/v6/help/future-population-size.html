@@ -1,0 +1,74 @@
+{% extends "v6/layouts/help.html" %}
+
+{% set pageName = "Indicator definition and supporting information: population size" %}
+
+{% block content %}
+
+<a href="javascript:history.back()" class="govuk-back-link">Back</a>
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">
+      Footnoes: population size 
+    </h1>
+
+    <p class="govuk-body-l">Find detailed information about this indicator.</p>
+
+      <!---
+    <p class="govuk-body"><a href="" class="govuk-link">View data for this indicator</a></p>
+  -->
+  <table class="govuk-table">
+   
+    <thead class="govuk-table__head">
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header govuk-!-width-one-third">What this measures</td>
+        <td class="govuk-table__cell">The estimated number of individuals living in the selected administrative area within England.</td>
+      </tr>
+    </thead>
+    <tbody class="govuk-table__body">
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header">Source</th>
+        <td class="govuk-table__cell"><a href="https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/bulletins/populationestimatesforenglandandwales/mid2023" class="govuk-link" target="_blank">Office for National Statistics population estimates for England and Wales (opens in new tab)</td>
+      </tr>
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header">Data correct as of</th>
+        <td class="govuk-table__cell">[Generated automatically]</td>
+      </tr>
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header">Update frequency</th>
+        <td class="govuk-table__cell">Yearly</td>
+      </tr>
+
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header">Data available for</th>
+        <td class="govuk-table__cell">[Generated automatically, e.g. 5 February 2019 to 5 February 2025]</td>
+      </tr>
+
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header">Methodology</th>
+        <td class="govuk-table__cell">This data is from the Office for National Statistics mid-2023 population estimates for England and Wales.</td>
+      </tr>
+
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header">Limitations</th>
+        <td class="govuk-table__cell">
+          The data are not counts, but estimates produced by combining data from multiple sources. The accuracy of the estimates is subject to the coverage and errors associated with those sources.
+            <br><br>
+          These estimates reflect the mid-2023 population, not the current population. 
+          <br> <br>
+          Changes to methods and data sources may lead to regular revisions of these estimates.</td>
+      </tr>
+
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header">Data definitions</th>
+        <td class="govuk-table__cell">All ages are included in the population size.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  
+
+  {% endblock %}
+  

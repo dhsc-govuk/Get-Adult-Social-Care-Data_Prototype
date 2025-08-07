@@ -1,0 +1,99 @@
+    <!-- 
+    
+    Time series 
+    
+    -->
+    <style>
+        .date-pickers{display:inline-grid;
+            grid-template-columns: auto auto;
+            gap:1em
+        }
+    </style>
+        <h3>
+            Total Projected change (%)
+        </h3>
+
+        <ul class="govuk-list">
+            <li>
+                <svg height="5" width="50" xmlns="http://www.w3.org/2000/svg">
+                    <g fill="none">
+                        <line x1="0" y1="0" x2="50" y2="0" stroke="purple" stroke-width="10" />
+                    </g>
+                </svg> 
+                Suffolk</li>
+           <li>
+                <svg height="5" width="50" xmlns="http://www.w3.org/2000/svg">
+                    <g fill="none">
+                        <line x1="0" y1="0" x2="50" y2="0" stroke="gold" stroke-width="10" />
+                    </g>
+                </svg> 
+                East of England</li>
+                <li>
+                    <svg height="5" width="50" xmlns="http://www.w3.org/2000/svg">
+                        <g fill="none">
+                            <line x1="0" y1="0" x2="50" y2="0" stroke="orange" stroke-width="10" />
+                        </g>
+                    </svg> 
+                    All England</li>
+                    
+                </ul>
+                <!-- 
+                
+                Chart  
+                
+                -->
+                <style>
+                    .data-chart{width:100%; overflow-x: scroll;margin-bottom: 2em;}
+                </style>
+                {% set chartHeight = 400 %} 
+                {% set chartWidth = 600 %} 
+                {% set topMargin = 20 %}
+                {% set leftMargin = 40 %} 
+                {% set bottomMargin = 20 %}
+                {% set xAxis = chartWidth - leftMargin %}
+                {% set yAxis = chartHeight - bottomMargin %}
+                <svg height="{{chartHeight}}" width="{{chartWidth}}" xmlns="http://www.w3.org/2000/svg" class="data-chart">
+                    <defs>
+                        <style>
+                            text{font-family: 'Helvetica Neue', sans-serif; }
+                        </style>
+                    </defs>
+
+                    <title>Total beds per 100,000 population in Suffolk: 1 April 2021 to 1 November 2023</title>
+                    
+                    <!-- 	Y Scale -->
+                    <text class="axis-text"x="0" y="10%" fill="#666">6%</text>
+                    <text class="axis-text"x="0" y="40%" fill="#666">4%</text>
+                    <text class="axis-text"x="0" y="70%" fill="#666">2%</text>
+                    <text class="axis-text"x="0" y="95%" fill="#666">0</text>
+                    
+                    <g transform="translate(20,0)">
+                        <!-- Y Axis -->
+                        <line x1="{{leftMargin}}" y1="0" x2="{{leftMargin}}" y2="380" style="stroke:#666;stroke-width:2" />
+                        
+                        <!-- X Axis -->
+                        <line x1="{{leftMargin}}" y1="380" x2="600" y2="380" style="stroke:#666;stroke-width:2" />
+
+                        <!-- 		X Scale -->
+                        <text class="axis-text"x="{{leftMargin}}" y="400" fill="#666">2025</text>
+                        <text class="axis-text"x="{{chartWidth / 2}}" y="400" fill="#666">2032</text>
+                        <text class="axis-text"x="90%" y="400" fill="#666">2040</text>
+                        
+                        <!-- 		Lines -->
+                        <g transform="translate({{leftMargin}},0)">
+                            <!-- Suffolk -->
+                            <polyline points="0,380 37,357 112,316 186,276 373,117 560,79"
+                            style="fill:none;stroke:purple;stroke-width:3" />
+                            
+                            <!-- East of England -->
+                            <polyline points="0,380 37,353 112,304 186,259 373,159 560,49"
+                            style="fill:none;stroke:gold;stroke-width:3" />
+                            
+                            <!-- England -->
+                            <polyline points="0,380 37,354 112,304 186,257 373,148 560,42"
+                            style="fill:none;stroke:orange;stroke-width:3" />
+                            
+                        </g>
+                    </svg>                            
+                    <p class="govuk-body"><a href="#" class="govuk-link">Download chart image (PNG)</a>
+                    </p>

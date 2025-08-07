@@ -1,0 +1,84 @@
+<style>
+
+  .chart-bar {
+    fill: #955196;
+    margin: 0;
+    }
+
+</style>
+
+{% set las =
+  [
+    ["Suffolk local authority area", 1152,89],
+    ["East of England (regional average)", 1094,80],
+    ["England (national average)", 958,87]
+  ]
+%}
+
+<div class="govuk-grid-column-full">
+    <!-- <h3 class="govuk-heading-m">Residential care beds in the East of England</h3> -->
+    <table class="govuk-table">
+        <caption class="govuk-table__caption govuk-table__caption--m">Chart comparing care home bed provision in Suffolk to regional and national averages</caption>
+        <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+                <th scope="col" class="govuk-table__header" style="min-width:12em">Area</th>
+                <th scope="col" class="govuk-table__header" style="text-align: right;"></th>
+                <th scope="col" class="govuk-table__header">Care home beds per 100,000 adult population</span></th>
+                <!-- <th scope="col" class="govuk-table__header" style="text-align: right;">Care home capacity</th>
+                <th scope="col" class="govuk-table__header">Data bar</th> -->
+            </tr>
+        </thead>
+        {% for item in las %}
+        {% if item[0] == "Suffolk" %}
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell">Suffolk local authority area</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">1,152</td>
+            <td class="govuk-table__cell">
+                <svg width="340" height="25">
+                    <rect width="235" height="25" class="chart-bar" style="fill:#DD5182"></rect>
+                </svg>
+            </td>
+            <!-- <td class="govuk-table__cell govuk-table__cell--numeric">89%</td>
+            <td class="govuk-table__cell">
+              <svg width="340" height="25">
+                <rect width="200" height="25" class="chart-bar" style="fill:white; stroke-width:2;stroke:#e1e1e1"></rect>
+                <rect width="178" height="25" class="chart-bar" style="fill:orange"></rect>
+              </svg>
+            </td> -->
+        </tr>
+        {% else %}
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell">{{item[0]}}</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">{{item[1]|addcommas}}</td>
+            <td class="govuk-table__cell">
+                <svg width="340" height="25">
+                    <rect width="{{item[1]/10}}" height="25" class="chart-bar"></rect>
+                </svg>
+            </td>
+            <!-- <td class="govuk-table__cell govuk-table__cell--numeric">{{item[2]}}%</td>
+            <td class="govuk-table__cell">
+              <svg width="340" height="25">
+                <rect width="200" height="25" class="chart-bar" style="fill:white; stroke-width:2;stroke:#e1e1e1"></rect>
+                <rect width="{{item[2] * 2}}" height="28" y="1" x ="1" class="chart-bar" style="fill:gold"></rect>
+              </svg>
+            </td> -->
+        </tr>
+        {% endif %}
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <p class="govuk-body">
+        <strong>Chart data information</strong><br /> Data source: <a href="#" class="govuk-link" target="_blank" data-message="Sorry, this hasn’t been designed yet">Capacity Tracker</a>
+        <br>
+        Last checked for updates: 18 April 2025<br />
+    </p>
+    <p class="govuk-body">
+        <a href="#" class="govuk-link" data-message="Sorry, this hasn’t been designed yet">Export chart data (CSV, 420 KB)</a><br />
+        <a href="#" class="govuk-link" data-message="Sorry, this hasn’t been designed yet">Download chart image (PNG, 1 MB)</a>
+    </p>
+
+    <h3 class="govuk-heading-m govuk-!-margin-top-7">Compare care home bed provision across local authorities in the region</h3>
+    <p class="govuk-body"><a href="#" class="govuk-link" data-message="Sorry, this hasn’t been designed yet">Chart of care home bed numbers for local authorities in the East of England</a></p>
+    
+</div>

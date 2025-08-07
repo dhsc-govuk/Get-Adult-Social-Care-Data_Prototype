@@ -1,0 +1,50 @@
+{% extends "v6/layouts/main.html" %}
+
+{% set pageName = "Location settings" %}
+
+{% block content %} 
+<a href="javascript:history.back()" class="govuk-back-link">Back</a>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1>
+    <span class="govuk-caption-m">Population age</span> 
+{{pageName}}</h1>
+    <table class="govuk-table">
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Map colour</th>
+          <td class="govuk-table__cell">
+            <ul class="govuk-list" style="text-align: left;">
+              <li>Population aged 85+ (%)</li>
+            </ul>
+          </td>
+          <td class="govuk-table__cell">
+            <a href="present-demand-locations">Change</a>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Default location</th>
+          <td class="govuk-table__cell">
+            <ul class="govuk-list" style="text-align: left;">
+              <li>East Sussex, Sussex, East of England</li>
+            </ul>
+          </td>
+          <td class="govuk-table__cell">
+            <a href="present-demand-locations">Change</a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+   
+      <form action="population-age">
+        <div class="govuk-button-group">
+    <button type="submit" class="govuk-button" data-module="govuk-button">
+      Apply changes
+    </button>
+    <a class="govuk-link" href="population-age">Cancel and go back</a>
+  </div>
+    </form>
+  </div>
+
+    {% endblock %}

@@ -1,0 +1,83 @@
+<!-- {% set population = 
+  [
+    ["Mid Suffolk local authority district", 51, 22.3, 6.7, 3.2, 83241],
+    ["Suffolk local authority", 52, 21.4, 0.6, 3.1, 173241],
+    
+    ["East of England", 49, 19.9, 3.4, 2.2, 5183241],
+    ["England", 57, 21.4, 5.4, 3.1, 55286249]
+  ]
+%}
+<table class="govuk-table govuk-table--small-text-until-tablet">
+  <caption class="govuk-table__caption govuk-table__caption--m  govuk-!-margin-top-5">Table comparing population size and age in Mid Suffolk to local authority area, regional and national statistics</caption>
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header">Area</th>
+      <th scope="col" class="govuk-table__header govuk-table__header--numeric">Aged 18 to 64</th>
+      <th scope="col" class="govuk-table__header govuk-table__header--numeric">Aged 65 and over</th>
+      <th scope="col" class="govuk-table__header govuk-table__header--numeric">Aged 75 and over</th>
+      <th scope="col" class="govuk-table__header govuk-table__header--numeric">Aged 85 and over</th>
+      <th scope="col" class="govuk-table__header govuk-table__header--numeric">Total adult population</th>
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+    {% for item in population %}
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">{{item[0]}}</th>
+      <td class="govuk-table__cell govuk-table__cell--numeric">{{item[1]}}%</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">{{item[2]}}%</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">{{item[3]}}%</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">{{item[4]}}%</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">{{item[5] | addcommas}}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table> -->
+<table class="govuk-table govuk-table--small-text-until-tablet">
+  <caption class="govuk-table__caption govuk-table__caption--m  govuk-!-margin-top-5">Table comparing population size and age in Mid Suffolk to local authority area, regional and national statistics</caption>
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header">Indicator</th>
+      <th scope="col" class="govuk-table__header govuk-table__header--numeric">Mid Suffolk local authority district</th>
+      <th scope="col" class="govuk-table__header govuk-table__header--numeric">Suffolk local authority</th>
+      <th scope="col" class="govuk-table__header govuk-table__header--numeric">East of England</th>
+      <th scope="col" class="govuk-table__header govuk-table__header--numeric">England</th>
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Aged 18 to 64</th>
+      <td class="govuk-table__cell govuk-table__cell--numeric">51%</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">52%</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">49%</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">57%</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Aged 65 and over</th>
+      <td class="govuk-table__cell govuk-table__cell--numeric">22.3%</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">21.4%</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">19.9%</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">21.4%</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Aged 75 and over</th>
+      <td class="govuk-table__cell govuk-table__cell--numeric">6.7%</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">0.6%</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">3.4%</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">5.4%</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Aged 85 and over</th>
+      <td class="govuk-table__cell govuk-table__cell--numeric">3.2%</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">3.1%</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">2.2%</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">3.1%</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Total adult population</th>
+      <td class="govuk-table__cell govuk-table__cell--numeric">83,241</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">173,241</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">5,183,241</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">55,286,249</td>
+    </tr>
+  </tbody>
+</table>

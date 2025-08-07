@@ -1,0 +1,20 @@
+{% extends "v6/layouts/logged-in.html" %}
+
+{% set pageName = "Add locations" %}
+
+{% block content %} 
+<a href="javascript:history.back()" class="govuk-back-link">Back</a>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <!-- <span class="govuk-caption-l">Demand and capacity</span> -->
+    <h1 class="govuk-heading-l">
+      <span class="govuk-caption-m">Population age</span> 
+      {{pageName}}</h1>
+      <form action="edit-locations">
+          {% include "./_select-la.html" %}
+                  <button class="govuk-button" data-module="govuk-button" style="margin-right:1em">
+            Add this location
+                  </button>
+                </form>
+<a href="javascript:history.back()" class="govuk-link govuk-body">Cancel and go back</a>
+        {% endblock %}

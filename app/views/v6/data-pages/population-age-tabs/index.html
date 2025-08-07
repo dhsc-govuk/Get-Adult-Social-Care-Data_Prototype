@@ -1,0 +1,276 @@
+{% extends "v6/layouts/data.html" %}
+
+{% set pageName = "Population age" %}
+
+{% block content %} 
+<a href="javascript:history.back()" class="govuk-back-link">Back</a>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full-width">
+    <!--<span class="govuk-caption-l">Demand and capacity</span>-->
+    <h1 class="govuk-heading-l">{{pageName}}</h1>
+    <p class="govuk-body-l">Percentage of the population in different age categories. Combined with other indicators, this reflects the population needs for adult social care.</p>
+    
+    <style>
+      /* Contents Box Styling */
+      .contents-box {
+        background-color: #f3f2f1; /* GOV.UK light grey */
+        padding: 20px;
+        margin-bottom: 20px;
+        max-width: 63%; /* Adjusted width for better spacing */
+      }
+      
+      /* Remove default list indentation */
+      .govuk-list--number {
+        counter-reset: main-counter;
+        list-style-type: none;
+        padding-left: 0; /* Remove padding */
+        margin-left: 0; /* Remove margin */
+      }
+      
+      .govuk-list--number > li {
+        counter-increment: main-counter;
+      }
+      
+      .govuk-list--number > li::before {
+        content: counter(main-counter) ". ";
+        font-weight: normal;
+      }
+      
+      /* Styling for the nested (child) ordered list */
+      .nested-list {
+        counter-reset: sub-counter;
+        list-style-type: none;
+        padding-left: 1.5rem; /* Align nested items properly */
+        margin-left: 0;
+      }
+      
+      .nested-list li {
+        counter-increment: sub-counter;
+      }
+      
+      .nested-list li::before {
+        content: counter(main-counter) "." counter(sub-counter) ". ";
+        font-weight: normal;
+      }
+      
+      /* Bridge Text Styling */
+      .bridge-text {
+        margin-top: 20px;
+        font-weight: bold;
+      }
+    </style>
+    
+    <!-- Contents Box -->
+    <div class="contents-box">
+      <h2 class="govuk-heading-m">Contents</h2>
+      <ol class="govuk-list govuk-list--number">
+        <li><a href="#preferences" class="govuk-link">Choose your data preferences</a>
+          <li><a href="#data" class="govuk-link">Data</a>
+            <li><a href="#smart-insights" class="govuk-link">Smart insights (experimental)</a>
+            <li><a href="#footnotes" class="govuk-link">Footnotes</a>
+            </ol>
+      </div>
+
+      <!-- 
+
+      Main content
+      
+      -->
+      <style>
+        h2{margin-top:4em}
+      </style>
+    
+            <!-- 
+            
+            Main content
+            
+            -->
+            <style>
+              h2{margin-top:4em}
+            </style>
+            
+            <h2 id="preferences">
+              1. Choose your data preferences
+            </h2>
+            <p>Change your selected locations to view data for a different area.</p>
+            <table class="govuk-table">
+              <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header">Locations</th>
+                  <td class="govuk-table__cell">
+                    <ul class="govuk-list" style="text-align: left;">
+                      <li>Suffolk</li>
+                      <li>East of England</li>
+                    </ul>
+                  </td>
+                  <td class="govuk-table__cell">
+                    <a href="present-demand-locations">Change</a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <!-- 
+            
+            Tabs
+            
+            -->
+            <h2 id="smart-insights">2. Data</h2>
+            <!-- 
+            
+            Panels 
+            
+            -->
+            <div class="govuk-tabs" data-module="govuk-tabs">
+              <h2 class="govuk-tabs__title">
+                Contents
+              </h2>
+              <ul class="govuk-tabs__list">
+                <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+                  <a class="govuk-tabs__tab" href="#chart">
+                    Map
+                  </a>
+                </li>
+                <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+                  <a class="govuk-tabs__tab" href="#locations">
+                    Compare locations
+                  </a>
+                </li>
+                <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+                  <a class="govuk-tabs__tab" href="#time-series">
+                    Trends over time
+                  </a>
+                </li>
+                <li class="govuk-tabs__list-item">
+                  <a class="govuk-tabs__tab" href="#table">
+                    Table
+                  </a>
+                </li>
+                <li class="govuk-tabs__list-item">
+                  <a class="govuk-tabs__tab" href="#insights">
+                    Smart insights
+                  </a>
+                </li>
+              </ul>
+              <div class="govuk-tabs__panel" id="chart">
+                <h3>Map</h3>
+                <p>This map shows data for the selected age group. Change the age group to update the map.</p>
+                <table class="govuk-table" style="width:66%">
+                  <tbody class="govuk-table__body">
+                    <tr class="govuk-table__row">
+                      <th scope="row" class="govuk-table__header">Age group</th>
+                      <td class="govuk-table__cell">
+                        <ul class="govuk-list" style="text-align: left;">
+                          <li>85 and over</li>
+                        </ul>
+                      </td>
+                      <td class="govuk-table__cell">
+                        <a href="total_beds-edit-single-filter">Change</a>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+                <iframe width="100%" height="600px" title="ONS Census Maps" frameborder="0" src="https://www.ons.gov.uk/census/maps/choropleth/population/age/resident-age-11a/aged-85-years-and-over/?lad=E07000203&embed=true&embedInteractive=true&embedAreaSearch=false&embedCategorySelection=false&embedView=viewport&embedBounds=0.4518427976473447%2C51.95149998586203%2C1.7552472023533312%2C52.516917630727676" />    
+              </iframe>
+              <p class="govuk-body"><a href="" class="govuk-link">Download chart image (PNG)</a></p>
+                <p class="govuk-body">Source: Office for National Statistics<br>
+                  Data correct as of 21 March 2021</p>
+                  <!-- <a href="../v3/help/beds-per-100000-people.html" class="govuk-link">View supporting information for this data</a></p>-->
+                </div>
+                <!-- 
+                
+                Locations
+                
+                -->
+                <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="locations">
+                  <h3>Compare locations</h3>
+                  <a href="locations-look-up.html" type="submit" style="margin-right:1em" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                    Edit locations
+                  </a>
+                  <a href="indicators-look-up" type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                    Edit indicators
+                  </a>
+                  {% include "./_locations-bar-chart.html" %}
+                </div>
+                <!-- 
+                
+                Time series 
+                
+                -->
+                <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="time-series">
+                  <h2 class="govuk-heading-m">Trends over time</h2>
+                  <button type="submit" style="margin-right:1em" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                    Edit locations
+                  </button>
+                  <a href="indicators-look-up" type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                    Edit indicators
+                  </a>
+                 {% include "./_time-series.html" %}
+                </div>
+                <!-- 
+                
+                Table 
+                
+                -->
+                <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="table">
+                  <h3 id="total">Table</h3>
+                  <a href="locations-look-up.html" type="submit" style="margin-right:1em" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                    Edit locations
+                  </a>
+                  <a href="indicators-look-up" type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                    Edit indicators
+                  </a>
+                  <style>
+                    th:nth-child(2),th:nth-child(3), th:nth-child(4), td:nth-child(2),td:nth-child(3), td:nth-child(4) {
+                      text-align: right;
+                    }
+                  </style>
+                  {% include "./_locations-table.html" %}
+                  <p class="govuk-body"><a href="" class="govuk-link">Download this table (CSV)</a></p>
+                  <p class="govuk-body">Source: Office for National Statistics<br>
+                    Data correct as of 21 March 2021</p>
+                      <!-- <a href="../v3/help/beds-per-100000-people.html" class="govuk-link">View supporting information for this data</a></p>-->
+                    </div>
+
+
+
+              <h2 id="smart-insights">3. Smart insights (experimental)</h2>
+              <div class="govuk-inset-text">
+                Smart insights use artificial intelligence (AI) to analyse this data, highlighting trends and patterns to support your own analysis. As this is experimental, verify the insights to check they are appropriate and meet your needs. <a class="govuk-link" href="./../../help/user-guide#ai">Learn more about smart insights</a>
+              </div>
+
+              <h3 class="govuk-heading-s">Summary of key trends</h3>
+              <p>The number of people aged 85 and over is increasing across England, with some areas seeing a much faster rise. Between 2015 and 2023, this age group grew by over 60% in parts of Suffolk, East Suffolk, and Cambridgeshire, compared to a national increase of around 30%. This trend suggests increasing need for adult social care services, particularly in regions with rapid population ageing.</p>
+
+              <h3 class="govuk-heading-s">Insight 1: Suffolk and Cambridgeshire have the highest proportions of people aged 85 and over</h3>
+              <p>Suffolk and Cambridgeshire stand out as having a greater proportion of older residents compared to the England average (3.1%) and the East of England average (2.9%). In Suffolk, 3.3% of the population is aged 85 and over, and in Cambridgeshire, it is slightly higher at 3.5%. This suggests that local social care services may need to adapt to meet the needs of an ageing population.</p>
+              <h4 class="govuk-heading-s">How you might use this insight</h4>
+              
+              <ul class="govuk-list govuk-list--bullet">
+                <li>Assess whether social care funding in Suffolk and Cambridgeshire reflects the higher proportion of older people.</li>
+                <li>Consider workforce planning to ensure there are enough care staff to support the increasing number of older residents.</li>
+             </ul>
+        
+             <h3 class="govuk-heading-s">Insight 2: The population aged 85 and over is growing fastest in parts of the East of England</h3>
+             <p>The number of people aged 85 and over has increased significantly in some parts of the East of England. Between 2015 and 2023, this age group grew by over 60% in Suffolk, East Suffolk, and Cambridgeshire—double the national growth rate of around 30%. This means these areas may see increasing pressure on services such as specialist care homes and community support.</p>
+             <h4 class="govuk-heading-s">How you might use this insight</h4>
+             
+             <ul class="govuk-list govuk-list--bullet">
+               <li>Check if social care provision in Suffolk, East Suffolk, and Cambridgeshire is keeping pace with the rapid growth of older populations.</li>
+               <li>Identify specific areas where investment in specialist care, such as dementia care and nursing homes, may be needed to meet rising demand.</li>
+            </ul>
+
+            <h2 id="footnotes">4. Footnotes</h2>
+
+            <p class="govuk-body">
+              Find out how this indicator is defined, sourced, and updated.
+            </p>
+
+            <p class="govuk-body">
+              <a href="../../help/population-age.html" class="govuk-link">View footnotes</a>
+            </p>
+ 
+      
+            <p class="govuk-body"><a href="javascript:history.back()" class="govuk-link">Back</a></p>
+
+            </div>
+            {% endblock %}

@@ -1,0 +1,37 @@
+{% extends "v6/layouts/main.html" %}
+
+{% set titleH1 = "Sign in to Get adult social care data or request access" %} {% block pageTitle %} {{titleH1}} - {{serviceName}} - GOV.UK {% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">Sign in to Get adult social care data or request access</h1>
+
+      <form class="form" action="2-confirm-code" method="post">
+       
+        {% from "govuk/components/input/macro.njk" import govukInput %}
+
+        {{ govukInput({
+          label: {
+            text: "Enter your email address"
+          },
+          id: "email",
+          name: "email",
+          type: "email",
+          classes: "govuk-input--width-20",
+          spellcheck: false
+        }) }}
+       
+{{ govukButton({
+  text: "Continue"
+}) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
+
+

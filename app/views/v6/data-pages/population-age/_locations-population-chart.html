@@ -1,0 +1,56 @@
+<style>
+  .chart-bar{fill:purple; margin: 0}
+</style>
+{% set las = 
+  [
+  ["Essex",1506300,89],
+  ["Cambridgeshire",1048712,89],
+  ["Luton",1001728,90],
+  ["Cambridgeshire",935421,91],
+  ["Suffolk",763400,89],
+  ["Central Bedfordshire",631756,82],
+  ["Hertfordshire",529512,92],
+  ["Thurrock",220454,85],
+  ["Peterborough",208667,93],
+  ["Norfolk",207967,81],
+  ["Bedford",106754,84],
+  ["Southend On Sea",87634,87]
+  ]
+  %}
+  
+  <h3 class="govuk-heading-m">East of England: population</h3>
+  <table class="govuk-table">
+    <thead class="govuk-table__head">
+      <tr class="govuk-table__row">
+        <th scope="col" class="govuk-table__header" style="min-width:12em">Location</th>
+        <th scope="col" class="govuk-table__header" style="min-width:8em; text-align: right;">Population in the 2021 Census</th>
+        <th scope="col" class="govuk-table__header"><span class="govuk-visually-hidden">Data bar</span></th>
+        
+      </tr>
+    </thead>
+    {% for item in las %}
+    {% if item[0] == "Suffolk" %} 
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"><strong>Suffolk</strong></td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">763,400</td>
+      <td class="govuk-table__cell">
+        <svg width="340" height="25">
+          <rect width="71" height="25" class="chart-bar" style="fill:orange"></rect>
+        </svg>
+      </td>
+    </tr>
+    {% else %}
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">{{item[0]}}</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">{{item[1]|addcommas}}</td>
+      <td class="govuk-table__cell">
+        <svg width="340" height="25">
+          <rect width="{{item[1]/10000}}" height="25" class="chart-bar"></rect>
+        </svg>
+      </td>
+    </tr>
+    {% endif %}
+    {% endfor %}
+  </tbody>
+</table>
+<p><a href="#">Export table as PNG</a></p>

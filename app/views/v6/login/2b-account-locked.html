@@ -1,0 +1,39 @@
+{% extends "v6/layouts/main.html" %}
+
+{% set titleH1 = "Account locked" %} {% block pageTitle %} {{titleH1}} - {{serviceName}} - GOV.UK {% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">Account locked</h1>
+
+      <p class="govuk-body">
+        You have entered the wrong password more than 5 times.
+      </p>
+
+      <p class="govuk-body">
+       For your security,
+       
+       {% if (data['email']) %}
+
+        {{ data['email'] }} has been locked.
+
+      {% else %}
+
+        yourname@example.com has been locked.
+
+      </p>
+      
+      {% endif %}
+
+      </p>
+
+      <p class="govuk-body">
+        You will need to <a class="govuk-link" href="4-confirm-code.html">reset your password</a>.
+      </p>
+
+    </div>
+  </div>
+
+{% endblock %}

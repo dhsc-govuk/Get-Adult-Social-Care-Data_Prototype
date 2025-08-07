@@ -1,0 +1,111 @@
+{% extends "v6/layouts/landing-page.html" %}
+
+{% set pageName = "Current population needs and overall capacity at local authority level" %}
+
+{% block content %} 
+<nav class="govuk-breadcrumbs" aria-label="Breadcrumb">
+  <ol class="govuk-breadcrumbs__list">
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="#">Home</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="#">Browse data by topic</a>
+    </li>
+  </ol>
+</nav>
+
+<style>
+  .govuk-breadcrumbs__list-item {
+      font-size: 10px; /* Ensure breadcrumbs inherit the correct font size */
+  }
+  
+  .govuk-breadcrumbs__chevron {
+      font-size: 5px; /* Reduce size of the arrow if needed */
+  }
+</style>
+<br>
+<!-- Contents section -->
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">{{pageName}}</h1>
+
+        <h2 class="govuk-heading-m">Contents</h2>
+                <ol class="govuk-list govuk-list--number">
+                    <li><a href="#introduction" class="govuk-link">Introduction</a></li>
+                    <li><a href="#settings" class="govuk-link">Personalise this page</a></li>
+                    <li><a href="#population" class="govuk-link">Demographic factors driving population needs</a></li>
+                    <li><a href="#capacity" class="govuk-link">Overall capacity at local authority level</a></li>
+                    <li><a href="#guidance" class="govuk-link">Footnotes</a></li>
+                </ol>
+
+
+<!-- Main content -->
+<h2 class="govuk-heading-m" id="introduction">1. Introduction</h2>
+<p class="govuk-body">
+  Here you can explore factors driving local population needs and find insights into current capacity to meet those needs.
+</p>
+<p class="govuk-body">
+  For more information on local population needs, check the latest Market Position Statement and Joint Strategic Needs Assessment documents. You will usually find these on the local authority's website.
+</p>
+
+
+<h2 id="settings">2. Personalise this page</h2>
+<p class="govuk-body">You can update these settings to change the data shown.</p>
+
+<!-- Settings table -->
+<dl class="govuk-summary-list">
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">Active location</dt>
+    <dd class="govuk-summary-list__value">Greenfields Care</dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="present-demand-locations">Change<span class="govuk-visually-hidden"> name</span></a>
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">Available locations</dt>
+    <dd class="govuk-summary-list__value">Woodlands Care, Suffolk<br>Seafront Villas, Norfolk</dd>
+  </div>
+</dl>
+
+<h2 id="population">4. Demographic factors driving population needs</h2>
+<p class="govuk-body">
+  Population needs for adult social care are shaped by a range of factors, including age, income levels, employment status, disability, long-term health conditions, and household composition.
+</p>
+
+<h2 id="capacity">5. Overall capacity at local authority level</h2>
+<p class="govuk-body">
+  Adult social care provision includes different types of care, such as unpaid care, care homes, and domiciliary care.
+</p>
+
+
+
+<h2 id="guidance">5. Footnotes</h2>
+<p class="govuk-body">Find out how each indicator is compiled and updated.</p>
+
+<details class="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">Guidance for each indicator</span>
+  </summary>
+  <div class="govuk-details__text">
+    <p class="govuk-body">Select an indicator to view its guidance.</p>
+    <h3 class="govuk-heading-s">Demographic factors</h3>
+    <ul class="govuk-list govuk-list--bullet">
+        <li><a href="../../help/population-size.html" class="govuk-link">Population size</a></li>
+        <li><a href="../../help/population-age.html" class="govuk-link">Percentage of population in age group</a></li>
+    </ul>
+    <h3 class="govuk-heading-s">Economic factors</h3>
+    <ul class="govuk-list govuk-list--bullet">
+        <li><a href="../../help/" class="govuk-link">Neighbourhoods in most deprived 10%</a></li>
+        <li><a href="../../help/" class="govuk-link">Homes owned outright</a></li>
+    </ul>
+  </div>
+</details>
+
+
+<p class="govuk-body"><a class="govuk-link" href="#">Back</a></p>
+
+</div>
+</div>
+</div>
+{% endblock %}

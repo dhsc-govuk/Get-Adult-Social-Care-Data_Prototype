@@ -1,0 +1,73 @@
+{% extends "v6/layouts/main.html" %}
+
+{% set titleH1 = "What is your organisation type?" %} {% block pageTitle %} {{titleH1}} - {{serviceName}} - GOV.UK {% endblock %}
+
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="6-organisation-name" method="post">
+        {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+        {{ govukRadios({
+          name: "orgType",
+          value: data['orgType'],
+          fieldset: {
+            legend: {
+              text: "What is your organisation type?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+          items: [
+            {
+              value: "Academic institution",
+              text: "Academic institution"
+            },
+            {
+              value: "Care provider",
+              text: "Care provider"
+            },
+            {
+              value: "Government department or other public body",
+              text: "Government department or other public body"
+            },
+            {
+              value: "Local authority",
+              text: "Local authority"
+            },
+            {
+              value: "Membership organisation",
+              text: "Membership organisation"
+            },
+            {
+              value: "NHS",
+              text: "NHS"
+            },
+            {
+              value: "Other",
+              text: "Other"
+            }
+          ]
+        }) }}
+
+       
+{{ govukButton({
+  text: "Continue"
+}) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

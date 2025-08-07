@@ -1,0 +1,56 @@
+{% extends "v6/layouts/data.html" %}
+
+{% set pageName = "Map settings" %}
+
+{% block content %} 
+<a href="javascript:history.back()" class="govuk-back-link">Back</a>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full-width">
+    <!--<span class="govuk-caption-l">Demand and capacity</span>-->
+    <h1 class="govuk-heading-l">{{pageName}}</h1>
+    <p class="govuk-body-l">Intro goes here.</p>
+<table class="govuk-table">
+    <tbody class="govuk-table__body">
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header">Map labels</th>
+        <td class="govuk-table__cell">
+          <ul class="govuk-list" style="text-align: left;">
+            <li>Population aged 85+ (%)</li>
+            <li>Deprivation rating (low to high)</li>
+          </ul>
+        </td>
+        <td class="govuk-table__cell">
+          <a href="present-demand-locations">Change</a>
+        </td>
+      </tr>
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header">Care provider - labels</th>
+        <td class="govuk-table__cell">
+          <ul class="govuk-list" style="text-align: left;">
+            <li>CQC rating</li>
+            <li>Types of care</li>
+          </ul>
+        </td>
+        <td class="govuk-table__cell">
+          <a href="present-demand-locations">Change</a>
+        </td>
+      </tr>
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header">Indicators</th>
+        <td class="govuk-table__cell">
+          <ul class="govuk-list" style="text-align: left;">
+            <li>Care type: residential</li>
+            <li>Dementia care</li>
+          </ul>
+        </td>
+        <td class="govuk-table__cell">
+          <a href="present-demand-locations">Change</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<a href="index" type="submit" class="govuk-button" data-module="govuk-button">
+  Continue
+</a>
+  {% endblock %}

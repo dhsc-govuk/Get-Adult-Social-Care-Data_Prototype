@@ -1,0 +1,492 @@
+{% extends "v6/layouts/logged-in.html" %}
+
+{% set pageName = "Your dashboard" %}
+
+{% block header %}
+<header class="govuk-header govuk-header--full-width-border" data-module="govuk-header">
+  <div class="govuk-header__container govuk-width-container">
+    <div class="govuk-header__logo">
+      <a href="/" class="govuk-header__link govuk-header__link--homepage">
+        <svg
+        focusable="false"
+        role="img"
+        class="govuk-header__logotype"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 148 30"
+        height="30"
+        width="148"
+        aria-label="GOV.UK">
+        <title>GOV.UK</title>
+        <path d="M22.6 10.4c-1 .4-2-.1-2.4-1-.4-.9.1-2 1-2.4.9-.4 2 .1 2.4 1s-.1 2-1 2.4m-5.9 6.7c-.9.4-2-.1-2.4-1-.4-.9.1-2 1-2.4.9-.4 2 .1 2.4 1s-.1 2-1 2.4m10.8-3.7c-1 .4-2-.1-2.4-1-.4-.9.1-2 1-2.4.9-.4 2 .1 2.4 1s0 2-1 2.4m3.3 4.8c-1 .4-2-.1-2.4-1-.4-.9.1-2 1-2.4.9-.4 2 .1 2.4 1s-.1 2-1 2.4M17 4.7l2.3 1.2V2.5l-2.3.7-.2-.2.9-3h-3.4l.9 3-.2.2c-.1.1-2.3-.7-2.3-.7v3.4L15 4.7c.1.1.1.2.2.2l-1.3 4c-.1.2-.1.4-.1.6 0 1.1.8 2 1.9 2.2h.7c1-.2 1.9-1.1 1.9-2.1 0-.2 0-.4-.1-.6l-1.3-4c-.1-.2 0-.2.1-.3m-7.6 5.7c.9.4 2-.1 2.4-1 .4-.9-.1-2-1-2.4-.9-.4-2 .1-2.4 1s0 2 1 2.4m-5 3c.9.4 2-.1 2.4-1 .4-.9-.1-2-1-2.4-.9-.4-2 .1-2.4 1s.1 2 1 2.4m-3.2 4.8c.9.4 2-.1 2.4-1 .4-.9-.1-2-1-2.4-.9-.4-2 .1-2.4 1s0 2 1 2.4m14.8 11c4.4 0 8.6.3 12.3.8 1.1-4.5 2.4-7 3.7-8.8l-2.5-.9c.2 1.3.3 1.9 0 2.7-.4-.4-.8-1.1-1.1-2.3l-1.2 4c.7-.5 1.3-.8 2-.9-1.1 2.5-2.6 3.1-3.5 3-1.1-.2-1.7-1.2-1.5-2.1.3-1.2 1.5-1.5 2.1-.1 1.1-2.3-.8-3-2-2.3 1.9-1.9 2.1-3.5.6-5.6-2.1 1.6-2.1 3.2-1.2 5.5-1.2-1.4-3.2-.6-2.5 1.6.9-1.4 2.1-.5 1.9.8-.2 1.1-1.7 2.1-3.5 1.9-2.7-.2-2.9-2.1-2.9-3.6.7-.1 1.9.5 2.9 1.9l.4-4.3c-1.1 1.1-2.1 1.4-3.2 1.4.4-1.2 2.1-3 2.1-3h-5.4s1.7 1.9 2.1 3c-1.1 0-2.1-.2-3.2-1.4l.4 4.3c1-1.4 2.2-2 2.9-1.9-.1 1.5-.2 3.4-2.9 3.6-1.9.2-3.4-.8-3.5-1.9-.2-1.3 1-2.2 1.9-.8.7-2.3-1.2-3-2.5-1.6.9-2.2.9-3.9-1.2-5.5-1.5 2-1.3 3.7.6 5.6-1.2-.7-3.1 0-2 2.3.6-1.4 1.8-1.1 2.1.1.2.9-.3 1.9-1.5 2.1-.9.2-2.4-.5-3.5-3 .6 0 1.2.3 2 .9l-1.2-4c-.3 1.1-.7 1.9-1.1 2.3-.3-.8-.2-1.4 0-2.7l-2.9.9C1.3 23 2.6 25.5 3.7 30c3.7-.5 7.9-.8 12.3-.8m28.3-11.6c0 .9.1 1.7.3 2.5.2.8.6 1.5 1 2.2.5.6 1 1.1 1.7 1.5.7.4 1.5.6 2.5.6.9 0 1.7-.1 2.3-.4s1.1-.7 1.5-1.1c.4-.4.6-.9.8-1.5.1-.5.2-1 .2-1.5v-.2h-5.3v-3.2h9.4V28H55v-2.5c-.3.4-.6.8-1 1.1-.4.3-.8.6-1.3.9-.5.2-1 .4-1.6.6s-1.2.2-1.8.2c-1.5 0-2.9-.3-4-.8-1.2-.6-2.2-1.3-3-2.3-.8-1-1.4-2.1-1.8-3.4-.3-1.4-.5-2.8-.5-4.3s.2-2.9.7-4.2c.5-1.3 1.1-2.4 2-3.4.9-1 1.9-1.7 3.1-2.3 1.2-.6 2.6-.8 4.1-.8 1 0 1.9.1 2.8.3.9.2 1.7.6 2.4 1s1.4.9 1.9 1.5c.6.6 1 1.3 1.4 2l-3.7 2.1c-.2-.4-.5-.9-.8-1.2-.3-.4-.6-.7-1-1-.4-.3-.8-.5-1.3-.7-.5-.2-1.1-.2-1.7-.2-1 0-1.8.2-2.5.6-.7.4-1.3.9-1.7 1.5-.5.6-.8 1.4-1 2.2-.3.8-.4 1.9-.4 2.7zM71.5 6.8c1.5 0 2.9.3 4.2.8 1.2.6 2.3 1.3 3.1 2.3.9 1 1.5 2.1 2 3.4s.7 2.7.7 4.2-.2 2.9-.7 4.2c-.4 1.3-1.1 2.4-2 3.4-.9 1-1.9 1.7-3.1 2.3-1.2.6-2.6.8-4.2.8s-2.9-.3-4.2-.8c-1.2-.6-2.3-1.3-3.1-2.3-.9-1-1.5-2.1-2-3.4-.4-1.3-.7-2.7-.7-4.2s.2-2.9.7-4.2c.4-1.3 1.1-2.4 2-3.4.9-1 1.9-1.7 3.1-2.3 1.2-.5 2.6-.8 4.2-.8zm0 17.6c.9 0 1.7-.2 2.4-.5s1.3-.8 1.7-1.4c.5-.6.8-1.3 1.1-2.2.2-.8.4-1.7.4-2.7v-.1c0-1-.1-1.9-.4-2.7-.2-.8-.6-1.6-1.1-2.2-.5-.6-1.1-1.1-1.7-1.4-.7-.3-1.5-.5-2.4-.5s-1.7.2-2.4.5-1.3.8-1.7 1.4c-.5.6-.8 1.3-1.1 2.2-.2.8-.4 1.7-.4 2.7v.1c0 1 .1 1.9.4 2.7.2.8.6 1.6 1.1 2.2.5.6 1.1 1.1 1.7 1.4.6.3 1.4.5 2.4.5zM88.9 28 83 7h4.7l4 15.7h.1l4-15.7h4.7l-5.9 21h-5.7zm28.8-3.6c.6 0 1.2-.1 1.7-.3.5-.2 1-.4 1.4-.8.4-.4.7-.8.9-1.4.2-.6.3-1.2.3-2v-13h4.1v13.6c0 1.2-.2 2.2-.6 3.1s-1 1.7-1.8 2.4c-.7.7-1.6 1.2-2.7 1.5-1 .4-2.2.5-3.4.5-1.2 0-2.4-.2-3.4-.5-1-.4-1.9-.9-2.7-1.5-.8-.7-1.3-1.5-1.8-2.4-.4-.9-.6-2-.6-3.1V6.9h4.2v13c0 .8.1 1.4.3 2 .2.6.5 1 .9 1.4.4.4.8.6 1.4.8.6.2 1.1.3 1.8.3zm13-17.4h4.2v9.1l7.4-9.1h5.2l-7.2 8.4L148 28h-4.9l-5.5-9.4-2.7 3V28h-4.2V7zm-27.6 16.1c-1.5 0-2.7 1.2-2.7 2.7s1.2 2.7 2.7 2.7 2.7-1.2 2.7-2.7-1.2-2.7-2.7-2.7z"></path>
+      </svg>
+    </a>
+  </div>
+  <div class="govuk-header__content">
+    <a href="/" class="govuk-header__link govuk-header__service-name">
+      {{serviceName}}
+    </a>
+    <p style="float: right; margin: 19px 0 11px;"><a href="#" style="color: white; text-decoration: none;">Manage account | Sign out</a></p>
+    
+  </div>
+</div>
+</header>
+<div class="govuk-phase-banner govuk-width-container">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      Beta
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service. Help us improve it and <a class="govuk-link" href="#">give your feedback (opens in new tab)</a>.
+    </span>
+  </p>
+</div>
+{% from "govuk/components/service-navigation/macro.njk" import govukServiceNavigation %}
+
+{{ govukServiceNavigation({
+  navigation: [
+  {
+    href: "index",
+    text: "Home",
+    active: true
+  },
+  {
+    href: "get-data",
+    text: "Get data"
+  },
+  {
+    href: "../help/user-guide",
+    text: "User guide"
+  }
+  ]
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<a href="index.html" class="govuk-back-link">Back</a>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-xl">Glossary</h1>
+    <p class="govuk-body">This guide provides definitions and explanations for terms used in the service.</p>
+  
+    <div class="govuk-accordion" data-module="govuk-accordion" id="a-to-z-accordion">
+  
+      <!--
+      <div class="govuk-accordion__section">
+        <div class="govuk-accordion__section-header">
+          <h2 class="govuk-accordion__section-heading">
+            <button type="button" class="govuk-accordion__section-button" id="accordion-a">
+              A
+            </button>
+          </h2>
+        </div>
+        <div class="govuk-accordion__section-content">
+          <p class="govuk-body">Example content for letter A. Define terms or guidance starting with A.</p>
+        </div>
+      </div>
+    -->
+
+      <div class="govuk-accordion__section">
+        <div class="govuk-accordion__section-header">
+          <h2 class="govuk-accordion__section-heading">
+            <button type="button" class="govuk-accordion__section-button" id="accordion-b">
+              B
+            </button>
+          </h2>
+        </div>
+        <div class="govuk-accordion__section-content">
+          <h3 class="govuk-heading-s">Beds</h3>
+            <p class="govuk-body">Beds refers to adult social care beds in care providers and includes the following categories:
+
+              <ul class="govuk-list govuk-list--bullet">
+                <li>general residential</li>
+                <li>general nursing</li>
+                <li>dementia residential</li>
+                <li>dementia nursing</li>
+                 <li>mental health residential</li>
+                 <li>mental health nursing</li>
+                 <li>learning disability residential</li>
+                 <li>learning disability nursing</li>
+                 <li>transitional care</li>
+                 <li>young physically disabled</li>
+              </ul>
+        </div>
+      </div>
+
+
+
+      <div class="govuk-accordion__section">
+        <div class="govuk-accordion__section-header">
+          <h2 class="govuk-accordion__section-heading">
+            <button type="button" class="govuk-accordion__section-button" id="accordion-c">
+              C
+            </button>
+          </h2>
+        </div>
+        <div class="govuk-accordion__section-content">
+          <h3 class="govuk-heading-s">Capacity (care provider services)</h3>
+          <p class="govuk-body">The ability of care providers to deliver care and support services. This includes:</p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>available places – the number of people a provider can support at a given time</li>
+            <li>workforce availability – the staff and skills needed to deliver care</li>
+            <li>service capability – the ability to meet different levels of need, including specialist care</li>
+          </ul>
+          <p class="govuk-body">Capacity can be affected by factors such as staffing levels, funding, demand for services, and regulatory requirements.</p>
+      
+        </div>
+      </div>
+
+
+
+      <div class="govuk-accordion__section">
+        <div class="govuk-accordion__section-header">
+          <h2 class="govuk-accordion__section-heading">
+            <button type="button" class="govuk-accordion__section-button" id="accordion-a">
+              D
+            </button>
+          </h2>
+        </div>
+        <div class="govuk-accordion__section-content">
+          <h3 class="govuk-heading-s">Domiciliary care</h3>
+          <p class="govuk-body">Care services provided to people in their own homes.</p>
+
+          <p class="govuk-body">This covers a range of different types of support, including help with daily living tasks, medical care, and specialist services tailored to individual needs.</p>
+
+        </div>
+      </div>
+  
+      <!--
+      <div class="govuk-accordion__section">
+        <div class="govuk-accordion__section-header">
+          <h2 class="govuk-accordion__section-heading">
+            <button type="button" class="govuk-accordion__section-button" id="accordion-b">
+              E
+            </button>
+          </h2>
+        </div>
+        <div class="govuk-accordion__section-content">
+          <p class="govuk-body">Example content for letter E. Define terms or guidance starting with E.</p>
+        </div>
+      </div>
+    -->
+      <!--
+      <div class="govuk-accordion__section">
+        <div class="govuk-accordion__section-header">
+          <h2 class="govuk-accordion__section-heading">
+            <button type="button" class="govuk-accordion__section-button" id="accordion-c">
+              F
+            </button>
+          </h2>
+        </div>
+        <div class="govuk-accordion__section-content">
+          <p class="govuk-body">Example content for letter F. Define terms or guidance starting with F.</p>
+        </div>
+      </div>
+    -->
+      <!--
+      <div class="govuk-accordion__section">
+        <div class="govuk-accordion__section-header">
+          <h2 class="govuk-accordion__section-heading">
+            <button type="button" class="govuk-accordion__section-button" id="accordion-a">
+              G
+            </button>
+          </h2>
+        </div>
+        <div class="govuk-accordion__section-content">
+          <p class="govuk-body">Example content for letter G. Define terms or guidance starting with G.</p>
+        </div>
+      </div>
+    -->
+      <!--
+      <div class="govuk-accordion__section">
+        <div class="govuk-accordion__section-header">
+          <h2 class="govuk-accordion__section-heading">
+            <button type="button" class="govuk-accordion__section-button" id="accordion-b">
+              H
+            </button>
+          </h2>
+        </div>
+        <div class="govuk-accordion__section-content">
+          <p class="govuk-body">Example content for letter H. Define terms or guidance starting with H.</p>
+        </div>
+      </div>
+    -->
+      <!--
+      <div class="govuk-accordion__section">
+        <div class="govuk-accordion__section-header">
+          <h2 class="govuk-accordion__section-heading">
+            <button type="button" class="govuk-accordion__section-button" id="accordion-c">
+              I
+            </button>
+          </h2>
+        </div>
+        <div class="govuk-accordion__section-content">
+          <p class="govuk-body">Example content for letter I. Define terms or guidance starting with I.</p>
+        </div>
+      </div>
+    -->
+
+      <div class="govuk-accordion__section">
+        <div class="govuk-accordion__section-header">
+          <h2 class="govuk-accordion__section-heading">
+            <button type="button" class="govuk-accordion__section-button" id="accordion-a">
+              J
+            </button>
+          </h2>
+        </div>
+        <div class="govuk-accordion__section-content">
+          <h3 class="govuk-heading-s">Joint Stategic Needs Assessment (JSNA)</h3>
+          <p class="govuk-body">This is a process that local authorities and their partner organisations use to understand the health and care needs of people in their area. It helps inform decisions about planning, commissioning, and improving local services.</p>
+
+           <p class="govuk-body">It is a statutory requirement under the Health and Social Care Act 2012 for local authorities and their partners to prepare a JSNA.</p>
+
+        </div>
+      </div>
+      <!--
+      <div class="govuk-accordion__section">
+        <div class="govuk-accordion__section-header">
+          <h2 class="govuk-accordion__section-heading">
+            <button type="button" class="govuk-accordion__section-button" id="accordion-b">
+              K
+            </button>
+          </h2>
+        </div>
+        <div class="govuk-accordion__section-content">
+          <p class="govuk-body">Example content for letter K. Define terms or guidance starting with K.</p>
+        </div>
+      </div>
+    -->
+      <!--
+      <div class="govuk-accordion__section">
+        <div class="govuk-accordion__section-header">
+          <h2 class="govuk-accordion__section-heading">
+            <button type="button" class="govuk-accordion__section-button" id="accordion-c">
+              L
+            </button>
+          </h2>
+        </div>
+        <div class="govuk-accordion__section-content">
+          <p class="govuk-body">Example content for letter L. Define terms or guidance starting with L.</p>
+        </div>
+      </div>
+    -->
+      <div class="govuk-accordion__section">
+        <div class="govuk-accordion__section-header">
+          <h2 class="govuk-accordion__section-heading">
+            <button type="button" class="govuk-accordion__section-button" id="accordion-a">
+              M
+            </button>
+          </h2>
+        </div>
+        <div class="govuk-accordion__section-content">
+          <h3 class="govuk-heading-s">Market Position Statement</h3>
+            <p class="govuk-body">This is a document that local authorities produce to set out the current state of the adult social care market and how they expect it to develop. It helps care providers and other organisations understand local demand, commissioning plans and opportunities to shape services.
+
+            <p class="govuk-body">A Market Position Statement usually includes:</p>
+              <ul class="govuk-list govuk-list--bullet">
+                <li>population trends and future care needs</li>
+                <li>existing care services and any gaps in provision</li>
+                <li>commissioning priorities and plans</li>
+                 <li>opportunities for providers to develop services</li>
+              </ul>
+        </div>
+      </div>
+  <!--
+      <div class="govuk-accordion__section">
+        <div class="govuk-accordion__section-header">
+          <h2 class="govuk-accordion__section-heading">
+            <button type="button" class="govuk-accordion__section-button" id="accordion-b">
+              N
+            </button>
+          </h2>
+        </div>
+        <div class="govuk-accordion__section-content">
+          <p class="govuk-body">Example content for letter N. Define terms or guidance starting with N.</p>
+        </div>
+      </div>
+    -->
+      <!--
+      <div class="govuk-accordion__section">
+        <div class="govuk-accordion__section-header">
+          <h2 class="govuk-accordion__section-heading">
+            <button type="button" class="govuk-accordion__section-button" id="accordion-c">
+              O
+            </button>
+          </h2>
+        </div>
+        <div class="govuk-accordion__section-content">
+          <p class="govuk-body">Example content for letter O. Define terms or guidance starting with O.</p>
+        </div>
+      </div>
+    -->
+
+      <div class="govuk-accordion__section">
+        <div class="govuk-accordion__section-header">
+          <h2 class="govuk-accordion__section-heading">
+            <button type="button" class="govuk-accordion__section-button" id="accordion-a">
+              P
+            </button>
+          </h2>
+        </div>
+        <div class="govuk-accordion__section-content">
+          <h3 class="govuk-heading-s">Population needs</h3>
+          <p class="govuk-body">The underlying needs of a specific group of people or a community in relation to adult social care. This includes:</p>
+
+          <ul class="govuk-list govuk-list--bullet">
+            <li>met needs – where appropriate care and support services are in place to meet a person's requirements</li>
+            <li>unmet needs – where required care and support are not available or accessible, leading to gaps in provision</li>
+          </ul>
+      </div>
+ 
+      <!--
+      <div class="govuk-accordion__section">
+        <div class="govuk-accordion__section-header">
+          <h2 class="govuk-accordion__section-heading">
+            <button type="button" class="govuk-accordion__section-button" id="accordion-b">
+              Q
+            </button>
+          </h2>
+        </div>
+        <div class="govuk-accordion__section-content">
+          <p class="govuk-body">Example content for letter Q. Define terms or guidance starting with Q.</p>
+        </div>
+      </div>
+    -->
+      <!--
+      <div class="govuk-accordion__section">
+        <div class="govuk-accordion__section-header">
+          <h2 class="govuk-accordion__section-heading">
+            <button type="button" class="govuk-accordion__section-button" id="accordion-c">
+              R
+            </button>
+          </h2>
+        </div>
+        <div class="govuk-accordion__section-content">
+          <p class="govuk-body">Example content for letter R. Define terms or guidance starting with R.</p>
+        </div>
+      </div>
+    -->
+
+    <!--
+      <div class="govuk-accordion__section">
+        <div class="govuk-accordion__section-header">
+          <h2 class="govuk-accordion__section-heading">
+            <button type="button" class="govuk-accordion__section-button" id="accordion-a">
+              S
+            </button>
+          </h2>
+        </div>
+        <div class="govuk-accordion__section-content">
+          <h3 class="govuk-heading-s">Similar (data comparison)</h3>
+          <p class="govuk-body">In this service, data in tables is marked as Similar if the difference between 2 values is small and not meaningful.</p>
+
+            <p class="govuk-body">For example, if the percentage of a population group in one area is close to another and the difference is not significant, it will be marked as Similar.</p>  </div>
+      </div>
+    -->
+      <div class="govuk-accordion__section">
+        <div class="govuk-accordion__section-header">
+          <h2 class="govuk-accordion__section-heading">
+            <button type="button" class="govuk-accordion__section-button" id="accordion-b">
+              T
+            </button>
+          </h2>
+        </div>
+        <div class="govuk-accordion__section-content">
+          <h3 class="govuk-heading-s">Transitional care</h3>
+          <p class="govuk-body">Transitional care in adult social care is the process of moving a person from children's services to adult social care services.</p>
+        </div>
+      </div>
+ 
+
+      <div class="govuk-accordion__section">
+        <div class="govuk-accordion__section-header">
+          <h2 class="govuk-accordion__section-heading">
+            <button type="button" class="govuk-accordion__section-button" id="accordion-c">
+              U
+            </button>
+          </h2>
+        </div>
+        <div class="govuk-accordion__section-content">
+          <h3 class="govuk-heading-s">Unpaid care</h3>
+          <p class="govuk-body">Unpaid care is the voluntary help or support given to someone with a long-term physical or mental health condition, illness, or problems related to old age. It does not include care provided as part of paid employment.</p>
+          <p class="govuk-body">This support can include help with daily activities, medical needs or emotional support. It can be given to someone within or outside the carer’s household.</p>
+        </div>
+      </div>
+
+      <!--
+      <div class="govuk-accordion__section">
+        <div class="govuk-accordion__section-header">
+          <h2 class="govuk-accordion__section-heading">
+            <button type="button" class="govuk-accordion__section-button" id="accordion-b">
+              V
+            </button>
+          </h2>
+        </div>
+        <div class="govuk-accordion__section-content">
+          <p class="govuk-body">Example content for letter V. Define terms or guidance starting with V.</p>
+        </div>
+      </div>
+    -->
+      <!--
+      <div class="govuk-accordion__section">
+        <div class="govuk-accordion__section-header">
+          <h2 class="govuk-accordion__section-heading">
+            <button type="button" class="govuk-accordion__section-button" id="accordion-c">
+              W
+            </button>
+          </h2>
+        </div>
+        <div class="govuk-accordion__section-content">
+          <p class="govuk-body">Example content for letter W. Define terms or guidance starting with W.</p>
+        </div>
+      </div>
+    -->
+      <!--
+      <div class="govuk-accordion__section">
+        <div class="govuk-accordion__section-header">
+          <h2 class="govuk-accordion__section-heading">
+            <button type="button" class="govuk-accordion__section-button" id="accordion-a">
+              X
+            </button>
+          </h2>
+        </div>
+        <div class="govuk-accordion__section-content">
+          <p class="govuk-body">Example content for letter X. Define terms or guidance starting with X.</p>
+        </div>
+      </div>
+    -->
+      <!--
+      <div class="govuk-accordion__section">
+        <div class="govuk-accordion__section-header">
+          <h2 class="govuk-accordion__section-heading">
+            <button type="button" class="govuk-accordion__section-button" id="accordion-b">
+              Y
+            </button>
+          </h2>
+        </div>
+        <div class="govuk-accordion__section-content">
+          <p class="govuk-body">Example content for letter Y. Define terms or guidance starting with Y.</p>
+        </div>
+      </div>
+    -->
+      <!--
+      <div class="govuk-accordion__section">
+        <div class="govuk-accordion__section-header">
+          <h2 class="govuk-accordion__section-heading">
+            <button type="button" class="govuk-accordion__section-button" id="accordion-c">
+              Z
+            </button>
+          </h2>
+        </div>
+        <div class="govuk-accordion__section-content">
+          <p class="govuk-body">Example content for letter Z. Define terms or guidance starting with Z.</p>
+        </div>
+      </div>
+    -->
+    </div>
+    </div>
+
+
+{% endblock %}

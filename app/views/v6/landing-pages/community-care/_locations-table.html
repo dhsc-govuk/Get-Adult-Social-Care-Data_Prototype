@@ -1,0 +1,29 @@
+<table class="govuk-table">
+    <thead class="govuk-table__head">
+      <tr class="govuk-table__row">
+        <th scope="col" class="govuk-table__header">Location</th>
+        <th scope="col" class="govuk-table__header">Population aged 65 and over</th>
+        <th scope="col" class="govuk-table__header">Population aged 85 and over</th>
+        <th scope="col" class="govuk-table__header">Actual population</th>
+      </tr>
+    </thead>
+    {% set population = 
+        [
+        ["East Suffolk",22.3,3.2,83241],
+        ["Suffolk",21.4,3.1,173241],
+        ["Cambridgeshire",21.4,3.1,168948],
+        ["East of England",19.9,2.2,5183241],
+        ["England",21.4,3.1,55286249]
+        ]
+    %}
+    <tbody class="govuk-table__body">
+      {% for item in population %}
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">{{item[0]}}</td>
+        <td class="govuk-table__cell">{{item[1]}}%</td>
+        <td class="govuk-table__cell">{{item[2]}}%</td>
+        <td class="govuk-table__cell">{{item[3]|addcommas}}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>

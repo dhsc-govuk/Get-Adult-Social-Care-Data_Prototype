@@ -1,0 +1,158 @@
+{% extends "v6/layouts/data.html" %}
+
+{% set pageName = "Bed occupancy rate" %}
+
+{% block content %} 
+<a href="../dashboard/capacity" class="govuk-back-link">Back</a>
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" aria-describedby="countries-hint">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                <h1 class="govuk-fieldset__heading">
+                  Bed occupancy rate - select indicators
+                </h1>
+              </legend>
+              <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="countries-5" name="countries" type="checkbox" value="none" data-behaviour="exclusive" checked>
+                    <label class="govuk-label govuk-checkboxes__label" for="countries-5">
+                      Select all
+                    </label>
+                  </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="countries" name="countries" type="checkbox" value="france">
+                  <label class="govuk-label govuk-checkboxes__label" for="countries">
+                    Adult community contacts
+                  </label>
+                </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="countries-2" name="countries" type="checkbox" value="portugal">
+                  <label class="govuk-label govuk-checkboxes__label" for="countries-2">
+                    Adult hospice at home beds
+                  </label>
+                </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="countries-3" name="countries" type="checkbox" value="spain">
+                  <label class="govuk-label govuk-checkboxes__label" for="countries-3">
+                    Adult inpatient beds
+                  </label>
+                </div>
+                <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="countries-4" name="countries" type="checkbox" value="spain">
+                    <label class="govuk-label govuk-checkboxes__label" for="countries-4">
+                        Children's community contacts
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="countries-4" name="countries" type="checkbox" value="spain">
+                    <label class="govuk-label govuk-checkboxes__label" for="countries-4">
+                        Children's hospice at home beds
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="countries-5" name="countries" type="checkbox" value="spain">
+                    <label class="govuk-label govuk-checkboxes__label" for="countries-5">
+                        Children's inpatient beds
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="countries-6" name="countries" type="checkbox" value="spain">
+                    <label class="govuk-label govuk-checkboxes__label" for="countries-6">
+                        Community rehabilitation NHS or LA funded
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="countries-7" name="countries" type="checkbox" value="spain">
+                    <label class="govuk-label govuk-checkboxes__label" for="countries-7">
+                        Community rehabilitation private funded
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="countries-8" name="countries" type="checkbox" value="spain">
+                    <label class="govuk-label govuk-checkboxes__label" for="countries-8">
+                        Community support
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="countries-9" name="countries" type="checkbox" value="spain">
+                    <label class="govuk-label govuk-checkboxes__label" for="countries-9">
+                        Dementia nursing
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="countries-9" name="countries" type="checkbox" value="spain">
+                    <label class="govuk-label govuk-checkboxes__label" for="countries-9">
+                        Dementia residential
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="countries-10" name="countries" type="checkbox" value="spain">
+                    <label class="govuk-label govuk-checkboxes__label" for="countries-10">
+                        End of life
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="countries-11" name="countries" type="checkbox" value="spain">
+                    <label class="govuk-label govuk-checkboxes__label" for="countries-11">
+                        General nursing
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="countries-11" name="countries" type="checkbox" value="spain">
+                    <label class="govuk-label govuk-checkboxes__label" for="countries-11">
+                        General residential
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="countries-12" name="countries" type="checkbox" value="spain">
+                    <label class="govuk-label govuk-checkboxes__label" for="countries-12">
+                        Learning disability nursing
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="countries-13" name="countries" type="checkbox" value="spain">
+                    <label class="govuk-label govuk-checkboxes__label" for="countries-13">
+                        Learning disability residential
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="countries-14" name="countries" type="checkbox" value="spain">
+                    <label class="govuk-label govuk-checkboxes__label" for="countries-14">
+                        Mental health nursing
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="countries-15" name="countries" type="checkbox" value="spain">
+                    <label class="govuk-label govuk-checkboxes__label" for="countries-15">
+                        Mental health residential
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="countries-16" name="countries" type="checkbox" value="spain">
+                    <label class="govuk-label govuk-checkboxes__label" for="countries-16">
+                        Total
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="countries-17" name="countries" type="checkbox" value="spain">
+                    <label class="govuk-label govuk-checkboxes__label" for="countries-17">
+                        Transitional
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="countries-18" name="countries" type="checkbox" value="spain">
+                    <label class="govuk-label govuk-checkboxes__label" for="countries-18">
+                        YPD young physically disabled
+                    </label>
+                  </div>
+              </div>
+            </fieldset>
+          </div>
+                        <form action="beds-occupancy">
+          <button type="submit" class="govuk-button" data-module="govuk-button">
+            Continue
+          </button>
+        </form>
+                    
+                    {% endblock %}

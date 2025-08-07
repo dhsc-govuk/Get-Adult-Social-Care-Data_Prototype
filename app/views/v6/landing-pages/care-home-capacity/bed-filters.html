@@ -1,0 +1,92 @@
+{% extends "v6/layouts/logged-in.html" %}
+
+{% set pageName = "Edit bed types" %}
+
+{% block beforeContent %}
+<a href="care-homes" class="govuk-back-link" >Back</a>
+{% endblock %}
+
+{% block content %} 
+<div class="govuk-grid-row">
+  
+  <div class="govuk-grid-column-two-thirds">
+
+    <form action="care-homes" method="post" novalidate>
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+            <span class="govuk-caption-xl">Care home provision</span> 
+            <h1 class="govuk-fieldset__heading govuk-!-margin-bottom-7">{{pageName}}</h1>
+          </legend>
+          <p class="govuk-body">Select filters to refine the data displayed.</p>
+
+          <div class="govuk-radios" data-module="govuk-radios">
+            
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="bedType-1" name="bedType" type="radio" value="All types" checked>
+              <label class="govuk-label govuk-radios__label" for="bedType-1">All types</label>
+            </div>
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="bedType-2" name="bedType" type="radio" value="Community care">
+              <label class="govuk-label govuk-radios__label" for="bedType-2">Community care</label>
+            </div>
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="bedType-3" name="bedType" type="radio" value="Nursing - dementia">
+              <label class="govuk-label govuk-radios__label" for="bedType-3">Nursing - dementia</label>
+            </div>
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="bedType-4" name="bedType" type="radio" value="Nursing - general">
+              <label class="govuk-label govuk-radios__label" for="bedType-4">Nursing - general</label>
+            </div>
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="bedType-5" name="bedType" type="radio" value="Nursing - learning disability">
+              <label class="govuk-label govuk-radios__label" for="bedType-5">Nursing - learning disability</label>
+            </div>
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="bedType-6" name="bedType" type="radio" value="Residential - dementia">
+              <label class="govuk-label govuk-radios__label" for="bedType-6">Residential - dementia</label>
+            </div>
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="bedType-7" name="bedType" type="radio" value="Residential - general">
+              <label class="govuk-label govuk-radios__label" for="bedType-7">Residential - general</label>
+            </div>
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="bedType-8" name="bedType" type="radio" value="Residential - learning disability">
+              <label class="govuk-label govuk-radios__label" for="bedType-8">Residential - learning disability</label>
+            </div>
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="bedType-10" name="bedType" type="radio" value="Transitional" aria-describedby="bedType-10-hint">
+              <label class="govuk-label govuk-radios__label" for="bedType-10">Transitional</label>
+
+              <div id="bedType-10-hint" class="govuk-hint govuk-radios__hint">
+                For individuals moving from children's services to adult social care.
+              </div>
+
+            </div>
+
+          </div>
+
+        </fieldset>
+
+      </div>
+
+      <div class="govuk-button-group">
+        <button type="submit" class="govuk-button" data-module="govuk-button">Apply changes</button>
+        <a href="care-homes" class="govuk-link">Cancel and go back</a>
+      </div>
+
+    </form>
+
+  </div>
+
+</div>
+{% endblock %}

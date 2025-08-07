@@ -1,0 +1,26 @@
+{% extends "v6/layouts/main.html" %}
+
+{% set titleH1 = "You cannot access this service yet" %} {% block pageTitle %} {{titleH1}} - {{serviceName}} - GOV.UK {% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">{{titleH1}}</h1>
+
+      <p class="govuk-body">
+        The Department for Health and Social Care (DHSC) will review your request to access the Get adult social care data service.
+      </p>
+    
+      <p class="govuk-body">
+        DHSC will normally contact you within x working days to grant access or ask for more information. During busy periods, this may take longer.
+      </p>
+
+      <a href="https://www.gov.uk" class="govuk-button">
+        Go back to GOV.UK
+      </a>
+
+    </div>
+  </div>
+
+{% endblock %}

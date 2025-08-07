@@ -1,0 +1,63 @@
+{% extends "v6/layouts/logged-in.html" %}
+
+{% set pageName = "Change settings for the care home locations map and table" %}
+
+{% block beforeContent %}
+<a href="care-homes" class="govuk-back-link" >Back</a>
+{% endblock %}
+
+{% block content %} 
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-two-thirds">
+
+    <form action="care-homes" method="post" novalidate>
+      <span class="govuk-caption-xl">Care home capacity data</span> 
+      <h1 class="govuk-heading-xl">{{pageName}}</h1>
+      <dl class="govuk-summary-list">
+        
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">Care home information</dt>
+          <dd class="govuk-summary-list__value">
+            CQC rating
+            <br>
+            Care services
+          </dd>
+          <dd class="govuk-summary-list__actions"><a class="govuk-link" href="#" data-message="Sorry, this hasn’t been designed yet">Change<span class="govuk-visually-hidden"> care home information</span></a></dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">Filters</dt>
+          <dd class="govuk-summary-list__value">
+            Residential care homes
+            <br>
+            Dementia care beds
+          </dd>
+          <dd class="govuk-summary-list__actions"><a class="govuk-link" href="#" data-message="Sorry, this hasn’t been designed yet">Change<span class="govuk-visually-hidden"> filters</span></a></dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">Additional indicators for the local authority district map</dt>
+          <dd class="govuk-summary-list__value">
+            Care bed occupancy
+            <br>
+            Deprivation rating (low to high)
+            <br>
+            Population aged 85 and over
+          </dd>
+          <dd class="govuk-summary-list__actions"><a class="govuk-link" href="#" data-message="Sorry, this hasn’t been designed yet">Change<span class="govuk-visually-hidden"> additional indicators for the local authority district map</span></a></dd>
+        </div>
+        
+      </dl>
+      
+      <div class="govuk-button-group">
+        <button type="submit" class="govuk-button" data-module="govuk-button">Apply changes</button>
+        <a href="care-homes" class="govuk-link">Cancel and go back</a>
+      </div>
+
+    </form>
+
+  </div>
+
+</div>
+{% endblock %}

@@ -1,0 +1,360 @@
+{% extends "v6/layouts/help.html" %}
+
+{% set pageName = "Help" %}
+
+{% block content %}
+
+<a href="javascript:history.back()" class="govuk-back-link">Back</a>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-third">      
+          <nav class="moj-side-navigation" aria-label="Side navigation">
+            <h4 class="govuk-heading-m">Topics</h4>
+            <ul class="moj-side-navigation__list">
+
+              <li class="moj-side-navigation__item">
+                <a href="user-guide">User guide</a>
+              </li>
+
+              <li class="moj-side-navigation__item">
+                <a href="data-sources">Data sources</a>
+              </li>
+
+              <li class="moj-side-navigation__item">
+                <a href="indicator-definitions">Indicator definitions and supporting information</a>
+              </li>
+
+              <li class="moj-side-navigation__item">
+                <a href="about" aria-current="location">About this service</a>
+              </li>
+
+              <li class="moj-side-navigation__item">
+                <a href="smart-insights">About smart insights (experimental)</a>
+              </li>
+              <li class="moj-side-navigation__item">
+                <a href="news-archive" aria-current="location">News archive</a>
+              </li>
+
+              <li class="moj-side-navigation__item">
+                <a href="contact-us">Contact us</a>
+              </li>
+
+            </ul>
+          </nav>
+  </div>
+
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">
+      Help
+    </h1>
+    <p class="govuk-body-l">Get the help you need from these options.</p>
+
+ 
+    <h2 class="govuk-heading-m">User guide</h2>
+
+    <p class="govuk-body">Learn how to navigate the service and use its features.</p>
+
+    <p class="govuk-body"><a href="user-guide" class="govuk-link">Go to user guide</a></p>
+
+    <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+    <h2 class="govuk-heading-m">Data sources</h2>
+
+    <p class="govuk-body">Find out where the data is sourced from, including details of data providers and how updates are managed.
+    </p>
+
+    <p class="govuk-body"><a href="data-sources" class="govuk-link">View data sources</a></p>
+
+    <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+    <h2 class="govuk-heading-m">Indicator definitions and supporting information</h2>
+
+    <p class="govuk-body">Understand how indicators are defined, how they are compiled, updated schedules and date ranges available.</p>
+
+    <p class="govuk-body"><a href="indicator-definitions" class="govuk-link">Go to indicator definitions</a></p>
+
+    <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+    <h2 class="govuk-heading-m">About this service</h2>
+
+    <p class="govuk-body">Find out about Get adult social data and what this service offers.</p>
+
+    <p class="govuk-body"><a href="about" class="govuk-link">Learn more about this service</a></p>
+
+    <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+    <h2 class="govuk-heading-m">About smart insights (experimental)</h2>
+
+    <p class="govuk-body">Learn more about smart insights and how they can help you uncover useful patterns and trends in the data.</p>
+
+    <p class="govuk-body"><a href="smart-insights"class="govuk-link">Learn about smart insights</a></p>
+
+    <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+ 
+    <h2 class="govuk-heading-m">News archive</h2>
+
+    <p class="govuk-body">Find news and updates for Get adult social care data.</p>
+
+    <p class="govuk-body"><a href="news-archive.html"class="govuk-link">View news archive</a></p>
+
+    <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+    <h2 class="govuk-heading-m">Contact us</h2>
+
+    <p class="govuk-body">Contact us if you have questions or feedback about this service.</p>
+
+    <p class="govuk-body"><a href="contact-us" class="govuk-link">Find out how to contact us</a></p>
+
+    <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+<!--
+    <h2 id="demand-and-capacity" class="govuk-heading-m">
+      About this service
+    </h2>
+
+    <p>Get adult social care data is a digital insight tool that provides access to a wide range of datasets relevant to adult social care in England.</p>
+
+    <p>The service brings together data from the Care Quality Commission, Office for National Statistics, NHS England, Capacity Tracker and other sources. <a href="#data-sources" class="govuk-link">Learn more about the data sources.</a><p>
+
+    <p>When new data is published, the service updates automatically so you can get insights based on the most current information.</p>
+ 
+    <p>You can use this service to:</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li><strong>access data and track indicators</strong> across a range of topics, using the latest available information</li>
+      <li><strong>explore and visualise data</strong> with interactive tools that help you to identify patterns, trends and insights</li>
+      <li><strong>support decision-making and strategic planning</strong> by downloading datasets and charts in formats you can integrate into your own analyses</li>
+    </ul>
+
+    <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+
+    <h2 id="data-sources" class="govuk-heading-m">
+      Available data
+    </h2>
+
+     <p>The service includes data for a range of indicators, covering key topics in adult social care.</p>
+
+     <p>These topics include:</p>
+
+     <ul class="govuk-list govuk-list--bullet">
+      <li><strong>present demand:</strong> identify the current demand for care, including met and unmet needs, service capacity, and factors driving demand.</li>
+      <li><strong>future demand:</strong> understand the likely demand for care, including projected needs by care type, with high-level and detailed data.</li>
+      <li><strong>current market:</strong> assess the local care market, including provider availability, occupancy levels, service performance and fee rates.</li>
+      </ul>
+
+     <p class="govuk-body">We'll be adding more topics over time. Tell us which topics would be most useful to you - <a href="">give your feedback</a>.</p>
+
+     <p>The availability of detailed data depends on the source datasets. Some indicators provide data at the national (England) level, while others include more granular data at regional or local authority levels.</p>
+
+     <p>For more information about the datasets behind these indicators, you can <a href="" class="govuk-link">view the detailed guide to the datasets.</a></p> 
+
+    <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+    <h2 id="data-sources" class="govuk-heading-m">Data sources</h2>
+
+    <p>Get adult social care data uses the following public and private data sources.</p>
+
+    <h3 class="govuk-heading-s">Public data sources</h3>
+
+    <ul class="govuk-list govuk-list--bullet">
+      <li>Adult Social Care Statistics (Department for Health and Social Care)</li>
+      <li>Adult Social Care Outcomes Framwork (ASCOF) (NHS England)</li>
+      <li>Adult Social Care Report (Department for Health and Social Care)</li>
+      <li>Care Quality Commission (CQC) Care Directory</li>
+      <li>Office for National Statistics collection</li>
+      <li>Short and Long Term Return (SALT) (NHS England)</li>
+      </ul>
+
+      <h3 class="govuk-heading-s">Private data sources</h3>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>Capacity Tracker</li>
+        <li>Skills for Care</li>
+        <li>Client Level Data (CLD)</li>
+        </ul>
+
+    <p>For a deeper understanding of the source datasets, including how they are compiled and updated,, <a href="" class="govuk-link">view the detailed guide to the datasets.</a></p> 
+
+      <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+    <h2 id="quick-guide" class="govuk-heading-m">
+      Quick guide
+    </h2>
+
+    <p>To access indicators, start by selecting <a href="get-data">Get data</a>.</p>
+
+    <p class="govuk-body">You can explore indicators by topic:</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li><a href="#" class="govuk-link">present demand</a></li>
+      <li><a href="#" class="govuk-link">future demand</a></li>
+      <li><a href="#" class="govuk-link">current market</a></li>
+
+    </ul>
+
+    <p>For quick access, save your preferred indicators to <a href="dashboard" class="govuk-link">your dashboard</a>.  
+
+    <h3 class="govuk-heading-s">How to save an indicator to your dashboard</h3>  
+    <p>Follow these steps:</p>
+    <ol class="govuk-list govuk-list--number">
+        <li>Select an indicator to view its details</li>
+        <li>Tick the checkbox for 'Show this indicator on your dashboard'.</li>
+    </ol>
+
+    <p>To remove the indicator, untick the checkbox.</p>  
+
+    <p class="govuk-body"></p>
+
+    <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+    <!---
+    <h2 id="smart-insights" class="govuk-heading-m">
+      Smart insights (experimental)
+    </h2>
+
+    <p class="govuk-body">Smart insights is a feature that uses artificial intelligence (AI) to help analyse data and identify key trends and patterns.
+
+    <p class="govuk-body">This is designed to support - but not replace - your own analysis of the data.</p>
+    
+    <p class="govuk-body">As it's experimental, there are some limitations to keep in mind..</p>
+
+    <h3 class="govuk-heading-s">How it works</h3>
+
+    <p class="govuk-body">Smart insights uses AI models trained on large datasets to identify relationships within the data.</p>
+    
+    <p class="govuk-body">These models generate summaries and interpretations designed to simplify complex information and help you uncover useful insights.</p>
+
+    <h3 class="govuk-heading-s">Limitations</h3>
+
+    <p class="govuk-body">AI-generated insights are generally reliable, but may not always be complete, reflect the most recent policy changes, or capture important context.</p>
+    
+    <p class="govuk-body">Sometimes, AI might misinterpret data, producing insights that do not fully align with the underlying trends or patterns.</p>
+
+    <h3 class="govuk-heading-s">Best practices</h3>
+
+    <p class="govuk-body">Always cross-check the AI-generated insights with other data sources to get a fuller picture.</p>
+    
+    <p class="govuk-body">Review the insights carefully, and verify they are correct and appropriate for your needs before sharing or using them.</p>
+
+    <p class="govuk-body">To help us refine and improve this feature, please <a href="" class="govuk-link">share your feedback</a>.</p>
+    
+    <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+    -->
+    <!--
+    <h2 id="contact" class="govuk-heading-m">
+      Contact us
+    </h2>
+
+    <p class="govuk-body">If you need further support with using the Get adult social care data service, email <a href="" class="mailto:asc.data@dhsc.gov.uk">gascd.enquiries@dhsc.gov.uk</a>.</p>
+
+    <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+  -->
+  </div>
+
+</div>
+
+<!---
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <h1 class="govuk-heading-xl">
+      All indicators
+    </h1>
+  {% set queries = [
+    { date: "1 April", query:"Capacity where number of beds is greater than 5", user: "Made by you", tags:"Capacity planning", datasets: "Occupancy visiting workforce" },
+    { date: "30 March", query:"Suffolk nursing homes: CQC ratings", user: "Made by you", tags:"Quality of care", datasets: "CQC ratings" }, 
+    { date: "29 March", query:"Capacity where Number of Beds (vacant) accepting admissions is greater than 10", user: "Made by you", tags:"Capacity planning", datasets: "Occupancy visiting workforce" }, 
+    { date: "29 March", query:"Number of directly employed registered nurses absent, not COVID-19 related", user: "Template", tags:"Capacity planning", datasets: "Occupancy visiting workforce" },
+    { date: "28 March", query:"Total headcount of directly employed registered nurses", user: "Made by you", tags:"Capacity planning",datasets: "Occupancy visiting workforce" }, 
+    { date: "25 March", query:"Capacity where number of beds is greater than 5", user: "Template", tags:"Capacity planning", datasets: "Occupancy visiting workforce"},
+    { date: "25 March", query:"Capacity where number of beds is greater than 5", user: "Made by you", tags:"Capacity planning", datasets: "Occupancy visiting workforce" }, 
+    { date: "24 March", query:"Capacity where number of beds is greater than 5", user: "Made by you" , tags:"Capacity planning", datasets: "Occupancy visiting workforce"}
+  ] %}
+  <style>
+    
+table {
+margin: 2em 0;
+text-align: left;
+vertical-align: top;
+border-collapse: collapse;
+font-family: "GDS Transport", arial, sans-serif;
+}
+
+.companies-table{
+display:block;
+min-width:600px
+}
+
+caption {
+text-align: left;
+font-size: 1.4em;
+}
+
+th,
+td {
+/*   border: 1px solid #666; */
+padding: 1em;
+}
+
+th {
+background-color: #acbcd5;
+/*     #a15dbc; */
+color: #000;
+font-weight: normal;
+}
+
+tr{box-shadow: 0 3px 3px rgb(0 0 0 / 0.1);}
+
+tr:hover {
+text-decoration: underline;
+}
+
+tr:nth-child(odd) {
+background-color: #fff;
+}
+
+tr:nth-child(even) {
+background-color: #f2f2f2;
+} 
+
+#search-queries{
+font-family: "GDS Transport", arial, sans-serif;
+border: none;
+}
+
+.search-queries-label{display: block;}
+
+.search-queries-input{padding:1em; margin-top:0.5em; width: 40em; border-radius: 5px;}
+
+</style>
+  <fieldset id="search-queries">
+    <label class="search-queries-label" for="first-name"><h3>Search indicators</h3>By name, filter or dataset</label>
+    <input class="search-queries-input " type="text" id="first-name" name="first-name">
+  </fieldset>
+  <table class="companies-table">
+    <caption>All indicators</caption>
+    <tr>
+      <th scope="col"><i class="fa-solid fa-chevron-down"></i>Last updated</th>
+      <th scope="col">Name</th>
+      <th scope="col">Type</th>
+      <th scope="col">Topic</th>
+      <th scope="col">Datasets</th>
+      <th scope="col">View / edit</th>
+    </tr>
+
+
+        {% for item in queries %}
+        <tr scope="row">
+        <td>{{ item.date }}</td>
+        <td>{{ item.query }}</td>
+        <td>{{ item.user }}</td>
+        <td>{{ item.tags }}</td>
+        <td>{{ item.datasets }}</td>
+        <td><a href="#">Open</a></td>
+      </tr>
+        {% else %}
+          This would display if the 'item' collection were empty
+        {% endfor %}
+  </table>
+-->
+  {% endblock %}
+  

@@ -1,0 +1,24 @@
+{% extends "v6/layouts/main.html" %}
+
+{% set titleH1 = "You have signed out" %} {% block pageTitle %} {{titleH1}} - {{serviceName}} - GOV.UK {% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">{{titleH1}}</h1>
+
+
+      <p class="govuk-body">Help us improve this service - 
+        <a href="#" class="govuk-link">give your feedback</a> (takes 30 seconds).
+      </p>
+
+      <p class="govuk-body">
+        <a href="../login/2-login.html" class="govuk-button">Sign in again</a>
+      </p>
+  
+
+    </div>
+  </div>
+
+{% endblock %}

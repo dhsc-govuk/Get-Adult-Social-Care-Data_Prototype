@@ -1,0 +1,42 @@
+{% extends "v6/layouts/data.html" %}
+
+{% set pageName = "Edit locations" %}
+
+{% block content %} 
+{% from "govuk/components/input/macro.njk" import govukInput %}
+<a href="javascript:history.back()" class="govuk-back-link">Back</a>
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <!--<span class="govuk-caption-l">Demand and capacity</span>-->
+      <h1 class="govuk-heading-l">{{pageName}}</h1>
+
+
+      {% include "./_locations.html" %}
+
+      <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+        Add location
+      </button>
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+            <h1 class="govuk-fieldset__heading">
+              Selected locations
+            </h1>
+          </legend>
+          <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses" checked>
+              <label class="govuk-label govuk-checkboxes__label" for="waste">
+                Alexis homecare (head office), East Suffolk 
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+      </div>
+      <a href="home-care" type="submit" class="govuk-button" data-module="govuk-button">
+        Continue
+      </a>
+    </div>
+ </div>
+      {% endblock %}

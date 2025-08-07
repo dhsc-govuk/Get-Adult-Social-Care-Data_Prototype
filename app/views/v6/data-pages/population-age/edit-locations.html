@@ -1,0 +1,79 @@
+{% extends "v6/layouts/data.html" %}
+
+{% set pageName = "Edit locations" %}
+
+{% block content %} 
+<a href="javascript:history.back()" class="govuk-back-link">Back</a>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <!-- <span class="govuk-caption-l">Demand and capacity</span> -->
+    <h1 class="govuk-heading-l">
+      <span class="govuk-caption-m">Population age</span> 
+      {{pageName}}</h1>
+      <!-- 
+      
+      Main content
+      
+      -->
+      {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+      {{ govukRadios({
+        name: "care-provider-location",
+        fieldset: {
+          legend: {
+            text: "Set a default location",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        hint: {text: "We'll show this location when displaying maps and charts."},
+        items: [
+          {
+            value: "Greenfields care, Suffolk",
+            text: "Greenfields care, Suffolk",
+            checked: true
+          },
+          {
+            value: "Woodlands Care, Suffolk",
+            text: "Woodlands Care, Suffolk"
+          },
+          {
+            value: "Seafront Villas, Norfolk ",
+            text: "Seafront Villas, Norfolk "
+          }
+
+        ]
+      }) }}
+      <h2>Add more locations</h2>
+      <p>You can add more local authorities or districts to compare the data.</p>
+      {% if data['new-location'] %}
+      <table class="govuk-table">
+        <caption class="govuk-table__caption govuk-table__caption--s"></caption>
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header">Locations added</th>
+            <th scope="col" class="govuk-table__header">Remove</th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          <!-- <tr class="govuk-table__row">
+            <td scope="row" class="govuk-table__cell">East of England - all local authorities</td>
+            <td class="govuk-table__cell"><a href="#">Remove</a></td>
+          </tr> -->
+          <tr class="govuk-table__row">
+            <td scope="row" class="govuk-table__cell">{{data['new-location']|default("Cambridgeshire")}}</td>
+            <td class="govuk-table__cell"><a href="#">Remove</a></td>
+          </tr>
+          <!-- <tr class="govuk-table__row">
+            <td scope="row" class="govuk-table__cell">Bournemouth</td>
+            <td class="govuk-table__cell"><a href="#">Remove</a></td>
+          </tr> -->
+          </tbody>
+          </table>
+          {% endif %}
+          <p><a href="edit-locations-search" class="govuk-button govuk-button--secondary">Add locations</a></p>
+          <a href="population-age?newLocation=true" class="govuk-button" data-module="govuk-button" style="margin-right:1em">
+            Apply changes
+          </a>
+<a href="javascript:history.back()" class="govuk-link govuk-body">Cancel and go back</a>
+        {% endblock %}
