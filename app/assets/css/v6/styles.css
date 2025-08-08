@@ -5,6 +5,7 @@
 
 /* Expansion on the GOV.UK Design System service navigation component https://design-system.service.gov.uk/components/service-navigation) to include the recommended 'Sign out' button (https://govuk-frontend-review.herokuapp.com/full-page-examples/companies-you-follow-slot) */
 
+/* DELETE - once new header is designed */
 /* When the 'Sign out' link is with other items */
 .app-sign-out-grouped {
   margin-left: auto;
@@ -20,6 +21,7 @@
   width: auto;
 }
 
+/* DELETE - once new header is designed */
 /* When the 'Sign out' link is the only item */
 .app-sign-out {
   margin-left: auto;
