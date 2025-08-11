@@ -1,4 +1,10 @@
-{% extends "v6/layouts/logged-in.html" %}
+{% extends "v6/layouts/logged-in-change-location.html" %}
+
+{% set pageName = "Change care provider location" %}
+
+{% block beforeContent %}
+<a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
 
 {% block content %}
 <style>
@@ -15,10 +21,6 @@
   /* The 'Menu' component used on GOV.UK (https://www.gov.uk) */
 
   /* Button - :before */
-  .gem-c-layout-super-navigation-header__navigation-top-toggle-button .gem-c-layout-super-navigation-header__navigation-top-toggle-button-inner {
-    padding: 0;
-  }
-  /* @media(min-width: 40.0625em) { */
   @media(min-width: 22.5em) {
     .gem-c-layout-super-navigation-header__navigation-top-toggle-button .gem-c-layout-super-navigation-header__navigation-top-toggle-button-inner {
       padding: 5px 15px;
@@ -246,78 +248,37 @@
 
 <div class="govuk-grid-row">
 
-  <div class="govuk-grid-column-full">
-    <h1 class="govuk-heading-xl">Get adult social care data</h1>
-    <p class="govuk-body-l">Access the latest data on adult social care capacity and population needs across England.</p>
-    <h2 class="govuk-heading-m govuk-!-margin-top-7">Adult social care capacity</h2>
-  </div>
-
-</div>
-
-<div class="govuk-grid-row">
-        
-  <div class="govuk-grid-column-one-half">
-    <a href="../landing-pages/care-home-capacity/care-homes" class="app-card">
-      <h3 class="govuk-heading-m app-card__heading">Care home capacity data</h3>
-      <p class="govuk-body">Find and compare capacity data for residential care homes and nursing homes.</p>
-    </a>
-  </div>  
-      
-  <div class="govuk-grid-column-one-half" data-message="Sorry, this hasn’t been designed yet">
-    <a href="#" class="app-card">
-      <h3 class="govuk-heading-m app-card__heading" data-message="Sorry, this hasn’t been designed yet">Domiciliary care capacity data</h3>
-      <p class="govuk-body" data-message="Sorry, this hasn’t been designed yet">Explore capacity data for home care, supported housing, supported living and shared lives schemes.</p>
-    </a>
-  </div>
-
-</div>
-
-<!-- <div class="govuk-grid-row">
-    
-  <div class="govuk-grid-column-one-half">
-    <a href="#" class="app-card">
-      <h3 class="govuk-heading-m app-card__heading">Unpaid care</h3>
-      <p class="govuk-body">Explore data and insights about people providing unpaid care to adults.</p>
-    </a>
-  </div>  
-  
-  <div class="govuk-grid-column-one-half">
-    <a href="#" class="app-card">
-      <h3 class="govuk-heading-m app-card__heading">Current market and provision</h3>
-      <p class="govuk-body">Assess the local care market, including provider availability, occupancy levels and service quality.</p>
-    </a>
-  </div>
-    
-</div> -->
-
-<div class="govuk-grid-row">
-
-  <div class="govuk-grid-column-full">
-    <h2 class="govuk-heading-m govuk-!-margin-top-7">Population needs</h2>
-  </div>
-
-  <div class="govuk-grid-column-one-half">
-    <a href="../landing-pages/current-population-needs/index" class="app-card">
-      <h3 class="govuk-heading-m app-card__heading">Current population needs</h3>
-      <p class="govuk-body">Assess data on a range of factors shaping current population needs for adult social care.</p>
-    </a>
-  </div>  
-      
-  <div class="govuk-grid-column-one-half" data-message="Sorry, this hasn’t been designed yet">
-    <a href="#" class="app-card">
-      <h3 class="govuk-heading-m app-card__heading" data-message="Sorry, this hasn’t been designed yet">Future population needs</h3>
-      <p class="govuk-body" data-message="Sorry, this hasn’t been designed yet">Identify potential future needs for adult social care services based on projected population changes.</p>
-    </a>
-  </div>
-
-</div>
-
-<div class="govuk-grid-row">
-  
   <div class="govuk-grid-column-two-thirds">
-    <h2 class="govuk-heading-m govuk-!-margin-top-7">Supporting information</h2>
-    <h3 class="govuk-heading-m"><a href="../help/user-guide">User guide</a></h3>
-    <p class="govuk-body">Find out more about the service. Learn how data sources are used to create indicators for adult social care capacity and population needs.</p>
+
+    <form action="/v6/logged-in/index" method="post" novalidate>
+
+      <div class="govuk-form-group">
+        <h1 class="govuk-label-wrapper">
+          <label class="govuk-label govuk-label--xl govuk-!-margin-bottom-9" for="careHome">{{pageName}}</label>
+        </h1>
+
+        <div id="la-hint" class="govuk-hint">
+          Start typing for suggestions.
+        </div>
+
+        <select class="govuk-select" id="careHome" name="careHome" aria-describedby="careHome-hint" data-module="autocomplete" data-autoselect="" data-display-menu="" data-min-length="" data-show-all-values="" data-show-no-options-found="">
+          <option value="" selected="" disabled="">Select an option</option>  
+          <option value="Apple Farm Care Home"{% if data.careHome == 'Apple Farm Care Home' %} selected{% endif %}>Apple Farm Care Home</option>
+          <option value="Greenfields Care Home"{% if data.careHome == 'Greenfields Care Home' %} selected{% endif %}>Greenfields Care Home</option>
+          <option value="Lily Hill Care Home"{% if data.careHome == 'Lily Hill Care Home' %} selected{% endif %}>Lily Hill Care Home</option>
+          <option value="Shoggins Care Home"{% if data.careHome == 'Shoggins Care Home' %} selected{% endif %}>Shoggins Care Home</option>
+          <option value="Strawberry Hill Care Home"{% if data.careHome == 'Strawberry Hill Care Home' %} selected{% endif %}>Strawberry Hill Care Home</option>
+          <option value="Waterfall Care Home"{% if data.careHome == 'Waterfall Care Home' %} selected{% endif %}>Waterfall Care Home</option>
+        </select>
+      </div>
+
+      <div class="govuk-button-group">
+        <button type="submit" class="govuk-button" data-module="govuk-button">Apply changes</button>
+        <a href="javascript:window.history.back()" class="govuk-link">Cancel and go back</a>
+      </div>
+
+    </form>
+
   </div>
 
 </div>
