@@ -20,10 +20,20 @@
 
   /* The 'Menu' component used on GOV.UK (https://www.gov.uk) */
 
-  /* Button - :before */
+  /* Link */
+  .gem-c-layout-super-navigation-header__navigation-item-link {
+    padding-right: 15px;
+  }
+
+  /* Button (:before) */
+  .gem-c-layout-super-navigation-header__navigation-top-toggle-button .gem-c-layout-super-navigation-header__navigation-top-toggle-button-inner {
+    padding: 0;
+  }
+  /* @media(min-width: 40.0625em) { */
   @media(min-width: 22.5em) {
     .gem-c-layout-super-navigation-header__navigation-top-toggle-button .gem-c-layout-super-navigation-header__navigation-top-toggle-button-inner {
-      padding: 5px 15px;
+      /* padding: 5px 15px; */
+      padding-right: 15px;
     }
 
     .gem-c-layout-super-navigation-header__navigation-top-toggle-button .gem-c-layout-super-navigation-header__navigation-top-toggle-button-inner::before {

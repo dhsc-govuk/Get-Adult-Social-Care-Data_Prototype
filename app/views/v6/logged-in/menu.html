@@ -1,0 +1,234 @@
+{% extends "v6/layouts/logged-in-menu.html" %}
+
+{% set pageName = "Browse" %}
+
+{% block beforeContent %}
+<a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+<style>
+
+  /* Edits to the GOV.UK Design System service navigation component https://design-system.service.gov.uk/components/service-navigation) to make it work in our custom service header */
+  .govuk-service-navigation__item-start {
+    margin-left: auto;
+  }
+  
+  .govuk-service-navigation__link-change {
+    padding-left: 10px;
+  }
+
+  /* The 'Menu' component used on GOV.UK (https://www.gov.uk) */
+
+  /* Link */
+  .gem-c-layout-super-navigation-header__navigation-item-link {
+    padding-right: 15px;
+  }
+
+  /* Button (:before) */
+  .gem-c-layout-super-navigation-header__navigation-top-toggle-button .gem-c-layout-super-navigation-header__navigation-top-toggle-button-inner {
+    padding: 0;
+  }
+  /* @media(min-width: 40.0625em) { */
+  @media(min-width: 22.5em) {
+    .gem-c-layout-super-navigation-header__navigation-top-toggle-button .gem-c-layout-super-navigation-header__navigation-top-toggle-button-inner {
+      /* padding: 5px 15px; */
+      padding-right: 15px;
+    }
+
+    .gem-c-layout-super-navigation-header__navigation-top-toggle-button .gem-c-layout-super-navigation-header__navigation-top-toggle-button-inner::before {
+      color: #1a65a6;
+      -webkit-transform: translateY(-35%) rotate(45deg) scale(1);
+      -ms-transform: translateY(-35%) rotate(45deg) scale(1);
+      transform: translateY(-35%) rotate(45deg) scale(1);
+      border-bottom: 2px solid #1a65a6;
+      border-right: 2px solid #1a65a6;
+      content: "";
+      display: inline-block;
+      height: 8px;
+      margin: 0 10px 0 2px;
+      vertical-align: middle;
+      width: 8px;
+    }
+  }
+
+  /* Button */
+  .gem-c-layout-super-navigation-header__navigation-top-toggle-button {
+    font-family: "GDS Transport", arial, sans-serif;
+    font-weight: 400;
+    background: none;
+    background-color: #f4f8fb;
+    color: #1a65a6;
+    border: none;
+    text-size-adjust: 100%;
+    outline: inherit;
+    text-decoration: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-decoration-thickness: max(1px, .0625rem);
+    text-underline-offset: 0.1578em;
+    cursor: pointer;
+    text-align: -webkit-match-parent;
+    list-style: none;
+    padding: 0;
+  }
+  @media (min-width: 40.0625em) {
+    .gem-c-layout-super-navigation-header__navigation-top-toggle-button {
+      line-height: 1.5263157895;
+      font-size: 1.1875rem;
+    }
+  }
+
+</style>
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">{{pageName}}</h1>
+  </div>
+
+</div>
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-full">
+    <h2 class="govuk-heading-l">Topics</h2>
+
+    <div class="gem-c-cards">
+      <ul class="gem-c-cards__list gem-c-cards__list--one-column">
+        <li class="gem-c-cards__list-item">
+
+          <div class="gem-c-cards__list-item-wrapper">
+            <h2 class="gem-c-cards__sub-heading govuk-heading-s">
+              <a class="govuk-link gem-c-cards__link gem-c-force-print-link-styles" href="#">Topic page 1</a>
+            </h2>
+            <p class="govuk-body gem-c-cards__description">Summary teaser (max 12 words) on information available for this topic.</p>
+          </div>
+        
+        </li>
+        <li class="gem-c-cards__list-item">
+
+          <div class="gem-c-cards__list-item-wrapper">
+            <h2 class="gem-c-cards__sub-heading govuk-heading-s">
+              <a class="govuk-link gem-c-cards__link gem-c-force-print-link-styles" href="#">Topic page 2</a>
+            </h2>
+            <p class="govuk-body gem-c-cards__description">Summary teaser (max 12 words) on information available for this topic.</p>
+          </div>
+        
+        </li>
+        <li class="gem-c-cards__list-item">
+
+          <div class="gem-c-cards__list-item-wrapper">
+            <h2 class="gem-c-cards__sub-heading govuk-heading-s">
+              <a class="govuk-link gem-c-cards__link gem-c-force-print-link-styles" href="#">Topic page 3</a>
+            </h2>
+            <p class="govuk-body gem-c-cards__description">Summary teaser (max 12 words) on information available for this topic.</p>
+          </div>
+        
+        </li>
+        <li class="gem-c-cards__list-item">
+
+          <div class="gem-c-cards__list-item-wrapper">
+            <h2 class="gem-c-cards__sub-heading govuk-heading-s">
+              <a class="govuk-link gem-c-cards__link gem-c-force-print-link-styles" href="#">Topic page 4</a>
+            </h2>
+            <p class="govuk-body gem-c-cards__description">Summary teaser (max 12 words) on information available for this topic.</p>
+          </div>
+        
+        </li>
+        <li class="gem-c-cards__list-item">
+
+          <div class="gem-c-cards__list-item-wrapper">
+            <h2 class="gem-c-cards__sub-heading govuk-heading-s">
+              <a class="govuk-link gem-c-cards__link gem-c-force-print-link-styles" href="#">Topic page 5</a>
+            </h2>
+            <p class="govuk-body gem-c-cards__description">Summary teaser (max 12 words) on information available for this topic.</p>
+          </div>
+        
+        </li>
+        <li class="gem-c-cards__list-item">
+
+          <div class="gem-c-cards__list-item-wrapper">
+            <h2 class="gem-c-cards__sub-heading govuk-heading-s">
+              <a class="govuk-link gem-c-cards__link gem-c-force-print-link-styles" href="#">Topic page {n}</a>
+            </h2>
+            <p class="govuk-body gem-c-cards__description">Summary teaser (max 12 words) on information available for this topic.</p>
+          </div>
+        
+        </li>
+      </ul>
+    </div>
+
+  </div>
+
+</div>
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-full">
+    <h2 class="govuk-heading-l govuk-!-margin-top-5">Service information</h2>
+
+    <div class="gem-c-cards">
+      <ul class="gem-c-cards__list gem-c-cards__list--one-column">
+        <li class="gem-c-cards__list-item">
+
+          <div class="gem-c-cards__list-item-wrapper">
+            <h2 class="gem-c-cards__sub-heading govuk-heading-s">
+              <a class="govuk-link gem-c-cards__link gem-c-force-print-link-styles" href="#">Homepage</a>
+            </h2>
+            <p class="govuk-body gem-c-cards__description">Short description (max 5 words)</p>
+          </div>
+        
+        </li>
+        <li class="gem-c-cards__list-item">
+
+          <div class="gem-c-cards__list-item-wrapper">
+            <h2 class="gem-c-cards__sub-heading govuk-heading-s">
+              <a class="govuk-link gem-c-cards__link gem-c-force-print-link-styles" href="#">About this service</a>
+            </h2>
+            <p class="govuk-body gem-c-cards__description">Short description (max 5 words)</p>
+          </div>
+        
+        </li>
+        <li class="gem-c-cards__list-item">
+
+          <div class="gem-c-cards__list-item-wrapper">
+            <h2 class="gem-c-cards__sub-heading govuk-heading-s">
+              <a class="govuk-link gem-c-cards__link gem-c-force-print-link-styles" href="#">Indicator definitions and data sources</a>
+            </h2>
+            <p class="govuk-body gem-c-cards__description">Short description (max 5 words)</p>
+          </div>
+        
+        </li>
+        <li class="gem-c-cards__list-item">
+
+          <div class="gem-c-cards__list-item-wrapper">
+            <h2 class="gem-c-cards__sub-heading govuk-heading-s">
+              <a class="govuk-link gem-c-cards__link gem-c-force-print-link-styles" href="#">User guide</a>
+            </h2>
+            <p class="govuk-body gem-c-cards__description">Short description (max 5 words)</p>
+          </div>
+        
+        </li>
+      </ul>
+    </div>
+
+    <!-- Chris Harding (11.08.25) - A great sticky 'Back to top' link from GOV.UK (e.g. https://www.gov.uk/government/collections/monthly-statistics-for-adult-social-care-england) -->
+    <!-- TO DO: Get this working for GASCD -->
+    <!-- <div data-sticky-element="" class="gem-c-contents-list-with-body__link-wrapper gem-c-contents-list-with-body__sticky-element--enabled">
+    
+      <div class="gem-c-contents-list-with-body__link-container">
+        <a class="govuk-link gem-c-back-to-top-link govuk-!-display-none-print" href="#contents">
+          <svg class="gem-c-back-to-top-link__icon" xmlns="http://www.w3.org/2000/svg" width="13" height="17" viewBox="0 0 13 17" aria-hidden="true" focusable="false">
+            <path fill="currentColor" d="M6.5 0L0 6.5 1.4 8l4-4v12.7h2V4l4.3 4L13 6.4z"></path>
+          </svg>
+          Contents
+        </a>
+      </div>
+
+    </div> -->
+
+  </div>
+
+</div>
+{% endblock %}

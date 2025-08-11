@@ -5,6 +5,9 @@
 
 // Add extra styles here
 
+// Components that aren't in GOV.UK Frontend
+@import "components/cards";
+
 /* Override to force pages using the unbranded template to fill the page height */
 .unbranded-fill-page {
   height: 100%;
