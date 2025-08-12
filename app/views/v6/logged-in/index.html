@@ -9,7 +9,7 @@
   }
   
   .govuk-service-navigation__link-change {
-    padding-left: 10px;
+    margin-left: 10px;
   }
 
   /* The 'Menu' component used on GOV.UK (https://www.gov.uk) */
@@ -71,7 +71,84 @@
       line-height: 1.5263157895;
       font-size: 1.1875rem;
     }
-  }  
+  }
+
+
+
+  .gem-c-layout-super-navigation-header__navigation-top-toggle-button {
+    font-family: "GDS Transport", arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-decoration: underline;
+    text-decoration-thickness: max(1px, .0625rem);
+    text-underline-offset: 0.1578em;
+  }
+  @media print {
+    .gem-c-layout-super-navigation-header__navigation-top-toggle-button {
+      font-family: sans-serif;
+    }
+  }
+  /* .gem-c-layout-super-navigation-header__navigation-top-toggle-button:hover {
+    text-decoration-thickness: max(3px, .1875rem, .12em);
+    -webkit-text-decoration-skip-ink: none;
+    text-decoration-skip-ink: none;
+    -webkit-text-decoration-skip: none;
+    text-decoration-skip: none;
+  } */
+  .gem-c-layout-super-navigation-header__navigation-top-toggle-button:focus {
+    outline: 3px solid transparent;
+    color: #0b0c0c;
+    background-color: #ffdd00;
+    box-shadow: 0 -2px #ffdd00, 0 4px #0b0c0c;
+    text-decoration: none;
+  }
+  @supports not (text-wrap: balance) {
+    .gem-c-layout-super-navigation-header__navigation-top-toggle-button:focus {
+      -webkit-box-decoration-break: clone;
+      box-decoration-break: clone;
+    }
+  }
+  .gem-c-layout-super-navigation-header__navigation-top-toggle-button:not(:hover):not(:active) {
+    text-decoration: none;
+  }
+  .gem-c-layout-super-navigation-header__navigation-top-toggle-button:link {
+    color: #1d70b8;
+  }
+  .gem-c-layout-super-navigation-header__navigation-top-toggle-button:visited {
+    color: #1d70b8;
+  }
+  .gem-c-layout-super-navigation-header__navigation-top-toggle-button:hover {
+    color: #003078;
+  }
+  .gem-c-layout-super-navigation-header__navigation-top-toggle-button:active {
+    color: #0b0c0c;
+  }
+  .gem-c-layout-super-navigation-header__navigation-top-toggle-button:focus {
+    color: #0b0c0c;
+  }
+  .gem-c-layout-super-navigation-header__navigation-top-toggle-button:not(:hover):not(:focus) {
+    color: #1a65a6;
+  }
+
+
+  @media (max-width: 40.0525em) {
+    .gem-c-layout-super-navigation-header__navigation-top-toggle-button:hover {
+      margin-left: -15px;
+      padding-left: 10px;
+      border-left-width: 5px;
+    }
+  }
+  @media (min-width: 40.0625em) {
+    .gem-c-layout-super-navigation-header__navigation-top-toggle-button:hover {
+      padding-bottom: 15px;
+      border-bottom-width: 5px;
+    }
+    .gem-c-layout-super-navigation-header__navigation-top-toggle-button:hover {
+      padding-bottom: 10px;
+    }
+  }
+
+
 
   /* Main service 'Menu' section  */
   .gem-c-layout-super-navigation-header__navigation-dropdown-menu {
