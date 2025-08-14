@@ -14,12 +14,13 @@
   margin-left: 10px;
 }
 
+.govuk-service-navigation__item-end {
+  margin-right: 15px;
+}
+
 /* The 'Menu' component used on GOV.UK (https://www.gov.uk) */
 
 /* Link */
-.gem-c-layout-super-navigation-header__navigation-item-link {
-  padding-right: 15px;
-}
 
 /* Button (:before) */
 .gem-c-layout-super-navigation-header__navigation-top-toggle-button .gem-c-layout-super-navigation-header__navigation-top-toggle-button-inner {
