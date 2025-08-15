@@ -1,6 +1,6 @@
 {% extends "v6/layouts/logged-in-change-location.html" %}
 
-{% set pageName = "Change care provider location" %}
+{% set pageName = "Select care provider location" %}
 
 {% block beforeContent %}
 <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
@@ -17,6 +17,7 @@
         <h1 class="govuk-label-wrapper">
           <label class="govuk-label govuk-label--xl govuk-!-margin-bottom-9" for="careHome">{{pageName}}</label>
         </h1>
+        <p class="govuk-body">[The location you select...]</p>
 
         <div id="la-hint" class="govuk-hint">
           Start typing for suggestions.
