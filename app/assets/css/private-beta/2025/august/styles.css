@@ -3,17 +3,6 @@
   * Global service pages (Get adult social care data)
 *****/
 
-/* Fix to address the lack of GOV.UK Design System (Frontend) CSS classes being applied across all HTML DOM elements */
-h1, h2, h3, p, ul, ol {
-  font-family: "GDS Transport", arial, sans-serif;
-}
-
-p, ul, ol {
-  font-size: 1.1875rem;
-  line-height: 1.3157894737;
-  color: #0b0c0c
-}
-
 /* Expansion on the GOV.UK Design System service navigation component https://design-system.service.gov.uk/components/service-navigation) to include the recommended 'Sign out' button (https://govuk-frontend-review.herokuapp.com/full-page-examples/companies-you-follow-slot) */
 
 /* When the 'Sign out' link is with other items */
@@ -93,9 +82,15 @@ p, ul, ol {
 .govuk-footer__inline-list {
   margin-bottom: 0;
 }
+
+.govuk-footer__inline-list-item {
+  margin-bottom: 0;
+}
+
 .govuk-footer__licence-logo {
   display: none;
 }
+
 .govuk-footer__licence-description {
   display: none;
 }
