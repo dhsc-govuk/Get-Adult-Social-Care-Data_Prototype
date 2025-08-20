@@ -1,0 +1,47 @@
+{% extends "v6/layouts/logged-in-select-location.html" %}
+
+{% set pageName = "Select care provider location" %}
+
+{% block beforeContent %}
+<a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-two-thirds">
+
+    <form action="/v6/signed-in/home" method="post" novalidate>
+
+      <div class="govuk-form-group">
+        <h1 class="govuk-label-wrapper">
+          <label class="govuk-label govuk-label--xl govuk-!-margin-bottom-9" for="careHome">{{pageName}}</label>
+        </h1>
+        <p class="govuk-body">[The location you select...]</p>
+
+        <div id="la-hint" class="govuk-hint">
+          Start typing for suggestions.
+        </div>
+
+        <select class="govuk-select" id="careHome" name="careHome" aria-describedby="careHome-hint" data-module="autocomplete" data-autoselect="" data-display-menu="" data-min-length="" data-show-all-values="" data-show-no-options-found="">
+          <option value="" selected="" disabled="">Select an option</option>  
+          <option value="Apple Farm Care Home"{% if data.careHome == 'Apple Farm Care Home' %} selected{% endif %}>Apple Farm Care Home</option>
+          <option value="Greenfields Care Home"{% if data.careHome == 'Greenfields Care Home' %} selected{% endif %}>Greenfields Care Home</option>
+          <option value="Lily Hill Care Home"{% if data.careHome == 'Lily Hill Care Home' %} selected{% endif %}>Lily Hill Care Home</option>
+          <option value="Shoggins Care Home"{% if data.careHome == 'Shoggins Care Home' %} selected{% endif %}>Shoggins Care Home</option>
+          <option value="Strawberry Hill Care Home"{% if data.careHome == 'Strawberry Hill Care Home' %} selected{% endif %}>Strawberry Hill Care Home</option>
+          <option value="Waterfall Care Home"{% if data.careHome == 'Waterfall Care Home' %} selected{% endif %}>Waterfall Care Home</option>
+        </select>
+      </div>
+
+      <div class="govuk-button-group">
+        <button type="submit" class="govuk-button" data-module="govuk-button">Apply changes</button>
+        <a href="javascript:window.history.back()" class="govuk-link">Cancel and go back</a>
+      </div>
+
+    </form>
+
+  </div>
+
+</div>
+{% endblock %}
