@@ -3,7 +3,14 @@
 {% set pageName = "Residential care" %}
 
 {% block beforeContent %}
-<a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{{ govukBreadcrumbs({
+  items: [
+    {
+      text: "Home",
+      href: "../../home"
+    }
+  ]
+}) }}
 {% endblock %}
 
 {% block content %}
@@ -11,14 +18,7 @@
 
   <div class="govuk-grid-column-two-thirds">
     <h1 class="govuk-heading-xl">{{pageName}}</h1>
-    <p class="govuk-body-l">[Topic introduction text block]</p>
-  </div>
-
-</div>
-
-<div class="govuk-grid-row">
-
-  <div class="govuk-grid-column-full">
+    <p class="govuk-body-l">Topic introduction text block.</p>
 
     <div class="gem-c-cards">
       <ul class="gem-c-cards__list gem-c-cards__list--one-column">
