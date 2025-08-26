@@ -96,16 +96,16 @@
 
       <div class="govuk-service-navigation__container">      
         <span class="govuk-service-navigation__service-name">
-          <a href="/v6/logged-in/index" class="govuk-service-navigation__link">Get adult social care data</a>
+          <a href="/v6/signed-in/home" class="govuk-service-navigation__link">Get adult social care data</a>
         </span>
 
         <nav aria-label="Menu" class="govuk-service-navigation__wrapper">
           <ul class="govuk-service-navigation__list" id="navigation">
             <li class="govuk-service-navigation__item govuk-service-navigation__item-start">
-              {{data.careHome or 'Greenfields Care Home'}} <a class="govuk-service-navigation__link govuk-service-navigation__link-change" href="/v6/logged-in/change-location?careHome={{data.careHome or 'Greenfields Care Home'}}">Change</a>
+              {{data.careHome or 'Greenfields Care Home'}} <a class="govuk-service-navigation__link govuk-service-navigation__link-change" href="/v6/signed-in/select-location?careHome={{data.careHome or 'Greenfields Care Home'}}">Change</a>
             </li>
             <li class="govuk-service-navigation__item govuk-service-navigation__item-end">
-              <a href="/v6/logged-in/menu" class="govuk-service-navigation__link non-javascript" aria-hidden="false">Menu</a>
+              <a href="/v6/signed-in/menu" class="govuk-service-navigation__link non-javascript" aria-hidden="false">Menu</a>
               <button aria-controls="super-navigation-menu" aria-expanded="false" aria-label="Show navigation menu" class="gem-c-layout-super-navigation-header__navigation-top-toggle-button javascript-only" data-text-for-hide="Hide navigation menu" data-text-for-show="Show navigation menu" data-toggle-desktop-group="top" data-toggle-mobile-group="top" id="super-navigation-menu-toggle" type="button" aria-hidden="true" hidden="hidden">
                 <span class="gem-c-layout-super-navigation-header__navigation-top-toggle-button-inner">Menu</span>
               </button>
@@ -125,43 +125,23 @@
       
       <div class="govuk-grid-row gem-c-layout-super-navigation-header__navigation-items">
 
-        <div class="govuk-grid-column-two-thirds-from-desktop gem-c-layout-super-navigation-header__column--services-and-information">
+        <div class="govuk-grid-column-two-thirds-from-desktop">
           <h3 class="govuk-heading-m gem-c-layout-super-navigation-header__column-header">Topics</h3>
-          <ul class="gem-c-layout-super-navigation-header__navigation-second-items gem-c-layout-super-navigation-header__navigation-second-items--services-and-information">
-            <!-- <li class="gem-c-layout-super-navigation-header__dropdown-list-item">
-              <a class="govuk-link gem-c-layout-super-navigation-header__navigation-second-item-link" href="#">Care home capacity</a>
-            </li>
+          <ul class="gem-c-layout-super-navigation-header__navigation-second-items gem-c-layout-super-navigation-header__navigation-second-items--topics">
             <li class="gem-c-layout-super-navigation-header__dropdown-list-item">
-              <a class="govuk-link gem-c-layout-super-navigation-header__navigation-second-item-link" href="#">Domiciliary care capacity data</a>
-            </li>
-            <li class="gem-c-layout-super-navigation-header__dropdown-list-item">
-              <a class="govuk-link gem-c-layout-super-navigation-header__navigation-second-item-link" href="#">Current population needs</a>
-            </li>
-            <li class="gem-c-layout-super-navigation-header__dropdown-list-item">
-              <a class="govuk-link gem-c-layout-super-navigation-header__navigation-second-item-link" href="#">Future population needs</a>
-            </li> -->
-            <li class="gem-c-layout-super-navigation-header__dropdown-list-item">
-              <a class="govuk-link gem-c-layout-super-navigation-header__navigation-second-item-link gem-c-layout-super-navigation-header__navigation-second-item-link--with-description" href="#">Topic page 1</a>
+              <a class="govuk-link gem-c-layout-super-navigation-header__navigation-second-item-link gem-c-layout-super-navigation-header__navigation-second-item-link--with-description" href="/v6/signed-in/topics/population-needs/subtopics">Population needs</a>
               <p class="govuk-body-s gem-c-layout-super-navigation-header__navigation-second-item-description">Summary teaser (max 12 words) on information available for this topic.</p>
             </li>
             <li class="gem-c-layout-super-navigation-header__dropdown-list-item">
-                <a class="govuk-link gem-c-layout-super-navigation-header__navigation-second-item-link gem-c-layout-super-navigation-header__navigation-second-item-link--with-description" href="#">Topic page 2</a>
+                <a class="govuk-link gem-c-layout-super-navigation-header__navigation-second-item-link gem-c-layout-super-navigation-header__navigation-second-item-link--with-description" href="/v6/signed-in/topics/community-social-care/subtopics">Community social care</a>
                 <p class="govuk-body-s gem-c-layout-super-navigation-header__navigation-second-item-description">Summary teaser (max 12 words) on information available for this topic.</p>
             </li>
             <li class="gem-c-layout-super-navigation-header__dropdown-list-item">
-                <a class="govuk-link gem-c-layout-super-navigation-header__navigation-second-item-link gem-c-layout-super-navigation-header__navigation-second-item-link--with-description" href="#">Topic page 3</a>
+                <a class="govuk-link gem-c-layout-super-navigation-header__navigation-second-item-link gem-c-layout-super-navigation-header__navigation-second-item-link--with-description" href="/v6/signed-in/topics/residential-care/subtopics">Residential care</a>
                 <p class="govuk-body-s gem-c-layout-super-navigation-header__navigation-second-item-description">Summary teaser (max 12 words) on information available for this topic.</p>
             </li>
             <li class="gem-c-layout-super-navigation-header__dropdown-list-item">
-                <a class="govuk-link gem-c-layout-super-navigation-header__navigation-second-item-link gem-c-layout-super-navigation-header__navigation-second-item-link--with-description" href="#">Topic page 4</a>
-                <p class="govuk-body-s gem-c-layout-super-navigation-header__navigation-second-item-description">Summary teaser (max 12 words) on information available for this topic.</p>
-            </li>
-            <li class="gem-c-layout-super-navigation-header__dropdown-list-item">
-                <a class="govuk-link gem-c-layout-super-navigation-header__navigation-second-item-link gem-c-layout-super-navigation-header__navigation-second-item-link--with-description" href="#">Topic page 5</a>
-                <p class="govuk-body-s gem-c-layout-super-navigation-header__navigation-second-item-description">Summary teaser (max 12 words) on information available for this topic.</p>
-            </li>
-            <li class="gem-c-layout-super-navigation-header__dropdown-list-item">
-                <a class="govuk-link gem-c-layout-super-navigation-header__navigation-second-item-link gem-c-layout-super-navigation-header__navigation-second-item-link--with-description" href="#">Topic page {n}</a>
+                <a class="govuk-link gem-c-layout-super-navigation-header__navigation-second-item-link gem-c-layout-super-navigation-header__navigation-second-item-link--with-description" href="/v6/signed-in/topics/financial-spend-and-unpaid-care/subtopics">Financial spend and unpaid care</a>
                 <p class="govuk-body-s gem-c-layout-super-navigation-header__navigation-second-item-description">Summary teaser (max 12 words) on information available for this topic.</p>
             </li>
           </ul>
@@ -171,7 +151,7 @@
           <h3 class="govuk-heading-m gem-c-layout-super-navigation-header__column-header">Service information</h3>
           <ul class="gem-c-layout-super-navigation-header__navigation-second-items gem-c-layout-super-navigation-header__navigation-second-items--government-activity">
             <li class="gem-c-layout-super-navigation-header__dropdown-list-item">
-              <a class="govuk-link gem-c-layout-super-navigation-header__navigation-second-item-link gem-c-layout-super-navigation-header__navigation-second-item-link--with-description" href="#">Homepage</a>
+              <a class="govuk-link gem-c-layout-super-navigation-header__navigation-second-item-link gem-c-layout-super-navigation-header__navigation-second-item-link--with-description" href="/v6/signed-in/home">Homepage</a>
               <p class="govuk-body-s gem-c-layout-super-navigation-header__navigation-second-item-description">Short description (max 5 words)</p>
             </li>
             <li class="gem-c-layout-super-navigation-header__dropdown-list-item">
@@ -183,7 +163,7 @@
               <p class="govuk-body-s gem-c-layout-super-navigation-header__navigation-second-item-description">Short description (max 5 words)</p>
             </li>
             <li class="gem-c-layout-super-navigation-header__dropdown-list-item">
-              <a class="govuk-link gem-c-layout-super-navigation-header__navigation-second-item-link gem-c-layout-super-navigation-header__navigation-second-item-link--with-description" href="#">User guide</a>
+              <a class="govuk-link gem-c-layout-super-navigation-header__navigation-second-item-link gem-c-layout-super-navigation-header__navigation-second-item-link--with-description" href="/v6/service-information/user-guide">User guide</a>
               <p class="govuk-body-s gem-c-layout-super-navigation-header__navigation-second-item-description">Short description (max 5 words)</p>
             </li>
           </ul>
@@ -218,7 +198,7 @@
   meta: {
     items: [
       {
-        href: "/v6/help/user-guide",
+        href: "/v6/service-information/user-guide",
         text: "User guide"
       },
       {
@@ -226,7 +206,7 @@
         text: "Feedback"
       },
       {
-        href: "/v6/system/privacy-policy",
+        href: "/v6/service-information/privacy-policy",
         text: "Privacy"
       }
     ]

@@ -1,0 +1,71 @@
+{% extends "v6/layouts/logged-in-menu.html" %}
+
+{% set pageName = "Population needs" %}
+
+{% block beforeContent %}
+{{ govukBreadcrumbs({
+  items: [
+    {
+      text: "Home",
+      href: "../../home"
+    }
+  ]
+}) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">{{pageName}}</h1>
+    <p class="govuk-body-l">Topic introduction text block.</p>
+
+    <div class="gem-c-cards">
+      <ul class="gem-c-cards__list gem-c-cards__list--one-column">
+        <li class="gem-c-cards__list-item">
+
+          <div class="gem-c-cards__list-item-wrapper">
+            <h2 class="gem-c-cards__sub-heading govuk-heading-s">
+              <a class="govuk-link gem-c-cards__link gem-c-force-print-link-styles" href="#" data-message="Sorry, this hasn’t been designed yet">Population age and size</a>
+            </h2>
+            <p class="govuk-body gem-c-cards__description">Summary teaser (max 12 words) on information available for this subtopic.</p>
+          </div>
+        
+        </li>
+        <li class="gem-c-cards__list-item">
+
+          <div class="gem-c-cards__list-item-wrapper">
+            <h2 class="gem-c-cards__sub-heading govuk-heading-s">
+              <a class="govuk-link gem-c-cards__link gem-c-force-print-link-styles" href="#" data-message="Sorry, this hasn’t been designed yet">Household composition and economic factors</a>
+            </h2>
+            <p class="govuk-body gem-c-cards__description">Summary teaser (max 12 words) on information available for this subtopic.</p>
+          </div>
+        
+        </li>
+        <li class="gem-c-cards__list-item">
+
+          <div class="gem-c-cards__list-item-wrapper">
+            <h2 class="gem-c-cards__sub-heading govuk-heading-s">
+              <a class="govuk-link gem-c-cards__link gem-c-force-print-link-styles" href="#" data-message="Sorry, this hasn’t been designed yet">Disability prevalence and reasons for people to access long term support</a>
+            </h2>
+            <p class="govuk-body gem-c-cards__description">Summary teaser (max 12 words) on information available for this subtopic.</p>
+          </div>
+        
+        </li>
+        <li class="gem-c-cards__list-item">
+
+          <div class="gem-c-cards__list-item-wrapper">
+            <h2 class="gem-c-cards__sub-heading govuk-heading-s">
+              <a class="govuk-link gem-c-cards__link gem-c-force-print-link-styles" href="#" data-message="Sorry, this hasn’t been designed yet">Dementia prevalence and estimated diagnosis rate</a>
+            </h2>
+            <p class="govuk-body gem-c-cards__description">Summary teaser (max 12 words) on information available for this subtopic.</p>
+          </div>
+        
+        </li>
+      </ul>
+    </div>
+
+  </div>
+
+</div>
+{% endblock %}

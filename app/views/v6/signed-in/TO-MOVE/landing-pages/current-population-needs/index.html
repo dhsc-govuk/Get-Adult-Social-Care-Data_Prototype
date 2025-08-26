@@ -1,0 +1,579 @@
+{% extends "v6/layouts/logged-in.html" %}
+
+{% set pageName = "Current population needs" %}
+
+{% block beforeContent %}
+<a href="../../signed-in/home" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+<style>
+
+  /* Contents box styling */
+  .contents-box {
+    background-color: #f3f2f1; /* GOV.UK light grey */
+    padding: 20px;
+    margin-bottom: 20px;
+    /* max-width: 63%; Adjusted width for better spacing */
+  }
+  
+  /* Remove default list indentation */
+  .govuk-list--number {
+    counter-reset: main-counter;
+    list-style-type: none;
+    padding-left: 0; /* Remove padding */
+    margin-left: 0; /* Remove margin */
+  }
+  
+  .govuk-list--number > li {
+    counter-increment: main-counter;
+  }
+  
+  .govuk-list--number > li::before {
+    content: counter(main-counter) ". ";
+    font-weight: normal;
+  }
+  
+  /* Styling for the nested (child) unordered list */
+  .nested-list {
+    counter-reset: sub-counter;
+    list-style-type: none;
+    padding-left: 1.5rem; /* Align nested items properly */
+    margin-left: 0;
+  }
+  
+  .nested-list li {
+    counter-increment: sub-counter;
+  }
+  
+  .nested-list li::before {
+    content: counter(main-counter) ". " counter(sub-counter) ". ";
+    font-weight: normal;
+  }
+
+</style>
+
+<div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-two-thirds">
+        <!-- <span class="govuk-caption-l">Demand and capacity</span> -->
+        <h1 class="govuk-heading-xl">{{pageName}}</h1>
+        <p class="govuk-body-l">Assess data indicators on a range of factors shaping current population needs for adult social care.</p>
+
+        <div class="contents-box">
+            <h2 class="govuk-heading-m">Contents</h2>
+            <ul class="govuk-list govuk-list--bullet">
+                <li><a href="#preferences" class="govuk-link">Choose your data preferences</a>
+                <li><a href="#factors" class="govuk-link">Demographic factors driving population needs</a></li>
+                <li><a href="#population-age" class="govuk-link">Population size and age</a></li>
+                <li><a href="#economic-factors" class="govuk-link">Economic factors</a></li>
+                <li><a href="#household-composition" class="govuk-link">Household composition</a></li>
+                <li><a href="#health-conditions" class="govuk-link">Long term health conditions and disability</a></li>
+                <li><a href="#dementia" class="govuk-link">Dementia</a></li>
+                <li><a href="#indicators" class="govuk-link">Indicator definitions and data sources</a></li>
+                <li><a href="#market-position-statement" class="govuk-link">Find more information on your local care market</a></li>
+            </ul>
+        </div>
+        
+            <h2 id="preferences" class="govuk-heading-l govuk-!-margin-top-9">Choose your data preferences</h2>
+            <p class="govuk-body">Change these settings to update the data shown in the tables on this page.</p>
+            <dl class="govuk-summary-list">
+
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">Your active location</dt>
+                    <dd class="govuk-summary-list__value">Greenfields Care, Suffolk</dd>
+                    <dd class="govuk-summary-list__actions">
+                        <!-- <a class="govuk-link" href="present-demand-locations">Change<span class="govuk-visually-hidden"> name</span></a> -->
+                        <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> name</span></a>
+                    </dd>
+                </div>
+
+                <div class="govuk-summary-list__row govuk-summary-list__row--no-actions">
+                    <dt class="govuk-summary-list__key">Other available locations</dt>
+                    <dd class="govuk-summary-list__value">
+                        Woodlands Care, Suffolk
+                        <br>
+                        Seafront Villas, Norfolk
+                    </dd>
+                </div>
+
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">Local authority</dt>
+                    <dd class="govuk-summary-list__value">Suffolk</dd>
+                    <dd class="govuk-summary-list__actions">
+                        <!-- <a class="govuk-link" href="select-la">Change<span class="govuk-visually-hidden"> name</span></a> -->
+                        <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> name</span></a>
+                    </dd>
+                </div>
+
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">Service user age</dt>
+                    <dd class="govuk-summary-list__value">Aged 65 and over</dd>
+                    <dd class="govuk-summary-list__actions">
+                        <!-- <a class="govuk-link" href="age-range">Change<span class="govuk-visually-hidden"> name</span></a> -->
+                        <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> name</span></a>
+                    </dd>
+                </div>
+
+            </dl>
+
+    <h2 id="factors" class="govuk-heading-l govuk-!-margin-top-9">Demographic factors driving population needs</h2>
+    <p class="govuk-body">Population needs for adult social care are shaped by a range of factors including age, income levels, employment status, disability, long-term health conditions, and household composition.</p>
+    <p class="govuk-body">Areas with higher proportions of older adults, people with disabilities, or long-term health conditions typically experience greater pressure on services.</p>
+    
+    <!-- <div class="govuk-inset-text">
+      <strong>Tip:</strong> Use the Explore more data option provided for each table to view smaller geographical areas than local authority level, where available.]
+    </div> -->
+    
+  </div>
+
+</div>
+
+<div class="govuk-grid-row">
+  
+  <div class="govuk-grid-column-two-thirds">
+    <h2 id="population-age" class="govuk-heading-l govuk-!-margin-top-9">Population size and age</h2>
+    <p class="govuk-body">Learn about the definition, sourcing of data and methodology for the indicators <a href="../../help/population-size.html" class="govuk-link">population size</a> and <a href="../../help/population-age.html" class="govuk-link">percentage of population in age group</a>.</p>
+    <a href="select-la" class="govuk-button govuk-button--secondary govuk-!-margin-top-5" type="submit" style="margin-right: 1em;" data-module="govuk-button">Change local authority</a>
+  </div>
+        
+  <div class="govuk-grid-column-full">
+
+    <!-- <table class="govuk-table">
+      <caption class="govuk-table__caption govuk-table__caption--m">Table comparing population size and age in Suffolk to regional and national statistics</caption>
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header govuk-!-width-one-third">Area</th>
+          <th scope="col" class="govuk-table__header govuk-table__header--numeric">Aged 18 to 64</th>
+          <th scope="col" class="govuk-table__header govuk-table__header--numeric">Aged 65 and over</th>
+          <th scope="col" class="govuk-table__header govuk-table__header--numeric">Aged 75 and over</th>
+          <th scope="col" class="govuk-table__header govuk-table__header--numeric">Aged 85 and over</th>
+          <th scope="col" class="govuk-table__header govuk-table__header--numeric">Total adult population</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Suffolk local authority</th>
+          <td class="govuk-table__cell govuk-table__cell--numeric">57.0%</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric">23.1%</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric">11.5%</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric">3.1%</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">173,241</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">East of England</th>
+          <td class="govuk-table__cell govuk-table__cell--numeric">58.4%</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric">23.0%</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric">12.2%</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric">2.8%</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric">5,183,241</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">England</th>
+          <td class="govuk-table__cell govuk-table__cell--numeric">61.4%</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric">19.8%</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric">9.7%</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric">2.5%</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric">55,286,249</td>
+        </tr>
+      </tbody>
+    </table> -->
+    <table class="govuk-table">
+      <caption class="govuk-table__caption govuk-table__caption--m">Table comparing population size and age in Suffolk to regional and national statistics</caption>
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header govuk-!-width-one-third">Indicator</th>
+          <th scope="col" class="govuk-table__header govuk-table__header--numeric">Suffolk local authority</th>
+          <th scope="col" class="govuk-table__header govuk-table__header--numeric">East of England</th>
+          <th scope="col" class="govuk-table__header govuk-table__header--numeric">England</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Aged 18 to 64</th>
+          <td class="govuk-table__cell govuk-table__cell--numeric">57.0%</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric">58.4%</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric">61.4%</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Aged 65 and over</th>
+          <td class="govuk-table__cell govuk-table__cell--numeric">23.1%</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric">23.0%</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric">19.8%</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Aged 75 and over</th>
+          <td class="govuk-table__cell govuk-table__cell--numeric">11.5%</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric">12.2%</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric">9.7%</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Aged 85 and over</th>
+          <td class="govuk-table__cell govuk-table__cell--numeric">3.1%</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric">2.8%</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric">2.5%</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Total adult population</th>
+          <td class="govuk-table__cell govuk-table__cell--numeric">173,241</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric">5,183,241</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric">55,286,249</td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+
+</div>
+
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+            <p class="govuk-body">
+                <strong>Table data information</strong><br /> Data sources: <a href="#" class="govuk-link" target="_blank" data-message="Sorry, this hasn’t been designed yet">Office for National Statistics (ONS)</a>
+                <br>
+                Last checked for updates: 5 February 2025<br />
+            </p>
+            <p class="govuk-body">
+                <a href="#" class="govuk-link" data-message="Sorry, this hasn’t been designed yet">Export table data (CSV, 658 KB)</a>
+            </p>
+            <h3 class="govuk-heading-m govuk-!-margin-top-7">Get more data on population age</h3>
+            <p class="govuk-body"></p>
+            <p class="govuk-body"><a href="../../data-pages/population-age/population-age" class="govuk-link">Explore more detailed data on population age</a>, including:</p>
+            <ol class="govuk-list govuk-list--bullet">
+                <li>an interactive map of England showing population age by percentage</a></li>
+                <li>a chart comparing population age groups across local authorities</li>
+                <li>a table with data on population age groups at local authority district level</li>
+            </ol>
+
+
+            <h2 id="economic-factors" class="govuk-heading-l govuk-!-margin-top-9">Economic factors</h2>
+            <a href="select-la" class="govuk-button govuk-button--secondary govuk-!-margin-top-5" type="submit" style="margin-right: 1em;" data-module="govuk-button">Change local authority</a>
+        </div>
+
+  <div class="govuk-grid-column-full">
+
+    <!-- <table class="govuk-table">
+      <caption class="govuk-table__caption govuk-table__caption--m">Table comparing economic indicators in Suffolk to regional and national statistics</caption>
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header govuk-!-width-one-third">Area</th>
+          <th scope="col" class="govuk-table__header govuk-table__header--numeric">Households that are deprived in 4 dimensions</th>
+          <th scope="col" class="govuk-table__header govuk-table__header--numeric">Households where the property is owned outright</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Suffolk local authority</th>
+          <td class="govuk-table__cell govuk-table__cell--numeric">14.2%</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric">23%</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">East of England</th>
+          <td class="govuk-table__cell govuk-table__cell--numeric">9.3%</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric">27%</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">England</th>
+          <td class="govuk-table__cell govuk-table__cell--numeric">10.0%</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric">32%</td>
+        </tr>
+      </tbody>
+    </table> -->
+    <table class="govuk-table">
+      <caption class="govuk-table__caption govuk-table__caption--m">Table comparing economic indicators in Suffolk to regional and national statistics</caption>
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header govuk-!-width-one-third">Indicator</th>
+          <th scope="col" class="govuk-table__header govuk-table__header--numeric">Suffolk local authority</th>
+          <th scope="col" class="govuk-table__header govuk-table__header--numeric">East of England</th>
+          <th scope="col" class="govuk-table__header govuk-table__header--numeric">England</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Households that are deprived in 4 dimensions</th>
+          <td class="govuk-table__cell govuk-table__cell--numeric">14.2%</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric">9.3%</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric">10.0%</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Households where the property is owned outright</th>
+          <td class="govuk-table__cell govuk-table__cell--numeric">23%</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric">27%</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric">32%</td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+
+        <div class="govuk-grid-column-two-thirds">
+            <p class="govuk-body">
+                <strong>Table data information</strong><br /> Data sources: <a href="#" class="govuk-link" target="_blank" data-message="Sorry, this hasn’t been designed yet">Office for National Statistics (ONS)</a>
+                <br>
+                Last checked for updates: 5 February 2025<br />
+            </p>
+            <p class="govuk-body">
+                <a href="#" class="govuk-link" data-message="Sorry, this hasn’t been designed yet">Export table data (CSV, 658 KB)</a>
+            </p>
+            <!--h3 class="govuk-heading-s">Further information</h3>
+        <p class="govuk-body"><a href="#" class="govuk-link" data-message="Sorry, this hasn’t been designed yet">Explore more economic factors data</a></p> -->
+
+            <h2 id="household-composition" class="govuk-heading-l govuk-!-margin-top-9">Household composition</h2>
+            <a href="select-la" class="govuk-button govuk-button--secondary govuk-!-margin-top-5" type="submit" style="margin-right: 1em;" data-module="govuk-button">Change local authority</a>
+        </div>
+
+  <div class="govuk-grid-column-full">
+      
+    <!-- <table class="govuk-table">
+      <caption class="govuk-table__caption govuk-table__caption--m">Table comparing household composition in Suffolk to regional and national statistics</caption>
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header govuk-!-width-one-third">Indicator</th>
+          <th scope="col" class="govuk-table__header govuk-table__header--numeric">Suffolk local authority</th>
+          <th scope="col" class="govuk-table__header govuk-table__header--numeric">East of England</th>
+          <th scope="col" class="govuk-table__header govuk-table__header--numeric">England</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Percentage of one person households where the person is aged 65 or over</th>
+          <td class="govuk-table__cell govuk-table__cell--numeric">43.0%</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric">35.9%</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric">42.7%</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Percentage of people aged 5 or over who provide unpaid care</th>
+          <td class="govuk-table__cell govuk-table__cell--numeric">7.8%</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric">7.0%</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric">8.9%</td>
+        </tr>
+      </tbody>
+    </table> -->
+    <table class="govuk-table">
+      <caption class="govuk-table__caption govuk-table__caption--m">Table comparing household composition in Suffolk to regional and national statistics</caption>
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header govuk-!-width-one-third">Indicator</th>
+          <th scope="col" class="govuk-table__header govuk-table__header--numeric">Suffolk local authority</th>
+          <th scope="col" class="govuk-table__header govuk-table__header--numeric">East of England</th>
+          <th scope="col" class="govuk-table__header govuk-table__header--numeric">England</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Percentage of one person households where the person is aged 65 or over</th>
+          <td class="govuk-table__cell govuk-table__cell--numeric">43.0%</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric">35.9%</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric">42.7%</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Percentage of people aged 5 or over who provide unpaid care</th>
+          <td class="govuk-table__cell govuk-table__cell--numeric">7.8%</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric">7.0%</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric">8.9%</td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+
+        <div class="govuk-grid-column-two-thirds">
+            <p class="govuk-body">
+                <strong>Table data information</strong><br /> Data sources: <a href="#" class="govuk-link" target="_blank" data-message="Sorry, this hasn’t been designed yet">Office for National Statistics (ONS)</a>
+                <br>
+                Last checked for updates: 5 February 2025<br />
+            </p>
+            <p class="govuk-body">
+                <a href="#" class="govuk-link" data-message="Sorry, this hasn’t been designed yet">Export table data (CSV, 658 KB)</a>
+            </p>
+
+
+            <h2 id="health-conditions" class="govuk-heading-l govuk-!-margin-top-9">Long term health conditions and disability</h2>
+            <p class="govuk-body">Learn about the definition, sourcing of data and methodology for the indicator <a href="../../help/disability-prevalence.html" class="govuk-link">disability prevalence</a>.</p>
+            <a href="select-la" class="govuk-button govuk-button--secondary govuk-!-margin-top-5" type="submit" style="margin-right: 1em;" data-module="govuk-button">Change local authority</a>
+        </div>
+
+
+  <div class="govuk-grid-column-full">
+    
+    <!-- <table class="govuk-table">
+      <caption class="govuk-table__caption govuk-table__caption--m">Table comparing long term health conditions and disability prevalence in Suffolk to regional and national statistics</caption>
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header govuk-!-width-one-third">Area</th>
+          <th scope="col" class="govuk-table__header govuk-table__header--numeric">People who are disabled under the Equality Act</th>
+          <th scope="col" class="govuk-table__header govuk-table__header--numeric">People with bad or very bad health conditions</th>
+          <th scope="col" class="govuk-table__header govuk-table__header--numeric">Learning disability prevalence</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Suffolk local authority</th>
+          <td class="govuk-table__cell govuk-table__cell--numeric">17.8%</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric">13.0%</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric">2.0%</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">East of England</th>
+          <td class="govuk-table__cell govuk-table__cell--numeric">17.5%</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric">14.6%</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric">2.6%</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">England</th>
+          <td class="govuk-table__cell govuk-table__cell--numeric">17.5%</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric">14.0%</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric">2.2%</td>
+        </tr>
+      </tbody>
+    </table> -->
+    <table class="govuk-table">
+      <caption class="govuk-table__caption govuk-table__caption--m">Table comparing long term health conditions and disability prevalence in Suffolk to regional and national statistics</caption>
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header govuk-!-width-one-third">Indicator</th>
+          <th scope="col" class="govuk-table__header govuk-table__header--numeric">Suffolk local authority</th>
+          <th scope="col" class="govuk-table__header govuk-table__header--numeric">East of England</th>
+          <th scope="col" class="govuk-table__header govuk-table__header--numeric">England</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">People who are disabled under the Equality Act</th>
+          <td class="govuk-table__cell govuk-table__cell--numeric">17.8%</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric">17.5%</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric">17.5%</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">People with bad or very bad health conditions</th>
+          <td class="govuk-table__cell govuk-table__cell--numeric">13.0%</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric">14.6%</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric">14.0%</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Learning disability prevalence</th>
+          <td class="govuk-table__cell govuk-table__cell--numeric">2.0%</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric">2.6%</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric">2.2%</td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+
+        <div class="govuk-grid-column-two-thirds">
+            <p class="govuk-body">
+                <strong>Table data information</strong><br /> Data source: <a href="#" class="govuk-link" target="_blank" data-message="Sorry, this hasn’t been designed yet">Fingertips public health profiles (DHSC)</a>
+                <br>
+                Last checked for updates: 5 February 2025<br />
+            </p>
+            <p class="govuk-body">
+                <a href="#" class="govuk-link" data-message="Sorry, this hasn’t been designed yet">Export table data (CSV, 658 KB)</a>
+            </p>
+
+            <h2 id="dementia" class="govuk-heading-l govuk-!-margin-top-9">Dementia</h2>
+            <p class="govuk-body">Learn about the definition, sourcing of data and methodology for the indicator <a href="../../help/disability-prevalence.html" class="govuk-link">disability prevalence</a>.</p>
+            <a href="select-la" class="govuk-button govuk-button--secondary govuk-!-margin-top-5" type="submit" style="margin-right: 1em;" data-module="govuk-button">Change local authority</a>
+
+        </div>
+
+
+  <div class="govuk-grid-column-full">
+      
+    <!-- <table class="govuk-table">
+      <caption class="govuk-table__caption govuk-table__caption--m">Table comparing dementia prevalence in Suffolk to regional and national statistics</caption>
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header govuk-!-width-one-third">Area</th>
+          <th scope="col" class="govuk-table__header govuk-table__header--numeric">Registered dementia patients over 65 per 100,000 adult population</th>
+          <th scope="col" class="govuk-table__header govuk-table__header--numeric">Estimated number of people over 65 with dementia per 100,000 adult population</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Suffolk local authority</th>
+          <td class="govuk-table__cell govuk-table__cell--numeric">4,397</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric">7,700</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">East of England</th>
+          <td class="govuk-table__cell govuk-table__cell--numeric">4,216</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric">7,200</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">England</th>
+          <td class="govuk-table__cell govuk-table__cell--numeric">4,458</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric">7,400</td>
+        </tr>
+      </tbody>
+    </table> -->
+    <table class="govuk-table">
+      <caption class="govuk-table__caption govuk-table__caption--m">Table comparing dementia prevalence in Suffolk to regional and national statistics</caption>
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header govuk-!-width-one-third">Indicator</th>
+          <th scope="col" class="govuk-table__header govuk-table__header--numeric">Suffolk local authority</th>
+          <th scope="col" class="govuk-table__header govuk-table__header--numeric">East of England</th>
+          <th scope="col" class="govuk-table__header govuk-table__header--numeric">England</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Registered dementia patients over 65 per 100,000 adult population</th>
+          <td class="govuk-table__cell govuk-table__cell--numeric">4,397</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric">4,216</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric">4,458</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Estimated number of people over 65 with dementia per 100,000 adult population</th>
+          <td class="govuk-table__cell govuk-table__cell--numeric">7,700</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric">7,200</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric">7,400</td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+
+
+  <div class="govuk-grid-column-two-thirds">
+      <p class="govuk-body">
+          <strong>Table data information</strong><br /> Data source: <a href="#" class="govuk-link" target="_blank" data-message="Sorry, this hasn’t been designed yet">NHS Digital</a>
+          <br>
+          Last checked for updates: 5 July 2025<br />
+      </p>
+      <p class="govuk-body">
+          <a href="#" class="govuk-link" data-message="Sorry, this hasn’t been designed yet">Export table data (CSV, 658 KB)</a>
+      </p>
+
+
+
+
+
+
+
+    <h2 id="indicators" class="govuk-heading-l govuk-!-margin-top-9">Indicator definitions and data sources</h2>
+    <p class="govuk-body">Find out how each indicator is defined, sourced, and updated.</p>
+    <p class="govuk-body">Select an indicator to view detailed information:</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li><a href="../../help/population-size.html" class="govuk-link">Population size</a></li>
+      <li><a href="../../help/population-age.html" class="govuk-link">Percentage of population in age group</a></li>
+      <li><a href="../../help/disability-prevalence.html" class="govuk-link">Disability prevalence</a></li>
+    </ul>
+      
+    <h2 id="market-position-statement" class="govuk-heading-l govuk-!-margin-top-9">Find more information on your local care market</h2>
+    <p class="govuk-body"><a href="#" class="govuk-link" data-message="This link would take you to the Market Position Statement on the Suffolk local authority website.">Market Position Statement for Suffolk (opens in new tab)</a></p>
+    <p class="govuk-body">Most local authorities in England publish Market Position Statements (MPS) to help care providers understand the local care market.</p>
+    <p class="govuk-body">You can usually find these <abbr title="Market Position Statement">MPS</abbr> documents on local authority websites.</p>
+    <p class="govuk-body"><abbr title="Market Position Statement">MPS</abbr> documents include information on:</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>supply and demand in the local care market</li>
+      <li>forecasts of future supply and demand for adult social care services</li>
+      <li>how the local authority will support the local care market to meet demand</li>
+      <li>how the local authority will engage with care providers on challenges in the sector, such as funding pressures</li>
+    </ul>
+  </div>
+
+</div>
+{% endblock %}

@@ -101,10 +101,10 @@
 
         <nav aria-label="Menu" class="govuk-service-navigation__wrapper">
           <ul class="govuk-service-navigation__list" id="navigation">
-            <li class="govuk-service-navigation__item govuk-service-navigation__item-start">
+            <li class="govuk-service-navigation__item govuk-service-navigation__item--active govuk-service-navigation__item-start">
               {{data.careHome or 'Greenfields Care Home'}} <a class="govuk-service-navigation__link govuk-service-navigation__link-change" href="/v6/signed-in/select-location?careHome={{data.careHome or 'Greenfields Care Home'}}">Change</a>
             </li>
-            <li class="govuk-service-navigation__item govuk-service-navigation__item-end govuk-service-navigation__item--active">
+            <li class="govuk-service-navigation__item govuk-service-navigation__item-end">
               <a href="/v6/signed-in/menu" class="govuk-service-navigation__link non-javascript" aria-hidden="false">Menu</a>
               <button aria-controls="super-navigation-menu" aria-expanded="false" aria-label="Show navigation menu" class="gem-c-layout-super-navigation-header__navigation-top-toggle-button javascript-only" data-text-for-hide="Hide navigation menu" data-text-for-show="Show navigation menu" data-toggle-desktop-group="top" data-toggle-mobile-group="top" id="super-navigation-menu-toggle" type="button" aria-hidden="true" hidden="hidden">
                 <span class="gem-c-layout-super-navigation-header__navigation-top-toggle-button-inner">Menu</span>
@@ -223,4 +223,4 @@
   <script src="https://d3js.org/d3.v4.js"></script>
   <!-- Custom global jQuery and JavaScript for GASCD -->
   <script src="/public/javascripts/v6/custom-global-behaviour.js"></script>
-{% endblock %}v
+{% endblock %}

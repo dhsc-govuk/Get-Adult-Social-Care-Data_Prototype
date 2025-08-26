@@ -1,0 +1,148 @@
+{% extends "v6/layouts/logged-in.html" %}
+
+{% set pageName = "User guide" %}
+
+{% block beforeContent %}
+<a href="../signed-in/home" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+<style>
+
+  /* Contents box styling */
+  .contents-box {
+    background-color: #f3f2f1; /* GOV.UK light grey */
+    padding: 20px;
+    margin-bottom: 20px;
+    /* max-width: 63%; Adjusted width for better spacing */
+  }
+  
+  /* Remove default list indentation */
+  .govuk-list--number {
+    counter-reset: main-counter;
+    list-style-type: none;
+    padding-left: 0; /* Remove padding */
+    margin-left: 0; /* Remove margin */
+  }
+  
+  .govuk-list--number > li {
+    counter-increment: main-counter;
+  }
+  
+  .govuk-list--number > li::before {
+    content: counter(main-counter) ". ";
+    font-weight: normal;
+  }
+  
+  /* Styling for the nested (child) unordered list */
+  .nested-list {
+    counter-reset: sub-counter;
+    list-style-type: none;
+    padding-left: 1.5rem; /* Align nested items properly */
+    margin-left: 0;
+  }
+  
+  .nested-list li {
+    counter-increment: sub-counter;
+  }
+  
+  .nested-list li::before {
+    content: counter(main-counter) ". " counter(sub-counter) ". ";
+    font-weight: normal;
+  }
+
+</style>
+
+<div class="govuk-grid-row">
+  
+    <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-xl">User guide</h1>
+
+        <div class="contents-box">
+            <h2 class="govuk-heading-m">Contents</h2>
+            <ul class="govuk-list govuk-list--bullet">
+                <li><a href="#about" class="govuk-link">About this service</a></li>
+                <li><a href="#how-to-use" class="govuk-link">How you can use this service</a></li>
+                <li><a href="#data-sources" class="govuk-link">Data sources and accuracy</a></li>
+                <li><a href="#indicators" class="govuk-link">Data indicators used in the service</a></li>
+                <li><a href="#contact" class="govuk-link">Contact us</a></li>
+            </ul>
+        </div>
+
+        <h2 id="about" class="govuk-heading-m govuk-!-margin-top-9">About this service</h2>
+        <p class="govuk-body">Get adult social care data is a service providing access to a range of datasets relating to adult social care in England.</p>
+
+        <h2 class="govuk-heading-m govuk-!-margin-top-7" id="how-to-use">How you can use this service</h2>
+        <p class="govuk-body">You can use this service to:</p>
+        <ul class="govuk-list govuk-list--bullet">
+            <li>access local, regional and national data on adult social care capacity and population needs</li>
+            <li>filter and explore data - for example, by care type or local authority area</li>
+        </ul>
+
+        <!-- Removing this temporarily while assessing data restrictions agreements
+            
+            <h3 class="govuk-heading-s">Data sharing and re-use</h3>
+            <p class="govuk-body">Unless stated otherwise, you may re-use this information (excluding logos) free of charge in any format or medium, under the terms of the <a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" target="_blank">Open Government Licence v.3.0 (opens in new tab)</a>.</p>
+            <p class="govuk-body">If we have identified any third-party copyright information, you must get permission from the copyright holders to re-use it.</p>
+
+            <div class="govuk-warning-text">
+                <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+                <strong class="govuk-warning-text__text">
+                    <span class="govuk-visually-hidden">Warning</span>
+                    Any data from Capacity Tracker in this service is for private use only and must not be shared or published externally. By accessing this service, you agree to these conditions.
+                </strong>
+            </div>
+    -->
+        <h2 class="govuk-heading-m govuk-!-margin-top-7" id="data-sources">Data sources and accuracy</h2>
+        <p class="govuk-body">Public data sources include:</p>
+        <ul class="govuk-list govuk-list--bullet">
+            <li>Adult Social Care Statistics (Department for Health and Social Care)</li>
+            <li>Adult Social Care Outcomes Framework (ASCOF) (NHS England)</li>
+            <li>Adult Social Care Report (Department for Health and Social Care)</li>
+            <li>Care Quality Commission (CQC) Care Directory</li>
+            <li>Office for National Statistics collection</li>
+            <li>Short and Long Term Return (SALT) (NHS England)</li>
+        </ul>
+        <p class="govuk-body">Private data sources include:</p>
+        <ul class="govuk-list govuk-list--bullet">
+            <li>Capacity Tracker</li>
+            <li>Skills for Care</li>
+            <li>Client Level Data (CLD)</li>
+        </ul>
+        <p class="govuk-body">For further information on the datasets, check the official documentation from the data provider. You can find links to data providers in the sources listed with each table, chart and map visualisation in the service.</p>
+
+        <h3 class="govuk-heading-s">Accuracy of the data in the service</h3>
+        <p class="govuk-body">The service will be updated whenever new datasets are published.</p>
+        <p class="govuk-body">You might find gaps or variations in the data. This is due to differences in:</p>
+        <ul class="govuk-list govuk-list--bullet">
+            <li>coverage - some datasets may not include all local authorities or demographic groups</li>
+            <li>methodology - the way data is collected varies between datasets and this can make it difficult to make direct comparisons</li>
+            <li>data currency - there can be a delay between data collection and publication, also some datasets are updated less frequently</li>
+            <li>confidence levels - some indicators are based on sample data or estimates (these have been marked as estimates in the service)</li>
+        </ul>
+
+        <h2 class="govuk-heading-m govuk-!-margin-top-7" id="indicators">Data indicators used in the service</h2>
+        <p class="govuk-body">These pages contain detailed information about the data indicators used in the service:</p>
+        <ul class="govuk-list govuk-list--bullet">
+            <li><a href="../../help/beds-per-100000-adult-population.html" class="govuk-link">Adult social care beds per 100,000 adult population</a></li>
+            <li><a href="../../help/percentage-beds-occupied" class="govuk-link">Percentage of adult social care beds occupied</a></li>
+            <li><a href="../../help/beds-care-provider-location" class="govuk-link">Number of adult social care beds in care provider location</a></li>
+            <li><a href="../../help/" class="govuk-link">People providing unpaid care, by hours per week</a></li>
+            <li><a href="../../help/" class="govuk-link">Domiciliary care providers per 100,000 adult population</a></li>
+            <li><a href="../../help/" class="govuk-link">People receiving domiciliary care per 100,000 adult population</a></li>
+            <li><a href="../../help/" class="govuk-link">Workforce hours paid per person receiving domiciliary care</a></li>
+            <li><a href="../../help/" class="govuk-link">Domiciliary care workers per 100,000 adult population</a></li>
+        </ul>
+        <p class="govuk-body">You can also find links to the relevant indicator information with the data tables, charts and map visualisations in the service.</p>
+
+        <h2 class="govuk-heading-m govuk-!-margin-top-7" id="contact">Contact us</h2>
+
+        <h3 class="govuk-heading-s">Get help using the service</h3>
+        <p class="govuk-body">If you have any questions or need support with using this service, email us at <a href="mailto:asc.data@dhsc.gov.uk" class="govjuk-link">gascd.enquiries@dhsc.gov.uk</a>.</p>
+
+        <h3 class="govuk-heading-s">Give feedback</h3>
+        <p class="govuk-body">To help us improve the service, <a href="" class="govuk-link">share your feedback (opens in new tab)</a>.</p>
+    </div>
+  
+</div>
+{% endblock %}
