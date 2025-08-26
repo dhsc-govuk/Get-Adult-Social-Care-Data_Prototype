@@ -7,7 +7,7 @@
   items: [
     {
       text: "Home",
-      href: "../../home"
+      href: "../../../home"
     },
     {
       text: "Community social care",
@@ -18,124 +18,6 @@
 {% endblock %}
 
 {% block content %}
-<style>
-
-  /* Data visualisation component box styling */
-  .data-box {
-    background-color: #f3f2f1;
-    padding: 20px; 
-    margin-bottom: 20px;
-  }
-
-  /* Expansion on the GOV.UK Design System tabs component https://design-system.service.gov.uk/components/tabs) to make it work in our service */
-  .govuk-tabs {
-    margin: 0;
-  }
-  @media (min-width: 40.0625em) {
-    .govuk-tabs__panel {
-      background-color: #ffffff;
-    }
-  }
-
-  /* 'Back to top' link component used on GOV.UK (e.g. https://www.gov.uk/government/collections/monthly-statistics-for-adult-social-care-england) */
-  .govuk-frontend-supported .gem-c-contents-list-with-body__sticky-element {
-    position: absolute;
-    bottom: 0
-  }
-  .govuk-frontend-supported .gem-c-contents-list-with-body__sticky-element--stuck-to-window {
-    bottom: 0;
-    position: fixed
-  }
-  .govuk-frontend-supported .gem-c-contents-list-with-body__sticky-element--enabled {
-    transition: opacity, .3s, ease;
-    opacity: 1
-  }
-  @media(max-width: 40.0525em) {
-    .govuk-frontend-supported .gem-c-contents-list-with-body__sticky-element--enabled {
-      position: static
-    }
-  }
-  .govuk-frontend-supported .gem-c-contents-list-with-body__sticky-element--hidden {
-    opacity: 0;
-    pointer-events: none
-  }
-
-  .gem-c-contents-list-with-body__link-container {
-    margin: 0 auto;
-    padding: 0
-  }
-  @media(min-width: 40.0625em) {
-    .gem-c-contents-list-with-body__link-container {
-      max-width: 1024px
-    }
-  }
-
-  .gem-c-contents-list-with-body__link-container .gem-c-back-to-top-link {
-    margin-left: 0;
-    margin-right: 0
-  }
-
-  .gem-c-contents-list-with-body__list-container {
-    margin-bottom: 15px
-  }
-  @media(min-width: 40.0625em) {
-    .gem-c-contents-list-with-body__list-container {
-      margin-bottom: 50px
-    }
-  }
-
-  .gem-c-contents-list-with-body__link-wrapper {
-    padding-bottom: 10px
-  }
-
-  .gem-c-contents-list-with-body__link-wrapper .gem-c-back-to-top-link {
-    padding-bottom: 10px
-  }
-
-  .gem-c-contents-list-with-body__link-wrapper.gem-c-contents-list-with-body__sticky-element--stuck-to-window {
-    background-color: #f3f2f1;
-    bottom: -1px;
-    left: 0;
-    margin: 0;
-    padding: 0;
-    padding-left: 0;
-    position: fixed;
-    width: 100%;
-    z-index: 10
-  }
-  @media(min-width: 40.0625em) {
-    .gem-c-contents-list-with-body__link-wrapper.gem-c-contents-list-with-body__sticky-element--stuck-to-window {
-      padding-left: 10px
-    }
-  }
-
-  .gem-c-contents-list-with-body__link-wrapper.gem-c-contents-list-with-body__sticky-element--stuck-to-window .gem-c-back-to-top-link {
-    margin-bottom: 0;
-    padding: 15px;
-    width: 66%
-  }
-  @media(min-width: 40.0625em) {
-    .gem-c-contents-list-with-body__link-wrapper.gem-c-contents-list-with-body__sticky-element--stuck-to-window .gem-c-back-to-top-link {
-      padding: 20px
-    }
-  }
-
-  .gem-c-back-to-top-link {
-    display: inline-block;
-    margin-bottom: 10px;
-    margin-left: 15px;
-    margin-right: 15px;
-  }
-
-  .gem-c-back-to-top-link__icon {
-    float: left;
-    margin-right: .3em;
-    width: .8em;
-    height: .968em;
-  }
-
-</style>
-
 <div class="govuk-grid-row">
 
   <div class="govuk-grid-column-two-thirds">
@@ -152,35 +34,43 @@
 
   <div class="govuk-grid-column-full">
 
-    <div class="data-box">
+    <div class="data-box govuk-form-group">
 
       <div class="govuk-tabs" data-module="govuk-tabs">
-        <h3 class="govuk-heading-m">Data visualisation caption</h3>
+        <h3 class="govuk-heading-m">Community care providers locations and services</h3>
         <p class="govuk-body">Data visualisation immediate context.</p>
 
         <h3 class="govuk-tabs__title">Contents</h3>
         <ul class="govuk-tabs__list">
           <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
-            <a class="govuk-tabs__tab" href="#data-map">Map</a>
+            <a class="govuk-tabs__tab" href="#data1-map">Map</a>
           </li>
           <li class="govuk-tabs__list-item">
-            <a class="govuk-tabs__tab" href="#data-table">Table</a>
+            <a class="govuk-tabs__tab" href="#data1-table">Table</a>
           </li>
           <li class="govuk-tabs__list-item">
-            <a class="govuk-tabs__tab" href="#data-download">Download links</a>
+            <a class="govuk-tabs__tab" href="#data1-download">Download links</a>
           </li>
         </ul>
 
-        <div class="govuk-tabs__panel" id="data-map">
-          <p class="govuk-body">Add data visualisation here.</p>
+        <div class="govuk-tabs__panel" id="data1-map">
+          {% include "./data-visualisations/_1-map.html" %}
         </div>
 
-        <div class="govuk-tabs__panel" id="data-table">
-          <p class="govuk-body">Add tabular data here.</p>
+        <div class="govuk-tabs__panel" id="data1-table">
+          {% include "./data-visualisations/_1-table.html" %}
         </div>
 
-        <div class="govuk-tabs__panel" id="data-download">
-          <p class="govuk-body">Add design for downloading data here.</p>
+        <div class="govuk-tabs__panel" id="data1-download">
+          <h4 class="govuk-heading-s">Download links</h4>
+          <ul class="govuk-list data-box-last-tab-last-item">
+            <li>
+              <a class="govuk-link" href="#" data-message="Sorry, this hasn’t been designed yet">Download current map image (PNG, 2 MB)</a>
+            </li>
+            <li>
+              <a class="govuk-link" href="#" data-message="Sorry, this hasn’t been designed yet">Export table data (CSV, 420 KB)</a>
+            </li>
+          </ul>
         </div>
 
       </div>
@@ -193,46 +83,35 @@
 
 <div class="govuk-grid-row">
 
-  <div class="govuk-grid-column-two-thirds">
-    <h2 class="govuk-heading-l govuk-!-margin-top-9">Trends</h2>
-    <p class="govuk-body">Trends summary information, e.g. limitation.</p>
-  </div>
-
-</div>
-
-<div class="govuk-grid-row">
-
   <div class="govuk-grid-column-full">
 
-    <div class="data-box">
+    <div class="data-box govuk-form-group">
 
       <div class="govuk-tabs" data-module="govuk-tabs">
-        <h3 class="govuk-heading-m">Data visualisation caption</h3>
+        <h3 class="govuk-heading-m">Number of providers per LA</h3>
         <p class="govuk-body">Data visualisation immediate context.</p>
 
         <h3 class="govuk-tabs__title">Contents</h3>
         <ul class="govuk-tabs__list">
-          <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
-            <a class="govuk-tabs__tab" href="#trend-chart">Chart</a>
+          <li class="govuk-tabs__list-item">
+            <a class="govuk-tabs__tab" href="#data2-table">Table</a>
           </li>
           <li class="govuk-tabs__list-item">
-            <a class="govuk-tabs__tab" href="#trend-table">Table</a>
-          </li>
-          <li class="govuk-tabs__list-item">
-            <a class="govuk-tabs__tab" href="#trend-download">Download links</a>
+            <a class="govuk-tabs__tab" href="#data2-download">Download links</a>
           </li>
         </ul>
 
-        <div class="govuk-tabs__panel" id="trend-chart">
-          <p class="govuk-body">Add data visualisation here.</p>
+        <div class="govuk-tabs__panel" id="data2-table">
+          {% include "./data-visualisations/_2-table.html" %}
         </div>
 
-        <div class="govuk-tabs__panel" id="trend-table">
-          <p class="govuk-body">Add tabular data here.</p>
-        </div>
-
-        <div class="govuk-tabs__panel" id="trend-download">
-          <p class="govuk-body">Add design for downloading data here.</p>
+        <div class="govuk-tabs__panel" id="data2-download">
+          <h4 class="govuk-heading-s">Download links</h4>
+          <ul class="govuk-list data-box-last-tab-last-item">
+            <li>
+              <a class="govuk-link" href="#" data-message="Sorry, this hasn’t been designed yet">Export table data (CSV, 420 KB)</a>
+            </li>
+          </ul>
         </div>
 
       </div>
@@ -255,7 +134,7 @@
 
           <div class="gem-c-cards__list-item-wrapper">
             <h2 class="gem-c-cards__sub-heading govuk-heading-s">
-              <a class="govuk-link gem-c-cards__link gem-c-force-print-link-styles" href="#">Methodology page</a>
+              <a class="govuk-link gem-c-cards__link gem-c-force-print-link-styles" href="#" data-message="Sorry, this hasn’t been designed yet">Methodology page</a>
             </h2>
             <p class="govuk-body gem-c-cards__description">Short description.</p>
           </div>
@@ -284,7 +163,7 @@
 
           <div class="gem-c-cards__list-item-wrapper">
             <h2 class="gem-c-cards__sub-heading govuk-heading-s">
-              <a class="govuk-link gem-c-cards__link gem-c-force-print-link-styles" href="#">Subtopic name</a>
+              <a class="govuk-link gem-c-cards__link gem-c-force-print-link-styles" href="../hours-of-paid-care/data">Hours of paid care</a>
             </h2>
             <p class="govuk-body gem-c-cards__description">Summary teaser (max 12 words) on information available for this subtopic.</p>
           </div>
@@ -294,7 +173,7 @@
 
           <div class="gem-c-cards__list-item-wrapper">
             <h2 class="gem-c-cards__sub-heading govuk-heading-s">
-              <a class="govuk-link gem-c-cards__link gem-c-force-print-link-styles" href="#">Subtopic name</a>
+              <a class="govuk-link gem-c-cards__link gem-c-force-print-link-styles" href="../number-of-people-receiving-care/data">Number of people receiving care</a>
             </h2>
             <p class="govuk-body gem-c-cards__description">Summary teaser (max 12 words) on information available for this subtopic.</p>
           </div>
