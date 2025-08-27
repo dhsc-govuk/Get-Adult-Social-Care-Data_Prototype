@@ -1,17 +1,17 @@
 <table class="govuk-table">
-  <caption class="govuk-table__caption govuk-table__caption--s">Table caption</caption>
+  <caption class="govuk-table__caption govuk-table__caption--s govuk-!-margin-bottom-5">Table 1: comparison of hours of paid community social care provided by your care service to local, regional and national statistics, September 2025 </caption>
   <thead class="govuk-table__head">
     <tr class="govuk-table__row">
       <th scope="col" class="govuk-table__header">Indicator</th>
-      <th scope="col" class="govuk-table__header govuk-table__header--numeric">{{data.careHome or 'Shoggins Care Services (Sudbury)'}}</th>
-      <th scope="col" class="govuk-table__header govuk-table__header--numeric">Suffolk local authority area</th>
-      <th scope="col" class="govuk-table__header govuk-table__header--numeric">East of England (regional average)</th>
-      <th scope="col" class="govuk-table__header govuk-table__header--numeric">England (national average)</th>
+      <th scope="col" class="govuk-table__header govuk-table__header--numeric">Total for {{data.careHome or 'Shoggins Care Services (Sudbury)'}}</th>
+      <th scope="col" class="govuk-table__header govuk-table__header--numeric">Total for Suffolk local authority</th>
+      <th scope="col" class="govuk-table__header govuk-table__header--numeric">East of England (regional average per local authority)</th>
+      <th scope="col" class="govuk-table__header govuk-table__header--numeric">England (national average per local authority)</th>
     </tr>
   </thead>
   <tbody class="govuk-table__body">
     <tr class="govuk-table__row">
-      <td class="govuk-table__cell">Hours of paid care provided in the last month by a community social care provider</td>
+      <td class="govuk-table__cell">Hours of paid care provided in the last month</td>
       <td class="govuk-table__cell govuk-table__cell--numeric">13,000</td>
       <td class="govuk-table__cell govuk-table__cell--numeric">100,000</td>
       <td class="govuk-table__cell govuk-table__cell--numeric">75,000</td>
@@ -19,3 +19,8 @@
     </tr>
   </tbody>
 </table>
+
+
+<div>
+    <p class="govuk-body">Source: Capacity Tracker from the Department of Health and Social Care (DHSC)</p>
+</div>
