@@ -1,0 +1,76 @@
+{% extends "v6/layouts/logged-in.html" %}
+
+{% set pageName = "Number of people accessing long-term adult social care support services by primary reason" %}
+
+{% block beforeContent %}
+<a href="javascript:window.history.back()" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-two-thirds">
+        <span class="govuk-caption-l">Indicator definition and data source</span>
+        <h1 class="govuk-heading-l">{{pageName}}</h1>
+        <dl class="govuk-summary-list">
+
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">What this measures</dt>
+                <dd class="govuk-summary-list__value">The number of people accessing long-term adult social care by primary support reason. This includes care homes and community social care services.</dd>
+            </div>
+
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Source</dt>
+                <dd class="govuk-summary-list__value"><a href="https://digital.nhs.uk/data-and-information/publications/statistical/adult-social-care-activity-and-finance-report" class="govuk-link" target="_blank">Adult Social Care Activity and Finance Report from NHS England (opens in new tab)</a></dd>
+            </div>
+
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Data correct as of</dt>
+                <dd class="govuk-summary-list__value">31 October 2024</dd>
+            </div>
+
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Update frequency</dt>
+                <dd class="govuk-summary-list__value">Yearly (by financial year)</dd>
+            </div>
+
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Methodology</dt>
+                <dd class="govuk-summary-list__value">
+                    This is calculated by summing the number of people accessing services over the previous financial year for the following primary support reasons:
+                    <br>
+                    <br>
+                    <ul class="govuk-list govuk-list--bullet govuk-list--spaced">
+                        <li>physical support &ndash; access and mobility only</li>
+                        <li>physical support &ndash; personal care support</li>
+                        <li>sensory support &ndash; support for visual impairment</li>
+                        <li>sensory support &ndash; support for hearing impairment</li>
+                        <li>sensory support &ndash; support for dual impairment</li>
+                        <li>support with memory and cognition</li>
+                        <li>learning disability support</li>
+                        <li>mental health support</li>
+                        <li>social support &ndash; substance misuse support</li>
+                        <li>social support &ndash; asylum seeker support</li>
+                        <li>social support &ndash; social isolation or other social support needs</li>
+                    </ul>
+                </dd>
+            </div>
+
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Limitations</dt>
+                <dd class="govuk-summary-list__value">
+                    See data source for details.
+                </dd>
+            </div>
+
+            <!-- Not included in Edge content document
+                    <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Data definitions</dt>
+            <dd class="govuk-summary-list__value">See data source for details.</dd>
+        </div>
+            -->
+        </dl>
+    </div>
+
+</div>
+{% endblock %}
