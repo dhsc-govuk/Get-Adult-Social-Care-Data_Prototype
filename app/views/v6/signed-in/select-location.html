@@ -1,6 +1,6 @@
 {% extends "v6/layouts/logged-in-select-location.html" %}
 
-{% set pageName = "Select care provider location" %}
+{% set pageName = "Choose a location from your care provider group" %}
 
 {% block beforeContent %}
 <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
@@ -17,7 +17,7 @@
         <h1 class="govuk-label-wrapper">
           <label class="govuk-label govuk-label--xl govuk-!-margin-bottom-9" for="careHome">{{pageName}}</label>
         </h1>
-        <p class="govuk-body">Explain to users that this choice will impact the defaults for the data.</p>
+        <p class="govuk-body govuk-!-margin-bottom-7">We use this to display your local and regional comparison data in the service.<br /><br />You can switch to another location at any time by using the &lsquo;Change&rsquo; link at the top of the page.</p>
 
         <div id="la-hint" class="govuk-hint">
           Start typing for suggestions.
