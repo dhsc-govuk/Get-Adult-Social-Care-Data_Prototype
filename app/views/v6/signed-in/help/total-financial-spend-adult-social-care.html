@@ -1,0 +1,64 @@
+{% extends "v6/layouts/logged-in.html" %}
+
+{% set pageName = "Total financial spend on adult social care" %}
+
+{% block beforeContent %}
+<a href="javascript:window.history.back()" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-two-thirds">
+        <span class="govuk-caption-l">Indicator definition and data source</span>
+        <h1 class="govuk-heading-l">{{pageName}}</h1>
+        <dl class="govuk-summary-list">
+
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">What this measures</dt>
+                <dd class="govuk-summary-list__value">The total financial spend on adult social care as funded by local authorities.</dd>
+            </div>
+
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Source</dt>
+                <dd class="govuk-summary-list__value"><a href="https://digital.nhs.uk/data-and-information/publications/statistical/adult-social-care-activity-and-finance-report" class="govuk-link" target="_blank">Adult Social Care Activity and Finance Report from NHS England (opens in new tab)</a></dd>
+            </div>
+
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Data correct as of</dt>
+                <dd class="govuk-summary-list__value">31 October 2024</dd>
+            </div>
+
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Update frequency</dt>
+                <dd class="govuk-summary-list__value">Yearly (by financial year)</dd>
+            </div>
+
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Methodology</dt>
+                <dd class="govuk-summary-list__value">
+                    The total financial spend on adult social care is calculated by summing the financial spend over the previous financial year for adult social care.
+                    <br>
+                    <br>
+                    The data only covers local authority funded long-term social care. It does not include NHS funded care or care funded privately by individuals.
+                </dd>
+            </div>
+
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Limitations</dt>
+                <dd class="govuk-summary-list__value">
+                    See data source for details.
+                </dd>
+            </div>
+
+            <!-- Not included in Edge content document
+                    <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Data definitions</dt>
+            <dd class="govuk-summary-list__value">See data source for details.</dd>
+        </div>
+            -->
+        </dl>
+    </div>
+
+</div>
+{% endblock %}
