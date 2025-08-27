@@ -75,7 +75,7 @@
   // var marker = L.marker([52.05, 0.72], 11).addTo(map);
   // marker.bindPopup("<b>Suffolk</b><br>Population aged over 85: 3.1%<br>Beds occupied: 89%<br>Deprivation: low");
   // var marker2 = L.marker([52.07, 0.72], 11).addTo(map);
-  // marker2.bindPopup("<b>Greenfields Care</b><br>Dementia beds: 6<br>All beds: 18").openPopup();
+  // marker2.bindPopup("<b>Shoggins Care Services (Sudbury)</b><br>Dementia beds: 6<br>All beds: 18").openPopup();
 
   var greenIcon = L.icon({
     iconUrl: '/public/images/your-care-home.png',
@@ -113,7 +113,7 @@
     popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
   });
 
-  L.marker([52.01, 0.71], {icon: greenIcon}).addTo(map).bindPopup("<b>Greenfields Care Home</b><br>Your care location");
+  L.marker([52.01, 0.71], {icon: greenIcon}).addTo(map).bindPopup("<b>Shoggins Care Services (Sudbury)</b><br>Your care location");
   L.marker([52.1, 0.74], {icon: fiveIcon}).addTo(map).bindPopup("<b>Vera Lynn Care</b><br>CQC rating: 5 (high)<br>Types: residential care");
   L.marker([52.12, 0.738], {icon: fourIcon}).addTo(map).bindPopup("<b>Cloverfield Care</b><br>CQC rating: 4 (medium high)<br>Types: residential care");
   L.marker([52.01, 0.738], {icon: threeIcon}).addTo(map).bindPopup("<b>Elysium Care</b><br>CQC rating: 3 (medium)<br>Types: residential care");

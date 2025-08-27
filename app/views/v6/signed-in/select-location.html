@@ -17,7 +17,11 @@
         <h1 class="govuk-label-wrapper">
           <label class="govuk-label govuk-label--xl govuk-!-margin-bottom-9" for="careHome">{{pageName}}</label>
         </h1>
-        <p class="govuk-body govuk-!-margin-bottom-7">We use this to display your local and regional comparison data in the service.<br /><br />You can switch to another location at any time by using the &lsquo;Change&rsquo; link at the top of the page.</p>
+        
+        <div class="govuk-form-group">
+          <p class="govuk-body">We use this to display your local and regional comparison data in the service.</p>
+          <p class="govuk-body">You can switch to another location at any time by using the &lsquo;Change&rsquo; link at the top of the page.</p>
+        </div>
 
         <div id="la-hint" class="govuk-hint">
           Start typing for suggestions.
@@ -25,12 +29,12 @@
 
         <select class="govuk-select" id="careHome" name="careHome" aria-describedby="careHome-hint" data-module="autocomplete" data-autoselect="" data-display-menu="" data-min-length="" data-show-all-values="" data-show-no-options-found="">
           <option value="" selected="" disabled="">Select an option</option>  
-          <option value="Apple Farm Care Home"{% if data.careHome == 'Apple Farm Care Home' %} selected{% endif %}>Apple Farm Care Home</option>
-          <option value="Greenfields Care Home"{% if data.careHome == 'Greenfields Care Home' %} selected{% endif %}>Greenfields Care Home</option>
-          <option value="Lily Hill Care Home"{% if data.careHome == 'Lily Hill Care Home' %} selected{% endif %}>Lily Hill Care Home</option>
-          <option value="Shoggins Care Home"{% if data.careHome == 'Shoggins Care Home' %} selected{% endif %}>Shoggins Care Home</option>
-          <option value="Strawberry Hill Care Home"{% if data.careHome == 'Strawberry Hill Care Home' %} selected{% endif %}>Strawberry Hill Care Home</option>
-          <option value="Waterfall Care Home"{% if data.careHome == 'Waterfall Care Home' %} selected{% endif %}>Waterfall Care Home</option>
+          <option value="Shoggins Care Services (Brighton)"{% if data.careHome == 'Shoggins Care Services (Brighton)' %} selected{% endif %}>Shoggins Care Services (Brighton)</option>
+          <option value="Shoggins Care Services (Ipswich)"{% if data.careHome == 'Shoggins Care Services (Ipswich)' %} selected{% endif %}>Shoggins Care Services (Ipswich)</option>
+          <option value="Shoggins Care Services (Newcastle)"{% if data.careHome == 'Shoggins Care Services (Newcastle)' %} selected{% endif %}>Shoggins Care Services (Newcastle)</option>
+          <option value="Shoggins Care Services (Reading)"{% if data.careHome == 'Shoggins Care Services (Reading)' %} selected{% endif %}>Shoggins Care Services (Reading)</option>
+          <option value="Shoggins Care Services (Shrewsbury)"{% if data.careHome == 'Shoggins Care Services (Shrewsbury)' %} selected{% endif %}>Shoggins Care Services (Shrewsbury)</option>
+          <option value="Shoggins Care Services (Sudbury)"{% if data.careHome == 'Shoggins Care Services (Sudbury)' %} selected{% endif %}>Shoggins Care Services (Sudbury)</option>
         </select>
       </div>
 
