@@ -398,3 +398,8 @@
   width: .8em;
   height: .968em;
 }
+
+/* Data visualisation styles */
+.data-source {
+  margin-bottom: 0;
+}
