@@ -1,11 +1,11 @@
 <table class="govuk-table">
-  <caption class="govuk-table__caption govuk-table__caption--s">Table caption</caption>
+    <caption class="govuk-table__caption govuk-table__caption--s govuk-!-margin-bottom-5">Table 2: Shoggins Care Services (Sudbury)'s percentages of the total hours of paid community social care provided in Suffolk, August 2024 to July 2025</caption>
   <thead class="govuk-table__head">
     <tr class="govuk-table__row">
-      <th scope="col" class="govuk-table__header">Hours of paid care provided in the last month</th>
-      <th scope="col" class="govuk-table__header govuk-table__header--numeric">{{data.careHome or 'Shoggins Care Services (Sudbury)'}}</th>
-      <th scope="col" class="govuk-table__header govuk-table__header--numeric">Suffolk local authority area</th>
-      <th scope="col" class="govuk-table__header govuk-table__header--numeric">Percentage share of Suffolk</th>
+      <th scope="col" class="govuk-table__header">Month</th>
+      <th scope="col" class="govuk-table__header govuk-table__header--numeric">Total hours for {{data.careHome or 'Shoggins Care Services (Sudbury)'}}</th>
+      <th scope="col" class="govuk-table__header govuk-table__header--numeric">Total hours for Suffolk local authority area</th>
+      <th scope="col" class="govuk-table__header govuk-table__header--numeric">Your percentage</th>
     </tr>
   </thead>
   <tbody class="govuk-table__body">
@@ -83,3 +83,7 @@
     </tr>
   </tbody>
 </table>
+
+<div>
+    <p class="govuk-body">Source: Capacity Tracker from the Department of Health and Social Care (DHSC)</p>
+</div>
