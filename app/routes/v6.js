@@ -49,8 +49,29 @@ module.exports = function(router) {
 
   /*****
    * Signed in (Get adult social care data)
-   * ?
+   * Select location
   *****/
+
+  router.get('/' + version + '/' + 'signed-in/select-location', function (req, res) {
+    res.render(version + '/signed-in/select-location', {
+      'error' : req.query.error
+		})
+  })
+
+  router.post('/' + version + '/' + 'signed-in/select-location-validation', function (req, res) {
+
+    var careHome = req.body['careHome']
+
+    // Error validation - make sure user enters data into required field
+    if (careHome == undefined) {
+      res.redirect('/' + version + '/' + 'signed-in/select-location?error=true')
+    }
+    // User selects a location
+    else {
+      res.redirect('/' + version + '/' + 'signed-in/home?justSignedIn=false')
+    }
+
+  })
 
   /*****
    * Additional screens (Get adult social care data)

@@ -9,7 +9,26 @@
     </tr>
   </thead>
   <tbody class="govuk-table__body">
-    {% if data.supportSetting == "Community social care" %}
+    {% if data.supportSetting == "Community direct payments" %}
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">2023/24</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">£26,259,000</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">£23,696,000</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">£14,604,000</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">2022/23</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">£25,544,000</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">£23,118,000</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">£14,262,000</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">2021/22</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">£24,848,000</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">£22,554,000</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">£13,927,000</td>
+    </tr>
+    {% elif data.supportSetting == "Community social care" %}
     <tr class="govuk-table__row">
       <td class="govuk-table__cell">2023/24</td>
       <td class="govuk-table__cell govuk-table__cell--numeric">£193,174,000</td>
@@ -27,6 +46,63 @@
       <td class="govuk-table__cell govuk-table__cell--numeric">£182,794,000</td>
       <td class="govuk-table__cell govuk-table__cell--numeric">£126,805,000</td>
       <td class="govuk-table__cell govuk-table__cell--numeric">£71,095,000</td>
+    </tr>
+    {% elif data.supportSetting == "Homecare" %}
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">2023/24</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">£67,473,000</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">£54,337,800</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">£24,310,000</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">2022/23</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">£65,635,000</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">£53,012,000</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">£23,740,000</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">2021/22</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">£63,847,000</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">£51,720,000</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">£23,184,000</td>
+    </tr>
+    {% elif data.supportSetting == "Supported housing" %}
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">2023/24</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">£64,535,000</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">£9,506,000</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">£5,760,000</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">2022/23</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">£62,777,000</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">£9,274,000</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">£5,265,000</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">2021/22</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">£61,067,000</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">£9,048,000</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">£5,493,000</td>
+    </tr>
+    {% elif data.supportSetting == "Supported living" %}
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">2023/24</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">£0</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">£30,413,000</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">£22,431,000</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">2022/23</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">£0</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">£29,671,000</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">£21,905,000</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">2021/22</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">£0</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">£28,948,000</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">£21,392,000</td>
     </tr>
     {% else %}
     <tr class="govuk-table__row">

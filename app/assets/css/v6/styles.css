@@ -292,6 +292,17 @@
   margin-bottom: 0;
 }
 
+.data-box .govuk-tabs {
+  background-color: #ffffff;
+  padding: 20px;
+}
+@media (min-width: 40.0625em) {
+  .data-box .govuk-tabs {
+    background-color: initial;
+    padding: 0;
+  }
+}
+
 /* Expansion on the GOV.UK Design System tabs component https://design-system.service.gov.uk/components/tabs) to make it work in our service */
 .govuk-tabs {
   margin: 0;
@@ -400,6 +411,11 @@
 }
 
 /* Data visualisation styles */
+.data-visualisation-image {
+  width: 100%;
+  height: auto;
+}
+
 .data-source {
   margin-bottom: 0;
 }
