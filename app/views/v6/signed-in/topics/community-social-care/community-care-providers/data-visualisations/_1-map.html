@@ -6,28 +6,8 @@
     width: 100%;
   }
 
-  .key-wrapper {
-    padding-bottom: 15px;
-  }
-
-  .key-section {
-    display: block;
-  }
-
-  .key-item {
-    display: inline-flex;
-    max-height: 30px;
-    margin: auto;
-  }
-
-  .key-image {
-    height: 30px;
-    width: 30px;
-    padding-right: 10px;
-  }
-
-  .key-text {
-    margin: auto;
+  .popup {
+    font-family: "GDS Transport", arial, sans-serif;
   }
 
 </style>
@@ -36,31 +16,12 @@
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 
 <h4 class="govuk-heading-s">Figure 1: map of community care providers near {{data.careHome or 'Shoggins Care Services (Sudbury)'}}</h4>
-<!-- <p><img src="/public/images/your-care-home.svg" style="width:1.2em; margin-right: 0.5em;">Your locations <img src="/public/images/five.svg" style="width:1.2em; margin-left:1em; margin-right: 0.5em;">Other care provider locations</p> -->
-<!-- <div class="key-wrapper">
-
-  <div class="key-section">
-    <p><strong>Map key</strong></p>
-    
-    <div class="key-item">
-      <img src="/public/images/your-care-home.svg" class="key-image"><span class="key-text">Your care home</span>
-    </div>
-
-  </div>
-
-  <div class="key-section">
-
-    <div class="key-item">
-      <img src="/public/images/five.svg" class="key-image"><span class="key-text">Other care homes, numbered by CQC rating from 1 (low) to 5 (high)</span>
-    </div>
-
-  </div>
-
-</div> -->
 
 <div class="govuk-form-group">
 
-  <div id="map"></div>
+  <div id="map">
+
+  </div>
 
 </div>
 
@@ -70,19 +31,8 @@
 
 <script>
 
-  var map = L.map('map').setView([52.05, 0.72], 11);
-  
-  L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    maxZoom: 19,
-    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-  }).addTo(map);
-  
-  // var marker = L.marker([52.05, 0.72], 11).addTo(map);
-  // marker.bindPopup("<b>Suffolk</b><br>Population aged over 85: 3.1%<br>Beds occupied: 89%<br>Deprivation: low");
-  // var marker2 = L.marker([52.07, 0.72], 11).addTo(map);
-  // marker2.bindPopup("<b>Shoggins Care Services (Sudbury)</b><br>Dementia beds: 6<br>All beds: 18").openPopup();
-
-  var greenIcon = L.icon({
+  var map = L.map('map').setView([52.063468, 0.730591], 12);
+  var homeIcon = L.icon({
     iconUrl: '/public/images/your-care-home.png',
     iconSize:     [40, 50], // size of the icon
     shadowSize:   [50, 64], // size of the shadow
@@ -90,40 +40,42 @@
     shadowAnchor: [4, 62],  // the same for the shadow
     popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
   });
+  var marker1 = L.marker([52.079339, 0.747522], 11).addTo(map);
+  var marker2 = L.marker([52.07887, 0.747719], 11).addTo(map);
+  var marker3 = L.marker([52.039805, 0.745942], 11).addTo(map);
+  var marker4 = L.marker([52.036340, 0.712279], 11).addTo(map);
+  var marker5 = L.marker([52.079734, 0.719010], 11).addTo(map);
+  var marker6 = L.marker([52.039719, 0.743473], 11).addTo(map);
+  var marker7 = L.marker([52.033887, 0.756749], 11).addTo(map);
+  var marker8 = L.marker([52.033352, 0.757328], 11).addTo(map);
+  var marker9 = L.marker([52.039927, 0.74162], 11).addTo(map);
 
-  var threeIcon = L.icon({
-    iconUrl: '/public/images/three.svg',
-    iconSize:     [38, 95], // size of the icon
-    shadowSize:   [50, 64], // size of the shadow
-    iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
-    shadowAnchor: [4, 62],  // the same for the shadow
-    popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
-  });
+  L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+  }).addTo(map);
 
-  var fourIcon = L.icon({
-    iconUrl: '/public/images/four.svg',
-    iconSize:     [38, 95], // size of the icon
-    shadowSize:   [50, 64], // size of the shadow
-    iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
-    shadowAnchor: [4, 62],  // the same for the shadow
-    popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
-  });
+  L.marker([52.037456, 0.730166], {icon: homeIcon}).addTo(map).bindPopup("<span class='popup'><strong>{{data.careHome or 'Shoggins Care Services (Sudbury)'}}</strong></span>");
+  marker1.bindPopup("<span class='popup'>Name: 1 Oak Home Care<br>Address: Unit 1 & 2 Woodview, Bull Lane Industrial Estate, Bull Lane, Acton, Sudbury, CO10 0FD<br>Services: Homecare<br>Distance from location: 3.2 miles</span>");
+  marker2.bindPopup("<span class='popup'>Name: Briarcare Recruitment Agency<br>Address: Unit 3, Woodview, Bull Lane Industrial Estate, Bull Lane, Acton, Sudbury, CO10 0FD<br>Services: Homecare<br>Distance from location: 3.2 miles</span>");
+  marker3.bindPopup("<span class='popup'>Name: Forest Homecare Suffolk<br>Address: Unit 22 South Suffolk Business Centre, Alexandra Road, Sudbury, CO10 2XH<br>Services: Homecare, supported housing<br>Distance from location: 0.6 miles</span>");
+  marker4.bindPopup("<span class='popup'>Name: Master Care Ipswich<br>Address: OFFICE 14, UNIT 5, STOUR VALLEY BUSINESS CENTRE, BRUNDON LANE, Sudbury, CO10 7GB<br>Services: Homecare<br>Distance from location: 0.8 miles</span>");
+  marker5.bindPopup("<span class='popup'>Name: Harmonize Care<br>Address: The Old Pharmacy, Hall Street, Long Melford, Sudbury, CO10 9JQ<br>Services: Homecare<br>Distance from location: 3 miles</span>");
+  marker6.bindPopup("<span class='popup'>Name: Supporting An Independent Life<br>Address: Unit 14, South Suffolk Business Centre, Alexandra Road, Sudbury, CO10 2ZX<br>Services: Homecare<br>Distance from location: 0.6 miles</span>");
+  marker7.bindPopup("<span class='popup'>Name: ivolve Suffolk Supported Living<br>Address: Peter Dodd Mews, Shawlands Avenue,Great Cornard,Sudbury	CO10 0FY<br>Services: Supported living<br>Distance from location: 1.1 miles</span>");
+  marker8.bindPopup("<span class='popup'>Name: Ivolve Shawlands Supported Living<br>Address: Fieldview, Hare Field, Woodpecke, Shawlands Avenue, Great Cornard, Sudbury, CO10 0EW<br>Services: Supported living<br>Distance from location: 1.2 miles</span>");
+  marker9.bindPopup("<span class='popup'>Name: Trust Homecare Solution South Suffolk Limited<br>Address: Unit 13, South Suffolk Business Centre, Alexandra Road, Sudbury, CO10 2ZX<br>Services: Homecare<br>Distance from location: 0.6 miles</span>");
 
-  var fiveIcon = L.icon({
-    iconUrl: '/public/images/five.svg',
-    iconSize:     [38, 95], // size of the icon
-    shadowSize:   [50, 64], // size of the shadow
-    iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
-    shadowAnchor: [4, 62],  // the same for the shadow
-    popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
-  });
+  // Use this to get the lat and long by clicking the map
+  // var popup = L.popup();
 
-  L.marker([52.01, 0.71], {icon: greenIcon}).addTo(map).bindPopup("<b>Shoggins Care Services (Sudbury)</b><br>Your care location");
-  L.marker([52.1, 0.74], {icon: fiveIcon}).addTo(map).bindPopup("<b>Vera Lynn Care</b><br>CQC rating: 5 (high)<br>Types: residential care");
-  L.marker([52.12, 0.738], {icon: fourIcon}).addTo(map).bindPopup("<b>Cloverfield Care</b><br>CQC rating: 4 (medium high)<br>Types: residential care");
-  L.marker([52.01, 0.738], {icon: threeIcon}).addTo(map).bindPopup("<b>Elysium Care</b><br>CQC rating: 3 (medium)<br>Types: residential care");
-  L.marker([52.04, 0.695], {icon: threeIcon}).addTo(map).bindPopup("<b>Duckworth Care</b><br>CQC rating: 3 (medium)<br>Types: residential care");
-  L.marker([52.15, 0.95], {icon: fiveIcon}).addTo(map).bindPopup("<b>Stowmarket Care</b><br>CQC rating: 5 (high)<br>Types: residential living");;
-  // marker.bindPopup("<b>Your pin</b><br>Click the map to change your location");
+  // function onMapClick(e) {
+  //   popup
+  //     .setLatLng(e.latlng)
+  //     .setContent("You clicked the map at " + e.latlng.toString())
+  //     .openOn(map);
+  // }
+
+  // map.on('click', onMapClick);
 
 </script>
