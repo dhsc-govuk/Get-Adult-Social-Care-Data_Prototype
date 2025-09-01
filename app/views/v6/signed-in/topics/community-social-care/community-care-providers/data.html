@@ -1,4 +1,4 @@
-{% extends "v6/layouts/logged-in.html" %}
+{% extends "v6/layouts/logged-in-map.html" %}
 
 {% set pageName = "Locations and services for community social care providers" %}
 
@@ -41,7 +41,7 @@
         <div class="govuk-form-group">
           <h3 class="govuk-heading-m">Community care provider locations near {{data.careHome or 'Shoggins Care Services (Sudbury)'}}</h3>
           <p class="govuk-body">Locations and service information for CQC-registered home care, supported living and supported housing providers in England, August 2025.</p>
-          <p class="govuk-body">Find out <a href="#" data-message="Sorry, this hasn’t been designed yet">how location and service data is collected</a>.</p>
+          <p class="govuk-body" data-module="edge">Find out <a href="#" data-message="Sorry, this hasn’t been designed yet">how location and service data is collected</a>.</p>
         </div>
 
         <h3 class="govuk-tabs__title">Contents</h3>
@@ -67,7 +67,7 @@
 
         <div class="govuk-tabs__panel" id="data1-download">
           <h4 class="govuk-heading-s">Download</h4>
-          <ul class="govuk-list data-box-last-tab-last-item">
+          <ul class="govuk-list data-box-last-tab-last-item" data-module="edge">
             <li>
               <a class="govuk-link" href="#" data-message="Sorry, this hasn’t been designed yet">Download current map image (PNG, 2 MB)</a>
             </li>
@@ -114,7 +114,7 @@
 
         <div class="govuk-tabs__panel" id="data2-download">
           <h4 class="govuk-heading-s">Download</h4>
-          <ul class="govuk-list data-box-last-tab-last-item">
+          <ul class="govuk-list data-box-last-tab-last-item" data-module="edge">
             <li>
               <a class="govuk-link" href="#" data-message="Sorry, this hasn’t been designed yet">Export table data (CSV, 420 KB)</a>
             </li>
@@ -151,7 +151,7 @@
     </div>
 
     <h2 class="govuk-heading-l govuk-!-margin-top-9">Find more information on your local care market</h2>
-    <p class="govuk-body"><a href="#" class="govuk-link" data-message="This link would take you to the Market Position Statement on the Suffolk local authority website.">Market Position Statement for Suffolk (opens in new tab)</a></p>
+    <p class="govuk-body" data-module="edge"><a href="#" class="govuk-link" data-message="This link would take you to the Market Position Statement on the Suffolk local authority website.">Market Position Statement for Suffolk (opens in new tab)</a></p>
     <p class="govuk-body">Most local authorities in England publish Market Position Statements (MPS) to help care providers understand the local care market.</p>
     <p class="govuk-body">You can usually find these <abbr title="Market Position Statement">MPS</abbr> documents on local authority websites.</p>
     <p class="govuk-body"><abbr title="Market Position Statement">MPS</abbr> documents include information on:</p>
