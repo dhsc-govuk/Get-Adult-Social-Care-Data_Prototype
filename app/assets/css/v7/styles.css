@@ -1,0 +1,421 @@
+/*****
+  * Styles (CSS)
+  * Global service pages (Get adult social care data)
+*****/
+
+/* Expansion on the GOV.UK Design System service navigation component https://design-system.service.gov.uk/components/service-navigation) to make it work in our custom service header */
+
+/* Navigation links */
+@media (min-width: 40.0625em) {
+  .govuk-service-navigation__item-start {
+    margin-left: auto;
+  }
+}
+
+.govuk-service-navigation__link-change {
+  margin-left: 10px;
+}
+
+.govuk-service-navigation__item-end {
+  margin-right: 15px;
+}
+
+/* The 'Menu' component used on GOV.UK (https://www.gov.uk) */
+
+/* Button */
+.gem-c-layout-super-navigation-header__navigation-top-toggle-button {
+  font-family: "GDS Transport", arial, sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  color: #1a65a6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-decoration: none;
+  text-decoration-thickness: max(1px, .0625rem);
+  text-underline-offset: 0.1578em;
+  background: none;
+  background-color: #f4f8fb;
+  border: none;
+  text-size-adjust: 100%;
+  outline: inherit;
+  text-align: -webkit-match-parent;
+  list-style: none;
+  cursor: pointer;
+  padding: 0;
+}
+@media (min-width: 40.0625em) {
+  .gem-c-layout-super-navigation-header__navigation-top-toggle-button {
+    line-height: 1.5263157895;
+    font-size: 1.1875rem;
+  }
+}
+
+/* Button (closed) */
+.gem-c-layout-super-navigation-header__navigation-top-toggle-button .gem-c-layout-super-navigation-header__navigation-top-toggle-button-inner {
+  padding: 0;
+}
+@media (min-width: 22.5em) {
+  .gem-c-layout-super-navigation-header__navigation-top-toggle-button .gem-c-layout-super-navigation-header__navigation-top-toggle-button-inner {
+    padding: 0;
+  }
+
+  .gem-c-layout-super-navigation-header__navigation-top-toggle-button .gem-c-layout-super-navigation-header__navigation-top-toggle-button-inner::before {
+    color: #1a65a6;
+    -webkit-transform: translateY(-35%) rotate(45deg) scale(1);
+    -ms-transform: translateY(-35%) rotate(45deg) scale(1);
+    transform: translateY(-35%) rotate(45deg) scale(1);
+    border-bottom: 2px solid #1a65a6;
+    border-right: 2px solid #1a65a6;
+    content: "";
+    display: inline-block;
+    height: 8px;
+    margin: 0 10px 0 2px;
+    vertical-align: middle;
+    width: 8px;
+  }
+}
+
+/* Button (open) */
+@media (min-width: 22.5em) {
+  .gem-c-layout-super-navigation-header__navigation-top-toggle-button.gem-c-layout-super-navigation-header__open-button .gem-c-layout-super-navigation-header__navigation-top-toggle-button-inner::before {
+    border-bottom-color: #1d70b8;
+    border-right-color: #1d70b8;
+    -webkit-transform: translateY(1px) rotate(225deg) scale(1);
+    -ms-transform: translateY(1px) rotate(225deg) scale(1);
+    transform: translateY(1px) rotate(225deg) scale(1);
+  }
+}
+
+@media (min-width: 22.5em) {
+  .gem-c-layout-super-navigation-header__navigation-top-toggle-button.gem-c-layout-super-navigation-header__open-button:focus:not(:focus-visible) .gem-c-layout-super-navigation-header__navigation-top-toggle-button-inner::before {
+    border-bottom-color: #1d70b8;
+    border-right-color: #1d70b8;
+    -webkit-transform: translateY(1px) rotate(225deg) scale(1);
+    -ms-transform: translateY(1px) rotate(225deg) scale(1);
+    transform: translateY(1px) rotate(225deg) scale(1);
+  }
+}
+
+/* Main service 'Menu' section  */
+.gem-c-layout-super-navigation-header__navigation-dropdown-menu {
+  background: #f4f8fb;
+  border-bottom: 1px #b1b4b6 solid;
+  padding-top: 30px;
+}
+@media (max-width: 18.75em) {
+  .gem-c-layout-super-navigation-header__navigation-dropdown-menu {
+    padding-top: 80px;
+  }
+}
+@media (min-width: 48.0625em) {
+  .gem-c-layout-super-navigation-header__navigation-dropdown-menu {
+    padding-top: 50px;
+  }
+}
+
+.gem-c-layout-super-navigation-header__column-header {
+  font-size: 24px;
+}
+
+.gem-c-layout-super-navigation-header__navigation-second-items {
+  list-style: none;
+  margin: 0;
+  padding: 15px 25px 10px 0;
+}
+@media (min-width: 48.0625em) {
+  .gem-c-layout-super-navigation-header__navigation-second-items {
+    margin: 0 -15px 40px;
+    padding: 10px 0 0 0;
+  }
+}
+
+@media (max-width: 48.0525em) {
+  .gem-c-layout-super-navigation-header__navigation-second-items--topics {
+    border-bottom: 1px solid #b1b4b6;
+  }
+}
+@media (min-width: 48.0625em) {
+  .gem-c-layout-super-navigation-header__navigation-second-items--topics {
+    display:-ms-grid;
+    display: grid;
+    grid-auto-flow: column;
+    -ms-grid-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    -ms-grid-rows: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+  .gem-c-layout-super-navigation-header__navigation-second-items--topics>li:nth-child(1) {
+    -ms-grid-column: 1;
+    -ms-grid-row: 1;
+  }
+  .gem-c-layout-super-navigation-header__navigation-second-items--topics>li:nth-child(2) {
+    -ms-grid-column: 1;
+    -ms-grid-row: 2;
+  }
+  .gem-c-layout-super-navigation-header__navigation-second-items--topics>li:nth-child(3) {
+    -ms-grid-column: 2;
+    -ms-grid-row: 1;
+  }
+  .gem-c-layout-super-navigation-header__navigation-second-items--topics>li:nth-child(4) {
+    -ms-grid-column: 2;
+    -ms-grid-row: 2;
+  }
+}
+
+.gem-c-layout-super-navigation-header__dropdown-list-item {
+  box-sizing: border-box;
+  padding: 0 0 15px 0;
+  position: relative;
+  margin: 0 0 10px 0;
+}
+@media (min-width: 48.0625em) {
+  .gem-c-layout-super-navigation-header__dropdown-list-item {
+    padding: 0 0 15px 0;
+    margin: 0 15px 5px 15px;
+  }
+}
+
+.gem-c-layout-super-navigation-header__navigation-second-item-link {
+  font-size: 16px;
+  font-size: 1rem;
+  font-weight: bold;
+}
+@media (min-width: 48.0625em) {
+  .gem-c-layout-super-navigation-header__navigation-second-item-link {
+    padding: 0;
+  }
+
+  .gem-c-layout-super-navigation-header__navigation-second-item-link::after {
+    background: none;
+    bottom: 0;
+    content: "";
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+}
+.gem-c-layout-super-navigation-header__navigation-second-item-link::after {
+  background: none;
+  bottom: 0;
+  content: "";
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.gem-c-layout-super-navigation-header__navigation-second-item-link--with-description {
+  font-size: 16px;
+  font-size: 1rem;
+  font-weight: bold;
+}
+.gem-c-layout-super-navigation-header__navigation-second-item-link--with-description::after {
+  background: none;
+  bottom: 0;
+  content: "";
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: calc(100% - 20px);
+}
+
+.gem-c-layout-super-navigation-header__navigation-second-item-description {
+  font-size: 16px;
+  font-size: 1rem;
+  font-weight: normal;
+  margin: 5px 0 0 0;
+  font-family: "GDS Transport",arial,sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+@media print {
+  .gem-c-layout-super-navigation-header__navigation-second-item-description {
+    font-family: sans-serif;
+  }
+}
+
+.gem-c-layout-super-navigation-header__column--government-activity {
+  position: relative;
+}
+@media(max-width: 48.0525em) {
+  .gem-c-layout-super-navigation-header__column--government-activity {
+    margin-top: 30px;
+  }
+}
+
+/* Card component taken from the HMRC Design System landing page (https://design.tax.service.gov.uk) */
+.app-card {
+  background-color: #f8f8f8;
+  margin-bottom: 20px;
+  padding: 20px;
+  text-decoration: none;
+}
+@media (min-width: 48.0625em) {
+  .app-card {
+    min-height: 160px;
+  }
+}
+
+.app-card p:last-child {
+  margin-bottom: 0;
+}
+
+.app-card,.js-enabled .print-page {
+  display: block;
+}
+
+.app-card:hover {
+  background-color: #005ea5;
+  color: #fff;
+}
+.app-card:hover > * {
+  color: inherit;
+}
+
+.app-card__heading {
+  color: #005ea5;
+}
+
+/* Data visualisation component box styling */
+.data-box {
+  background-color: #f3f2f1;
+  padding: 20px;
+}
+
+.data-box .govuk-tabs__panel:last-child {
+  margin-bottom: 0;
+}
+
+.data-box-last-tab-last-item {
+  margin-bottom: 0;
+}
+
+.data-box .govuk-tabs {
+  background-color: #ffffff;
+  padding: 20px;
+}
+@media (min-width: 40.0625em) {
+  .data-box .govuk-tabs {
+    background-color: initial;
+    padding: 0;
+  }
+}
+
+/* Expansion on the GOV.UK Design System tabs component https://design-system.service.gov.uk/components/tabs) to make it work in our service */
+.govuk-tabs {
+  margin: 0;
+}
+@media (min-width: 40.0625em) {
+  .govuk-tabs__panel {
+    background-color: #ffffff;
+  }
+}
+
+/* 'Back to top' link component used on GOV.UK (e.g. https://www.gov.uk/government/collections/monthly-statistics-for-adult-social-care-england) */
+.govuk-frontend-supported .gem-c-contents-list-with-body__sticky-element {
+  position: absolute;
+  bottom: 0;
+}
+.govuk-frontend-supported .gem-c-contents-list-with-body__sticky-element--stuck-to-window {
+  bottom: 0;
+  position: fixed;
+}
+.govuk-frontend-supported .gem-c-contents-list-with-body__sticky-element--enabled {
+  transition: opacity, .3s, ease;
+  opacity: 1;
+}
+@media(max-width: 40.0525em) {
+  .govuk-frontend-supported .gem-c-contents-list-with-body__sticky-element--enabled {
+    position: static;
+  }
+}
+.govuk-frontend-supported .gem-c-contents-list-with-body__sticky-element--hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.gem-c-contents-list-with-body__link-container {
+  margin: 0 auto;
+  padding: 0;
+}
+@media(min-width: 40.0625em) {
+  .gem-c-contents-list-with-body__link-container {
+    max-width: 1024px;
+  }
+}
+
+.gem-c-contents-list-with-body__link-container .gem-c-back-to-top-link {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.gem-c-contents-list-with-body__list-container {
+  margin-bottom: 15px;
+}
+@media(min-width: 40.0625em) {
+  .gem-c-contents-list-with-body__list-container {
+    margin-bottom: 50px;
+  }
+}
+
+.gem-c-contents-list-with-body__link-wrapper {
+  padding-bottom: 10px;
+}
+
+.gem-c-contents-list-with-body__link-wrapper .gem-c-back-to-top-link {
+  padding-bottom: 10px;
+}
+
+.gem-c-contents-list-with-body__link-wrapper.gem-c-contents-list-with-body__sticky-element--stuck-to-window {
+  background-color: #f3f2f1;
+  bottom: -1px;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  padding-left: 0;
+  position: fixed;
+  width: 100%;
+  z-index: 10;
+}
+@media(min-width: 40.0625em) {
+  .gem-c-contents-list-with-body__link-wrapper.gem-c-contents-list-with-body__sticky-element--stuck-to-window {
+    padding-left: 10px;
+  }
+}
+
+.gem-c-contents-list-with-body__link-wrapper.gem-c-contents-list-with-body__sticky-element--stuck-to-window .gem-c-back-to-top-link {
+  margin-bottom: 0;
+  padding: 15px;
+  width: 66%;
+}
+@media(min-width: 40.0625em) {
+  .gem-c-contents-list-with-body__link-wrapper.gem-c-contents-list-with-body__sticky-element--stuck-to-window .gem-c-back-to-top-link {
+    padding: 20px;
+  }
+}
+
+.gem-c-back-to-top-link {
+  display: inline-block;
+  margin-bottom: 10px;
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+.gem-c-back-to-top-link__icon {
+  float: left;
+  margin-right: .3em;
+  width: .8em;
+  height: .968em;
+}
+
+/* Data visualisation styles */
+.data-visualisation-image {
+  width: 100%;
+  height: auto;
+}
+
+.data-source {
+  margin-bottom: 0;
+}

@@ -1,0 +1,81 @@
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+<style>
+  
+  #map {
+    height: 420px;
+    width: 100%;
+  }
+
+  .popup {
+    font-family: "GDS Transport", arial, sans-serif;
+  }
+
+</style>
+
+<!-- Make sure you put this AFTER Leaflet's CSS -->
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+<h4 class="govuk-heading-s">Figure 1: map of community care providers near {{data.careHome or 'Shoggins Care Services (Sudbury)'}}</h4>
+
+<div class="govuk-form-group">
+
+  <div id="map">
+
+  </div>
+
+</div>
+
+<div class="govuk-form-block">
+  <p class="govuk-body data-source">Source: Care Directory from the Care Quality Commission (CQC)</p>
+</div>
+
+<script>
+
+  var map = L.map('map').setView([52.063468, 0.730591], 12);
+  var homeIcon = L.icon({
+    iconUrl: '/public/images/your-care-home.png',
+    iconSize:     [40, 50], // size of the icon
+    shadowSize:   [50, 64], // size of the shadow
+    iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
+    shadowAnchor: [4, 62],  // the same for the shadow
+    popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+  });
+  var marker1 = L.marker([52.079339, 0.747522], 11).addTo(map);
+  var marker2 = L.marker([52.07887, 0.747719], 11).addTo(map);
+  var marker3 = L.marker([52.039805, 0.745942], 11).addTo(map);
+  var marker4 = L.marker([52.036340, 0.712279], 11).addTo(map);
+  var marker5 = L.marker([52.079734, 0.719010], 11).addTo(map);
+  var marker6 = L.marker([52.039719, 0.743473], 11).addTo(map);
+  var marker7 = L.marker([52.033887, 0.756749], 11).addTo(map);
+  var marker8 = L.marker([52.033352, 0.757328], 11).addTo(map);
+  var marker9 = L.marker([52.039927, 0.74162], 11).addTo(map);
+
+  L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+  }).addTo(map);
+
+  L.marker([52.037456, 0.730166], {icon: homeIcon}).addTo(map).bindPopup("<span class='popup'><strong>{{data.careHome or 'Shoggins Care Services (Sudbury)'}}</strong></span>");
+  marker1.bindPopup("<span class='popup'>Name: 1 Oak Home Care<br>Address: Unit 1 & 2 Woodview, Bull Lane Industrial Estate, Bull Lane, Acton, Sudbury, CO10 0FD<br>Services: Homecare<br>Distance from location: 3.2 miles</span>");
+  marker2.bindPopup("<span class='popup'>Name: Briarcare Recruitment Agency<br>Address: Unit 3, Woodview, Bull Lane Industrial Estate, Bull Lane, Acton, Sudbury, CO10 0FD<br>Services: Homecare<br>Distance from location: 3.2 miles</span>");
+  marker3.bindPopup("<span class='popup'>Name: Forest Homecare Suffolk<br>Address: Unit 22 South Suffolk Business Centre, Alexandra Road, Sudbury, CO10 2XH<br>Services: Homecare, supported housing<br>Distance from location: 0.6 miles</span>");
+  marker4.bindPopup("<span class='popup'>Name: Master Care Ipswich<br>Address: OFFICE 14, UNIT 5, STOUR VALLEY BUSINESS CENTRE, BRUNDON LANE, Sudbury, CO10 7GB<br>Services: Homecare<br>Distance from location: 0.8 miles</span>");
+  marker5.bindPopup("<span class='popup'>Name: Harmonize Care<br>Address: The Old Pharmacy, Hall Street, Long Melford, Sudbury, CO10 9JQ<br>Services: Homecare<br>Distance from location: 3 miles</span>");
+  marker6.bindPopup("<span class='popup'>Name: Supporting An Independent Life<br>Address: Unit 14, South Suffolk Business Centre, Alexandra Road, Sudbury, CO10 2ZX<br>Services: Homecare<br>Distance from location: 0.6 miles</span>");
+  marker7.bindPopup("<span class='popup'>Name: ivolve Suffolk Supported Living<br>Address: Peter Dodd Mews, Shawlands Avenue,Great Cornard,Sudbury	CO10 0FY<br>Services: Supported living<br>Distance from location: 1.1 miles</span>");
+  marker8.bindPopup("<span class='popup'>Name: Ivolve Shawlands Supported Living<br>Address: Fieldview, Hare Field, Woodpecke, Shawlands Avenue, Great Cornard, Sudbury, CO10 0EW<br>Services: Supported living<br>Distance from location: 1.2 miles</span>");
+  marker9.bindPopup("<span class='popup'>Name: Trust Homecare Solution South Suffolk Limited<br>Address: Unit 13, South Suffolk Business Centre, Alexandra Road, Sudbury, CO10 2ZX<br>Services: Homecare<br>Distance from location: 0.6 miles</span>");
+
+  // Use this to get the lat and long by clicking the map
+  // var popup = L.popup();
+
+  // function onMapClick(e) {
+  //   popup
+  //     .setLatLng(e.latlng)
+  //     .setContent("You clicked the map at " + e.latlng.toString())
+  //     .openOn(map);
+  // }
+
+  // map.on('click', onMapClick);
+
+</script>

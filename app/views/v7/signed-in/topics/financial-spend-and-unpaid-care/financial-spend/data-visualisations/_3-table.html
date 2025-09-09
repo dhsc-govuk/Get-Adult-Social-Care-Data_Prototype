@@ -1,0 +1,132 @@
+<table class="govuk-table">
+  <caption class="govuk-table__caption govuk-table__caption--s">Table 3: Adult social care financial spend for Suffolk compared to regional and national averages, August 2024 to July 2025</caption>
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header">Financial year</th>
+      <th scope="col" class="govuk-table__header govuk-table__header--numeric">Suffolk local authority</th>
+      <th scope="col" class="govuk-table__header govuk-table__header--numeric">East of England (regional average per local authority)</th>
+      <th scope="col" class="govuk-table__header govuk-table__header--numeric">England (national average per local authority)</th>
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+    {% if data.supportSetting == "Community direct payments" %}
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">2023/24</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">£26,259,000</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">£23,696,000</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">£14,604,000</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">2022/23</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">£25,544,000</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">£23,118,000</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">£14,262,000</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">2021/22</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">£24,848,000</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">£22,554,000</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">£13,927,000</td>
+    </tr>
+    {% elif data.supportSetting == "Community social care" %}
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">2023/24</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">£193,174,000</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">£133,225,000</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">£74,548,000</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">2022/23</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">£187,912,000</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">£129,976,000</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">£72,801,000</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">2021/22</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">£182,794,000</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">£126,805,000</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">£71,095,000</td>
+    </tr>
+    {% elif data.supportSetting == "Homecare" %}
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">2023/24</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">£67,473,000</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">£54,337,800</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">£24,310,000</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">2022/23</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">£65,635,000</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">£53,012,000</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">£23,740,000</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">2021/22</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">£63,847,000</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">£51,720,000</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">£23,184,000</td>
+    </tr>
+    {% elif data.supportSetting == "Supported housing" %}
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">2023/24</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">£64,535,000</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">£9,506,000</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">£5,760,000</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">2022/23</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">£62,777,000</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">£9,274,000</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">£5,265,000</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">2021/22</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">£61,067,000</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">£9,048,000</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">£5,493,000</td>
+    </tr>
+    {% elif data.supportSetting == "Supported living" %}
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">2023/24</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">£0</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">£30,413,000</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">£22,431,000</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">2022/23</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">£0</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">£29,671,000</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">£21,905,000</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">2021/22</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">£0</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">£28,948,000</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">£21,392,000</td>
+    </tr>
+    {% else %}
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">2023/24</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">£348,197,000</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">£241,378,400</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">£139,889,700</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">2022/23</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">£338,713,000</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">£235,491,000</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">£136,611,000</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">2021/22</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">£329,487,000</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">£133,409,000</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">£229,747,000</td>
+    </tr>
+    {% endif %}
+  </tbody>
+</table>
+
+<div class="govuk-form-block">
+  <p class="govuk-body data-source">Source: Adult Social Care Activity and Finance Report from NHS England</p>
+</div>

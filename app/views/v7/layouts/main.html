@@ -1,0 +1,38 @@
+{#
+  For guidance on how to use layouts see:
+  https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
+#}
+
+{% extends "govuk-prototype-kit/layouts/govuk-branded.njk" %}
+{% from "govuk/components/footer/macro.njk" import govukFooter %}
+
+{% block footer %}
+{{ govukFooter({
+  meta: {
+    items: [
+      {
+        href: "#",
+        text: "Accessibility statement"
+      },
+      {
+        href: "#",
+        text: "Cookies"
+      }, 
+      {
+        href: "#",
+        text: "Privacy"
+      },      
+      {
+        href: "#",
+        text: "Terms and conditions"
+      }
+    ]
+  }
+}) }}
+{% endblock %}
+
+{% block scripts %}
+  {{ super() }}
+  <!-- D3 is a third party (OPEN SOURCE) JavaScript library for visualizing data (https://d3js.org)-->
+  <script src="https://d3js.org/d3.v4.js"></script>
+{% endblock %}
