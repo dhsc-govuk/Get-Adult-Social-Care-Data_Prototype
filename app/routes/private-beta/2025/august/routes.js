@@ -7,10 +7,44 @@ module.exports = function(router) {
    * Current population needs and capacity
   *****/
 
+  router.get('/' + version + '/' + 'current-population-needs/total-beds-edit-filters', function (req, res) {
+    res.render(version + '/current-population-needs/total-beds-edit-filters', {
+      'error' : req.query.error
+		})
+  })
+  router.post('/' + version + '/' + 'current-population-needs/total-beds-edit-filters-validation', function (req, res) {
+
+    var bedType = req.body['bedType']
+
+    // Error validation - make sure user enters data into required field
+    if (bedType == "_unchecked") {
+      res.redirect('/' + version + '/' + 'current-population-needs/total-beds-edit-filters?error=true')
+    }
+    // User selects at least one filter
+    else {
+      res.redirect('/' + version + '/' + 'current-population-needs/total-beds')
+    }
+
+  })
+  
   router.get('/' + version + '/' + 'current-population-needs/total-beds-edit-table-filters', function (req, res) {
     res.render(version + '/current-population-needs/total-beds-edit-table-filters', {
       'error' : req.query.error
 		})
+  })
+  router.post('/' + version + '/' + 'current-population-needs/total-beds-edit-table-filters-validation', function (req, res) {
+
+    var filters = req.body['filters']
+
+    // Error validation - make sure user enters data into required field
+    if (filters == "_unchecked") {
+      res.redirect('/' + version + '/' + 'current-population-needs/total-beds-edit-table-filters?error=true')
+    }
+    // User selects at least one filter
+    else {
+      res.redirect('/' + version + '/' + 'current-population-needs/total-beds')
+    }
+
   })
 
   /*****

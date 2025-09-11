@@ -11,7 +11,6 @@ module.exports = function(router) {
       'version' : version.substring(1)
 		})
   })
-
   router.post('/' + version + '/' + 'config-validation', function (req, res) {
 
     var userType = req.session.data['userType']
@@ -57,7 +56,6 @@ module.exports = function(router) {
       'error' : req.query.error
 		})
   })
-
   router.post('/' + version + '/' + 'signed-in/select-location-validation', function (req, res) {
 
     var careHome = req.body['careHome']

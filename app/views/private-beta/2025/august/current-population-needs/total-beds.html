@@ -115,13 +115,13 @@
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">Filters</dt>
             <dd class="govuk-summary-list__value">
-              Total beds
+              All types
               <br>
-              Dementia Nursing
+              Nursing - dementia
               <br>
-              Dementia Residential
+              Residential - dementia
             </dd>
-            <dd class="govuk-summary-list__actions"><a class="govuk-link" href="total-beds-edit-table-filters">Change<span class="govuk-visually-hidden"> filters</span></a></dd>
+            <dd class="govuk-summary-list__actions"><a class="govuk-link" href="total-beds-edit-filters{% if data.bedType %}{% else %}?bedType=All types,Nursing - dementia,Residential - dementia{% endif %}">Change<span class="govuk-visually-hidden"> filters</span></a></dd>
           </div>
           
         </dl>

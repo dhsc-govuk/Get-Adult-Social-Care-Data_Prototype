@@ -2,160 +2,133 @@
 
 {% set pageName = "Edit time series filters" %}
 
+{% block pageTitle %}
+  {% if error %}Error: {% endif %}{{pageName}} – {{serviceName}} – GOV.UK
+{% endblock %}
+
 {% block beforeContent %}
-<a href="total-beds" class="govuk-back-link" >Back</a>
+<a href="total-beds" class="govuk-back-link">Back</a>
 {% endblock %}
 
 {% block content %} 
 <div class="govuk-grid-row">
+  
   <div class="govuk-grid-column-two-thirds">
-    <span class="govuk-caption-m">Total beds per 100,000 population</span> 
-    <h1 class="govuk-heading-l">{{pageName}}</h1>
-    <p class="govuk-body">Select filters to refine the data displayed.</p>
-    <!-- 
-    
-    All types 
-    
-    -->
-    <div class="govuk-form-group">
-      <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
-        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-          <h1 class="govuk-fieldset__heading">
-            Total
-          </h1>
-        </legend>
-        <div class="govuk-checkboxes" data-module="govuk-checkboxes">
-          <div class="govuk-checkboxes__item">
-            <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses" checked>
-            <label class="govuk-label govuk-checkboxes__label" for="waste">
-              All types
-            </label>
-          </div>
-        </div>
-      </fieldset>
-    </div>
-    <!-- 
-    
-    General  
-    
-    -->
-    <div class="govuk-form-group">
-      <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
-        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-          <h1 class="govuk-fieldset__heading">
-            General
-          </h1>
-        </legend>
-        <div class="govuk-checkboxes__item">
-          <input class="govuk-checkboxes__input" id="waste-2" name="waste" type="checkbox" value="mines">
-          <label class="govuk-label govuk-checkboxes__label" for="waste-2">
-            Community care
-          </label>
-        </div>
-        <div class="govuk-checkboxes__item">
-          <input class="govuk-checkboxes__input" id="waste-2" name="waste" type="checkbox" value="mines">
-          <label class="govuk-label govuk-checkboxes__label" for="waste-2">
-            Transitional 
-          </label>
-          <div id="govuk-hint" class="govuk-hint govuk-checkboxes__hint">
-            For individuals moving from children's services to adult social care.
-          </div>
-        </div>
-        <div class="govuk-checkboxes__item">
-          <input class="govuk-checkboxes__input" id="waste-2" name="waste" type="checkbox" value="mines">
-          <label class="govuk-label govuk-checkboxes__label" for="waste-2">
-            YPD - Young Physically Disabled
-          </label>
-      </div>
-    </fieldset>
-  </div>
-  <!-- 
-  
-  Nursing
-  
-  -->
-  <div class="govuk-form-group">
-    <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
-      <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-        <h1 class="govuk-fieldset__heading">
-          Nursing
-        </h1>
-      </legend>
-      <div class="govuk-checkboxes" data-module="govuk-checkboxes">      
-        <div class="govuk-checkboxes__item">
-          <input class="govuk-checkboxes__input" id="waste-2" name="waste" type="checkbox" value="mines">
-          <label class="govuk-label govuk-checkboxes__label" for="waste-2">
-            General 
-          </label>
-        </div>
-        <div class="govuk-checkboxes__item">
-          <input class="govuk-checkboxes__input" id="waste-2" name="waste" type="checkbox" value="mines" checked>
-          <label class="govuk-label govuk-checkboxes__label" for="waste-2">
-            Dementia 
-          </label>
-        </div>
-        <div class="govuk-checkboxes__item">
-          <input class="govuk-checkboxes__input" id="waste-2" name="waste" type="checkbox" value="mines">
-          <label class="govuk-label govuk-checkboxes__label" for="waste-2">
-            Learning Disability 
-          </label>
-        </div>
-        <div class="govuk-checkboxes__item">
-          <input class="govuk-checkboxes__input" id="waste-2" name="waste" type="checkbox" value="mines">
-          <label class="govuk-label govuk-checkboxes__label" for="waste-2">
-            Mental Health 
-          </label>
-      </div>
-    </fieldset>
-  </div>
-  <!-- 
-  
-  Residential
-  
-  -->
-  <div class="govuk-form-group">
-    <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
-      <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-        <h1 class="govuk-fieldset__heading">
-          Residential
-        </h1>
-      </legend>
-      <div class="govuk-checkboxes__item">
-        <input class="govuk-checkboxes__input" id="waste-2" name="waste" type="checkbox" value="mines">
-        <label class="govuk-label govuk-checkboxes__label" for="waste-2">
-          General 
-        </label>
-      </div>  
-      <div class="govuk-checkboxes__item">
-        <input class="govuk-checkboxes__input" id="waste-2" name="waste" type="checkbox" value="mines" checked>
-        <label class="govuk-label govuk-checkboxes__label" for="waste-2">
-          Dementia 
-        </label>
-      </div>
-      <div class="govuk-checkboxes__item">
-        <input class="govuk-checkboxes__input" id="waste-2" name="waste" type="checkbox" value="mines">
-        <label class="govuk-label govuk-checkboxes__label" for="waste-2">
-          Learning Disability 
-        </label>
-      </div>
-      <div class="govuk-checkboxes__item">
-        <input class="govuk-checkboxes__input" id="waste-2" name="waste" type="checkbox" value="mines">
-        <label class="govuk-label govuk-checkboxes__label" for="waste-2">
-          Mental Health 
-        </label>
-    </div>
-  </fieldset>
-</div>
 
-<form action="total-beds">
+    <form action="total-beds-edit-filters-validation" method="post" novalidate>
+
+      {% if error %}
+      <div class="govuk-error-summary" data-module="govuk-error-summary">
+        
+        <div role="alert">
+          <h2 class="govuk-error-summary__title">There is a problem</h2>
           
-    <div class="govuk-button-group">
-      <button type="submit" class="govuk-button" data-module="govuk-button">Apply changes</button>
-      <a class="govuk-link" href="javascript:history.back()">Cancel and go back</a>
-    </div>
+          <div class="govuk-error-summary__body">
+            <ul class="govuk-list govuk-error-summary__list">
+              <li><a href="#bedType">You must select at least one filter</a></li>
+            </ul>
+          </div>
 
-  </form>
+        </div>
+
+      </div>
+      {% endif %}
+
+      <div {% if error %}class="govuk-form-group govuk-form-group--error" aria-describedby="bedType-error"{% else %}class="govuk-form-group"{% endif %}>
+        <fieldset class="govuk-fieldset" aria-describedby="bedType-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+            <span class="govuk-caption-xl">Total beds per 100,000 population</span> 
+            <h1 class="govuk-fieldset__heading">{{pageName}}</h1>
+          </legend>
+          
+          <div id="bedType-hint" class="govuk-hint govuk-!-margin-top-7">
+            Select filters to refine the data displayed
+          </div>
+          {% if error %}
+
+          <p id="bedType-error" class="govuk-error-message"><span class="govuk-visually-hidden">Error:</span> You must select at least one filter</p>
+          {% endif %}
+
+          <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+            
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="bedType" name="bedType" type="checkbox" value="All types"{% for param in data.bedType %}{% if param == 'All types' %} checked{% endif %}{% endfor %}>
+              <label class="govuk-label govuk-checkboxes__label" for="bedType">All types</label>
+            </div>
+
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="bedType-2" name="bedType" type="checkbox" value="Community care"{% for param in data.bedType %}{% if param == 'Community care' %} checked{% endif %}{% endfor %}>
+              <label class="govuk-label govuk-checkboxes__label" for="bedType-2">Community care</label>
+            </div>
+
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="bedType-3" name="bedType" type="checkbox" value="Transitional" aria-describedby="bedType-3-item-hint"{% for param in data.bedType %}{% if param == 'Transitional' %} checked{% endif %}{% endfor %}>
+              <label class="govuk-label govuk-checkboxes__label" for="bedType-3">Transitional</label>
+
+              <div id="bedType-3-item-hint" class="govuk-hint govuk-checkboxes__hint">
+                For individuals moving from children's services to adult social care.
+              </div>
+
+            </div>
+
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="bedType-4" name="bedType" type="checkbox" value="YPD - Young Physically Disabled"{% for param in data.bedType %}{% if param == 'YPD - Young Physically Disabled' %} checked{% endif %}{% endfor %}>
+              <label class="govuk-label govuk-checkboxes__label" for="bedType-4">YPD &ndash; Young Physically Disabled</label>
+            </div>
+
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="bedType-5" name="bedType" type="checkbox" value="Nursing - general"{% for param in data.bedType %}{% if param == 'Nursing - general' %} checked{% endif %}{% endfor %}>
+              <label class="govuk-label govuk-checkboxes__label" for="bedType-5">Nursing - general</label>
+            </div>
+
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="bedType-6" name="bedType" type="checkbox" value="Nursing - dementia"{% for param in data.bedType %}{% if param == 'Nursing - dementia' %} checked{% endif %}{% endfor %}>
+              <label class="govuk-label govuk-checkboxes__label" for="bedType-6">Nursing - dementia</label>
+            </div>
+
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="bedType-7" name="bedType" type="checkbox" value="Nursing - mental health"{% for param in data.bedType %}{% if param == 'Nursing - mental health' %} checked{% endif %}{% endfor %}>
+              <label class="govuk-label govuk-checkboxes__label" for="bedType-7">Nursing - mental health</label>
+            </div>
+
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="bedType-8" name="bedType" type="checkbox" value="Nursing - learning disability"{% for param in data.bedType %}{% if param == 'Nursing - learning disability' %} checked{% endif %}{% endfor %}>
+              <label class="govuk-label govuk-checkboxes__label" for="bedType-8">Nursing - learning disability</label>
+            </div>
+
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="bedType-9" name="bedType" type="checkbox" value="Residential - general"{% for param in data.bedType %}{% if param == 'Residential - general' %} checked{% endif %}{% endfor %}>
+              <label class="govuk-label govuk-checkboxes__label" for="bedType-9">Residential - general</label>
+            </div>
+
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="bedType-10" name="bedType" type="checkbox" value="Residential - dementia"{% for param in data.bedType %}{% if param == 'Residential - dementia' %} checked{% endif %}{% endfor %}>
+              <label class="govuk-label govuk-checkboxes__label" for="bedType-10">Residential - dementia</label>
+            </div>
+
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="bedType-11" name="bedType" type="checkbox" value="Residential - mental health"{% for param in data.bedType %}{% if param == 'Residential - mental health' %} checked{% endif %}{% endfor %}>
+              <label class="govuk-label govuk-checkboxes__label" for="bedType-11">Residential - mental health</label>
+            </div>
+
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="bedType-12" name="bedType" type="checkbox" value="Residential - learning disability"{% for param in data.bedType %}{% if param == 'Residential - learning disability' %} checked{% endif %}{% endfor %}>
+              <label class="govuk-label govuk-checkboxes__label" for="bedType-12">Residential - learning disability</label>
+            </div>
+
+          </div>
+        </fieldset>
+
+      </div>    
+              
+      <div class="govuk-button-group">
+        <button type="submit" class="govuk-button" data-module="govuk-button">Apply changes</button>
+        <a class="govuk-link" href="javascript:history.back()">Cancel and go back</a>
+      </div>
+
+    </form>
+
+  </div>
 
 </div>
-
 {% endblock %}

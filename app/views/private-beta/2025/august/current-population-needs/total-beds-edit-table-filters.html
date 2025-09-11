@@ -2,6 +2,10 @@
 
 {% set pageName = "Edit table filters" %}
 
+{% block pageTitle %}
+  {% if error %}Error: {% endif %}{{pageName}} – {{serviceName}} – GOV.UK
+{% endblock %}
+
 {% block beforeContent %}
 <a href="total-beds" class="govuk-back-link" >Back</a>
 {% endblock %}
@@ -28,12 +32,12 @@
     </div>
     {% endif %}
 
-    <form action="total-beds" method="post" novalidate>
+    <form action="total-beds-edit-table-filters-validation" method="post" novalidate>
       
       <div {% if error %}class="govuk-form-group govuk-form-group--error" aria-describedby="nationality-error"{% else %}class="govuk-form-group"{% endif %}>
-        <span class="govuk-caption-m">Total beds per 100,000 population</span> 
-        <h1 class="govuk-heading-l">{{pageName}}</h1>
-        <p class="govuk-body">Select filters to refine the data displayed.</p>
+        <span class="govuk-caption-xl">Total beds per 100,000 population</span> 
+        <h1 class="govuk-heading-xl">{{pageName}}</h1>
+        <p class="govuk-hint">Select filters to refine the data displayed</p>
         {% if error %}
         <p id="nationality-error" class="govuk-error-message"><span class="govuk-visually-hidden">Error:</span> Select one or more table filters</p>
         {% endif %}
@@ -41,13 +45,13 @@
         <div class="govuk-form-group">
           <fieldset class="govuk-fieldset">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-              <h1 class="govuk-fieldset__heading">Total</h1>
+              <h2 class="govuk-fieldset__heading">Total</h2>
             </legend>
             
             <div class="govuk-checkboxes" data-module="govuk-checkboxes">
               
               <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="filters" name="filters" type="checkbox" value="All types" checked>
+                <input class="govuk-checkboxes__input" id="filters" name="filters" type="checkbox" value="All types"{% for param in data.filters %}{% if param == 'All types' %} checked{% endif %}{% endfor %}>
                 <label class="govuk-label govuk-checkboxes__label" for="filters">All types</label>
               </div>
 
@@ -59,16 +63,16 @@
         <div class="govuk-form-group">
           <fieldset class="govuk-fieldset">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-              <h1 class="govuk-fieldset__heading">General</h1>
+              <h2 class="govuk-fieldset__heading">General</h2>
             </legend>
 
             <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" id="filters-2" name="filters" type="checkbox" value="Community care">
+              <input class="govuk-checkboxes__input" id="filters-2" name="filters" type="checkbox" value="Community care"{% for param in data.filters %}{% if param == 'Community care' %} checked{% endif %}{% endfor %}>
               <label class="govuk-label govuk-checkboxes__label" for="filters-2">Community care</label>
             </div>
 
             <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" id="filters-3" name="filters" type="checkbox" value="Transitional" aria-describedby="filters-3-hint">
+              <input class="govuk-checkboxes__input" id="filters-3" name="filters" type="checkbox" value="Transitional" aria-describedby="filters-3-hint"{% for param in data.filters %}{% if param == 'Transitional' %} checked{% endif %}{% endfor %}>
               <label class="govuk-label govuk-checkboxes__label" for="filters-3">Transitional</label>
 
               <div id="filters-3-hint" class="govuk-hint govuk-checkboxes__hint">
@@ -78,8 +82,8 @@
             </div>
 
             <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" id="filters-4" name="filters" type="checkbox" value="YPD - Young Physically Disabled">
-              <label class="govuk-label govuk-checkboxes__label" for="filters-4">YPD - Young Physically Disabled</label>
+              <input class="govuk-checkboxes__input" id="filters-4" name="filters" type="checkbox" value="YPD - Young Physically Disabled"{% for param in data.filters %}{% if param == 'YPD - Young Physically Disabled' %} checked{% endif %}{% endfor %}>
+              <label class="govuk-label govuk-checkboxes__label" for="filters-4">YPD &ndash; Young Physically Disabled</label>
             </div>
 
           </fieldset>
@@ -88,28 +92,28 @@
         <div class="govuk-form-group">
           <fieldset class="govuk-fieldset">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-              <h1 class="govuk-fieldset__heading">Nursing</h1>
+              <h2 class="govuk-fieldset__heading">Nursing</h2>
             </legend>
           
             <div class="govuk-checkboxes" data-module="govuk-checkboxes">      
             
               <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="filters-5" name="filters" type="checkbox" value="Nursing - General">
+                <input class="govuk-checkboxes__input" id="filters-5" name="filters" type="checkbox" value="Nursing - General"{% for param in data.filters %}{% if param == 'Nursing - General' %} checked{% endif %}{% endfor %}>
                 <label class="govuk-label govuk-checkboxes__label" for="filters-5">General</label>
               </div>
 
               <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="filters-6" name="filters" type="checkbox" value="Nursing - Dementia" checked>
+                <input class="govuk-checkboxes__input" id="filters-6" name="filters" type="checkbox" value="Nursing - Dementia"{% for param in data.filters %}{% if param == 'Nursing - Dementia' %} checked{% endif %}{% endfor %}>
                 <label class="govuk-label govuk-checkboxes__label" for="filters-6">Dementia</label>
               </div>
 
               <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="filters-7" name="filters" type="checkbox" value="Nursing - Learning Disability">
+                <input class="govuk-checkboxes__input" id="filters-7" name="filters" type="checkbox" value="Nursing - Learning Disability"{% for param in data.filters %}{% if param == 'Nursing - Learning Disability' %} checked{% endif %}{% endfor %}>
                 <label class="govuk-label govuk-checkboxes__label" for="filters-7">Learning Disability</label>
               </div>
 
               <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="filters-8" name="filters" type="checkbox" value="Nursing - Mental Health">
+                <input class="govuk-checkboxes__input" id="filters-8" name="filters" type="checkbox" value="Nursing - Mental Health"{% for param in data.filters %}{% if param == 'Nursing - Mental Health' %} checked{% endif %}{% endfor %}>
                 <label class="govuk-label govuk-checkboxes__label" for="filters-8">Mental Health</label>
               </div>
 
@@ -121,26 +125,26 @@
         <div class="govuk-form-group">
           <fieldset class="govuk-fieldset">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-              <h1 class="govuk-fieldset__heading">Residential</h1>
+              <h2 class="govuk-fieldset__heading">Residential</h2>
             </legend>
 
             <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" id="filters-9" name="filters" type="checkbox" value="Residential - General">
+              <input class="govuk-checkboxes__input" id="filters-9" name="filters" type="checkbox" value="Residential - General"{% for param in data.filters %}{% if param == 'Residential - General' %} checked{% endif %}{% endfor %}>
               <label class="govuk-label govuk-checkboxes__label" for="filters-9">General</label>
             </div> 
 
             <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" id="filters-10" name="filters" type="checkbox" value="Residential - Dementia" checked>
+              <input class="govuk-checkboxes__input" id="filters-10" name="filters" type="checkbox" value="Residential - Dementia"{% for param in data.filters %}{% if param == 'Residential - Dementia' %} checked{% endif %}{% endfor %}>
               <label class="govuk-label govuk-checkboxes__label" for="filters-10">Dementia</label>
             </div>
 
             <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" id="filters-11" name="filters" type="checkbox" value="Residential - Learning Disability">
+              <input class="govuk-checkboxes__input" id="filters-11" name="filters" type="checkbox" value="Residential - Learning Disability"{% for param in data.filters %}{% if param == 'Residential - Learning Disability' %} checked{% endif %}{% endfor %}>
               <label class="govuk-label govuk-checkboxes__label" for="filters-11">Learning Disability</label>
             </div>
 
             <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" id="filters-12" name="filters" type="checkbox" value="Residential - Mental Health">
+              <input class="govuk-checkboxes__input" id="filters-12" name="filters" type="checkbox" value="Residential - Mental Health"{% for param in data.filters %}{% if param == 'Residential - Mental Health' %} checked{% endif %}{% endfor %}>
               <label class="govuk-label govuk-checkboxes__label" for="filters-12">Mental Health</label>
             </div>
 
