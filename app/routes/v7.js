@@ -73,7 +73,13 @@ module.exports = function(router) {
 
   /*****
    * Additional screens (Get adult social care data)
-   * ?
-  *****/  
+   * Service information and system
+  *****/
+
+  router.get('/' + version + '/' + 'service-information/cookies', function (req, res) {
+    res.render(version + '/service-information/cookies', {
+      'cookiesUpdated' : req.query.cookiesUpdated
+		})
+  })
 
 }

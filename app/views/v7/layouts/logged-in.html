@@ -3,6 +3,7 @@
   https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
 #}
 
+{% from "govuk/components/cookie-banner/macro.njk" import govukCookieBanner %}
 {% extends "govuk-prototype-kit/layouts/govuk-branded.njk" %}
 {% from "di-govuk-one-login-service-header/service-header.njk" import govukOneLoginServiceHeader %}
 {% from "govuk/components/header/macro.njk" import govukHeader %}
@@ -18,6 +19,69 @@
 {% endblock %}
 
 {% block header %}
+{% if data.cookiesAnalytics == null %}
+{% set html %}
+  <p class="govuk-body">We use some essential cookies to make this service work.</p>
+  <p class="govuk-body">We&#39;d also like to use analytics cookies so we can understand how you use the service and make improvements.</p>
+{% endset %}
+
+<form method="post" novalidate>
+  
+  {{ govukCookieBanner({
+    ariaLabel: "Cookies on " + serviceName,
+    messages: [
+      {
+        headingText: "Cookies on " + serviceName,
+        html: html,
+        actions: [
+          {
+            text: "Accept analytics cookies",
+            type: "button",
+            href: "?cookiesAnalytics=Yes"
+          },
+          {
+            text: "Reject analytics cookies",
+            type: "button",
+            href: "?cookiesAnalytics=No"
+          },
+          {
+            text: "View cookies",
+            href: "/v7/service-information/cookies"
+          }
+        ]
+      }
+    ]
+  }) }}
+
+</form>
+{% else %}
+{% if data.cookiesBanner != "Hidden" %}
+{% set acceptHtml %}
+  <p class="govuk-body">You&#39;ve accepted additional cookies. You can <a class="govuk-link" href="/v7/service-information/cookies">change your cookie settings</a> at any time.</p>
+{% endset %}
+
+<form method="post" novalidate>
+
+  {{ govukCookieBanner({
+    ariaLabel: "Cookies on " + serviceName,
+    messages: [
+      {
+        html: acceptHtml,
+        actions: [
+          {
+            text: "Hide cookie message",
+            type: "button",
+            href: "?cookiesBanner=Hidden"
+          }
+        ]
+      }
+    ]
+  }) }}
+  
+</form>
+{% endif %}
+{% endif %}
+
 <!-- START REBRANDED HEADER -->
 <!-- IMPORTANT: you must implement logic in your service to switch this off until the official launch date -->
 <header class="rebranded-cross-service-header" data-module="one-login-header">
@@ -208,6 +272,14 @@
       {
         href: "/v7/service-information/privacy-policy",
         text: "Privacy"
+      },
+      {
+        href: "/v7/service-information/cookies",
+        text: "Cookies"
+      },
+      {
+        href: "/v7/service-information/accessibility-statement",
+        text: "Accessibility statement"
       }
     ]
   }
