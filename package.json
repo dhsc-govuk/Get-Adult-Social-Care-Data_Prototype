@@ -6,12 +6,13 @@
   },
   "dependencies": {
     "@govuk-prototype-kit/common-templates": "2.0.1",
+    "@ministryofjustice/frontend": "^5.1.5",
     "@x-govuk/govuk-prototype-filters": "^2.0.0",
     "accessible-autocomplete": "^3.0.1",
     "govuk-frontend": "5.11.2",
     "govuk-one-login-service-header": "github:govuk-one-login/service-header",
     "govuk-prototype-kit": "13.18.0",
-    "hmrc-frontend": "6.88.0",
+    "hmrc-frontend": "6.93.0",
     "jquery": "3.7.1",
     "node": "^20.19.4",
     "nunjucks": "^3.2.4"
