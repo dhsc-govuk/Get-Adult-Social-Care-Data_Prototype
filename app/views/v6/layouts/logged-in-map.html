@@ -14,7 +14,6 @@
 {{super()}}
 <link href="/public/css/v6/styles.css" rel="stylesheet" type="text/css" />
 <link href="/public/css/v6/print.css" media="print" rel="stylesheet" type="text/css" />
-<link href="/public/css/x-govuk/accessible-autocomplete.min.css" rel="stylesheet" type="text/css" />
 {% endblock %}
 
 {% block header %}
@@ -212,9 +211,6 @@
 
 {% block scripts %}
   {{ super() }}
-  <!-- X-GOV.UK Prototype Components (https://x-govuk.github.io/govuk-prototype-components) JavaScript added and referenced directly to avoid using the plugin (https://x-govuk.github.io/govuk-prototype-components/get-started) as this causes multiple errors in the prototype (raised with the X-GOV.UK Prototype Components team on Thursday 26/06/25 via the #govuk-prototype-kit Slack channel - via the UK Government Digital workspace) -->
-  <script type="module" src="/public/javascripts/x-govuk/govuk-prototype-components.min.js"></script>
-  <script type="module" src="/public/javascripts/x-govuk/init.js"></script>
   <!-- D3 is a third party (OPEN SOURCE) JavaScript library for visualizing data (https://d3js.org)-->
   <script src="https://d3js.org/d3.v4.js"></script>
   <!-- Custom global jQuery and JavaScript for GASCD -->
