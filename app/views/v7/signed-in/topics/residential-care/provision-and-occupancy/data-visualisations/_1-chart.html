@@ -67,11 +67,13 @@
       <text {% if x == 'England (national average)' or x == 'East of England (regional average)' or x == 'Suffolk' %}class="svg-bold" {% endif %}x="10" y={{55 + q * 50}}>{{x}}</text>
       <g fill="none">
       <title stroke-width="5">Total beds per 100,000 in {{x}} - {{z | addcommas}}</title>
-      {% if x == "Suffolk" %}
+      {% if x == "England (national average)" or x == "East of England (regional average)" %}
+      <line x1="320" y1={{50 + q * 50}} x2={{y + 320}} y2={{50 + q * 50}} stroke="#003c57" stroke-width="20" />
+      {% elif x == "Suffolk" %}
       <rect x="0" y={{35 + q * 50}} width="500" height="30" stroke="black" stroke-width="2" stroke-dasharray="2,2" />
-      <line x1="320" y1={{50 + q * 50}} x2={{y + 320}} y2={{50 + q * 50}} stroke="red" stroke-width="20" />
+      <line x1="320" y1={{50 + q * 50}} x2={{y + 320}} y2={{50 + q * 50}} stroke="#f39431" stroke-width="20" />
       {% else %}
-      <line x1="320" y1={{50 + q * 50}} x2={{y + 320}} y2={{50 + q * 50}} stroke="purple" stroke-width="20" />
+      <line x1="320" y1={{50 + q * 50}} x2={{y + 320}} y2={{50 + q * 50}} stroke="#746cb1" stroke-width="20" />
       {% endif %}
       </g>
       {% endfor %}
