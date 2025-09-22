@@ -12,7 +12,7 @@
     "accessible-autocomplete": "^3.0.1",
     "govuk-frontend": "5.12.0",
     "govuk-one-login-service-header": "github:govuk-one-login/service-header",
-    "govuk-prototype-kit": "13.18.0",
+    "govuk-prototype-kit": "13.18.1",
     "hmrc-frontend": "6.93.0",
     "jquery": "3.7.1",
     "node": "^20.19.4",
