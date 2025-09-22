@@ -1,7 +1,7 @@
 <style>
 
   .chart-bar {
-    fill: #955196;
+    fill: #746cb1;
     margin: 0;
   }
 
@@ -9,19 +9,19 @@
 
 {% set las =
   [
-    ["Southend-on-Sea", 87634, 4.2],
-    ["Norfolk", 207967, 3.9],
-    ["Cambridgeshire", 935421, 3.8],
-    ["Suffolk", 763400, 3.1],
-    ["Central Bedfordshire", 631756, 2.9],
-    ["East of England (regional average)", 631756, 2.8],
-    ["Hertfordshire", 529512, 2.7],
-    ["Thurrock", 220454, 2.6],
-    ["England (national average)", 631756, 2.5],
-    ["Peterborough", 208667, 2.4],
-    ["Luton", 1001728, 2.2],
-    ["Bedford", 106754, 2.0],
-    ["Essex", 1506300, 1.9]
+    ["England (national average)", 2.5],
+    ["East of England (regional average)", 2.8],
+    ["Southend-on-Sea", 4.2],
+    ["Norfolk", 3.9],
+    ["Cambridgeshire", 3.8],
+    ["Suffolk", 3.1],
+    ["Central Bedfordshire", 2.9],
+    ["Hertfordshire", 2.7],
+    ["Thurrock", 2.6],
+    ["Peterborough", 2.4],
+    ["Luton", 2.2],
+    ["Bedford", 2.0],
+    ["Essex", 1.9]
   ]
 %}
 
@@ -38,23 +38,43 @@
     </thead>
     <tbody class="govuk-table__body">
       {% for item in las %}
-      {% if item[0] == "Suffolk" %}
+      {% if item[0] == "England (national average)" %}
       <tr class="govuk-table__row">
-        <td class="govuk-table__cell"><strong>Suffolk</strong></td>
-        <td class="govuk-table__cell govuk-table__cell--numeric">{{item[2]}}</td>
+        <td class="govuk-table__cell"><strong>England (national average)</strong></td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">{{item[1]}}&#37;</td>
         <td class="govuk-table__cell">
           <svg width="500" height="25">
-            <rect width="{{item[2] * 100}}" height="25" class="chart-bar" style="fill: #DD5182";></rect>
+            <rect width="{{item[1] * 100}}" height="25" class="chart-bar" style="fill: #003c57";></rect>
+          </svg>
+        </td>
+      </tr>
+      {% elif item[0] == "East of England (regional average)" %}
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell"><strong>East of England (regional average)</strong></td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">{{item[1]}}&#37;</td>
+        <td class="govuk-table__cell">
+          <svg width="500" height="25">
+            <rect width="{{item[1] * 100}}" height="25" class="chart-bar" style="fill: #003c57";></rect>
+          </svg>
+        </td>
+      </tr>
+      {% elif item[0] == "Suffolk" %}
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell"><strong>Suffolk</strong></td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">{{item[1]}}&#37;</td>
+        <td class="govuk-table__cell">
+          <svg width="500" height="25">
+            <rect width="{{item[1] * 100}}" height="25" class="chart-bar" style="fill: #f39431";></rect>
           </svg>
         </td>
       </tr>
       {% else %}
       <tr class="govuk-table__row">
         <td class="govuk-table__cell">{{item[0]}}</td>
-        <td class="govuk-table__cell govuk-table__cell--numeric">{{item[2]}}</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">{{item[1]}}&#37;</td>
         <td class="govuk-table__cell">
           <svg width="500" height="25">
-            <rect width="{{item[2] * 100}}" height="25" class="chart-bar"></rect>
+            <rect width="{{item[1] * 100}}" height="25" class="chart-bar"></rect>
           </svg>
         </td>
       </tr>
