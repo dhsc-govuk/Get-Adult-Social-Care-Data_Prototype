@@ -1,15 +1,15 @@
-FROM node:24-slim
+FROM node:22.19.0-slim
 
 RUN addgroup --system --gid 1001 prototype
 RUN adduser --system --uid 1001 prototype
 
 RUN mkdir /code
 COPY package.json package-lock.json /code/
-COPY app /code/app
 WORKDIR /code
 
-RUN npm install
+RUN npm ci
 
+COPY app /code/app
 RUN chown -R prototype:prototype /code
 USER prototype
 

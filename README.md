@@ -11,6 +11,32 @@ Bobby King and Ian Cuddy worked on this prototype between November 2024 and Apri
 + The earlier versions of the designs contain more of a narrative; as time went on they found that users reacted with more enthusiasm to interactive maps and personalised data. Version 5 uses more of a 'show don't tell approach'.
 + They finished my leaving the message "if you're reading this, they hope you get the chance to test this prototype out on more users - Bobby King, April 2025".
 
+## GASCD-specific installation instructions
+
+This project uses [Mise](https://mise.jdx.dev/getting-started.html) to control dependency versions:
+
+### Installing project dependencies
+
+1. Clone the repo to your chosen directory
+2. Run `mise install` to install the correct version of node
+3. Run npm install to build the NodeJS app
+
+### Running the prototype
+
+`npm run dev`
+
+This will start the development server on http://localhost:3000
+
+### Docker support
+
+The prototype is deployed to Azure using docker. You can also use the development `docker-compose.yml` file to run the prototype locally as follows:
+
+`docker-compose up`
+
+--
+
+(Generic GOV.UK Prototype Kit instructions follow)
+
 ## GOV.UK Prototype Kit
 
 Go to the [GOV.UK Prototype Kit site](https://prototype-kit.service.gov.uk/docs) to get the latest version and read the documentation.

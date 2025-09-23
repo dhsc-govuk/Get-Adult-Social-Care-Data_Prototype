@@ -1,0 +1,14 @@
+# Local development docker compose for the frontend
+# (only used for development/testing at the moment)
+services:
+    app:
+        container_name: gascd_prototype
+        build:
+            context: .
+        ports:
+            - 3000:3000
+        environment:
+            - USE_HTTPS=false
+            # Note - this is a development password only
+            # Production passwords are handled by the azure pipeline secrests
+            - PASSWORD=password
