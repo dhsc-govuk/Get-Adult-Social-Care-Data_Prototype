@@ -1,4 +1,4 @@
-FROM node:24-slim
+FROM node:22.19.0-slim
 
 RUN addgroup --system --gid 1001 prototype
 RUN adduser --system --uid 1001 prototype

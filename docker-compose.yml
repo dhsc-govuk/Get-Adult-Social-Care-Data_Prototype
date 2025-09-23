@@ -1,0 +1,14 @@
+# Local development docker compose for the frontend
+# (only used for development/testing at the moment)
+services:
+    app:
+        container_name: gascd_prototype
+        build:
+            context: .
+        ports:
+            - 3000:3000
+        env_file:
+            - .env
+        environment:
+            - USE_HTTPS=false
+            - PASSWORD=ba
