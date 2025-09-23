@@ -7,8 +7,8 @@ services:
             context: .
         ports:
             - 3000:3000
-        env_file:
-            - .env
         environment:
             - USE_HTTPS=false
-            - PASSWORD=ba
+            # Note - this is a development password only
+            # Production passwords are handled by the azure pipeline secrests
+            - PASSWORD=password
