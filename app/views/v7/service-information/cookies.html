@@ -1,5 +1,11 @@
 {% extends "v7/layouts/logged-in-cookies.html" %}
 
+{% set pageName = "Cookies on " + serviceName %}
+
+{% block beforeContent %}
+<a href="javascript:history.back()" class="govuk-back-link">Back</a>
+{% endblock %}
+
 {% block content %}
 <div class="govuk-grid-row">
   
@@ -21,7 +27,7 @@
       </div>
       {% endif %}
 
-      <h1 class="govuk-heading-xl">Cookies on {{serviceName}}</h1>
+      <h1 class="govuk-heading-xl">{{pageName}}</h1>
       <p class="govuk-body">Cookies are small text files that we save on your phone, tablet or computer when you use this service. Some cookies on Get adult social care data are essential and others are optional.</p>
       <p class="govuk-body">We cannot use cookies to identify you.</p>
       
