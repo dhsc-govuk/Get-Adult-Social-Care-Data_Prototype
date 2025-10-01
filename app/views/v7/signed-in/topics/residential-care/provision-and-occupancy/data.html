@@ -22,7 +22,7 @@
 
   <div class="govuk-grid-column-two-thirds">
     <h1 class="govuk-heading-xl">{{pageName}}</h1>
-    <p class="govuk-body-l">Compare capacity data for care homes in a local authority area to national and regional statistics.</p>
+    <p class="govuk-body-l">Compare capacity data for care homes in a local authority area to regional and national statistics.</p>
 
     <h2 class="govuk-heading-l govuk-!-margin-top-9">Data overview</h2>
     <!-- <p class="govuk-body">Data overview summary information, e.g. broad guidance.</p> -->
@@ -40,8 +40,7 @@
         
         <div class="govuk-form-group">
           <h3 class="govuk-heading-m">Provision of care home beds</h3>
-          <p class="govuk-body">The number of adult social care beds per 100,000 adult population provides an indicator of current care capacity. A higher number usually suggests more sufficient capacity for locations with similar needs.</p>
-          <p class="govuk-body">Learn about the definition, sourcing of data and methodology for the indicator <a href="../../../help/beds-per-100000-adult-population" class="govuk-link">adult social care beds per 100,000 adult population</a>.</p>
+           <p class="govuk-body">Find out <a href="../../../help/beds-per-100000-adult-population" class="govuk-link">how the number of adult social care beds per 100,000 adult population is calculated</a>.</p>
         </div>
 
         <h3 class="govuk-tabs__title">Contents</h3>
@@ -95,8 +94,8 @@
         
         <div class="govuk-form-group">
           <h3 class="govuk-heading-m">Occupancy levels in care homes</h3>
-          <p class="govuk-body">Adult social care beds and percentage of occupancy are used as measures of capacity in the care home sector.</p>
-          <p class="govuk-body">Learn about the definition, sourcing of data and methodology for the indicators <a href="../../../help/percentage-beds-occupied" class="govuk-link">percentage of adult social care beds occupied</a> and <a href="../../../help/beds-care-provider-location" class="govuk-link">number of adult social care beds in care provider location</a>.</p>
+          
+          <p class="govuk-body">Find out how <a href="../../../help/percentage-beds-occupied" class="govuk-link">occupancy level percentages</a> and <a href="../../../help/beds-care-provider-location" class="govuk-link">the number of adult social care beds per 100,000 adult population</a> are calculated.</p>
         </div>
 
         <h3 class="govuk-tabs__title">Contents</h3>
@@ -136,38 +135,51 @@
 
     <div class="data-box govuk-form-group">
 
-      <div class="govuk-tabs" data-module="govuk-tabs">
-        
-        <div class="govuk-form-group">
-          <h3 class="govuk-heading-m">Provision and occupancy levels in care homes</h3>
-          <p class="govuk-body">Adult social care beds and percentage of occupancy are used as measures of capacity in the care home sector.</p>
-          <p class="govuk-body">Learn about the definition, sourcing of data and methodology for the indicators <a href="../../../help/percentage-beds-occupied" class="govuk-link">percentage of adult social care beds occupied</a> and <a href="../../../help/beds-care-provider-location" class="govuk-link">number of adult social care beds in care provider location</a>.</p>
+        <div class="govuk-tabs" data-module="govuk-tabs">
+
+            <div class="govuk-form-group">
+                <h3 class="govuk-heading-m">Provision and occupancy levels in care homes</h3>
+
+                <p class="govuk-body">Find out how <a href="../../../help/percentage-beds-occupied" class="govuk-link">occupancy level percentages</a> and the <a href="../../../help/beds-care-provider-location" class="govuk-link">number of adult social care beds in a care provider location</a> are calculated.</p>
+            </div>
+
+            <details class="govuk-details">
+                <summary class="govuk-details__summary">
+                    <span class="govuk-details__summary-text">
+                        Definition of a &lsquo;median&rsquo; number
+                    </span>
+                </summary>
+                <div class="govuk-details__text">
+                    <p>If you place a set of numbers in order, the median number is the middle one.</p>
+                    
+                    <p>If there are two middle numbers, the median is the average of those two numbers.</p>
+                </div>
+            </details>
+
+            <h3 class="govuk-tabs__title">Contents</h3>
+            <ul class="govuk-tabs__list">
+                <li class="govuk-tabs__list-item">
+                    <a class="govuk-tabs__tab" href="#data3-table">Table</a>
+                </li>
+                <li class="govuk-tabs__list-item">
+                    <a class="govuk-tabs__tab" href="#data3-download">Download</a>
+                </li>
+            </ul>
+
+            <div class="govuk-tabs__panel" id="data3-table">
+                {% include "./data-visualisations/_3-table.html" %}
+            </div>
+
+            <div class="govuk-tabs__panel" id="data3-download">
+                <h4 class="govuk-heading-s">Download</h4>
+                <ul class="govuk-list data-box-last-tab-last-item">
+                    <li>
+                        <a class="govuk-link" href="#" data-message="Sorry, this hasn’t been designed yet">Export table data (CSV, 420 KB)</a>
+                    </li>
+                </ul>
+            </div>
+
         </div>
-
-        <h3 class="govuk-tabs__title">Contents</h3>
-        <ul class="govuk-tabs__list">
-          <li class="govuk-tabs__list-item">
-            <a class="govuk-tabs__tab" href="#data3-table">Table</a>
-          </li>
-          <li class="govuk-tabs__list-item">
-            <a class="govuk-tabs__tab" href="#data3-download">Download</a>
-          </li>
-        </ul>
-
-        <div class="govuk-tabs__panel" id="data3-table">
-          {% include "./data-visualisations/_3-table.html" %}
-        </div>
-
-        <div class="govuk-tabs__panel" id="data3-download">
-          <h4 class="govuk-heading-s">Download</h4>
-          <ul class="govuk-list data-box-last-tab-last-item">
-            <li>
-              <a class="govuk-link" href="#" data-message="Sorry, this hasn’t been designed yet">Export table data (CSV, 420 KB)</a>
-            </li>
-          </ul>
-        </div>
-
-      </div>
 
     </div>
 
@@ -238,7 +250,7 @@
             <h2 class="gem-c-cards__sub-heading govuk-heading-s">
               <a class="govuk-link gem-c-cards__link gem-c-force-print-link-styles" href="../residential-care-providers/data">Locations and services of care home providers</a>
             </h2>
-            <p class="govuk-body gem-c-cards__description">Explore data on residential care homes and nursing homes by location. Filter by service and bed type.</p>
+            <p class="govuk-body gem-c-cards__description">Explore data on residential care homes and nursing homes by location.</p>
           </div>
         
         </li>

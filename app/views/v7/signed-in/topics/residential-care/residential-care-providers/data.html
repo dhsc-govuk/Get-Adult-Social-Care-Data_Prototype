@@ -1,9 +1,10 @@
 {% extends "v7/layouts/logged-in-map.html" %}
 
-{% set pageName = "Locations and services of care home providers" %}
+{% set pageName = "Locations and services – care home providers" %}
 
 {% block beforeContent %}
-{{ govukBreadcrumbs({
+{{
+ govukBreadcrumbs({
   items: [
     {
       text: "Home",
@@ -14,142 +15,143 @@
       href: "../subtopics"
     }
   ]
-}) }}
+})
+}}
 {% endblock %}
 
 {% block content %}
 <div class="govuk-grid-row">
 
-  <div class="govuk-grid-column-two-thirds">
-    <h1 class="govuk-heading-xl">{{pageName}}</h1>
-    <p class="govuk-body-l">Explore data on residential care homes and nursing homes by location. Filter by service and bed type.</p>
+    <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-xl">{{pageName}}</h1>
+        <p class="govuk-body-l">Explore data on residential care homes and nursing homes by location.</p>
 
-    <h2 class="govuk-heading-l govuk-!-margin-top-9">Data overview</h2>
-    <!-- <p class="govuk-body">Data overview summary information, e.g. broad guidance.</p> -->
-  </div>
+        <h2 class="govuk-heading-l govuk-!-margin-top-9">Data overview</h2>
+        <!-- <p class="govuk-body">Data overview summary information, e.g. broad guidance.</p> -->
+    </div>
 
 </div>
 
 <div class="govuk-grid-row">
 
-  <div class="govuk-grid-column-full">
+    <div class="govuk-grid-column-full">
 
-    <div class="data-box govuk-form-group">
+        <div class="data-box govuk-form-group">
 
-      <div class="govuk-tabs" data-module="govuk-tabs">
-        
-        <div class="govuk-form-group">
-          <h3 class="govuk-heading-m">CQC&#45;registered care home locations near {{data.careHome or 'Shoggins Care Services (Sudbury)'}}</h3>
-          <p class="govuk-body">Locations and service information for CQC&#45;registered care homes, residential care and nursing in England, August 2025.</p>
-          <p class="govuk-body" data-module="edge">Find out <a href="#" data-message="Sorry, this hasn’t been designed yet">how location and service data is collected</a>.</p>
+            <div class="govuk-tabs" data-module="govuk-tabs">
+
+                <div class="govuk-form-group">
+                    <h3 class="govuk-heading-m">CQC&#45;registered care home locations near {{data.careHome or 'Shoggins Care Services (Sudbury)'}}</h3>
+                    <p class="govuk-body">Locations and service information for CQC&#45;registered residential care homes and nursing homes in England, August 2025.</p>
+                    <p class="govuk-body" data-module="edge">Find out <a href="#" data-message="Sorry, this hasn’t been designed yet">how location and service data is collected</a>.</p>
+                </div>
+
+                <h3 class="govuk-tabs__title">Contents</h3>
+                <ul class="govuk-tabs__list">
+                    <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+                        <a class="govuk-tabs__tab" href="#data1-map">Map</a>
+                    </li>
+                    <li class="govuk-tabs__list-item">
+                        <a class="govuk-tabs__tab" href="#data1-table">Table</a>
+                    </li>
+                    <li class="govuk-tabs__list-item">
+                        <a class="govuk-tabs__tab" href="#data1-download">Download</a>
+                    </li>
+                </ul>
+
+                <div class="govuk-tabs__panel" id="data1-map">
+                    {% include "./data-visualisations/_1-map.html" %}
+                </div>
+
+                <div class="govuk-tabs__panel" id="data1-table">
+                    {% include "./data-visualisations/_1-table.html" %}
+                </div>
+
+                <div class="govuk-tabs__panel" id="data1-download">
+                    <h4 class="govuk-heading-s">Download</h4>
+                    <ul class="govuk-list data-box-last-tab-last-item" data-module="edge">
+                        <li>
+                            <a class="govuk-link" href="#" data-message="Sorry, this hasn’t been designed yet">Download current map image (PNG, 2 MB)</a>
+                        </li>
+                        <li>
+                            <a class="govuk-link" href="#" data-message="Sorry, this hasn’t been designed yet">Export table data (CSV, 420 KB)</a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
         </div>
 
-        <h3 class="govuk-tabs__title">Contents</h3>
-        <ul class="govuk-tabs__list">
-          <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
-            <a class="govuk-tabs__tab" href="#data1-map">Map</a>
-          </li>
-          <li class="govuk-tabs__list-item">
-            <a class="govuk-tabs__tab" href="#data1-table">Table</a>
-          </li>
-          <li class="govuk-tabs__list-item">
-            <a class="govuk-tabs__tab" href="#data1-download">Download</a>
-          </li>
+    </div>
+
+</div>
+
+<div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-two-thirds">
+        <h2 class="govuk-heading-l govuk-!-margin-top-9">Data indicator definitions and data sources</h2>
+        <!-- <p class="govuk-body">Summary text on any non-specialist points.</p> -->
+
+        <div class="gem-c-cards">
+            <ul class="gem-c-cards__list gem-c-cards__list--one-column">
+                <li class="gem-c-cards__list-item">
+
+                    <div class="gem-c-cards__list-item-wrapper">
+                        <h2 class="gem-c-cards__sub-heading govuk-heading-s" data-module="edge">
+                            <a class="govuk-link gem-c-cards__link gem-c-force-print-link-styles" href="#" data-message="Sorry, this hasn’t been designed yet">[Data indicator definition and data source]</a>
+                        </h2>
+                        <p class="govuk-body gem-c-cards__description">Find further information about this indicator.</p>
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+        <h2 class="govuk-heading-l govuk-!-margin-top-9">Find more information on your local care market</h2>
+        <p class="govuk-body" data-module="edge"><a href="#" class="govuk-link" data-message="This link would take you to the Market Position Statement on the Suffolk local authority website.">Market Position Statement for Suffolk (opens in new tab)</a></p>
+        <p class="govuk-body">Most local authorities in England publish Market Position Statements (MPS) to help care providers understand the local care market.</p>
+        <p class="govuk-body">You can usually find these <abbr title="Market Position Statement">MPS</abbr> documents on local authority websites.</p>
+        <p class="govuk-body"><abbr title="Market Position Statement">MPS</abbr> documents include information on:</p>
+        <ul class="govuk-list govuk-list--bullet">
+            <li>supply and demand in the local care market</li>
+            <li>forecasts of future supply and demand for adult social care services</li>
+            <li>how the local authority will support the local care market to meet demand</li>
+            <li>how the local authority will engage with care providers on challenges in the sector, such as funding pressures</li>
         </ul>
 
-        <div class="govuk-tabs__panel" id="data1-map">
-          {% include "./data-visualisations/_1-map.html" %}
+        <h2 class="govuk-heading-l govuk-!-margin-top-9">Related data</h2>
+
+        <div class="gem-c-cards">
+            <ul class="gem-c-cards__list gem-c-cards__list--one-column">
+                <li class="gem-c-cards__list-item">
+
+                    <div class="gem-c-cards__list-item-wrapper">
+                        <h2 class="gem-c-cards__sub-heading govuk-heading-s">
+                            <a class="govuk-link gem-c-cards__link gem-c-force-print-link-styles" href="../provision-and-occupancy/data">Care home bed provision and occupancy levels</a>
+                        </h2>
+                        <p class="govuk-body gem-c-cards__description">Compare capacity data for care homes in a local authority area to regional and national statistics.</p>
+                    </div>
+
+                </li>
+            </ul>
         </div>
 
-        <div class="govuk-tabs__panel" id="data1-table">
-          {% include "./data-visualisations/_1-table.html" %}
+        <!-- TO DO: Get this component working as a progressive enhancement (i.e. with JavaScript as per the live GOV.UK examples) -->
+        <div data-sticky-element class="gem-c-contents-list-with-body__link-wrapper govuk-!-margin-top-9">
+
+            <div class="gem-c-contents-list-with-body__link-container">
+                <a class="govuk-link gem-c-back-to-top-link govuk-!-display-none-print" href="#top">
+                    <svg class="gem-c-back-to-top-link__icon" xmlns="http://www.w3.org/2000/svg" width="13" height="17" viewBox="0 0 13 17" aria-hidden="true" focusable="false">
+                        <path fill="currentColor" d="M6.5 0L0 6.5 1.4 8l4-4v12.7h2V4l4.3 4L13 6.4z"></path>
+                    </svg>
+                    Back to top
+                </a>
+            </div>
+
         </div>
 
-        <div class="govuk-tabs__panel" id="data1-download">
-          <h4 class="govuk-heading-s">Download</h4>
-          <ul class="govuk-list data-box-last-tab-last-item" data-module="edge">
-            <li>
-              <a class="govuk-link" href="#" data-message="Sorry, this hasn’t been designed yet">Download current map image (PNG, 2 MB)</a>
-            </li>
-            <li>
-              <a class="govuk-link" href="#" data-message="Sorry, this hasn’t been designed yet">Export table data (CSV, 420 KB)</a>
-            </li>
-          </ul>
-        </div>
-
-      </div>
-
     </div>
-
-  </div>
-
-</div>
-
-<div class="govuk-grid-row">
-
-  <div class="govuk-grid-column-two-thirds">
-    <h2 class="govuk-heading-l govuk-!-margin-top-9">Data indicator definitions and data sources</h2>
-    <!-- <p class="govuk-body">Summary text on any non-specialist points.</p> -->
-
-    <div class="gem-c-cards">
-      <ul class="gem-c-cards__list gem-c-cards__list--one-column">
-        <li class="gem-c-cards__list-item">
-
-          <div class="gem-c-cards__list-item-wrapper">
-            <h2 class="gem-c-cards__sub-heading govuk-heading-s" data-module="edge">
-              <a class="govuk-link gem-c-cards__link gem-c-force-print-link-styles" href="#" data-message="Sorry, this hasn’t been designed yet">[Data indicator definition and data source]</a>
-            </h2>
-            <p class="govuk-body gem-c-cards__description">Find further information about this indicator.</p>
-          </div>
-        
-        </li>
-      </ul>
-    </div>
-
-    <h2 class="govuk-heading-l govuk-!-margin-top-9">Find more information on your local care market</h2>
-    <p class="govuk-body" data-module="edge"><a href="#" class="govuk-link" data-message="This link would take you to the Market Position Statement on the Suffolk local authority website.">Market Position Statement for Suffolk (opens in new tab)</a></p>
-    <p class="govuk-body">Most local authorities in England publish Market Position Statements (MPS) to help care providers understand the local care market.</p>
-    <p class="govuk-body">You can usually find these <abbr title="Market Position Statement">MPS</abbr> documents on local authority websites.</p>
-    <p class="govuk-body"><abbr title="Market Position Statement">MPS</abbr> documents include information on:</p>
-    <ul class="govuk-list govuk-list--bullet">
-      <li>supply and demand in the local care market</li>
-      <li>forecasts of future supply and demand for adult social care services</li>
-      <li>how the local authority will support the local care market to meet demand</li>
-      <li>how the local authority will engage with care providers on challenges in the sector, such as funding pressures</li>
-    </ul>
-
-    <h2 class="govuk-heading-l govuk-!-margin-top-9">Related data</h2>
-
-    <div class="gem-c-cards">
-      <ul class="gem-c-cards__list gem-c-cards__list--one-column">
-        <li class="gem-c-cards__list-item">
-
-          <div class="gem-c-cards__list-item-wrapper">
-            <h2 class="gem-c-cards__sub-heading govuk-heading-s">
-              <a class="govuk-link gem-c-cards__link gem-c-force-print-link-styles" href="../provision-and-occupancy/data">Care home bed provision and occupancy levels</a>
-            </h2>
-            <p class="govuk-body gem-c-cards__description">Compare capacity data for care homes in a local authority area to national and regional statistics.</p>
-          </div>
-        
-        </li>
-      </ul>
-    </div>
-
-    <!-- TO DO: Get this component working as a progressive enhancement (i.e. with JavaScript as per the live GOV.UK examples) -->
-    <div data-sticky-element class="gem-c-contents-list-with-body__link-wrapper govuk-!-margin-top-9">
-    
-      <div class="gem-c-contents-list-with-body__link-container">
-        <a class="govuk-link gem-c-back-to-top-link govuk-!-display-none-print" href="#top">
-          <svg class="gem-c-back-to-top-link__icon" xmlns="http://www.w3.org/2000/svg" width="13" height="17" viewBox="0 0 13 17" aria-hidden="true" focusable="false">
-            <path fill="currentColor" d="M6.5 0L0 6.5 1.4 8l4-4v12.7h2V4l4.3 4L13 6.4z"></path>
-          </svg>
-          Back to top
-        </a>
-      </div>
-
-    </div>
-
-  </div>
 
 </div>
 {% endblock %}
