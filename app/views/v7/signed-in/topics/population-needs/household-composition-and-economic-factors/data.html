@@ -22,7 +22,7 @@
 
   <div class="govuk-grid-column-two-thirds">
     <h1 class="govuk-heading-xl">{{pageName}}</h1>
-    <p class="govuk-body-l">These care needs indicators include the number of older people living alone and deprivation metrics.</p>
+    <p class="govuk-body-l">Care needs indicators including the number of older people living alone and deprivation metrics.</p>
 
     <h2 class="govuk-heading-l govuk-!-margin-top-9">Data overview</h2>
     <!-- <p class="govuk-body">Data overview summary information, e.g. broad guidance.</p> -->
@@ -36,37 +36,53 @@
 
     <div class="data-box govuk-form-group">
 
-      <div class="govuk-tabs" data-module="govuk-tabs">
-        
-        <div class="govuk-form-group">
-          <h3 class="govuk-heading-m">Deprivation in 4 dimensions</h3>
-          <p class="govuk-body">[Data visualisation immediate context]</p>
+        <div class="govuk-tabs" data-module="govuk-tabs">
+
+            <div class="govuk-form-group">
+                <h3 class="govuk-heading-m">Households deprived in 4 dimensions</h3>
+            </div>
+
+            <details class="govuk-details">
+                <summary class="govuk-details__summary">
+                    <span class="govuk-details__summary-text">
+                        What &lsquo;deprived in 4 dimensions&rsquo; means
+                    </span>
+                </summary>
+                <div class="govuk-details__text">
+                    A household is &lsquo;deprived in 4 dimensions&rsquo; if all the following apply:</p>
+                    <ul class="govuk-list govuk-list--bullet govuk-list--spaced">
+                        <li>a household member is disabled</li>
+                        <li>a household member is unemployed or economically inactive due to long-term sickness or disability, and is not a full-time student</li>
+                        <li>no one in the household has at least level 2 education and no one aged 16 to 18 years is a full-time student</li>
+                        <li>the household&rsquo;s accommodation is overcrowded, is in a shared dwelling or has no central heating</li>
+                    </ul>
+                </div>
+            </details>
+
+            <h3 class="govuk-tabs__title">Contents</h3>
+            <ul class="govuk-tabs__list">
+                <li class="govuk-tabs__list-item">
+                    <a class="govuk-tabs__tab" href="#data1-table">Table</a>
+                </li>
+                <li class="govuk-tabs__list-item">
+                    <a class="govuk-tabs__tab" href="#data1-download">Download</a>
+                </li>
+            </ul>
+
+            <div class="govuk-tabs__panel" id="data1-table">
+                {% include "./data-visualisations/_1-table.html" %}
+            </div>
+
+            <div class="govuk-tabs__panel" id="data1-download">
+                <h4 class="govuk-heading-s">Download</h4>
+                <ul class="govuk-list data-box-last-tab-last-item">
+                    <li>
+                        <a class="govuk-link" href="#" data-message="Sorry, this hasn’t been designed yet">Export table data (CSV, 420 KB)</a>
+                    </li>
+                </ul>
+            </div>
+
         </div>
-
-        <h3 class="govuk-tabs__title">Contents</h3>
-        <ul class="govuk-tabs__list">
-          <li class="govuk-tabs__list-item">
-            <a class="govuk-tabs__tab" href="#data1-table">Table</a>
-          </li>
-          <li class="govuk-tabs__list-item">
-            <a class="govuk-tabs__tab" href="#data1-download">Download</a>
-          </li>
-        </ul>
-
-        <div class="govuk-tabs__panel" id="data1-table">
-          {% include "./data-visualisations/_1-table.html" %}
-        </div>
-
-        <div class="govuk-tabs__panel" id="data1-download">
-          <h4 class="govuk-heading-s">Download</h4>
-          <ul class="govuk-list data-box-last-tab-last-item">
-            <li>
-              <a class="govuk-link" href="#" data-message="Sorry, this hasn’t been designed yet">Export table data (CSV, 420 KB)</a>
-            </li>
-          </ul>
-        </div>
-
-      </div>
 
     </div>
 
@@ -83,8 +99,8 @@
       <div class="govuk-tabs" data-module="govuk-tabs">
         
         <div class="govuk-form-group">
-          <h3 class="govuk-heading-m">Home owned outright</h3>
-          <p class="govuk-body">[Data visualisation immediate context]</p>
+          <h3 class="govuk-heading-m">Households where the property is owned outright</h3>
+          <p class="govuk-body">This is where the property does not have an outstanding mortgage or any other type of loan attached to it.</p>
         </div>
 
         <h3 class="govuk-tabs__title">Contents</h3>
@@ -127,8 +143,8 @@
       <div class="govuk-tabs" data-module="govuk-tabs">
         
         <div class="govuk-form-group">
-          <h3 class="govuk-heading-m">Household composition</h3>
-          <p class="govuk-body">[Data visualisation immediate context]</p>
+          <h3 class="govuk-heading-m">One-person households where the person is aged 65 or over</h3>
+          
         </div>
 
         <h3 class="govuk-tabs__title">Contents</h3>
