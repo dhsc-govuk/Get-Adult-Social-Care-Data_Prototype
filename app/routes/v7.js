@@ -72,12 +72,24 @@ module.exports = function(router) {
   })
 
   /*****
+   * Signed in (Get adult social care data)
+   * Data > Care homes
+  *****/
+
+  router.get('/' + version + '/' + 'signed-in/topics/residential-care/residential-care-providers/data', function (req, res) {
+    res.render(version + '/signed-in/topics/residential-care/residential-care-providers/data', {
+      'sessionTimeoutJs' : req.query.sessionTimeoutJs,
+      'sessionTimeoutNonJs' : req.query.sessionTimeoutNonJs
+		})
+  })
+
+  /*****
    * Additional screens (Get adult social care data)
    * Service information and system
   *****/
 
-  router.get('/' + version + '/' + 'service-information/cookies', function (req, res) {
-    res.render(version + '/service-information/cookies', {
+  router.get('/' + version + '/' + 'footer/cookies', function (req, res) {
+    res.render(version + '/footer/cookies', {
       'cookiesUpdated' : req.query.cookiesUpdated
 		})
   })

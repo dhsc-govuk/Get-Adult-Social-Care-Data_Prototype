@@ -185,3 +185,65 @@ dialog {
     overflow: hidden;
   }
 }
+
+/* Custom styles used for GOV.UK One Login (https://www.sign-in.service.gov.uk) */
+.govuk-tag-current {
+  display: inline-block;
+  outline: 2px solid rgba(0, 0, 0, 0);
+  outline-offset: -2px;
+  color: #fff;
+  background-color: #1d70b8;
+  letter-spacing: 1px;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-family: "GDS Transport", arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 700;
+  font-size: 14px;
+  font-size: 0.875rem;
+  line-height: 1;
+  padding-top: 5px;
+  padding-right: 8px;
+  padding-bottom: 4px;
+  padding-left: 8px;
+}
+
+.language-select {
+  margin: 15px 0 5px 0;
+}
+@media screen and (min-width: 767px) {
+  .language-select {
+    margin-bottom: -10px;
+  }
+}
+
+.language-select__list {
+  margin-top: 1em;
+  text-align: right;
+}
+
+.language-select__list-item {
+  display: inline-block;
+}
+.language-select__list-item:first-child::after {
+  content: "";
+  display: inline-block;
+  position: relative;
+  top: 0.1875em;
+  height: 1em;
+  border-right: 0.09375em solid black;
+}
+
+.language-select__list-item a, .language-select__list-item [aria-current] {
+  padding: 0.3125em;
+}
+
+@media screen and (max-width: 641px) {
+  .language-select__list {
+    float: none;
+    text-align: left;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #b1b4b6;
+  }
+}

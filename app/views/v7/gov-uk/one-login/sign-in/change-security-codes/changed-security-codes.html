@@ -1,0 +1,25 @@
+{% extends "v7/gov-uk/one-login/layouts/signed-out.html" %}
+
+<!-- Set a blank service name (i.e. not creditor portal) -->
+{% set serviceName %}
+{% endset %}
+
+{% block pageTitle %}
+  You've changed how you get security codes - GOV.UK One Login – Prototype Kit
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  
+  <div class="govuk-grid-column-two-thirds">
+
+    <form action="../../../{{data.dashboardURL or 'dashboard-3-cases'}}" method="post" novalidate>
+      <h1 class="govuk-heading-l">You've changed how you get security codes</h1>
+      <p class="govuk-body">We'll send security codes to your phone number ending with 7137 when you sign in.</p>
+      <button class="govuk-button" data-module="govuk-button">Continue</button>
+    </form>
+
+  </div>
+
+</div>
+{% endblock %}

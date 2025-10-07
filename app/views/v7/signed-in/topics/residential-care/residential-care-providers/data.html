@@ -1,4 +1,4 @@
-{% extends "v7/layouts/logged-in-map.html" %}
+{% extends "v7/layouts/signed-in-map.html" %}
 
 {% set pageName = "Locations and services – care home providers" %}
 
@@ -22,13 +22,30 @@
 {% block content %}
 <div class="govuk-grid-row">
 
-    <div class="govuk-grid-column-two-thirds">
-        <h1 class="govuk-heading-xl">{{pageName}}</h1>
-        <p class="govuk-body-l">Explore data on residential care homes and nursing homes by location.</p>
+  <div class="govuk-grid-column-two-thirds">
+    {% if sessionTimeoutJs == "true" %}
+    <meta name="hmrc-timeout-dialog" content="hmrc-timeout-dialog" data-language="en" data-timeout="70" data-countdown="68" data-keep-alive-url="?continue=true" data-sign-out-url="/v7/system/signed-out" data-timeout-url="/v7/system/session-expired" data-title="You will be signed out soon" data-message="For your security, you will be signed out in " data-message-suffix="" data-keep-alive-button-text="" data-sign-out-button-text="" data-synchronise-tabs="" data-hide-sign-out-button="" />
+    {% elif sessionTimeoutNonJs == "true" %}
 
-        <h2 class="govuk-heading-l govuk-!-margin-top-9">Data overview</h2>
-        <!-- <p class="govuk-body">Data overview summary information, e.g. broad guidance.</p> -->
+    <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+      
+      <div class="govuk-notification-banner__header">
+        <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">Important</h2>
+      </div>
+
+      <div class="govuk-notification-banner__content">
+        <p class="govuk-body">For your security, we will sign you out if you are inactive for <strong>20 minutes</strong>.</p>
+      </div>
+
     </div>
+
+    {% endif %}
+    <h1 class="govuk-heading-xl">{{pageName}}</h1>
+    <p class="govuk-body-l">Explore data on residential care homes and nursing homes by location.</p>
+
+    <h2 class="govuk-heading-l govuk-!-margin-top-9">Data overview</h2>
+    <!-- <p class="govuk-body">Data overview summary information, e.g. broad guidance.</p> -->
+  </div>
 
 </div>
 

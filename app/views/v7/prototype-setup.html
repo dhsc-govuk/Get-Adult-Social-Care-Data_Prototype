@@ -1,0 +1,207 @@
+{% extends "v14/layouts/main.html" %}
+
+{% block pageTitle %}
+  Prototype setup (Version {{version}}) – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">
+      <span class="govuk-caption-xl">Version {{version}}</span>
+      Prototype setup
+    </h1>
+
+    <form action="prototype-setup-validation" method="post" novalidate>
+      <button type="submit" class="govuk-button" data-module="govuk-button">Continue</button>
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">User type</legend>
+          
+          <div class="govuk-radios" data-module="govuk-radios" id="userTypeRadios">
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="user_type1" name="userType" type="radio" value="Creditor (individual)" checked="checked">
+              <label class="govuk-label govuk-radios__label" for="user_type1">Creditor (individual)</label>
+            </div>
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="user_type2" name="userType" type="radio" value="Creditor (company)">
+              <label class="govuk-label govuk-radios__label" for="user_type2">Creditor (company)</label>
+            </div>
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="user_type3" name="userType" type="radio" value="Authority holder">
+              <label class="govuk-label govuk-radios__label" for="user_type3">Authority holder</label>
+            </div>
+
+          </div>
+
+        </fieldset>
+      </div>
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">Entry point</legend>
+        
+          <div class="govuk-radios" data-module="govuk-radios">
+            
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="entry_point_1" name="entryPoint" type="radio" value="Start page">
+              <label class="govuk-label govuk-radios__label" for="entry_point_1">Start page</label>
+            </div>
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="entry_point_2" name="entryPoint" type="radio" value="GOV.UK One Login">
+              <label class="govuk-label govuk-radios__label" for="entry_point_2">GOV.UK One Login</label>
+            </div>
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="entry_point_3" name="entryPoint" type="radio" value="Dashboard" checked="checked">
+              <label class="govuk-label govuk-radios__label" for="entry_point_3">{{serviceName}}</label>
+            </div>
+
+          </div>
+
+        </fieldset>
+      </div>
+
+      <!-- Additional config options for the 'Creditor' user journeys (START) -->
+      <div id="optionsCreditor">
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" aria-describedby="casesCreditor-hint">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">Number of cases</legend>
+
+            <div id="casesCreditor-hint" class="govuk-hint">
+              This will be ignored if you choose to register for the service
+            </div>
+            
+            <div class="govuk-radios" data-module="govuk-radios">
+
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="casesCreditor_1" name="casesCreditor" type="radio" value="0">
+                <label class="govuk-label govuk-radios__label" for="casesCreditor_1">0</label>
+              </div>
+              
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="casesCreditor_2" name="casesCreditor" type="radio" value="1">
+                <label class="govuk-label govuk-radios__label" for="casesCreditor_2">1</label>
+              </div>
+
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="casesCreditor_3" name="casesCreditor" type="radio" value="2">
+                <label class="govuk-label govuk-radios__label" for="casesCreditor_3">2</label>
+              </div>
+
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="casesCreditor_4" name="casesCreditor" type="radio" value="3" checked="checked">
+                <label class="govuk-label govuk-radios__label" for="casesCreditor_4">3</label>
+              </div>
+
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="casesCreditor_5" name="casesCreditor" type="radio" value="21-100">
+                <label class="govuk-label govuk-radios__label" for="casesCreditor_5">21-100 (search and filter)</label>
+              </div>
+
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="casesCreditor_6" name="casesCreditor" type="radio" value="101 or more">
+                <label class="govuk-label govuk-radios__label" for="casesCreditor_6">101 or more (search, filter and pagination)</label>
+              </div>
+
+            </div>
+
+          </fieldset>
+        </div>
+
+      </div>
+      <!-- Additional config options for the 'Creditor' user journeys (END) -->
+
+      <!-- Additional config options for the 'Authority holder' user journeys (START) -->
+      <div id="optionsAuthorityHolder" class="hidden" aria-hidden="true" style="display: none;">
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" aria-describedby="scenarios-hint">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">Scenarios</legend>
+
+            <div id="scenarios-hint" class="govuk-hint">
+              This will be ignored if you choose to register for the service
+            </div>
+            
+            <div class="govuk-radios" data-module="govuk-radios">
+
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="scenarios_1" name="scenarios" type="radio" value="1 client">
+                <label class="govuk-label govuk-radios__label" for="scenarios_1">1 client</label>
+              </div>
+              
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="scenarios_2" name="scenarios" type="radio" value="2 or more clients" checked="checked">
+                <label class="govuk-label govuk-radios__label" for="scenarios_2">2 or more clients</label>
+              </div>
+
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="scenarios_3" name="scenarios" type="radio" value="1 client plus they are a creditor">
+                <label class="govuk-label govuk-radios__label" for="scenarios_3">1 client plus they are a creditor</label>
+              </div>
+
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="scenarios_4" name="scenarios" type="radio" value="2 or more clients plus they are a creditor">
+                <label class="govuk-label govuk-radios__label" for="scenarios_4">2 or more clients plus they are a creditor</label>
+              </div>
+
+            </div>
+
+          </fieldset>
+        </div>
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" aria-describedby="casesAuthorityHolder-hint">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">Number of cases</legend>
+
+            <div id="casesAuthorityHolder-hint" class="govuk-hint">
+              This will be ignored if you choose to register for the service
+            </div>
+            
+            <div class="govuk-radios" data-module="govuk-radios">
+
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="casesAuthorityHolder_1" name="casesAuthorityHolder" type="radio" value="0">
+                <label class="govuk-label govuk-radios__label" for="casesAuthorityHolder_1">0</label>
+              </div>
+              
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="casesAuthorityHolder_2" name="casesAuthorityHolder" type="radio" value="1-20">
+                <label class="govuk-label govuk-radios__label" for="casesAuthorityHolder_2">1-20</label>
+              </div>
+
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="casesAuthorityHolder_3" name="casesAuthorityHolder" type="radio" value="21-100" checked="checked">
+                <label class="govuk-label govuk-radios__label" for="casesAuthorityHolder_3">21-100 (search and filter)</label>
+              </div>
+
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="casesAuthorityHolder_4" name="casesAuthorityHolder" type="radio" value="101 or more">
+                <label class="govuk-label govuk-radios__label" for="casesAuthorityHolder_4">101 or more (search, filter and pagination)</label>
+              </div>
+
+            </div>
+
+          </fieldset>
+        </div>
+
+      </div>
+      <!-- Additional config options for the 'Authority holder' user journeys (END) -->
+
+    </form>
+
+  </div>
+
+</div>
+{% endblock %}
+
+{% block pageScripts %}
+<script src="/public/javascripts/prototype-setup.js"></script>
+{% endblock %}
