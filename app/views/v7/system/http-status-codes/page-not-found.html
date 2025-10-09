@@ -1,22 +1,15 @@
-{% extends "v7/layouts/signed-out.html" %}
+{% extends "v7/layouts/signed-in-basic.html" %}
 
-{% set titleH1 = "Page not found" %} {% block pageTitle %} {{titleH1}} - {{serviceName}} - GOV.UK {% endblock %}
+{% set pageName = "Page not found" %}
 
 {% block content %}
+<div class="govuk-grid-row">
 
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-      <h1 class="govuk-heading-l">{{titleH1}}</h1>
-
-      <p class="govuk-body">
-        If you typed the web address, check it is correct.
-      </p>
-
-      <p class="govuk-body">
-        If you pasted the web address, check you copied the entire address.
-      </p>
-
-    </div>
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">{{pageName}}</h1>
+    <p class="govuk-body">If you typed the web address, check it is correct.</p>
+    <p class="govuk-body">If you pasted the web address, check you copied the entire address.</p>
   </div>
-
+  
+</div>
 {% endblock %}

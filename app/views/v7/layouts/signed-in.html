@@ -24,6 +24,7 @@
   <p class="govuk-body">We&#39;d also like to use analytics cookies so we can understand how you use the service and make improvements.</p>
 {% endset %}
 
+{% if data.showCookieBanner != "false" %}
 <form method="post" novalidate>
   
   {{ govukCookieBanner({
@@ -78,6 +79,7 @@
   }) }}
   
 </form>
+{% endif %}
 {% endif %}
 {% endif %}
 
@@ -264,19 +266,19 @@
   meta: {
     items: [
       {
-        href: "/v7/footer/help",
+        href: "/v7/footer/help?signedInState=signedIn&showCookieBanner=true",
         text: "Help"
       },
       {
-        href: "/v7/footer/privacy-policy",
+        href: "/v7/footer/privacy-policy?signedInState=signedIn&showCookieBanner=true",
         text: "Privacy"
       },
       {
-        href: "/v7/footer/cookies",
+        href: "/v7/footer/cookies?signedInState=signedIn&showCookieBanner=false",
         text: "Cookies"
       },
       {
-        href: "/v7/footer/accessibility-statement",
+        href: "/v7/footer/accessibility-statement?signedInState=signedIn&showCookieBanner=true",
         text: "Accessibility statement"
       },
       {

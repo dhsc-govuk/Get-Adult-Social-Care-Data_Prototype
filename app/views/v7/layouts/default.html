@@ -5,7 +5,6 @@
 
 {% from "govuk/components/cookie-banner/macro.njk" import govukCookieBanner %}
 {% extends "govuk-prototype-kit/layouts/govuk-branded.njk" %}
-{% from "di-govuk-one-login-service-header/service-header.njk" import govukOneLoginServiceHeader %}
 {% from "govuk/components/header/macro.njk" import govukHeader %}
 {% from "govuk/components/service-navigation/macro.njk" import govukServiceNavigation %}
 {% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
@@ -24,6 +23,7 @@
   <p class="govuk-body">We&#39;d also like to use analytics cookies so we can understand how you use the service and make improvements.</p>
 {% endset %}
 
+{% if data.showCookieBanner != "false" %}
 <form method="post" novalidate>
   
   {{ govukCookieBanner({
@@ -80,16 +80,10 @@
 </form>
 {% endif %}
 {% endif %}
+{% endif %}
 
-{{ govukOneLoginServiceHeader({
-  homepageLink: "/",
-  signOutLink: "/v7/system/signed-out",
-  rebrand: true,
-  serviceNavigationParams: { 
-    rebrand: true,
-    serviceName: serviceName,
-    serviceUrl: "/v7/system/access-denied"
-  }
+{{ govukHeader({
+  homepageUrl: "/"
 }) }}
 
 <div class="govuk-width-container">
@@ -111,19 +105,19 @@
   meta: {
     items: [
       {
-        href: "/v7/footer/help",
+        href: "/v7/footer/help?signedInState=default&showCookieBanner=true",
         text: "Help"
       },
       {
-        href: "/v7/footer/privacy-policy",
+        href: "/v7/footer/privacy-policy?signedInState=default&showCookieBanner=true",
         text: "Privacy"
       },
       {
-        href: "/v7/footer/cookies",
+        href: "/v7/footer/cookies?signedInState=default&showCookieBanner=false",
         text: "Cookies"
       },
       {
-        href: "/v7/footer/accessibility-statement",
+        href: "/v7/footer/accessibility-statement?signedInState=default&showCookieBanner=true",
         text: "Accessibility statement"
       },
       {
