@@ -13,7 +13,7 @@
   
   <div class="govuk-grid-column-two-thirds">
 
-    <form action="../../{{data.dashboardURL or 'dashboard-3-cases'}}" method="post" novalidate>
+    <form action="/v7/signed-in/{{data.postAuthenticationURL or 'select-location?justSignedIn=true&careHome=&locations='}}" method="post" novalidate>
       <h1 class="govuk-heading-l">Check your phone</h1>
 
       <div class="govuk-inset-text">
@@ -35,7 +35,7 @@
         
         <div class="govuk-details__text">
           <p class="govuk-body">We can <a href="resend-code-sms" class="govuk-link govuk-link--no-visited-state" rel="noreferrer noopener">send the code again</a> if the code is not working or you did not receive it.</p>
-          <p class="govuk-body">If you cannot access the phone number for your GOV.UK One Login, you can securely <a href="change-security-codes/check-email" class="govuk-link govuk-link--no-visited-state" rel="noreferrer noopener">change how you get security codes</a>.</p>
+          <p class="govuk-body">If you no longer have access to this phone number, <a href="cannot-change-security-codes?redirectMFA=check-phone" class="govuk-link govuk-link--no-visited-state" rel="noreferrer noopener">check if you can change how you get security codes</a>.</p>
         </div>
 
       </details>

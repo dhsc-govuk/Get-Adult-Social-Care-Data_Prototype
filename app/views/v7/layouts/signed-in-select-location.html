@@ -162,15 +162,8 @@
         <span class="govuk-service-navigation__service-name">
           <a href="/v7/signed-in/home" class="govuk-service-navigation__link">Get adult social care data</a>
         </span>
-        {% if data.justSignedIn != "true" %}
         <nav aria-label="Menu" class="govuk-service-navigation__wrapper">
           <ul class="govuk-service-navigation__list" id="navigation">
-            <li class="govuk-service-navigation__item govuk-service-navigation__item-start govuk-service-navigation__item-end">
-              <a href="/v7/signed-in/menu" class="govuk-service-navigation__link non-javascript" aria-hidden="false">Menu</a>
-              <button aria-controls="super-navigation-menu" aria-expanded="false" aria-label="Show navigation menu" class="gem-c-layout-super-navigation-header__navigation-top-toggle-button javascript-only" data-text-for-hide="Hide navigation menu" data-text-for-show="Show navigation menu" data-toggle-desktop-group="top" data-toggle-mobile-group="top" id="super-navigation-menu-toggle" type="button" aria-hidden="true" hidden="hidden">
-                <span class="gem-c-layout-super-navigation-header__navigation-top-toggle-button-inner">Menu</span>
-              </button>
-            </li>
             <li class="govuk-service-navigation__item govuk-service-navigation__item--active govuk-service-navigation__item-start">
               {{data.careHome or 'Shoggins Care Services (Sudbury)'}} <a class="govuk-service-navigation__link govuk-service-navigation__link-change" href="/v7/signed-in/select-location?careHome={{data.careHome or 'Shoggins Care Services (Sudbury)'}}">Change</a>
             </li>
@@ -183,7 +176,6 @@
             
           </ul>
         </nav>
-        {% endif %}
       </div>
 
     </div>

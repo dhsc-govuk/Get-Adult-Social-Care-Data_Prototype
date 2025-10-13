@@ -1,4 +1,8 @@
+{% if data.justSignedIn == "true" %}
+{% extends "v7/layouts/signed-in-basic.html" %}
+{% else %}
 {% extends "v7/layouts/signed-in-select-location.html" %}
+{% endif %}
 
 {% set pageName = "Choose a location from your care provider group" %}
 

@@ -1,7 +1,7 @@
 {% extends "govuk-prototype-kit/layouts/unbranded.html" %}
 
 {% block pageTitle %}
-  Security code confirmation email – GOV.UK One Login – GOV.UK Prototype Kit
+  Security code text message – GOV.UK One Login – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block content %}
@@ -291,14 +291,182 @@
     background-color: #f3f2f1;
   }
 
+  .sms-message-recipient, .sms-message-sender, p, .govuk-body, .govuk-body-m {
+    color: #0b0c0c;
+    font-family: "HelveticaNeue", "Helvetica Neue", "Arial", "Helvetica", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 1.25;
+    margin-top: 0;
+    margin-bottom: 15px;
+  }
+  @media print {
+    .sms-message-recipient, .sms-message-sender, p, .govuk-body, .govuk-body-m {
+      color: #000000;
+    }
+  }
+  @media print {
+    .sms-message-recipient, .sms-message-sender, p, .govuk-body, .govuk-body-m {
+      font-family: sans-serif;
+    }
+  }
+  @media (min-width: 40.0625em) {
+    .sms-message-recipient, .sms-message-sender, p, .govuk-body, .govuk-body-m {
+      font-size: 1.1875rem;
+      line-height: 1.3157894737;
+    }
+  }
+  @media print {
+    .sms-message-recipient, .sms-message-sender, p, .govuk-body, .govuk-body-m {
+      font-size: 14pt;
+      line-height: 1.15;
+    }
+  }
+  @media (min-width: 40.0625em) {
+    .sms-message-recipient, .sms-message-sender, p, .govuk-body, .govuk-body-m {
+      margin-bottom: 20px;
+    }
+  }
+
+  .sms-message-recipient + .govuk-heading-l, .sms-message-sender + .govuk-heading-l, p + .govuk-heading-l, .govuk-body-m + .govuk-heading-l, .govuk-body + .govuk-heading-l,
+  .govuk-body-s + .govuk-heading-l,
+  .govuk-list + .govuk-heading-l {
+    padding-top: 15px;
+  }
+  @media (min-width: 40.0625em) {
+    .sms-message-recipient + .govuk-heading-l, .sms-message-sender + .govuk-heading-l, p + .govuk-heading-l, .govuk-body-m + .govuk-heading-l, .govuk-body + .govuk-heading-l,
+    .govuk-body-s + .govuk-heading-l,
+    .govuk-list + .govuk-heading-l {
+      padding-top: 20px;
+    }
+  }
+
+  .sms-message-recipient + .govuk-heading-m, .sms-message-sender + .govuk-heading-m, p + .govuk-heading-m, .govuk-body-m + .govuk-heading-m, .govuk-body + .govuk-heading-m,
+  .govuk-body-s + .govuk-heading-m,
+  .govuk-list + .govuk-heading-m,
+  .sms-message-recipient + .govuk-heading-s,
+  .sms-message-sender + .govuk-heading-s,
+  p + .govuk-heading-s,
+  .govuk-body-m + .govuk-heading-s,
+  .govuk-body + .govuk-heading-s,
+  .govuk-body-s + .govuk-heading-s,
+  .govuk-list + .govuk-heading-s {
+    padding-top: 5px;
+  }
+  @media (min-width: 40.0625em) {
+    .sms-message-recipient + .govuk-heading-m, .sms-message-sender + .govuk-heading-m, p + .govuk-heading-m, .govuk-body-m + .govuk-heading-m, .govuk-body + .govuk-heading-m,
+    .govuk-body-s + .govuk-heading-m,
+    .govuk-list + .govuk-heading-m,
+    .sms-message-recipient + .govuk-heading-s,
+    .sms-message-sender + .govuk-heading-s,
+    p + .govuk-heading-s,
+    .govuk-body-m + .govuk-heading-s,
+    .govuk-body + .govuk-heading-s,
+    .govuk-body-s + .govuk-heading-s,
+    .govuk-list + .govuk-heading-s {
+      padding-top: 10px;
+    }
+  }
+
+  .sms-message-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 464px;
+    box-sizing: border-box;
+    padding: 15px;
+    background: #e2e1e0;
+    border: 1px solid #e2e1e0;
+    border-radius: 5px;
+    white-space: normal;
+    margin: 0 0 30px 0;
+    clear: both;
+    word-wrap: break-word;
+  }
+  .sms-message-wrapper:after {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: -5px;
+    right: -20px;
+    border: 10px solid transparent;
+    border-left-width: 13px;
+    border-right-width: 13px;
+    border-bottom-color: #e2e1e0;
+    border-left-color: #e2e1e0;
+    transform: rotate(20deg);
+  }
+
+  .sms-message-inbound .sms-message-wrapper:after {
+    border-left-color: transparent;
+    border-bottom-color: #e2e1e0;
+    border-right-color: #e2e1e0;
+    right: auto;
+    left: -20px;
+    transform: rotate(-20deg);
+  }
+
+  .sms-message-sender {
+    color: #505a5f;
+    margin: 0 0 -10px 0;
+  }
+
+  .sms-message-recipient {
+    color: #505a5f;
+    margin: 10px 0 0 0;
+  }
+
+  .sms-message-status {
+    font-family: "HelveticaNeue", "Helvetica Neue", "Arial", "Helvetica", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-weight: 400;
+    font-size: 0.875rem;
+    line-height: 1.1428571429;
+    color: #505a5f;
+    margin: -20px 15px 20px 15px;
+  }
+  @media print {
+    .sms-message-status {
+      font-family: sans-serif;
+    }
+  }
+  @media (min-width: 40.0625em) {
+    .sms-message-status {
+      font-size: 1rem;
+      line-height: 1.25;
+    }
+  }
+  @media print {
+    .sms-message-status {
+      font-size: 14pt;
+      line-height: 1.2;
+    }
+  }
+
+  .sms-message-status-outbound {
+    text-align: right;
+  }
+
+  .sms-message-row:focus {
+    outline: none;
+    padding-top: 120px;
+    margin-top: -120px;
+  }
+
+  .sms-message-reply-link {
+    text-align: right;
+  }
+
 </style>
 
 <div class="govuk-grid-row">
 
   <div class="govuk-grid-column-two-thirds">
     <h1 class="govuk-heading-l">
-      <span class="govuk-caption-l">Change how you get security codes</span>
-      Security code confirmation email
+      <span class="govuk-caption-l">I’ve forgotten my password</span>
+      Security code text message
     </h1>
 
     <div class="email-message">
@@ -307,25 +475,25 @@
         <tbody>
           <tr>
             <th scope="row">From</th>
-            <td>GOV.UK One Login</td>
+            <td>GOV.UK</td>
           </tr>
           <tr>
             <th scope="row">To</th>
-            <td><span class="placeholder-no-brackets background: #fd0;">Email address</span></td>
-          </tr>
-          <tr class="email-message-meta">
-            <th scope="row">Subject</th>
-            <td>You've changed how you get security codes</td>
+            <td><span class="placeholder-no-brackets background: #fd0;">Mobile number</span></td>
           </tr>
         </tbody>
+
       </table>
 
       <div class="email-message-body govuk-!-margin-top-2 govuk-!-margin-bottom-0">
-        <p class="govuk-body">You've changed how you get security codes when you sign in to GOV.UK One Login.</p>
-        <p class="govuk-body">If you did not do this, contact us: <a href="#">https://signin.account.gov.uk/contact-us</a></p>    
-        <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-4  govuk-!-margin-top-4">
-        <p class="govuk-bodygovuk-!-margin-bottom-6">Do not reply to this email - it’s an automatic message from an unmonitored account.</p>
-        <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-4  govuk-!-margin-top-4">
+  
+        <div class="sms-message-wrapper">
+          <p class="govuk-body"><a href="#">890623</a> is your GOV.UK One Login security code.</p>
+          <p class="govuk-body">Your code expires in 15 minutes.</p>
+          <p class="govuk-body"><a href="#">890623</a> yw eich cod diogelwch GOV.UK One Login.</p>
+          <p class="govuk-body">Mae eich cod yn dod i ben mewn 15 munud.</p>
+        </div>
+        
       </div>
 
     </div>

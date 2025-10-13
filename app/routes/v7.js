@@ -13,41 +13,159 @@ module.exports = function(router) {
   })
   router.post('/' + version + '/' + 'config-validation', function (req, res) {
 
-    var userType = req.session.data['userType']
+    var numberOfLocations = req.session.data['numberOfLocations']
     var entryPoint = req.session.data['entryPoint']
 
-    // For Single Academy Trust (SAT) type users
-    if (userType == "Single Academy Trust (SAT)") {
-      req.session.data['rb'] = "SAT"
+    // For 'Number of locations' is '1'
+    if (numberOfLocations == "1") {
+      req.session.data['locations'] = "1"
+      req.session.data['postAuthenticationURL'] = "home"
     }
-    // For Multi Academy Trust (MAT) type users
+    // For 'Number of locations' is '2 or more'
     else {
-      req.session.data['rb'] = "MAT"
+      req.session.data['locations'] = ""
+      req.session.data['careHome'] = ""
+      req.session.data['justSignedIn'] = "true"
+      req.session.data['postAuthenticationURL'] = "select-location"
     }
 
     // Routing - send to the chosen entry point
-    if (entryPoint == "Start page on GOV.UK (Estate Management Portal)") {
-      res.redirect('/' + version + '/' + 'emp/start')
+    if (entryPoint == "Start page (private beta)") {
+      res.redirect('/' + version + '/' + 'start-private-beta')
     }
-    else if (entryPoint == "Department for Education Sign-in") {
-      res.redirect('/' + version + '/' + 'dfe-sign-in/department-for-education-sign-in')
+    else if (entryPoint == "Start page on GOV.UK") {
+      res.redirect('/' + version + '/' + 'start')
     }
-    else if (entryPoint == "Home (Estate Management Portal)") {
-      res.redirect('/' + version + '/' + 'emp/home')
+    else if (entryPoint == "GOV.UK One Login") {
+      res.redirect('/' + version + '/' + 'gov-uk/one-login/start')
     }
     else {
-      res.redirect('/' + version + '/' + 'start')
+      res.redirect('/' + version + '/' + 'signed-in/' + req.session.data['postAuthenticationURL'])
     }
 
   })
 
   /*****
-   * Not signed in (Get adult social care data)
-   * GOV.UK
+   * Not signed in
+   * GOV.UK One Login (https://www.sign-in.service.gov.uk)
   *****/
 
+  /* Create an account */
+  router.get('/' + version + '/' + 'gov-uk/one-login/create-account/get-security-code', function (req, res) {
+    res.render(version + '/gov-uk/one-login/create-account/get-security-code', {
+      'error' : req.query.error
+		})
+  })
+
+  router.post('/' + version + '/' + 'gov-uk/one-login/create-account/get-security-code-validation', function (req, res) {
+
+    var chooseSecurityCodes = req.body['choose-security-codes']
+    
+    if (chooseSecurityCodes == "Text message") {
+      res.redirect('/' + version + '/' + 'gov-uk/one-login/create-account/enter-phone-number')
+    }
+    else if (chooseSecurityCodes == "Authenticator app for smartphone, tablet or computer") {
+      res.redirect('/' + version + '/' + 'gov-uk/one-login/create-account/auth-app')
+    }
+    // Error validation - make sure user chooses an option
+    else {
+      res.redirect('/' + version + '/' + 'gov-uk/one-login/create-account/get-security-code?error=true')
+    }
+
+  })
+
+  /* Sign in */
+  router.get('/' + version + '/' + 'gov-uk/one-login/sign-in/cannot-change-security-codes', function (req, res) {
+    res.render(version + '/gov-uk/one-login/sign-in/cannot-change-security-codes', {
+      'error' : req.query.error
+		})
+  })
+
+  router.post('/' + version + '/' + 'gov-uk/one-login/sign-in/cannot-change-security-codes-validation', function (req, res) {
+
+    var cannotChangeHowGetSecurityCodeAction = req.body['cannotChangeHowGetSecurityCodeAction']
+    var redirectMFA = req.session.data['redirectMFA'] || "check-phone"
+    
+    if (cannotChangeHowGetSecurityCodeAction == "Try entering a security code again with the method you already have set up") {
+      res.redirect('/' + version + '/' + 'gov-uk/one-login/sign-in/' + redirectMFA)
+    }
+    // Error validation - make sure user chooses an option
+    else {
+      res.redirect('/' + version + '/' + 'gov-uk/one-login/sign-in/cannot-change-security-codes?error=true')
+    }
+
+  })
+
+  router.get('/' + version + '/' + 'gov-uk/one-login/sign-in/how-do-you-want-security-codes', function (req, res) {
+    res.render(version + '/gov-uk/one-login/sign-in/how-do-you-want-security-codes', {
+      'error' : req.query.error
+		})
+  })
+
+  router.post('/' + version + '/' + 'gov-uk/one-login/sign-in/how-do-you-want-security-codes-validation', function (req, res) {
+
+    var mfaMethodId = req.body['mfa-method-id']
+    
+    if (mfaMethodId == "Use your authenticator app") {
+      res.redirect('/' + version + '/' + 'gov-uk/one-login/sign-in/enter-authenticator-app-code')
+    }
+    else if (mfaMethodId == "Text message") {
+      res.redirect('/' + version + '/' + 'gov-uk/one-login/sign-in/check-phone')
+    }
+    // Error validation - make sure user chooses an option
+    else {
+      res.redirect('/' + version + '/' + 'gov-uk/one-login/sign-in/how-do-you-want-security-codes?error=true')
+    }
+
+  })
+
+  /* I’ve forgotten my password */
+  router.get('/' + version + '/' + 'gov-uk/one-login/sign-in/forgotten-password/cannot-change-security-codes', function (req, res) {
+    res.render(version + '/gov-uk/one-login/sign-in/forgotten-password/cannot-change-security-codes', {
+      'error' : req.query.error
+		})
+  })
+
+  router.post('/' + version + '/' + 'gov-uk/one-login/sign-in/forgotten-password/cannot-change-security-codes-validation', function (req, res) {
+
+    var cannotChangeHowGetSecurityCodeAction = req.body['cannotChangeHowGetSecurityCodeAction']
+    var redirectMFA = req.session.data['redirectMFA'] || "check-phone"
+    
+    if (cannotChangeHowGetSecurityCodeAction == "Try entering a security code again with the method you already have set up") {
+      res.redirect('/' + version + '/' + 'gov-uk/one-login/sign-in/forgotten-password/' + redirectMFA)
+    }
+    // Error validation - make sure user chooses an option
+    else {
+      res.redirect('/' + version + '/' + 'gov-uk/one-login/sign-in/forgotten-password/cannot-change-security-codes?error=true')
+    }
+
+  })
+
+  router.get('/' + version + '/' + 'gov-uk/one-login/sign-in/forgotten-password/how-do-you-want-security-codes', function (req, res) {
+    res.render(version + '/gov-uk/one-login/sign-in/forgotten-password/how-do-you-want-security-codes', {
+      'error' : req.query.error
+		})
+  })
+
+  router.post('/' + version + '/' + 'gov-uk/one-login/sign-in/forgotten-password/how-do-you-want-security-codes-validation', function (req, res) {
+
+    var mfaMethodId = req.body['mfa-method-id']
+    
+    if (mfaMethodId == "Use your authenticator app") {
+      res.redirect('/' + version + '/' + 'gov-uk/one-login/sign-in/forgotten-password/enter-authenticator-app-code')
+    }
+    else if (mfaMethodId == "Text message") {
+      res.redirect('/' + version + '/' + 'gov-uk/one-login/sign-in/forgotten-password/check-phone')
+    }
+    // Error validation - make sure user chooses an option
+    else {
+      res.redirect('/' + version + '/' + 'gov-uk/one-login/sign-in/forgotten-password/how-do-you-want-security-codes?error=true')
+    }
+
+  })
+
   /*****
-   * Signed in (Get adult social care data)
+   * Signed in
    * Select location
   *****/
 
@@ -72,7 +190,7 @@ module.exports = function(router) {
   })
 
   /*****
-   * Signed in (Get adult social care data)
+   * Signed in
    * Data > Care homes
   *****/
 
@@ -84,7 +202,7 @@ module.exports = function(router) {
   })
 
   /*****
-   * Additional screens (Get adult social care data)
+   * Additional screens
    * Service information and system
   *****/
 

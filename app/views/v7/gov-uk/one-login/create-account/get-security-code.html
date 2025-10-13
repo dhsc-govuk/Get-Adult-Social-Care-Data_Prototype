@@ -41,7 +41,7 @@
           </legend>
         
           <div id="choose-security-codes-hint" class="govuk-hint">
-            To finish creating your GOV.UK One Login, choose a way to prove it’s you when you sign in.
+            You'll need to enter a security code when you sign in to GOV.UK One Login.
           </div>
 
           {% if error %}
@@ -56,8 +56,13 @@
             </div>
                 
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="choose-security-codes-2" name="choose-security-codes" type="radio" value="Authenticator app for smartphone, tablet or computer">
-              <label class="govuk-label govuk-radios__label" for="choose-security-codes-2">Authenticator app for smartphone, tablet or computer</label>
+              <input class="govuk-radios__input" id="choose-security-codes-2" name="choose-security-codes" type="radio" value="Authenticator app for smartphone, tablet or computer" aria-describedby="choose-security-codes-2-item-hint">
+              <label class="govuk-label govuk-radios__label" for="choose-security-codes-2">Authenticator app </label>
+              
+              <div id="choose-security-codes-2-item-hint" class="govuk-hint govuk-radios__hint">
+                You can use any authenticator app to create security codes when you sign in 
+              </div>
+              
             </div>
                 
           </div>
@@ -73,7 +78,8 @@
 
         <div class="govuk-details__text">
           <p class="govuk-body">An authenticator app creates a security code that helps confirm it’s you when you sign in.</p>
-          <p class="govuk-body">You can use an authenticator app on your smartphone, tablet or desktop computer. Download an authenticator app for your smartphone or tablet from your app store or search online for an authenticator app for your computer.</p>
+          <p class="govuk-body">You can use an authenticator app on your smartphone, tablet or desktop computer.</p>
+          <p class="govuk-body">Download an authenticator app from your app store or search online for one you can use on your computer.</p>
         </div>
 
       </details>
