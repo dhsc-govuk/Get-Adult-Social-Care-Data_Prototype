@@ -18,13 +18,13 @@
 {% endblock %}
 
 {% block header %}
+{% if data.onCookiesPage != "true" %}
 {% if data.cookiesAnalytics == null or data.cookiesAnalytics == "" %}
 {% set html %}
   <p class="govuk-body">We use some essential cookies to make this service work.</p>
   <p class="govuk-body">We&#39;d also like to use analytics cookies so we can understand how you use the service and make improvements.</p>
 {% endset %}
 
-{% if data.showCookieBanner != "false" %}
 <form method="post" novalidate>
   
   {{ govukCookieBanner({
@@ -46,7 +46,7 @@
           },
           {
             text: "View cookies",
-            href: "/v7/footer/cookies"
+            href: "/v7/footer/cookies?onCookiesPage=true"
           }
         ]
       }
@@ -57,7 +57,7 @@
 {% else %}
 {% if data.cookiesBanner != "Hidden" %}
 {% set acceptHtml %}
-  <p class="govuk-body">You&#39;ve accepted additional cookies. You can <a class="govuk-link" href="/v7/footer/cookies">change your cookie settings</a> at any time.</p>
+  <p class="govuk-body">You&#39;ve accepted additional cookies. You can <a class="govuk-link" href="/v7/footer/cookies?onCookiesPage=true">change your cookie settings</a> at any time.</p>
 {% endset %}
 
 <form method="post" novalidate>
@@ -262,19 +262,19 @@
   meta: {
     items: [
       {
-        href: "/v7/footer/help?signedInState=signedInMap&showCookieBanner=true",
+        href: "/v7/footer/help?signedInState=default&onCookiesPage=false",
         text: "Help"
       },
       {
-        href: "/v7/footer/privacy-policy?signedInState=signedInMap&showCookieBanner=true",
+        href: "/v7/footer/privacy-policy?signedInState=default&onCookiesPage=false",
         text: "Privacy"
       },
       {
-        href: "/v7/footer/cookies?signedInState=signedInMap&showCookieBanner=false",
+        href: "/v7/footer/cookies?signedInState=default&onCookiesPage=true",
         text: "Cookies"
       },
       {
-        href: "/v7/footer/accessibility-statement?signedInState=signedInMap&showCookieBanner=true",
+        href: "/v7/footer/accessibility-statement?signedInState=default&onCookiesPage=false",
         text: "Accessibility statement"
       },
       {

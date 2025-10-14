@@ -203,7 +203,7 @@ module.exports = function(router) {
 
   /*****
    * Additional screens
-   * Service information and system
+   * Footer, service information and system pages
   *****/
 
   router.get('/' + version + '/' + 'footer/cookies', function (req, res) {
