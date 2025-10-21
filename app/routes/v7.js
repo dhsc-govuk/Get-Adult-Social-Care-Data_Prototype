@@ -33,7 +33,7 @@ module.exports = function(router) {
     if (entryPoint == "Start page (private beta)") {
       res.redirect('/' + version + '/' + 'start-private-beta')
     }
-    else if (entryPoint == "Start page on GOV.UK") {
+    else if (entryPoint == "Start page on GOV.UK (public beta)") {
       res.redirect('/' + version + '/' + 'start')
     }
     else if (entryPoint == "GOV.UK One Login") {
