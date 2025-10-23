@@ -1,9 +1,5 @@
 {% extends "v7/gov-uk/one-login/layouts/signed-in-your-services.html" %}
 
-<!-- Set a blank service name (i.e. not creditor portal) -->
-{% set serviceName %}
-{% endset %}
-
 {% block pageTitle %}
   Your services - GOV.UK One Login – Prototype Kit
 {% endblock %}
@@ -272,16 +268,16 @@
   
   <div class="govuk-grid-column-two-thirds">
     <h1 class="govuk-heading-xl" id="header">Your services</h1>
-    <p class="govuk-body">You're signed in as <b>name@email.com</b></p>
+    <p class="govuk-body">You're signed in as <b>bill.shoggins@shogginscare.co.uk</b></p>
 
     <h2 class="govuk-heading-m">Your accounts</h2>
     <ul class="govuk-list your-services__list">
       <li class="your-services__card">
-        <h3 class="govuk-heading-s your-services__card__heading" data-test-id="account-card-heading">GOV.UK email subscriptions</h3>
+        <h3 class="govuk-heading-s your-services__card__heading" data-test-id="account-card-heading">{{serviceName}}</h3>
         
         <div class="your-services__card__content">
-          <p class="govuk-body">See and manage the updates you get about GOV.UK pages you’re interested in.</p>
-          <p class="govuk-body"><a class="govuk-link govuk-link--no-visited-state" href="#" data-message="Sorry, this is an external service feature (GOV.UK One Login) not within the scope of this prototype">Go to your GOV.UK email subscriptions</a></p>
+          <p class="govuk-body">Access data on adult social care provision and population needs at national, regional and local levels across England.</p>
+          <p class="govuk-body"><a class="govuk-link govuk-link--no-visited-state" href="/v7/signed-in/home">Go to your {{serviceName}} account</a></p>
           <p class="govuk-body govuk-body your-services__card__last-used">Last used: 9 November 2023</p>
         </div>
 
