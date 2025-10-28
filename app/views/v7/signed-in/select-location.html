@@ -4,7 +4,7 @@
 {% extends "v7/layouts/signed-in-select-location.html" %}
 {% endif %}
 
-{% set pageName = "Choose a location from your care provider group" %}
+{% set pageName = "Select a location from your care provider group" %}
 
 {% block pageTitle %}
   {% if error %}Error: {% endif %}{{pageName}} – {{serviceName}} – GOV.UK
@@ -29,7 +29,7 @@
         
         <div class="govuk-error-summary__body">
           <ul class="govuk-list govuk-error-summary__list">
-            <li><a href="#careHome">Choose a location</a></li>
+            <li><a href="#careHome">Select a location</a></li>
           </ul>
         </div>
 
@@ -46,8 +46,8 @@
         </h1>
 
         <div class="govuk-form-group">
-          <p class="govuk-body">We use this to display your local and regional comparison data in the service.</p>
-          <p class="govuk-body">You can switch to another location at any time by using the &lsquo;Change&rsquo; link at the top of the page.</p>
+          <p class="govuk-body">Local and regional comparison data is based on your selected location.</p>
+          <p class="govuk-body">You can change to another location in your care provider group at any time.</p>
         </div>
 
         <div id="la-hint" class="govuk-hint">
