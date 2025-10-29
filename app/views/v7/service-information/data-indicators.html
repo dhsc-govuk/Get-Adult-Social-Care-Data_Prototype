@@ -1,0 +1,84 @@
+{% extends "v7/layouts/signed-in.html" %}
+
+{% set pageName = "About the data in this service" %}
+
+{% block beforeContent %}
+<a href="javascript:history.back()" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+
+
+
+<div class="govuk-grid-row">
+  
+    <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-xl">{{pageName}}</h1>
+        <p class="govuk-body-l">Find information on the data sources, how the data was collected and limitations to consider when using the data.</p>
+
+
+        <h2 class="govuk-heading-m govuk-!-margin-top-7" id="how-to-use">Care provision data</h2>
+        <div class="gem-c-cards">
+            <ul class="gem-c-cards__list gem-c-cards__list--one-column">
+
+                <li class="gem-c-cards__list-item">
+
+                    <div class="gem-c-cards__list-item-wrapper">
+                        <h2 class="gem-c-cards__sub-heading govuk-heading-s">
+                            <a class="govuk-link gem-c-cards__link gem-c-force-print-link-styles" href="../../../help/beds-per-100000-adult-population">Adult social care beds per 100,000 adult population</a>
+                        </h2>
+                        <p class="govuk-body gem-c-cards__description">Sourced from Capacity Tracker. <br />Daily updates, limitations apply.</p>
+                    </div>
+
+                </li>
+
+                <li class="gem-c-cards__list-item">
+
+                    <div class="gem-c-cards__list-item-wrapper">
+                        <h2 class="gem-c-cards__sub-heading govuk-heading-s">
+                            <a class="govuk-link gem-c-cards__link gem-c-force-print-link-styles" href="../../../help/beds-care-provider-location">Number of adult social care beds in a care provider location</a>
+                        </h2>
+                        <p class="govuk-body gem-c-cards__description">Sourced from Capacity Tracker. <br />Daily updates, limitations apply.</p>
+                    </div>
+
+                </li>
+                <li class="gem-c-cards__list-item">
+
+                    <div class="gem-c-cards__list-item-wrapper">
+                        <h2 class="gem-c-cards__sub-heading govuk-heading-s">
+                            <a class="govuk-link gem-c-cards__link gem-c-force-print-link-styles" href="../../../help/total-number-community-social-care-providers">Number of community social care providers</a>
+                        </h2>
+                        <p class="govuk-body gem-c-cards__description">Sourced from the Care Quality Commission (CQC). <br />Monthly updates, limitations apply.</p>
+                    </div>
+
+                </li>
+                <li class="gem-c-cards__list-item">
+
+                    <div class="gem-c-cards__list-item-wrapper">
+                        <h2 class="gem-c-cards__sub-heading govuk-heading-s">
+                            <a class="govuk-link gem-c-cards__link gem-c-force-print-link-styles" href="../../../help/percentage-beds-occupied">Occupancy level percentages for adult social care beds</a>
+                        </h2>
+                        <p class="govuk-body gem-c-cards__description">Sourced from Capacity Tracker. <br />Daily updates, limitations apply.</p>
+                    </div>
+
+                </li>
+
+
+            </ul>
+        </div>
+
+
+
+        <h2 class="govuk-heading-m govuk-!-margin-top-7" id="data-sources">Financial spend and unpaid care data</h2>
+        <p class="govuk-body">Public data sources include:</p>
+
+
+        <h2 class="govuk-heading-m">Population needs data indicators</h2>
+        <p class="govuk-body">The service will be updated whenever new datasets are published.</p>
+
+
+       
+    </div>
+  
+</div>
+{% endblock %}
