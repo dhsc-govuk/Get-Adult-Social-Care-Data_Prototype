@@ -71,30 +71,26 @@
       </ul>
 
       <div class="govuk-tabs__panel" id="chart">
-          <h3 class="govuk-heading-m">Bar chart</h3>
-          <p class="govuk-body">This chart shows data for all local authorities in the East of England.</p>
-          <dl class="govuk-summary-list">
+        <h3 class="govuk-heading-m">Bar chart</h3>
+        <p class="govuk-body">This chart shows data for all local authorities in the East of England.</p>
+        <dl class="govuk-summary-list">
 
-              <div class="govuk-summary-list__row">
-                  <dt class="govuk-summary-list__key">Filter</dt>
-                  <dd class="govuk-summary-list__value">All bed types</dd>
-                  <dd class="govuk-summary-list__actions"><a class="govuk-link" href="total-beds-edit-single-filter">Change<span class="govuk-visually-hidden"> filter</span></a></dd>
-              </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Filter</dt>
+            <dd class="govuk-summary-list__value">All bed types</dd>
+            <dd class="govuk-summary-list__actions"><a class="govuk-link" href="total-beds-edit-single-filter">Change<span class="govuk-visually-hidden"> filter</span></a></dd>
+          </div>
 
-          </dl>
+        </dl>
 
-          {% include "private-beta/2025/august/current-population-needs/layouts/_chart.html" %}
-          <p class="govuk-body">
-
-              <a href="#" class="govuk-link">Download table data (CSV)</a>
-              <br />
-              Source: Capacity Tracker from the Department of Health and Social Care (DHSC), population estimates from the Office for National Statistics (ONS)
-              <br>
-              Data correct as of 24 December 2024
-              <br />
-              <a href="../help/beds-per-100000-adult-population" class="govuk-link">View supporting information for this data</a>
-          </p>
-
+        {% include "private-beta/2025/august/current-population-needs/layouts/_chart.html" %}
+        <p class="govuk-body"><a href="#" class="govuk-link">Download table data (CSV)</a></p>
+        <p class="govuk-body">
+          Source: Capacity Tracker from the Department of Health and Social Care (DHSC), population estimates from the Office for National Statistics (ONS)
+          <br>
+          Data correct as of 24 December 2024
+        </p>
+        <p class="govuk-body"><a href="../help/beds-per-100000-adult-population" class="govuk-link">View supporting information for this data</a></p>
       </div>
             
       <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="time-series">

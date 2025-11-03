@@ -36,12 +36,12 @@
 
       <div {% if error %}class="govuk-form-group govuk-form-group--error" aria-describedby="bedType-error"{% else %}class="govuk-form-group"{% endif %}>
         <fieldset class="govuk-fieldset" aria-describedby="bedType-hint">
-          <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
-            <span class="govuk-caption-xl">Total beds per 100,000 population</span> 
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <span class="govuk-caption-l">Total beds per 100,000 population</span> 
             <h1 class="govuk-fieldset__heading">{{pageName}}</h1>
           </legend>
           
-          <div id="bedType-hint" class="govuk-hint govuk-!-margin-top-7">
+          <div id="bedType-hint" class="govuk-hint govuk-!-margin-top-5">
             Select filters to refine the data displayed
           </div>
           {% if error %}
