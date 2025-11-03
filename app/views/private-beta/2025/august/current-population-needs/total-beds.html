@@ -29,7 +29,7 @@
   </div>
 
   <div class="govuk-grid-column-two-thirds">
-    <h1 class="govuk-heading-xl">{{pageName}}</h1>
+    <h1 class="govuk-heading-l">{{pageName}}</h1>
     
     <h2 class="govuk-heading-m govuk-!-margin-top-9" id="definition">Indicator definition and supporting information</h2>
     <p class="govuk-body">The total number of beds recorded by care providers across health and adult social care, adjusted to a rate of 100,000 adults in the local authority population.</p>
@@ -71,29 +71,30 @@
       </ul>
 
       <div class="govuk-tabs__panel" id="chart">
-        <h3 class="govuk-heading-m">Bar chart</h3>
-        <p class="govuk-body">This chart shows data for all local authorities in the East of England.</p>
-        <dl class="govuk-summary-list">
-  
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">Filter</dt>
-            <dd class="govuk-summary-list__value">Total beds</dd>
-            <dd class="govuk-summary-list__actions"><a class="govuk-link" href="total-beds-edit-single-filter">Change<span class="govuk-visually-hidden"> filter</span></a></dd>
-          </div>
-          
-        </dl>
-        
-        {% include "private-beta/2025/august/current-population-needs/layouts/_chart.html" %}
-        <p class="govuk-body">
-          <a href="#" class="govuk-link">Download chart image (PNG)</a>
-          <br>
-          <a href="#" class="govuk-link">Download table data (CSV)</a>
-        </p>
-        <p class="govuk-body">
-          Source: Capacity Tracker from the Department of Health and Social Care (DHSC)
-          <br>
-          Data correct as of 24 December 2024
-        </p>
+          <h3 class="govuk-heading-m">Bar chart</h3>
+          <p class="govuk-body">This chart shows data for all local authorities in the East of England.</p>
+          <dl class="govuk-summary-list">
+
+              <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Filter</dt>
+                  <dd class="govuk-summary-list__value">All bed types</dd>
+                  <dd class="govuk-summary-list__actions"><a class="govuk-link" href="total-beds-edit-single-filter">Change<span class="govuk-visually-hidden"> filter</span></a></dd>
+              </div>
+
+          </dl>
+
+          {% include "private-beta/2025/august/current-population-needs/layouts/_chart.html" %}
+          <p class="govuk-body">
+
+              <a href="#" class="govuk-link">Download table data (CSV)</a>
+              <br />
+              Source: Capacity Tracker from the Department of Health and Social Care (DHSC), population estimates from the Office for National Statistics (ONS)
+              <br>
+              Data correct as of 24 December 2024
+              <br />
+              <a href="../help/beds-per-100000-adult-population" class="govuk-link">View supporting information for this data</a>
+          </p>
+
       </div>
             
       <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="time-series">
@@ -108,61 +109,62 @@
       </div>
 
       <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="table">
-        <h3 class="govuk-heading-m">Table</h3>
+          <h3 class="govuk-heading-m">Table</h3>
 
-        <dl class="govuk-summary-list">
-  
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">Filters</dt>
-            <dd class="govuk-summary-list__value">
-              All types
-              <br>
-              Nursing - dementia
-              <br>
-              Residential - dementia
-            </dd>
-            <dd class="govuk-summary-list__actions"><a class="govuk-link" href="total-beds-edit-filters{% if data.bedType %}{% else %}?bedType=All types,Nursing - dementia,Residential - dementia{% endif %}">Change<span class="govuk-visually-hidden"> filters</span></a></dd>
-          </div>
-          
-        </dl>
-        
-        <table class="govuk-table">
-          <caption class="govuk-table__caption govuk-table__caption--s">Adult social care beds per 100,000 adult population at 24 December 2024</caption>
-          <thead class="govuk-table__head">
-            <th scope="col" class="govuk-table__header">Location</th>
-            <th scope="col" class="govuk-table__header govuk-table__header--numeric">Suffolk</th>
-            <th scope="col" class="govuk-table__header govuk-table__header--numeric">East of England</th>
-            <th scope="col" class="govuk-table__header govuk-table__header--numeric">England</th>
-          </thead>
-          <tbody>
-            <tr class="govuk-table__row">
-              <td class="govuk-table__cell">Total beds</td>
-              <td class="govuk-table__cell govuk-table__cell--numeric">2,398.4</td>
-              <td class="govuk-table__cell govuk-table__cell--numeric">1,969.5</td>
-              <td class="govuk-table__cell govuk-table__cell--numeric">2,088.2</td>
-            </tr>
-            <tr class="govuk-table__row">
-              <td class="govuk-table__cell">Dementia nursing</td>
-              <td class="govuk-table__cell govuk-table__cell--numeric">160.1</td>
-              <td class="govuk-table__cell govuk-table__cell--numeric">126.0</td>
-              <td class="govuk-table__cell govuk-table__cell--numeric">182.1</td>
-            </tr>
-            <tr class="govuk-table__row">
-              <td class="govuk-table__cell">Dementia residential</td>
-              <td class="govuk-table__cell govuk-table__cell--numeric">648.8</td>
-              <td class="govuk-table__cell govuk-table__cell--numeric">486.6</td>
-              <td class="govuk-table__cell govuk-table__cell--numeric">432.8</td>
-            </tr>
-          </tbody>
-        </table>
+          <dl class="govuk-summary-list">
 
-        <p class="govuk-body"><a href="#" class="govuk-link">Download table data (CSV)</a></p>
-        <p class="govuk-body">
-            Source: Capacity Tracker from the Department of Health and Social Care (DHSC)
-            <br>
-            Data correct as of 24 December 2024
-        </p>
-      </div>
+              <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">Filters</dt>
+                  <dd class="govuk-summary-list__value">
+                      Total Beds <!-- Matches formatting in the live private beta -->
+                      <br>
+                      Dementia Nursing <!-- Matches formatting in the live private beta -->
+                      <br>
+                      Dementia Residential <!-- Matches formatting in the live private beta -->
+                  </dd>
+                  <dd class="govuk-summary-list__actions"><a class="govuk-link" href="total-beds-edit-filters{% if data.bedType %}{% else %}?bedType=All types,Nursing - dementia,Residential - dementia{% endif %}">Change<span class="govuk-visually-hidden"> filters</span></a></dd>
+              </div>
+
+          </dl>
+
+          <table class="govuk-table">
+              <caption class="govuk-table__caption govuk-table__caption--s">Adult social care beds per 100,000 adult population</caption>
+              <thead class="govuk-table__head">
+              <th scope="col" class="govuk-table__header">Location</th>
+              <th scope="col" class="govuk-table__header govuk-table__header--numeric">Suffolk</th>
+              <th scope="col" class="govuk-table__header govuk-table__header--numeric">East of England</th>
+              <th scope="col" class="govuk-table__header govuk-table__header--numeric">England</th>
+              </thead>
+              <tbody>
+                  <tr class="govuk-table__row">
+                      <td class="govuk-table__cell"><b>Total Beds</b></td> <!-- Matches formatting in the live private beta -->
+                      <td class="govuk-table__cell govuk-table__cell--numeric">2,398.4</td>
+                      <td class="govuk-table__cell govuk-table__cell--numeric">1,969.5</td>
+                      <td class="govuk-table__cell govuk-table__cell--numeric">2,088.2</td>
+                  </tr>
+                  <tr class="govuk-table__row">
+                      <td class="govuk-table__cell"><b>Dementia Nursing</b></td> <!-- Matches formatting in the live private beta -->
+                      <td class="govuk-table__cell govuk-table__cell--numeric">160.1</td>
+                      <td class="govuk-table__cell govuk-table__cell--numeric">126.0</td>
+                      <td class="govuk-table__cell govuk-table__cell--numeric">182.1</td>
+                  </tr>
+                  <tr class="govuk-table__row">
+                      <td class="govuk-table__cell"><b>Dementia Residential</b></td> <!-- Matches formatting in the live private beta -->
+                      <td class="govuk-table__cell govuk-table__cell--numeric">648.8</td>
+                      <td class="govuk-table__cell govuk-table__cell--numeric">486.6</td>
+                      <td class="govuk-table__cell govuk-table__cell--numeric">432.8</td>
+                  </tr>
+              </tbody>
+          </table>
+
+          <p class="govuk-body"><a href="#" class="govuk-link">Download table data (CSV)</a></p>
+          <p class="govuk-body">
+              Source: Capacity Tracker from the Department of Health and Social Care (DHSC), population estimates from the Office for National Statistics (ONS)
+              <br>
+              Data correct as of 24 December 2024
+          </p>
+          <p class="govuk-body"><a href="../help/beds-per-100000-adult-population" class="govuk-link">View supporting information for this data</a></p>
+</div>
     
     </div>
 

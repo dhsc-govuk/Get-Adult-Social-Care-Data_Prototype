@@ -1,6 +1,6 @@
 {% extends "v7/layouts/signed-in.html" %}
 
-{% set pageName = "Disability prevalence and reasons for people to access long term support" %}
+{% set pageName = "Disability prevalence and reasons for people to access long-term adult social care" %}
 
 {% block beforeContent %}
 {{ govukBreadcrumbs({
@@ -40,7 +40,7 @@
         
         <div class="govuk-form-group">
           <h3 class="govuk-heading-m">Disability prevalence</h3>
-          <p class="govuk-body">Learn about the definition, sourcing of data and methodology for the indicator <a href="../../../help/disability-prevalence" class="govuk-link">disability prevalence</a>.</p>
+          <p class="govuk-body">Find out how <a href="../../../help/people-who-reported-bad-or-very-bad-health">people who reported bad or very bad health</a> and <a href="../../../help/disability-prevalence" class="govuk-link">disability prevalence</a> are calculated.</p>
         </div>
 
         <h3 class="govuk-tabs__title">Contents</h3>
@@ -83,8 +83,8 @@
       <div class="govuk-tabs" data-module="govuk-tabs">
         
         <div class="govuk-form-group">
-          <h3 class="govuk-heading-m">Long term health conditions</h3>
-          <p class="govuk-body">Learn about the definition, sourcing of data and methodology for the indicator <a href="../../help/disability-prevalence" class="govuk-link">disability prevalence</a>.</p>
+          <h3 class="govuk-heading-m">Learning disability prevalence</h3>
+          <p class="govuk-body">Find out <a href="../../../help/learning-disability-prevalence" class="govuk-link">how learning disability prevalence is calculated</a>.</p>
         </div>
 
         <h3 class="govuk-tabs__title">Contents</h3>
@@ -120,89 +120,147 @@
 
 <div class="govuk-grid-row">
 
-  <div class="govuk-grid-column-two-thirds">
-    <h2 class="govuk-heading-l govuk-!-margin-top-9">Data indicator definitions and data sources</h2>
-    <!-- <p class="govuk-body">Summary text on any non-specialist points.</p> -->
+    <div class="govuk-grid-column-full">
 
-    <div class="gem-c-cards">
-      <ul class="gem-c-cards__list gem-c-cards__list--one-column">
-        <li class="gem-c-cards__list-item">
+        <div class="data-box govuk-form-group">
 
-          <div class="gem-c-cards__list-item-wrapper">
-            <h2 class="gem-c-cards__sub-heading govuk-heading-s">
-              <a class="govuk-link gem-c-cards__link gem-c-force-print-link-styles" href="../../../help/disability-prevalence">Disability prevalence</a>
-            </h2>
-            <p class="govuk-body gem-c-cards__description">Find further information about this indicator.</p>
-          </div>
+            <div class="govuk-tabs" data-module="govuk-tabs">
 
-        </li>
-      </ul>
-    </div>
+                <div class="govuk-form-group">
+                    <h3 class="govuk-heading-m">Primary reason for people to access long-term adult social care</h3>
+                    <p class="govuk-body">[Needs to be designed.]</p>
+                </div>
 
-    <h2 class="govuk-heading-l govuk-!-margin-top-9">Find more information on your local care market</h2>
-    <p class="govuk-body"><a href="#" class="govuk-link" data-message="This link would take you to the Market Position Statement on the Suffolk local authority website.">Market Position Statement for Suffolk (opens in new tab)</a></p>
-    <p class="govuk-body">Most local authorities in England publish Market Position Statements (MPS) to help care providers understand the local care market.</p>
-    <p class="govuk-body">You can usually find these <abbr title="Market Position Statement">MPS</abbr> documents on local authority websites.</p>
-    <p class="govuk-body"><abbr title="Market Position Statement">MPS</abbr> documents include information on:</p>
-    <ul class="govuk-list govuk-list--bullet">
-      <li>supply and demand in the local care market</li>
-      <li>forecasts of future supply and demand for adult social care services</li>
-      <li>how the local authority will support the local care market to meet demand</li>
-      <li>how the local authority will engage with care providers on challenges in the sector, such as funding pressures</li>
-    </ul>
+                
 
-    <h2 class="govuk-heading-l govuk-!-margin-top-9">Related data</h2>
 
-    <div class="gem-c-cards">
-      <ul class="gem-c-cards__list gem-c-cards__list--one-column">
-        <li class="gem-c-cards__list-item">
+                
 
-          <div class="gem-c-cards__list-item-wrapper">
-            <h2 class="gem-c-cards__sub-heading govuk-heading-s">
-              <a class="govuk-link gem-c-cards__link gem-c-force-print-link-styles" href="../population-age-and-size/data">Population size and age group percentages</a>
-            </h2>
-            <p class="govuk-body gem-c-cards__description">Population metrics to help with planning for adult social care demand and workforce availability.</p>
-          </div>
-        
-        </li>
-        <li class="gem-c-cards__list-item">
+            </div>
 
-          <div class="gem-c-cards__list-item-wrapper">
-            <h2 class="gem-c-cards__sub-heading govuk-heading-s">
-              <a class="govuk-link gem-c-cards__link gem-c-force-print-link-styles" href="../household-composition-and-economic-factors/data">Household composition and economic factors</a>
-            </h2>
-            <p class="govuk-body gem-c-cards__description">These care needs indicators include the number of older people living alone and deprivation metrics.</p>
-          </div>
-        
-        </li>
-        <li class="gem-c-cards__list-item">
-
-          <div class="gem-c-cards__list-item-wrapper">
-            <h2 class="gem-c-cards__sub-heading govuk-heading-s">
-              <a class="govuk-link gem-c-cards__link gem-c-force-print-link-styles" href="../dementia-prevalence/data">Dementia prevalence and estimated diagnosis rate</a>
-            </h2>
-            <p class="govuk-body gem-c-cards__description">Data to help compare actual dementia diagnoses to the number of people likely to have dementia.</p>
-          </div>
-        
-        </li>
-      </ul>
-    </div>
-
-    <!-- TO DO: Get this component working as a progressive enhancement (i.e. with JavaScript as per the live GOV.UK examples) -->
-    <div data-sticky-element class="gem-c-contents-list-with-body__link-wrapper govuk-!-margin-top-9">
-    
-      <div class="gem-c-contents-list-with-body__link-container">
-        <a class="govuk-link gem-c-back-to-top-link govuk-!-display-none-print" href="#top">
-          <svg class="gem-c-back-to-top-link__icon" xmlns="http://www.w3.org/2000/svg" width="13" height="17" viewBox="0 0 13 17" aria-hidden="true" focusable="false">
-            <path fill="currentColor" d="M6.5 0L0 6.5 1.4 8l4-4v12.7h2V4l4.3 4L13 6.4z"></path>
-          </svg>
-          Back to top
-        </a>
-      </div>
+        </div>
 
     </div>
 
-  </div>
+</div>
+
+<div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-two-thirds">
+        <h2 class="govuk-heading-l govuk-!-margin-top-9">Data indicator details</h2>
+        <!-- <p class="govuk-body">Summary text on any non-specialist points.</p> -->
+
+        <div class="gem-c-cards">
+            <ul class="gem-c-cards__list gem-c-cards__list--one-column">
+                <li class="gem-c-cards__list-item">
+
+                    <div class="gem-c-cards__list-item-wrapper">
+                        <h2 class="gem-c-cards__sub-heading govuk-heading-s">
+                            <a class="govuk-link gem-c-cards__link gem-c-force-print-link-styles" href="../../../help/people-who-reported-bad-or-very-bad-health">People who reported bad or very bad health</a>
+                        </h2>
+                        <p class="govuk-body gem-c-cards__description">Source: Office for National Statistics.<br />Updated every 10 years, limitations might apply.</p>
+                    </div>
+
+                </li>
+                <li class="gem-c-cards__list-item">
+
+                    <div class="gem-c-cards__list-item-wrapper">
+                        <h2 class="gem-c-cards__sub-heading govuk-heading-s">
+                            <a class="govuk-link gem-c-cards__link gem-c-force-print-link-styles" href="../../../help/disability-prevalence">Disability prevalence</a>
+                        </h2>
+                        <p class="govuk-body gem-c-cards__description">Source: Office for National Statistics.<br />Updated every 10 years, limitations might apply.</p>
+                    </div>
+
+                </li>
+                <li class="gem-c-cards__list-item">
+
+                    <div class="gem-c-cards__list-item-wrapper">
+                        <h2 class="gem-c-cards__sub-heading govuk-heading-s">
+                            <a class="govuk-link gem-c-cards__link gem-c-force-print-link-styles" href="../../../help/learning-disability-prevalence">Learning disability prevalence</a>
+                        </h2>
+                        <p class="govuk-body gem-c-cards__description">Source: Department of Health and Social Care.<br />Yearly updates, limitations apply.</p>
+                    </div>
+
+                </li>
+                <li class="gem-c-cards__list-item">
+
+                    <div class="gem-c-cards__list-item-wrapper">
+                        <h2 class="gem-c-cards__sub-heading govuk-heading-s">
+                            <a class="govuk-link gem-c-cards__link gem-c-force-print-link-styles" href="../../../help/primary-reason-for-accessing-long-term-adult-social-care">Primary reason for people to access long-term adult social care</a>
+                        </h2>
+                        <p class="govuk-body gem-c-cards__description">Source: NHS England.<br />Yearly updates, limitations might apply.</p>
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+
+
+        <h2 class="govuk-heading-l govuk-!-margin-top-9">Related data</h2>
+
+        <div class="gem-c-cards">
+            <ul class="gem-c-cards__list gem-c-cards__list--one-column">
+                <li class="gem-c-cards__list-item">
+
+                    <div class="gem-c-cards__list-item-wrapper">
+                        <h2 class="gem-c-cards__sub-heading govuk-heading-s">
+                            <a class="govuk-link gem-c-cards__link gem-c-force-print-link-styles" href="../population-age-and-size/data">Population size and age group percentages</a>
+                        </h2>
+                        <p class="govuk-body gem-c-cards__description">Population metrics to help with planning for adult social care demand and workforce availability.</p>
+                    </div>
+
+                </li>
+                <li class="gem-c-cards__list-item">
+
+                    <div class="gem-c-cards__list-item-wrapper">
+                        <h2 class="gem-c-cards__sub-heading govuk-heading-s">
+                            <a class="govuk-link gem-c-cards__link gem-c-force-print-link-styles" href="../household-composition-and-economic-factors/data">Household composition and economic factors</a>
+                        </h2>
+                        <p class="govuk-body gem-c-cards__description">These care needs indicators include the number of older people living alone and deprivation metrics.</p>
+                    </div>
+
+                </li>
+                <li class="gem-c-cards__list-item">
+
+                    <div class="gem-c-cards__list-item-wrapper">
+                        <h2 class="gem-c-cards__sub-heading govuk-heading-s">
+                            <a class="govuk-link gem-c-cards__link gem-c-force-print-link-styles" href="../dementia-prevalence/data">Dementia prevalence and estimated diagnosis rate</a>
+                        </h2>
+                        <p class="govuk-body gem-c-cards__description">Data to help compare actual dementia diagnoses to the number of people likely to have dementia.</p>
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+        <h2 class="govuk-heading-l govuk-!-margin-top-9">Information on the local care market</h2>
+        <p class="govuk-body"><a href="#" class="govuk-link" data-message="This link would take you to the Market Position Statement on the Suffolk local authority website.">Market Position Statement for Suffolk (opens in new tab)</a></p>
+        <p class="govuk-body">Most local authorities in England publish Market Position Statements (MPS) to help care providers understand the local care market.</p>
+        <p class="govuk-body">You can usually find these <abbr title="Market Position Statement">MPS</abbr> documents on local authority websites.</p>
+        <p class="govuk-body"><abbr title="Market Position Statement">MPS</abbr> documents include information on:</p>
+        <ul class="govuk-list govuk-list--bullet">
+            <li>supply and demand in the local care market</li>
+            <li>forecasts of future supply and demand for adult social care services</li>
+            <li>how the local authority will support the local care market to meet demand</li>
+            <li>how the local authority will engage with care providers on challenges in the sector, such as funding pressures</li>
+        </ul>
+
+        <!-- TO DO: Get this component working as a progressive enhancement (i.e. with JavaScript as per the live GOV.UK examples) -->
+        <div data-sticky-element class="gem-c-contents-list-with-body__link-wrapper govuk-!-margin-top-9">
+
+            <div class="gem-c-contents-list-with-body__link-container">
+                <a class="govuk-link gem-c-back-to-top-link govuk-!-display-none-print" href="#top">
+                    <svg class="gem-c-back-to-top-link__icon" xmlns="http://www.w3.org/2000/svg" width="13" height="17" viewBox="0 0 13 17" aria-hidden="true" focusable="false">
+                        <path fill="currentColor" d="M6.5 0L0 6.5 1.4 8l4-4v12.7h2V4l4.3 4L13 6.4z"></path>
+                    </svg>
+                    Back to top
+                </a>
+            </div>
+
+        </div>
+
+    </div>
 
 </div>
 {% endblock %}

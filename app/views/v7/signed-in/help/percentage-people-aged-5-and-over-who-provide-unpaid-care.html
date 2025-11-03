@@ -1,6 +1,6 @@
 {% extends "v7/layouts/signed-in.html" %}
 
-{% set pageName = "Disability prevalence" %}
+{% set pageName = "People aged 5 or over who provide unpaid care" %}
 
 {% block beforeContent %}
 <a href="javascript:window.history.back()" class="govuk-back-link">Back</a>
@@ -16,12 +16,12 @@
 
             <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">What this measures</dt>
-                <dd class="govuk-summary-list__value">The proportion of people living within the selected administrative area within England who assessed their day-to-day activities as limited by long-term physical or mental health conditions or illnesses are considered disabled. This definition of a disabled person meets the harmonised standard for measuring disability and is in line with the Equality Act (2010).</dd>
+                <dd class="govuk-summary-list__value">The proportion of people aged five years and over living within the selected administrative area within England who provide unpaid help or support to anyone who has long-term physical or mental health conditions, illness or problems related to old age. This does not include any activities as part of paid employment. This help can be within or outside of the carer's household.</dd>
             </div>
 
             <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">Source</dt>
-                <dd class="govuk-summary-list__value"><a href="https://www.nomisweb.co.uk/datasets/c2021ts038" class="govuk-link" target="_blank">Census 2021 from the Office for National Statistics (opens in new tab)</a></dd>
+                <dd class="govuk-summary-list__value"><a href="https://www.nomisweb.co.uk/datasets/c2021ts039" class="govuk-link" rel="noreferrer noopener" target="_blank">Census 2021 from the Office for National Statistics (opens in new tab)</a></dd>
             </div>
 
             <div class="govuk-summary-list__row">
@@ -34,14 +34,11 @@
                 <dd class="govuk-summary-list__value">Census cadence</dd>
             </div>
 
-            <!-- <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">Data available for</dt>
-          <dd class="govuk-summary-list__value">{{"today" | govukDate}} to {% set expirationDate = "today" | duration(5, "years") %}{{expirationDate | govukDate}}</dd>
-        </div> -->
-
             <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">Methodology</dt>
-                <dd class="govuk-summary-list__value">This dataset provides Census 2021 estimates that classify usual residents in England and Wales by long-term health problems or disabilities. The estimates are as at Census Day, 21 March 2021.</dd>
+                <dd class="govuk-summary-list__value">
+                    This dataset provides Census 2021 estimates that classify usual residents aged 5 years and over in England and Wales by the number of hours of unpaid care they provide. The estimates are as at Census Day, 21 March 2021.
+                </dd>
             </div>
 
             <div class="govuk-summary-list__row">
@@ -51,7 +48,8 @@
                 </dd>
             </div>
 
-            <div class="govuk-summary-list__row">
+            
+                        <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">Data definitions</dt>
                 <dd class="govuk-summary-list__value">See data source for details.</dd>
             </div>
@@ -60,4 +58,4 @@
     </div>
 
 </div>
-{% endblock %}
+    {% endblock %}
