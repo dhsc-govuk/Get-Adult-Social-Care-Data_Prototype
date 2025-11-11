@@ -280,26 +280,13 @@
 
 /* Data visualisation component box styling */
 .data-box {
-  background-color: #f3f2f1;
-  padding: 20px;
-}
-
-.data-box .govuk-tabs__panel:last-child {
-  margin-bottom: 0;
-}
-
-.data-box-last-tab-last-item {
-  margin-bottom: 0;
-}
-
-.data-box .govuk-tabs {
   background-color: #ffffff;
-  padding: 20px;
+  padding: 0;
 }
 @media (min-width: 40.0625em) {
-  .data-box .govuk-tabs {
-    background-color: initial;
-    padding: 0;
+  .data-box {
+    background-color: #f3f2f1;
+    padding: 20px;
   }
 }
 
