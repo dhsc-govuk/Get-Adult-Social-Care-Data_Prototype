@@ -15,7 +15,7 @@
 <!-- Make sure you put this AFTER Leaflet's CSS -->
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 
-<h4 class="govuk-heading-s">Figure 1: map of CQC-registered care homes near {{data.careHome or 'Shoggins Care Services (Sudbury)'}}</h4>
+<h4 class="govuk-heading-s">Figure 1: map of CQC-registered care homes near {{data.locationName or 'Shoggins Care Services (Sudbury)'}}</h4>
 
 <div class="govuk-form-group">
 
@@ -55,7 +55,7 @@
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
   }).addTo(map);
 
-  L.marker([52.037456, 0.730166], {icon: homeIcon}).addTo(map).bindPopup("<span class='popup'><strong>{{data.careHome or 'Shoggins Care Services (Sudbury)'}}</strong></span>");
+  L.marker([52.037456, 0.730166], {icon: homeIcon}).addTo(map).bindPopup("<span class='popup'><strong>{{data.locationName or 'Shoggins Care Services (Sudbury)'}}</strong></span>");
   marker1.bindPopup("<span class='popup'>Name: 1 Oak Care Home<br>Address: Unit 1 &#38; 2 Woodview, Bull Lane Industrial Estate, Bull Lane, Acton, Sudbury, CO10 0FD<br>Services: Nursing<br>Distance from location: 3.2 miles</span>");
   marker2.bindPopup("<span class='popup'>Name: Briarcare Recruitment Agency<br>Address: Unit 3, Woodview, Bull Lane Industrial Estate, Bull Lane, Acton, Sudbury, CO10 0FD<br>Services: Nursing<br>Distance from location: 3.2 miles</span>");
   marker3.bindPopup("<span class='popup'>Name: Forest Care Home Suffolk<br>Address: Unit 22 South Suffolk Business Centre, Alexandra Road, Sudbury, CO10 2XH<br>Services: Nursing, residential care<br>Distance from location: 0.6 miles</span>");

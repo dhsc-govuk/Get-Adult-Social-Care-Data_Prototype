@@ -90,8 +90,7 @@
   rebrand: true,
   serviceNavigationParams: { 
     rebrand: true,
-    serviceName: serviceName,
-    serviceUrl: "#"
+    serviceName: serviceName
   }
 }) }}
 
@@ -104,10 +103,6 @@
   }) }}
 </div>
 {% endblock %}
-
-{% set bodyAttributes = {
-  "data-module": "edge"
-} %}
 
 {% block footer %}
 {{ govukFooter({

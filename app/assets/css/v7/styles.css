@@ -499,3 +499,102 @@
     display: none;
   }
 }
+
+/* Styles for the searchable radio buttons so users can select a location */
+
+/* Search input */
+.search-field {
+  position: relative;
+  margin-bottom: 1em;
+}
+
+.search-field-darker .search-input input {
+  border-top-color: rgb(111, 119, 123);
+  border-right-color: rgb(111, 119, 123);
+  border-bottom-color: rgb(111, 119, 123);
+  border-left-color: rgb(111, 119, 123);
+}
+
+.search-input {
+  position: static;
+  margin: 0;
+  padding: 0;
+}
+
+.search-input input {
+  -webkit-appearance: none;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+  border-bottom-left-radius: 0px;
+  font-family: nta, Arial, sans-serif;
+  font-weight: 400;
+  text-transform: none;
+  font-size: 19px;
+  box-sizing: border-box;
+  width: 100%;
+  margin: 0;
+  padding-left: 10px;
+  display: block;
+  height: 50px;
+  border-top-color: rgb(191, 193, 195);
+  border-right-color: rgb(191, 193, 195);
+  border-bottom-color: rgb(191, 193, 195);
+  border-left-color: rgb(191, 193, 195);
+  line-height: 48px;
+}
+
+.search-input-with-button {
+  padding-right: 50px;
+}
+
+.search-input-with-button input {
+  border-right-width: initial;
+  border-right-style: none;
+  border-right-color: initial;
+}
+
+.search-submit {
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  height: 50px;
+  width: 50px;
+  overflow-x: visible;
+  overflow-y: visible;
+}
+
+.search-submit button {
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+  border-bottom-left-radius: 0px;
+  box-shadow: none;
+  position: absolute;
+  z-index: 4;
+  right: 0px;
+  top: 0px;
+  width: 50px;
+  height: 50px;
+  border-width: initial;
+  border-style: none;
+  border-color: initial;
+  border-image-source: initial;
+  border-image-slice: initial;
+  border-image-width: initial;
+  border-image-outset: initial;
+  border-image-repeat: initial;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  text-indent: -5000px;
+  color: rgb(255, 255, 255);
+  background-color: #005ea5;
+  background-image: url("/public/images/search-button.png");
+  background-repeat: repeat-x;
+  background-repeat: repeat-y;
+  background-position-x: -12.5%;
+  background-position-y: 50%;
+}
+.search-submit button:hover, .search-submit button:focus {
+  background-color: #267daf;
+}

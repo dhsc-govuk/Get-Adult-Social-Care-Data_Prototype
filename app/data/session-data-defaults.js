@@ -1,6 +1,7 @@
 module.exports = {
 
-  // Insert values here
-  'first-name': 'Avinash',
-  myArray: ["apple","squid",6,8]
+  // v7
+  "v7ProviderLocationsData": require('./v7/provider-locations.json'),
+  "v7ProviderLocations": "v7ProviderLocationsData"
+
 }

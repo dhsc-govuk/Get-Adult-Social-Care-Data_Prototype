@@ -21,12 +21,19 @@ module.exports = function(router) {
       req.session.data['locations'] = "1"
       req.session.data['postAuthenticationURL'] = "home"
     }
-    // For 'Number of locations' is '2 or more'
+    // For 'Number of locations' is '2 to 19'
+    else if (numberOfLocations == "2 to 19") {
+      req.session.data['locations'] = ""
+      req.session.data['locationName'] = ""
+      req.session.data['justSignedIn'] = "true"
+      req.session.data['postAuthenticationURL'] = "select-location?searchRequired=false&paginationRequired=false"
+    }
+    // For 'Number of locations' is '101 or more'
     else {
       req.session.data['locations'] = ""
-      req.session.data['careHome'] = ""
+      req.session.data['locationName'] = ""
       req.session.data['justSignedIn'] = "true"
-      req.session.data['postAuthenticationURL'] = "select-location"
+      req.session.data['postAuthenticationURL'] = "select-location?searchRequired=true&paginationRequired=true&page1=true"
     }
 
     // Routing - send to the chosen entry point
@@ -171,19 +178,69 @@ module.exports = function(router) {
 
   router.get('/' + version + '/' + 'signed-in/select-location', function (req, res) {
     res.render(version + '/signed-in/select-location', {
-      'error' : req.query.error
+      'error' : req.query.error,
+      'error1' : req.query.error1,
+      'error2' : req.query.error2,
+      'page1' : req.query.page1,
+      'page2' : req.query.page2,
+      'searchLocation' : req.query.searchLocation      
 		})
   })
+  // NON JAVASCRIPT - Deal with the non JavaScript scenario (e.g. POST) for users entering an empty search on the radio buttons
+	router.get('/' + version + '/' + 'signed-in/select-location-non-javascript-post', function (req, res) {		
+
+    var searchLocation = req.query['searchLocation']
+
+		// Error validation - make sure user enters a search term
+		if (searchLocation == "") {
+			res.redirect('/' + version + '/' + 'signed-in/select-location?searchRequired=true&paginationRequired=true&page1=true&error=true&error1=true')
+		}
+		// User searches for a location
+		else {
+			res.redirect('/' + version + '/' + 'signed-in/select-location?searchRequired=true&paginationRequired=true&page1=true')
+		}
+		
+	})
   router.post('/' + version + '/' + 'signed-in/select-location-validation', function (req, res) {
 
-    var careHome = req.body['careHome']
+    // Data objects to be retrieved and queried
+    var locationName = req.body['locationName']
 
     // Error validation - make sure user enters data into required field
-    if (careHome == undefined) {
-      res.redirect('/' + version + '/' + 'signed-in/select-location?error=true')
+		if (locationName == undefined) {
+      res.redirect('/' + version + '/' + 'signed-in/select-location?error=true&error2=true')      
+		}
+		// User selects a location
+		else {			
+      res.redirect('/' + version + '/' + 'signed-in/home?justSignedIn=false')
     }
-    // User selects a location
-    else {
+
+  })
+  router.post('/' + version + '/' + 'signed-in/select-location-search-and-pagination-validation', function (req, res) {
+
+    // Data objects to be retrieved and queried
+    var searchRequired = req.session.data['searchRequired']
+    var paginationRequired = req.session.data['paginationRequired']
+    var locationName = req.body['locationName']
+
+    // Logic and validation for routing
+    var searchRequiredURL = "";
+    var paginationRequiredURL = "";
+    
+    if (searchRequired == "true") {
+      searchRequiredURL = "&searchRequired=true"
+    }
+
+    if (paginationRequired == "true") {
+      paginationRequiredURL = "&paginationRequired=true&page1=true"
+    }
+
+    // Error validation - make sure user enters data into required field
+		if (locationName == undefined) {
+      res.redirect('/' + version + '/' + 'signed-in/select-location?error=true&error2=true' + searchRequiredURL + paginationRequiredURL)      
+		}
+		// User selects a location
+		else {			
       res.redirect('/' + version + '/' + 'signed-in/home?justSignedIn=false')
     }
 
