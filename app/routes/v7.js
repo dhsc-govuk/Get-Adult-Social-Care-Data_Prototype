@@ -21,12 +21,19 @@ module.exports = function(router) {
       req.session.data['locations'] = "1"
       req.session.data['postAuthenticationURL'] = "home"
     }
-    // For 'Number of locations' is '2 to 19'
-    else if (numberOfLocations == "2 to 19") {
+    // For 'Number of locations' is '2 to 20'
+    else if (numberOfLocations == "2 to 20") {
       req.session.data['locations'] = ""
       req.session.data['locationName'] = ""
       req.session.data['justSignedIn'] = "true"
       req.session.data['postAuthenticationURL'] = "select-location?searchRequired=false&paginationRequired=false"
+    }
+    // For 'Number of locations' is '21 to 100'
+    else if (numberOfLocations == "21 to 100") {
+      req.session.data['locations'] = ""
+      req.session.data['locationName'] = ""
+      req.session.data['justSignedIn'] = "true"
+      req.session.data['postAuthenticationURL'] = "select-location?searchRequired=true&paginationRequired=false"
     }
     // For 'Number of locations' is '101 or more'
     else {

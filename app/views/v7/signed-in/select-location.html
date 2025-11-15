@@ -44,7 +44,7 @@
     {% endif %}
 
     <!-- 120 RESULTS -->
-    {% if data.searchRequired == "true" and data.paginationRequired == "true" %}
+    {% if data.searchRequired == "true" %}
     <!-- Radio button SEARCH (START) -->
     <form action="select-location-non-javascript-post" method="get">
       <fieldset class="govuk-fieldset">
@@ -80,11 +80,11 @@
     <!-- Radio button SEARCH (END) -->
                 
     <div class="govuk-form-group">
-      <p class="govuk-body hidden" data-clear-filter><a href="select-location?searchRequired=true&paginationRequired=true&page1=true" id="clearSearchAndSelection">Clear search</a></p>
+      <p class="govuk-body hidden" data-clear-filter><a href="select-location?searchRequired={{data.searchRequired or 'true'}}&paginationRequired={{data.paginationRequired or 'true'}}{% if data.paginationRequired != 'false' %}&page1=true{% endif %}" id="clearSearchAndSelection">Clear search</a></p>
     </div>
 
     <h2 id="selectedChoiceHeading" class="govuk-heading-m hidden">No location selected</h2>
-    <p data-filtered-message>120 locations</p>
+    <p data-filtered-message>{% if data.paginationRequired != "true" %}30{% else %}120{% endif %} locations</p>
     
     <form action="/v7/signed-in/select-location-search-and-pagination-validation" method="post" novalidate>
     
@@ -99,6 +99,22 @@
 
           <div class="govuk-radios" data-module="govuk-radios">
             
+            {% if data.paginationRequired != "true" %}
+            <!-- SHOWING 1 TO 30 OF 30 LOCATIONS -->
+            {% for item in data[data['v7ProviderLocations']] %}
+            {% if (loop.index <= 30) %}
+            <div class="govuk-radios__item searchable-radio">
+              <input class="govuk-radios__input" id="locationName-{{item.ID}}" name="locationName" type="radio" data-search-value="{{item.Name}}, {{item.Address}}" value="{{item.Name}}" aria-describedby="locationName-{{item.ID}}-hint"{% if data.locationName == "{{item.Name}}" %} checked{% endif %}>
+              <label class="govuk-label govuk-radios__label" for="locationName-{{item.ID}}">{{item.Name}}</label>
+            
+              <div id="locationName-{{item.ID}}-hint" class="govuk-hint govuk-radios__hint">
+                Address: {{item.Address}}
+              </div>
+
+            </div>
+            {% endif %}
+            {% endfor %}
+            {% else %}
             <!-- SHOWING 1 TO 100 OF 120 LOCATIONS -->
             {% if page1 %}
             {% for item in data[data['v7ProviderLocations']] %}
@@ -130,6 +146,7 @@
             {% endif %}
             {% endfor %}
             {% endif %}
+            {% endif %}
 
           </div>
 
@@ -144,6 +161,23 @@
 
           <div class="govuk-radios" data-module="govuk-radios">
 
+            {% if data.paginationRequired != "true" %}
+            <!-- 30 LOCATIONS -->
+            {% for item in data[data['v7ProviderLocations']] %}
+            {% if (loop.index <= 30) %}
+            <div class="govuk-radios__item searchable-radio">
+              <input class="govuk-radios__input" id="locationName-{{item.ID}}" name="locationName" type="radio" data-search-value="{{item.Name}}, {{item.Address}}" value="{{item.Name}}" aria-describedby="locationName-{{item.ID}}-hint"{% if data.locationName == "{{item.Name}}" %} checked{% endif %}>
+              <label class="govuk-label govuk-radios__label" for="locationName-{{item.ID}}">{{item.Name}}</label>
+            
+              <div id="locationName-{{item.ID}}-hint" class="govuk-hint govuk-radios__hint">
+                Address: {{item.Address}}
+              </div>
+
+            </div>
+            {% endif %}
+            {% endfor %}
+            {% else %}
+            <!-- 120 LOCATIONS -->
             {% for item in data[data['v7ProviderLocations']] %}
             <div class="govuk-radios__item searchable-radio">
               <input class="govuk-radios__input" id="locationName-{{item.ID}}" name="locationName" type="radio" data-search-value="{{item.Name}}, {{item.Address}}" value="{{item.Name}}" aria-describedby="locationName-{{item.ID}}-hint"{% if data.locationName == "{{item.Name}}" %} checked{% endif %}>
@@ -155,14 +189,15 @@
 
             </div>
             {% endfor %}
+            {% endif %}
 
           </div>
 
         </div>
         <!-- JS RADIO BUTTONS (END) -->
 
-        <!-- NON JS PAGING (START) -->
         {% if data.paginationRequired == "true" %}
+        <!-- NON JS PAGING (START) -->
         {% if page1 %}
         {{ govukPagination({
           next: {
@@ -200,9 +235,10 @@
           ]
         }) }}
         {% endif %}
-        {% endif %}
         <!-- NON JS PAGING (START) -->
+        {% endif %}
 
+        {% if data.paginationRequired == "true" %}
         <!-- JS PAGING (START) -->
         <nav class="govuk-pagination hidden" aria-label="Pagination" hidden aria-hidden="true" data-paging>
           
@@ -229,6 +265,7 @@
           </div>
         </nav>
         <!-- JS PAGING (END) -->
+        {% endif %}
 
       </fieldset>
 
