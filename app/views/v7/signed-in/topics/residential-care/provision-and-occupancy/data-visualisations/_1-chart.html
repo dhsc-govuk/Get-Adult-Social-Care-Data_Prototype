@@ -15,7 +15,7 @@
 ]%}
 
 <div class="govuk-form-group">
-    <h3 class="govuk-heading-s">Figure 1: chart of adult social care beds per 100,000 adult population &ndash; local authorities in the East of England, October 2025</h3>
+    <h3 class="govuk-heading-s">Figure 1: chart of care home beds per 100,000 adult population &ndash; local authorities in the East of England, October 2025</h3>
   
   <style>
 
@@ -66,7 +66,7 @@
       {% for x, y, z, q in thisData %}
       <text {% if x == 'England (national average)' or x == 'East of England (regional average)' or x == 'Suffolk' %}class="svg-bold" {% endif %}x="10" y={{55 + q * 50}}>{{x}}</text>
       <g fill="none">
-      <title stroke-width="5">Total beds per 100,000 in {{x}} - {{z | addcommas}}</title>
+      <title stroke-width="5">Care home beds per 100,000 adult population in {{x}} - {{z | addcommas}}</title>
       {% if x == "England (national average)" or x == "East of England (regional average)" %}
       <line x1="320" y1={{50 + q * 50}} x2={{y + 320}} y2={{50 + q * 50}} stroke="#003c57" stroke-width="20" />
       {% elif x == "Suffolk" %}
