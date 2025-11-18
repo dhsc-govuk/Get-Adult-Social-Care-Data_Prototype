@@ -1,0 +1,295 @@
+{% extends "private-beta/2025/december/layouts/signed-in.html" %}
+
+{% set pageName = "Economic factors and household composition" %}
+
+{% block beforeContent %}
+{{ govukBreadcrumbs({
+  items: [
+    {
+      text: "Home",
+      href: "../../../home"
+    },
+    {
+      text: "Population needs",
+      href: "../subtopics"
+    }
+  ]
+}) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">{{pageName}}</h1>
+    <p class="govuk-body-l">Data on household deprivation, property ownership and older people living alone.</p>
+
+    <h2 class="govuk-heading-l govuk-!-margin-top-9">Data overview</h2>
+    <!-- <p class="govuk-body">Data overview summary information, e.g. broad guidance.</p> -->
+  </div>
+
+</div>
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-full">
+
+    <div class="data-box govuk-form-group">
+
+        <div class="govuk-tabs" data-module="govuk-tabs">
+
+            <div class="govuk-form-group">
+                <h3 class="govuk-heading-m">Household deprivation</h3>
+                <p class="govuk-body">In Census 2021, households were classified by 4 dimensions of deprivation: education, employment, health and disability, and household overcrowding.</p>
+            </div>
+
+            <details class="govuk-details">
+                <summary class="govuk-details__summary">
+                    <span class="govuk-details__summary-text">
+                        How the 4 dimensions of deprivation are measured
+                    </span>
+                </summary>
+                <div class="govuk-details__text">
+                    All the following characteristics must apply for a household to be classified as &lsquo;deprived in 4 dimensions&rsquo; in Census 2021 data.</p>
+                    <ol class="govuk-list govuk-list--number govuk-list--spaced">
+                        <li>No one in the household has at least level 2 education and no one aged 16 to 18 years is a full-time student.</li>
+                        <li>A household member is unemployed or economically inactive due to long-term sickness or disability, and is not a full-time student.</li>
+                        <li>Any member of the household has general health that is bad or very bad, or is identified as disabled.</li>
+                        <li>The household&rsquo;s accommodation is overcrowded, is in a shared dwelling, or has no central heating.</li>
+                    </ol>
+                    <p class="govuk-body"><a href="../../../help/household-deprivation" class="govuk-link">More details on household deprivation data.</a></p>
+                </div>
+            </details>
+
+            <h3 class="govuk-tabs__title">Contents</h3>
+            <ul class="govuk-tabs__list">
+                <li class="govuk-tabs__list-item">
+                    <a class="govuk-tabs__tab" href="#data1-table">Table</a>
+                </li>
+                <li class="govuk-tabs__list-item">
+                    <a class="govuk-tabs__tab" href="#data1-download">Download</a>
+                </li>
+            </ul>
+
+            <div class="govuk-tabs__panel" id="data1-table">
+                {% include "./data-visualisations/_1-table.html" %}
+            </div>
+
+            <div class="govuk-tabs__panel" id="data1-download">
+                <h4 class="govuk-heading-s">Download</h4>
+                <ul class="govuk-list">
+                    <li>
+                        <a class="govuk-link" href="#" data-message="Sorry, this hasn’t been designed yet">Export table data (CSV, 420 KB)</a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-full">
+
+    <div class="data-box govuk-form-group">
+
+      <div class="govuk-tabs" data-module="govuk-tabs">
+        
+          <div class="govuk-form-group">
+              <h3 class="govuk-heading-m">Households where the property is owned outright</h3>
+              <p class="govuk-body">This is when the property does not have an outstanding mortgage or any other type of loan attached to it.</p>
+              <p class="govuk-body">Find out <a href="../../../help/households-where-property-is-owned-outright" class="govuk-link">how data on property ownership is collected</a>.</p>
+          </div>
+
+        <h3 class="govuk-tabs__title">Contents</h3>
+        <ul class="govuk-tabs__list">
+          <li class="govuk-tabs__list-item">
+            <a class="govuk-tabs__tab" href="#data2-table">Table</a>
+          </li>
+          <li class="govuk-tabs__list-item">
+            <a class="govuk-tabs__tab" href="#data2-download">Download</a>
+          </li>
+        </ul>
+
+        <div class="govuk-tabs__panel" id="data2-table">
+          {% include "./data-visualisations/_2-table.html" %}
+        </div>
+
+        <div class="govuk-tabs__panel" id="data2-download">
+          <h4 class="govuk-heading-s">Download</h4>
+          <ul class="govuk-list">
+            <li>
+              <a class="govuk-link" href="#" data-message="Sorry, this hasn’t been designed yet">Export table data (CSV, 420 KB)</a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-full">
+
+    <div class="data-box govuk-form-group">
+
+      <div class="govuk-tabs" data-module="govuk-tabs">
+        
+          <div class="govuk-form-group">
+              <h3 class="govuk-heading-m">One-person households where the person is aged 65 or over</h3>
+              <p class="govuk-body">Find out <a href="../../../help/one-person-households-where-person-aged-65-or-over">how the percentage of one-person households where the person is aged 65 or over is calculated</a>.</p>
+</div>
+
+        <h3 class="govuk-tabs__title">Contents</h3>
+        <ul class="govuk-tabs__list">
+          <li class="govuk-tabs__list-item">
+            <a class="govuk-tabs__tab" href="#data3-table">Table</a>
+          </li>
+          <li class="govuk-tabs__list-item">
+            <a class="govuk-tabs__tab" href="#data3-download">Download</a>
+          </li>
+        </ul>
+
+        <div class="govuk-tabs__panel" id="data3-table">
+          {% include "./data-visualisations/_3-table.html" %}
+        </div>
+
+        <div class="govuk-tabs__panel" id="data3-download">
+          <h4 class="govuk-heading-s">Download</h4>
+          <ul class="govuk-list">
+            <li>
+              <a class="govuk-link" href="#" data-message="Sorry, this hasn’t been designed yet">Export table data (CSV, 420 KB)</a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+<div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-two-thirds">
+        <h2 class="govuk-heading-l govuk-!-margin-top-9">Data indicator details</h2>
+        <p class="govuk-body">Use the links to view details on the data source, how the data was collected and any limitations to consider when using the data.</p>
+
+        <div class="gem-c-cards">
+            <ul class="gem-c-cards__list gem-c-cards__list--one-column">
+                <li class="gem-c-cards__list-item">
+
+                    <div class="gem-c-cards__list-item-wrapper">
+                        <h2 class="gem-c-cards__sub-heading govuk-heading-s">
+                            <a class="govuk-link gem-c-cards__link gem-c-force-print-link-styles" href="../../../help/household-deprivation">Households ‘deprived in 4 dimensions’</a>
+                        </h2>
+                        <p class="govuk-body gem-c-cards__description">Source: Office for National Statistics.<br>Updated every 10 years, limitations might apply. </p>
+                    </div>
+
+                </li>
+                <li class="gem-c-cards__list-item">
+
+                    <div class="gem-c-cards__list-item-wrapper">
+                        <h2 class="gem-c-cards__sub-heading govuk-heading-s">
+                            <a class="govuk-link gem-c-cards__link gem-c-force-print-link-styles" href="../../../help/households-where-property-is-owned-outright">Households where the property is owned outright</a>
+                        </h2>
+                        <p class="govuk-body gem-c-cards__description">Source: Office for National Statistics.<br>Updated every 10 years, limitations might apply. </p>
+                    </div>
+
+                </li>
+                <li class="gem-c-cards__list-item">
+
+                    <div class="gem-c-cards__list-item-wrapper">
+                        <h2 class="gem-c-cards__sub-heading govuk-heading-s">
+                            <a class="govuk-link gem-c-cards__link gem-c-force-print-link-styles" href="../../../help/one-person-households-where-person-aged-65-or-over">One-person households where the person is aged 65 or over</a>
+                        </h2>
+                        <p class="govuk-body gem-c-cards__description">Source: Office for National Statistics.<br>Updated every 10 years, limitations might apply. </p>
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+
+
+        <h2 class="govuk-heading-l govuk-!-margin-top-9">Related data</h2>
+
+        <div class="gem-c-cards">
+            <ul class="gem-c-cards__list gem-c-cards__list--one-column">
+                <li class="gem-c-cards__list-item">
+
+                    <div class="gem-c-cards__list-item-wrapper">
+                        <h2 class="gem-c-cards__sub-heading govuk-heading-s">
+                            <a class="govuk-link gem-c-cards__link gem-c-force-print-link-styles" href="../dementia-prevalence/data">Dementia prevalence and estimated diagnosis rate</a>
+                        </h2>
+                        <p class="govuk-body gem-c-cards__description">Data on registered dementia diagnoses with estimates for undiagnosed dementia.</p>
+                    </div>
+
+                </li>
+                <li class="gem-c-cards__list-item">
+
+                    <div class="gem-c-cards__list-item-wrapper">
+                        <h2 class="gem-c-cards__sub-heading govuk-heading-s">
+                            <a class="govuk-link gem-c-cards__link gem-c-force-print-link-styles" href="../disability-prevalence/data">General health, disability and learning disability</a>
+                        </h2>
+                        <p class="govuk-body gem-c-cards__description">Data on disability prevalence, learning disability diagnoses and reasons for accessing care.</p>
+                    </div>
+
+                </li>
+                <li class="gem-c-cards__list-item">
+
+                    <div class="gem-c-cards__list-item-wrapper">
+                        <h2 class="gem-c-cards__sub-heading govuk-heading-s">
+                            <a class="govuk-link gem-c-cards__link gem-c-force-print-link-styles" href="../population-age-and-size/data">Population size and age group percentages</a>
+                        </h2>
+                        <p class="govuk-body gem-c-cards__description">Population data at district, local authority, regional and national levels for England.</p>
+                    </div>
+
+                </li>
+
+
+            </ul>
+        </div>
+
+        <h2 class="govuk-heading-l govuk-!-margin-top-9">Information on the local care market</h2>
+        <p class="govuk-body"><a href="#" class="govuk-link" data-message="This link would take you to the Market Position Statement on the Suffolk local authority website.">Market Position Statement for Suffolk (opens in new tab)</a></p>
+        <p class="govuk-body">Most local authorities in England publish Market Position Statements (MPS) to help care providers understand the local care market.</p>
+        <p class="govuk-body">You can usually find these <abbr title="Market Position Statement">MPS</abbr> documents on local authority websites.</p>
+        <p class="govuk-body"><abbr title="Market Position Statement">MPS</abbr> documents include information on:</p>
+        <ul class="govuk-list govuk-list--bullet">
+            <li>supply and demand in the local care market</li>
+            <li>forecasts of future supply and demand for adult social care services</li>
+            <li>how the local authority will support the local care market to meet demand</li>
+            <li>how the local authority will engage with care providers on challenges in the sector, such as funding pressures</li>
+        </ul>
+
+        <!-- TO DO: Get this component working as a progressive enhancement (i.e. with JavaScript as per the live GOV.UK examples) -->
+        <div data-sticky-element class="gem-c-contents-list-with-body__link-wrapper govuk-!-margin-top-9">
+
+            <div class="gem-c-contents-list-with-body__link-container">
+                <a class="govuk-link gem-c-back-to-top-link govuk-!-display-none-print" href="#top">
+                    <svg class="gem-c-back-to-top-link__icon" xmlns="http://www.w3.org/2000/svg" width="13" height="17" viewBox="0 0 13 17" aria-hidden="true" focusable="false">
+                        <path fill="currentColor" d="M6.5 0L0 6.5 1.4 8l4-4v12.7h2V4l4.3 4L13 6.4z"></path>
+                    </svg>
+                    Back to top
+                </a>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+{% endblock %}

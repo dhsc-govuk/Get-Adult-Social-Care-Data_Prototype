@@ -1,0 +1,92 @@
+{% extends "private-beta/2025/december/layouts/signed-in-menu.html" %}
+
+{% set pageName = "Browse" %}
+
+{% block beforeContent %}
+<a class="govuk-back-link" href="javascript:history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">{{pageName}}</h1>
+
+    <h2 class="govuk-heading-l">Topics</h2>
+
+    <div class="gem-c-cards">
+      <ul class="gem-c-cards__list gem-c-cards__list--one-column">
+        <li class="gem-c-cards__list-item">
+
+          <div class="gem-c-cards__list-item-wrapper">
+            <h2 class="gem-c-cards__sub-heading govuk-heading-s">
+              <a class="govuk-link gem-c-cards__link gem-c-force-print-link-styles" href="topics/residential-care/subtopics">Care homes</a>
+            </h2>
+            <p class="govuk-body gem-c-cards__description">Data on residential care homes and nursing homes, including capacity data.</p>
+          </div>
+        
+        </li>
+        <li class="gem-c-cards__list-item">
+
+          <div class="gem-c-cards__list-item-wrapper">
+            <h2 class="gem-c-cards__sub-heading govuk-heading-s">
+              <a class="govuk-link gem-c-cards__link gem-c-force-print-link-styles" href="topics/population-needs/subtopics">Population needs</a>
+            </h2>
+            <p class="govuk-body gem-c-cards__description">Data on a range of population metrics, including disability statistics.</p>
+          </div>
+        
+        </li>
+      </ul>
+    </div>
+
+    <h2 class="govuk-heading-l govuk-!-margin-top-5">Service information</h2>
+
+    <div class="gem-c-cards">
+      <ul class="gem-c-cards__list gem-c-cards__list--one-column">
+        <li class="gem-c-cards__list-item">
+
+          <div class="gem-c-cards__list-item-wrapper">
+            <h2 class="gem-c-cards__sub-heading govuk-heading-s">
+              <a class="govuk-link gem-c-cards__link gem-c-force-print-link-styles" href="index">Homepage</a>
+            </h2>
+            <p class="govuk-body gem-c-cards__description">Short description (max 5 words)</p>
+          </div>
+        
+        </li>
+        <li class="gem-c-cards__list-item">
+
+          <div class="gem-c-cards__list-item-wrapper">
+            <h2 class="gem-c-cards__sub-heading govuk-heading-s">
+              <a class="govuk-link gem-c-cards__link gem-c-force-print-link-styles" href="#">About this service</a>
+            </h2>
+            <p class="govuk-body gem-c-cards__description">Short description (max 5 words)</p>
+          </div>
+        
+        </li>
+        <li class="gem-c-cards__list-item">
+
+          <div class="gem-c-cards__list-item-wrapper">
+            <h2 class="gem-c-cards__sub-heading govuk-heading-s">
+              <a class="govuk-link gem-c-cards__link gem-c-force-print-link-styles" href="#">Indicator definitions and data sources</a>
+            </h2>
+            <p class="govuk-body gem-c-cards__description">Short description (max 5 words)</p>
+          </div>
+        
+        </li>
+        <li class="gem-c-cards__list-item">
+
+          <div class="gem-c-cards__list-item-wrapper">
+            <h2 class="gem-c-cards__sub-heading govuk-heading-s">
+              <a class="govuk-link gem-c-cards__link gem-c-force-print-link-styles" href="../help/user-guide">User guide</a>
+            </h2>
+            <p class="govuk-body gem-c-cards__description">Short description (max 5 words)</p>
+          </div>
+        
+        </li>
+      </ul>
+    </div>
+
+  </div>
+
+</div>
+{% endblock %}

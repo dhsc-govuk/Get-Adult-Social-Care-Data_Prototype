@@ -1,0 +1,32 @@
+{% if data.signedInState == "signedInBasic" %}
+{% extends "v7/layouts/signed-in-basic.html" %}
+{% elif data.signedInState == "signedInSelectLocation" %}
+{% extends "v7/layouts/signed-in-select-location.html" %}
+{% elif data.signedInState == "signedInHome" %}
+{% extends "v7/layouts/signed-in-home.html" %}
+{% elif data.signedInState == "signedIn" %}
+{% extends "v7/layouts/signed-in.html" %}
+{% elif data.signedInState == "signedInMenu" %}
+{% extends "v7/layouts/signed-in-menu.html" %}
+{% elif data.signedInState == "signedInMap" %}
+{% extends "v7/layouts/signed-in-map.html" %}
+{% else %}
+{% extends "v7/layouts/default.html" %}
+{% endif %}
+
+{% set pageName = "Get help with this service" %}
+
+{% block beforeContent %}
+<a href="javascript:history.back()" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">{{pageName}}</h1>
+    <p class="govuk-body">If you have any questions or need support with using this service, email us at <a href="mailto:getadultsocialcaredata.team@dhsc.gov.uk" class="govuk-link">getadultsocialcaredata.team@dhsc.gov.uk</a>.</p>
+  </div>
+  
+</div>
+{% endblock %}

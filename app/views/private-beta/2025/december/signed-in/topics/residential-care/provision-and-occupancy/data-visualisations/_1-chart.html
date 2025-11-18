@@ -1,0 +1,87 @@
+{% set thisData = [
+  ["England (national average)", 239, 1255, 0],
+  ["East of England (regional average)", 200, 1436, 1],
+  ["Cambridgeshire", 239, 1912, 2],
+  ["Peterborough", 200, 1600, 3],
+  ["Luton", 199, 1600, 4],
+  ["Southend-on-Sea", 200, 1592, 5],
+  ["Suffolk", 189, 1512, 6],
+  ["Bedford", 170, 1360, 7],
+  ["Central Bedfordshire", 148, 1184, 8],
+  ["Thurrock", 132, 1056, 9],
+  ["Hertfordshire", 104, 832, 10],
+  ["Essex", 98, 784, 11],
+  ["Norfolk", 91, 728, 12]
+]%}
+
+<div class="govuk-form-group">
+    <h3 class="govuk-heading-s">Figure 1: chart of care home beds per 100,000 adult population &ndash; local authorities in the East of England, October 2025</h3>
+  
+  <style>
+
+    .svg-bar {
+      width: 100%;
+      display: block;
+      overflow-x: auto;
+    }
+
+    .svg-bold {
+      font-style: unset;
+      font-variant-caps: unset;
+      font-variant-ligatures: unset;
+      font-variant-numeric: unset;
+      font-variant-east-asian: unset;
+      font-variant-alternates: unset;
+      font-size-adjust: unset;
+      font-kerning: unset;
+      font-optical-sizing: unset;
+      font-feature-settings: unset;
+      font-variation-settings: unset;
+      font-variant-position: unset;
+      font-variant-emoji: unset;
+      font-weight: bold;
+      font-stretch: unset;
+      font-size: unset;
+      line-height: unset;
+      font-family: unset;
+    }
+
+  </style>
+
+  <div class="svg-bar">
+    <!-- <svg height="680" width="500" viewBox="0 0 878 600" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" class="svg-bar"> -->
+    <svg height="680" width="500" xmlns="http://www.w3.org/2000/svg" class="svg-bar">
+      <title>Beds per 100,000 by local authorities in the East of England</title>
+      
+      <!-- Axis labels -->
+      <text x="320" y="20">0</text>
+      <text x="550" y="20">2,400</text>
+      
+      <!-- Horizontal axis -->
+      <line x1="320" y1="25" x2="600" y2="25" stroke="grey" stroke-width="2" />
+      
+      <!-- Vertical axis -->
+      <line x1="320" y1="25" x2="320" y2="680" stroke="grey" stroke-width="2" />
+
+      {% for x, y, z, q in thisData %}
+      <text {% if x == 'England (national average)' or x == 'East of England (regional average)' or x == 'Suffolk' %}class="svg-bold" {% endif %}x="10" y={{55 + q * 50}}>{{x}}</text>
+      <g fill="none">
+      <title stroke-width="5">Care home beds per 100,000 adult population in {{x}} - {{z | addcommas}}</title>
+      {% if x == "England (national average)" or x == "East of England (regional average)" %}
+      <line x1="320" y1={{50 + q * 50}} x2={{y + 320}} y2={{50 + q * 50}} stroke="#003c57" stroke-width="20" />
+      {% elif x == "Suffolk" %}
+      <rect x="0" y={{35 + q * 50}} width="520" height="30" stroke="black" stroke-width="2" stroke-dasharray="2,2" />
+      <line x1="320" y1={{50 + q * 50}} x2={{y + 320}} y2={{50 + q * 50}} stroke="#f39431" stroke-width="20" />
+      {% else %}
+      <line x1="320" y1={{50 + q * 50}} x2={{y + 320}} y2={{50 + q * 50}} stroke="#746cb1" stroke-width="20" />
+      {% endif %}
+      </g>
+      {% endfor %}
+    </svg>
+  </div>
+
+</div>
+
+<div class="govuk-form-block">
+  <p class="govuk-body data-source">Sources: Capacity Tracker from the Department of Health and Social Care (DHSC), population estimates from the Office for National Statistics (ONS)</p>
+</div>

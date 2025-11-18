@@ -1,0 +1,63 @@
+{% extends "private-beta/2025/december/layouts/signed-in.html" %}
+
+{% set pageName = "Dementia prevalence" %}
+
+{% block beforeContent %}
+<a href="javascript:history.back()" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-two-thirds">
+        <span class="govuk-caption-l">Data indicator details</span>
+        <h1 class="govuk-heading-l">{{pageName}}</h1>
+        <dl class="govuk-summary-list">
+
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">What this measures</dt>
+                <dd class="govuk-summary-list__value">	The percentage of people registered with a GP within the selected administrative area within England who have a recorded diagnosis of dementia.</dd>
+            </div>
+
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Source</dt>
+                <dd class="govuk-summary-list__value"><a href="https://fingertips.phe.org.uk/dementia#page/6/gid/1938132811/pat/159/par/K02000001/ati/15/are/E92000001/iid/247/age/1/sex/4/cat/-1/ctp/-1/yrr/1/cid/4/tbm/1/page-options/car-do-0" class="govuk-link" target="_blank">Fingertips from the Department of Health and Social Care (opens in new tab)</a></dd>
+            </div>
+
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Data correct as of</dt>
+                <dd class="govuk-summary-list__value">{{"today" | govukDate}}</dd>
+            </div>
+
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Update frequency</dt>
+                <dd class="govuk-summary-list__value">Yearly</dd>
+            </div>
+
+            <!-- <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">Data available for</dt>
+          <dd class="govuk-summary-list__value">{{"today" | govukDate}} to {% set expirationDate = "today" | duration(5, "years") %}{{expirationDate | govukDate}}</dd>
+        </div> -->
+
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Methodology</dt>
+                <dd class="govuk-summary-list__value">Based on Quality and Outcomes Framework (QOF) data, this measure calculates the proportion of patients on GP practice registers with a recorded diagnosis of dementia. Figures are aggregated to local authority level using the postcode of the GP practice, not the patient's home address.</dd>
+            </div>
+
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Limitations</dt>
+                <dd class="govuk-summary-list__value">
+                    The measure is intended to show the prevalence of dementia among residents of each local authority area. However, data by place of residence is not available. Instead, a proxy is used based on GP registrations, assigning individuals to a local authority according to the postcode of their GP practice rather than their home address.
+                </dd>
+            </div>
+
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Data definitions</dt>
+                <dd class="govuk-summary-list__value">See data source for details.</dd>
+            </div>
+
+        </dl>
+    </div>
+
+</div>
+{% endblock %}
