@@ -18,6 +18,68 @@
 {% endblock %}
 
 {% block content %}
+<style>
+
+  /* Styling for the 'Care home bed numbers - trends over time' chart */
+  .data-chart {
+    width: 100%;
+    overflow-x: visible;
+  }
+
+  /* To make the SVG itself responsive */
+  .svg {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    display: block;
+  }
+
+  /* GOV.UK typography inside SVG */
+  #test text {
+    font-family: "GDS Transport", Arial, sans-serif;
+    font-size: 16px;
+    fill: #0b0c0c;
+  }
+
+  /* Axis text */
+  #test text.axis-text {
+    fill: #666;
+    font-size: 14px;
+  }
+
+  /* Lines & grid */
+  #test .axis-line {
+    stroke: #666;
+    stroke-width: 2;
+  }
+
+  #test .grid-line {
+    fill: none;
+    stroke: #e1e1e1;
+    stroke-width: 2;
+  }
+
+  /* Series colours */
+  #test .series-total {
+    stroke: purple;
+    stroke-width: 3;
+    fill: none;
+  }
+
+  #test .series-residential {
+    stroke: gold;
+    stroke-width: 3;
+    fill: none;
+  }
+
+  #test .series-nursing {
+    stroke: orange;
+    stroke-width: 3;
+    fill: none;
+  }
+
+</style>
+
 <div class="govuk-grid-row">
 
   <div class="govuk-grid-column-two-thirds">
@@ -103,6 +165,16 @@
         <div class="govuk-form-group">
           <h3 class="govuk-heading-m">Occupancy levels</h3>
           <p class="govuk-body">Find out how <a href="../../../help/percentage-beds-occupied" class="govuk-link">occupancy level percentages</a> and <a href="../../../help/beds-care-provider-location" class="govuk-link">the number of adult social care beds per 100,000 adult population</a> are calculated.</p>
+          <dl class="govuk-summary-list">
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">Filters</dt>
+              <dd class="govuk-summary-list__value">All bed types
+              </dd>
+              <dd class="govuk-summary-list__actions"><a class="govuk-link" href="filters/_2-filters">Change<span class="govuk-visually-hidden"> filters</span></a></dd>
+            </div>
+
+            </dl>
         </div>
 
         <h3 class="govuk-tabs__title">Contents</h3>
@@ -199,6 +271,84 @@
         <div class="govuk-tabs__panel" id="data3-download">
           <h4 class="govuk-heading-s">Download</h4>
           <ul class="govuk-list">
+            <li>
+              <a class="govuk-link" href="#" data-message="Sorry, this hasn’t been designed yet">Export table data (CSV, 420 KB)</a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-two-thirds">
+    <h2 class="govuk-heading-l govuk-!-margin-top-9">Trends</h2>
+    <!-- <p class="govuk-body">Trends summary information, e.g. limitation.</p> -->
+  </div>
+
+</div>
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-full">
+
+    <div class="data-box">
+
+      <div class="govuk-tabs" data-module="govuk-tabs">
+        
+        <div class="govuk-form-group">
+          <h3 class="govuk-heading-m">Care home bed numbers - trends over time</h3>
+          <!-- <p class="govuk-body">Find out <a href="../../../help/total-financial-spend-long-term-community-adult-social-care">how the financial spend on long&#45;term adult social care is calculated</a>.</p> -->
+          <dl class="govuk-summary-list">
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">Filters</dt>
+              <dd class="govuk-summary-list__value">
+                All bed types
+                <br>
+                Nursing - dementia
+                <br>
+                Residential - dementia
+              </dd>
+              <dd class="govuk-summary-list__actions"><a href="filters/_4-filters" class="govuk-link">Change<span class="govuk-visually-hidden"> filters</span></a></dd>
+            </div>
+
+          </dl>
+        </div>
+
+        <h3 class="govuk-tabs__title">Contents</h3>
+        <ul class="govuk-tabs__list">
+          <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+            <a class="govuk-tabs__tab" href="#trend-chart">Graph</a>
+          </li>
+          <!-- <li class="govuk-tabs__list-item">
+            <a class="govuk-tabs__tab" href="#trend-table">Table</a>
+          </li> -->
+          <li class="govuk-tabs__list-item">
+            <a class="govuk-tabs__tab" href="#trend-download">Download</a>
+          </li>
+        </ul>
+
+        <div class="govuk-tabs__panel" id="trend-chart">
+          {% include "./data-visualisations/_4-time-series.html" %}
+        </div>
+
+        <!-- <div class="govuk-tabs__panel" id="trend-table">
+          {% include "./data-visualisations/_4-table.html" %}
+        </div> -->
+
+        <div class="govuk-tabs__panel" id="trend-download">
+          <h4 class="govuk-heading-s">Download</h4>
+          <ul class="govuk-list">
+            <li>
+              <a class="govuk-link" href="#" data-message="Sorry, this hasn’t been designed yet">Download chart image (PNG, 1 MB)</a>
+            </li>
             <li>
               <a class="govuk-link" href="#" data-message="Sorry, this hasn’t been designed yet">Export table data (CSV, 420 KB)</a>
             </li>

@@ -3,125 +3,6 @@ module.exports = function(router) {
   var version = 'private-beta/2025/december';
 
   /*****
-   * Not signed in
-   * GOV.UK One Login (https://www.sign-in.service.gov.uk)
-  *****/
-
-  /* Create an account */
-  router.get('/' + version + '/' + 'gov-uk/one-login/create-account/get-security-code', function (req, res) {
-    res.render(version + '/gov-uk/one-login/create-account/get-security-code', {
-      'error' : req.query.error
-		})
-  })
-
-  router.post('/' + version + '/' + 'gov-uk/one-login/create-account/get-security-code-validation', function (req, res) {
-
-    var chooseSecurityCodes = req.body['choose-security-codes']
-    
-    if (chooseSecurityCodes == "Text message") {
-      res.redirect('/' + version + '/' + 'gov-uk/one-login/create-account/enter-phone-number')
-    }
-    else if (chooseSecurityCodes == "Authenticator app for smartphone, tablet or computer") {
-      res.redirect('/' + version + '/' + 'gov-uk/one-login/create-account/auth-app')
-    }
-    // Error validation - make sure user chooses an option
-    else {
-      res.redirect('/' + version + '/' + 'gov-uk/one-login/create-account/get-security-code?error=true')
-    }
-
-  })
-
-  /* Sign in */
-  router.get('/' + version + '/' + 'gov-uk/one-login/sign-in/cannot-change-security-codes', function (req, res) {
-    res.render(version + '/gov-uk/one-login/sign-in/cannot-change-security-codes', {
-      'error' : req.query.error
-		})
-  })
-
-  router.post('/' + version + '/' + 'gov-uk/one-login/sign-in/cannot-change-security-codes-validation', function (req, res) {
-
-    var cannotChangeHowGetSecurityCodeAction = req.body['cannotChangeHowGetSecurityCodeAction']
-    var redirectMFA = req.session.data['redirectMFA'] || "check-phone"
-    
-    if (cannotChangeHowGetSecurityCodeAction == "Try entering a security code again with the method you already have set up") {
-      res.redirect('/' + version + '/' + 'gov-uk/one-login/sign-in/' + redirectMFA)
-    }
-    // Error validation - make sure user chooses an option
-    else {
-      res.redirect('/' + version + '/' + 'gov-uk/one-login/sign-in/cannot-change-security-codes?error=true')
-    }
-
-  })
-
-  router.get('/' + version + '/' + 'gov-uk/one-login/sign-in/how-do-you-want-security-codes', function (req, res) {
-    res.render(version + '/gov-uk/one-login/sign-in/how-do-you-want-security-codes', {
-      'error' : req.query.error
-		})
-  })
-
-  router.post('/' + version + '/' + 'gov-uk/one-login/sign-in/how-do-you-want-security-codes-validation', function (req, res) {
-
-    var mfaMethodId = req.body['mfa-method-id']
-    
-    if (mfaMethodId == "Use your authenticator app") {
-      res.redirect('/' + version + '/' + 'gov-uk/one-login/sign-in/enter-authenticator-app-code')
-    }
-    else if (mfaMethodId == "Text message") {
-      res.redirect('/' + version + '/' + 'gov-uk/one-login/sign-in/check-phone')
-    }
-    // Error validation - make sure user chooses an option
-    else {
-      res.redirect('/' + version + '/' + 'gov-uk/one-login/sign-in/how-do-you-want-security-codes?error=true')
-    }
-
-  })
-
-  /* I’ve forgotten my password */
-  router.get('/' + version + '/' + 'gov-uk/one-login/sign-in/forgotten-password/cannot-change-security-codes', function (req, res) {
-    res.render(version + '/gov-uk/one-login/sign-in/forgotten-password/cannot-change-security-codes', {
-      'error' : req.query.error
-		})
-  })
-
-  router.post('/' + version + '/' + 'gov-uk/one-login/sign-in/forgotten-password/cannot-change-security-codes-validation', function (req, res) {
-
-    var cannotChangeHowGetSecurityCodeAction = req.body['cannotChangeHowGetSecurityCodeAction']
-    var redirectMFA = req.session.data['redirectMFA'] || "check-phone"
-    
-    if (cannotChangeHowGetSecurityCodeAction == "Try entering a security code again with the method you already have set up") {
-      res.redirect('/' + version + '/' + 'gov-uk/one-login/sign-in/forgotten-password/' + redirectMFA)
-    }
-    // Error validation - make sure user chooses an option
-    else {
-      res.redirect('/' + version + '/' + 'gov-uk/one-login/sign-in/forgotten-password/cannot-change-security-codes?error=true')
-    }
-
-  })
-
-  router.get('/' + version + '/' + 'gov-uk/one-login/sign-in/forgotten-password/how-do-you-want-security-codes', function (req, res) {
-    res.render(version + '/gov-uk/one-login/sign-in/forgotten-password/how-do-you-want-security-codes', {
-      'error' : req.query.error
-		})
-  })
-
-  router.post('/' + version + '/' + 'gov-uk/one-login/sign-in/forgotten-password/how-do-you-want-security-codes-validation', function (req, res) {
-
-    var mfaMethodId = req.body['mfa-method-id']
-    
-    if (mfaMethodId == "Use your authenticator app") {
-      res.redirect('/' + version + '/' + 'gov-uk/one-login/sign-in/forgotten-password/enter-authenticator-app-code')
-    }
-    else if (mfaMethodId == "Text message") {
-      res.redirect('/' + version + '/' + 'gov-uk/one-login/sign-in/forgotten-password/check-phone')
-    }
-    // Error validation - make sure user chooses an option
-    else {
-      res.redirect('/' + version + '/' + 'gov-uk/one-login/sign-in/forgotten-password/how-do-you-want-security-codes?error=true')
-    }
-
-  })
-
-  /*****
    * Signed in
    * Select location
   *****/
@@ -201,17 +82,57 @@ module.exports = function(router) {
    * Data > Care homes
   *****/
 
-  router.get('/' + version + '/' + 'signed-in/topics/residential-care/residential-care-providers/data', function (req, res) {
-    res.render(version + '/signed-in/topics/residential-care/residential-care-providers/data', {
-      'sessionTimeoutJs' : req.query.sessionTimeoutJs,
-      'sessionTimeoutNonJs' : req.query.sessionTimeoutNonJs
+  router.get('/' + version + '/' + 'signed-in/topics/residential-care/provision-and-occupancy/filters/_2-filters', function (req, res) {
+    res.render(version + '/signed-in/topics/residential-care/provision-and-occupancy/filters/_2-filters', {
+      'error' : req.query.error
 		})
+  })
+  router.post('/' + version + '/' + 'signed-in/topics/residential-care/provision-and-occupancy/filters/_2-filters-validation', function (req, res) {
+
+    var bedType = req.body['bedType2']
+
+    // Error validation - make sure user enters data into required field
+    if (bedType == "_unchecked") {
+      res.redirect('/' + version + '/' + 'signed-in/topics/residential-care/provision-and-occupancy/filters/_2-filters?error=true')
+    }
+    // User selects at least one filter
+    else {
+      res.redirect('/' + version + '/' + 'signed-in/topics/residential-care/provision-and-occupancy/data')
+    }
+
+  })
+  
+  router.get('/' + version + '/' + 'signed-in/topics/residential-care/provision-and-occupancy/filters/_4-filters', function (req, res) {
+    res.render(version + '/signed-in/topics/residential-care/provision-and-occupancy/filters/_4-filters', {
+      'error' : req.query.error
+		})
+  })
+  router.post('/' + version + '/' + 'signed-in/topics/residential-care/provision-and-occupancy/filters/_4-filters-validation', function (req, res) {
+
+    var bedType = req.body['bedType4']
+
+    // Error validation - make sure user enters data into required field
+    if (bedType == "_unchecked") {
+      res.redirect('/' + version + '/' + 'signed-in/topics/residential-care/provision-and-occupancy/filters/_4-filters?error=true')
+    }
+    // User selects at least one filter
+    else {
+      res.redirect('/' + version + '/' + 'signed-in/topics/residential-care/provision-and-occupancy/data')
+    }
+
   })
 
   /*****
    * Additional screens
    * Footer, service information and system pages
   *****/
+
+  
+  router.get('/' + version + '/' + 'footer/disclaimer', function (req, res) {
+    res.render(version + '/footer/disclaimer', {
+      'backLink' : req.query.backLink
+		})
+  })
 
   router.get('/' + version + '/' + 'footer/cookies', function (req, res) {
     res.render(version + '/footer/cookies', {
