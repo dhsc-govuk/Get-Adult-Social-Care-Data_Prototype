@@ -500,6 +500,12 @@
                     <li class="gem-c-contents-list__list-item gem-c-contents-list__list-item--dashed">
                       <span class="gem-c-contents-list__list-item-dash" aria-hidden="true"></span>
                       <a class="gem-c-contents-list__link govuk-link gem-print-force-link-styles govuk-link--no-underline"
+                        data-ga4-link='{"event_name":"select_content","section":"Contents","type":"contents list","index_total":3,"index_link":3}'
+                        href="#how-nominated-individuals-can-access-the-service">How nominated individuals can access the service</a>
+                    </li>
+                    <li class="gem-c-contents-list__list-item gem-c-contents-list__list-item--dashed">
+                      <span class="gem-c-contents-list__list-item-dash" aria-hidden="true"></span>
+                      <a class="gem-c-contents-list__link govuk-link gem-print-force-link-styles govuk-link--no-underline"
                         data-ga4-link='{"event_name":"select_content","section":"Contents","type":"contents list","index_total":3,"index_link":4}'
                         href="#get-help-with-this-service">Get help with this service</a>
                     </li>
@@ -510,35 +516,33 @@
                 <button class="govuk-link gem-c-print-link__button" data-module="print-link">Print this page</button>
               </div>
               <div data-module="govspeak" class="gem-c-govspeak govuk-govspeak govuk-!-margin-bottom-0">
-                  <div class="govspeak">
-                      <h2 id="about-the-service">About this service</h2>
-                      <p class="govuk-body">{{serviceName}} is a new service providing access to data on adult social care and related population needs in England. It is managed by the Department of Health and Social Care (DHSC).</p>
-                      </p>
-                      <p class="govuk-body">The service displays a range of the most recent data from Capacity Tracker, the CQC, Office for National Statistics, NHS England and other sources.</p>
-                      <p class="govuk-body">You can use this service to:</p>
-                      <ul class="govuk-list govuk-list--bullet">
-                          <li>find data on topics such as care provision, funding and population needs</li>
-                          <li>compare local data to regional and national statistics</li>
-                          <li>explore trends over time</li>
-                          <li>download charts and data to use in your own analysis and documentation</li>
-                      </ul>
-                      <h2 id="who-can-use-the-service">Who can use the service</h2>
-                      <p class="govuk-body">This service is currently in a private beta phase. This means only a limited number of users can access the service.</p>
-                      <p class="govuk-body">Nominated individuals from care providers listed in the CQC care directory can access the service using their CQC registered email.</p>
-                      <p class="govuk-body">We plan to widen access to other users within the adult social care sector once we have received more feedback.</p>
-
-
-                      <h2 id="how-to-access-the-service">How nominated individuals can access the service</h2>
-                      <p class="govuk-body">You need a GOV.UK One Login for your CQC registered email to sign in to this service. You can create one if you do not already have one.</p>
-                      <a href="gov-uk/one-login/start" role="button" draggable="false" class="govuk-button govuk-button--start" data-module="govuk-button">
-                          Start now
-                          <svg class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19" viewBox="0 0 33 40" aria-hidden="true" focusable="false">
-                              <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z" />
-                          </svg>
-                      </a>
-                      <h2 id="get-help-with-this-service">Get help with this service</h2>
-                      <p class="govuk-body">If you have any questions or need support with {{serviceName}}, email <a href="https://www.gov.uk/guidance/get-an-hmrc-agent-services-account" class="mailto:getadultsocialcaredata.team@dhsc.gov.uk">getadultsocialcaredata.team@dhsc.gov.uk</a>.</p>
-                  </div>
+                <div class="govspeak">
+                  <h2 id="about-the-service">About this service</h2>
+                  <p class="govuk-body">{{serviceName}} is a new service providing access to data on adult social care and related population needs in England. It is managed by the Department of Health and Social Care (DHSC).</p>
+                  </p>
+                  <p class="govuk-body">The service displays a range of the most recent data from Capacity Tracker, the <abbr title="Care Quality Commission">CQC</abbr>, Office for National Statistics, NHS England and other sources.</p>
+                  <p class="govuk-body">You can use this service to:</p>
+                  <ul class="govuk-list govuk-list--bullet">
+                    <li>find data on topics such as care provision, funding and population needs</li>
+                    <li>compare local data to regional and national statistics</li>
+                    <li>explore trends over time</li>
+                    <li>download charts and data to use in your own analysis and documentation</li>
+                  </ul>
+                  <h2 id="who-can-use-the-service">Who can use the service</h2>
+                  <p class="govuk-body">This service is currently in a private beta phase. This means only a limited number of users can access the service.</p>
+                  <p class="govuk-body">Nominated individuals from care providers listed in the <abbr title="Care Quality Commission">CQC</abbr> care directory can access the service using their <abbr title="Care Quality Commission">CQC</abbr> registered email.</p>
+                  <p class="govuk-body">We plan to widen access to other users within the adult social care sector once we have received more feedback.</p>
+                  <h2 id="how-nominated-individuals-can-access-the-service">How nominated individuals can access the service</h2>
+                  <p class="govuk-body">You need a GOV.UK One Login for your <abbr title="Care Quality Commission">CQC</abbr> registered email to sign in to this service. You can create one if you do not already have one.</p>
+                  <a href="gov-uk/one-login/start" role="button" draggable="false" class="govuk-button govuk-button--start" data-module="govuk-button">
+                    Start now
+                    <svg class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19" viewBox="0 0 33 40" aria-hidden="true" focusable="false">
+                      <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z" />
+                    </svg>
+                  </a>
+                  <h2 id="get-help-with-this-service">Get help with this service</h2>
+                  <p class="govuk-body">If you have any questions or need support with {{serviceName}}, email <a href="https://www.gov.uk/guidance/get-an-hmrc-agent-services-account" class="mailto:getadultsocialcaredata.team@dhsc.gov.uk">getadultsocialcaredata.team@dhsc.gov.uk</a>.</p>
+                </div>
               </div>
               <div id="full-publication-update-history" data-module="gem-toggle"
                 class="gem-c-published-dates gem-c-published-dates--history govuk-!-margin-bottom-5" lang="en">
@@ -640,24 +644,17 @@
                 <h2 id="related-nav-related_items-15d1ff5e" class="gem-c-related-navigation__main-heading">
                   Related content
                 </h2>
-                <nav class="gem-c-related-navigation__nav-section" aria-labelledby="related-nav-related_guides-15d1ff5e"
-                  data-module="gem-toggle">
-                  
-                        <li class="gem-c-related-navigation__link"> <!-- Non-descriptive and does not link to anything, but keeping this from the previous iteration as potentially interesting to find out what users might expect from this. -->
-                            <a href="#" data-message="Sorry, this hasn’t been designed yet" class="govuk-link govuk-link gem-c-related-navigation__section-link govuk-link gem-c-related-navigation__section-link--sidebar"
-                               data-ga4-link='{"event_name":"navigation","type":"related content","index_section":"1","index_link":"1","index_section_count":"2","index_total":"2","section":"Detailed guidance {"event_name":"navigation","type":"footer","index_link":"1","index_section":"1","index_section_count":"5","index_total":"16","section":"Services and information"}'>
-                                    Detailed guidance
-                                </h3>
-                            </a>
-                            </li> 
-                            <ul class="gem-c-related-navigation__link-list">
-                                <li class="gem-c-related-navigation__link">
-                                    <a class="govuk-link govuk-link gem-c-related-navigation__section-link govuk-link gem-c-related-navigation__section-link--sidebar"
-                                       data-ga4-link='{"event_name":"navigation","type":"related content","index_section":"1","index_link":"1","index_section_count":"2","index_total":"2","section":"Detailed guidance"}'
-                                       href="https://www.gov.uk/government/publications/care-data-matters-a-roadmap-for-better-adult-social-care-data">Care data matters: a roadmap for better adult social care data</a>
-                                </li>
-                            </ul>
-</nav>
+                <nav class="gem-c-related-navigation__nav-section" aria-labelledby="related-nav-related_guides-15d1ff5e" data-module="gem-toggle">
+                  <!-- Non-descriptive and does not link to anything, but keeping this from the previous iteration as potentially interesting to find out what users might expect from this. -->
+                  <li class="gem-c-related-navigation__link" data-module="edge">
+                    <a href="#" class="govuk-link govuk-link gem-c-related-navigation__section-link govuk-link gem-c-related-navigation__section-link--sidebar" data-message="Sorry, this hasn’t been designed yet">Detailed guidance</a>
+                  </li> 
+                  <ul class="gem-c-related-navigation__link-list">
+                    <li class="gem-c-related-navigation__link">
+                      <a class="govuk-link govuk-link gem-c-related-navigation__section-link govuk-link gem-c-related-navigation__section-link--sidebar" href="https://www.gov.uk/government/publications/care-data-matters-a-roadmap-for-better-adult-social-care-data">Care data matters: a roadmap for better adult social care data</a>
+                    </li>
+                  </ul>
+                </nav>
               </div>
             </div>
           </div>
@@ -1016,6 +1013,9 @@
         </div>
       </div>
     </footer>
+    <!-- X-GOV.UK Prototype Components (https://x-govuk.github.io/govuk-prototype-components) JavaScript added and referenced directly due to not using the prototype layout partials for this page -->
+    <script type="module" src="/public/javascripts/v7/x-govuk/govuk-prototype-components.min.js"></script>
+    <script type="module" src="/public/javascripts/v7/x-govuk/init.js"></script>
     <script src="https://www.gov.uk/assets/static/application-797926e5a7d2db83c4d02a72bd4d31233750842fb58a04eeb1fdd2aab63d21b1.js" type="module"></script>
     <script src="https://www.gov.uk/assets/frontend/application-f06de4e35a53c24016352091ed899c2bfbdcc0385a8ad80c28fad4d2cc0bc1a1.js" type="module"></script>
     <script type="application/ld+json">

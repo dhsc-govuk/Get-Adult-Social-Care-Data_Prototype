@@ -1,0 +1,2 @@
+/* Always initiate the X-GOV.UK Prototype Components (https://x-govuk.github.io/govuk-prototype-components) code in this scenario (i.e. when not using the prototype layout partials) */
+window.GOVUKPrototypeComponents.initAll();

@@ -25,76 +25,76 @@
 <div class="govuk-grid-row">
   
   <div class="govuk-grid-column-two-thirds">
-    <span class="govuk-caption-xl">Care home bed numbers</span> 
-    <h1 class="govuk-heading-xl govuk-!-margin-bottom-7">{{pageName}}</h1>
-    <p class="govuk-body">Select the filter to refine the data displayed.</p>
-
-    {{ govukRadios({
-      name: "Filters",
-      fieldset: {
-        legend: {
-          text: "Filters",
-          isPageHeading: true,
-          classes: "govuk-fieldset__legend--m"
-        }
-      },
-      items: [
-        {
-          value: "All types",
-          text: "All types",
-          checked: true
-        },
-        {
-          value: "Community care",
-          text: "Community care"
-        },
-        {
-          value: "Transitional",
-          text: "Transitional",
-          hint: {
-            text:"For individuals moving from children's services to adult social care."
-          }
-        },
-        {
-          value: "Nursing - general",
-          text: "Nursing - general"
-        },
-        {
-          value: "Nursing - dementia",
-          text: "Nursing - dementia"
-        },
-        {
-          value: "Nursing - mental health",
-          text: "Nursing - mental health"
-        },
-        {
-          value: "Nursing - learning disability",
-          text: "Nursing - learning disability"
-        },
-        {
-          value: "Residential - general",
-          text: "Residential - general"
-        },
-        {
-          value: "Residential - dementia",
-          text: "Residential - dementia"
-        },
-        {
-          value: "Residential - mental health",
-          text: "Residential - mental health"
-        },
-        {
-          value: "Residential - learning disability",
-          text: "Residential - learning disability"
-        }
-      ]
-    }) }}
 
     <form action="../data#data1" method="post" novalidate>
-          
+      <span class="govuk-caption-xl">Care home bed numbers</span> 
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-7">{{pageName}}</h1>
+      <p class="govuk-body">Select the filter to refine the data displayed.</p>
+
+      {{ govukRadios({
+        name: "Filters",
+        fieldset: {
+          legend: {
+            text: "Filters",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        items: [
+          {
+            value: "All types",
+            text: "All types",
+            checked: true
+          },
+          {
+            value: "Community care",
+            text: "Community care"
+          },
+          {
+            value: "Transitional",
+            text: "Transitional",
+            hint: {
+              text:"For individuals moving from children's services to adult social care."
+            }
+          },
+          {
+            value: "Nursing - general",
+            text: "Nursing - general"
+          },
+          {
+            value: "Nursing - dementia",
+            text: "Nursing - dementia"
+          },
+          {
+            value: "Nursing - mental health",
+            text: "Nursing - mental health"
+          },
+          {
+            value: "Nursing - learning disability",
+            text: "Nursing - learning disability"
+          },
+          {
+            value: "Residential - general",
+            text: "Residential - general"
+          },
+          {
+            value: "Residential - dementia",
+            text: "Residential - dementia"
+          },
+          {
+            value: "Residential - mental health",
+            text: "Residential - mental health"
+          },
+          {
+            value: "Residential - learning disability",
+            text: "Residential - learning disability"
+          }
+        ]
+      }) }}
+            
       <div class="govuk-button-group">
         <button type="submit" class="govuk-button" data-module="govuk-button">Apply changes</button>
-        <a class="govuk-link" href="javascript:history.back()">Cancel and go back</a>
+        <a class="govuk-link" href="../data#data1">Cancel and go back</a>
       </div>
 
     </form>

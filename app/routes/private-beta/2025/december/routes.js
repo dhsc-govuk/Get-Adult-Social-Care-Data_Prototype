@@ -97,7 +97,7 @@ module.exports = function(router) {
     }
     // User selects at least one filter
     else {
-      res.redirect('/' + version + '/' + 'signed-in/topics/residential-care/provision-and-occupancy/data')
+      res.redirect('/' + version + '/' + 'signed-in/topics/residential-care/provision-and-occupancy/data#data2')
     }
 
   })
@@ -117,7 +117,7 @@ module.exports = function(router) {
     }
     // User selects at least one filter
     else {
-      res.redirect('/' + version + '/' + 'signed-in/topics/residential-care/provision-and-occupancy/data')
+      res.redirect('/' + version + '/' + 'signed-in/topics/residential-care/provision-and-occupancy/data#trend1')
     }
 
   })
