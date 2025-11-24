@@ -57,7 +57,7 @@
           </legend>
           
           <div id="bedType-hint" class="govuk-hint govuk-!-margin-top-6">
-            Select filters to refine the data displayed
+            Select filters to refine the data displayed.
           </div>
           {% if error %}
 
@@ -67,73 +67,73 @@
           <div class="govuk-checkboxes" data-module="govuk-checkboxes">
             
             <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" id="bedType" name="bedType4" type="checkbox" value="All types"{% if data.bedType4 %}{% for param in data.bedType4 %}{% if param == 'All types' %} checked{% endif %}{% endfor %}{% else %} checked{% endif %}>
-              <label class="govuk-label govuk-checkboxes__label" for="bedType">All types</label>
+              <input class="govuk-checkboxes__input" id="bedType" name="bedType4" type="checkbox" value="All bed types"{% if data.bedType4 %}{% for param in data.bedType4 %}{% if param == 'All bed types' %} checked{% endif %}{% endfor %}{% else %} checked{% endif %}>
+              <label class="govuk-label govuk-checkboxes__label" for="bedType">All bed types</label>
             </div>
 
-            <div class="govuk-checkboxes__item">
+            <!-- <div class="govuk-checkboxes__item">
               <input class="govuk-checkboxes__input" id="bedType-2" name="bedType4" type="checkbox" value="Community care"{% for param in data.bedType4 %}{% if param == 'Community care' %} checked{% endif %}{% endfor %}>
               <label class="govuk-label govuk-checkboxes__label" for="bedType-2">Community care</label>
+            </div> -->
+
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="bedType-3" name="bedType4" type="checkbox" value="Dementia nursing"{% if data.bedType4 %}{% for param in data.bedType4 %}{% if param == 'Dementia nursing' %} checked{% endif %}{% endfor %}{% else %} checked{% endif %}>
+              <label class="govuk-label govuk-checkboxes__label" for="bedType-3">Dementia nursing</label>
             </div>
 
             <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" id="bedType-3" name="bedType4" type="checkbox" value="Transitional" aria-describedby="bedType-3-item-hint"{% for param in data.bedType4 %}{% if param == 'Transitional' %} checked{% endif %}{% endfor %}>
-              <label class="govuk-label govuk-checkboxes__label" for="bedType-3">Transitional</label>
+              <input class="govuk-checkboxes__input" id="bedType-4" name="bedType4" type="checkbox" value="Dementia residential"{% if data.bedType4 %}{% for param in data.bedType4 %}{% if param == 'Dementia residential' %} checked{% endif %}{% endfor %}{% else %} checked{% endif %}>
+              <label class="govuk-label govuk-checkboxes__label" for="bedType-4">Dementia residential</label>
+            </div>
 
-              <div id="bedType-3-item-hint" class="govuk-hint govuk-checkboxes__hint">
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="bedType-5" name="bedType4" type="checkbox" value="General nursing"{% for param in data.bedType4 %}{% if param == 'General nursing' %} checked{% endif %}{% endfor %}>
+              <label class="govuk-label govuk-checkboxes__label" for="bedType-5">General nursing</label>
+            </div>
+
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="bedType-6" name="bedType4" type="checkbox" value="General residential"{% for param in data.bedType4 %}{% if param == 'General residential' %} checked{% endif %}{% endfor %}>
+              <label class="govuk-label govuk-checkboxes__label" for="bedType-6">General residential</label>
+            </div>
+
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="bedType-7" name="bedType4" type="checkbox" value="Learning disability nursing"{% for param in data.bedType4 %}{% if param == 'Learning disability nursing' %} checked{% endif %}{% endfor %}>
+              <label class="govuk-label govuk-checkboxes__label" for="bedType-7">Learning disability nursing</label>
+            </div>
+
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="bedType-8" name="bedType4" type="checkbox" value="Learning disability residential"{% for param in data.bedType4 %}{% if param == 'Learning disability residential' %} checked{% endif %}{% endfor %}>
+              <label class="govuk-label govuk-checkboxes__label" for="bedType-8">Learning disability residential</label>
+            </div>
+
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="bedType-9" name="bedType4" type="checkbox" value="Mental health nursing"{% for param in data.bedType4 %}{% if param == 'Mental health nursing' %} checked{% endif %}{% endfor %}>
+              <label class="govuk-label govuk-checkboxes__label" for="bedType-9">Mental health nursing</label>
+            </div>
+
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="bedType-10" name="bedType4" type="checkbox" value="Mental health residential"{% for param in data.bedType4 %}{% if param == 'Mental health residential' %} checked{% endif %}{% endfor %}>
+              <label class="govuk-label govuk-checkboxes__label" for="bedType-10">Mental health residential</label>
+            </div>
+
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="bedType-11" name="bedType4" type="checkbox" value="Transitional" aria-describedby="bedType-11-item-hint"{% for param in data.bedType4 %}{% if param == 'Transitional' %} checked{% endif %}{% endfor %}>
+              <label class="govuk-label govuk-checkboxes__label" for="bedType-11">Transitional</label>
+
+              <div id="bedType-11-item-hint" class="govuk-hint govuk-checkboxes__hint">
                 For individuals moving from children's services to adult social care.
               </div>
 
             </div>
 
             <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" id="bedType-4" name="bedType4" type="checkbox" value="YPD - Young Physically Disabled"{% for param in data.bedType4 %}{% if param == 'YPD - Young Physically Disabled' %} checked{% endif %}{% endfor %}>
-              <label class="govuk-label govuk-checkboxes__label" for="bedType-4">YPD &ndash; Young Physically Disabled</label>
-            </div>
-
-            <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" id="bedType-5" name="bedType4" type="checkbox" value="Nursing - general"{% for param in data.bedType4 %}{% if param == 'Nursing - general' %} checked{% endif %}{% endfor %}>
-              <label class="govuk-label govuk-checkboxes__label" for="bedType-5">Nursing - general</label>
-            </div>
-
-            <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" id="bedType-6" name="bedType4" type="checkbox" value="Nursing - dementia"{% if data.bedType4 %}{% for param in data.bedType4 %}{% if param == 'Nursing - dementia' %} checked{% endif %}{% endfor %}{% else %} checked{% endif %}>
-              <label class="govuk-label govuk-checkboxes__label" for="bedType-6">Nursing - dementia</label>
-            </div>
-
-            <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" id="bedType-7" name="bedType4" type="checkbox" value="Nursing - mental health"{% for param in data.bedType4 %}{% if param == 'Nursing - mental health' %} checked{% endif %}{% endfor %}>
-              <label class="govuk-label govuk-checkboxes__label" for="bedType-7">Nursing - mental health</label>
-            </div>
-
-            <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" id="bedType-8" name="bedType4" type="checkbox" value="Nursing - learning disability"{% for param in data.bedType4 %}{% if param == 'Nursing - learning disability' %} checked{% endif %}{% endfor %}>
-              <label class="govuk-label govuk-checkboxes__label" for="bedType-8">Nursing - learning disability</label>
-            </div>
-
-            <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" id="bedType-9" name="bedType4" type="checkbox" value="Residential - general"{% for param in data.bedType4 %}{% if param == 'Residential - general' %} checked{% endif %}{% endfor %}>
-              <label class="govuk-label govuk-checkboxes__label" for="bedType-9">Residential - general</label>
-            </div>
-
-            <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" id="bedType-10" name="bedType4" type="checkbox" value="Residential - dementia"{% if data.bedType4 %}{% for param in data.bedType4 %}{% if param == 'Residential - dementia' %} checked{% endif %}{% endfor %}{% else %} checked{% endif %}>
-              <label class="govuk-label govuk-checkboxes__label" for="bedType-10">Residential - dementia</label>
-            </div>
-
-            <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" id="bedType-11" name="bedType4" type="checkbox" value="Residential - mental health"{% for param in data.bedType4 %}{% if param == 'Residential - mental health' %} checked{% endif %}{% endfor %}>
-              <label class="govuk-label govuk-checkboxes__label" for="bedType-11">Residential - mental health</label>
-            </div>
-
-            <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" id="bedType-12" name="bedType4" type="checkbox" value="Residential - learning disability"{% for param in data.bedType4 %}{% if param == 'Residential - learning disability' %} checked{% endif %}{% endfor %}>
-              <label class="govuk-label govuk-checkboxes__label" for="bedType-12">Residential - learning disability</label>
+              <input class="govuk-checkboxes__input" id="bedType-12" name="bedType4" type="checkbox" value="Young physically disabled"{% for param in data.bedType4 %}{% if param == 'Young physically disabled' %} checked{% endif %}{% endfor %}>
+              <label class="govuk-label govuk-checkboxes__label" for="bedType-12">Young physically disabled</label>
             </div>
 
           </div>
+          
         </fieldset>
-
       </div>    
               
       <div class="govuk-button-group">

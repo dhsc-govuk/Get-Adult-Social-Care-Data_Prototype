@@ -27,70 +27,89 @@
   <div class="govuk-grid-column-two-thirds">
 
     <form action="../data#data1" method="post" novalidate>
-      <span class="govuk-caption-xl">Care home bed numbers</span> 
-      <h1 class="govuk-heading-xl govuk-!-margin-bottom-7">{{pageName}}</h1>
-      <p class="govuk-body">Select the filter to refine the data displayed.</p>
 
-      {{ govukRadios({
-        name: "Filters",
-        fieldset: {
-          legend: {
-            text: "Filters",
-            isPageHeading: true,
-            classes: "govuk-fieldset__legend--m"
-          }
-        },
-        items: [
-          {
-            value: "All types",
-            text: "All types",
-            checked: true
-          },
-          {
-            value: "Community care",
-            text: "Community care"
-          },
-          {
-            value: "Transitional",
-            text: "Transitional",
-            hint: {
-              text:"For individuals moving from children's services to adult social care."
-            }
-          },
-          {
-            value: "Nursing - general",
-            text: "Nursing - general"
-          },
-          {
-            value: "Nursing - dementia",
-            text: "Nursing - dementia"
-          },
-          {
-            value: "Nursing - mental health",
-            text: "Nursing - mental health"
-          },
-          {
-            value: "Nursing - learning disability",
-            text: "Nursing - learning disability"
-          },
-          {
-            value: "Residential - general",
-            text: "Residential - general"
-          },
-          {
-            value: "Residential - dementia",
-            text: "Residential - dementia"
-          },
-          {
-            value: "Residential - mental health",
-            text: "Residential - mental health"
-          },
-          {
-            value: "Residential - learning disability",
-            text: "Residential - learning disability"
-          }
-        ]
-      }) }}
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="bedType-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+            <span class="govuk-caption-xl">Care home bed numbers</span> 
+            <h1 class="govuk-fieldset__heading">{{pageName}}</h1>
+          </legend>
+          
+          <div id="bedType-hint" class="govuk-hint govuk-!-margin-top-6">
+            Select the filter to refine the data displayed.
+          </div>
+
+          <div class="govuk-radios" data-module="govuk-radios">
+                
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="bedType" name="bedType" type="radio" value="All bed types"{% if data.bedType %}{% if data.bedType == 'All bed types' %} checked{% endif %}{% else %} checked{% endif %}>
+              <label class="govuk-label govuk-radios__label" for="bedType">All bed types</label>
+            </div>
+
+            <!-- <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="bedType-2" name="bedType" type="radio" value="Community care"{% if data.bedType == 'Community care' %} checked{% endif %}>
+              <label class="govuk-label govuk-radios__label" for="bedType-2">Community care</label>
+            </div> -->
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="bedType-3" name="bedType" type="radio" value="Dementia nursing"{% if data.bedType == 'Dementia nursing' %} checked{% endif %}>
+              <label class="govuk-label govuk-radios__label" for="bedType-3">Dementia nursing</label>
+            </div>
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="bedType-4" name="bedType" type="radio" value="Dementia residential"{% if data.bedType == 'Dementia residential' %} checked{% endif %}>
+              <label class="govuk-label govuk-radios__label" for="bedType-4">Dementia residential</label>
+            </div>
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="bedType-5" name="bedType" type="radio" value="General nursing"{% if data.bedType == 'General nursing' %} checked{% endif %}>
+              <label class="govuk-label govuk-radios__label" for="bedType-5">General nursing</label>
+            </div>
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="bedType-6" name="bedType" type="radio" value="General residential"{% if data.bedType == 'General residential' %} checked{% endif %}>
+              <label class="govuk-label govuk-radios__label" for="bedType-6">General residential</label>
+            </div>
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="bedType-7" name="bedType" type="radio" value="Learning disability nursing"{% if data.bedType == 'Learning disability nursing' %} checked{% endif %}>
+              <label class="govuk-label govuk-radios__label" for="bedType-7">Learning disability nursing</label>
+            </div>
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="bedType-8" name="bedType" type="radio" value="Learning disability residential"{% if data.bedType == 'Learning disability residential' %} checked{% endif %}>
+              <label class="govuk-label govuk-radios__label" for="bedType-8">Learning disability residential</label>
+            </div>
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="bedType-9" name="bedType" type="radio" value="Mental health nursing"{% if data.bedType == 'Mental health nursing' %} checked{% endif %}>
+              <label class="govuk-label govuk-radios__label" for="bedType-9">Mental health nursing</label>
+            </div>
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="bedType-10" name="bedType" type="radio" value="Mental health residential"{% if data.bedType == 'Mental health residential' %} checked{% endif %}>
+              <label class="govuk-label govuk-radios__label" for="bedType-10">Mental health residential</label>
+            </div>
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="bedType-11" name="bedType" type="radio" value="Transitional" aria-describedby="bedType-11-item-hint"{% if data.bedType == 'Transitional' %} checked{% endif %}>
+              <label class="govuk-label govuk-radios__label" for="bedType-11">Transitional</label>
+
+              <div id="bedType-11-item-hint" class="govuk-hint govuk-checkboxes__hint">
+                For individuals moving from children's services to adult social care.
+              </div>
+
+            </div>
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="bedType-12" name="bedType" type="radio" value="Young physically disabled"{% if data.bedType == 'Young physically disabled' %} checked{% endif %}>
+              <label class="govuk-label govuk-radios__label" for="bedType-12">Young physically disabled</label>
+            </div>
+
+          </div>
+
+        </fieldset>
+      </div>
             
       <div class="govuk-button-group">
         <button type="submit" class="govuk-button" data-module="govuk-button">Apply changes</button>
