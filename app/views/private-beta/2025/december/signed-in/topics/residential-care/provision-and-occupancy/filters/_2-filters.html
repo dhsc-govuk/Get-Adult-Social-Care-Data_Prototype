@@ -52,7 +52,7 @@
       <div {% if error %}class="govuk-form-group govuk-form-group--error" aria-describedby="bedType-error"{% else %}class="govuk-form-group"{% endif %}>
         <fieldset class="govuk-fieldset" aria-describedby="bedType-hint">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
-            <span class="govuk-caption-xl">Occupancy levels</span> 
+            <span class="govuk-caption-xl">Care home bed types</span> 
             <h1 class="govuk-fieldset__heading">{{pageName}}</h1>
           </legend>
           
@@ -71,10 +71,15 @@
               <label class="govuk-label govuk-checkboxes__label" for="bedType">All bed types</label>
             </div>
 
-            <!-- <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" id="bedType-2" name="bedType2" type="checkbox" value="Community care"{% for param in data.bedType2 %}{% if param == 'Community care' %} checked{% endif %}{% endfor %}>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="bedType-2" name="bedType2" type="checkbox" value="Community care" aria-describedby="bedType-2-item-hint"{% for param in data.bedType2 %}{% if param == 'Community care' %} checked{% endif %}{% endfor %}>
               <label class="govuk-label govuk-checkboxes__label" for="bedType-2">Community care</label>
-            </div> -->
+
+              <div id="bedType-2-item-hint" class="govuk-hint govuk-checkboxes__hint">
+                [HINT TEXT].
+              </div>
+
+            </div>
 
             <div class="govuk-checkboxes__item">
               <input class="govuk-checkboxes__input" id="bedType-3" name="bedType2" type="checkbox" value="Dementia nursing"{% for param in data.bedType2 %}{% if param == 'Dementia nursing' %} checked{% endif %}{% endfor %}>

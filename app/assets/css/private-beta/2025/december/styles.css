@@ -621,3 +621,62 @@
 .rebranded-one-login-header__nav__link-content--sign-out {
   border: none;
 }
+
+/* Styling for the 'Care home bed numbers - trends over time' chart */
+
+.data-chart {
+  width: 100%;
+  overflow-x: visible;
+}
+
+/* To make the SVG itself responsive */
+.svg {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  display: block;
+}
+
+/* GOV.UK typography inside SVG */
+#svg4 text {
+  font-family: "GDS Transport", Arial, sans-serif;
+  font-size: 16px;
+  fill: #0b0c0c;
+}
+
+/* Axis text */
+#svg4 text.axis-text {
+  fill: #0b0c0c;
+  font-size: 14px;
+}
+
+/* Lines & grid */
+#svg4 .axis-line {
+  stroke: #666;
+  stroke-width: 2;
+}
+
+#svg4 .grid-line {
+  fill: none;
+  stroke: #e1e1e1;
+  stroke-width: 2;
+}
+
+/* Series colours */
+#svg4 .series-total {
+  stroke: purple;
+  stroke-width: 3;
+  fill: none;
+}
+
+#svg4 .series-residential {
+  stroke: gold;
+  stroke-width: 3;
+  fill: none;
+}
+
+#svg4 .series-nursing {
+  stroke: orange;
+  stroke-width: 3;
+  fill: none;
+}

@@ -89,7 +89,7 @@
 
     <div class="data-box govuk-form-group">
 
-      <div class="govuk-tabs" data-module="govuk-tabs">
+      <!-- <div class="govuk-tabs" data-module="govuk-tabs">
         
         <div class="govuk-form-group">
           <h3 id="map" class="govuk-heading-m">Age group percentages at district and Middle Layer Super Output Area (MSOA) level</h3>
@@ -161,7 +161,47 @@
           </ul>
         </div>
 
+      </div> -->
+      <div class="govuk-form-group">
+        <h3 id="map" class="govuk-heading-m">Age group percentages at district and Middle Layer Super Output Area (MSOA) level</h3>
+        <p class="govuk-body">Find out <a href="../../../help/population-age" class="govuk-link">how age group percentages are calculated</a>.</p>
       </div>
+
+      <form action="#map" method="post" novalidate>
+
+        <div class="govuk-form-block">
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+              <h4 class="govuk-fieldset__heading">Select age group</h4>
+            </legend>
+        
+            <div class="govuk-radios govuk-radios--inline govuk-radios--small" data-module="govuk-radios">
+        
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="mapAgeGroup-1" name="mapAgeGroup" type="radio" value="Aged 65 to 74"{% if data.mapAgeGroup == 'Aged 65 to 74' %} checked{% endif %}>
+                <label class="govuk-label govuk-radios__label" for="mapAgeGroup-1">Aged 65 to 74</label>
+              </div>
+
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id=" mapAgeGroup-2" name="mapAgeGroup" type="radio" value="Aged 75 to 84"{% if data.mapAgeGroup == 'Aged 75 to 84' %} checked{% endif %}>
+                <label class="govuk-label govuk-radios__label" for=" mapAgeGroup-2">Aged 75 to 84</label>
+              </div>
+        
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id=" mapAgeGroup-3" name="mapAgeGroup" type="radio" value="Aged 85 and over"{% if data.mapAgeGroup != 'Aged 65 to 74' and data.mapAgeGroup != 'Aged 75 to 84' %} checked{% endif %}>
+                <label class="govuk-label govuk-radios__label" for=" mapAgeGroup-3">Aged 85 and over</label>
+              </div>
+            </div>
+
+            <button class="govuk-button govuk-!-margin-top-2 govuk-!-margin-bottom-7">Apply age group filter</button>
+          </fieldset>
+        </div>
+
+        <div class="govuk-form-group govuk-!-padding-bottom-3">
+          {% include "./data-visualisations/_2-map.html" %}
+        </div>
+
+      </form>
 
     </div>
 
@@ -169,7 +209,7 @@
 
 </div>
 
-<div class="govuk-grid-row">
+<!-- <div class="govuk-grid-row">
 
   <div class="govuk-grid-column-full">
 
@@ -221,7 +261,7 @@
 
   </div>
 
-</div>
+</div> -->
 
 <div class="govuk-grid-row">
 

@@ -46,10 +46,15 @@
               <label class="govuk-label govuk-radios__label" for="bedType">All bed types</label>
             </div>
 
-            <!-- <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="bedType-2" name="bedType" type="radio" value="Community care"{% if data.bedType == 'Community care' %} checked{% endif %}>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="bedType-2" name="bedType" type="radio" value="Community care" aria-describedby="bedType-2-item-hint"{% if data.bedType == 'Community care' %} checked{% endif %}>
               <label class="govuk-label govuk-radios__label" for="bedType-2">Community care</label>
-            </div> -->
+
+              <div id="bedType-2-item-hint" class="govuk-hint govuk-radios__hint">
+                [HINT TEXT].
+              </div>
+
+            </div>
 
             <div class="govuk-radios__item">
               <input class="govuk-radios__input" id="bedType-3" name="bedType" type="radio" value="Dementia nursing"{% if data.bedType == 'Dementia nursing' %} checked{% endif %}>
