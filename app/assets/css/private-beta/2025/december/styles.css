@@ -613,7 +613,7 @@
   text-wrap-mode: nowrap;
 }
 
-/* Temporary hiding of the 'GOV.UK One Login' link within the service header - while GASCD does not use GOV.UK One Login */
+/* TEMPORARY - hiding of the 'GOV.UK One Login' link within the service header - while GASCD does not use GOV.UK One Login */
 .rebranded-one-login-header__nav__list-item:first-child {
   display: none;
 }
@@ -637,46 +637,97 @@
   display: block;
 }
 
-/* GOV.UK typography inside SVG */
-#svg4 text {
+/* GOV.UK typography for SVG text */
+#svg1 text {
   font-family: "GDS Transport", Arial, sans-serif;
-  font-size: 16px;
+  font-size: clamp(0.8rem, 0.9rem, 1rem);
   fill: #0b0c0c;
 }
 
-/* Axis text */
-#svg4 text.axis-text {
+/* Axis labels (slightly smaller, still auto-scaling) */
+#svg1 text.axis-text {
   fill: #0b0c0c;
-  font-size: 14px;
+  font-size: clamp(0.8rem, 0.9rem, 1rem);
 }
 
 /* Lines & grid */
-#svg4 .axis-line {
+#svg1 .axis-line {
   stroke: #666;
   stroke-width: 2;
 }
 
-#svg4 .grid-line {
+#svg1 .grid-line {
   fill: none;
   stroke: #e1e1e1;
   stroke-width: 2;
 }
 
-/* Series colours */
-#svg4 .series-total {
-  stroke: purple;
+/* Data series colours */
+#svg1 .series-all {
+  stroke: #f39431;
   stroke-width: 3;
   fill: none;
 }
 
-#svg4 .series-residential {
-  stroke: gold;
+#svg1 .series-dementia-nursing {
+  stroke: #003c57;
   stroke-width: 3;
   fill: none;
 }
 
-#svg4 .series-nursing {
-  stroke: orange;
+#svg1 .series-dementia-residential {
+  stroke: #27a0cc;
   stroke-width: 3;
+  fill: none;
+}
+
+/* Styling for the 'Care home bed numbers chart */
+
+/* Make SVG scale with container */
+#svg2 {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Typography */
+#svg2 text {
+  font-family: "GDS Transport", Arial, sans-serif;
+  font-size: clamp(0.8rem, 0.9rem, 1rem);
+  fill: #0b0c0c;
+}
+
+#svg2 text.label-bold {
+  font-weight: bold;
+}
+
+#svg2 text.axis-text {
+  fill: #0b0c0c;
+  font-size: clamp(0.8rem, 0.9rem, 1rem);
+}
+
+/* Bars */
+#svg2 .bar {
+  stroke-width: 20;
+  stroke-linecap: unset;
+}
+
+#svg2 .bar-blue {
+  stroke: #003c57;
+}
+
+#svg2 .bar-purple {
+  stroke: #746cb1;
+}
+
+#svg2 .bar-orange {
+  stroke: #f39431;
+}
+
+/* Highlight bbox (Suffolk) */
+#svg2 rect.highlight {
+  stroke: black;
+  stroke-width: 2;
+  stroke-dasharray: 3,3;
   fill: none;
 }

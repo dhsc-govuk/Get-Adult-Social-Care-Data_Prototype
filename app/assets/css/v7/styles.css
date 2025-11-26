@@ -598,3 +598,118 @@
 .search-submit button:hover, .search-submit button:focus {
   background-color: #267daf;
 }
+
+/* TEMPORARY - Expansion on the GOV.UK Design System radio component https://design-system.service.gov.uk/components/radio) to stop inline radio buttons labels wrapping */
+.govuk-radios--inline {
+  text-wrap-mode: nowrap;
+}
+
+/* Styling for the 'Care home bed numbers - trends over time' chart */
+
+.data-chart {
+  width: 100%;
+  overflow-x: visible;
+}
+
+/* To make the SVG itself responsive */
+.svg {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  display: block;
+}
+
+/* GOV.UK typography for SVG text */
+#svg1 text {
+  font-family: "GDS Transport", Arial, sans-serif;
+  font-size: clamp(0.8rem, 0.9rem, 1rem);
+  fill: #0b0c0c;
+}
+
+/* Axis labels (slightly smaller, still auto-scaling) */
+#svg1 text.axis-text {
+  fill: #0b0c0c;
+  font-size: clamp(0.8rem, 0.9rem, 1rem);
+}
+
+/* Lines & grid */
+#svg1 .axis-line {
+  stroke: #666;
+  stroke-width: 2;
+}
+
+#svg1 .grid-line {
+  fill: none;
+  stroke: #e1e1e1;
+  stroke-width: 2;
+}
+
+/* Data series colours */
+#svg1 .series-all {
+  stroke: #f39431;
+  stroke-width: 3;
+  fill: none;
+}
+
+#svg1 .series-dementia-nursing {
+  stroke: #003c57;
+  stroke-width: 3;
+  fill: none;
+}
+
+#svg1 .series-dementia-residential {
+  stroke: #27a0cc;
+  stroke-width: 3;
+  fill: none;
+}
+
+/* Styling for the 'Care home bed numbers chart */
+
+/* Make SVG scale with container */
+#svg2 {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Typography */
+#svg2 text {
+  font-family: "GDS Transport", Arial, sans-serif;
+  font-size: clamp(0.8rem, 0.9rem, 1rem);
+  fill: #0b0c0c;
+}
+
+#svg2 text.label-bold {
+  font-weight: bold;
+}
+
+#svg2 text.axis-text {
+  fill: #0b0c0c;
+  font-size: clamp(0.8rem, 0.9rem, 1rem);
+}
+
+/* Bars */
+#svg2 .bar {
+  stroke-width: 20;
+  stroke-linecap: unset;
+}
+
+#svg2 .bar-blue {
+  stroke: #003c57;
+}
+
+#svg2 .bar-purple {
+  stroke: #746cb1;
+}
+
+#svg2 .bar-orange {
+  stroke: #f39431;
+}
+
+/* Highlight bbox (Suffolk) */
+#svg2 rect.highlight {
+  stroke: black;
+  stroke-width: 2;
+  stroke-dasharray: 3,3;
+  fill: none;
+}

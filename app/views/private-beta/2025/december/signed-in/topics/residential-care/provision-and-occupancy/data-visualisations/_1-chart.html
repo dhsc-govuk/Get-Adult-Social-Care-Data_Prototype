@@ -1,85 +1,54 @@
-{% set thisData = [
-  ["England (national average)", 239, 1255, 0],
-  ["East of England (regional average)", 200, 1436, 1],
-  ["Cambridgeshire", 239, 1912, 2],
-  ["Peterborough", 200, 1600, 3],
-  ["Luton", 199, 1600, 4],
-  ["Southend-on-Sea", 200, 1592, 5],
-  ["Suffolk", 189, 1512, 6],
-  ["Bedford", 170, 1360, 7],
-  ["Central Bedfordshire", 148, 1184, 8],
-  ["Thurrock", 132, 1056, 9],
-  ["Hertfordshire", 104, 832, 10],
-  ["Essex", 98, 784, 11],
-  ["Norfolk", 91, 728, 12]
-] %}
-
 <div class="govuk-form-group">
   <h3 class="govuk-heading-s">Figure 1: chart of care home beds per 100,000 adult population &ndash; local authorities in the East of England, October 2025</h3>
-  
-  <style>
-
-    .svg-bar {
-      width: 100%;
-      display: block;
-      overflow-x: auto;
-    }
-
-    .svg-bold {
-      font-style: unset;
-      font-variant-caps: unset;
-      font-variant-ligatures: unset;
-      font-variant-numeric: unset;
-      font-variant-east-asian: unset;
-      font-variant-alternates: unset;
-      font-size-adjust: unset;
-      font-kerning: unset;
-      font-optical-sizing: unset;
-      font-feature-settings: unset;
-      font-variation-settings: unset;
-      font-variant-position: unset;
-      font-variant-emoji: unset;
-      font-weight: bold;
-      font-stretch: unset;
-      font-size: unset;
-      line-height: unset;
-      font-family: unset;
-    }
-
-  </style>
-
-  <div class="svg-bar">
-    <!-- <svg height="680" width="500" viewBox="0 0 878 600" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" class="svg-bar"> -->
-    <svg height="680" width="500" xmlns="http://www.w3.org/2000/svg" class="svg-bar">
-      <title>Beds per 100,000 by local authorities in the East of England</title>
-      
-      <!-- Axis labels -->
-      <text x="320" y="20">0</text>
-      <text x="550" y="20">2,400</text>
-      
-      <!-- Horizontal axis -->
-      <line x1="320" y1="25" x2="600" y2="25" stroke="grey" stroke-width="2" />
-      
-      <!-- Vertical axis -->
-      <line x1="320" y1="25" x2="320" y2="680" stroke="grey" stroke-width="2" />
-
-      {% for x, y, z, q in thisData %}
-      <text {% if x == 'England (national average)' or x == 'East of England (regional average)' or x == 'Suffolk' %}class="svg-bold" {% endif %}x="10" y={{55 + q * 50}}>{{x}}</text>
-      <g fill="none">
-      <title stroke-width="5">Care home beds per 100,000 adult population in {{x}} - {{z | addcommas}}</title>
-      {% if x == "England (national average)" or x == "East of England (regional average)" %}
-      <line x1="320" y1={{50 + q * 50}} x2={{y + 320}} y2={{50 + q * 50}} stroke="#003c57" stroke-width="20" />
-      {% elif x == "Suffolk" %}
-      <rect x="0" y={{35 + q * 50}} width="520" height="30" stroke="black" stroke-width="2" stroke-dasharray="2,2" />
-      <line x1="320" y1={{50 + q * 50}} x2={{y + 320}} y2={{50 + q * 50}} stroke="#f39431" stroke-width="20" />
-      {% else %}
-      <line x1="320" y1={{50 + q * 50}} x2={{y + 320}} y2={{50 + q * 50}} stroke="#746cb1" stroke-width="20" />
-      {% endif %}
-      </g>
-      {% endfor %}
-    </svg>
-  </div>
-
+  <svg id="svg2" viewBox="0 0 600 560" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+    <title>Care home beds per 100,000 adult population – East of England, Oct 2025</title>
+    <!-- Axis labels -->
+    <text class="axis-text" x="320" y="14">0</text>
+    <text class="axis-text" x="598" y="14" text-anchor="end">2,400</text>
+    <!-- Axes -->
+    <line x1="320" y1="22" x2="600" y2="22" stroke="#666" stroke-width="2" />
+    <line x1="320" y1="22" x2="320" y2="560" stroke="#666" stroke-width="2" />
+    <!-- England -->
+    <text class="label-bold" x="10" y="55">England (national average)</text>
+    <line class="bar bar-blue" x1="320" y1="50" x2="466.4" y2="50" />
+    <!-- East of England -->
+    <text class="label-bold" x="10" y="95">East of England (regional average)</text>
+    <line class="bar bar-blue" x1="320" y1="90" x2="487.37" y2="90" />
+    <!-- Cambridgeshire -->
+    <text x="10" y="135">Cambridgeshire</text>
+    <line class="bar bar-purple" x1="320" y1="130" x2="543.07" y2="130" />
+    <!-- Peterborough -->
+    <text x="10" y="175">Peterborough</text>
+    <line class="bar bar-purple" x1="320" y1="170" x2="506.67" y2="170" />
+    <!-- Luton -->
+    <text x="10" y="215">Luton</text>
+    <line class="bar bar-purple" x1="320" y1="210" x2="506.67" y2="210" />
+    <!-- Southend-on-Sea -->
+    <text x="10" y="255">Southend-on-Sea</text>
+    <line class="bar bar-purple" x1="320" y1="250" x2="505.07" y2="250" />
+    <!-- Suffolk -->
+    <text class="label-bold" x="10" y="295">Suffolk</text>
+    <rect class="highlight" x="0" y="275" width="600" height="30" />
+    <line class="bar bar-orange" x1="320" y1="290" x2="497.17" y2="290" />
+    <!-- Bedford -->
+    <text x="10" y="335">Bedford</text>
+    <line class="bar bar-purple" x1="320" y1="330" x2="478.67" y2="330" />
+    <!-- Central Bedfordshire -->
+    <text x="10" y="375">Central Bedfordshire</text>
+    <line class="bar bar-purple" x1="320" y1="370" x2="460.27" y2="370" />
+    <!-- Thurrock -->
+    <text x="10" y="415">Thurrock</text>
+    <line class="bar bar-purple" x1="320" y1="410" x2="448.27" y2="410" />
+    <!-- Hertfordshire -->
+    <text x="10" y="455">Hertfordshire</text>
+    <line class="bar bar-purple" x1="320" y1="450" x2="417.47" y2="450" />
+    <!-- Essex -->
+    <text x="10" y="495">Essex</text>
+    <line class="bar bar-purple" x1="320" y1="490" x2="409.47" y2="490" />
+    <!-- Norfolk -->
+    <text x="10" y="535">Norfolk</text>
+    <line class="bar bar-purple" x1="320" y1="530" x2="401.87" y2="530" />
+  </svg>
 </div>
 
 <div class="govuk-form-block">

@@ -42,13 +42,13 @@
           <p class="govuk-body">Find out <a href="../../../help/beds-per-100000-adult-population" class="govuk-link">how the number of adult social care beds per 100,000 adult population is calculated</a>.</p>
           <dl class="govuk-summary-list">
 
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">Filter</dt>
-            <dd class="govuk-summary-list__value">{% if data.bedType %}{{data.bedType}}{% else %}All bed types{% endif %}</dd>
-            <dd class="govuk-summary-list__actions"><a class="govuk-link" href="filters/_1-filters">Change<span class="govuk-visually-hidden"> filter</span></a></dd>
-          </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">Filter</dt>
+              <dd class="govuk-summary-list__value">{% if data.bedType %}{{data.bedType}}{% else %}All bed types{% endif %}</dd>
+              <dd class="govuk-summary-list__actions"><a class="govuk-link" href="filters/_1-filters">Change<span class="govuk-visually-hidden"> filter</span></a></dd>
+            </div>
 
-        </dl>
+          </dl>
         </div>
 
         <h3 class="govuk-tabs__title">Contents</h3>
@@ -256,7 +256,7 @@
         
         <div class="govuk-form-group">
           <h3 id="trend1" class="govuk-heading-m">Care home bed numbers - trends over time</h3>
-          <p class="govuk-body">Find out <a href="#">[URL TO DATA INDICATOR DETAILS PAGE]</a> are/is calculated.</p>
+          <p class="govuk-body">Find out <a href="../../../help/beds-per-100000-adult-population" class="govuk-link">how the number of adult social care beds per 100,000 adult population is calculated</a>.</p>
           <dl class="govuk-summary-list">
 
             <div class="govuk-summary-list__row">
@@ -279,9 +279,6 @@
           <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
             <a class="govuk-tabs__tab" href="#trend-chart">Graph</a>
           </li>
-          <!-- <li class="govuk-tabs__list-item">
-            <a class="govuk-tabs__tab" href="#trend-table">Table</a>
-          </li> -->
           <li class="govuk-tabs__list-item">
             <a class="govuk-tabs__tab" href="#trend-download">Download</a>
           </li>
@@ -290,10 +287,6 @@
         <div class="govuk-tabs__panel" id="trend-chart">
           {% include "./data-visualisations/_4-time-series.html" %}
         </div>
-
-        <!-- <div class="govuk-tabs__panel" id="trend-table">
-          {% include "./data-visualisations/_4-table.html" %}
-        </div> -->
 
         <div class="govuk-tabs__panel" id="trend-download">
           <h4 class="govuk-heading-s">Download</h4>
