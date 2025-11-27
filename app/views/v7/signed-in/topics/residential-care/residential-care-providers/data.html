@@ -18,6 +18,15 @@
 {% endblock %}
 
 {% block content %}
+<style>
+
+  .table-indent {
+    /* text-indent: 20px; */
+    padding-left: 20px;
+  }
+
+</style>
+
 <div class="govuk-grid-row">
 
   <div class="govuk-grid-column-two-thirds">
@@ -55,8 +64,8 @@
       <div class="govuk-tabs" data-module="govuk-tabs">
 
         <div class="govuk-form-group">
-          <h3 class="govuk-heading-m">Care home locations near {{data.locationName or 'Shoggins Care Services (Sudbury)'}}</h3>
-          <p class="govuk-body">Locations and service information for CQC&#45;registered residential care homes and nursing homes in England, August 2025.</p>
+          <h3 class="govuk-heading-m">Care provider locations near {{data.locationName or 'Shoggins Care Services (Sudbury)'}}</h3>
+          <p class="govuk-body">Locations and service information for CQC&#45;registered residential social care and community based adult social care service providers in England, August 2025.</p>
           <!-- THIS INDICATOR DEFINITION PAGE DOES NOT EXIST
           <p class="govuk-body" data-module="edge">Find out <a href="#" data-message="Sorry, this hasn’t been designed yet">how locations and services data is collected</a>.</p> -->
         </div>
@@ -111,8 +120,8 @@
       <div class="govuk-tabs" data-module="govuk-tabs">
 
         <div class="govuk-form-group">
-          <h3 class="govuk-heading-m">Number of <span class="needs-content">[care providers]</span></h3>
-          <p class="govuk-body">Find out <span class="needs-content"><a href="../../../help/total-number-community-social-care-providers">how the number of care providers is calculated</a></span>.</p>
+          <h3 class="govuk-heading-m">Number of adult social care providers</span></h3>
+          <p class="govuk-body">Find out <span class="needs-content"><a href="../../../help/total-number-community-social-care-providers">how the number of adult social care providers is calculated</a></span>.</p>
         </div>
 
         <h3 class="govuk-tabs__title">Contents</h3>
