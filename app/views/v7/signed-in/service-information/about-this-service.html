@@ -1,0 +1,26 @@
+{% extends "v7/layouts/signed-in.html" %}
+
+{% set pageName = "About this service" %}
+
+{% block beforeContent %}
+<a href="javascript:history.back()" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">{{pageName}}</h1>
+    <p class="govuk-body">{{serviceName}} is a new service providing access to data on adult social care and related population needs in England. It is managed by the Department of Health and Social Care (DHSC).</p>
+    <p class="govuk-body">The service displays a range of the most recent data from Capacity Tracker, the <abbr title="Care Quality Commission">CQC</abbr>, Office for National Statistics, NHS England and other sources.</p>
+    <p class="govuk-body">You can use this service to:</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>find data on topics such as care provision, funding and population needs</li>
+      <li>compare local data to regional and national statistics</li>
+      <li>explore trends over time</li>
+      <li>download charts and data to use in your own analysis and documentation</li>
+    </ul>
+  </div>
+
+</div>
+{% endblock %}

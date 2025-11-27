@@ -713,3 +713,8 @@
   stroke-dasharray: 3,3;
   fill: none;
 }
+
+/* Styling for the design team (i.e. Chris) to alert others that content is needed across the prototype */
+.needs-content {
+  color: #d4351c;
+}
