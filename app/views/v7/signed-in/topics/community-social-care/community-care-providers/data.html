@@ -3,20 +3,18 @@
 {% set pageName = "Community social care providers: locations and services" %}
 
 {% block beforeContent %}
-{{
-  govukBreadcrumbs({
-    items: [
-      {
-        text: "Home",
-        href: "../../../home"
-      },
-      {
-        text: "Community social care",
-        href: "../subtopics"
-      }
-    ]
-  })
-}}
+{{ govukBreadcrumbs({
+  items: [
+    {
+      text: "Home",
+      href: "../../../home"
+    },
+    {
+      text: "Community social care",
+      href: "../subtopics"
+    }
+  ]
+}) }}
 {% endblock %}
 
 {% block content %}
