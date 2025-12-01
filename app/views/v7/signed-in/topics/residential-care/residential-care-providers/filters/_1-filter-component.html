@@ -1,0 +1,124 @@
+<div class="defra-filter--action" style="display: none;">
+  <button id="defra-filter--button" class="govuk-button{% if query.filterApplied == 'Yes' %} defra-filter-button--active{% endif %}" type="button" aria-expanded="false">
+    <span class="defra-filter--button-content">Show filters</span>
+    <span class="defra-filter__icon"></span>
+  </button>
+</div>
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-full">
+
+    <div class="defra-filter--content">
+
+      <form action="data-update-filters" method="post" novalidate>
+
+        <div class="govuk-grid-row">
+
+          <div class="govuk-grid-column-one-third">
+            {% include "./_1-postcode.html" %}
+          </div>
+          
+          <div class="govuk-grid-column-one-third">
+            {% include "./_1-service-types.html" %}
+          </div>
+
+        </div>
+
+        <div class="govuk-grid-row govuk-!-margin-top-4">
+
+          <div class="govuk-grid-column-full">
+
+            <div class="govuk-button-group">
+              <button id="update-filters" type="submit" class="govuk-button" data-module="govuk-button" name="filterApplied" value="Yes">Apply</button>
+              {% if data.filterApplied %}
+              <a href="?filterApplied=&postcode1=&serviceType1=" class="govuk-link app-button--link">Clear all</a>
+              {% endif %}
+            </div>
+            
+          </div>
+
+        </div>
+
+      </form>
+
+    </div>
+
+  </div>
+
+</div>
+{% if data.filterApplied %}
+
+<div class="app-c-filter-summary">
+  <h5 class="app-c-filter-summary__heading">Active filters</h5>
+  <ul class="app-c-filter-summary__remove-filters">
+    {% if data.postcode1 %}
+    <li id="postcode-remove">
+      <a class="app-c-filter-summary__remove-filter" href="#">
+        <span class="app-c-filter-summary__remove-filter-text">
+          <span class="govuk-visually-hidden">Remove filter</span>
+          Postcode: {{data.postcode1}}
+        </span>
+      </a>
+    </li>
+    {% endif %}
+    {% for param in data.serviceType1 %}
+    {% if param == "Homecare agencies" %}
+    <li id="serviceType1_1-remove">
+      <a class="app-c-filter-summary__remove-filter" href="#">
+        <span class="app-c-filter-summary__remove-filter-text">
+          <span class="govuk-visually-hidden">Remove filter</span>
+          Service type: Homecare agencies
+        </span>
+      </a>
+    </li>
+    {% endif %}
+    {% if param == "Nursing homes" %}
+    <li id="serviceType1_2-remove">
+      <a class="app-c-filter-summary__remove-filter" href="#">
+        <span class="app-c-filter-summary__remove-filter-text">
+          <span class="govuk-visually-hidden">Remove filter</span>
+          Service type: Nursing homes
+        </span>
+      </a>
+    </li>
+    {% endif %}
+    {% if param == "Residential homes" %}
+    <li id="serviceType1_3-remove">
+      <a class="app-c-filter-summary__remove-filter" href="#">
+        <span class="app-c-filter-summary__remove-filter-text">
+          <span class="govuk-visually-hidden">Remove filter</span>
+          Service type: Residential homes
+        </span>
+      </a>
+    </li>
+    {% endif %}
+    {% if param == "Supported housing" %}
+    <li id="serviceType1_4-remove">
+      <a class="app-c-filter-summary__remove-filter" href="#">
+        <span class="app-c-filter-summary__remove-filter-text">
+          <span class="govuk-visually-hidden">Remove filter</span>
+          Service type: Supported housing
+        </span>
+      </a>
+    </li>
+    {% endif %}
+    {% if param == "Supported living" %}
+    <li id="serviceType1_5-remove">
+      <a class="app-c-filter-summary__remove-filter" href="#">
+        <span class="app-c-filter-summary__remove-filter-text">
+          <span class="govuk-visually-hidden">Remove filter</span>
+          Service type: Supported living
+        </span>
+      </a>
+    </li>
+    {% endif %}
+    {% endfor %}
+  </ul>
+
+  <div>
+    <a class="app-c-filter-summary__clear-filters govuk-link govuk-link--no-visited-state" href="?filterApplied=&postcode1=&serviceType1=">Clear all filters</a>
+  </div>
+
+</div>
+{% endif %}

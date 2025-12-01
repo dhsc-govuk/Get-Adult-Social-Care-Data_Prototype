@@ -264,6 +264,22 @@ module.exports = function(router) {
       'sessionTimeoutNonJs' : req.query.sessionTimeoutNonJs
 		})
   })
+  router.post('/' + version + '/' + 'signed-in/topics/residential-care/residential-care-providers/data-update-filters', function (req, res) {
+
+    // Data objects to be retrieved and queried
+    var postcode1 = req.session.data['postcode1']
+    var serviceType1 = req.session.data['serviceType1']
+
+    // User has chosen at least 1 filter  
+		if (postcode1 || serviceType1) {
+      res.redirect('/' + version + '/' + 'signed-in/topics/residential-care/residential-care-providers/data?filterApplied=Yes')     
+		}
+		// No filters selected by user
+		else {			
+      res.redirect('/' + version + '/' + 'signed-in/topics/residential-care/residential-care-providers/data?filterApplied=')
+    }
+    
+  })
 
   /*****
    * Additional screens

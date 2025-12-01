@@ -1,0 +1,35 @@
+<div class="govuk-form-group">
+  <fieldset class="govuk-fieldset">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">Service type</legend>
+    
+    <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+      
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="serviceType1_1" name="serviceType1" type="checkbox" value="Homecare agencies"{% for param in data.serviceType1 %}{% if param == 'Homecare agencies' %} checked{% endif %}{% endfor %}>
+        <label class="govuk-label govuk-checkboxes__label" for="serviceType1_1">Homecare agencies</label>
+      </div>
+
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="serviceType1_2" name="serviceType1" type="checkbox" value="Nursing homes"{% for param in data.serviceType1 %}{% if param == 'Nursing homes' %} checked{% endif %}{% endfor %}>
+        <label class="govuk-label govuk-checkboxes__label" for="serviceType1_2">Nursing homes</label>
+      </div>
+
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="serviceType1_3" name="serviceType1" type="checkbox" value="Residential homes"{% for param in data.serviceType1 %}{% if param == 'Residential homes' %} checked{% endif %}{% endfor %}>
+        <label class="govuk-label govuk-checkboxes__label" for="serviceType1_3">Residential homes</label>
+      </div>
+
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="serviceType1_4" name="serviceType1" type="checkbox" value="Supported housing"{% for param in data.serviceType1 %}{% if param == 'Supported housing' %} checked{% endif %}{% endfor %}>
+        <label class="govuk-label govuk-checkboxes__label" for="serviceType1_4">Supported housing</label>
+      </div>
+
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="serviceType1_5" name="serviceType1" type="checkbox" value="Supported living"{% for param in data.serviceType1 %}{% if param == 'Supported living' %} checked{% endif %}{% endfor %}>
+        <label class="govuk-label govuk-checkboxes__label" for="serviceType1_5">Supported living</label>
+      </div>
+
+    </div>
+
+  </fieldset>
+</div>

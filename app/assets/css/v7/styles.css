@@ -599,11 +599,6 @@
   background-color: #267daf;
 }
 
-/* TEMPORARY - Expansion on the GOV.UK Design System radio component https://design-system.service.gov.uk/components/radio) to stop inline radio buttons labels wrapping */
-.govuk-radios--inline {
-  text-wrap-mode: nowrap;
-}
-
 /* Styling for the 'Care home bed numbers - trends over time' chart */
 
 .data-chart {
@@ -717,4 +712,259 @@
 /* Styling for the design team (i.e. Chris) to alert others that content is needed across the prototype */
 .needs-content {
   color: #d4351c;
+}
+
+/* Add slight indentation to any table <td> elements that are within a hierarchy (i.e. are a child to another data item) */
+.table-indent {
+  padding-left: 20px;
+}
+
+/* Filter component inspired by GOV.UK search (https://www.gov.uk) and Apply for plant export certificates and inspections (https://www.gov.uk/guidance/apply-for-plant-export-certificates-and-inspections) */
+.defra-filter--action {
+  position: relative;
+}
+.defra-filter--action:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+.defra-filter--action .govuk-button {
+  color: #ffffff;
+  margin-bottom: 0;
+  padding: 16px 50px 10px 20px;
+  display: block;
+  text-align: left;
+  background-color: #1d70b8;
+  box-shadow: 0 2px 0 #929191;
+  font-weight: 700;
+}
+.defra-filter--action .defra-accordion__icon:before {
+  content: "";
+  box-sizing: border-box;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 25%;
+  height: 25%;
+  margin: auto;
+  border: 2px solid transparent;
+  background-color: #ffffff;
+}
+.defra-filter--action .defra-filter__icon {
+  position: absolute;
+  top: 25px;
+  right: 15px;
+  width: 16px;
+  height: 16px;
+  margin-top: -8px;
+}
+.defra-filter--action .defra-filter__icon:before {
+  content: "";
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 25%;
+  height: 25%;
+  margin: auto;
+  border: 2px solid transparent;
+  background-color: #ffffff;
+}
+.defra-filter--action .defra-filter__icon:after {
+  content: "";
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 25%;
+  height: 25%;
+  margin: auto;
+  border: 2px solid transparent;
+  background-color: #ffffff;
+}
+.defra-filter--action .defra-filter__icon:before {
+  width: 100%;
+}
+.defra-filter--action .defra-filter__icon:after {
+  height: 100%;
+}
+.defra-filter--action .defra-filter-button--active {
+  background-color: #1d70b8 !important;
+  color: #ffffff !important;
+  box-shadow: 0 2px 0 #091728;
+}
+.defra-filter--action .defra-filter-button--active .defra-filter__icon:before {
+  background-color: #ffffff;
+}
+.defra-filter--action .defra-filter-button--active .defra-filter__icon:after {
+  background-color: #ffffff;
+}
+
+.defra-filter--content {
+  background-color: #ffffff;
+  border: 2px solid #1d70b8;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+@media (min-width: 48.0625em) {
+  .defra-filter--content {
+    margin-top: -10px;
+  }
+}
+.defra-filter--content .govuk-grid-column--divider {
+  border-right: 1px solid #b1b4b6;
+}
+.defra-filter--content .govuk-button-group, .defra-filter--content .govuk-button, .defra-filter--content .govuk-link {
+  margin-bottom: 0;
+}
+.defra-filter--content .govuk-grid-column-one-third:first-child {
+  padding-bottom: 20px;
+}
+@media (min-width: 641px) {
+  .defra-filter--content .govuk-grid-column-one-third:first-child {
+    padding-bottom: 0;
+  }
+}
+
+.defra-filter--open .govuk-button {
+  box-shadow: none !important;
+  background-color: #1d70b8 !important;
+  color: #ffffff !important;
+  margin-bottom: 0;
+}
+@media (min-width: 48.0625em) {
+  .defra-filter--open .govuk-button {
+    padding-bottom: 30px;
+    height: 70px;
+  }
+}
+
+@media (min-width: 641px) {
+  .defra-filter--open .govuk-button {
+    height: 70px;
+    padding-bottom: 30px;
+  }
+  .defra-filter--content {
+    margin-top: -10px;
+  }
+}
+
+.defra-filter--open .govuk-button .defra-filter__icon:before {
+  background-color: #ffffff !important;
+}
+.defra-filter--open .govuk-button .defra-filter__icon:after {
+  background-color: transparent !important;
+}
+
+/* GOV.UK search filtering summary section */
+.app-c-filter-summary {
+  padding-bottom: 5px;
+}
+
+.app-c-filter-summary__heading {
+  margin-top: 15px; 
+  margin-bottom: 10px;
+  font-family: "GDS Transport",arial,sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 400;
+  font-size: 1.1875rem;
+  line-height: 1.3157894737;
+}
+@media print {
+  .app-c-filter-summary__heading {
+    font-family: sans-serif;
+  }
+}
+@media print {
+  .app-c-filter-summary__heading {
+    font-size: 14pt;
+    line-height: 1.15;
+  }
+}
+
+.app-c-filter-summary__remove-filters {
+  list-style-type: none;
+  margin-block-start:0;padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.app-c-filter-summary__remove-filter {
+  border: 2px solid #1d70b8;
+  border-radius: .3125em;
+  padding: 5px 10px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  color: #0b0c0c;
+  background-color: #ffffff;
+  font-family: "GDS Transport",arial,sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 400;
+  font-size: 1.1875rem;
+  line-height: 1.3157894737;
+}
+@media print {
+  .app-c-filter-summary__remove-filter {
+    font-family: sans-serif;
+  }
+}
+@media print {
+  .app-c-filter-summary__remove-filter {
+    font-size: 14pt;
+    line-height: 1.15;
+  }
+}
+.app-c-filter-summary__remove-filter:focus {
+  background-color: #fd0;
+  outline: 2px #0b0c0c solid;
+  outline-offset: 0;
+  border-color: #0b0c0c;
+}
+.app-c-filter-summary__remove-filter:hover {
+  outline: 1px #0b0c0c solid;
+  outline-offset: 0;
+  border-color: #0b0c0c;
+}
+.app-c-filter-summary__remove-filter::before {
+  margin-top: 1px;
+  content: "×";
+  padding-right: 5px;
+  font-size: 22px;
+}
+
+.app-c-filter-summary__clear-filters {
+  font-family: "GDS Transport",arial,sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 400;
+  font-size: 1.1875rem;
+  line-height: 1.3157894737;
+}
+@media print {
+  .app-c-filter-summary__clear-filters {
+    font-family: sans-serif;
+  }
+}
+@media print {
+  .app-c-filter-summary__clear-filters {
+    font-size: 14pt;
+    line-height: 1.15;
+  }
+}
+
+/* TEMPORARY - Expansion on the GOV.UK Design System radio component https://design-system.service.gov.uk/components/radio) to stop inline radio buttons labels wrapping */
+.govuk-radios--inline {
+  text-wrap-mode: nowrap;
 }
