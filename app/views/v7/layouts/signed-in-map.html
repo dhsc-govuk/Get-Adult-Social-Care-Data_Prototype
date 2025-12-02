@@ -169,7 +169,7 @@
             <li class="govuk-service-navigation__item govuk-service-navigation__item-start">{{data.locationName or 'Shoggins Care Services (Sudbury)'}}</li>
             {% else %}
             <li class="govuk-service-navigation__item govuk-service-navigation__item-start">
-              {{data.locationName or 'Shoggins Care Services (Sudbury)'}} <a class="govuk-service-navigation__link govuk-service-navigation__link-change" href="/v7/signed-in/select-location?searchRequired={{data.searchRequired or 'true'}}&paginationRequired={{data.paginationRequired or 'true'}}{% if data.searchRequired != 'false' and data.paginationRequired != 'false' %}&page1=true{% endif %}">Change</a>
+              {{data.locationName or 'Shoggins Care Services (Sudbury)'}} <a class="govuk-service-navigation__link govuk-service-navigation__link-change" href="/v7/signed-in/select-location?searchRequired={{data.searchRequired or 'true'}}&paginationRequired={{data.paginationRequired or 'true'}}{% if data.searchRequired != 'false' and data.paginationRequired != 'false' %}&page1=true{% endif %}&updateMyLocation=true">Change</a>
             </li>
             {% endif %}
             <li class="govuk-service-navigation__item govuk-service-navigation__item-end">

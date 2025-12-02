@@ -440,6 +440,7 @@
 
 {% block pageScripts %}
 <!-- Searchable radio button choices (configuration) -->
+{% if updateMyLocation == "true" %}
 <script>
 
 	$(document).ready(function() {
@@ -461,6 +462,29 @@
   });
     
 </script>
+{% else %}
+<script>
+
+	$(document).ready(function() {
+
+    // Pass these parameters in (below)
+		radioButtonsSearch(
+      // (120) - total items (totalRadioButtonCount)
+      120,
+      // (true) - boolean whether to clear down the session data or not
+      true,
+      // (100) - how many items to show per page
+			100,
+      // 1 result
+			"location",
+      // 2+ results
+			"locations"
+		)
+
+  });
+    
+</script>
+{% endif %}
 <!-- Searchable radio button choices (code) -->
 <script src="/public/javascripts/v7/radio-button-editing.js"></script>
 <!-- Dynamic search against all radio buttons (provider locations) -->

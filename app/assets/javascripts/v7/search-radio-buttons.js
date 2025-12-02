@@ -17,7 +17,7 @@ $(document).ready(function () {
 
 		// If the user hasn't searched
 		if (searchInputValue == "") {
-			// Show the hidden 'clear search and selection' link
+			// Show the hidden 'clear search' link
 			$(clearFilter).removeClass("hidden");
 			$(clearFilter).attr("aria-hidden", false);
 			$(clearFilter).removeAttr("hidden");
@@ -27,8 +27,7 @@ $(document).ready(function () {
 			$("#selectedChoiceHeading").attr("aria-hidden", false);
 			$("#selectedChoiceHeading").removeAttr("hidden");
 			
-			// Rename the link and associated header 
-			$("#clearSearchAndSelection").text("Clear selection");
+			// Rename the associated header 
 			$("#selectedChoiceHeading").text("You’ve selected “" + selectedRadioButtonValue + "”");
 		}
 		// Unless they have searched...
@@ -44,7 +43,7 @@ $(document).ready(function () {
 			$("#selectedChoiceHeading").removeAttr("hidden");
 			
 			// Rename the link and associated header 
-			$("#clearSearchAndSelection").text("Clear search and selection");
+			$("#clearSearchAndSelection").text("Clear search");
 			$("#selectedChoiceHeading").text("You’ve selected “" + selectedRadioButtonValue + "”");
 		}
 

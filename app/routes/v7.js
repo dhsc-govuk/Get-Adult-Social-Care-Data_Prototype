@@ -190,7 +190,8 @@ module.exports = function(router) {
       'error2' : req.query.error2,
       'page1' : req.query.page1,
       'page2' : req.query.page2,
-      'searchLocation' : req.query.searchLocation      
+      'searchLocation' : req.query.searchLocation,
+      'updateMyLocation' : req.query.updateMyLocation
 		})
   })
   // NON JAVASCRIPT - Deal with the non JavaScript scenario (e.g. POST) for users entering an empty search on the radio buttons
