@@ -256,9 +256,10 @@ module.exports = function(router) {
 
   /*****
    * Signed in
-   * Data > Care homes
+   * Data > Care provision
   *****/
 
+  // Care providers: locations and services
   router.get('/' + version + '/' + 'signed-in/topics/residential-care/residential-care-providers/data', function (req, res) {
     res.render(version + '/signed-in/topics/residential-care/residential-care-providers/data', {
       'sessionTimeoutJs' : req.query.sessionTimeoutJs,
@@ -278,6 +279,53 @@ module.exports = function(router) {
 		// No filters selected by user
 		else {			
       res.redirect('/' + version + '/' + 'signed-in/topics/residential-care/residential-care-providers/data?filterApplied=')
+    }
+    
+  })
+
+  // Care home beds and occupancy levels
+  router.post('/' + version + '/' + 'signed-in/topics/residential-care/provision-and-occupancy/data-update-filters1', function (req, res) {
+
+    // Data objects to be retrieved and queried
+    var bedType1 = req.session.data['bedType1']
+
+    // User has chosen at least 1 filter  
+		if (bedType1) {
+      res.redirect('/' + version + '/' + 'signed-in/topics/residential-care/provision-and-occupancy/data?filterApplied1=Yes#data1')     
+		}
+		// No filters selected by user
+		else {			
+      res.redirect('/' + version + '/' + 'signed-in/topics/residential-care/provision-and-occupancy/data?filterApplied1=#data1')
+    }
+    
+  })
+  router.post('/' + version + '/' + 'signed-in/topics/residential-care/provision-and-occupancy/data-update-filters2', function (req, res) {
+
+    // Data objects to be retrieved and queried
+    var bedType2 = req.session.data['bedType2']
+
+    // User has chosen at least 1 filter  
+		if (bedType2) {
+      res.redirect('/' + version + '/' + 'signed-in/topics/residential-care/provision-and-occupancy/data?filterApplied2=Yes#data2')     
+		}
+		// No filters selected by user
+		else {			
+      res.redirect('/' + version + '/' + 'signed-in/topics/residential-care/provision-and-occupancy/data?filterApplied2=#data2')
+    }
+    
+  })
+  router.post('/' + version + '/' + 'signed-in/topics/residential-care/provision-and-occupancy/data-update-filters4', function (req, res) {
+
+    // Data objects to be retrieved and queried
+    var bedType4 = req.session.data['bedType4']
+
+    // User has chosen at least 1 filter  
+		if (bedType4) {
+      res.redirect('/' + version + '/' + 'signed-in/topics/residential-care/provision-and-occupancy/data?filterApplied4=Yes#trend1')     
+		}
+		// No filters selected by user
+		else {			
+      res.redirect('/' + version + '/' + 'signed-in/topics/residential-care/provision-and-occupancy/data?filterApplied4=#trend1')
     }
     
   })

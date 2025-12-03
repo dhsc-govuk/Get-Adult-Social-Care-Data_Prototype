@@ -963,8 +963,3 @@
     line-height: 1.15;
   }
 }
-
-/* TEMPORARY - Expansion on the GOV.UK Design System radio component https://design-system.service.gov.uk/components/radio) to stop inline radio buttons labels wrapping */
-.govuk-radios--inline {
-  text-wrap-mode: nowrap;
-}

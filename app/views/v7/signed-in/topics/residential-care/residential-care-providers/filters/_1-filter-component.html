@@ -1,4 +1,4 @@
-<div class="defra-filter--action" style="display: none;">
+<div id="defra-filter--action" class="defra-filter--action" style="display: none;">
   <button id="defra-filter--button" class="govuk-button{% if query.filterApplied == 'Yes' %} defra-filter-button--active{% endif %}" type="button" aria-expanded="false">
     <span class="defra-filter--button-content">Show filters</span>
     <span class="defra-filter__icon"></span>
@@ -9,7 +9,7 @@
 
   <div class="govuk-grid-column-full">
 
-    <div class="defra-filter--content">
+    <div id="defra-filter--content" class="defra-filter--content">
 
       <form action="data-update-filters" method="post" novalidate>
 

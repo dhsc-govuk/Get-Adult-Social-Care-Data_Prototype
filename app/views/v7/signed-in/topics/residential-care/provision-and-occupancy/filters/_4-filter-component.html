@@ -1,0 +1,180 @@
+<div id="defra-filter--action4" class="defra-filter--action" style="display: none;">
+  <button id="defra-filter--button4" class="govuk-button{% if query.filterApplied4 == 'Yes' %} defra-filter-button--active{% endif %}" type="button" aria-expanded="false">
+    <span class="defra-filter--button-content">Show filters</span>
+    <span class="defra-filter__icon"></span>
+  </button>
+</div>
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-full">
+
+    <div id="defra-filter--content4" class="defra-filter--content">
+
+      <form action="data-update-filters4" method="post" novalidate>
+
+        <div class="govuk-grid-row">
+          
+          <div class="govuk-grid-column-one-third govuk-grid-column-one-third-searchable-checkboxes-section">
+            {% include "./_4-bed-types.html" %}
+          </div>
+
+        </div>
+
+        <div class="govuk-grid-row govuk-!-margin-top-4">
+
+          <div class="govuk-grid-column-full">
+
+            <div class="govuk-button-group">
+              <button id="update-filters4" type="submit" class="govuk-button" data-module="govuk-button" name="filterApplied4" value="Yes">Apply</button>
+              {% if data.filterApplied4 %}
+              <a href="?filterApplied4=&bedType4=#trend1" class="govuk-link app-button--link">Clear all</a>
+              {% endif %}
+            </div>
+            
+          </div>
+
+        </div>
+
+      </form>
+
+    </div>
+
+  </div>
+
+</div>
+{% if data.filterApplied4 %}
+
+<div class="app-c-filter-summary">
+  <h5 class="app-c-filter-summary__heading">Active filters</h5>
+  <ul class="app-c-filter-summary__remove-filters">
+    {% for param in data.bedType4 %}
+    {% if param == "All bed types" %}
+    <li id="bedType4_1-remove">
+      <a class="app-c-filter-summary__remove-filter" href="#">
+        <span class="app-c-filter-summary__remove-filter-text">
+          <span class="govuk-visually-hidden">Remove filter</span>
+          Bed type: All bed types
+        </span>
+      </a>
+    </li>
+    {% endif %}
+    {% if param == "Community care bed" %}
+    <li id="bedType4_2-remove">
+      <a class="app-c-filter-summary__remove-filter" href="#">
+        <span class="app-c-filter-summary__remove-filter-text">
+          <span class="govuk-visually-hidden">Remove filter</span>
+          Bed type: Community care bed
+        </span>
+      </a>
+    </li>
+    {% endif %}
+    {% if param == "Dementia nursing" %}
+    <li id="bedType4_3-remove">
+      <a class="app-c-filter-summary__remove-filter" href="#">
+        <span class="app-c-filter-summary__remove-filter-text">
+          <span class="govuk-visually-hidden">Remove filter</span>
+          Bed type: Dementia nursing
+        </span>
+      </a>
+    </li>
+    {% endif %}
+    {% if param == "Dementia residential" %}
+    <li id="bedType4_4-remove">
+      <a class="app-c-filter-summary__remove-filter" href="#">
+        <span class="app-c-filter-summary__remove-filter-text">
+          <span class="govuk-visually-hidden">Remove filter</span>
+          Bed type: Dementia residential
+        </span>
+      </a>
+    </li>
+    {% endif %}
+    {% if param == "General nursing" %}
+    <li id="bedType4_5-remove">
+      <a class="app-c-filter-summary__remove-filter" href="#">
+        <span class="app-c-filter-summary__remove-filter-text">
+          <span class="govuk-visually-hidden">Remove filter</span>
+          Bed type: General nursing
+        </span>
+      </a>
+    </li>
+    {% endif %}
+    {% if param == "General residential" %}
+    <li id="bedType4_6-remove">
+      <a class="app-c-filter-summary__remove-filter" href="#">
+        <span class="app-c-filter-summary__remove-filter-text">
+          <span class="govuk-visually-hidden">Remove filter</span>
+          Bed type: General residential
+        </span>
+      </a>
+    </li>
+    {% endif %}
+    {% if param == "Learning disability nursing" %}
+    <li id="bedType4_7-remove">
+      <a class="app-c-filter-summary__remove-filter" href="#">
+        <span class="app-c-filter-summary__remove-filter-text">
+          <span class="govuk-visually-hidden">Remove filter</span>
+          Bed type: Learning disability nursing
+        </span>
+      </a>
+    </li>
+    {% endif %}
+    {% if param == "Learning disability residential" %}
+    <li id="bedType4_8-remove">
+      <a class="app-c-filter-summary__remove-filter" href="#">
+        <span class="app-c-filter-summary__remove-filter-text">
+          <span class="govuk-visually-hidden">Remove filter</span>
+          Bed type: Learning disability residential
+        </span>
+      </a>
+    </li>
+    {% endif %}
+    {% if param == "Mental health nursing" %}
+    <li id="bedType4_9-remove">
+      <a class="app-c-filter-summary__remove-filter" href="#">
+        <span class="app-c-filter-summary__remove-filter-text">
+          <span class="govuk-visually-hidden">Remove filter</span>
+          Bed type: Mental health nursing
+        </span>
+      </a>
+    </li>
+    {% endif %}
+    {% if param == "Mental health residential" %}
+    <li id="bedType4_10-remove">
+      <a class="app-c-filter-summary__remove-filter" href="#">
+        <span class="app-c-filter-summary__remove-filter-text">
+          <span class="govuk-visually-hidden">Remove filter</span>
+          Bed type: Mental health residential
+        </span>
+      </a>
+    </li>
+    {% endif %}
+    {% if param == "Transitional" %}
+    <li id="bedType4_11-remove">
+      <a class="app-c-filter-summary__remove-filter" href="#">
+        <span class="app-c-filter-summary__remove-filter-text">
+          <span class="govuk-visually-hidden">Remove filter</span>
+          Bed type: Transitional
+        </span>
+      </a>
+    </li>
+    {% endif %}
+    {% if param == "Young physically disabled" %}
+    <li id="bedType4_12-remove">
+      <a class="app-c-filter-summary__remove-filter" href="#">
+        <span class="app-c-filter-summary__remove-filter-text">
+          <span class="govuk-visually-hidden">Remove filter</span>
+          Bed type: Young physically disabled
+        </span>
+      </a>
+    </li>
+    {% endif %}
+    {% endfor %}
+  </ul>
+
+  <div>
+    <a class="app-c-filter-summary__clear-filters govuk-link govuk-link--no-visited-state" href="?filterApplied4=&bedType4=#trend1">Clear all filters</a>
+  </div>
+
+</div>
+{% endif %}

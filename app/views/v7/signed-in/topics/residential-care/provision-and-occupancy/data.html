@@ -1,4 +1,4 @@
-{% extends "v7/layouts/signed-in.html" %}
+{% extends "v7/layouts/signed-in-map.html" %}
 
 {% set pageName = "Care home beds and occupancy levels" %}
 
@@ -40,15 +40,7 @@
         <div class="govuk-form-group">
           <h3 id="data1" class="govuk-heading-m">Care home bed numbers</h3>
           <p class="govuk-body">Find out <a href="../../../help/beds-per-100000-adult-population" class="govuk-link">how the number of adult social care beds per 100,000 adult population is calculated</a>.</p>
-          <dl class="govuk-summary-list">
-
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">Filter</dt>
-              <dd class="govuk-summary-list__value">{% if data.bedType %}{{data.bedType}}{% else %}All bed types{% endif %}</dd>
-              <dd class="govuk-summary-list__actions"><a class="govuk-link" href="filters/_1-filters">Change<span class="govuk-visually-hidden"> filter</span></a></dd>
-            </div>
-
-          </dl>
+          {% include "./filters/_1-filter-component.html" %}
         </div>
 
         <h3 class="govuk-tabs__title">Contents</h3>
@@ -103,30 +95,7 @@
         <div class="govuk-form-group">
           <h3 id="data2" class="govuk-heading-m">Care home bed types</h3>
           <p class="govuk-body">Find out how <a href="../../../help/beds-per-100000-adult-population" class="govuk-link">the number of adult social care beds per 100,000 adult population</a> are calculated.</p>
-          <dl class="govuk-summary-list">
-
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">Filters</dt>
-              <dd class="govuk-summary-list__value">
-                {% if data.bedType2 %}
-                {% for param in data.bedType2 %}
-                {{param}}
-                <br>
-                {% endfor %}
-                {% else %}
-                All bed types
-                <br>
-                General nursing
-                <br>
-                Transitional
-                <br>
-                Young physically disabled
-                {% endif %}
-              </dd>
-              <dd class="govuk-summary-list__actions"><a class="govuk-link" href="filters/_2-filters">Change<span class="govuk-visually-hidden"> filters</span></a></dd>
-            </div>
-
-            </dl>
+          {% include "./filters/_2-filter-component.html" %}
         </div>
 
         <h3 class="govuk-tabs__title">Contents</h3>
@@ -257,21 +226,7 @@
         <div class="govuk-form-group">
           <h3 id="trend1" class="govuk-heading-m">Care home bed numbers - trends over time</h3>
           <p class="govuk-body">Find out <a href="../../../help/beds-per-100000-adult-population-over-time" class="govuk-link">how the total number of adult social care beds per 100,000 adults in the local authority area over time is calculated</a>.</p>
-          <dl class="govuk-summary-list">
-
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">Filters</dt>
-              <dd class="govuk-summary-list__value">
-                All bed types
-                <br>
-                Dementia nursing
-                <br>
-                Dementia residential
-              </dd>
-              <dd class="govuk-summary-list__actions"><a href="filters/_4-filters" class="govuk-link">Change<span class="govuk-visually-hidden"> filters</span></a></dd>
-            </div>
-
-          </dl>
+          {% include "./filters/_4-filter-component.html" %}
         </div>
 
         <h3 class="govuk-tabs__title">Contents</h3>
@@ -414,4 +369,223 @@
   </div>
 
 </div>
+{% endblock %}
+
+{% block pageScripts %}
+<!-- jQuery (progressive enhancement) that loads and controls the dynamic filters for this page -->
+<script type="text/javascript">
+  
+  window.addEventListener('load', function() {
+
+    // Hide all dynamic filter sections (i.e. all filter options)
+    $('.defra-filter--content').hide();
+    // Show all dynamic filter buttons
+    $('.defra-filter--action').show();
+
+    // Filter 1 (Care home bed numbers) - User interacts with the filter button
+    $('#defra-filter--button1').on("click", function() {
+      
+      if (!$('#defra-filter--action1').hasClass('defra-filter--open')) {
+        $('#defra-filter--content1').show().focus();
+        $('#defra-filter--action1').addClass('defra-filter--open');
+        $('#defra-filter--button1').attr('aria-expanded', 'true');
+        $("#defra-filter--button1 .defra-filter--button-content").text('Hide filters');
+      }
+      else {
+        $('#defra-filter--content1').hide();
+        $('#defra-filter--action1').removeClass('defra-filter--open');
+        $('#defra-filter--button1').attr('aria-expanded', 'false');
+        $("#defra-filter--button1 .defra-filter--button-content").text('Show filters');
+      }
+
+    });
+
+    // Filter 2 (Care home bed types) - User interacts with the filter button
+    $('#defra-filter--button2').on("click", function() {
+      
+      if (!$('#defra-filter--action2').hasClass('defra-filter--open')) {
+        $('#defra-filter--content2').show().focus();
+        $('#defra-filter--action2').addClass('defra-filter--open');
+        $('#defra-filter--button2').attr('aria-expanded', 'true');
+        $("#defra-filter--button2 .defra-filter--button-content").text('Hide filters');
+      }
+      else {
+        $('#defra-filter--content2').hide();
+        $('#defra-filter--action2').removeClass('defra-filter--open');
+        $('#defra-filter--button2').attr('aria-expanded', 'false');
+        $("#defra-filter--button2 .defra-filter--button-content").text('Show filters');
+      }
+
+    });
+
+    /* Filter 2 (Care home bed types) - Quick and dirty way of updating the filters individually, when a user clicks a related pill */
+    // 
+    // All bed types
+    $('#bedType2_1-remove').on("click", function(e) {
+      e.preventDefault();
+      $('#bedType2_1').prop("checked", false);
+      $('#update-filters2').click();
+    });
+    // Community care bed
+    $('#bedType2_2-remove').on("click", function(e) {
+      e.preventDefault();
+      $('#bedType2_2').prop("checked", false);
+      $('#update-filters2').click();
+    });
+    // Dementia nursing
+    $('#bedType2_3-remove').on("click", function(e) {
+      e.preventDefault();
+      $('#bedType2_3').prop("checked", false);
+      $('#update-filters2').click();
+    });
+    // Dementia residential
+    $('#bedType2_4-remove').on("click", function(e) {
+      e.preventDefault();
+      $('#bedType2_4').prop("checked", false);
+      $('#update-filters2').click();
+    });
+    // General nursing
+    $('#bedType2_5-remove').on("click", function(e) {
+      e.preventDefault();
+      $('#bedType2_5').prop("checked", false);
+      $('#update-filters2').click();
+    });
+    // General residential
+    $('#bedType2_6-remove').on("click", function(e) {
+      e.preventDefault();
+      $('#bedType2_6').prop("checked", false);
+      $('#update-filters2').click();
+    });
+    // Learning disability nursing
+    $('#bedType2_7-remove').on("click", function(e) {
+      e.preventDefault();
+      $('#bedType2_7').prop("checked", false);
+      $('#update-filters2').click();
+    });
+    // Learning disability residential
+    $('#bedType2_8-remove').on("click", function(e) {
+      e.preventDefault();
+      $('#bedType2_8').prop("checked", false);
+      $('#update-filters2').click();
+    });
+    // Mental health nursing
+    $('#bedType2_9-remove').on("click", function(e) {
+      e.preventDefault();
+      $('#bedType2_9').prop("checked", false);
+      $('#update-filters2').click();
+    });
+    // Mental health residential
+    $('#bedType2_10-remove').on("click", function(e) {
+      e.preventDefault();
+      $('#bedType2_10').prop("checked", false);
+      $('#update-filters2').click();
+    });
+    // Transitional
+    $('#bedType2_11-remove').on("click", function(e) {
+      e.preventDefault();
+      $('#bedType2_11').prop("checked", false);
+      $('#update-filters2').click();
+    });
+    // Young physically disabled
+    $('#bedType2_12-remove').on("click", function(e) {
+      e.preventDefault();
+      $('#bedType2_12').prop("checked", false);
+      $('#update-filters2').click();
+    });
+
+    // Filter 4 (Care home bed numbers - trends over time) - User interacts with the filter button 
+    $('#defra-filter--button4').on("click", function() {
+      
+      if (!$('#defra-filter--action4').hasClass('defra-filter--open')) {
+        $('#defra-filter--content4').show().focus();
+        $('#defra-filter--action4').addClass('defra-filter--open');
+        $('#defra-filter--button4').attr('aria-expanded', 'true');
+        $("#defra-filter--button4 .defra-filter--button-content").text('Hide filters');
+      }
+      else {
+        $('#defra-filter--content4').hide();
+        $('#defra-filter--action4').removeClass('defra-filter--open');
+        $('#defra-filter--button4').attr('aria-expanded', 'false');
+        $("#defra-filter--button4 .defra-filter--button-content").text('Show filters');
+      }
+
+    });
+
+    /* Filter 4 (Care home bed numbers - trends over time) - Quick and dirty way of updating the filters individually, when a user clicks a related pill */
+    // All bed types
+    $('#bedType4_1-remove').on("click", function(e) {
+      e.preventDefault();
+      $('#bedType4_1').prop("checked", false);
+      $('#update-filters4').click();
+    });
+    // Community care bed
+    $('#bedType4_2-remove').on("click", function(e) {
+      e.preventDefault();
+      $('#bedType4_2').prop("checked", false);
+      $('#update-filters4').click();
+    });
+    // Dementia nursing
+    $('#bedType4_3-remove').on("click", function(e) {
+      e.preventDefault();
+      $('#bedType4_3').prop("checked", false);
+      $('#update-filters4').click();
+    });
+    // Dementia residential
+    $('#bedType4_4-remove').on("click", function(e) {
+      e.preventDefault();
+      $('#bedType4_4').prop("checked", false);
+      $('#update-filters4').click();
+    });
+    // General nursing
+    $('#bedType4_5-remove').on("click", function(e) {
+      e.preventDefault();
+      $('#bedType4_5').prop("checked", false);
+      $('#update-filters4').click();
+    });
+    // General residential
+    $('#bedType4_6-remove').on("click", function(e) {
+      e.preventDefault();
+      $('#bedType4_6').prop("checked", false);
+      $('#update-filters4').click();
+    });
+    // Learning disability nursing
+    $('#bedType4_7-remove').on("click", function(e) {
+      e.preventDefault();
+      $('#bedType4_7').prop("checked", false);
+      $('#update-filters4').click();
+    });
+    // Learning disability residential
+    $('#bedType4_8-remove').on("click", function(e) {
+      e.preventDefault();
+      $('#bedType4_8').prop("checked", false);
+      $('#update-filters4').click();
+    });
+    // Mental health nursing
+    $('#bedType4_9-remove').on("click", function(e) {
+      e.preventDefault();
+      $('#bedType4_9').prop("checked", false);
+      $('#update-filters4').click();
+    });
+    // Mental health residential
+    $('#bedType4_10-remove').on("click", function(e) {
+      e.preventDefault();
+      $('#bedType4_10').prop("checked", false);
+      $('#update-filters4').click();
+    });
+    // Transitional
+    $('#bedType4_11-remove').on("click", function(e) {
+      e.preventDefault();
+      $('#bedType4_11').prop("checked", false);
+      $('#update-filters4').click();
+    });
+    // Young physically disabled
+    $('#bedType4_12-remove').on("click", function(e) {
+      e.preventDefault();
+      $('#bedType4_12').prop("checked", false);
+      $('#update-filters4').click();
+    });
+
+  });
+  
+</script>
 {% endblock %}
