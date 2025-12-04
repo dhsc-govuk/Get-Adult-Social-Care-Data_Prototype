@@ -274,11 +274,11 @@ module.exports = function(router) {
 
     // User has chosen at least 1 filter  
 		if (postcode1 || serviceType1) {
-      res.redirect('/' + version + '/' + 'signed-in/topics/residential-care/residential-care-providers/data?filterApplied=Yes')     
+      res.redirect('/' + version + '/' + 'signed-in/topics/residential-care/residential-care-providers/data?filterApplied=Yes#data1')     
 		}
 		// No filters selected by user
 		else {			
-      res.redirect('/' + version + '/' + 'signed-in/topics/residential-care/residential-care-providers/data?filterApplied=')
+      res.redirect('/' + version + '/' + 'signed-in/topics/residential-care/residential-care-providers/data?filterApplied=#data1')
     }
     
   })
