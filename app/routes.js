@@ -7,6 +7,7 @@ const govukPrototypeKit = require('govuk-prototype-kit')
 const router = govukPrototypeKit.requests.setupRouter()
 
 // Versioned route files
+require('./routes/v8')(router)
 require('./routes/private-beta/2025/december/routes')(router)
 require('./routes/v7')(router)
 require('./routes/v6')(router)

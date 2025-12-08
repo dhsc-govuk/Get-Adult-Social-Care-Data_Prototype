@@ -1,0 +1,70 @@
+{% extends "v8/gov-uk/one-login/layouts/default.html" %}
+
+<!-- Set a blank service name (i.e. not get adult social care data) -->
+{% set serviceName %}
+{% endset %}
+
+{% block pageTitle %}
+  How do you want to get a security code? - GOV.UK One Login – Prototype Kit
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-two-thirds">
+
+    <form action="how-do-you-want-security-codes-validation" method="post" novalidate>
+      
+      {% if error %}
+      <div class="govuk-error-summary" data-module="govuk-error-summary">
+        
+        <div role="alert">
+          <h2 class="govuk-error-summary__title">There is a problem</h2>
+
+          <div class="govuk-error-summary__body">
+            <ul class="govuk-list govuk-error-summary__list">
+              <li>
+                <a href="#mfa-method-id">Select how you want to get a security code</a>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+
+      </div>
+      {% endif %}
+
+      <div class="govuk-form-group{% if error %} govuk-form-group--error{% endif %}">
+        <fieldset class="govuk-fieldset"{% if error %} aria-describedby="mfa-method-id-error"{% endif %}>
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <h1 class="govuk-fieldset__heading">How do you want to get a security code?</h1>
+          </legend>
+          {% if error %}
+          <p id="mfa-method-id-error" class="govuk-error-message"><span class="govuk-visually-hidden">Error:</span> Select how you want to get a security code</p>
+          {% endif %}
+  
+          <div class="govuk-radios" id="mfa-method" data-module="govuk-radios" data-govuk-radios-init="">
+      
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="mfa-method-id" name="mfa-method-id" type="radio" value="Use your authenticator app">
+              <label class="govuk-label govuk-radios__label" for="mfa-method-id">Use your authenticator app</label>
+            </div>
+      
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="mfa-method-id-2" name="mfa-method-id" type="radio" value="Text message">
+              <label class="govuk-label govuk-radios__label" for="mfa-method-id-2">Text message to your phone number ending with <span class="govuk-!-font-weight-bold">608</span></label>
+            </div>
+
+          </div>
+
+        </fieldset>
+      </div>
+
+      <button type="Submit" data-prevent-double-click="true" class="govuk-button" data-module="govuk-button" data-govuk-button-init="">Continue</button>
+      <p class="govuk-body">If you have permanently lost access to both of these methods, <a href="/mfa-reset-with-ipv" class="govuk-link" rel="noreferrer noopener">check if you can change how you get security codes</a>.</p>
+    </form>
+  
+  </div>
+
+</div>
+{% endblock %}

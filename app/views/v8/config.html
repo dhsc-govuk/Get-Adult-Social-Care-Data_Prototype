@@ -1,0 +1,109 @@
+{% extends "govuk-prototype-kit/layouts/unbranded.html" %}
+
+{% block content %}
+<style>
+
+  /* Minor workaround to remove the light grey (#f4f8fb) footer due to the content container not having enough in it */
+  html, body {
+    height: 100%;
+  }
+
+</style>
+
+<div class="govuk-form-group">
+  <a class="govuk-back-link" href="../index">Back</a>
+</div>
+
+<h1 class="govuk-heading-xl">
+  <span class="govuk-caption-xl">v{{version}}</span>
+  Choose your user journey
+</h1>
+
+<form action="config-validation" method="post" novalidate>
+  <button type="submit" class="govuk-button" data-module="govuk-button">Continue</button>
+
+  <!-- <div class="govuk-form-group">
+    <fieldset class="govuk-fieldset">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">User type</legend>
+      
+      <div class="govuk-radios" data-module="govuk-radios">
+
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="user_type_1" name="userType" type="radio" value="Care home provider" checked="checked">
+          <label class="govuk-label govuk-radios__label" for="user_type_1">Care home provider</label>
+        </div>
+
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="user_type_2" name="userType" type="radio" value="Community social care provider">
+          <label class="govuk-label govuk-radios__label" for="user_type_2">Community social care provider</label>
+        </div>
+
+      </div>
+
+    </fieldset>
+  </div> -->
+
+  <div class="govuk-form-group">
+    <fieldset class="govuk-fieldset">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">Entry point</legend>
+    
+      <div class="govuk-radios" data-module="govuk-radios">
+
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="entry_point_1" name="entryPoint" type="radio" value="Start page (private beta)">
+          <label class="govuk-label govuk-radios__label" for="entry_point_1">Start page (private beta)</label>
+        </div>
+
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="entry_point_2" name="entryPoint" type="radio" value="Start page on GOV.UK (public beta)">
+          <label class="govuk-label govuk-radios__label" for="entry_point_2">Start page on GOV.UK (public beta)</label>
+        </div>
+
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="entry_point_3" name="entryPoint" type="radio" value="GOV.UK One Login">
+          <label class="govuk-label govuk-radios__label" for="entry_point_3">GOV.UK One Login</label>
+        </div>
+
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="entry_point_4" name="entryPoint" type="radio" value="{{serviceName}}" checked="checked">
+          <label class="govuk-label govuk-radios__label" for="entry_point_4">{{serviceName}}</label>
+        </div>
+
+      </div>
+
+    </fieldset>
+  </div>
+
+  <div class="govuk-form-group">
+    <fieldset class="govuk-fieldset">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">Number of locations</legend>
+      
+      <div class="govuk-radios" data-module="govuk-radios">
+
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="number_of_locations_1" name="numberOfLocations" type="radio" value="1">
+          <label class="govuk-label govuk-radios__label" for="number_of_locations_1">1</label>
+        </div>
+
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="number_of_locations_2" name="numberOfLocations" type="radio" value="2 to 20">
+          <label class="govuk-label govuk-radios__label" for="number_of_locations_2">2 to 20</label>
+        </div>
+        
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="number_of_locations_3" name="numberOfLocations" type="radio" value="21 to 100">
+          <label class="govuk-label govuk-radios__label" for="number_of_locations_3">21 to 100</label>
+        </div>
+
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="number_of_locations_4" name="numberOfLocations" type="radio" value="101 or more" checked="checked">
+          <label class="govuk-label govuk-radios__label" for="number_of_locations_4">101 or more</label>
+        </div>
+
+      </div>
+
+    </fieldset>
+  </div>
+
+</form>
+{% endblock %}

@@ -1,0 +1,308 @@
+{% extends "v8/gov-uk/one-login/layouts/signed-in-security.html" %}
+
+<!-- Set a blank service name (i.e. not get adult social care data) -->
+{% set serviceName %}
+{% endset %}
+
+{% block pageTitle %}
+  Security - GOV.UK One Login – Prototype Kit
+{% endblock %}
+
+{% block content %}
+<style>
+
+  .govuk-header__container-design-hub {
+    border-bottom: 10px solid #4c2c92;
+  }
+
+  .govuk-header__container--full-width {
+    padding: 0 15px;
+    border-color: #1d70b8;
+  }
+  .govuk-header__container--full-width .govuk-header__menu-button {
+    right: 15px;
+  }
+
+  .govuk-header__container {
+    position: relative;
+    margin-bottom: -10px;
+    padding-top: 10px;
+    border-bottom: 10px solid #1d70b8;
+  }
+  .govuk-header__container::after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+
+  .govuk-template--rebranded .govuk-header__container {
+    margin-bottom: 0;
+    padding-top: 0;
+    border-bottom: none;
+  }
+
+  .govuk-header--full-width-border {
+    border-bottom-color: #1d70b8;
+  }
+  .govuk-header--full-width-border .govuk-header__container {
+    border-bottom-color: transparent;
+  }
+
+  .govuk-header__container {
+    display: flex;
+    justify-content: space-between; /* Logo on left, sign out on right */
+    align-items: center;
+    flex-wrap: nowrap; /* Prevent wrapping unless absolutely necessary */
+  }
+
+  .govuk-header__container-design-hub {
+    border-bottom: 10px solid #4c2c92;
+  }
+
+  @media (min-width: 48.0625em) {
+    .govuk-header__logo {
+      width: 33.33%; /* Optional: constrain width if needed */
+      padding-right: 0px !important; /* Remove default GOV.UK padding */
+      float: left; /* Support older layouts */
+      vertical-align: top;
+    }
+  }
+
+  @media (max-width: 48.0525em) {
+    .govuk-header--with-js-navigation .govuk-header__logo {
+      padding-right: 80px;
+    }
+  }
+
+  .govuk-header__logo,
+  .govuk-header__content {
+    box-sizing: border-box;
+  }
+
+  .govuk-header__logo {
+    margin-bottom: 10px;
+  }
+  @media (min-width: 48.0625em) {
+    .govuk-header__logo {
+      width: 33.33%;
+      padding-right: 15px;
+      float: left;
+      vertical-align: top;
+    }
+    .govuk-header__logo:last-child {
+      width: auto;
+      padding-right: 0;
+      float: none;
+    }
+  }
+
+  .govuk-template--rebranded .govuk-header__logo {
+    margin-bottom: 0;
+    padding-top: 16px;
+    padding-bottom: 12px;
+  }
+
+  .govuk-header__logo {
+    display: flex; /* Align SVG and product name horizontally */
+    align-items: center; /* Vertically align items */
+    flex: 1 1 auto; /* Allow logo section to grow/shrink */
+    min-width: 0; /* Prevent overflow on small screens */
+  }
+  @media (min-width: 48.0625em) {
+    .govuk-header__logo {
+      width: 33.33%; /* Optional: constrain width if needed */
+      padding-right: 0px !important; /* Remove default GOV.UK padding */
+      float: left; /* Support older layouts */
+      vertical-align: top;
+    }
+  }
+
+  .govuk-header__product-name {
+    font-size: 1.125rem;
+    line-height: 1;
+    font-weight: 400;
+    display: inline-table;
+    margin-top: 10px;
+    vertical-align: top;
+  }
+  @media (min-width: 40.0625em) {
+    .govuk-header__product-name {
+      font-size: 1.5rem;
+      line-height: 1;
+    }
+  }
+  @media print {
+    .govuk-header__product-name {
+      font-size: 18pt;
+      line-height: 1;
+    }
+  }
+  @-moz-document url-prefix() {
+    .govuk-header__product-name {
+      margin-top: 9.5px;
+    }
+  }
+  @media (min-width: 40.0625em) {
+    .govuk-header__product-name {
+      margin-top: 5px;
+    }
+    @-moz-document url-prefix() {
+      .govuk-header__product-name {
+        margin-top: 4.5px;
+      }
+    }
+  }
+
+  .govuk-template--rebranded .govuk-header__product-name {
+    margin-top: 0;
+    margin-bottom: -0.0625rem;
+    font-size: 1.9375rem;
+    letter-spacing: -0.015em;
+    forced-color-adjust: none;
+  }
+  @media screen and (forced-colors: active) {
+    .govuk-template--rebranded .govuk-header__product-name {
+      color: LinkText;
+      background: transparent;
+    }
+  }
+  @media (min-width: 40.0625em) {
+    .govuk-template--rebranded .govuk-header__product-name {
+      margin-top: 0;
+    }
+  }
+  @media (min-width: 48.0625em) {
+    .govuk-template--rebranded .govuk-header__product-name {
+      margin-top: 0;
+    }
+  }
+
+  .govuk-header__product-name {
+    display: inline-block; /* Ensure it respects margin */
+    margin-left: 10px; /* Space between logo and text */
+    font-size: 19px;
+    font-weight: normal;
+    color: #ffffff;
+    line-height: 1;
+  }
+
+  @media (max-width: 48.06125em) {
+    .govuk-header__logo {
+      flex-direction: column; /* Stack logo and product name */
+      align-items: flex-start; /* Align to left edge */
+    }
+    .govuk-header__product-name {
+      margin-left: 0;
+      margin-top: 5px; /* Add spacing above when stacked */
+      font-size: 16px;
+    }
+  }
+
+  .govuk-header--purple-prototype .govuk-header__product-name {
+    background-color: transparent;
+    color: #ffffff !important; /* Optional: ensures white text */
+  }
+
+  .govuk-header__signout {
+    flex-shrink: 0; /* Don’t let it shrink if space gets tight */
+    margin-left: auto; /* Push to far right of flex container */
+  }
+
+  .govuk-header__link--signout {
+    white-space: nowrap; /* Prevent line break */
+    font-weight: bold;
+    font-size: 16px;
+    color: #ffffff;
+    text-decoration: none;
+    display: inline-block;
+  }
+  .govuk-header__link--signout:focus {
+    background-color: #fd0;
+    color: #0b0c0c;
+    outline: 3px solid #fd0;
+  }
+
+  .activity-card {
+    border: 1px solid #b1b4b6;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+  }
+
+  .activity-card-location {
+    color: #505A5F;
+    margin-bottom: 1em;
+  }
+
+  .activity-card-date {
+    color: #505A5F;
+    margin-bottom: 0px;
+  }
+
+  .activity-card--device {
+    margin-bottom: 20px;
+  }
+
+  .activity-card--device h3 {
+    padding-top: 1em;
+  }
+
+</style>          
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-two-thirds">  
+    <h1 class="govuk-heading-xl" id="header">Security</h1>
+
+    <div class="activity-card govuk-!-margin-bottom-6">
+      <h2 class="govuk-heading-m">Your sign in details</h2>    
+      <dl class="govuk-summary-list govuk-!-margin-bottom-0">
+      
+        <div class="govuk-summary-list__row" style="border-top: 1px solid #b1b4b6; padding-top:10px">
+          <dt class="govuk-summary-list__key">Email address</dt>
+          <dd class="govuk-summary-list__value"><p>bill.shoggins@shogginscare.co.uk</p> </dd>
+          <dd class="govuk-summary-list__actions"><a class="govuk-link govuk-link--no-visited-state" href="#" data-message="Sorry, this is an external service feature (GOV.UK One Login) not within the scope of this prototype">Change<span class="govuk-visually-hidden">change email address</span></a></dd>
+        </div>
+
+        <div class="govuk-summary-list__row govuk-summary-list__row--no-border">
+          <dt class="govuk-summary-list__key">Password</dt>
+          <dd class="govuk-summary-list__value">••••••••••••••••</dd>
+          <dd class="govuk-summary-list__actions"><a class="govuk-link govuk-link--no-visited-state" href="#" data-message="Sorry, this is an external service feature (GOV.UK One Login) not within the scope of this prototype">Change<span class="govuk-visually-hidden">change password</span></a></dd>
+        </div>
+
+      </dl>
+    
+    </div>
+  
+    <div class="activity-card govuk-!-margin-bottom-6">
+      <h2 class="govuk-heading-m">How you get security codes to sign in</h2>
+      <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-3">
+      <h2 class="govuk-heading-s">Your default method</h2>
+      <p class="govuk-body">Text message to your phone number ending with ####</p>
+      <p class="govuk-body"><a href="#" class="govuk-link--no-visited-state" data-message="Sorry, this is an external service feature (GOV.UK One Login) not within the scope of this prototype">Change phone number</a></p>
+      <p class="govuk-body govuk-!-margin-bottom-6"><a href="#" class="govuk-link--no-visited-state" data-message="Sorry, this is an external service feature (GOV.UK One Login) not within the scope of this prototype">Use a different default method</a></p>
+      <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-3">
+      <h2 class="govuk-heading-s">Add a back-up method </h2>
+      <p class="govuk-body">We recommend you add a back-up method for getting security codes.</p>
+      <p class="govuk-body">This will make sure you can always sign in, even if you cannot get security codes using your default method.</p>
+      <p class="govuk-body govuk-!-margin-bottom-0"><a href="#" class="govuk-link--no-visited-state" data-message="Sorry, this is an external service feature (GOV.UK One Login) not within the scope of this prototype">Add a back-up method</a></p>
+    </div>
+
+    <div class="activity-card govuk-!-margin-bottom-6">
+      <h2 class="govuk-heading-m">Activity history</h2>
+      <p class="govuk-body">See what you've visited with your GOV.UK One Login and when.</p>
+      <p class="govuk-body govuk-!-margin-bottom-0"><a href="#" class="govuk-link--no-visited-state" data-message="Sorry, this is an external service feature (GOV.UK One Login) not within the scope of this prototype">See your activity history</a></p>
+    </div>
+  
+    <div class="activity-card govuk-!-margin-bottom-6">
+      <h2 class="govuk-heading-m">Delete your GOV.UK One Login</h2>
+      <p class="govuk-body">This will permanently delete your GOV.UK One Login. You’ll no longer be able to sign in to the services you’ve used with it.</p>
+      <p class="govuk-body govuk-!-margin-bottom-0"><a href="#" class="govuk-link--no-visited-state" data-message="Sorry, this is an external service feature (GOV.UK One Login) not within the scope of this prototype">Delete your GOV.UK One Login</a></p>
+    </div>
+  
+  </div>
+
+</div>
+{% endblock %}

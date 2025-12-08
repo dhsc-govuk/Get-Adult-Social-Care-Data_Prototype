@@ -1,0 +1,66 @@
+<div id="defra-filter--action1" class="defra-filter--action" style="display: none;">
+  <button id="defra-filter--button1" class="govuk-button{% if query.filterApplied1 == 'Yes' %} defra-filter-button--active{% endif %}" type="button" aria-expanded="false">
+    <span class="defra-filter--button-content">Show filters</span>
+    <span class="defra-filter__icon"></span>
+  </button>
+</div>
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-full">
+
+    <div id="defra-filter--content1" class="defra-filter--content">
+
+      <form action="data-update-filters1" method="post" novalidate>
+
+        <div class="govuk-grid-row">
+          
+          <div class="govuk-grid-column-one-third govuk-grid-column-one-third-searchable-radios-section">
+            {% include "./_1-bed-types.html" %}
+          </div>
+
+        </div>
+
+        <div class="govuk-grid-row govuk-!-margin-top-4">
+
+          <div class="govuk-grid-column-full">
+
+            <div class="govuk-button-group">
+              <button id="update-filters1" type="submit" class="govuk-button" data-module="govuk-button" name="filterApplied1" value="Yes">Apply</button>
+              {% if data.filterApplied1 %}
+              <a href="?filterApplied1=&bedType1=#data1" class="govuk-link app-button--link">Clear all</a>
+              {% endif %}
+            </div>
+            
+          </div>
+
+        </div>
+
+      </form>
+
+    </div>
+
+  </div>
+
+</div>
+{% if data.filterApplied1 %}
+
+<div class="app-c-filter-summary">
+  <h5 class="app-c-filter-summary__heading">Active filters</h5>
+  <ul class="app-c-filter-summary__remove-filters">
+    <li>
+      <a class="app-c-filter-summary__remove-filter" href="?filterApplied1=&bedType1=#data1">
+        <span class="app-c-filter-summary__remove-filter-text">
+          <span class="govuk-visually-hidden">Remove filter</span>
+          Bed type: {{data.bedType1 or 'All bed types'}}
+        </span>
+      </a>
+    </li>
+  </ul>
+
+  <div>
+    <a class="app-c-filter-summary__clear-filters govuk-link govuk-link--no-visited-state" href="?filterApplied1=&bedType1=#data1">Clear all filters</a>
+  </div>
+
+</div>
+{% endif %}

@@ -1,0 +1,69 @@
+<h3 class="govuk-heading-s">Figure 2: graph of care home bed numbers per 100,000 adult population – Suffolk local authority, 1 February 2025 to 1 October 2025</h3>
+
+<ul class="govuk-list">
+  <li>
+    <svg height="5" width="50" xmlns="http://www.w3.org/2000/svg">
+      <g fill="none">
+        <line x1="0" y1="0" x2="50" y2="0" stroke="#f39431" stroke-width="10" />
+      </g>
+    </svg>
+    All bed types
+  </li>
+  <li>
+    <svg height="5" width="50" xmlns="http://www.w3.org/2000/svg">
+      <g fill="none">
+        <line x1="0" y1="0" x2="50" y2="0" stroke="#003c57" stroke-width="10" />
+      </g>
+    </svg>
+    Dementia nursing
+  </li>
+  <li>
+    <svg height="5" width="50" xmlns="http://www.w3.org/2000/svg">
+      <g fill="none">
+        <line x1="0" y1="0" x2="50" y2="0" stroke="#27a0cc" stroke-width="10" />
+      </g>
+    </svg>
+    Dementia residential
+  </li>
+</ul>
+
+<div class="data-chart">
+  <svg id="svg1" viewBox="0 0 600 250" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+    <title>Care home bed numbers per 100,000 adult population in Suffolk: 1 February 2025 to 1 October 2025</title>
+    <!-- Y-axis scale -->
+    <text class="axis-text" x="0" y="50">2,400</text>
+    <text class="axis-text" x="0" y="125">1,200</text>
+    <text class="axis-text" x="42" y="200">0</text>
+    <g transform="translate(20,0)">
+      <!-- Axes -->
+      <line class="axis-line" x1="50" y1="0" x2="50" y2="200" />
+      <line class="axis-line" x1="50" y1="200" x2="600" y2="200" />
+      <!-- Gridlines -->
+      <line class="grid-line" x1="50" y1="50" x2="600" y2="50" />
+      <line class="grid-line" x1="50" y1="120" x2="600" y2="120" />
+      <!-- Month labels (12 evenly spaced) -->
+      <!-- Total space for X axis = 550px (600 - 50) -->
+      <!-- Step ≈ 550 / 11 = 50px between labels -->
+      <text class="axis-text" x="50"  y="220">Jan</text>
+      <text class="axis-text" x="100" y="220">Feb</text>
+      <text class="axis-text" x="150" y="220">Mar</text>
+      <text class="axis-text" x="200" y="220">Apr</text>
+      <text class="axis-text" x="250" y="220">May</text>
+      <text class="axis-text" x="300" y="220">Jun</text>
+      <text class="axis-text" x="350" y="220">Jul</text>
+      <text class="axis-text" x="400" y="220">Aug</text>
+      <text class="axis-text" x="450" y="220">Sep</text>
+      <text class="axis-text" x="500" y="220">Oct</text>
+      <text class="axis-text" x="550" y="220">Nov</text>
+      <text class="axis-text" x="600" y="220">Dec</text>
+      <!-- Data series -->
+      <g transform="translate(-250,0) scale(2 1)">
+        <polyline class="series-all" points="150,110 200,90 250,80 300,90 350,82 400,65 450,80" />
+        <polyline class="series-dementia-nursing" points="150,169 200,173 250,152 300,158 350,143 400,154 450,158" />
+        <polyline class="series-dementia-residential" points="150,194 200,193 250,179 300,191 350,193 400,189 450,195" />
+      </g>
+    </g>
+  </svg>
+</div>
+
+<p class="govuk-body">Source: Capacity Tracker from the Department of Health and Social Care (DHSC), population estimates from the Office for National Statistics (ONS)</p>
