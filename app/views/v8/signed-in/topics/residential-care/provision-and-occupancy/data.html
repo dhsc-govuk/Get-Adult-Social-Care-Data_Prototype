@@ -378,42 +378,54 @@
   window.addEventListener('load', function() {
 
     // Hide all dynamic filter sections (i.e. all filter options)
-    $('.defra-filter--content').hide();
+    $('.dhsc-filter--content').hide();
     // Show all dynamic filter buttons
-    $('.defra-filter--action').show();
+    $('.dhsc-filter--action').show();
 
     // Filter 1 (Care home bed numbers) - User interacts with the filter button
-    $('#defra-filter--button1').on("click", function() {
+    $('#dhsc-filter--button1').on("click", function() {
       
-      if (!$('#defra-filter--action1').hasClass('defra-filter--open')) {
-        $('#defra-filter--content1').show().focus();
-        $('#defra-filter--action1').addClass('defra-filter--open');
-        $('#defra-filter--button1').attr('aria-expanded', 'true');
-        $("#defra-filter--button1 .defra-filter--button-content").text('Hide filters');
+      if (!$('#dhsc-filter--action1').hasClass('dhsc-filter--open')) {
+        $('#dhsc-filter--content1').show().focus();
+        $('#dhsc-filter--action1').addClass('dhsc-filter--open');
+        $('#dhsc-filter--button1').attr('aria-expanded', 'true');
+        $("#dhsc-filter--button1 .dhsc-filter--button-content").text('Hide filters');
+        $('#dhsc-filter--icon1').addClass('fa-minus');
+        $('#dhsc-filter--icon1').removeClass('fa-plus');
+        $('#dhsc-filter--icon1-content').text('Close');
       }
       else {
-        $('#defra-filter--content1').hide();
-        $('#defra-filter--action1').removeClass('defra-filter--open');
-        $('#defra-filter--button1').attr('aria-expanded', 'false');
-        $("#defra-filter--button1 .defra-filter--button-content").text('Show filters');
+        $('#dhsc-filter--content1').hide();
+        $('#dhsc-filter--action1').removeClass('dhsc-filter--open');
+        $('#dhsc-filter--button1').attr('aria-expanded', 'false');
+        $("#dhsc-filter--button1 .dhsc-filter--button-content").text('Show filters');
+        $('#dhsc-filter--icon1').addClass('fa-plus');
+        $('#dhsc-filter--icon1').removeClass('fa-minus');
+        $('#dhsc-filter--icon1-content').text('Open');
       }
 
     });
 
     // Filter 2 (Care home bed types) - User interacts with the filter button
-    $('#defra-filter--button2').on("click", function() {
+    $('#dhsc-filter--button2').on("click", function() {
       
-      if (!$('#defra-filter--action2').hasClass('defra-filter--open')) {
-        $('#defra-filter--content2').show().focus();
-        $('#defra-filter--action2').addClass('defra-filter--open');
-        $('#defra-filter--button2').attr('aria-expanded', 'true');
-        $("#defra-filter--button2 .defra-filter--button-content").text('Hide filters');
+      if (!$('#dhsc-filter--action2').hasClass('dhsc-filter--open')) {
+        $('#dhsc-filter--content2').show().focus();
+        $('#dhsc-filter--action2').addClass('dhsc-filter--open');
+        $('#dhsc-filter--button2').attr('aria-expanded', 'true');
+        $("#dhsc-filter--button2 .dhsc-filter--button-content").text('Hide filters');
+        $('#dhsc-filter--icon2').addClass('fa-minus');
+        $('#dhsc-filter--icon2').removeClass('fa-plus');
+        $('#dhsc-filter--icon2-content').text('Close');
       }
       else {
-        $('#defra-filter--content2').hide();
-        $('#defra-filter--action2').removeClass('defra-filter--open');
-        $('#defra-filter--button2').attr('aria-expanded', 'false');
-        $("#defra-filter--button2 .defra-filter--button-content").text('Show filters');
+        $('#dhsc-filter--content2').hide();
+        $('#dhsc-filter--action2').removeClass('dhsc-filter--open');
+        $('#dhsc-filter--button2').attr('aria-expanded', 'false');
+        $("#dhsc-filter--button2 .dhsc-filter--button-content").text('Show filters');
+        $('#dhsc-filter--icon2').addClass('fa-plus');
+        $('#dhsc-filter--icon2').removeClass('fa-minus');
+        $('#dhsc-filter--icon2-content').text('Open');
       }
 
     });
@@ -494,19 +506,25 @@
     });
 
     // Filter 4 (Care home bed numbers - trends over time) - User interacts with the filter button 
-    $('#defra-filter--button4').on("click", function() {
+    $('#dhsc-filter--button4').on("click", function() {
       
-      if (!$('#defra-filter--action4').hasClass('defra-filter--open')) {
-        $('#defra-filter--content4').show().focus();
-        $('#defra-filter--action4').addClass('defra-filter--open');
-        $('#defra-filter--button4').attr('aria-expanded', 'true');
-        $("#defra-filter--button4 .defra-filter--button-content").text('Hide filters');
+      if (!$('#dhsc-filter--action4').hasClass('dhsc-filter--open')) {
+        $('#dhsc-filter--content4').show().focus();
+        $('#dhsc-filter--action4').addClass('dhsc-filter--open');
+        $('#dhsc-filter--button4').attr('aria-expanded', 'true');
+        $("#dhsc-filter--button4 .dhsc-filter--button-content").text('Hide filters');
+        $('#dhsc-filter--icon4').addClass('fa-minus');
+        $('#dhsc-filter--icon4').removeClass('fa-plus');
+        $('#dhsc-filter--icon4-content').text('Close');
       }
       else {
-        $('#defra-filter--content4').hide();
-        $('#defra-filter--action4').removeClass('defra-filter--open');
-        $('#defra-filter--button4').attr('aria-expanded', 'false');
-        $("#defra-filter--button4 .defra-filter--button-content").text('Show filters');
+        $('#dhsc-filter--content4').hide();
+        $('#dhsc-filter--action4').removeClass('dhsc-filter--open');
+        $('#dhsc-filter--button4').attr('aria-expanded', 'false');
+        $("#dhsc-filter--button4 .dhsc-filter--button-content").text('Show filters');
+        $('#dhsc-filter--icon4').addClass('fa-plus');
+        $('#dhsc-filter--icon4').removeClass('fa-minus');
+        $('#dhsc-filter--icon4-content').text('Open');
       }
 
     });
@@ -588,4 +606,6 @@
   });
   
 </script>
+<!-- Font Awesome 4 icons for the notifications -->
+<link href="/public/open-source/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
 {% endblock %}

@@ -1,0 +1,100 @@
+<div id="dhsc-filter--action3" class="dhsc-filter--action" style="display: none;">
+  <button id="dhsc-filter--button3" class="govuk-button" type="button" aria-expanded="false">
+    <span class="dhsc-filter--button-content">Show filters</span>
+    <i id="dhsc-filter--icon3" class="fa fa-plus" aria-hidden="true"><span id="dhsc-filter--icon3-content" class="govuk-visually-hidden">Open</span></i>
+  </button>
+</div>
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-full">
+
+    <div id="dhsc-filter--content3" class="dhsc-filter--content">
+
+      <form action="data-update-filters3" method="post" novalidate>
+
+        <div class="govuk-grid-row">
+          
+          <div class="govuk-grid-column-one-third govuk-grid-column-one-third-searchable-checkboxes-section">
+            {% include "./_3-age-groups.html" %}
+          </div>
+
+        </div>
+
+        <div class="govuk-grid-row govuk-!-margin-top-4">
+
+          <div class="govuk-grid-column-full">
+
+            <div class="govuk-button-group">
+              <button id="update-filters3" type="submit" class="govuk-button" data-module="govuk-button" name="filterApplied3" value="Yes">Apply</button>
+              {% if data.filterApplied3 %}
+              <a href="?filterApplied3=&ageGroup3=#data3" class="govuk-link app-button--link">Clear all</a>
+              {% endif %}
+            </div>
+            
+          </div>
+
+        </div>
+
+      </form>
+
+    </div>
+
+  </div>
+
+</div>
+{% if data.filterApplied3 %}
+
+<div class="app-c-filter-summary">
+  <h5 class="app-c-filter-summary__heading">Active filters</h5>
+  <ul class="app-c-filter-summary__remove-filters">
+    {% for param in data.ageGroup3 %}
+    {% if param == "Aged 18 to 64" %}
+    <li id="ageGroup3_1-remove">
+      <a class="app-c-filter-summary__remove-filter" href="#">
+        <span class="app-c-filter-summary__remove-filter-text">
+          <span class="govuk-visually-hidden">Remove filter</span>
+          Age group: Aged 18 to 64
+        </span>
+      </a>
+    </li>
+    {% endif %}
+    {% if param == "Aged 65 to 74" %}
+    <li id="ageGroup3_2-remove">
+      <a class="app-c-filter-summary__remove-filter" href="#">
+        <span class="app-c-filter-summary__remove-filter-text">
+          <span class="govuk-visually-hidden">Remove filter</span>
+          Age group: Aged 65 to 74
+        </span>
+      </a>
+    </li>
+    {% endif %}
+    {% if param == "Aged 75 to 84" %}
+    <li id="ageGroup3_3-remove">
+      <a class="app-c-filter-summary__remove-filter" href="#">
+        <span class="app-c-filter-summary__remove-filter-text">
+          <span class="govuk-visually-hidden">Remove filter</span>
+          Age group: Aged 75 to 84
+        </span>
+      </a>
+    </li>
+    {% endif %}
+    {% if param == "Aged 85 and over" %}
+    <li id="ageGroup3_4-remove">
+      <a class="app-c-filter-summary__remove-filter" href="#">
+        <span class="app-c-filter-summary__remove-filter-text">
+          <span class="govuk-visually-hidden">Remove filter</span>
+          Age group: Aged 85 and over
+        </span>
+      </a>
+    </li>
+    {% endif %}
+    {% endfor %}
+  </ul>
+
+  <div>
+    <a class="app-c-filter-summary__clear-filters govuk-link govuk-link--no-visited-state" href="?filterApplied3=&ageGroup3=#data3">Clear all filters</a>
+  </div>
+
+</div>
+{% endif %}

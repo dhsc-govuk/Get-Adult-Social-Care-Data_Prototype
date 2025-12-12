@@ -331,6 +331,43 @@ module.exports = function(router) {
   })
 
   /*****
+   * Signed in
+   * Data > Population needs
+  *****/
+
+  // Population size and age group percentages
+  router.post('/' + version + '/' + 'signed-in/topics/population-needs/population-age-and-size/data-update-filters2', function (req, res) {
+
+    // Data objects to be retrieved and queried
+    var ageGroup2 = req.session.data['ageGroup2']
+
+    // User has chosen at least 1 filter  
+		if (ageGroup2) {
+      res.redirect('/' + version + '/' + 'signed-in/topics/population-needs/population-age-and-size/data?filterApplied2=Yes#data2')     
+		}
+		// No filters selected by user
+		else {			
+      res.redirect('/' + version + '/' + 'signed-in/topics/population-needs/population-age-and-size/data?filterApplied2=#data2')
+    }
+    
+  })
+  router.post('/' + version + '/' + 'signed-in/topics/population-needs/population-age-and-size/data-update-filters3', function (req, res) {
+
+    // Data objects to be retrieved and queried
+    var ageGroup3 = req.session.data['ageGroup3']
+
+    // User has chosen at least 1 filter  
+		if (ageGroup3) {
+      res.redirect('/' + version + '/' + 'signed-in/topics/population-needs/population-age-and-size/data?filterApplied3=Yes#data3')     
+		}
+		// No filters selected by user
+		else {			
+      res.redirect('/' + version + '/' + 'signed-in/topics/population-needs/population-age-and-size/data?filterApplied3=#data3')
+    }
+    
+  })
+
+  /*****
    * Additional screens
    * Footer, service information and system pages
   *****/

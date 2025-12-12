@@ -236,24 +236,30 @@
   window.addEventListener('load', function() {
 
     // Hide all dynamic filter sections (i.e. all filter options)
-    $('.defra-filter--content').hide();
+    $('.dhsc-filter--content').hide();
     // Show all dynamic filter buttons
-    $('.defra-filter--action').show();
+    $('.dhsc-filter--action').show();
 
     // User interacts with the filter button
-    $('#defra-filter--button').on("click", function() {
+    $('#dhsc-filter--button').on("click", function() {
       
-      if (!$('#defra-filter--action').hasClass('defra-filter--open')) {
-        $('#defra-filter--content').show().focus();
-        $('#defra-filter--action').addClass('defra-filter--open');
-        $('#defra-filter--button').attr('aria-expanded', 'true');
-        $("#defra-filter--button .defra-filter--button-content").text('Hide filters');
+      if (!$('#dhsc-filter--action').hasClass('dhsc-filter--open')) {
+        $('#dhsc-filter--content').show().focus();
+        $('#dhsc-filter--action').addClass('dhsc-filter--open');
+        $('#dhsc-filter--button').attr('aria-expanded', 'true');
+        $("#dhsc-filter--button .dhsc-filter--button-content").text('Hide filters');
+        $('#dhsc-filter--icon').addClass('fa-minus');
+        $('#dhsc-filter--icon').removeClass('fa-plus');
+        $('#dhsc-filter--icon-content').text('Close');
       }
       else {
-        $('#defra-filter--content').hide();
-        $('#defra-filter--action').removeClass('defra-filter--open');
-        $('#defra-filter--button').attr('aria-expanded', 'false');
-        $("#defra-filter--button .defra-filter--button-content").text('Show filters');
+        $('#dhsc-filter--content').hide();
+        $('#dhsc-filter--action').removeClass('dhsc-filter--open');
+        $('#dhsc-filter--button').attr('aria-expanded', 'false');
+        $("#dhsc-filter--button .dhsc-filter--button-content").text('Show filters');
+        $('#dhsc-filter--icon').addClass('fa-plus');
+        $('#dhsc-filter--icon').removeClass('fa-minus');
+        $('#dhsc-filter--icon-content').text('Open');
       }
 
     });
@@ -299,4 +305,6 @@
   });
   
 </script>
+<!-- Font Awesome 4 icons for the notifications -->
+<link href="/public/open-source/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
 {% endblock %}
