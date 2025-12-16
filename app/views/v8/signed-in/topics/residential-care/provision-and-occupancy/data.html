@@ -382,7 +382,7 @@
     // Show all dynamic filter buttons
     $('.dhsc-filter--action').show();
 
-    // Filter 1 (Care home bed numbers) - User interacts with the filter button
+    // Filter (#1 for GASCD): Care home bed numbers - User interacts with the filter button
     $('#dhsc-filter--button1').on("click", function() {
       
       if (!$('#dhsc-filter--action1').hasClass('dhsc-filter--open')) {
@@ -406,7 +406,7 @@
 
     });
 
-    // Filter 2 (Care home bed types) - User interacts with the filter button
+    // Filter (#2 for GASCD): Care home bed types - User interacts with the filter button
     $('#dhsc-filter--button2').on("click", function() {
       
       if (!$('#dhsc-filter--action2').hasClass('dhsc-filter--open')) {
@@ -430,7 +430,7 @@
 
     });
 
-    /* Filter 2 (Care home bed types) - Quick and dirty way of updating the filters individually, when a user clicks a related pill */
+    /* Filter (#2 for GASCD): Care home bed types - Quick and dirty way of updating the filters individually, when a user clicks a related pill */
     // 
     // All bed types
     $('#bedType2_1-remove').on("click", function(e) {
@@ -505,102 +505,102 @@
       $('#update-filters2').click();
     });
 
-    // Filter 4 (Care home bed numbers - trends over time) - User interacts with the filter button 
-    $('#dhsc-filter--button4').on("click", function() {
+    // Filter (#3 for GASCD): Care home bed numbers - trends over time - User interacts with the filter button 
+    $('#dhsc-filter--button3').on("click", function() {
       
-      if (!$('#dhsc-filter--action4').hasClass('dhsc-filter--open')) {
-        $('#dhsc-filter--content4').show().focus();
-        $('#dhsc-filter--action4').addClass('dhsc-filter--open');
-        $('#dhsc-filter--button4').attr('aria-expanded', 'true');
-        $("#dhsc-filter--button4 .dhsc-filter--button-content").text('Hide filters');
-        $('#dhsc-filter--icon4').addClass('fa-minus');
-        $('#dhsc-filter--icon4').removeClass('fa-plus');
-        $('#dhsc-filter--icon4-content').text('Close');
+      if (!$('#dhsc-filter--action3').hasClass('dhsc-filter--open')) {
+        $('#dhsc-filter--content3').show().focus();
+        $('#dhsc-filter--action3').addClass('dhsc-filter--open');
+        $('#dhsc-filter--button3').attr('aria-expanded', 'true');
+        $("#dhsc-filter--button3 .dhsc-filter--button-content").text('Hide filters');
+        $('#dhsc-filter--icon3').addClass('fa-minus');
+        $('#dhsc-filter--icon3').removeClass('fa-plus');
+        $('#dhsc-filter--icon3-content').text('Close');
       }
       else {
-        $('#dhsc-filter--content4').hide();
-        $('#dhsc-filter--action4').removeClass('dhsc-filter--open');
-        $('#dhsc-filter--button4').attr('aria-expanded', 'false');
-        $("#dhsc-filter--button4 .dhsc-filter--button-content").text('Show filters');
-        $('#dhsc-filter--icon4').addClass('fa-plus');
-        $('#dhsc-filter--icon4').removeClass('fa-minus');
-        $('#dhsc-filter--icon4-content').text('Open');
+        $('#dhsc-filter--content3').hide();
+        $('#dhsc-filter--action3').removeClass('dhsc-filter--open');
+        $('#dhsc-filter--button3').attr('aria-expanded', 'false');
+        $("#dhsc-filter--button3 .dhsc-filter--button-content").text('Show filters');
+        $('#dhsc-filter--icon3').addClass('fa-plus');
+        $('#dhsc-filter--icon3').removeClass('fa-minus');
+        $('#dhsc-filter--icon3-content').text('Open');
       }
 
     });
 
-    /* Filter 4 (Care home bed numbers - trends over time) - Quick and dirty way of updating the filters individually, when a user clicks a related pill */
+    /* Filter (#3 for GASCD): Care home bed numbers - trends over time - Quick and dirty way of updating the filters individually, when a user clicks a related pill */
     // All bed types
-    $('#bedType4_1-remove').on("click", function(e) {
+    $('#bedType3_1-remove').on("click", function(e) {
       e.preventDefault();
-      $('#bedType4_1').prop("checked", false);
-      $('#update-filters4').click();
+      $('#bedType3_1').prop("checked", false);
+      $('#update-filters3').click();
     });
     // Community care bed
-    $('#bedType4_2-remove').on("click", function(e) {
+    $('#bedType3_2-remove').on("click", function(e) {
       e.preventDefault();
-      $('#bedType4_2').prop("checked", false);
-      $('#update-filters4').click();
+      $('#bedType3_2').prop("checked", false);
+      $('#update-filters3').click();
     });
     // Dementia nursing
-    $('#bedType4_3-remove').on("click", function(e) {
+    $('#bedType3_3-remove').on("click", function(e) {
       e.preventDefault();
-      $('#bedType4_3').prop("checked", false);
-      $('#update-filters4').click();
+      $('#bedType3_3').prop("checked", false);
+      $('#update-filters3').click();
     });
     // Dementia residential
-    $('#bedType4_4-remove').on("click", function(e) {
+    $('#bedType3_4-remove').on("click", function(e) {
       e.preventDefault();
-      $('#bedType4_4').prop("checked", false);
-      $('#update-filters4').click();
+      $('#bedType3_4').prop("checked", false);
+      $('#update-filters3').click();
     });
     // General nursing
-    $('#bedType4_5-remove').on("click", function(e) {
+    $('#bedType3_5-remove').on("click", function(e) {
       e.preventDefault();
-      $('#bedType4_5').prop("checked", false);
-      $('#update-filters4').click();
+      $('#bedType3_5').prop("checked", false);
+      $('#update-filters3').click();
     });
     // General residential
-    $('#bedType4_6-remove').on("click", function(e) {
+    $('#bedType3_6-remove').on("click", function(e) {
       e.preventDefault();
-      $('#bedType4_6').prop("checked", false);
-      $('#update-filters4').click();
+      $('#bedType3_6').prop("checked", false);
+      $('#update-filters3').click();
     });
     // Learning disability nursing
-    $('#bedType4_7-remove').on("click", function(e) {
+    $('#bedType3_7-remove').on("click", function(e) {
       e.preventDefault();
-      $('#bedType4_7').prop("checked", false);
-      $('#update-filters4').click();
+      $('#bedType3_7').prop("checked", false);
+      $('#update-filters3').click();
     });
     // Learning disability residential
-    $('#bedType4_8-remove').on("click", function(e) {
+    $('#bedType3_8-remove').on("click", function(e) {
       e.preventDefault();
-      $('#bedType4_8').prop("checked", false);
-      $('#update-filters4').click();
+      $('#bedType3_8').prop("checked", false);
+      $('#update-filters3').click();
     });
     // Mental health nursing
-    $('#bedType4_9-remove').on("click", function(e) {
+    $('#bedType3_9-remove').on("click", function(e) {
       e.preventDefault();
-      $('#bedType4_9').prop("checked", false);
-      $('#update-filters4').click();
+      $('#bedType3_9').prop("checked", false);
+      $('#update-filters3').click();
     });
     // Mental health residential
-    $('#bedType4_10-remove').on("click", function(e) {
+    $('#bedType3_10-remove').on("click", function(e) {
       e.preventDefault();
-      $('#bedType4_10').prop("checked", false);
-      $('#update-filters4').click();
+      $('#bedType3_10').prop("checked", false);
+      $('#update-filters3').click();
     });
     // Transitional
-    $('#bedType4_11-remove').on("click", function(e) {
+    $('#bedType3_11-remove').on("click", function(e) {
       e.preventDefault();
-      $('#bedType4_11').prop("checked", false);
-      $('#update-filters4').click();
+      $('#bedType3_11').prop("checked", false);
+      $('#update-filters3').click();
     });
     // Young physically disabled
-    $('#bedType4_12-remove').on("click", function(e) {
+    $('#bedType3_12-remove').on("click", function(e) {
       e.preventDefault();
-      $('#bedType4_12').prop("checked", false);
-      $('#update-filters4').click();
+      $('#bedType3_12').prop("checked", false);
+      $('#update-filters3').click();
     });
 
   });

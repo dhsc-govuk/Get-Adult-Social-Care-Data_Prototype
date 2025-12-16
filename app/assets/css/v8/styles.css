@@ -709,11 +709,6 @@
   fill: none;
 }
 
-/* Styling for the design team (i.e. Chris) to alert others that content is needed across the prototype */
-.needs-content {
-  color: #d4351c;
-}
-
 /* Add slight indentation to any table <td> elements that are within a hierarchy (i.e. are a child to another data item) */
 .table-indent {
   padding-left: 20px;
@@ -746,11 +741,20 @@
 .dhsc-filter--content .govuk-button-group, .dhsc-filter--content .govuk-button, .dhsc-filter--content .govuk-link {
   margin-bottom: 0;
 }
-.dhsc-filter--content .govuk-grid-column-one-third:first-child {
+.dhsc-filter--content .govuk-link {
+  margin-top: 17px;
+}
+@media (min-width: 40.0625em) {
+  .dhsc-filter--content .govuk-link {
+    margin-top: 0;
+  }
+}
+
+.dhsc-filter--section-spacer-for-mobile {
   padding-bottom: 20px;
 }
 @media (min-width: 641px) {
-  .dhsc-filter--content .govuk-grid-column-one-third:first-child {
+  .dhsc-filter--section-spacer-for-mobile {
     padding-bottom: 0;
   }
 }

@@ -269,11 +269,11 @@ module.exports = function(router) {
   router.post('/' + version + '/' + 'signed-in/topics/residential-care/residential-care-providers/data-update-filters', function (req, res) {
 
     // Data objects to be retrieved and queried
-    var postcode1 = req.session.data['postcode1']
-    var serviceType1 = req.session.data['serviceType1']
+    var postcode = req.session.data['postcode']
+    var serviceType = req.session.data['serviceType']
 
     // User has chosen at least 1 filter  
-		if (postcode1 || serviceType1) {
+		if (postcode || serviceType) {
       res.redirect('/' + version + '/' + 'signed-in/topics/residential-care/residential-care-providers/data?filterApplied=Yes#data1')     
 		}
 		// No filters selected by user
@@ -314,18 +314,18 @@ module.exports = function(router) {
     }
     
   })
-  router.post('/' + version + '/' + 'signed-in/topics/residential-care/provision-and-occupancy/data-update-filters4', function (req, res) {
+  router.post('/' + version + '/' + 'signed-in/topics/residential-care/provision-and-occupancy/data-update-filters3', function (req, res) {
 
     // Data objects to be retrieved and queried
-    var bedType4 = req.session.data['bedType4']
+    var bedType3 = req.session.data['bedType3']
 
     // User has chosen at least 1 filter  
-		if (bedType4) {
-      res.redirect('/' + version + '/' + 'signed-in/topics/residential-care/provision-and-occupancy/data?filterApplied4=Yes#trend1')     
+		if (bedType3) {
+      res.redirect('/' + version + '/' + 'signed-in/topics/residential-care/provision-and-occupancy/data?filterApplied3=Yes#trend1')     
 		}
 		// No filters selected by user
 		else {			
-      res.redirect('/' + version + '/' + 'signed-in/topics/residential-care/provision-and-occupancy/data?filterApplied4=#trend1')
+      res.redirect('/' + version + '/' + 'signed-in/topics/residential-care/provision-and-occupancy/data?filterApplied3=#trend1')
     }
     
   })
@@ -336,33 +336,48 @@ module.exports = function(router) {
   *****/
 
   // Population size and age group percentages
-  router.post('/' + version + '/' + 'signed-in/topics/population-needs/population-age-and-size/data-update-filters2', function (req, res) {
+  router.post('/' + version + '/' + 'signed-in/topics/population-needs/population-age-and-size/data-update-filters4', function (req, res) {
 
     // Data objects to be retrieved and queried
-    var ageGroup2 = req.session.data['ageGroup2']
+    var ageGroup4 = req.session.data['ageGroup4']
 
     // User has chosen at least 1 filter  
-		if (ageGroup2) {
-      res.redirect('/' + version + '/' + 'signed-in/topics/population-needs/population-age-and-size/data?filterApplied2=Yes#data2')     
+		if (ageGroup4) {
+      res.redirect('/' + version + '/' + 'signed-in/topics/population-needs/population-age-and-size/data?filterApplied4=Yes#data2')     
 		}
 		// No filters selected by user
 		else {			
-      res.redirect('/' + version + '/' + 'signed-in/topics/population-needs/population-age-and-size/data?filterApplied2=#data2')
+      res.redirect('/' + version + '/' + 'signed-in/topics/population-needs/population-age-and-size/data?filterApplied4=#data2')
     }
     
   })
-  router.post('/' + version + '/' + 'signed-in/topics/population-needs/population-age-and-size/data-update-filters3', function (req, res) {
+  router.post('/' + version + '/' + 'signed-in/topics/population-needs/population-age-and-size/data-update-filters5', function (req, res) {
 
     // Data objects to be retrieved and queried
-    var ageGroup3 = req.session.data['ageGroup3']
+    var ageGroup5 = req.session.data['ageGroup5']
 
     // User has chosen at least 1 filter  
-		if (ageGroup3) {
-      res.redirect('/' + version + '/' + 'signed-in/topics/population-needs/population-age-and-size/data?filterApplied3=Yes#data3')     
+		if (ageGroup5) {
+      res.redirect('/' + version + '/' + 'signed-in/topics/population-needs/population-age-and-size/data?filterApplied5=Yes#data3')     
 		}
 		// No filters selected by user
 		else {			
-      res.redirect('/' + version + '/' + 'signed-in/topics/population-needs/population-age-and-size/data?filterApplied3=#data3')
+      res.redirect('/' + version + '/' + 'signed-in/topics/population-needs/population-age-and-size/data?filterApplied5=#data3')
+    }
+    
+  })
+  router.post('/' + version + '/' + 'signed-in/topics/population-needs/population-age-and-size/data-update-filters6', function (req, res) {
+
+    // Data objects to be retrieved and queried
+    var localAuthority6 = req.session.data['localAuthority6']
+
+    // User has chosen at least 1 filter  
+		if (localAuthority6) {
+      res.redirect('/' + version + '/' + 'signed-in/topics/population-needs/population-age-and-size/data?filterApplied6=Yes')     
+		}
+		// No filters selected by user
+		else {			
+      res.redirect('/' + version + '/' + 'signed-in/topics/population-needs/population-age-and-size/data?filterApplied6=')
     }
     
   })

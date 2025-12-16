@@ -55,7 +55,7 @@
       <div class="govuk-tabs" data-module="govuk-tabs">
         
         <div class="govuk-form-group">
-          <h3 id="data1" class="govuk-heading-m">Care provider locations near {% if data.postcode1 %}postcode {{data.postcode1}}{% else %}postcode CO5 1ST for {{data.locationName or 'Shoggins Care Services (Sudbury)'}}{% endif %}</h3>
+          <h3 id="data1" class="govuk-heading-m">Care provider locations near {% if data.postcode %}postcode {{data.postcode}}{% else %}postcode CO5 1ST for {{data.locationName or 'Shoggins Care Services (Sudbury)'}}{% endif %}</h3>
           <p class="govuk-body">Locations and service information for CQC&#45;registered residential social care and community based adult social care service providers in England, August 2025.</p>
           <!-- THIS INDICATOR DEFINITION PAGE DOES NOT EXIST
           <p class="govuk-body" data-module="edge">Find out <a href="#" data-message="Sorry, this hasn’t been designed yet">how locations and services data is collected</a>.</p> -->
@@ -240,7 +240,7 @@
     // Show all dynamic filter buttons
     $('.dhsc-filter--action').show();
 
-    // User interacts with the filter button
+    // Filter (#0 for GASCD): Care provider locations near postcode CO5 1ST for Shoggins Care Services (Sudbury) - User interacts with the filter button
     $('#dhsc-filter--button').on("click", function() {
       
       if (!$('#dhsc-filter--action').hasClass('dhsc-filter--open')) {
@@ -264,7 +264,7 @@
 
     });
 
-    /* Quick and dirty way of updating the filters individually, when a user clicks a related pill */
+    /* Filter (#0 for GASCD): Care provider locations near postcode CO5 1ST for Shoggins Care Services (Sudbury) - Quick and dirty way of updating the filters individually, when a user clicks a related pill */
     // Postcode
     $('#postcode-remove').on("click", function(e) {
       e.preventDefault();
@@ -272,33 +272,33 @@
       $('#update-filters').click();
     });
     // Homecare agencies
-    $('#serviceType1_1-remove').on("click", function(e) {
+    $('#serviceType_1-remove').on("click", function(e) {
       e.preventDefault();
-      $('#serviceType1_1').prop("checked", false);
+      $('#serviceType_1').prop("checked", false);
       $('#update-filters').click();
     });
     // Nursing homes
-    $('#serviceType1_2-remove').on("click", function(e) {
+    $('#serviceType_2-remove').on("click", function(e) {
       e.preventDefault();
-      $('#serviceType1_2').prop("checked", false);
+      $('#serviceType_2').prop("checked", false);
       $('#update-filters').click();
     });
     // Residential homes
-    $('#serviceType1_3-remove').on("click", function(e) {
+    $('#serviceType_3-remove').on("click", function(e) {
       e.preventDefault();
-      $('#serviceType1_3').prop("checked", false);
+      $('#serviceType_3').prop("checked", false);
       $('#update-filters').click();
     });
     // Supported housing
-    $('#serviceType1_4-remove').on("click", function(e) {
+    $('#serviceType_4-remove').on("click", function(e) {
       e.preventDefault();
-      $('#serviceType1_4').prop("checked", false);
+      $('#serviceType_4').prop("checked", false);
       $('#update-filters').click();
     });
     // Supported living
-    $('#serviceType1_5-remove').on("click", function(e) {
+    $('#serviceType_5-remove').on("click", function(e) {
       e.preventDefault();
-      $('#serviceType1_5').prop("checked", false);
+      $('#serviceType_5').prop("checked", false);
       $('#update-filters').click();
     });
 

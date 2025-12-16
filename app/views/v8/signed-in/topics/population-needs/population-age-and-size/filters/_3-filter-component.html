@@ -1,7 +1,7 @@
-<div id="dhsc-filter--action3" class="dhsc-filter--action" style="display: none;">
-  <button id="dhsc-filter--button3" class="govuk-button" type="button" aria-expanded="false">
+<div id="dhsc-filter--action5" class="dhsc-filter--action" style="display: none;">
+  <button id="dhsc-filter--button5" class="govuk-button" type="button" aria-expanded="false">
     <span class="dhsc-filter--button-content">Show filters</span>
-    <i id="dhsc-filter--icon3" class="fa fa-plus" aria-hidden="true"><span id="dhsc-filter--icon3-content" class="govuk-visually-hidden">Open</span></i>
+    <i id="dhsc-filter--icon5" class="fa fa-plus" aria-hidden="true"><span id="dhsc-filter--icon5-content" class="govuk-visually-hidden">Open</span></i>
   </button>
 </div>
 
@@ -9,9 +9,9 @@
 
   <div class="govuk-grid-column-full">
 
-    <div id="dhsc-filter--content3" class="dhsc-filter--content">
+    <div id="dhsc-filter--content5" class="dhsc-filter--content">
 
-      <form action="data-update-filters3" method="post" novalidate>
+      <form action="data-update-filters5" method="post" novalidate>
 
         <div class="govuk-grid-row">
           
@@ -26,9 +26,9 @@
           <div class="govuk-grid-column-full">
 
             <div class="govuk-button-group">
-              <button id="update-filters3" type="submit" class="govuk-button" data-module="govuk-button" name="filterApplied3" value="Yes">Apply</button>
-              {% if data.filterApplied3 %}
-              <a href="?filterApplied3=&ageGroup3=#data3" class="govuk-link app-button--link">Clear all</a>
+              <button id="update-filters5" type="submit" class="govuk-button" data-module="govuk-button" name="filterApplied5" value="Yes">Apply</button>
+              {% if data.filterApplied5 %}
+              <a href="?filterApplied5=&ageGroup5=#data3" class="govuk-link">Clear all</a>
               {% endif %}
             </div>
             
@@ -43,14 +43,14 @@
   </div>
 
 </div>
-{% if data.filterApplied3 %}
+{% if data.filterApplied5 %}
 
 <div class="app-c-filter-summary">
   <h5 class="app-c-filter-summary__heading">Active filters</h5>
   <ul class="app-c-filter-summary__remove-filters">
-    {% for param in data.ageGroup3 %}
+    {% for param in data.ageGroup5 %}
     {% if param == "Aged 18 to 64" %}
-    <li id="ageGroup3_1-remove">
+    <li id="ageGroup5_1-remove">
       <a class="app-c-filter-summary__remove-filter" href="#">
         <span class="app-c-filter-summary__remove-filter-text">
           <span class="govuk-visually-hidden">Remove filter</span>
@@ -60,7 +60,7 @@
     </li>
     {% endif %}
     {% if param == "Aged 65 to 74" %}
-    <li id="ageGroup3_2-remove">
+    <li id="ageGroup5_2-remove">
       <a class="app-c-filter-summary__remove-filter" href="#">
         <span class="app-c-filter-summary__remove-filter-text">
           <span class="govuk-visually-hidden">Remove filter</span>
@@ -70,7 +70,7 @@
     </li>
     {% endif %}
     {% if param == "Aged 75 to 84" %}
-    <li id="ageGroup3_3-remove">
+    <li id="ageGroup5_3-remove">
       <a class="app-c-filter-summary__remove-filter" href="#">
         <span class="app-c-filter-summary__remove-filter-text">
           <span class="govuk-visually-hidden">Remove filter</span>
@@ -80,7 +80,7 @@
     </li>
     {% endif %}
     {% if param == "Aged 85 and over" %}
-    <li id="ageGroup3_4-remove">
+    <li id="ageGroup5_4-remove">
       <a class="app-c-filter-summary__remove-filter" href="#">
         <span class="app-c-filter-summary__remove-filter-text">
           <span class="govuk-visually-hidden">Remove filter</span>
@@ -93,7 +93,7 @@
   </ul>
 
   <div>
-    <a class="app-c-filter-summary__clear-filters govuk-link govuk-link--no-visited-state" href="?filterApplied3=&ageGroup3=#data3">Clear all filters</a>
+    <a class="app-c-filter-summary__clear-filters govuk-link govuk-link--no-visited-state" href="?filterApplied5=&ageGroup5=#data3">Clear all filters</a>
   </div>
 
 </div>

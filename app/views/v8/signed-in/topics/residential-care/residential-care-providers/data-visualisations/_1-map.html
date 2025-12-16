@@ -56,7 +56,7 @@
 
 </style>
 
-<h4 class="govuk-heading-s">Figure 1: map of CQC-registered residential social care and community based adult social care service providers near {% if data.postcode1 %}postcode {{data.postcode1}}{% else %}postcode CO5 1ST for {{data.locationName or 'Shoggins Care Services (Sudbury)'}}{% endif %}</h4>
+<h4 class="govuk-heading-s">Figure 1: map of CQC-registered residential social care and community based adult social care service providers near {% if data.postcode %}postcode {{data.postcode}}{% else %}postcode CO5 1ST for {{data.locationName or 'Shoggins Care Services (Sudbury)'}}{% endif %}</h4>
 
 <div class="govuk-form-group">
 
@@ -70,7 +70,7 @@
   <p class="govuk-body data-source">Source: Care Directory from the Care Quality Commission (CQC)</p>
 </div>
 
-{% if data.postcode1 %}
+{% if data.postcode %}
 <script>
   
   // Home location (Haverhill)
@@ -140,7 +140,7 @@
   // Home marker
   L.marker(homeCoords, { icon: homeIcon })
     .addTo(map)
-    .bindPopup("<span class='popup'><strong>{{data.postcode1}}</strong></span>");
+    .bindPopup("<span class='popup'><strong>{{data.postcode}}</strong></span>");
 
   // --- 5 mile radius circle (Sudbury) ---
   // 5 miles in metres

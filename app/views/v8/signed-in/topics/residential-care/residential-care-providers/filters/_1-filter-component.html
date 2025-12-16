@@ -15,7 +15,7 @@
 
         <div class="govuk-grid-row">
 
-          <div class="govuk-grid-column-one-third">
+          <div class="govuk-grid-column-one-third dhsc-filter--section-spacer-for-mobile">
             {% include "./_1-postcode.html" %}
           </div>
           
@@ -32,7 +32,7 @@
             <div class="govuk-button-group">
               <button id="update-filters" type="submit" class="govuk-button" data-module="govuk-button" name="filterApplied" value="Yes">Apply</button>
               {% if data.filterApplied %}
-              <a href="?filterApplied=&postcode1=&serviceType1=#data1" class="govuk-link app-button--link">Clear all</a>
+              <a href="?filterApplied=&postcode=&serviceType=#data1" class="govuk-link">Clear all</a>
               {% endif %}
             </div>
             
@@ -52,19 +52,19 @@
 <div class="app-c-filter-summary">
   <h5 class="app-c-filter-summary__heading">Active filters</h5>
   <ul class="app-c-filter-summary__remove-filters">
-    {% if data.postcode1 %}
+    {% if data.postcode %}
     <li id="postcode-remove">
       <a class="app-c-filter-summary__remove-filter" href="#">
         <span class="app-c-filter-summary__remove-filter-text">
           <span class="govuk-visually-hidden">Remove filter</span>
-          Postcode: {{data.postcode1}}
+          Postcode: {{data.postcode}}
         </span>
       </a>
     </li>
     {% endif %}
-    {% for param in data.serviceType1 %}
+    {% for param in data.serviceType %}
     {% if param == "Homecare agencies" %}
-    <li id="serviceType1_1-remove">
+    <li id="serviceType_1-remove">
       <a class="app-c-filter-summary__remove-filter" href="#">
         <span class="app-c-filter-summary__remove-filter-text">
           <span class="govuk-visually-hidden">Remove filter</span>
@@ -74,7 +74,7 @@
     </li>
     {% endif %}
     {% if param == "Nursing homes" %}
-    <li id="serviceType1_2-remove">
+    <li id="serviceType_2-remove">
       <a class="app-c-filter-summary__remove-filter" href="#">
         <span class="app-c-filter-summary__remove-filter-text">
           <span class="govuk-visually-hidden">Remove filter</span>
@@ -84,7 +84,7 @@
     </li>
     {% endif %}
     {% if param == "Residential homes" %}
-    <li id="serviceType1_3-remove">
+    <li id="serviceType_3-remove">
       <a class="app-c-filter-summary__remove-filter" href="#">
         <span class="app-c-filter-summary__remove-filter-text">
           <span class="govuk-visually-hidden">Remove filter</span>
@@ -94,7 +94,7 @@
     </li>
     {% endif %}
     {% if param == "Supported housing" %}
-    <li id="serviceType1_4-remove">
+    <li id="serviceType_4-remove">
       <a class="app-c-filter-summary__remove-filter" href="#">
         <span class="app-c-filter-summary__remove-filter-text">
           <span class="govuk-visually-hidden">Remove filter</span>
@@ -104,7 +104,7 @@
     </li>
     {% endif %}
     {% if param == "Supported living" %}
-    <li id="serviceType1_5-remove">
+    <li id="serviceType_5-remove">
       <a class="app-c-filter-summary__remove-filter" href="#">
         <span class="app-c-filter-summary__remove-filter-text">
           <span class="govuk-visually-hidden">Remove filter</span>
@@ -117,7 +117,7 @@
   </ul>
 
   <div>
-    <a class="app-c-filter-summary__clear-filters govuk-link govuk-link--no-visited-state" href="?filterApplied=&postcode1=&serviceType1=#data1">Clear all filters</a>
+    <a class="app-c-filter-summary__clear-filters govuk-link govuk-link--no-visited-state" href="?filterApplied=&postcode=&serviceType=#data1">Clear all filters</a>
   </div>
 
 </div>
