@@ -377,20 +377,19 @@
     });
 
     /* Filter (#5 for GASCD): Age group percentages for regional local authorities - Quick and dirty way of updating the filters individually, when a user clicks a related pill */
-    // 
     // 18 to 64
     $('#ageGroup5_1-remove').on("click", function(e) {
       e.preventDefault();
       $('#ageGroup5_1').prop("checked", false);
       $('#update-filters5').click();
     });
-    // 65 and over
+    // 65 to 74
     $('#ageGroup5_2-remove').on("click", function(e) {
       e.preventDefault();
       $('#ageGroup5_2').prop("checked", false);
       $('#update-filters5').click();
     });
-    // 75 and over
+    // 75 to 84
     $('#ageGroup5_3-remove').on("click", function(e) {
       e.preventDefault();
       $('#ageGroup5_3').prop("checked", false);

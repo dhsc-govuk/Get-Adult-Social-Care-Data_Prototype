@@ -1,0 +1,216 @@
+<div class="moj-scrollable-pane">
+
+  <table class="govuk-table">
+    <caption class="govuk-table__caption">Table 3: <span class="needs-content">[needs description]</span> &ndash; Suffolk local authority, East of England region and England, October 2024</caption>
+    <thead class="govuk-table__head">
+      <tr class="govuk-table__row">
+        <th scope="col" class="govuk-table__header govuk-!-width-one-third">Primary support reason</th>
+        <th scope="col" class="govuk-table__header govuk-table__header--numeric">Suffolk</th>
+        <th scope="col" class="govuk-table__header govuk-table__header--numeric">East of England</th>
+        <th scope="col" class="govuk-table__header govuk-table__header--numeric">England</th>
+      </tr>
+    </thead>
+    <tbody class="govuk-table__body">
+      {% if data.primarySupportReason8 %}
+      {% for param in data.primarySupportReason8 %}
+      {% if param == "Learning disability support" %}
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">Learning disability support</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">{% if data.ageGroup8 == "Aged 18 to 64" %}1,935{% else %}270{% endif %}</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">{% if data.ageGroup8 == "Aged 18 to 64" %}14,490{% else %}1,915{% endif %}</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">{% if data.ageGroup8 == "Aged 18 to 64" %}129,375{% else %}17,680{% endif %}</td>
+      </tr>
+      {% endif %}
+      {% endfor %}
+      {% for param in data.primarySupportReason8 %}
+      {% if param == "Mental health support" %}
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">Mental health support</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">{% if data.ageGroup8 == "Aged 18 to 64" %}465{% else %}310{% endif %}</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">{% if data.ageGroup8 == "Aged 18 to 64" %}4,910{% else %}2,700{% endif %}</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">{% if data.ageGroup8 == "Aged 18 to 64" %}51,260{% else %}29,415{% endif %}</td>
+      </tr>
+      {% endif %}
+      {% endfor %}
+      {% for param in data.primarySupportReason8 %}
+      {% if param == "Physical support: Access and mobility only" %}
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">Physical support: Access and mobility only</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">{% if data.ageGroup8 == "Aged 18 to 64" %}110{% else %}315{% endif %}</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">{% if data.ageGroup8 == "Aged 18 to 64" %}2,455{% else %}5,755{% endif %}</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">{% if data.ageGroup8 == "Aged 18 to 64" %}16,840{% else %}49,080{% endif %}</td>
+      </tr>
+      {% endif %}
+      {% endfor %}
+      {% for param in data.primarySupportReason8 %}
+      {% if param == "Physical support: Personal care support" %}
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">Physical support: Personal care support</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">{% if data.ageGroup8 == "Aged 18 to 64" %}775{% else %}4,515{% endif %}</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">{% if data.ageGroup8 == "Aged 18 to 64" %}5,185{% else %}26,185{% endif %}</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">{% if data.ageGroup8 == "Aged 18 to 64" %}60,230{% else %}236,315{% endif %}</td>
+      </tr>
+      {% endif %}
+      {% endfor %}
+      {% for param in data.primarySupportReason8 %}
+      {% if param == "Sensory support: Support for dual impairment" %}
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">Sensory support: Support for dual impairment</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">{% if data.ageGroup8 == "Aged 18 to 64" %}5{% else %}10{% endif %}</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">{% if data.ageGroup8 == "Aged 18 to 64" %}70{% else %}100{% endif %}</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">{% if data.ageGroup8 == "Aged 18 to 64" %}585{% else %}860{% endif %}</td>
+      </tr>
+      {% endif %}
+      {% endfor %}
+      {% for param in data.primarySupportReason8 %}
+      {% if param == "Sensory support: Support for hearing impairment" %}
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">Sensory support: Support for hearing impairment</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">{% if data.ageGroup8 == "Aged 18 to 64" %}10{% else %}[C]{% endif %}</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">{% if data.ageGroup8 == "Aged 18 to 64" %}110{% else %}125{% endif %}</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">{% if data.ageGroup8 == "Aged 18 to 64" %}880{% else %}995{% endif %}</td>
+      </tr>
+      {% endif %}
+      {% endfor %}
+      {% for param in data.primarySupportReason8 %}
+      {% if param == "Sensory support: Support for visual impairment" %}
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">Sensory support: Support for visual impairment</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">{% if data.ageGroup8 == "Aged 18 to 64" %}15{% else %}25{% endif %}</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">{% if data.ageGroup8 == "Aged 18 to 64" %}180{% else %}300{% endif %}</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">{% if data.ageGroup8 == "Aged 18 to 64" %}1,950{% else %}2,650{% endif %}</td>
+      </tr>
+      {% endif %}
+      {% endfor %}
+      {% for param in data.primarySupportReason8 %}
+      {% if param == "Social support: Asylum seeker support" %}
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">Social support: Asylum seeker support</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">{% if data.ageGroup8 == "Aged 18 to 64" %}[C]{% else %}[C]{% endif %}</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">{% if data.ageGroup8 == "Aged 18 to 64" %}[C]{% else %}[C]{% endif %}</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">{% if data.ageGroup8 == "Aged 18 to 64" %}145{% else %}35{% endif %}</td>
+      </tr>
+      {% endif %}
+      {% endfor %}
+      {% for param in data.primarySupportReason8 %}
+      {% if param == "Social support: Substance misuse support" %}
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">Social support: Substance misuse support</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">{% if data.ageGroup8 == "Aged 18 to 64" %}[C]{% else %}5{% endif %}</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">{% if data.ageGroup8 == "Aged 18 to 64" %}45{% else %}40{% endif %}</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">{% if data.ageGroup8 == "Aged 18 to 64" %}875{% else %}415{% endif %}</td>
+      </tr>
+      {% endif %}
+      {% endfor %}
+      {% for param in data.primarySupportReason8 %}
+      {% if param == "Social support: Support for social isolation or other reason" %}
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">Social support: Support for social isolation or other reason</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">{% if data.ageGroup8 == "Aged 18 to 64" %}125{% else %}140{% endif %}</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">{% if data.ageGroup8 == "Aged 18 to 64" %}810{% else %}780{% endif %}</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">{% if data.ageGroup8 == "Aged 18 to 64" %}6,725{% else %}4,790{% endif %}</td>
+      </tr>
+      {% endif %}
+      {% endfor %}
+      {% for param in data.primarySupportReason8 %}
+      {% if param == "Support with memory and cognition" %}
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">Support with memory and cognition</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">{% if data.ageGroup8 == "Aged 18 to 64" %}75{% else %}770{% endif %}</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">{% if data.ageGroup8 == "Aged 18 to 64" %}340{% else %}4,145{% endif %}</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">{% if data.ageGroup8 == "Aged 18 to 64" %}4,645{% else %}50,430{% endif %}</td>
+      </tr>
+      {% endif %}
+      {% endfor %}
+      {% for param in data.primarySupportReason8 %}
+      {% if param == "Unknown" %}
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">Unknown</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">{% if data.ageGroup8 == "Aged 18 to 64" %}[C]{% else %}15{% endif %}</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">{% if data.ageGroup8 == "Aged 18 to 64" %}105{% else %}430{% endif %}</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">{% if data.ageGroup8 == "Aged 18 to 64" %}2,440{% else %}3,650{% endif %}</td>
+      </tr>
+      {% endif %}
+      {% endfor %}
+      {% else %}
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">Learning disability support</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">{% if data.ageGroup8 == "Aged 18 to 64" %}1,935{% else %}270{% endif %}</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">{% if data.ageGroup8 == "Aged 18 to 64" %}14,490{% else %}1,915{% endif %}</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">{% if data.ageGroup8 == "Aged 18 to 64" %}129,375{% else %}17,680{% endif %}</td>
+      </tr>
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">Mental health support</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">{% if data.ageGroup8 == "Aged 18 to 64" %}465{% else %}310{% endif %}</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">{% if data.ageGroup8 == "Aged 18 to 64" %}4,910{% else %}2,700{% endif %}</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">{% if data.ageGroup8 == "Aged 18 to 64" %}51,260{% else %}29,415{% endif %}</td>
+      </tr>
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">Physical support: Access and mobility only</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">{% if data.ageGroup8 == "Aged 18 to 64" %}110{% else %}315{% endif %}</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">{% if data.ageGroup8 == "Aged 18 to 64" %}2,455{% else %}5,755{% endif %}</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">{% if data.ageGroup8 == "Aged 18 to 64" %}16,840{% else %}49,080{% endif %}</td>
+      </tr>
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">Physical support: Personal care support</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">{% if data.ageGroup8 == "Aged 18 to 64" %}775{% else %}4,515{% endif %}</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">{% if data.ageGroup8 == "Aged 18 to 64" %}5,185{% else %}26,185{% endif %}</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">{% if data.ageGroup8 == "Aged 18 to 64" %}60,230{% else %}236,315{% endif %}</td>
+      </tr>
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">Sensory support: Support for dual impairment</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">{% if data.ageGroup8 == "Aged 18 to 64" %}5{% else %}10{% endif %}</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">{% if data.ageGroup8 == "Aged 18 to 64" %}70{% else %}100{% endif %}</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">{% if data.ageGroup8 == "Aged 18 to 64" %}585{% else %}860{% endif %}</td>
+      </tr>
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">Sensory support: Support for hearing impairment</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">{% if data.ageGroup8 == "Aged 18 to 64" %}10{% else %}[C]{% endif %}</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">{% if data.ageGroup8 == "Aged 18 to 64" %}110{% else %}125{% endif %}</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">{% if data.ageGroup8 == "Aged 18 to 64" %}880{% else %}995{% endif %}</td>
+      </tr>
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">Sensory support: Support for visual impairment</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">{% if data.ageGroup8 == "Aged 18 to 64" %}15{% else %}25{% endif %}</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">{% if data.ageGroup8 == "Aged 18 to 64" %}180{% else %}300{% endif %}</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">{% if data.ageGroup8 == "Aged 18 to 64" %}1,950{% else %}2,650{% endif %}</td>
+      </tr>
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">Social support: Asylum seeker support</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">{% if data.ageGroup8 == "Aged 18 to 64" %}[C]{% else %}[C]{% endif %}</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">{% if data.ageGroup8 == "Aged 18 to 64" %}[C]{% else %}[C]{% endif %}</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">{% if data.ageGroup8 == "Aged 18 to 64" %}145{% else %}35{% endif %}</td>
+      </tr>
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">Social support: Substance misuse support</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">{% if data.ageGroup8 == "Aged 18 to 64" %}[C]{% else %}5{% endif %}</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">{% if data.ageGroup8 == "Aged 18 to 64" %}45{% else %}40{% endif %}</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">{% if data.ageGroup8 == "Aged 18 to 64" %}875{% else %}415{% endif %}</td>
+      </tr>
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">Social support: Support for social isolation or other reason</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">{% if data.ageGroup8 == "Aged 18 to 64" %}125{% else %}140{% endif %}</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">{% if data.ageGroup8 == "Aged 18 to 64" %}810{% else %}780{% endif %}</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">{% if data.ageGroup8 == "Aged 18 to 64" %}6,725{% else %}4,790{% endif %}</td>
+      </tr>
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">Support with memory and cognition</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">{% if data.ageGroup8 == "Aged 18 to 64" %}75{% else %}770{% endif %}</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">{% if data.ageGroup8 == "Aged 18 to 64" %}340{% else %}4,145{% endif %}</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">{% if data.ageGroup8 == "Aged 18 to 64" %}4,645{% else %}50,430{% endif %}</td>
+      </tr>
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">Unknown</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">{% if data.ageGroup8 == "Aged 18 to 64" %}[C]{% else %}15{% endif %}</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">{% if data.ageGroup8 == "Aged 18 to 64" %}105{% else %}430{% endif %}</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">{% if data.ageGroup8 == "Aged 18 to 64" %}2,440{% else %}3,650{% endif %}</td>
+      </tr>
+      {% endif %}
+    </tbody>
+  </table>
+
+</div>
+
+<div class="govuk-form-block">
+  <p class="govuk-body data-source">Source: <span class="needs-content">[Needs source information]</span></p>
+</div>

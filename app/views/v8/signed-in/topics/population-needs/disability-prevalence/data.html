@@ -1,4 +1,4 @@
-{% extends "v8/layouts/signed-in.html" %}
+{% extends "v8/layouts/signed-in-map.html" %}
 
 {% set pageName = "General health, disability and learning disability" %}
 
@@ -24,8 +24,12 @@
     <h1 class="govuk-heading-xl">{{pageName}}</h1>
     <p class="govuk-body-l">Data on disability prevalence, learning disability diagnoses and reasons for accessing care.</p>
 
-    <h2 class="govuk-heading-l govuk-!-margin-top-9">Data overview</h2>
-    <!-- <p class="govuk-body">Data overview summary information, e.g. broad guidance.</p> -->
+    <div class="govuk-form-group">
+      <h2 class="govuk-heading-l govuk-!-margin-top-9">Data overview</h2>
+      <!-- <p class="govuk-body">Data overview summary information, e.g. broad guidance.</p> -->
+      {% include "./filters/_page-filter-component.html" %}
+    </div>
+
   </div>
 
 </div>
@@ -127,8 +131,32 @@
       <div class="govuk-tabs" data-module="govuk-tabs">
 
         <div class="govuk-form-group">
-          <h3 class="govuk-heading-m">Primary reason for people to access long-term adult social care</h3>
-          <p class="govuk-body">[Needs to be designed.]</p>
+          <h3 id="data3" class="govuk-heading-m">Primary reason for people to access long-term adult social care</h3>
+          <p class="govuk-body needs-content">[Needs content and <a href="#" class="govuk-link">link to data indicator details page</a>].</p>
+          {% include "./filters/_3-filter-component.html" %}
+        </div>
+
+        <h3 class="govuk-tabs__title">Contents</h3>
+        <ul class="govuk-tabs__list">
+          <li class="govuk-tabs__list-item">
+            <a class="govuk-tabs__tab" href="#data3-table">Table</a>
+          </li>
+          <li class="govuk-tabs__list-item">
+            <a class="govuk-tabs__tab" href="#data3-download">Download</a>
+          </li>
+        </ul>
+
+        <div class="govuk-tabs__panel" id="data3-table">
+          {% include "./data-visualisations/_3-table.html" %}
+        </div>
+
+        <div class="govuk-tabs__panel" id="data3-download">
+          <h4 class="govuk-heading-s">Download</h4>
+          <ul class="govuk-list">
+            <li>
+              <a class="govuk-link" href="#" data-message="Sorry, this hasn’t been designed yet">Export table data (CSV, 420 KB)</a>
+            </li>
+          </ul>
         </div>
 
       </div>
@@ -257,4 +285,151 @@
   </div>
 
 </div>
+{% endblock %}
+
+{% block pageScripts %}
+<!-- jQuery (progressive enhancement) that loads and controls the dynamic filters for this page -->
+<script type="text/javascript">
+  
+  window.addEventListener('load', function() {
+
+    // Hide all dynamic filter sections (i.e. all filter options)
+    $('.dhsc-filter--content').hide();
+    // Show all dynamic filter buttons
+    $('.dhsc-filter--action').show();
+
+    // Page filter (#7 for GASCD) - User interacts with the filter button
+    $('#dhsc-filter--button7').on("click", function() {
+      
+      if (!$('#dhsc-filter--action7').hasClass('dhsc-filter--open')) {
+        $('#dhsc-filter--content7').show().focus();
+        $('#dhsc-filter--action7').addClass('dhsc-filter--open');
+        $('#dhsc-filter--button7').attr('aria-expanded', 'true');
+        $("#dhsc-filter--button7 .dhsc-filter--button-content").text('Hide filters');
+        $('#dhsc-filter--icon7').addClass('fa-minus');
+        $('#dhsc-filter--icon7').removeClass('fa-plus');
+        $('#dhsc-filter--icon7-content').text('Close');
+      }
+      else {
+        $('#dhsc-filter--content7').hide();
+        $('#dhsc-filter--action7').removeClass('dhsc-filter--open');
+        $('#dhsc-filter--button7').attr('aria-expanded', 'false');
+        $("#dhsc-filter--button7 .dhsc-filter--button-content").text('Show filters');
+        $('#dhsc-filter--icon7').addClass('fa-plus');
+        $('#dhsc-filter--icon7').removeClass('fa-minus');
+        $('#dhsc-filter--icon7-content').text('Open');
+      }
+
+    });
+
+    // Page filter (#7 for GASCD) - Quick and dirty way of updating the filters individually, when a user clicks a related pill
+    $('#localAuthority7-remove').on("click", function(e) {
+      e.preventDefault();
+      $('#localAuthority7').val('');
+      $('#update-filters7').click();
+    });
+    
+    // Filter (#8 for GASCD): Primary reason for people to access long-term adult social care - User interacts with the filter button
+    $('#dhsc-filter--button8').on("click", function() {
+      
+      if (!$('#dhsc-filter--action8').hasClass('dhsc-filter--open')) {
+        $('#dhsc-filter--content8').show().focus();
+        $('#dhsc-filter--action8').addClass('dhsc-filter--open');
+        $('#dhsc-filter--button8').attr('aria-expanded', 'true');
+        $("#dhsc-filter--button8 .dhsc-filter--button-content").text('Hide filters');
+        $('#dhsc-filter--icon8').addClass('fa-minus');
+        $('#dhsc-filter--icon8').removeClass('fa-plus');
+        $('#dhsc-filter--icon8-content').text('Close');
+      }
+      else {
+        $('#dhsc-filter--content8').hide();
+        $('#dhsc-filter--action8').removeClass('dhsc-filter--open');
+        $('#dhsc-filter--button8').attr('aria-expanded', 'false');
+        $("#dhsc-filter--button8 .dhsc-filter--button-content").text('Show filters');
+        $('#dhsc-filter--icon8').addClass('fa-plus');
+        $('#dhsc-filter--icon8').removeClass('fa-minus');
+        $('#dhsc-filter--icon8-content').text('Open');
+      }
+
+    });
+
+    /* Filter (#8 for GASCD): Primary reason for people to access long-term adult social care - Quick and dirty way of updating the filters individually, when a user clicks a related pill */
+    // Learning disability support
+    $('#primarySupportReason8_1-remove').on("click", function(e) {
+      e.preventDefault();
+      $('#primarySupportReason8_1').prop("checked", false);
+      $('#update-filters8').click();
+    });
+    // Mental health support
+    $('#primarySupportReason8_2-remove').on("click", function(e) {
+      e.preventDefault();
+      $('#primarySupportReason8_2').prop("checked", false);
+      $('#update-filters8').click();
+    });
+    // Physical support: Access and mobility only
+    $('#primarySupportReason8_3-remove').on("click", function(e) {
+      e.preventDefault();
+      $('#primarySupportReason8_3').prop("checked", false);
+      $('#update-filters8').click();
+    });
+    // Physical support: Personal care support
+    $('#primarySupportReason8_4-remove').on("click", function(e) {
+      e.preventDefault();
+      $('#primarySupportReason8_4').prop("checked", false);
+      $('#update-filters8').click();
+    });
+    // Sensory support: Support for dual impairment
+    $('#primarySupportReason8_5-remove').on("click", function(e) {
+      e.preventDefault();
+      $('#primarySupportReason8_5').prop("checked", false);
+      $('#update-filters8').click();
+    });
+    // Sensory support: Support for hearing impairment
+    $('#primarySupportReason8_6-remove').on("click", function(e) {
+      e.preventDefault();
+      $('#primarySupportReason8_6').prop("checked", false);
+      $('#update-filters8').click();
+    });
+    // Sensory support: Support for visual impairment
+    $('#primarySupportReason8_7-remove').on("click", function(e) {
+      e.preventDefault();
+      $('#primarySupportReason8_7').prop("checked", false);
+      $('#update-filters8').click();
+    });
+    // Social support: Asylum seeker support
+    $('#primarySupportReason8_8-remove').on("click", function(e) {
+      e.preventDefault();
+      $('#primarySupportReason8_8').prop("checked", false);
+      $('#update-filters8').click();
+    });
+    // Social support: Substance misuse support
+    $('#primarySupportReason8_9-remove').on("click", function(e) {
+      e.preventDefault();
+      $('#primarySupportReason8_9').prop("checked", false);
+      $('#update-filters8').click();
+    });
+    // Social support: Support for social isolation or other reason
+    $('#primarySupportReason8_10-remove').on("click", function(e) {
+      e.preventDefault();
+      $('#primarySupportReason8_10').prop("checked", false);
+      $('#update-filters8').click();
+    });
+    // Support with memory and cognition
+    $('#primarySupportReason8_11-remove').on("click", function(e) {
+      e.preventDefault();
+      $('#primarySupportReason8_11').prop("checked", false);
+      $('#update-filters8').click();
+    });
+    // Unknown
+    $('#primarySupportReason8_12-remove').on("click", function(e) {
+      e.preventDefault();
+      $('#primarySupportReason8_12').prop("checked", false);
+      $('#update-filters8').click();
+    });
+
+  });
+  
+</script>
+<!-- Font Awesome 4 icons for the notifications -->
+<link href="/public/open-source/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
 {% endblock %}

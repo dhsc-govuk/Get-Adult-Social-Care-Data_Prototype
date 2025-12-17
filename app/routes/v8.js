@@ -335,6 +335,39 @@ module.exports = function(router) {
    * Data > Population needs
   *****/
 
+  // General health, disability and learning disability
+  router.post('/' + version + '/' + 'signed-in/topics/population-needs/disability-prevalence/data-update-filters7', function (req, res) {
+
+    // Data objects to be retrieved and queried
+    var localAuthority7 = req.session.data['localAuthority7']
+
+    // User has chosen at least 1 filter  
+		if (localAuthority7) {
+      res.redirect('/' + version + '/' + 'signed-in/topics/population-needs/disability-prevalence/data?filterApplied7=Yes')     
+		}
+		// No filters selected by user
+		else {			
+      res.redirect('/' + version + '/' + 'signed-in/topics/population-needs/disability-prevalence/data?filterApplied7=')
+    }
+    
+  })
+  router.post('/' + version + '/' + 'signed-in/topics/population-needs/disability-prevalence/data-update-filters8', function (req, res) {
+
+    // Data objects to be retrieved and queried
+    var ageGroup8 = req.session.data['ageGroup8']
+    var primarySupportReason8 = req.session.data['primarySupportReason8']
+
+    // User has chosen at least 1 filter  
+		if (ageGroup8 || primarySupportReason8) {
+      res.redirect('/' + version + '/' + 'signed-in/topics/population-needs/disability-prevalence/data?filterApplied8=Yes#data3')     
+		}
+		// No filters selected by user
+		else {			
+      res.redirect('/' + version + '/' + 'signed-in/topics/population-needs/disability-prevalence/data?filterApplied8=#data3')
+    }
+    
+  })
+
   // Population size and age group percentages
   router.post('/' + version + '/' + 'signed-in/topics/population-needs/population-age-and-size/data-update-filters4', function (req, res) {
 
