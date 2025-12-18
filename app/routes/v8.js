@@ -289,11 +289,11 @@ module.exports = function(router) {
 
     // User has chosen at least 1 filter  
 		if (localAuthority13) {
-      res.redirect('/' + version + '/' + 'signed-in/topics/residential-care/residential-care-providers/data?filterApplied13=Yes')     
+      res.redirect('/' + version + '/' + 'signed-in/topics/residential-care/residential-care-providers/data?filterApplied13=Yes#data2')     
 		}
 		// No filters selected by user
 		else {			
-      res.redirect('/' + version + '/' + 'signed-in/topics/residential-care/residential-care-providers/data?filterApplied13=')
+      res.redirect('/' + version + '/' + 'signed-in/topics/residential-care/residential-care-providers/data?filterApplied13=#data2')
     }
     
   })
