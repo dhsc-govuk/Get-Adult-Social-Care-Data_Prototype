@@ -282,6 +282,21 @@ module.exports = function(router) {
     }
     
   })
+  router.post('/' + version + '/' + 'signed-in/topics/residential-care/residential-care-providers/data-update-filters13', function (req, res) {
+
+    // Data objects to be retrieved and queried
+    var localAuthority13 = req.session.data['localAuthority13']
+
+    // User has chosen at least 1 filter  
+		if (localAuthority13) {
+      res.redirect('/' + version + '/' + 'signed-in/topics/residential-care/residential-care-providers/data?filterApplied13=Yes')     
+		}
+		// No filters selected by user
+		else {			
+      res.redirect('/' + version + '/' + 'signed-in/topics/residential-care/residential-care-providers/data?filterApplied13=')
+    }
+    
+  })
 
   // Care home beds and occupancy levels
   router.post('/' + version + '/' + 'signed-in/topics/residential-care/provision-and-occupancy/data-update-filters1', function (req, res) {
@@ -330,11 +345,79 @@ module.exports = function(router) {
     
   })
 
+  // Number of adults receiving community social care
+  router.post('/' + version + '/' + 'signed-in/topics/residential-care/number-of-people-receiving-care/data-update-filters12', function (req, res) {
+
+    // Data objects to be retrieved and queried
+    var localAuthority12 = req.session.data['localAuthority12']
+
+    // User has chosen at least 1 filter  
+		if (localAuthority12) {
+      res.redirect('/' + version + '/' + 'signed-in/topics/residential-care/number-of-people-receiving-care/data?filterApplied12=Yes')     
+		}
+		// No filters selected by user
+		else {			
+      res.redirect('/' + version + '/' + 'signed-in/topics/residential-care/number-of-people-receiving-care/data?filterApplied12=')
+    }
+    
+  })
+  
+  // Unpaid care
+  router.post('/' + version + '/' + 'signed-in/topics/residential-care/unpaid-care/data-update-filters11', function (req, res) {
+
+    // Data objects to be retrieved and queried
+    var localAuthority11 = req.session.data['localAuthority11']
+
+    // User has chosen at least 1 filter  
+		if (localAuthority11) {
+      res.redirect('/' + version + '/' + 'signed-in/topics/residential-care/unpaid-care/data?filterApplied11=Yes')     
+		}
+		// No filters selected by user
+		else {			
+      res.redirect('/' + version + '/' + 'signed-in/topics/residential-care/unpaid-care/data?filterApplied11=')
+    }
+    
+  })
+
   /*****
    * Signed in
    * Data > Population needs
   *****/
 
+  // Dementia prevalence and estimated diagnosis rate
+  router.post('/' + version + '/' + 'signed-in/topics/population-needs/dementia-prevalence/data-update-filters10', function (req, res) {
+
+    // Data objects to be retrieved and queried
+    var localAuthority10 = req.session.data['localAuthority10']
+
+    // User has chosen at least 1 filter  
+		if (localAuthority10) {
+      res.redirect('/' + version + '/' + 'signed-in/topics/population-needs/dementia-prevalence/data?filterApplied10=Yes')     
+		}
+		// No filters selected by user
+		else {			
+      res.redirect('/' + version + '/' + 'signed-in/topics/population-needs/dementia-prevalence/data?filterApplied10=')
+    }
+    
+  })
+  
+  // Economic factors and household composition
+  router.post('/' + version + '/' + 'signed-in/topics/population-needs/household-composition-and-economic-factors/data-update-filters9', function (req, res) {
+
+    // Data objects to be retrieved and queried
+    var localAuthority9 = req.session.data['localAuthority9']
+
+    // User has chosen at least 1 filter  
+		if (localAuthority9) {
+      res.redirect('/' + version + '/' + 'signed-in/topics/population-needs/household-composition-and-economic-factors/data?filterApplied9=Yes')     
+		}
+		// No filters selected by user
+		else {			
+      res.redirect('/' + version + '/' + 'signed-in/topics/population-needs/household-composition-and-economic-factors/data?filterApplied9=')
+    }
+    
+  })
+  
   // General health, disability and learning disability
   router.post('/' + version + '/' + 'signed-in/topics/population-needs/disability-prevalence/data-update-filters7', function (req, res) {
 

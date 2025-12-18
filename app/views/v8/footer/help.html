@@ -8,8 +8,6 @@
 {% extends "v8/layouts/signed-in.html" %}
 {% elif data.signedInState == "signedInMenu" %}
 {% extends "v8/layouts/signed-in-menu.html" %}
-{% elif data.signedInState == "signedInMap" %}
-{% extends "v8/layouts/signed-in-map.html" %}
 {% else %}
 {% extends "v8/layouts/default.html" %}
 {% endif %}

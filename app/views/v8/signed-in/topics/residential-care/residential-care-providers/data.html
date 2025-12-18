@@ -1,4 +1,4 @@
-{% extends "v8/layouts/signed-in-map.html" %}
+{% extends "v8/layouts/signed-in.html" %}
 
 {% set pageName = "Care providers: locations and services" %}
 
@@ -116,6 +116,7 @@
           <!-- Commented out until Edge Health provide the content for this new page -->
           <!-- <p class="govuk-body">Find out <span class="needs-content"><a href="../../../help/total-number-community-social-care-providers">how the number of adult social care providers is calculated</a></span>.</p> -->
           <p class="govuk-body" data-module="edge">Find out <span class="needs-content"><a href="#" data-message="Sorry, this hasn’t been designed yet">how the number of adult social care providers is calculated</a></span>.</p>
+          {% include "./filters/_2-filter-component.html" %}
         </div>
 
         <h3 class="govuk-tabs__title">Contents</h3>
@@ -300,6 +301,37 @@
       e.preventDefault();
       $('#serviceType_5').prop("checked", false);
       $('#update-filters').click();
+    });
+
+    // Filter (#13 for GASCD): Number of adult social care providers - User interacts with the filter button
+    $('#dhsc-filter--button13').on("click", function() {
+      
+      if (!$('#dhsc-filter--action13').hasClass('dhsc-filter--open')) {
+        $('#dhsc-filter--content13').show().focus();
+        $('#dhsc-filter--action13').addClass('dhsc-filter--open');
+        $('#dhsc-filter--button13').attr('aria-expanded', 'true');
+        $("#dhsc-filter--button13 .dhsc-filter--button-content").text('Hide filters');
+        $('#dhsc-filter--icon13').addClass('fa-minus');
+        $('#dhsc-filter--icon13').removeClass('fa-plus');
+        $('#dhsc-filter--icon13-content').text('Close');
+      }
+      else {
+        $('#dhsc-filter--content13').hide();
+        $('#dhsc-filter--action13').removeClass('dhsc-filter--open');
+        $('#dhsc-filter--button13').attr('aria-expanded', 'false');
+        $("#dhsc-filter--button13 .dhsc-filter--button-content").text('Show filters');
+        $('#dhsc-filter--icon13').addClass('fa-plus');
+        $('#dhsc-filter--icon13').removeClass('fa-minus');
+        $('#dhsc-filter--icon13-content').text('Open');
+      }
+
+    });
+
+    // Filter (#13 for GASCD): Number of adult social care providers - Quick and dirty way of updating the filters individually, when a user clicks a related pill
+    $('#localAuthority13-remove').on("click", function(e) {
+      e.preventDefault();
+      $('#localAuthority13').val('');
+      $('#update-filters13').click();
     });
 
   });

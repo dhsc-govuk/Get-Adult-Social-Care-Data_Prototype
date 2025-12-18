@@ -1,4 +1,4 @@
-{% extends "v8/layouts/signed-in-map.html" %}
+{% extends "v8/layouts/signed-in.html" %}
 
 {% set pageName = "General health, disability and learning disability" %}
 
@@ -63,7 +63,7 @@
 
         <div class="govuk-tabs__panel" id="data1-download">
           <h4 class="govuk-heading-s">Download</h4>
-          <ul class="govuk-list">
+          <ul class="govuk-list" data-module="edge">
             <li>
               <a class="govuk-link" href="#" data-message="Sorry, this hasn’t been designed yet">Export table data (CSV, 420 KB)</a>
             </li>
@@ -107,7 +107,7 @@
 
         <div class="govuk-tabs__panel" id="data2-download">
           <h4 class="govuk-heading-s">Download</h4>
-          <ul class="govuk-list">
+          <ul class="govuk-list" data-module="edge">
             <li>
               <a class="govuk-link" href="#" data-message="Sorry, this hasn’t been designed yet">Export table data (CSV, 420 KB)</a>
             </li>
@@ -132,7 +132,7 @@
 
         <div class="govuk-form-group">
           <h3 id="data3" class="govuk-heading-m">Primary reason for people to access long-term adult social care</h3>
-          <p class="govuk-body needs-content">[Needs content and <a href="#" class="govuk-link">link to data indicator details page</a>].</p>
+          <p class="govuk-body">Find out <a href="../../../help/primary-reason-for-accessing-long-term-adult-social-care" class="govuk-link">how primary reason for people to access long-term adult social care is calculated</a>.</p>
           {% include "./filters/_3-filter-component.html" %}
         </div>
 
@@ -152,7 +152,7 @@
 
         <div class="govuk-tabs__panel" id="data3-download">
           <h4 class="govuk-heading-s">Download</h4>
-          <ul class="govuk-list">
+          <ul class="govuk-list" data-module="edge">
             <li>
               <a class="govuk-link" href="#" data-message="Sorry, this hasn’t been designed yet">Export table data (CSV, 420 KB)</a>
             </li>

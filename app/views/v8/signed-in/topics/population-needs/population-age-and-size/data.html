@@ -1,4 +1,4 @@
-{% extends "v8/layouts/signed-in-map.html" %}
+{% extends "v8/layouts/signed-in.html" %}
 
 {% set pageName = "Population size and age group percentages" %}
 
@@ -72,7 +72,7 @@
 
         <div class="govuk-tabs__panel" id="data1-download">
           <h4 class="govuk-heading-s">Download</h4>
-          <ul class="govuk-list">
+          <ul class="govuk-list" data-module="edge">
             <li>
               <a class="govuk-link" href="#" data-message="Sorry, this hasn’t been designed yet">Export table data (CSV, 420 KB)</a>
             </li>
@@ -124,7 +124,7 @@
 
         <div class="govuk-tabs__panel" id="data2-download">
           <h4 class="govuk-heading-s">Download</h4>
-          <ul class="govuk-list">
+          <ul class="govuk-list" data-module="edge">
             <li>
               <a class="govuk-link" href="#" data-message="Sorry, this hasn’t been designed yet">Download current map image (PNG, 2 MB)</a>
             </li>
@@ -172,7 +172,7 @@
 
         <div class="govuk-tabs__panel" id="data3-download">
           <h4 class="govuk-heading-s">Download</h4>
-          <ul class="govuk-list">
+          <ul class="govuk-list" data-module="edge">
             <li>
               <a class="govuk-link" href="#" data-message="Sorry, this hasn’t been designed yet">Export table data (CSV, 420 KB)</a>
             </li>

@@ -23,8 +23,13 @@
   <div class="govuk-grid-column-two-thirds">
     <h1 class="govuk-heading-xl">{{pageName}}</h1>
     <p class="govuk-body-l">Data on the number of people supported through community social care, including trends over time.</p>
-    <h2 class="govuk-heading-l govuk-!-margin-top-9">Data overview</h2>
-    <!-- <p class="govuk-body">Data overview summary information, e.g. broad guidance.</p> -->
+
+    <div class="govuk-form-group">
+      <h2 class="govuk-heading-l govuk-!-margin-top-9">Data overview</h2>
+      <!-- <p class="govuk-body">Data overview summary information, e.g. broad guidance.</p> -->
+      {% include "./filters/_page-filter-component.html" %}
+    </div>
+
   </div>
 
 </div>
@@ -58,7 +63,7 @@
 
         <div class="govuk-tabs__panel" id="data-download">
           <h4 class="govuk-heading-s">Download</h4>
-          <ul class="govuk-list">
+          <ul class="govuk-list" data-module="edge">
             <li>
               <a class="govuk-link" href="#" data-message="Sorry, this hasn’t been designed yet">Export table data (CSV, 420 KB)</a>
             </li>
@@ -118,7 +123,7 @@
 
         <div class="govuk-tabs__panel" id="trend-download">
           <h4 class="govuk-heading-s">Download</h4>
-          <ul class="govuk-list">
+          <ul class="govuk-list" data-module="edge">
             <li>
               <a class="govuk-link" href="#" data-message="Sorry, this hasn’t been designed yet">Download chart image (PNG, 1 MB)</a>
             </li>
@@ -185,4 +190,53 @@
   </div>
 
 </div>
+{% endblock %}
+
+{% block pageScripts %}
+<!-- jQuery (progressive enhancement) that loads and controls the dynamic filters for this page -->
+<script type="text/javascript">
+  
+  window.addEventListener('load', function() {
+
+    // Hide all dynamic filter sections (i.e. all filter options)
+    $('.dhsc-filter--content').hide();
+    // Show all dynamic filter buttons
+    $('.dhsc-filter--action').show();
+
+    // Page filter (#12 for GASCD) - User interacts with the filter button
+    $('#dhsc-filter--button12').on("click", function() {
+      
+      if (!$('#dhsc-filter--action12').hasClass('dhsc-filter--open')) {
+        $('#dhsc-filter--content12').show().focus();
+        $('#dhsc-filter--action12').addClass('dhsc-filter--open');
+        $('#dhsc-filter--button12').attr('aria-expanded', 'true');
+        $("#dhsc-filter--button12 .dhsc-filter--button-content").text('Hide filters');
+        $('#dhsc-filter--icon12').addClass('fa-minus');
+        $('#dhsc-filter--icon12').removeClass('fa-plus');
+        $('#dhsc-filter--icon12-content').text('Close');
+      }
+      else {
+        $('#dhsc-filter--content12').hide();
+        $('#dhsc-filter--action12').removeClass('dhsc-filter--open');
+        $('#dhsc-filter--button12').attr('aria-expanded', 'false');
+        $("#dhsc-filter--button12 .dhsc-filter--button-content").text('Show filters');
+        $('#dhsc-filter--icon12').addClass('fa-plus');
+        $('#dhsc-filter--icon12').removeClass('fa-minus');
+        $('#dhsc-filter--icon12-content').text('Open');
+      }
+
+    });
+
+    // Page filter (#12 for GASCD) - Quick and dirty way of updating the filters individually, when a user clicks a related pill
+    $('#localAuthority12-remove').on("click", function(e) {
+      e.preventDefault();
+      $('#localAuthority12').val('');
+      $('#update-filters12').click();
+    });
+
+  });
+  
+</script>
+<!-- Font Awesome 4 icons for the notifications -->
+<link href="/public/open-source/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
 {% endblock %}
