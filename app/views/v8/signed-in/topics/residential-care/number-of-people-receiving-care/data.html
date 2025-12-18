@@ -20,7 +20,7 @@
 {% block content %}
 <div class="govuk-grid-row">
 
-  <div class="govuk-grid-column-two-thirds">
+  <div class="govuk-grid-column-full">
     <h1 class="govuk-heading-xl">{{pageName}}</h1>
     <p class="govuk-body-l">Data on the number of people supported through community social care, including trends over time.</p>
 
@@ -80,7 +80,7 @@
 
 <div class="govuk-grid-row">
 
-  <div class="govuk-grid-column-two-thirds">
+  <div class="govuk-grid-column-full">
     <h2 class="govuk-heading-l govuk-!-margin-top-9">Trends</h2>
     <!-- <p class="govuk-body">Trends summary information, e.g. limitation.</p> -->
   </div>
@@ -143,7 +143,7 @@
 
 <div class="govuk-grid-row">
 
-  <div class="govuk-grid-column-two-thirds">
+  <div class="govuk-grid-column-full">
     <h2 class="govuk-heading-l govuk-!-margin-top-9">Data indicator details</h2>
     <p class="govuk-body">Use the link to view details on the data source, how the data was collected and any limitations to consider when using the data.</p>
 
@@ -228,6 +228,7 @@
     });
 
     // Page filter (#12 for GASCD) - Quick and dirty way of updating the filters individually, when a user clicks a related pill
+    // Local authority
     $('#localAuthority12-remove').on("click", function(e) {
       e.preventDefault();
       $('#localAuthority12').val('');

@@ -20,7 +20,7 @@
 {% block content %}
 <div class="govuk-grid-row">
 
-  <div class="govuk-grid-column-two-thirds">
+  <div class="govuk-grid-column-full">
     {% if sessionTimeoutJs == "true" %}
     <meta name="hmrc-timeout-dialog" content="hmrc-timeout-dialog" data-language="en" data-timeout="70" data-countdown="68" data-keep-alive-url="?continue=true" data-sign-out-url="/v8/system/signed-out" data-timeout-url="/v8/system/session-expired" data-title="You will be signed out soon" data-message="For your security, you will be signed out in " data-message-suffix="" data-keep-alive-button-text="" data-sign-out-button-text="" data-synchronise-tabs="" data-hide-sign-out-button="" />
     {% elif sessionTimeoutNonJs == "true" %}
@@ -152,7 +152,7 @@
 
 <div class="govuk-grid-row">
 
-  <div class="govuk-grid-column-two-thirds">
+  <div class="govuk-grid-column-full">
     <h2 class="govuk-heading-l govuk-!-margin-top-9">Data indicator details</h2>
     <p class="govuk-body">Use the link to view details on the data source, how the data was collected and any limitations to consider when using the data.</p>
 
@@ -328,6 +328,7 @@
     });
 
     // Filter (#13 for GASCD): Number of adult social care providers - Quick and dirty way of updating the filters individually, when a user clicks a related pill
+    // Local authority
     $('#localAuthority13-remove').on("click", function(e) {
       e.preventDefault();
       $('#localAuthority13').val('');

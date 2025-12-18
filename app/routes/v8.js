@@ -381,6 +381,28 @@ module.exports = function(router) {
 
   /*****
    * Signed in
+   * Data > Funding
+  *****/
+
+  // Local authority funding for adult social care
+  router.post('/' + version + '/' + 'signed-in/topics/financial-spend-and-unpaid-care/financial-spend/data-update-filters14', function (req, res) {
+
+    // Data objects to be retrieved and queried
+    var localAuthority14 = req.session.data['localAuthority14']
+
+    // User has chosen at least 1 filter  
+		if (localAuthority14) {
+      res.redirect('/' + version + '/' + 'signed-in/topics/financial-spend-and-unpaid-care/financial-spend/data?filterApplied14=Yes')     
+		}
+		// No filters selected by user
+		else {			
+      res.redirect('/' + version + '/' + 'signed-in/topics/financial-spend-and-unpaid-care/financial-spend/data?filterApplied14=')
+    }
+    
+  })
+
+  /*****
+   * Signed in
    * Data > Population needs
   *****/
 
