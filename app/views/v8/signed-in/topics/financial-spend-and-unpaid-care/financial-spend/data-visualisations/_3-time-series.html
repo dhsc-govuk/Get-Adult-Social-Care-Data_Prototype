@@ -1,8 +1,10 @@
 <div class="govuk-form-group">
-    <h4 class="govuk-heading-s">Figure 3: graph of local authority funding for long-term adult social care &ndash; Suffolk local authority, East of England region and England, financial years 2021 to 2024</h4>
+
+  {% set age = ageGroup8 or "All age groups" %}
+  <h4 class="govuk-heading-s">Figure 3: graph of local authority funding for long-term adult social care for people {{age | lower}} &ndash; Suffolk local authority, East of England region and England, financial years 2021 to 2024</h4>
   <!--We'll need to have conditional content in this graph title-->
     
-    {% if data.supportSetting == "Community direct payments" %}
+  {% if data.supportSetting == "Community direct payments" %}
   <img src="/public/images/data-visualisations/financial-spend-and-unpaid-care/financial-spend/time-series-community-direct-payments.jpg" alt class="data-visualisation-image">
   {% elif data.supportSetting == "Community social care" %}
   <img src="/public/images/data-visualisations/financial-spend-and-unpaid-care/financial-spend/time-series-community-social-care.jpg" alt class="data-visualisation-image">

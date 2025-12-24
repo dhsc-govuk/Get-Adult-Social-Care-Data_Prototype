@@ -389,9 +389,10 @@ module.exports = function(router) {
 
     // Data objects to be retrieved and queried
     var localAuthority14 = req.session.data['localAuthority14']
+    var ageGroup14 = req.session.data['ageGroup14']
 
     // User has chosen at least 1 filter  
-		if (localAuthority14) {
+		if (localAuthority14 || ageGroup14) {
       res.redirect('/' + version + '/' + 'signed-in/topics/financial-spend-and-unpaid-care/financial-spend/data?filterApplied14=Yes')     
 		}
 		// No filters selected by user

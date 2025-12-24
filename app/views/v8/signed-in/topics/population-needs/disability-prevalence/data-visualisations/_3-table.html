@@ -67,7 +67,7 @@
       {% if param == "Sensory support: Support for hearing impairment" %}
       <tr class="govuk-table__row">
         <td class="govuk-table__cell">Sensory support: Support for hearing impairment</td>
-        <td class="govuk-table__cell govuk-table__cell--numeric">{% if data.ageGroup8 == "Aged 18 to 64" %}10{% else %}[C]{% endif %}</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">{% if data.ageGroup8 == "Aged 18 to 64" %}10{% else %}<span class="govuk-hint">Not available</span>{% endif %}</td>
         <td class="govuk-table__cell govuk-table__cell--numeric">{% if data.ageGroup8 == "Aged 18 to 64" %}110{% else %}125{% endif %}</td>
         <td class="govuk-table__cell govuk-table__cell--numeric">{% if data.ageGroup8 == "Aged 18 to 64" %}880{% else %}995{% endif %}</td>
       </tr>
@@ -87,8 +87,8 @@
       {% if param == "Social support: Asylum seeker support" %}
       <tr class="govuk-table__row">
         <td class="govuk-table__cell">Social support: Asylum seeker support</td>
-        <td class="govuk-table__cell govuk-table__cell--numeric">{% if data.ageGroup8 == "Aged 18 to 64" %}[C]{% else %}[C]{% endif %}</td>
-        <td class="govuk-table__cell govuk-table__cell--numeric">{% if data.ageGroup8 == "Aged 18 to 64" %}[C]{% else %}[C]{% endif %}</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">{% if data.ageGroup8 == "Aged 18 to 64" %}<span class="govuk-hint">Not available</span>{% else %}<span class="govuk-hint">Not available</span>{% endif %}</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">{% if data.ageGroup8 == "Aged 18 to 64" %}<span class="govuk-hint">Not available</span>{% else %}<span class="govuk-hint">Not available</span>{% endif %}</td>
         <td class="govuk-table__cell govuk-table__cell--numeric">{% if data.ageGroup8 == "Aged 18 to 64" %}145{% else %}35{% endif %}</td>
       </tr>
       {% endif %}
@@ -97,7 +97,7 @@
       {% if param == "Social support: Substance misuse support" %}
       <tr class="govuk-table__row">
         <td class="govuk-table__cell">Social support: Substance misuse support</td>
-        <td class="govuk-table__cell govuk-table__cell--numeric">{% if data.ageGroup8 == "Aged 18 to 64" %}[C]{% else %}5{% endif %}</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">{% if data.ageGroup8 == "Aged 18 to 64" %}<span class="govuk-hint">Not available</span>{% else %}5{% endif %}</td>
         <td class="govuk-table__cell govuk-table__cell--numeric">{% if data.ageGroup8 == "Aged 18 to 64" %}45{% else %}40{% endif %}</td>
         <td class="govuk-table__cell govuk-table__cell--numeric">{% if data.ageGroup8 == "Aged 18 to 64" %}875{% else %}415{% endif %}</td>
       </tr>
@@ -127,7 +127,7 @@
       {% if param == "Unknown" %}
       <tr class="govuk-table__row">
         <td class="govuk-table__cell">Unknown</td>
-        <td class="govuk-table__cell govuk-table__cell--numeric">{% if data.ageGroup8 == "Aged 18 to 64" %}[C]{% else %}15{% endif %}</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">{% if data.ageGroup8 == "Aged 18 to 64" %}<span class="govuk-hint">Not available</span>{% else %}15{% endif %}</td>
         <td class="govuk-table__cell govuk-table__cell--numeric">{% if data.ageGroup8 == "Aged 18 to 64" %}105{% else %}430{% endif %}</td>
         <td class="govuk-table__cell govuk-table__cell--numeric">{% if data.ageGroup8 == "Aged 18 to 64" %}2,440{% else %}3,650{% endif %}</td>
       </tr>
@@ -166,7 +166,7 @@
       </tr>
       <tr class="govuk-table__row">
         <td class="govuk-table__cell">Sensory support: Support for hearing impairment</td>
-        <td class="govuk-table__cell govuk-table__cell--numeric">{% if data.ageGroup8 == "Aged 18 to 64" %}10{% else %}[C]{% endif %}</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">{% if data.ageGroup8 == "Aged 18 to 64" %}10{% else %}<span class="govuk-hint">Not available</span>{% endif %}</td>
         <td class="govuk-table__cell govuk-table__cell--numeric">{% if data.ageGroup8 == "Aged 18 to 64" %}110{% else %}125{% endif %}</td>
         <td class="govuk-table__cell govuk-table__cell--numeric">{% if data.ageGroup8 == "Aged 18 to 64" %}880{% else %}995{% endif %}</td>
       </tr>
@@ -178,13 +178,13 @@
       </tr>
       <tr class="govuk-table__row">
         <td class="govuk-table__cell">Social support: Asylum seeker support</td>
-        <td class="govuk-table__cell govuk-table__cell--numeric">{% if data.ageGroup8 == "Aged 18 to 64" %}[C]{% else %}[C]{% endif %}</td>
-        <td class="govuk-table__cell govuk-table__cell--numeric">{% if data.ageGroup8 == "Aged 18 to 64" %}[C]{% else %}[C]{% endif %}</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">{% if data.ageGroup8 == "Aged 18 to 64" %}<span class="govuk-hint">Not available</span>{% else %}<span class="govuk-hint">Not available</span>{% endif %}</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">{% if data.ageGroup8 == "Aged 18 to 64" %}<span class="govuk-hint">Not available</span>{% else %}<span class="govuk-hint">Not available</span>{% endif %}</td>
         <td class="govuk-table__cell govuk-table__cell--numeric">{% if data.ageGroup8 == "Aged 18 to 64" %}145{% else %}35{% endif %}</td>
       </tr>
       <tr class="govuk-table__row">
         <td class="govuk-table__cell">Social support: Substance misuse support</td>
-        <td class="govuk-table__cell govuk-table__cell--numeric">{% if data.ageGroup8 == "Aged 18 to 64" %}[C]{% else %}5{% endif %}</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">{% if data.ageGroup8 == "Aged 18 to 64" %}<span class="govuk-hint">Not available</span>{% else %}5{% endif %}</td>
         <td class="govuk-table__cell govuk-table__cell--numeric">{% if data.ageGroup8 == "Aged 18 to 64" %}45{% else %}40{% endif %}</td>
         <td class="govuk-table__cell govuk-table__cell--numeric">{% if data.ageGroup8 == "Aged 18 to 64" %}875{% else %}415{% endif %}</td>
       </tr>
@@ -202,7 +202,7 @@
       </tr>
       <tr class="govuk-table__row">
         <td class="govuk-table__cell">Unknown</td>
-        <td class="govuk-table__cell govuk-table__cell--numeric">{% if data.ageGroup8 == "Aged 18 to 64" %}[C]{% else %}15{% endif %}</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">{% if data.ageGroup8 == "Aged 18 to 64" %}<span class="govuk-hint">Not available</span>{% else %}15{% endif %}</td>
         <td class="govuk-table__cell govuk-table__cell--numeric">{% if data.ageGroup8 == "Aged 18 to 64" %}105{% else %}430{% endif %}</td>
         <td class="govuk-table__cell govuk-table__cell--numeric">{% if data.ageGroup8 == "Aged 18 to 64" %}2,440{% else %}3,650{% endif %}</td>
       </tr>
