@@ -5,7 +5,7 @@
     <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
       
       <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="ageGroup14_1" name="ageGroup14" type="radio" value="All age groups"{% if data.ageGroup14 == 'All age groups' %} checked{% endif %}>
+        <input class="govuk-radios__input" id="ageGroup14_1" name="ageGroup14" type="radio" value="All age groups"{% if data.ageGroup14%}{% if data.ageGroup14 == 'All age groups' %} checked{% endif %}{% else %} checked{% endif %}>
         <label class="govuk-label govuk-radios__label" for="ageGroup14_1">All age groups</label>
       </div>
 

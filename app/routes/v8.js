@@ -272,6 +272,11 @@ module.exports = function(router) {
     var postcode = req.session.data['postcode']
     var serviceType = req.session.data['serviceType']
 
+    // Reset all default values injected into our filters
+    if (postcode == "CO5 1ST") {
+      postcode = undefined
+    }
+
     // User has chosen at least 1 filter  
 		if (postcode || serviceType) {
       res.redirect('/' + version + '/' + 'signed-in/topics/residential-care/residential-care-providers/data?filterApplied=Yes#data1')     
@@ -287,6 +292,11 @@ module.exports = function(router) {
     // Data objects to be retrieved and queried
     var localAuthority13 = req.session.data['localAuthority13']
 
+    // Reset all default values injected into our filters
+    if (localAuthority13 == "Suffolk") {
+      localAuthority13 = undefined
+    }
+
     // User has chosen at least 1 filter  
 		if (localAuthority13) {
       res.redirect('/' + version + '/' + 'signed-in/topics/residential-care/residential-care-providers/data?filterApplied13=Yes#data2')     
@@ -299,10 +309,35 @@ module.exports = function(router) {
   })
 
   // Care home beds and occupancy levels
+  router.post('/' + version + '/' + 'signed-in/topics/residential-care/provision-and-occupancy/data-update-filters15', function (req, res) {
+
+    // Data objects to be retrieved and queried
+    var localAuthority15 = req.session.data['localAuthority15']
+
+    // Reset all default values injected into our filters
+    if (localAuthority15 == "Suffolk") {
+      localAuthority15 = undefined
+    }
+
+    // User has chosen at least 1 filter  
+		if (localAuthority15) {
+      res.redirect('/' + version + '/' + 'signed-in/topics/residential-care/provision-and-occupancy/data?filterApplied15=Yes')     
+		}
+		// No filters selected by user
+		else {			
+      res.redirect('/' + version + '/' + 'signed-in/topics/residential-care/provision-and-occupancy/data?filterApplied15=')
+    }
+    
+  })
   router.post('/' + version + '/' + 'signed-in/topics/residential-care/provision-and-occupancy/data-update-filters1', function (req, res) {
 
     // Data objects to be retrieved and queried
     var bedType1 = req.session.data['bedType1']
+
+    // Reset all default values injected into our filters
+    if (bedType1 == "All bed types") {
+      bedType1 = undefined
+    }
 
     // User has chosen at least 1 filter  
 		if (bedType1) {
@@ -351,6 +386,11 @@ module.exports = function(router) {
     // Data objects to be retrieved and queried
     var localAuthority12 = req.session.data['localAuthority12']
 
+    // Reset all default values injected into our filters
+    if (localAuthority12 == "Suffolk") {
+      localAuthority12 = undefined
+    }
+
     // User has chosen at least 1 filter  
 		if (localAuthority12) {
       res.redirect('/' + version + '/' + 'signed-in/topics/residential-care/number-of-people-receiving-care/data?filterApplied12=Yes')     
@@ -367,6 +407,11 @@ module.exports = function(router) {
 
     // Data objects to be retrieved and queried
     var localAuthority11 = req.session.data['localAuthority11']
+
+    // Reset all default values injected into our filters
+    if (localAuthority11 == "Suffolk") {
+      localAuthority11 = undefined
+    }
 
     // User has chosen at least 1 filter  
 		if (localAuthority11) {
@@ -391,6 +436,15 @@ module.exports = function(router) {
     var localAuthority14 = req.session.data['localAuthority14']
     var ageGroup14 = req.session.data['ageGroup14']
 
+    // Reset all default values injected into our filters
+    if (localAuthority14 == "Suffolk") {
+      localAuthority14 = undefined
+    }
+
+    if (ageGroup14 == "All age groups") {
+      ageGroup14 = undefined
+    }
+
     // User has chosen at least 1 filter  
 		if (localAuthority14 || ageGroup14) {
       res.redirect('/' + version + '/' + 'signed-in/topics/financial-spend-and-unpaid-care/financial-spend/data?filterApplied14=Yes')     
@@ -413,6 +467,11 @@ module.exports = function(router) {
     // Data objects to be retrieved and queried
     var localAuthority10 = req.session.data['localAuthority10']
 
+    // Reset all default values injected into our filters
+    if (localAuthority10 == "Suffolk") {
+      localAuthority10 = undefined
+    }
+
     // User has chosen at least 1 filter  
 		if (localAuthority10) {
       res.redirect('/' + version + '/' + 'signed-in/topics/population-needs/dementia-prevalence/data?filterApplied10=Yes')     
@@ -430,6 +489,11 @@ module.exports = function(router) {
     // Data objects to be retrieved and queried
     var localAuthority9 = req.session.data['localAuthority9']
 
+    // Reset all default values injected into our filters
+    if (localAuthority9 == "Suffolk") {
+      localAuthority9 = undefined
+    }
+
     // User has chosen at least 1 filter  
 		if (localAuthority9) {
       res.redirect('/' + version + '/' + 'signed-in/topics/population-needs/household-composition-and-economic-factors/data?filterApplied9=Yes')     
@@ -446,6 +510,11 @@ module.exports = function(router) {
 
     // Data objects to be retrieved and queried
     var localAuthority7 = req.session.data['localAuthority7']
+
+    // Reset all default values injected into our filters
+    if (localAuthority7 == "Suffolk") {
+      localAuthority7 = undefined
+    }
 
     // User has chosen at least 1 filter  
 		if (localAuthority7) {
@@ -509,6 +578,11 @@ module.exports = function(router) {
 
     // Data objects to be retrieved and queried
     var localAuthority6 = req.session.data['localAuthority6']
+
+    // Reset all default values injected into our filters
+    if (localAuthority6 == "Suffolk") {
+      localAuthority6 = undefined
+    }
 
     // User has chosen at least 1 filter  
 		if (localAuthority6) {

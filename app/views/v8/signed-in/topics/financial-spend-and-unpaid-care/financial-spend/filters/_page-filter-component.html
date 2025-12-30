@@ -52,7 +52,7 @@
 <div class="app-c-filter-summary">
   <h5 class="app-c-filter-summary__heading">Active filters</h5>
   <ul class="app-c-filter-summary__remove-filters">
-    {% if data.localAuthority14 %}
+    {% if data.localAuthority14 != "Suffolk" %}
     <li id="localAuthority14-remove">
       <a class="app-c-filter-summary__remove-filter" href="#">
         <span class="app-c-filter-summary__remove-filter-text">
@@ -62,12 +62,12 @@
       </a>
     </li>
     {% endif %}
-    {% if data.ageGroup14 %}
-    <li>
-      <a class="app-c-filter-summary__remove-filter" href="?filterApplied14=&ageGroup14=">
+    {% if data.ageGroup14 != "All age groups" %}
+    <li id="ageGroup14-remove">
+      <a class="app-c-filter-summary__remove-filter" href="#">
         <span class="app-c-filter-summary__remove-filter-text">
           <span class="govuk-visually-hidden">Remove filter</span>
-          Age group: {{data.ageGroup14 or 'All age groups'}}
+          Age group: {{data.ageGroup14}}
         </span>
       </a>
     </li>

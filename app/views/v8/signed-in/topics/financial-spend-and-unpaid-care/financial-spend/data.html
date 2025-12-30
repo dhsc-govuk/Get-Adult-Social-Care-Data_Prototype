@@ -295,7 +295,15 @@
     // Local authority
     $('#localAuthority14-remove').on("click", function(e) {
       e.preventDefault();
-      $('#localAuthority14').val('');
+      $('#localAuthority14').val('Suffolk');
+      $('#update-filters14').click();
+    });
+    // Age group
+    $('#ageGroup14-remove').on("click", function(e) {
+      e.preventDefault();
+      $('#ageGroup14_1').prop("checked", true);
+      $('#ageGroup14_2').prop("checked", false);
+      $('#ageGroup14_3').prop("checked", false);
       $('#update-filters14').click();
     });
 

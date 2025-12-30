@@ -152,7 +152,7 @@
           <legend class="govuk-fieldset__legend gem-c-radios govuk-fieldset__legend--m govuk-visually-hidden">Bed type</legend>
           <ul class="govuk-radios__list gem-c-radios__list">
             <li class="govuk-radios__item">
-              <input class="govuk-radios__input" id="bedType1" name="bedType1" type="radio" value="All bed types"{% if data.bedType1 == 'All bed types' %} checked{% endif %}>
+              <input class="govuk-radios__input" id="bedType1" name="bedType1" type="radio" value="All bed types"{% if data.bedType1 %}{% if data.bedType1 == 'All bed types' %} checked{% endif %}{% else %} checked{% endif %}>
               <label class="govuk-label govuk-radios__label" for="bedType1">All bed types</label>
             </li>
             <li class="govuk-radios__item">
