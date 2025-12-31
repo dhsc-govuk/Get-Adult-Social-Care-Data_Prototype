@@ -140,8 +140,9 @@
       <div class="govuk-tabs" data-module="govuk-tabs">
         
         <div class="govuk-form-group">
-          <h3 class="govuk-heading-m">Local authority funding for long-term adult social care &ndash; trends over time</h3>
+          <h3 id="trend1" class="govuk-heading-m">Local authority funding for long-term adult social care &ndash; trends over time</h3>
           <p class="govuk-body">Find out <a href="../../../help/total-financial-spend-long-term-community-adult-social-care">how the financial spend on long&#45;term adult social care is calculated</a>.</p>
+          {% include "./filters/_3-filter-component.html" %}
         </div>
 
         <h3 class="govuk-tabs__title">Contents</h3>
@@ -307,6 +308,38 @@
       $('#update-filters14').click();
     });
 
+  });
+
+  // Filter (#16 for GASCD): Local authority funding for long-term adult social care – trends over time - User interacts with the filter button
+  $('#dhsc-filter--button16').on("click", function() {
+    
+    if (!$('#dhsc-filter--action16').hasClass('dhsc-filter--open')) {
+      $('#dhsc-filter--content16').show().focus();
+      $('#dhsc-filter--action16').addClass('dhsc-filter--open');
+      $('#dhsc-filter--button16').attr('aria-expanded', 'true');
+      $("#dhsc-filter--button16 .dhsc-filter--button-content").text('Hide filters');
+      $('#dhsc-filter--icon16').addClass('fa-minus');
+      $('#dhsc-filter--icon16').removeClass('fa-plus');
+      $('#dhsc-filter--icon16-content').text('Close');
+    }
+    else {
+      $('#dhsc-filter--content16').hide();
+      $('#dhsc-filter--action16').removeClass('dhsc-filter--open');
+      $('#dhsc-filter--button16').attr('aria-expanded', 'false');
+      $("#dhsc-filter--button16 .dhsc-filter--button-content").text('Show filters');
+      $('#dhsc-filter--icon16').addClass('fa-plus');
+      $('#dhsc-filter--icon16').removeClass('fa-minus');
+      $('#dhsc-filter--icon16-content').text('Open');
+    }
+
+  });
+
+  /* Filter (#16 for GASCD): Local authority funding for long-term adult social care – trends over time - Quick and dirty way of updating the filters individually, when a user clicks a related pill */
+  // Support setting
+  $('#supportSetting16-remove').on("click", function(e) {
+    e.preventDefault();
+    $('#supportSetting16 option[value=All types of adult social care]').prop("checked", true);
+    $('#update-filters16').click();
   });
   
 </script>

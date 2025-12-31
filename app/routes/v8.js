@@ -455,6 +455,26 @@ module.exports = function(router) {
     }
     
   })
+  router.post('/' + version + '/' + 'signed-in/topics/financial-spend-and-unpaid-care/financial-spend/data-update-filters16', function (req, res) {
+
+    // Data objects to be retrieved and queried
+    var supportSetting16 = req.session.data['supportSetting16']
+
+    // Reset all default values injected into our filters
+    if (supportSetting16 == "All types of adult social care") {
+      supportSetting16 = undefined
+    }
+
+    // User has chosen at least 1 filter  
+		if (supportSetting16) {
+      res.redirect('/' + version + '/' + 'signed-in/topics/financial-spend-and-unpaid-care/financial-spend/data?filterApplied16=Yes#trend1')     
+		}
+		// No filters selected by user
+		else {			
+      res.redirect('/' + version + '/' + 'signed-in/topics/financial-spend-and-unpaid-care/financial-spend/data?filterApplied16=#trend1')
+    }
+    
+  })
 
   /*****
    * Signed in
@@ -531,6 +551,11 @@ module.exports = function(router) {
     // Data objects to be retrieved and queried
     var ageGroup8 = req.session.data['ageGroup8']
     var primarySupportReason8 = req.session.data['primarySupportReason8']
+
+    // Reset all default values injected into our filters
+    if (ageGroup8 == "All age groups") {
+      ageGroup8 = undefined
+    }
 
     // User has chosen at least 1 filter  
 		if (ageGroup8 || primarySupportReason8) {

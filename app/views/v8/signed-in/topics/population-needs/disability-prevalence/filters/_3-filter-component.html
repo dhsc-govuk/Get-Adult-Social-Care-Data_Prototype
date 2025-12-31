@@ -52,22 +52,12 @@
 <div class="app-c-filter-summary">
   <h5 class="app-c-filter-summary__heading">Active filters</h5>
   <ul class="app-c-filter-summary__remove-filters">
-    {% if data.ageGroup8 == "Aged 18 to 64" %}
-    <li id="ageGroup8_1-remove">
-      <a class="app-c-filter-summary__remove-filter" href="?data-update-filters7&ageGroup8=#data3">
+    {% if data.ageGroup8 != "All age groups" %}
+    <li id="ageGroup8-remove">
+      <a class="app-c-filter-summary__remove-filter" href="#">
         <span class="app-c-filter-summary__remove-filter-text">
           <span class="govuk-visually-hidden">Remove filter</span>
-          Age group: Aged 18 to 64
-        </span>
-      </a>
-    </li>
-    {% endif %}
-    {% if data.ageGroup8 == "Aged 65 and over" %}
-    <li id="ageGroup8_2-remove">
-      <a class="app-c-filter-summary__remove-filter" href="?data-update-filters7&ageGroup8=#data3">
-        <span class="app-c-filter-summary__remove-filter-text">
-          <span class="govuk-visually-hidden">Remove filter</span>
-          Age group: Aged 65 and over
+          Age group: {{data.ageGroup8}}
         </span>
       </a>
     </li>

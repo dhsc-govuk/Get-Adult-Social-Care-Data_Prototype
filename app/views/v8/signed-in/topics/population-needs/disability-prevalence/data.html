@@ -355,6 +355,14 @@
     });
 
     /* Filter (#8 for GASCD): Primary reason for people to access long-term adult social care - Quick and dirty way of updating the filters individually, when a user clicks a related pill */
+    // Age group
+    $('#ageGroup8-remove').on("click", function(e) {
+      e.preventDefault();
+      $('#ageGroup8_1').prop("checked", true);
+      $('#ageGroup8_2').prop("checked", false);
+      $('#ageGroup8_3').prop("checked", false);
+      $('#update-filters8').click();
+    });
     // Learning disability support
     $('#primarySupportReason8_1-remove').on("click", function(e) {
       e.preventDefault();

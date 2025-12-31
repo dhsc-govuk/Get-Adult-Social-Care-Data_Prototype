@@ -1,0 +1,17 @@
+<div class="govuk-form-group">
+  <h4 class="govuk-label-wrapper">
+    <label class="govuk-label govuk-label--s" for="supportSetting16">Support setting</label>
+  </h4>
+  <select class="govuk-select" id="supportSetting16" name="supportSetting16">
+    <option value="All types of adult social care"{% if data.supportSetting16 %}{% if data.supportSetting16 == 'All types of adult social care' %} selected{% endif %}{% else %} selected{% endif %}>All types of adult social care</option>
+    <option value="All types of care home"{% if data.supportSetting16 == 'All types of care home' %} selected{% endif %}>All types of care home</option>
+    <option value="Residential"{% if data.supportSetting16 == 'Residential' %} selected{% endif %}>Residential</option>
+    <option value="Nursing"{% if data.supportSetting16 == 'Nursing' %} selected{% endif %}>Nursing</option>
+    <option value="All types of community social care"{% if data.supportSetting16 == 'All types of community social care' %} selected{% endif %}>All types of community social care</option>
+    <option value="Home care"{% if data.supportSetting16 == 'Home care' %} selected{% endif %}>Home care</option>
+    <option value="Supported living"{% if data.supportSetting16 == 'Supported living' %} selected{% endif %}>Supported living</option>
+    <option value="Community direct payments"{% if data.supportSetting16 == 'Community direct payments' %} selected{% endif %}>Community direct payments</option>
+    <option value="Other"{% if data.supportSetting16 == 'Other' %} selected{% endif %}>Other</option>
+    <option value="Supported accomodation"{% if data.supportSetting16 == 'Supported accomodation' %} selected{% endif %}>Supported accomodation</option>
+  </select>
+</div>
