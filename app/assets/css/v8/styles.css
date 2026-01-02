@@ -284,7 +284,7 @@
   padding: 0;
 }
 @media (min-width: 40.0625em) {
-  .data-box {
+  .js-enabled .data-box {
     background-color: #f3f2f1;
     padding: 20px;
   }
@@ -294,11 +294,32 @@
 .govuk-tabs {
   margin: 0;
 }
+
 @media (min-width: 40.0625em) {
   .govuk-tabs__panel {
     background-color: #ffffff;
   }
 }
+
+/* Declarations to deal with all related JavaScript progressive enhancements (START) */
+.govuk-tabs__list-item-map, .govuk-tabs__panel-map {
+  display: none;
+}
+
+.govuk-tabs__panel:last-child {
+  margin-bottom: 0;
+}
+.js-enabled .govuk-tabs__panel:last-child {
+  margin-bottom: initial;
+}
+
+.js-enabled .govuk-tabs__list-item-map {
+  display: list-item;
+}
+.js-enabled .govuk-tabs__panel-map:not(.govuk-tabs__panel--hidden) {
+  display: block;
+}
+/* Declarations to deal with all related JavaScript progressive enhancements (END) */
 
 /* 'Back to top' link component used on GOV.UK (e.g. https://www.gov.uk/government/collections/monthly-statistics-for-adult-social-care-england) */
 .govuk-frontend-supported .gem-c-contents-list-with-body__sticky-element {
@@ -729,9 +750,19 @@
   color: #ffffff !important;
 }
 
-.dhsc-filter--button-content {
+/* Declarations to deal with all related JavaScript progressive enhancements (START) */
+.js-enabled .dhsc-filter--button-content {
   padding-right: 10px;
 }
+
+.fa {
+  display: none !important;
+}
+
+.js-enabled .fa {
+  display: inherit !important;
+}
+/* Declarations to deal with all related JavaScript progressive enhancements (END) */
 
 .dhsc-filter--content {
   background-color: #ffffff;

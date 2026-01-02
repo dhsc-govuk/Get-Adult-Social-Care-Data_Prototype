@@ -64,7 +64,7 @@
 
         <h3 class="govuk-tabs__title">Contents</h3>
         <ul class="govuk-tabs__list">
-          <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+          <li class="govuk-tabs__list-item govuk-tabs__list-item-map govuk-tabs__list-item--selected">
             <a class="govuk-tabs__tab" href="#data1-map">Map</a>
           </li>
           <li class="govuk-tabs__list-item">
@@ -75,7 +75,7 @@
           </li>
         </ul>
 
-        <div class="govuk-tabs__panel" id="data1-map">
+        <div class="govuk-tabs__panel govuk-tabs__panel-map" id="data1-map">
           {% include "./data-visualisations/_1-map.html" %}
         </div>
 
@@ -236,10 +236,10 @@
   
   window.addEventListener('load', function() {
 
-    // Hide all dynamic filter sections (i.e. all filter options)
+    // Hide all dynamic filter sections (i.e. all filter options) and relabel the filter button to read 'Show filters' as part of progressive enhancement
     $('.dhsc-filter--content').hide();
-    // Show all dynamic filter buttons
-    $('.dhsc-filter--action').show();
+    $('#dhsc-filter--button-content').html('Show filters');
+    $('#dhsc-filter--button-content13').html('Show filters');
 
     // Filter (#0 for GASCD): Care provider locations near postcode CO5 1ST for Shoggins Care Services (Sudbury) - User interacts with the filter button
     $('#dhsc-filter--button').on("click", function() {

@@ -382,10 +382,12 @@
   
   window.addEventListener('load', function() {
 
-    // Hide all dynamic filter sections (i.e. all filter options)
+    // Hide all dynamic filter sections (i.e. all filter options) and relabel the filter button to read 'Show filters' as part of progressive enhancement
     $('.dhsc-filter--content').hide();
-    // Show all dynamic filter buttons
-    $('.dhsc-filter--action').show();
+    $('#dhsc-filter--button-content15').html('Show filters');
+    $('#dhsc-filter--button-content1').html('Show filters');
+    $('#dhsc-filter--button-content2').html('Show filters');
+    $('#dhsc-filter--button-content3').html('Show filters');
 
     // Page filter (#15 for GASCD) - User interacts with the filter button
     $('#dhsc-filter--button15').on("click", function() {
