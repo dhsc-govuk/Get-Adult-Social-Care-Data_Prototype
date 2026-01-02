@@ -1,8 +1,11 @@
 <div class="moj-scrollable-pane">
 
-  {% set age = data.ageGroup14 or "All age groups" %}
+  {% set rows = data[data['v8localAuthorityFundingForAdultSocialCare']]['Local authority funding for long-term adult social care – trends over time'] %}
+  {% set noFiltersSet = (not data.ageGroup14) and (not data.supportSetting16) %}
+  {% set age = (data.ageGroup14 if data.ageGroup14 else ("All age groups" if noFiltersSet else "All age groups")) %}
+  {% set supportSetting = (data.supportSetting16 if data.supportSetting16 else ("All types of adult social care" if noFiltersSet else "All types of adult social care")) %}
   <table class="govuk-table">
-    <caption class="govuk-table__caption">Table 3: local authority funding for long-term adult social care for people{% if data.ageGroup14 != "Aged 18 to 64" and data.ageGroup14 != "Aged 65 and over" %} of{% endif %} {{age | lower}} &ndash; Suffolk local authority, East of England region and England, financial years 2021 to 2024</caption>
+    <caption class="govuk-table__caption">Table 3: local authority funding for long-term adult social care ({{supportSetting | lower}}) for people{% if data.ageGroup14 != "Aged 18 to 64" and data.ageGroup14 != "Aged 65 and over" %} of{% endif %} {{age | lower}} &ndash; Suffolk local authority, East of England region and England, financial years 2021 to 2024</caption>
     <thead class="govuk-table__head">
       <tr class="govuk-table__row">
         <th scope="col" class="govuk-table__header">Financial year</th>
@@ -12,36 +15,25 @@
       </tr>
     </thead>
     <tbody class="govuk-table__body">
-      {% if data.supportSetting == "All adult social care" %}
-      {% elif data.supportSetting == "Care home" %}
-      {% elif data.supportSetting == "Residential" %}
-      {% elif data.supportSetting == "Nursing" %}
-      {% elif data.supportSetting == "Community social care" %}
-      {% elif data.supportSetting == "Home care" %}
-      {% elif data.supportSetting == "Supported living" %}
-      {% elif data.supportSetting == "Community direct payments" %}
-      {% elif data.supportSetting == "Other" %}
-      {% elif data.supportSetting == "Supported accomodation" %}
-      {% else %}
+      {% set rowsRendered = 0 %}
+      {% for row in rows %}
+      {% set matchesAge = (row["Age group"] == age) %}
+      {% set matchesSupportSetting = (row["Care type or funding method"] in supportSetting) %}
+      {% if matchesAge and matchesSupportSetting %}
+      {% set rowsRendered = rowsRendered + 1 %}
       <tr class="govuk-table__row">
-        <td class="govuk-table__cell">2023 to 2024</td>
-        <td class="govuk-table__cell govuk-table__cell--numeric">&#163;{% if data.ageGroup14 == "Aged 18 to 64" %}124,567{% elif data.ageGroup14 == "Aged 65 and over" %}287,432{% else %}411,999{% endif %}</td>
-        <td class="govuk-table__cell govuk-table__cell--numeric">&#163;{% if data.ageGroup14 == "Aged 18 to 64" %}1,196,896{% elif data.ageGroup14 == "Aged 65 and over" %}2,184,567{% else %}3,381,463{% endif %}</td>
-        <td class="govuk-table__cell govuk-table__cell--numeric">&#163;{% if data.ageGroup14 == "Aged 18 to 64" %}10,390,148{% elif data.ageGroup14 == "Aged 65 and over" %}18,726,394{% else %}29,116,542{% endif %}</td>
-      </tr>
-      <tr class="govuk-table__row">
-        <td class="govuk-table__cell">2022 to 2023</td>
-        <td class="govuk-table__cell govuk-table__cell--numeric">&#163;{% if data.ageGroup14 == "Aged 18 to 64" %}118,234{% elif data.ageGroup14 == "Aged 65 and over" %}274,123{% else %}392,357{% endif %}</td>
-        <td class="govuk-table__cell govuk-table__cell--numeric">&#163;{% if data.ageGroup14 == "Aged 18 to 64" %}1,124,532{% elif data.ageGroup14 == "Aged 65 and over" %}2,056,234{% else %}3,180,766{% endif %}</td>
-        <td class="govuk-table__cell govuk-table__cell--numeric">&#163;{% if data.ageGroup14 == "Aged 18 to 64" %}9,876,543{% elif data.ageGroup14 == "Aged 65 and over" %}17,654,321{% else %}27,530,864{% endif %}</td>
-      </tr>
-      <tr class="govuk-table__row">
-        <td class="govuk-table__cell">2021 to 2022</td>
-        <td class="govuk-table__cell govuk-table__cell--numeric">&#163;{% if data.ageGroup14 == "Aged 18 to 64" %}112,456{% elif data.ageGroup14 == "Aged 65 and over" %}258,765{% else %}371,221{% endif %}</td>
-        <td class="govuk-table__cell govuk-table__cell--numeric">&#163;{% if data.ageGroup14 == "Aged 18 to 64" %}1,067,891{% elif data.ageGroup14 == "Aged 65 and over" %}1,945,678{% else %}3,013,569{% endif %}</td>
-        <td class="govuk-table__cell govuk-table__cell--numeric">&#163;{% if data.ageGroup14 == "Aged 18 to 64" %}9,234,567{% elif data.ageGroup14 == "Aged 65 and over" %}16,543,210{% else %}25,777,777{% endif %}</td>
+        <td class="govuk-table__cell">{{row["Financial year"]}}</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">&#163;{{row["Suffolk"]}}</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">&#163;{{row["East of England (LA average)"]}}</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">&#163;{{row["England (LA average)"]}}</td>
       </tr>
       {% endif %}
+      {% endfor %}
+      <!-- {% if rowsRendered == 0 %}
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell" colspan="4">No results match your selection.</td>
+      </tr>
+      {% endif %} -->
     </tbody>
   </table>
 
