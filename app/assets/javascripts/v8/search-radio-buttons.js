@@ -7,9 +7,10 @@
 $(document).ready(function () {
 
 	// For the 'select-location.html' page
-	$('input[name="locationName"]').on('change', function() {
-			
-		var selectedRadioButtonValue = $('input[name=locationName]:checked').val(); 
+	$('input[name="locationId"]').on('change', function() {
+
+		var selectedId = $('input[name="locationId"]:checked').attr('id');
+		var selectedRadioButtonValue = $('label[for="' + selectedId + '"]').text().trim();			
 		var clearFilter = jQuery("[data-clear-filter]");
 		var searchContainer = jQuery("[data-radio-buttons-search-filter]");
 		var searchInput = searchContainer.find("input");

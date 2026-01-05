@@ -55,7 +55,7 @@
     {% if data.localAuthority14 != "Suffolk" %}
     <li id="localAuthority14-remove">
       <a class="app-c-filter-summary__remove-filter" href="#">
-        <span class="app-c-filter-summary__remove-filter-text">
+        <span>
           <span class="govuk-visually-hidden">Remove filter</span>
           Local authority: {{data.localAuthority14}}
         </span>
@@ -65,7 +65,7 @@
     {% if data.ageGroup14 != "All age groups" %}
     <li id="ageGroup14-remove">
       <a class="app-c-filter-summary__remove-filter" href="#">
-        <span class="app-c-filter-summary__remove-filter-text">
+        <span>
           <span class="govuk-visually-hidden">Remove filter</span>
           Age group: {{data.ageGroup14}}
         </span>
@@ -75,7 +75,7 @@
   </ul>
 
   <div>
-    <a class="app-c-filter-summary__clear-filters govuk-link govuk-link--no-visited-state" href="?filterApplied14=&localAuthority14=&ageGroup14=">Clear all filters</a>
+    <a class="govuk-link govuk-link--no-visited-state" href="?filterApplied14=&localAuthority14=&ageGroup14=">Clear all filters</a>
   </div>
 
 </div>

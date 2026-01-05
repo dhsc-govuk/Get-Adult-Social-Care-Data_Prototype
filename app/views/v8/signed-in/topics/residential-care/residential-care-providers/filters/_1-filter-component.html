@@ -52,10 +52,10 @@
 <div class="app-c-filter-summary">
   <h5 class="app-c-filter-summary__heading">Active filters</h5>
   <ul class="app-c-filter-summary__remove-filters">
-    {% if data.postcode != "CO5 1ST" %}
+    {% if data.postcode != data.selectedLocationPostcode %}
     <li id="postcode-remove">
       <a class="app-c-filter-summary__remove-filter" href="#">
-        <span class="app-c-filter-summary__remove-filter-text">
+        <span>
           <span class="govuk-visually-hidden">Remove filter</span>
           Postcode: {{data.postcode}}
         </span>
@@ -66,7 +66,7 @@
     {% if param == "Homecare agencies" %}
     <li id="serviceType_1-remove">
       <a class="app-c-filter-summary__remove-filter" href="#">
-        <span class="app-c-filter-summary__remove-filter-text">
+        <span>
           <span class="govuk-visually-hidden">Remove filter</span>
           Service type: Homecare agencies
         </span>
@@ -76,7 +76,7 @@
     {% if param == "Nursing homes" %}
     <li id="serviceType_2-remove">
       <a class="app-c-filter-summary__remove-filter" href="#">
-        <span class="app-c-filter-summary__remove-filter-text">
+        <span>
           <span class="govuk-visually-hidden">Remove filter</span>
           Service type: Nursing homes
         </span>
@@ -86,7 +86,7 @@
     {% if param == "Residential homes" %}
     <li id="serviceType_3-remove">
       <a class="app-c-filter-summary__remove-filter" href="#">
-        <span class="app-c-filter-summary__remove-filter-text">
+        <span>
           <span class="govuk-visually-hidden">Remove filter</span>
           Service type: Residential homes
         </span>
@@ -96,7 +96,7 @@
     {% if param == "Supported housing" %}
     <li id="serviceType_4-remove">
       <a class="app-c-filter-summary__remove-filter" href="#">
-        <span class="app-c-filter-summary__remove-filter-text">
+        <span>
           <span class="govuk-visually-hidden">Remove filter</span>
           Service type: Supported housing
         </span>
@@ -106,7 +106,7 @@
     {% if param == "Supported living" %}
     <li id="serviceType_5-remove">
       <a class="app-c-filter-summary__remove-filter" href="#">
-        <span class="app-c-filter-summary__remove-filter-text">
+        <span>
           <span class="govuk-visually-hidden">Remove filter</span>
           Service type: Supported living
         </span>
@@ -117,7 +117,7 @@
   </ul>
 
   <div>
-    <a class="app-c-filter-summary__clear-filters govuk-link govuk-link--no-visited-state" href="?filterApplied=&postcode=&serviceType=#data1">Clear all filters</a>
+    <a class="govuk-link govuk-link--no-visited-state" href="?filterApplied=&postcode=&serviceType=#data1">Clear all filters</a>
   </div>
 
 </div>

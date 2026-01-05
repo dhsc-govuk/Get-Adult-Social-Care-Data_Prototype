@@ -1,6 +1,7 @@
 module.exports = function(router) {
 
   var version = 'v8';
+  const providerLocations = require('../data/v8/provider-locations.json');
 
   /*****
    * General prototype pages (not part of the service)
@@ -24,21 +25,21 @@ module.exports = function(router) {
     // For 'Number of locations' is '2 to 20'
     else if (numberOfLocations == "2 to 20") {
       req.session.data['locations'] = ""
-      req.session.data['locationName'] = ""
+      req.session.data['selectedProviderName'] = ""
       req.session.data['justSignedIn'] = "true"
       req.session.data['postAuthenticationURL'] = "select-location?searchRequired=false&paginationRequired=false"
     }
     // For 'Number of locations' is '21 to 100'
     else if (numberOfLocations == "21 to 100") {
       req.session.data['locations'] = ""
-      req.session.data['locationName'] = ""
+      req.session.data['selectedProviderName'] = ""
       req.session.data['justSignedIn'] = "true"
       req.session.data['postAuthenticationURL'] = "select-location?searchRequired=true&paginationRequired=false"
     }
     // For 'Number of locations' is '101 or more'
     else {
       req.session.data['locations'] = ""
-      req.session.data['locationName'] = ""
+      req.session.data['selectedProviderName'] = ""
       req.session.data['justSignedIn'] = "true"
       req.session.data['postAuthenticationURL'] = "select-location?searchRequired=true&paginationRequired=true&page1=true"
     }
@@ -212,10 +213,10 @@ module.exports = function(router) {
   router.post('/' + version + '/' + 'signed-in/select-location-validation', function (req, res) {
 
     // Data objects to be retrieved and queried
-    var locationName = req.body['locationName']
+    var locationId = req.body['locationId']
 
     // Error validation - make sure user enters data into required field
-		if (locationName == undefined) {
+		if (locationId == undefined) {
       res.redirect('/' + version + '/' + 'signed-in/select-location?error=true&error2=true')      
 		}
 		// User selects a location
@@ -229,7 +230,7 @@ module.exports = function(router) {
     // Data objects to be retrieved and queried
     var searchRequired = req.session.data['searchRequired']
     var paginationRequired = req.session.data['paginationRequired']
-    var locationName = req.body['locationName']
+    var locationId = req.body['locationId']
 
     // Logic and validation for routing
     var searchRequiredURL = "";
@@ -244,11 +245,22 @@ module.exports = function(router) {
     }
 
     // Error validation - make sure user enters data into required field
-		if (locationName == undefined) {
+		if (locationId == undefined) {
       res.redirect('/' + version + '/' + 'signed-in/select-location?error=true&error2=true' + searchRequiredURL + paginationRequiredURL)      
 		}
 		// User selects a location
-		else {			
+		else {
+
+      // Take user's selection ID, query it in the provider locations JSON data and store the related data objects as session data
+      var locationId = Number(req.body['locationId'])
+      const selectedLocation = providerLocations.find(l => l.ID === locationId)
+      req.session.data.selectedLocation = selectedLocation
+      req.session.data.selectedProviderName = selectedLocation?.['Provider name']
+      req.session.data.selectedLocationName = selectedLocation?.['Location name']
+      req.session.data.selectedLocationAddress = selectedLocation?.['Address']
+      req.session.data.selectedLocationPostcode = selectedLocation?.['Postcode']
+      req.session.data.selectedServiceType = selectedLocation?.['Service type']
+
       res.redirect('/' + version + '/' + 'signed-in/home?justSignedIn=false')
     }
 
@@ -271,9 +283,10 @@ module.exports = function(router) {
     // Data objects to be retrieved and queried
     var postcode = req.session.data['postcode']
     var serviceType = req.session.data['serviceType']
+    var selectedLocationPostcode = req.session.data['selectedLocationPostcode']
 
     // Reset all default values injected into our filters
-    if (postcode == "CO5 1ST") {
+    if (postcode == selectedLocationPostcode) {
       postcode = undefined
     }
 

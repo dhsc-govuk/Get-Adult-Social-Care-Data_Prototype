@@ -33,7 +33,7 @@
           <li><a href="#searchLocation">Search for a location</a></li>
           {% endif %}
           {% if error2 %}
-          <li><a href="#locationName-1">Select a location</a></li>
+          <li><a href="#locationId-1">Select a location</a></li>
           {% endif %}
         </ul>
         </div>
@@ -104,11 +104,13 @@
             {% for item in data[data['v8ProviderLocations']] %}
             {% if (loop.index <= 30) %}
             <div class="govuk-radios__item searchable-radio">
-              <input class="govuk-radios__input" id="locationName-{{item.ID}}" name="locationName" type="radio" data-search-value="{{item.Name}}, {{item.Address}}" value="{{item.Name}}" aria-describedby="locationName-{{item.ID}}-hint"{% if data.locationName == "{{item.Name}}" %} checked{% endif %}>
-              <label class="govuk-label govuk-radios__label" for="locationName-{{item.ID}}">{{item.Name}}</label>
+              <input class="govuk-radios__input" id="locationId-{{item['ID']}}" name="locationId" type="radio" data-search-value="{{item['Provider name']}}, {{item['Location name']}}, {{item['Address']}}, {{item['Postcode']}}" value="{{item['ID']}}" aria-describedby="locationId-{{item['ID']}}-hint"{% if data.locationId == "{{item['ID']}}" %} checked{% endif %}>
+              <label class="govuk-label govuk-radios__label" for="locationId-{{item['ID']}}">{{item['Provider name']}}</label>
             
-              <div id="locationName-{{item.ID}}-hint" class="govuk-hint govuk-radios__hint">
-                Address: {{item.Address}}
+              <div id="locationId-{{item['ID']}}-hint" class="govuk-hint govuk-radios__hint">
+                Location name: {{item['Location name']}}
+                <br>
+                Address: {{item['Address']}}, {{item['Postcode']}}
               </div>
 
             </div>
@@ -120,11 +122,13 @@
             {% for item in data[data['v8ProviderLocations']] %}
             {% if (loop.index <= 100) %}
             <div class="govuk-radios__item searchable-radio">
-              <input class="govuk-radios__input" id="locationName-{{item.ID}}" name="locationName" type="radio" data-search-value="{{item.Name}}, {{item.Address}}" value="{{item.Name}}" aria-describedby="locationName-{{item.ID}}-hint"{% if data.locationName == "{{item.Name}}" %} checked{% endif %}>
-              <label class="govuk-label govuk-radios__label" for="locationName-{{item.ID}}">{{item.Name}}</label>
+              <input class="govuk-radios__input" id="locationId-{{item['ID']}}" name="locationId" type="radio" data-search-value="{{item['Provider name']}}, {{item['Location name']}}, {{item['Address']}}, {{item['Postcode']}}" value="{{item['ID']}}" aria-describedby="locationId-{{item['ID']}}-hint"{% if data.locationId == "{{item['ID']}}" %} checked{% endif %}>
+              <label class="govuk-label govuk-radios__label" for="locationId-{{item['ID']}}">{{item['Provider name']}}</label>
             
-              <div id="locationName-{{item.ID}}-hint" class="govuk-hint govuk-radios__hint">
-                Address: {{item.Address}}
+              <div id="locationId-{{item['ID']}}-hint" class="govuk-hint govuk-radios__hint">
+                Location name: {{item['Location name']}}
+                <br>
+                Address: {{item['Address']}}, {{item['Postcode']}}
               </div>
 
             </div>
@@ -135,11 +139,13 @@
             {% for item in data[data['v8ProviderLocations']] %}
             {% if (loop.index >= 101) %}
             <div class="govuk-radios__item searchable-radio">
-              <input class="govuk-radios__input" id="locationName-{{item.ID}}" name="locationName" type="radio" data-search-value="{{item.Name}}, {{item.Address}}" value="{{item.Name}}" aria-describedby="locationName-{{item.ID}}-hint"{% if data.locationName == "{{item.Name}}" %} checked{% endif %}>
-              <label class="govuk-label govuk-radios__label" for="locationName-{{item.ID}}">{{item.Name}}</label>
+              <input class="govuk-radios__input" id="locationId-{{item['ID']}}" name="locationId" type="radio" data-search-value="{{item['Provider name']}}, {{item['Location name']}}, {{item['Address']}}, {{item['Postcode']}}" value="{{item['ID']}}" aria-describedby="locationId-{{item['ID']}}-hint"{% if data.locationId == "{{item['ID']}}" %} checked{% endif %}>
+              <label class="govuk-label govuk-radios__label" for="locationId-{{item['ID']}}">{{item['Provider name']}}</label>
             
-              <div id="locationName-{{item.ID}}-hint" class="govuk-hint govuk-radios__hint">
-                Address: {{item.Address}}
+              <div id="locationId-{{item['ID']}}-hint" class="govuk-hint govuk-radios__hint">
+                Location name: {{item['Location name']}}
+                <br>
+                Address: {{item['Address']}}, {{item['Postcode']}}
               </div>
 
             </div>
@@ -166,11 +172,13 @@
             {% for item in data[data['v8ProviderLocations']] %}
             {% if (loop.index <= 30) %}
             <div class="govuk-radios__item searchable-radio">
-              <input class="govuk-radios__input" id="locationName-{{item.ID}}" name="locationName" type="radio" data-search-value="{{item.Name}}, {{item.Address}}" value="{{item.Name}}" aria-describedby="locationName-{{item.ID}}-hint"{% if data.locationName == "{{item.Name}}" %} checked{% endif %}>
-              <label class="govuk-label govuk-radios__label" for="locationName-{{item.ID}}">{{item.Name}}</label>
+              <input class="govuk-radios__input" id="locationId-{{item['ID']}}" name="locationId" type="radio" data-search-value="{{item['Provider name']}}, {{item['Location name']}}, {{item['Address']}}, {{item['Postcode']}}" value="{{item['ID']}}" aria-describedby="locationId-{{item['ID']}}-hint"{% if data.locationId == "{{item['ID']}}" %} checked{% endif %}>
+              <label class="govuk-label govuk-radios__label" for="locationId-{{item['ID']}}">{{item['Provider name']}}</label>
             
-              <div id="locationName-{{item.ID}}-hint" class="govuk-hint govuk-radios__hint">
-                Address: {{item.Address}}
+              <div id="locationId-{{item['ID']}}-hint" class="govuk-hint govuk-radios__hint">
+                Location name: {{item['Location name']}}
+                <br>
+                Address: {{item['Address']}}, {{item['Postcode']}}
               </div>
 
             </div>
@@ -180,11 +188,13 @@
             <!-- 120 LOCATIONS -->
             {% for item in data[data['v8ProviderLocations']] %}
             <div class="govuk-radios__item searchable-radio">
-              <input class="govuk-radios__input" id="locationName-{{item.ID}}" name="locationName" type="radio" data-search-value="{{item.Name}}, {{item.Address}}" value="{{item.Name}}" aria-describedby="locationName-{{item.ID}}-hint"{% if data.locationName == "{{item.Name}}" %} checked{% endif %}>
-              <label class="govuk-label govuk-radios__label" for="locationName-{{item.ID}}">{{item.Name}}</label>
+              <input class="govuk-radios__input" id="locationId-{{item['ID']}}" name="locationId" type="radio" data-search-value="{{item['Provider name']}}, {{item['Location name']}}, {{item['Address']}}, {{item['Postcode']}}" value="{{item['ID']}}" aria-describedby="locationId-{{item['ID']}}-hint"{% if data.locationId == "{{item['ID']}}" %} checked{% endif %}>
+              <label class="govuk-label govuk-radios__label" for="locationId-{{item['ID']}}">{{item['Provider name']}}</label>
             
-              <div id="locationName-{{item.ID}}-hint" class="govuk-hint govuk-radios__hint">
-                Address: {{item.Address}}
+              <div id="locationId-{{item['ID']}}-hint" class="govuk-hint govuk-radios__hint">
+                Location name: {{item['Location name']}}
+                <br>
+                Address: {{item['Address']}}, {{item['Postcode']}}
               </div>
 
             </div>
@@ -304,109 +314,129 @@
             <div class="govuk-radios" data-module="govuk-radios">
 
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="locationName-1" name="locationName" type="radio" value="Shoggins Care Services (Birmingham)" aria-describedby="locationName-1-hint"{% if data.locationName == "Shoggins Care Services (Birmingham)" %} checked{% endif %}>
-                <label class="govuk-label govuk-radios__label" for="locationName-1">Shoggins Care Services (Birmingham)</label>
+                <input class="govuk-radios__input" id="locationId-1" name="locationId" type="radio" value="Shoggins Care Home Ltd" aria-describedby="locationId-1-hint"{% if data.locationId == "Shoggins Care Home Ltd" %} checked{% endif %}>
+                <label class="govuk-label govuk-radios__label" for="locationId-1">Shoggins Care Home Ltd</label>
 
-                <div id="locationName-1-hint" class="govuk-hint govuk-radios__hint">
+                <div id="locationId-1-hint" class="govuk-hint govuk-radios__hint">
+                  Location name: Meadowbrook House (Birmingham)
+                  <br>
                   Address: 16 High Street, Birmingham, West Midlands, UK, B4 2DG
                 </div>
 
               </div>
 
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="locationName-24" name="locationName" type="radio"
-                  value="Shoggins Care Services (Canterbury)" aria-describedby="locationName-24-hint"{% if data.locationName == "Shoggins Care Services (Canterbury)" %} checked{% endif %}>
-                <label class="govuk-label govuk-radios__label" for="locationName-24">Shoggins Care Services (Canterbury)</label>
+                <input class="govuk-radios__input" id="locationId-24" name="locationId" type="radio"
+                  value="Shoggins Care Home Ltd" aria-describedby="locationId-24-hint"{% if data.locationId == "Shoggins Care Home Ltd" %} checked{% endif %}>
+                <label class="govuk-label govuk-radios__label" for="locationId-24">Shoggins Care Home Ltd</label>
 
-                <div id="locationName-24-hint" class="govuk-hint govuk-radios__hint">
+                <div id="locationId-24-hint" class="govuk-hint govuk-radios__hint">
+                  Location name: Victoria Road Manor (Canterbury)
+                  <br>
                   Address: 94 Victoria Road, Canterbury, Kent, UK, CT13 7UB
                 </div>
 
               </div>
 
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="locationName-36" name="locationName" type="radio"
-                  value="Shoggins Care Services (Durham)" aria-describedby="locationName-36-hint"{% if data.locationName == "Shoggins Care Services (Durham)" %} checked{% endif %}>
-                <label class="govuk-label govuk-radios__label" for="locationName-36">Shoggins Care Services (Durham)</label>
+                <input class="govuk-radios__input" id="locationId-36" name="locationId" type="radio"
+                  value="Shoggins Care Home Ltd" aria-describedby="locationId-36-hint"{% if data.locationId == "Shoggins Care Home Ltd" %} checked{% endif %}>
+                <label class="govuk-label govuk-radios__label" for="locationId-36">Shoggins Care Home Ltd</label>
 
-                <div id="locationName-36-hint" class="govuk-hint govuk-radios__hint">
+                <div id="locationId-36-hint" class="govuk-hint govuk-radios__hint">
+                  Location name: Station Road Lodge (Durham)
+                  <br>
                   Address: 169 Station Road, Durham, County Durham, UK, DH9 1FP
                 </div>
 
               </div>
 
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="locationName-48" name="locationName" type="radio"
-                  value="Shoggins Care Services (Exeter)" aria-describedby="locationName-48-hint"{% if data.locationName == "Shoggins Care Services (Exeter)" %} checked{% endif %}>
-                <label class="govuk-label govuk-radios__label" for="locationName-48">Shoggins Care Services (Exeter)</label>
+                <input class="govuk-radios__input" id="locationId-48" name="locationId" type="radio"
+                  value="Shoggins Care Home Ltd" aria-describedby="locationId-48-hint"{% if data.locationId == "Shoggins Care Home Ltd" %} checked{% endif %}>
+                <label class="govuk-label govuk-radios__label" for="locationId-48">Shoggins Care Home Ltd</label>
 
-                <div id="locationName-48-hint" class="govuk-hint govuk-radios__hint">
+                <div id="locationId-48-hint" class="govuk-hint govuk-radios__hint">
+                  Location name: Riverbank House (Exeter)
+                  <br>
                   Address: 73 Riverbank Road, Exeter, Devon, UK, EX5 4RD
                 </div>
 
               </div>
 
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="locationName-60" name="locationName" type="radio"
-                  value="Shoggins Care Services (Newcastle)" aria-describedby="locationName-60-hint"{% if data.locationName == "Shoggins Care Services (Newcastle)" %} checked{% endif %}>
-                <label class="govuk-label govuk-radios__label" for="locationName-60">Shoggins Care Services (Newcastle)</label>
+                <input class="govuk-radios__input" id="locationId-60" name="locationId" type="radio"
+                  value="Shoggins Care Home Ltd" aria-describedby="locationId-60-hint"{% if data.locationId == "Shoggins Care Home Ltd" %} checked{% endif %}>
+                <label class="govuk-label govuk-radios__label" for="locationId-60">Shoggins Care Home Ltd</label>
 
-                <div id="locationName-60-hint" class="govuk-hint govuk-radios__hint">
+                <div id="locationId-60-hint" class="govuk-hint govuk-radios__hint">
+                  Location name: Riverbank House (Newcastle)
+                  <br>
                   Address: 15 Riverbank Road, Newcastle, Tyne and Wear, UK, NE1 7BR
                 </div>
 
               </div>
 
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="locationName-72" name="locationName" type="radio"
-                  value="Shoggins Care Services (Nottingham)" aria-describedby="locationName-72-hint"{% if data.locationName == "Shoggins Care Services (Nottingham)" %} checked{% endif %}>
-                <label class="govuk-label govuk-radios__label" for="locationName-72">Shoggins Care Services (Nottingham)</label>
+                <input class="govuk-radios__input" id="locationId-72" name="locationId" type="radio"
+                  value="Shoggins Care Home Ltd" aria-describedby="locationId-72-hint"{% if data.locationId == "Shoggins Care Home Ltd" %} checked{% endif %}>
+                <label class="govuk-label govuk-radios__label" for="locationId-72">Shoggins Care Home Ltd</label>
 
-                <div id="locationName-72-hint" class="govuk-hint govuk-radios__hint">
+                <div id="locationId-72-hint" class="govuk-hint govuk-radios__hint">
+                  Location name: Station Road Lodge (Nottingham)
+                  <br>
                   Address: 70 Station Road, Nottingham, Nottinghamshire, UK, NG17 1LE
                 </div>
 
               </div>
 
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="locationName-84" name="locationName" type="radio"
-                  value="Shoggins Care Services (Plymouth)" aria-describedby="locationName-84-hint"{% if data.locationName == "Shoggins Care Services (Plymouth)" %} checked{% endif %}>
-                <label class="govuk-label govuk-radios__label" for="locationName-84">Shoggins Care Services (Plymouth)</label>
+                <input class="govuk-radios__input" id="locationId-84" name="locationId" type="radio"
+                  value="Shoggins Care Home Ltd" aria-describedby="locationId-84-hint"{% if data.locationId == "Shoggins Care Home Ltd" %} checked{% endif %}>
+                <label class="govuk-label govuk-radios__label" for="locationId-84">Shoggins Care Home Ltd</label>
 
-                <div id="locationName-84-hint" class="govuk-hint govuk-radios__hint">
+                <div id="locationId-84-hint" class="govuk-hint govuk-radios__hint">
+                  Location name: London Road Court (Plymouth)
+                  <br>
                   Address: 5 London Road, Plymouth, Devon, UK, PL13 4WS
                 </div>
 
               </div>
 
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="locationName-96" name="locationName" type="radio"
-                  value="Shoggins Care Services (Preston)" aria-describedby="locationName-96-hint"{% if data.locationName == "Shoggins Care Services (Preston)" %} checked{% endif %}>
-                <label class="govuk-label govuk-radios__label" for="locationName-96">Shoggins Care Services (Preston)</label>
+                <input class="govuk-radios__input" id="locationId-96" name="locationId" type="radio"
+                  value="Shoggins Care Home Ltd" aria-describedby="locationId-96-hint"{% if data.locationId == "Shoggins Care Home Ltd" %} checked{% endif %}>
+                <label class="govuk-label govuk-radios__label" for="locationId-96">Shoggins Care Home Ltd</label>
 
-                <div id="locationName-96-hint" class="govuk-hint govuk-radios__hint">
+                <div id="locationId-96-hint" class="govuk-hint govuk-radios__hint">
+                  Location name: Meadow Lane Lodge (Preston)
+                  <br>
                   Address: 72 Meadow Lane, Preston, Lancashire, UK, PR9 7GF
                 </div>
 
               </div>
 
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="locationName-108" name="locationName" type="radio"
-                  value="Shoggins Care Services (Sudbury)" aria-describedby="locationName-108-hint"{% if data.locationName == "Shoggins Care Services (Sudbury)" %} checked{% endif %}>
-                <label class="govuk-label govuk-radios__label" for="locationName-108">Shoggins Care Services (Sudbury)</label>
+                <input class="govuk-radios__input" id="locationId-108" name="locationId" type="radio"
+                  value="Shoggins Care Services Limited" aria-describedby="locationId-108-hint"{% if data.locationId == "Shoggins Care Services Limited" %} checked{% endif %}>
+                <label class="govuk-label govuk-radios__label" for="locationId-108">Shoggins Care Services Limited</label>
 
-                <div id="locationName-108-hint" class="govuk-hint govuk-radios__hint">
-                  Address: 1st Floor, 54a Station Road, Sudbury, Suffolk, CO5 1ST
+                <div id="locationId-108-hint" class="govuk-hint govuk-radios__hint">
+                  Location name: Station Road Centre (Sudbury)
+                  <br>
+                  Address: 1st Floor, 54a Station Road, Sudbury, Suffolk, UK, CO5 1ST
                 </div>
 
               </div>
 
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="locationName-120" name="locationName" type="radio"
-                  value="Shoggins Care Services (York)" aria-describedby="locationName-120-hint"{% if data.locationName == "Shoggins Care Services (York)" %} checked{% endif %}>
-                <label class="govuk-label govuk-radios__label" for="locationName-120">Shoggins Care Services (York)</label>
+                <input class="govuk-radios__input" id="locationId-120" name="locationId" type="radio"
+                  value="Shoggins Care Services Limited" aria-describedby="locationId-120-hint"{% if data.locationId == "Shoggins Care Services Limited" %} checked{% endif %}>
+                <label class="govuk-label govuk-radios__label" for="locationId-120">Shoggins Care Services Limited</label>
 
-                <div id="locationName-120-hint" class="govuk-hint govuk-radios__hint">
+                <div id="locationId-120-hint" class="govuk-hint govuk-radios__hint">
+                  Location name: Springfield Court (York)
+                  <br>
                   Address: 57 Springfield Drive, York, North Yorkshire, UK, YO1 4DG
                 </div>
 

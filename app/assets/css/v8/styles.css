@@ -226,14 +226,9 @@
   font-size: 1rem;
   font-weight: normal;
   margin: 5px 0 0 0;
-  font-family: "GDS Transport",arial,sans-serif;
+  font-family: "GDS Transport", arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-@media print {
-  .gem-c-layout-super-navigation-header__navigation-second-item-description {
-    font-family: sans-serif;
-  }
 }
 
 .gem-c-layout-super-navigation-header__column--government-activity {
@@ -798,28 +793,24 @@
 .app-c-filter-summary__heading {
   margin-top: 15px; 
   margin-bottom: 10px;
-  font-family: "GDS Transport",arial,sans-serif;
+  font-family: "GDS Transport", arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
-  font-size: 1.1875rem;
-  line-height: 1.3157894737;
+  font-size: 1rem;
+  line-height: 1.25;
 }
-@media print {
+@media (min-width: 40.0625em) {
   .app-c-filter-summary__heading {
-    font-family: sans-serif;
-  }
-}
-@media print {
-  .app-c-filter-summary__heading {
-    font-size: 14pt;
-    line-height: 1.15;
+    font-size: 1.1875rem;
+    line-height: 1.3157894737;
   }
 }
 
 .app-c-filter-summary__remove-filters {
   list-style-type: none;
-  margin-block-start:0;padding: 0;
+  margin-block-start: 0;
+  padding: 0;
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
@@ -834,23 +825,9 @@
   align-items: center;
   color: #0b0c0c;
   background-color: #ffffff;
-  font-family: "GDS Transport",arial,sans-serif;
+  font-family: "GDS Transport", arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-weight: 400;
-  font-size: 1.1875rem;
-  line-height: 1.3157894737;
-}
-@media print {
-  .app-c-filter-summary__remove-filter {
-    font-family: sans-serif;
-  }
-}
-@media print {
-  .app-c-filter-summary__remove-filter {
-    font-size: 14pt;
-    line-height: 1.15;
-  }
 }
 .app-c-filter-summary__remove-filter:focus {
   background-color: #fd0;
@@ -868,24 +845,4 @@
   content: "×";
   padding-right: 5px;
   font-size: 22px;
-}
-
-.app-c-filter-summary__clear-filters {
-  font-family: "GDS Transport",arial,sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  font-weight: 400;
-  font-size: 1.1875rem;
-  line-height: 1.3157894737;
-}
-@media print {
-  .app-c-filter-summary__clear-filters {
-    font-family: sans-serif;
-  }
-}
-@media print {
-  .app-c-filter-summary__clear-filters {
-    font-size: 14pt;
-    line-height: 1.15;
-  }
 }
