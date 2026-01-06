@@ -13,24 +13,35 @@ module.exports = function(router) {
 		})
   })
   router.post('/' + version + '/' + 'config-validation', function (req, res) {
-
-    var numberOfLocations = req.session.data['numberOfLocations']
+    
+    var userType = req.session.data['userType']
     var entryPoint = req.session.data['entryPoint']
+    var numberOfLocations = req.session.data['numberOfLocations']
 
     // For 'Number of locations' is '1'
     if (numberOfLocations == "1") {
+
+      if (userType == "Care provider (care home)") {
+        req.session.data['selectedProviderName'] = "Shoggins Care Home Ltd"
+        req.session.data['selectedServiceType'] = "Care home"
+      }
+      else {
+        req.session.data['selectedProviderName'] = "Shoggins Care Services Limited"
+        req.session.data['selectedServiceType'] = "Community social care"
+      }
+
       req.session.data['locations'] = "1"
       req.session.data['postAuthenticationURL'] = "home"
     }
     // For 'Number of locations' is '2 to 20'
-    else if (numberOfLocations == "2 to 20") {
+    else if (numberOfLocations == "2 to 20 (select a location)") {
       req.session.data['locations'] = ""
       req.session.data['selectedProviderName'] = ""
       req.session.data['justSignedIn'] = "true"
       req.session.data['postAuthenticationURL'] = "select-location?searchRequired=false&paginationRequired=false"
     }
     // For 'Number of locations' is '21 to 100'
-    else if (numberOfLocations == "21 to 100") {
+    else if (numberOfLocations == "21 to 100 (select a location with search)") {
       req.session.data['locations'] = ""
       req.session.data['selectedProviderName'] = ""
       req.session.data['justSignedIn'] = "true"
@@ -220,7 +231,18 @@ module.exports = function(router) {
       res.redirect('/' + version + '/' + 'signed-in/select-location?error=true&error2=true')      
 		}
 		// User selects a location
-		else {			
+		else {		
+      
+      // Take user's selection ID, query it in the provider locations JSON data and store the related data objects as session data
+      var locationId = Number(req.body['locationId'])
+      const selectedLocation = providerLocations.find(l => l.ID === locationId)
+      req.session.data['selectedLocation'] = selectedLocation
+      req.session.data['selectedProviderName'] = selectedLocation?.['Provider name']
+      req.session.data['selectedLocationName'] = selectedLocation?.['Location name']
+      req.session.data['selectedLocationAddress'] = selectedLocation?.['Address']
+      req.session.data['selectedLocationPostcode'] = selectedLocation?.['Postcode']
+      req.session.data['selectedServiceType'] = selectedLocation?.['Service type']
+
       res.redirect('/' + version + '/' + 'signed-in/home?justSignedIn=false')
     }
 
@@ -254,12 +276,12 @@ module.exports = function(router) {
       // Take user's selection ID, query it in the provider locations JSON data and store the related data objects as session data
       var locationId = Number(req.body['locationId'])
       const selectedLocation = providerLocations.find(l => l.ID === locationId)
-      req.session.data.selectedLocation = selectedLocation
-      req.session.data.selectedProviderName = selectedLocation?.['Provider name']
-      req.session.data.selectedLocationName = selectedLocation?.['Location name']
-      req.session.data.selectedLocationAddress = selectedLocation?.['Address']
-      req.session.data.selectedLocationPostcode = selectedLocation?.['Postcode']
-      req.session.data.selectedServiceType = selectedLocation?.['Service type']
+      req.session.data['selectedLocation'] = selectedLocation
+      req.session.data['selectedProviderName'] = selectedLocation?.['Provider name']
+      req.session.data['selectedLocationName'] = selectedLocation?.['Location name']
+      req.session.data['selectedLocationAddress'] = selectedLocation?.['Address']
+      req.session.data['selectedLocationPostcode'] = selectedLocation?.['Postcode']
+      req.session.data['selectedServiceType'] = selectedLocation?.['Service type']
 
       res.redirect('/' + version + '/' + 'signed-in/home?justSignedIn=false')
     }

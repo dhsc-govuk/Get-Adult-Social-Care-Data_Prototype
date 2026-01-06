@@ -1,11 +1,17 @@
 <div class="moj-scrollable-pane">
 
   <table class="govuk-table">
+    {% if data.selectedServiceType == "Community social care" %}
     <caption class="govuk-table__caption">Table 1: number of people receiving community social care in the last month &ndash; {{data.selectedProviderName or 'Shoggins Care Services Limited'}}, Suffolk local authority, East of England region and England, October 2025</caption>
+    {% else %}
+    <caption class="govuk-table__caption">Table 1: number of people receiving community social care in the last month &ndash; Suffolk local authority, East of England region and England, October 2025</caption>
+    {% endif %}
     <thead class="govuk-table__head">
       <tr class="govuk-table__row">
         <th scope="col" class="govuk-table__header">Indicator</th>
+        {% if data.selectedServiceType == "Community social care" %}
         <th scope="col" class="govuk-table__header govuk-table__header--numeric">Total for {{data.selectedProviderName or 'Shoggins Care Services Limited'}}</th>
+        {% endif %}
         <th scope="col" class="govuk-table__header govuk-table__header--numeric">Total for Suffolk</th>
         <th scope="col" class="govuk-table__header govuk-table__header--numeric">East of England (regional average by local authority)</th>
         <th scope="col" class="govuk-table__header govuk-table__header--numeric">England (national average by local authority)</th>
@@ -14,7 +20,9 @@
     <tbody class="govuk-table__body">
       <tr class="govuk-table__row">
         <td class="govuk-table__cell">People receiving community social care in October 2025</td>
+        {% if data.selectedServiceType == "Community social care" %}
         <td class="govuk-table__cell govuk-table__cell--numeric">2,000</td>
+        {% endif %}
         <td class="govuk-table__cell govuk-table__cell--numeric">11,000</td>
         <td class="govuk-table__cell govuk-table__cell--numeric">15,000</td>
         <td class="govuk-table__cell govuk-table__cell--numeric">20,000</td>
