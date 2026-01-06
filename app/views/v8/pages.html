@@ -103,12 +103,25 @@
 
 <h3 class="govuk-heading-m">Home</h3>
 
-<h4 class="govuk-heading-s heading-override">Care providers</h4>
+<h4 class="govuk-heading-s heading-override">Care providers (care home)</h4>
 <ul class="govuk-list govuk-list--bullet">
-  <li><a href="signed-in/home?locations=1">1 location</a></li>
-  <li><a href="signed-in/select-location?justSignedIn=true&selectedProviderName=&locations=&searchRequired=false&paginationRequired=false">2 to 20 locations (select a location)</a> <strong class="govuk-tag govuk-tag--purple">In progress</strong></li>
-  <li><a href="signed-in/select-location?justSignedIn=true&selectedProviderName=&locations=&searchRequired=true&paginationRequired=false">21 to 100 locations (select a location with search)</a> <strong class="govuk-tag govuk-tag--purple">In progress</strong></li>
-  <li><a href="signed-in/select-location?justSignedIn=true&selectedProviderName=&locations=&searchRequired=true&paginationRequired=true&page1=true">101 or more locations (select a location with search and pagination)</a> <strong class="govuk-tag govuk-tag--purple">In progress</strong></li>
+  <li><a href="signed-in/home?selectedProviderName=Shoggins Care Home Ltd&selectedServiceType=Care home&locations=1">1 location</a></li>
+  <li><a href="signed-in/select-location?userType=Care provider (care home)&justSignedIn=true&selectedProviderName=&locations=&searchRequired=false&paginationRequired=false">2 to 20 locations (select a location)</a> <strong class="govuk-tag govuk-tag--purple">In progress</strong></li>
+  <li><a href="signed-in/select-location?userType=Care provider (care home)&justSignedIn=true&selectedProviderName=&locations=&searchRequired=true&paginationRequired=false">21 to 100 locations (select a location with search)</a> <strong class="govuk-tag govuk-tag--purple">In progress</strong></li>
+</ul>
+
+<h4 class="govuk-heading-s heading-override">Care providers (community social care)</h4>
+<ul class="govuk-list govuk-list--bullet">
+  <li><a href="signed-in/home?selectedProviderName=Shoggins Care Services Limited&selectedServiceType=Community social care&locations=1">1 location</a></li>
+  <li><a href="signed-in/select-location?userType=Care provider (community social care)&justSignedIn=true&selectedProviderName=&locations=&searchRequired=false&paginationRequired=false">2 to 20 locations (select a location)</a> <strong class="govuk-tag govuk-tag--purple">In progress</strong></li>
+  <li><a href="signed-in/select-location?userType=Care provider (community social care)&justSignedIn=true&selectedProviderName=&locations=&searchRequired=true&paginationRequired=false">21 to 100 locations (select a location with search)</a> <strong class="govuk-tag govuk-tag--purple">In progress</strong></li>
+</ul>
+
+<h4 class="govuk-heading-s heading-override">Care providers (all services)</h4>
+<ul class="govuk-list govuk-list--bullet">
+  <li><a href="signed-in/select-location?userType=&justSignedIn=true&selectedProviderName=&locations=&searchRequired=false&paginationRequired=false">2 to 20 locations (select a location)</a> <strong class="govuk-tag govuk-tag--purple">In progress</strong></li>
+  <li><a href="signed-in/select-location?userType=&justSignedIn=true&selectedProviderName=&locations=&searchRequired=true&paginationRequired=false">21 to 100 locations (select a location with search)</a> <strong class="govuk-tag govuk-tag--purple">In progress</strong></li>
+  <li><a href="signed-in/select-location?userType=&justSignedIn=true&selectedProviderName=&locations=&searchRequired=true&paginationRequired=true&page1=true">101 or more locations (select a location with search and pagination)</a> <strong class="govuk-tag govuk-tag--purple">In progress</strong></li>
 </ul>
 
 <h3 class="govuk-heading-m heading-override">Data > Care provision <strong class="govuk-tag govuk-tag--purple">In progress</strong></h3>
@@ -118,7 +131,8 @@
 
 <h4 class="govuk-heading-s heading-override">Care home beds and occupancy levels</h4>
 <ul class="govuk-list govuk-list--bullet">
-  <li><a href="signed-in/topics/residential-care/provision-and-occupancy/data">Care home beds and occupancy levels (data page)</a></li>
+  <li>Care providers (care home) - <a href="signed-in/topics/residential-care/provision-and-occupancy/data?selectedProviderName=Shoggins Care Home Ltd&selectedServiceType=Care home">Care home beds and occupancy levels (data page)</a></li>
+  <li>Care providers (community social care) - <a href="signed-in/topics/residential-care/provision-and-occupancy/data?selectedProviderName=Shoggins Care Services Limited&selectedServiceType=Community social care">Care home beds and occupancy levels (data page)</a></li>
 </ul>
 
 <h4 class="govuk-heading-s heading-override">Care providers: locations and services</h4>
@@ -128,7 +142,8 @@
 
 <h4 class="govuk-heading-s heading-override">Number of adults receiving community social care</h4>
 <ul class="govuk-list govuk-list--bullet">
-  <li><a href="signed-in/topics/residential-care/number-of-people-receiving-care/data">Number of adults receiving community social care (data page)</a></li>
+  <li>Care providers (care home) - <a href="signed-in/topics/residential-care/number-of-people-receiving-care/data?selectedProviderName=Shoggins Care Home Ltd&selectedServiceType=Care home">Number of adults receiving community social care (data page)</a></li>
+  <li>Care providers (community social care) - <a href="signed-in/topics/residential-care/number-of-people-receiving-care/data?selectedProviderName=Shoggins Care Services Limited&selectedServiceType=Community social care">Number of adults receiving community social care (data page)</a></li>
 </ul>
 
 <h4 class="govuk-heading-s heading-override">Unpaid care</h4>

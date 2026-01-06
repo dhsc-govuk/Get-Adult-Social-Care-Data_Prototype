@@ -347,34 +347,7 @@
 
             <div class="govuk-radios" data-module="govuk-radios">
 
-              {% if data.userType == "Care provider (community social care)" %}
-              <!-- SHOWING 2 LOCATIONS -->
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="locationId-108" name="locationId" type="radio"
-                  value="108" aria-describedby="locationId-108-hint"{% if data.locationId == "108" %} checked{% endif %}>
-                <label class="govuk-label govuk-radios__label" for="locationId-108">Shoggins Care Services Limited</label>
-
-                <div id="locationId-108-hint" class="govuk-hint govuk-radios__hint">
-                  Location name: Station Road Centre (Sudbury)
-                  <br>
-                  Address: 1st Floor, 54a Station Road, Sudbury, Suffolk, UK, CO5 1ST
-                </div>
-
-              </div>
-
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="locationId-120" name="locationId" type="radio"
-                  value="120" aria-describedby="locationId-120-hint"{% if data.locationId == "120" %} checked{% endif %}>
-                <label class="govuk-label govuk-radios__label" for="locationId-120">Shoggins Care Services Limited</label>
-
-                <div id="locationId-120-hint" class="govuk-hint govuk-radios__hint">
-                  Location name: Springfield Court (York)
-                  <br>
-                  Address: 57 Springfield Drive, York, North Yorkshire, UK, YO1 4DG
-                </div>
-
-              </div>
-              {% else %}
+              {% if data.userType == "Care provider (care home)" %}
               <!-- SHOWING 8 LOCATIONS -->
               <div class="govuk-radios__item">
                 <input class="govuk-radios__input" id="locationId-1" name="locationId" type="radio" value="1" aria-describedby="locationId-1-hint"{% if data.locationId == "1" %} checked{% endif %}>
@@ -475,6 +448,163 @@
                   Location name: Meadow Lane Lodge (Preston)
                   <br>
                   Address: 72 Meadow Lane, Preston, Lancashire, UK, PR9 7GF
+                </div>
+
+              </div>
+              {% elif data.userType == "Care provider (community social care)" %}
+              <!-- SHOWING 2 LOCATIONS -->
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="locationId-108" name="locationId" type="radio"
+                  value="108" aria-describedby="locationId-108-hint"{% if data.locationId == "108" %} checked{% endif %}>
+                <label class="govuk-label govuk-radios__label" for="locationId-108">Shoggins Care Services Limited</label>
+
+                <div id="locationId-108-hint" class="govuk-hint govuk-radios__hint">
+                  Location name: Station Road Centre (Sudbury)
+                  <br>
+                  Address: 1st Floor, 54a Station Road, Sudbury, Suffolk, UK, CO5 1ST
+                </div>
+
+              </div>
+
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="locationId-120" name="locationId" type="radio"
+                  value="120" aria-describedby="locationId-120-hint"{% if data.locationId == "120" %} checked{% endif %}>
+                <label class="govuk-label govuk-radios__label" for="locationId-120">Shoggins Care Services Limited</label>
+
+                <div id="locationId-120-hint" class="govuk-hint govuk-radios__hint">
+                  Location name: Springfield Court (York)
+                  <br>
+                  Address: 57 Springfield Drive, York, North Yorkshire, UK, YO1 4DG
+                </div>
+
+              </div>
+              {% else %}
+              <!-- SHOWING 10 LOCATIONS -->
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="locationId-1" name="locationId" type="radio" value="1" aria-describedby="locationId-1-hint"{% if data.locationId == "1" %} checked{% endif %}>
+                <label class="govuk-label govuk-radios__label" for="locationId-1">Shoggins Care Home Ltd</label>
+
+                <div id="locationId-1-hint" class="govuk-hint govuk-radios__hint">
+                  Location name: Meadowbrook House (Birmingham)
+                  <br>
+                  Address: 16 High Street, Birmingham, West Midlands, UK, B4 2DG
+                </div>
+
+              </div>
+
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="locationId-24" name="locationId" type="radio"
+                  value="24" aria-describedby="locationId-24-hint"{% if data.locationId == "24" %} checked{% endif %}>
+                <label class="govuk-label govuk-radios__label" for="locationId-24">Shoggins Care Home Ltd</label>
+
+                <div id="locationId-24-hint" class="govuk-hint govuk-radios__hint">
+                  Location name: Victoria Road Manor (Canterbury)
+                  <br>
+                  Address: 94 Victoria Road, Canterbury, Kent, UK, CT13 7UB
+                </div>
+
+              </div>
+
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="locationId-36" name="locationId" type="radio"
+                  value="36" aria-describedby="locationId-36-hint"{% if data.locationId == "36" %} checked{% endif %}>
+                <label class="govuk-label govuk-radios__label" for="locationId-36">Shoggins Care Home Ltd</label>
+
+                <div id="locationId-36-hint" class="govuk-hint govuk-radios__hint">
+                  Location name: Station Road Lodge (Durham)
+                  <br>
+                  Address: 169 Station Road, Durham, County Durham, UK, DH9 1FP
+                </div>
+
+              </div>
+
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="locationId-48" name="locationId" type="radio"
+                  value="48" aria-describedby="locationId-48-hint"{% if data.locationId == "48" %} checked{% endif %}>
+                <label class="govuk-label govuk-radios__label" for="locationId-48">Shoggins Care Home Ltd</label>
+
+                <div id="locationId-48-hint" class="govuk-hint govuk-radios__hint">
+                  Location name: Riverbank House (Exeter)
+                  <br>
+                  Address: 73 Riverbank Road, Exeter, Devon, UK, EX5 4RD
+                </div>
+
+              </div>
+
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="locationId-60" name="locationId" type="radio"
+                  value="60" aria-describedby="locationId-60-hint"{% if data.locationId == "60" %} checked{% endif %}>
+                <label class="govuk-label govuk-radios__label" for="locationId-60">Shoggins Care Home Ltd</label>
+
+                <div id="locationId-60-hint" class="govuk-hint govuk-radios__hint">
+                  Location name: Riverbank House (Newcastle)
+                  <br>
+                  Address: 15 Riverbank Road, Newcastle, Tyne and Wear, UK, NE1 7BR
+                </div>
+
+              </div>
+
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="locationId-72" name="locationId" type="radio"
+                  value="72" aria-describedby="locationId-72-hint"{% if data.locationId == "72" %} checked{% endif %}>
+                <label class="govuk-label govuk-radios__label" for="locationId-72">Shoggins Care Home Ltd</label>
+
+                <div id="locationId-72-hint" class="govuk-hint govuk-radios__hint">
+                  Location name: Station Road Lodge (Nottingham)
+                  <br>
+                  Address: 70 Station Road, Nottingham, Nottinghamshire, UK, NG17 1LE
+                </div>
+
+              </div>
+
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="locationId-84" name="locationId" type="radio"
+                  value="84" aria-describedby="locationId-84-hint"{% if data.locationId == "84" %} checked{% endif %}>
+                <label class="govuk-label govuk-radios__label" for="locationId-84">Shoggins Care Home Ltd</label>
+
+                <div id="locationId-84-hint" class="govuk-hint govuk-radios__hint">
+                  Location name: London Road Court (Plymouth)
+                  <br>
+                  Address: 5 London Road, Plymouth, Devon, UK, PL13 4WS
+                </div>
+
+              </div>
+
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="locationId-96" name="locationId" type="radio"
+                  value="96" aria-describedby="locationId-96-hint"{% if data.locationId == "96" %} checked{% endif %}>
+                <label class="govuk-label govuk-radios__label" for="locationId-96">Shoggins Care Home Ltd</label>
+
+                <div id="locationId-96-hint" class="govuk-hint govuk-radios__hint">
+                  Location name: Meadow Lane Lodge (Preston)
+                  <br>
+                  Address: 72 Meadow Lane, Preston, Lancashire, UK, PR9 7GF
+                </div>
+
+              </div>
+
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="locationId-108" name="locationId" type="radio"
+                  value="108" aria-describedby="locationId-108-hint"{% if data.locationId == "108" %} checked{% endif %}>
+                <label class="govuk-label govuk-radios__label" for="locationId-108">Shoggins Care Services Limited</label>
+
+                <div id="locationId-108-hint" class="govuk-hint govuk-radios__hint">
+                  Location name: Station Road Centre (Sudbury)
+                  <br>
+                  Address: 1st Floor, 54a Station Road, Sudbury, Suffolk, UK, CO5 1ST
+                </div>
+
+              </div>
+
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="locationId-120" name="locationId" type="radio"
+                  value="120" aria-describedby="locationId-120-hint"{% if data.locationId == "120" %} checked{% endif %}>
+                <label class="govuk-label govuk-radios__label" for="locationId-120">Shoggins Care Services Limited</label>
+
+                <div id="locationId-120-hint" class="govuk-hint govuk-radios__hint">
+                  Location name: Springfield Court (York)
+                  <br>
+                  Address: 57 Springfield Drive, York, North Yorkshire, UK, YO1 4DG
                 </div>
 
               </div>
