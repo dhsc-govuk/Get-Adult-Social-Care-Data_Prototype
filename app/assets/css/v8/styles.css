@@ -790,6 +790,17 @@
   padding-bottom: 5px;
 }
 
+.app-c-filter-summary > a {
+  font-size: 1rem;
+  line-height: 1.25;
+}
+@media (min-width: 40.0625em) {
+  .app-c-filter-summary {
+    font-size: 1.1875rem;
+    line-height: 1.3157894737;
+  }
+}
+
 .app-c-filter-summary__heading {
   margin-top: 15px; 
   margin-bottom: 10px;
