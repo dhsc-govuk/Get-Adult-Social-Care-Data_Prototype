@@ -21,16 +21,14 @@
         <td class="govuk-table__cell govuk-table__cell--numeric">958</td>
       </tr>
       {% endif %}
-      {% endfor %}
-      {% else %}
+      {% if param == 'Community care bed' %}
       <tr class="govuk-table__row">
-        <td class="govuk-table__cell">All bed types</td>
-        <td class="govuk-table__cell govuk-table__cell--numeric">1,152</td>
-        <td class="govuk-table__cell govuk-table__cell--numeric">1,094</td>
-        <td class="govuk-table__cell govuk-table__cell--numeric">958</td>
+        <td class="govuk-table__cell">Community care bed</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">1</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">1</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">2</td>
       </tr>
       {% endif %}
-      {% for param in data.bedType2 %}
       {% if param == 'Dementia nursing' %}
       <tr class="govuk-table__row">
         <td class="govuk-table__cell">Dementia nursing</td>
@@ -39,8 +37,6 @@
         <td class="govuk-table__cell govuk-table__cell--numeric">251</td>
       </tr>
       {% endif %}
-      {% endfor %}
-      {% for param in data.bedType2 %}
       {% if param == 'Dementia residential' %}
       <tr class="govuk-table__row">
         <td class="govuk-table__cell">Dementia residential</td>
@@ -49,27 +45,14 @@
         <td class="govuk-table__cell govuk-table__cell--numeric">105</td>
       </tr>
       {% endif %}
-      {% endfor %}
-      {% if data.bedType2 %}
-      {% for param in data.bedType2 %}
       {% if param == 'General nursing' %}
       <tr class="govuk-table__row">
         <td class="govuk-table__cell">General nursing</td>
         <td class="govuk-table__cell govuk-table__cell--numeric">268</td>
         <td class="govuk-table__cell govuk-table__cell--numeric">314</td>
-        <td class="govuk-table__cell govuk-table__cell--numeric">313</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">310</td>
       </tr>
       {% endif %}
-      {% endfor %}
-      {% else %}
-      <tr class="govuk-table__row">
-        <td class="govuk-table__cell">General nursing</td>
-        <td class="govuk-table__cell govuk-table__cell--numeric">268</td>
-        <td class="govuk-table__cell govuk-table__cell--numeric">314</td>
-        <td class="govuk-table__cell govuk-table__cell--numeric">313</td>
-      </tr>
-      {% endif %}
-      {% for param in data.bedType2 %}
       {% if param == 'General residential' %}
       <tr class="govuk-table__row">
         <td class="govuk-table__cell">General residential</td>
@@ -78,8 +61,6 @@
         <td class="govuk-table__cell govuk-table__cell--numeric">164</td>
       </tr>
       {% endif %}
-      {% endfor %}
-      {% for param in data.bedType2 %}
       {% if param == 'Learning disability nursing' %}
       <tr class="govuk-table__row">
         <td class="govuk-table__cell">Learning disability nursing</td>
@@ -88,8 +69,6 @@
         <td class="govuk-table__cell govuk-table__cell--numeric">62</td>
       </tr>
       {% endif %}
-      {% endfor %}
-      {% for param in data.bedType2 %}
       {% if param == 'Learning disability residential' %}
       <tr class="govuk-table__row">
         <td class="govuk-table__cell">Learning disability residential</td>
@@ -98,8 +77,6 @@
         <td class="govuk-table__cell govuk-table__cell--numeric">4</td>
       </tr>
       {% endif %}
-      {% endfor %}
-      {% for param in data.bedType2 %}
       {% if param == 'Mental health nursing' %}
       <tr class="govuk-table__row">
         <td class="govuk-table__cell">Mental health nursing</td>
@@ -108,8 +85,6 @@
         <td class="govuk-table__cell govuk-table__cell--numeric">8</td>
       </tr>
       {% endif %}
-      {% endfor %}
-      {% for param in data.bedType2 %}
       {% if param == 'Mental health residential' %}
       <tr class="govuk-table__row">
         <td class="govuk-table__cell">Mental health residential</td>
@@ -118,9 +93,6 @@
         <td class="govuk-table__cell govuk-table__cell--numeric">17</td>
       </tr>
       {% endif %}
-      {% endfor %}
-      {% if data.bedType2 %}
-      {% for param in data.bedType2 %}
       {% if param == 'Transitional' %}
       <tr class="govuk-table__row">
         <td class="govuk-table__cell">Transitional</td>
@@ -129,17 +101,6 @@
         <td class="govuk-table__cell govuk-table__cell--numeric">30</td>
       </tr>
       {% endif %}
-      {% endfor %}
-      {% else %}
-      <tr class="govuk-table__row">
-        <td class="govuk-table__cell">Transitional</td>
-        <td class="govuk-table__cell govuk-table__cell--numeric">11</td>
-        <td class="govuk-table__cell govuk-table__cell--numeric">26</td>
-        <td class="govuk-table__cell govuk-table__cell--numeric">30</td>
-      </tr>
-      {% endif %}
-      {% if data.bedType2 %}
-      {% for param in data.bedType2 %}
       {% if param == 'Young physically disabled' %}
       <tr class="govuk-table__row">
         <td class="govuk-table__cell">Young physically disabled</td>
@@ -150,6 +111,72 @@
       {% endif %}
       {% endfor %}
       {% else %}
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">All bed types</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">1,152</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">1,094</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">958</td>
+      </tr>
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">Community care bed</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">1</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">1</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">2</td>
+      </tr>
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">Dementia nursing</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">298</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">272</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">251</td>
+      </tr>
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">Dementia residential</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">187</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">142</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">105</td>
+      </tr>
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">General nursing</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">268</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">314</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">310</td>
+      </tr>
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">General residential</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">276</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">238</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">164</td>
+      </tr>
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">Learning disability nursing</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">81</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">78</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">62</td>
+      </tr>
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">Learning disability residential</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">6</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">3</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">4</td>
+      </tr>
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">Mental health nursing</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">8</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">6</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">8</td>
+      </tr>
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">Mental health residential</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">14</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">8</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">17</td>
+      </tr>
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">Transitional</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">11</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">26</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">30</td>
+      </tr>
       <tr class="govuk-table__row">
         <td class="govuk-table__cell">Young physically disabled</td>
         <td class="govuk-table__cell govuk-table__cell--numeric">2</td>

@@ -33,7 +33,7 @@
       "Primary support reason": "Sensory support: Support for dual impairment",
       "Suffolk": "5",
       "East of England (LA average)": "6",
-      "England (LA average)": "4"
+      "England (LA average)": "Less than 5"
     },
     {
       "Age group": "Aged 18 to 64",
@@ -60,7 +60,7 @@
       "Age group": "Aged 18 to 64",
       "Primary support reason": "Social support: Substance misuse support",
       "Suffolk": "Less than 5",
-      "East of England (LA average)": "4",
+      "East of England (LA average)": "Less than 5",
       "England (LA average)": "6"
     },
     {
@@ -144,8 +144,8 @@
       "Age group": "Aged 65 and over",
       "Primary support reason": "Social support: Substance misuse support",
       "Suffolk": "5",
-      "East of England (LA average)": "4",
-      "England (LA average)": "3"
+      "East of England (LA average)": "Less than 5",
+      "England (LA average)": "Less than 5"
     },
     {
       "Age group": "Aged 65 and over",
@@ -222,7 +222,7 @@
       "Primary support reason": "Social support: Asylum seeker support",
       "Suffolk": "Less than 5",
       "East of England (LA average)": "Less than 5",
-      "England (LA average)": "1"
+      "England (LA average)": "Less than 5"
     },
     {
       "Age group": "All age groups",

@@ -195,50 +195,8 @@
 {% endblock %}
 
 {% block pageScripts %}
-<!-- jQuery (progressive enhancement) that loads and controls the dynamic filters for this page -->
-<script type="text/javascript">
-  
-  window.addEventListener('load', function() {
-
-    // Hide all dynamic filter sections (i.e. all filter options) and relabel the filter button to read 'Show filters' as part of progressive enhancement
-    $('.dhsc-filter--content').hide();
-    $('#dhsc-filter--button-content12').html('Show filters');
-
-    // Page filter (#12 for GASCD) - User interacts with the filter button
-    $('#dhsc-filter--button12').on("click", function() {
-      
-      if (!$('#dhsc-filter--action12').hasClass('dhsc-filter--open')) {
-        $('#dhsc-filter--content12').show().focus();
-        $('#dhsc-filter--action12').addClass('dhsc-filter--open');
-        $('#dhsc-filter--button12').attr('aria-expanded', 'true');
-        $("#dhsc-filter--button12 .dhsc-filter--button-content").text('Hide filters');
-        $('#dhsc-filter--icon12').addClass('fa-minus');
-        $('#dhsc-filter--icon12').removeClass('fa-plus');
-        $('#dhsc-filter--icon12-content').text('Close');
-      }
-      else {
-        $('#dhsc-filter--content12').hide();
-        $('#dhsc-filter--action12').removeClass('dhsc-filter--open');
-        $('#dhsc-filter--button12').attr('aria-expanded', 'false');
-        $("#dhsc-filter--button12 .dhsc-filter--button-content").text('Show filters');
-        $('#dhsc-filter--icon12').addClass('fa-plus');
-        $('#dhsc-filter--icon12').removeClass('fa-minus');
-        $('#dhsc-filter--icon12-content').text('Open');
-      }
-
-    });
-
-    // Page filter (#12 for GASCD) - Quick and dirty way of updating the filters individually, when a user clicks a related pill
-    // Local authority
-    $('#localAuthority12-remove').on("click", function(e) {
-      e.preventDefault();
-      $('#localAuthority12').val('Suffolk');
-      $('#update-filters12').click();
-    });
-
-  });
-  
-</script>
+<!-- Filters (progressive enhancement) code that loads and controls the dynamic filters for this page -->
+<script src="/public/javascripts/v8/filters.js"></script>
 <!-- Font Awesome 4 icons for the notifications -->
 <link href="/public/open-source/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
 {% endblock %}
