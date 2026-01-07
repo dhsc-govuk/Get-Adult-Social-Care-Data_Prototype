@@ -169,9 +169,33 @@ dialog {
   margin-bottom: 0;
 }
 
-/* Custom width for the main container (govuk-width-container) on the design history page */
+/* Custom override width for the main container (govuk-width-container) across any specified pages in the prototype */
 .extra-page-width-1400 .govuk-width-container {
   max-width: 1400px;
+}
+@media (min-width: 1020px) {
+  .extra-page-width-1400 .govuk-width-container {
+    margin-left: 30px;
+    margin-right: 30px;
+  }
+  @supports (margin: max(calc(0px))) {
+    .extra-page-width-1400 .govuk-width-container  {
+      margin-left: max(30px, calc(15px + env(safe-area-inset-left)));
+      margin-right: max(30px, calc(15px + env(safe-area-inset-right)));
+    }
+  }
+}
+@media (min-width: 1460px) {
+  .extra-page-width-1400 .govuk-width-container {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  @supports (margin: max(calc(0px))) {
+    .extra-page-width-1400 .govuk-width-container {
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
 }
 
 /* Design history styling to tags in the table */

@@ -1,13 +1,14 @@
 {% extends "layouts/main.html" %}
 
 {% set pageName = serviceName + " prototype" %}
+{% set bodyClasses = "extra-page-width-1400" %}
 
 {% block content %}
 <div class="govuk-grid-row">
 
   <div class="govuk-grid-column-full">
     <span class="govuk-caption-xl">GOV.UK Prototype Kit</span>
-    <h1 class="govuk-heading-xl">{% include "./sparkle.html" %} {{serviceName}} prototype</h1>
+    <h1 class="govuk-heading-xl">{% include "./sparkle.html" %} {{pageName}}</h1>
   </div>
 
   <div class="govuk-grid-column-two-thirds index-padding">    
