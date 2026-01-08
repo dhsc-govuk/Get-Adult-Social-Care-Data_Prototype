@@ -8,13 +8,18 @@
     {% endif %}
     <thead class="govuk-table__head">
       <tr class="govuk-table__row">
-        <th scope="col" class="govuk-table__header">Indicator</th>
         {% if data.selectedServiceType == "Care home" %}
+        <th scope="col" class="govuk-table__header">Indicator</th>
         <th scope="col" class="govuk-table__header govuk-table__header--numeric">{{data.selectedProviderName or 'Shoggins Care Home Ltd'}}</th>
-        {% endif %}
         <th scope="col" class="govuk-table__header govuk-table__header--numeric">Suffolk</th>
         <th scope="col" class="govuk-table__header govuk-table__header--numeric">East of England</th>
         <th scope="col" class="govuk-table__header govuk-table__header--numeric">England</th>
+        {% else %}
+        <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Indicator</th>
+        <th scope="col" class="govuk-table__header govuk-!-width-one-quarter govuk-table__header--numeric">Suffolk</th>
+        <th scope="col" class="govuk-table__header govuk-!-width-one-quarter govuk-table__header--numeric">East of England</th>
+        <th scope="col" class="govuk-table__header govuk-!-width-one-quarter govuk-table__header--numeric">England</th>
+        {% endif %}
       </tr>
     </thead>
     <tbody class="govuk-table__body">

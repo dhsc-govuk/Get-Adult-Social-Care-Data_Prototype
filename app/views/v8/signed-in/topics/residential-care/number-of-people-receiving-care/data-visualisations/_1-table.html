@@ -8,13 +8,18 @@
     {% endif %}
     <thead class="govuk-table__head">
       <tr class="govuk-table__row">
-        <th scope="col" class="govuk-table__header">Indicator</th>
         {% if data.selectedServiceType == "Community social care" %}
+        <th scope="col" class="govuk-table__header">Indicator</th>
         <th scope="col" class="govuk-table__header govuk-table__header--numeric">Total for {{data.selectedProviderName or 'Shoggins Care Services Limited'}}</th>
-        {% endif %}
         <th scope="col" class="govuk-table__header govuk-table__header--numeric">Total for Suffolk</th>
         <th scope="col" class="govuk-table__header govuk-table__header--numeric">East of England (regional average by local authority)</th>
         <th scope="col" class="govuk-table__header govuk-table__header--numeric">England (national average by local authority)</th>
+        {% else %}
+        <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Indicator</th>
+        <th scope="col" class="govuk-table__header govuk-!-width-one-quarter govuk-table__header--numeric">Total for Suffolk</th>
+        <th scope="col" class="govuk-table__header govuk-!-width-one-quarter govuk-table__header--numeric">East of England (regional average by local authority)</th>
+        <th scope="col" class="govuk-table__header govuk-!-width-one-quarter govuk-table__header--numeric">England (national average by local authority)</th>
+        {% endif %}
       </tr>
     </thead>
     <tbody class="govuk-table__body">
