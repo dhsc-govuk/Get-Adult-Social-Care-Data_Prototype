@@ -22,11 +22,11 @@ module.exports = function(router) {
     if (numberOfLocations == "1") {
 
       if (userType == "Care provider (care home)") {
-        req.session.data['selectedProviderName'] = "Shoggins Care Home Ltd"
+        req.session.data['selectedLocationName'] = "Ashfield Court (Exeter)"
         req.session.data['selectedServiceType'] = "Care home"
       }
       else {
-        req.session.data['selectedProviderName'] = "Shoggins Care Services Limited"
+        req.session.data['selectedLocationName'] = "Station Road Centre (Sudbury)"
         req.session.data['selectedServiceType'] = "Community social care"
       }
 
@@ -36,21 +36,21 @@ module.exports = function(router) {
     // For 'Number of locations' is '2 to 20'
     else if (numberOfLocations == "2 to 20 (select a location)") {
       req.session.data['locations'] = ""
-      req.session.data['selectedProviderName'] = ""
+      req.session.data['selectedLocationName'] = ""
       req.session.data['justSignedIn'] = "true"
       req.session.data['postAuthenticationURL'] = "select-location?searchRequired=false&paginationRequired=false"
     }
     // For 'Number of locations' is '21 to 100'
     else if (numberOfLocations == "21 to 100 (select a location with search)") {
       req.session.data['locations'] = ""
-      req.session.data['selectedProviderName'] = ""
+      req.session.data['selectedLocationName'] = ""
       req.session.data['justSignedIn'] = "true"
       req.session.data['postAuthenticationURL'] = "select-location?searchRequired=true&paginationRequired=false"
     }
     // For 'Number of locations' is '101 or more'
     else {
       req.session.data['locations'] = ""
-      req.session.data['selectedProviderName'] = ""
+      req.session.data['selectedLocationName'] = ""
       req.session.data['justSignedIn'] = "true"
       req.session.data['postAuthenticationURL'] = "select-location?searchRequired=true&paginationRequired=true&page1=true"
     }

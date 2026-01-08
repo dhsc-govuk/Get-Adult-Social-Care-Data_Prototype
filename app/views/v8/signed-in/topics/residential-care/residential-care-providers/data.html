@@ -55,7 +55,7 @@
       <div class="govuk-tabs" data-module="govuk-tabs">
         
         <div class="govuk-form-group">
-          <h3 id="data1" class="govuk-heading-m">Care provider locations near {% if data.postcode %}postcode {{data.postcode}}{% else %}postcode {{data.selectedLocationPostcode or 'CO5 1ST'}} for {{data.selectedProviderName or 'Shoggins Care Services Limited'}}{% endif %}</h3>
+          <h3 id="data1" class="govuk-heading-m">Care provider locations near {% if data.postcode %}postcode {{data.postcode}}{% else %}postcode {{data.selectedLocationPostcode or 'CO5 1ST'}} for {{data.selectedLocationName or 'Station Road Centre (Sudbury)'}}{% endif %}</h3>
           <p class="govuk-body">Locations and service information for CQC&#45;registered residential social care and community based adult social care service providers in England, August 2025.</p>
           <!-- THIS INDICATOR DEFINITION PAGE DOES NOT EXIST
           <p class="govuk-body" data-module="edge">Find out <a href="#" data-message="Sorry, this hasn’t been designed yet">how locations and services data is collected</a>.</p> -->

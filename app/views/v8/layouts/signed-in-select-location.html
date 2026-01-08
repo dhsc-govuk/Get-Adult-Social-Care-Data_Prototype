@@ -163,7 +163,7 @@
         <nav aria-label="Menu" class="govuk-service-navigation__wrapper">
           <ul class="govuk-service-navigation__list" id="navigation">
             <li class="govuk-service-navigation__item govuk-service-navigation__item--active govuk-service-navigation__item-start">
-              {{data.selectedProviderName or 'Shoggins Care Services Limited'}} <a class="govuk-service-navigation__link govuk-service-navigation__link-change" href="/v8/signed-in/select-location?searchRequired={{data.searchRequired or 'true'}}&paginationRequired={{data.paginationRequired or 'true'}}{% if data.searchRequired != 'false' and data.paginationRequired != 'false' %}&page1=true{% endif %}&updateMyLocation=true">Change</a>
+              {{data.selectedLocationName or 'Station Road Centre (Sudbury)'}} <a class="govuk-service-navigation__link govuk-service-navigation__link-change" href="/v8/signed-in/select-location?searchRequired={{data.searchRequired or 'true'}}&paginationRequired={{data.paginationRequired or 'true'}}{% if data.searchRequired != 'false' and data.paginationRequired != 'false' %}&page1=true{% endif %}&updateMyLocation=true">Change</a>
             </li>
             <li class="govuk-service-navigation__item govuk-service-navigation__item-end">
               <a href="/v8/signed-in/menu" class="govuk-service-navigation__link non-javascript" aria-hidden="false">Menu</a>

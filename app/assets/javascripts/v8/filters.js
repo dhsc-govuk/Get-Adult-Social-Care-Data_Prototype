@@ -61,29 +61,29 @@ window.addEventListener('load', function() {
   // Postcode
   $('#postcode-remove').on("click", function(e) {
     e.preventDefault();
-    $('#postcode').val('{{data.selectedLocationPostcode or "CO5 1ST" | escape}}');
+    $('#postcode').val('');
     $('#update-filters').click();
   });
 
-  // Homecare agencies
+  // Extra care housing housing
   $('#serviceType_1-remove').on("click", function(e) {
     e.preventDefault();
     $('#serviceType_1').prop("checked", false);
     $('#update-filters').click();
   });
-  // Nursing homes
+  // Homecare agencies
   $('#serviceType_2-remove').on("click", function(e) {
     e.preventDefault();
     $('#serviceType_2').prop("checked", false);
     $('#update-filters').click();
   });
-  // Residential homes
+  // Nursing homes
   $('#serviceType_3-remove').on("click", function(e) {
     e.preventDefault();
     $('#serviceType_3').prop("checked", false);
     $('#update-filters').click();
   });
-  // Supported housing
+  // Residential homes
   $('#serviceType_4-remove').on("click", function(e) {
     e.preventDefault();
     $('#serviceType_4').prop("checked", false);

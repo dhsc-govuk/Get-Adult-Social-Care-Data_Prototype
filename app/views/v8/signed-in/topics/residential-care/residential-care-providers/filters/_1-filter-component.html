@@ -63,8 +63,18 @@
     </li>
     {% endif %}
     {% for param in data.serviceType %}
-    {% if param == "Homecare agencies" %}
+    {% if param == "Extra care housing" %}
     <li id="serviceType_1-remove">
+      <a class="app-c-filter-summary__remove-filter" href="#">
+        <span>
+          <span class="govuk-visually-hidden">Remove filter</span>
+          Service type: Extra care housing
+        </span>
+      </a>
+    </li>
+    {% endif %}
+    {% if param == "Homecare agencies" %}
+    <li id="serviceType_2-remove">
       <a class="app-c-filter-summary__remove-filter" href="#">
         <span>
           <span class="govuk-visually-hidden">Remove filter</span>
@@ -74,7 +84,7 @@
     </li>
     {% endif %}
     {% if param == "Nursing homes" %}
-    <li id="serviceType_2-remove">
+    <li id="serviceType_3-remove">
       <a class="app-c-filter-summary__remove-filter" href="#">
         <span>
           <span class="govuk-visually-hidden">Remove filter</span>
@@ -84,21 +94,11 @@
     </li>
     {% endif %}
     {% if param == "Residential homes" %}
-    <li id="serviceType_3-remove">
-      <a class="app-c-filter-summary__remove-filter" href="#">
-        <span>
-          <span class="govuk-visually-hidden">Remove filter</span>
-          Service type: Residential homes
-        </span>
-      </a>
-    </li>
-    {% endif %}
-    {% if param == "Supported housing" %}
     <li id="serviceType_4-remove">
       <a class="app-c-filter-summary__remove-filter" href="#">
         <span>
           <span class="govuk-visually-hidden">Remove filter</span>
-          Service type: Supported housing
+          Service type: Residential homes
         </span>
       </a>
     </li>
