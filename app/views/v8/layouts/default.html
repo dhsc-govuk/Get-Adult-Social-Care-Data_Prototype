@@ -107,6 +107,9 @@
 } %}
 
 {% block footer %}
+{% if hideFooterLinks == "true" %}
+{{ govukFooter({}) }}
+{% else %}
 {{ govukFooter({
   meta: {
     items: [
@@ -133,6 +136,7 @@
     ]
   }
 }) }}
+{% endif %}
 {% endblock %}
 
 {% block scripts %}

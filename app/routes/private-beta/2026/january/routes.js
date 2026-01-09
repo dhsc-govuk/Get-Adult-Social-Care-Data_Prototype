@@ -348,4 +348,16 @@ module.exports = function(router) {
 		})
   })
 
+  router.get('/' + version + '/' + 'system/http-status-codes/service-unavailable', function (req, res) {
+    res.render(version + '/system/http-status-codes/service-unavailable', {
+      'hideFooterLinks' : req.query.hideFooterLinks
+		})
+  })
+
+  router.get('/' + version + '/' + 'system/http-status-codes/service-unavailable-with-date', function (req, res) {
+    res.render(version + '/system/http-status-codes/service-unavailable-with-date', {
+      'hideFooterLinks' : req.query.hideFooterLinks
+		})
+  })
+
 }
