@@ -1,0 +1,206 @@
+{% extends "private-beta/2026/january/layouts/signed-in.html" %}
+
+{% set pageName = "Dementia prevalence and estimated diagnosis rate" %}
+
+{% block beforeContent %}
+{{ govukBreadcrumbs({
+  items: [
+    {
+      text: "Home",
+      href: "../../../home"
+    },
+    {
+      text: "Population needs",
+      href: "../subtopics"
+    }
+  ]
+}) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-full">
+    <h1 class="govuk-heading-xl">{{pageName}}</h1>
+    <p class="govuk-body-l">Data on registered dementia diagnoses with estimates for undiagnosed dementia.</p>
+
+    <div class="govuk-form-group">
+      <h2 class="govuk-heading-l govuk-!-margin-top-9">Data overview</h2>
+    </div>
+
+  </div>
+
+</div>
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-full">
+
+    <div class="data-box govuk-form-group">
+
+      <div class="govuk-tabs" data-module="govuk-tabs">
+
+        <div class="govuk-form-group">
+          <h3 class="govuk-heading-m">Dementia prevalence and estimated diagnosis rate</h3>
+
+
+          <p class="govuk-body">
+            Find out how <a href="../../../help/dementia-prevalence" class="govuk-link">dementia prevalence</a> and the <a href="../../../help/estimated-dementia-diagnosis-rate-aged-65-and-over">estimated dementia diagnosis rate for people aged 65 and over</a> are calculated.
+          </p>
+        </div>
+
+        <details class="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              What &lsquo;dementia diagnosis rate&rsquo; means
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+            The &lsquo;dementia diagnosis rate&rsquo; is found by dividing the number of people with a formal diagnosis of dementia by the estimated number of people expected to have dementia.</p>
+            <p>The estimated number of people expected to have dementia is worked out by combining:</p>
+            <ul class="govuk-list govuk-list--bullet">
+
+              <li>the characteristics of the local registered population</li>
+              <li>studies on dementia prevalence by age and sex</li>
+            </ul>
+            <a href="https://fingertips.phe.org.uk/dementia#page/6/gid/1938132811/ati/15/iid/92949/age/27/sex/4/cat/-1/ctp/-1/yrr/1/cid/4/tbm/1" class="govuk-link" target="_blank">Read a more detailed explanation of how &lsquo;dementia diagnosis rate&rsquo; is calculated (opens in new tab).</a></p>
+          </div>
+        </details>
+
+        <h3 class="govuk-tabs__title">Contents</h3>
+        <ul class="govuk-tabs__list">
+          <li class="govuk-tabs__list-item">
+            <a class="govuk-tabs__tab" href="#data1-table">Table</a>
+          </li>
+          <li class="govuk-tabs__list-item">
+            <a class="govuk-tabs__tab" href="#data1-download">Download</a>
+          </li>
+        </ul>
+
+        <div class="govuk-tabs__panel" id="data1-table">
+          {% include "./data-visualisations/_1-table.html" %}
+        </div>
+
+        <div class="govuk-tabs__panel" id="data1-download">
+          <h4 class="govuk-heading-s">Download</h4>
+          <ul class="govuk-list" data-module="edge">
+            <li>
+              <a class="govuk-link" href="#" data-message="Sorry, this hasn’t been designed yet">Export table data (CSV, 420 KB)</a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-full">
+    <h2 class="govuk-heading-l govuk-!-margin-top-9">Data indicator details</h2>
+    <p class="govuk-body">Use the links to view details on the data source, how the data was collected and any limitations to consider when using the data.</p>
+
+    <div class="gem-c-cards">
+      <ul class="gem-c-cards__list gem-c-cards__list--one-column">
+        <li class="gem-c-cards__list-item">
+
+          <div class="gem-c-cards__list-item-wrapper">
+            <h2 class="gem-c-cards__sub-heading govuk-heading-s">
+              <a class="govuk-link gem-c-cards__link gem-c-force-print-link-styles" href="../../../help/dementia-prevalence">Dementia prevalence</a>
+            </h2>
+            <p class="govuk-body gem-c-cards__description">Source: Department of Health and Social Care.<br>Yearly updates, limitations apply.</p>
+          </div>
+
+        </li>
+        <li class="gem-c-cards__list-item">
+
+          <div class="gem-c-cards__list-item-wrapper">
+            <h2 class="gem-c-cards__sub-heading govuk-heading-s">
+              <a class="govuk-link gem-c-cards__link gem-c-force-print-link-styles" href="../../../help/estimated-dementia-diagnosis-rate-aged-65-and-over">Estimated dementia diagnosis rate for people aged 65 and over</a>
+            </h2>
+            <p class="govuk-body gem-c-cards__description">Source: Department of Health and Social Care.<br>Yearly updates, limitations apply.</p>
+          </div>
+
+        </li>
+      </ul>
+    </div>
+
+    <h2 class="govuk-heading-l govuk-!-margin-top-9">Related data</h2>
+
+    <div class="gem-c-cards">
+      <ul class="gem-c-cards__list gem-c-cards__list--one-column">
+        <li class="gem-c-cards__list-item">
+
+          <div class="gem-c-cards__list-item-wrapper">
+            <h2 class="gem-c-cards__sub-heading govuk-heading-s">
+              <a class="govuk-link gem-c-cards__link gem-c-force-print-link-styles" href="../household-composition-and-economic-factors/data">Economic factors and household composition</a>
+            </h2>
+            <p class="govuk-body gem-c-cards__description">Data on household deprivation, property ownership and older people living alone.</p>
+          </div>
+
+        </li>
+        <li class="gem-c-cards__list-item">
+
+          <div class="gem-c-cards__list-item-wrapper">
+            <h2 class="gem-c-cards__sub-heading govuk-heading-s">
+              <a class="govuk-link gem-c-cards__link gem-c-force-print-link-styles" href="../disability-prevalence/data">General health, disability and learning disability</a>
+            </h2>
+            <p class="govuk-body gem-c-cards__description">Data on disability prevalence, learning disability diagnoses and reasons for accessing care.</p>
+          </div>
+
+        </li>
+        <li class="gem-c-cards__list-item">
+
+          <div class="gem-c-cards__list-item-wrapper">
+            <h2 class="gem-c-cards__sub-heading govuk-heading-s">
+              <a class="govuk-link gem-c-cards__link gem-c-force-print-link-styles" href="../population-age-and-size/data">Population size and age group percentages</a>
+            </h2>
+            <!-- <p class="govuk-body gem-c-cards__description">Population data at district, local authority, regional and national levels for England.</p> -->
+            <p class="govuk-body gem-c-cards__description">Population data at local authority, regional and national levels for England.</p>
+          </div>
+
+        </li>
+      </ul>
+    </div>
+
+    <h2 class="govuk-heading-l govuk-!-margin-top-9">Information on the local care market</h2>
+    <p class="govuk-body"><a href="#" class="govuk-link" data-message="This link would take you to the Market Position Statement on the Suffolk local authority website.">Market Position Statement for Suffolk (opens in new tab)</a></p>
+    <p class="govuk-body">Most local authorities in England publish Market Position Statements (MPS) to help care providers understand the local care market.</p>
+    <p class="govuk-body">You can usually find these <abbr title="Market Position Statement">MPS</abbr> documents on local authority websites.</p>
+    <p class="govuk-body"><abbr title="Market Position Statement">MPS</abbr> documents include information on:</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>supply and demand in the local care market</li>
+      <li>forecasts of future supply and demand for adult social care services</li>
+      <li>how the local authority will support the local care market to meet demand</li>
+      <li>how the local authority will engage with care providers on challenges in the sector, such as funding pressures</li>
+    </ul>
+
+    <!-- TO DO: Get this component working as a progressive enhancement (i.e. with JavaScript as per the live GOV.UK examples) -->
+    <div data-sticky-element class="gem-c-contents-list-with-body__link-wrapper govuk-!-margin-top-9">
+
+      <div class="gem-c-contents-list-with-body__link-container">
+        <a class="govuk-link gem-c-back-to-top-link govuk-!-display-none-print" href="#top">
+          <svg class="gem-c-back-to-top-link__icon" xmlns="http://www.w3.org/2000/svg" width="13" height="17" viewBox="0 0 13 17" aria-hidden="true" focusable="false">
+            <path fill="currentColor" d="M6.5 0L0 6.5 1.4 8l4-4v12.7h2V4l4.3 4L13 6.4z"></path>
+          </svg>
+          Back to top
+        </a>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+{% endblock %}
+
+{% block pageScripts %}
+<!-- Filters (progressive enhancement) code that loads and controls the dynamic filters for this page -->
+<script src="/public/javascripts/private-beta/2026/january/filters.js"></script>
+<!-- Font Awesome 4 icons for the notifications -->
+<link href="/public/open-source/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+{% endblock %}

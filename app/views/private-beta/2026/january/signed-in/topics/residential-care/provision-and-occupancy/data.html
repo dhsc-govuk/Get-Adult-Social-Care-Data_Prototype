@@ -1,0 +1,376 @@
+{% extends "private-beta/2026/january/layouts/signed-in.html" %}
+
+{% set pageName = "Care home beds and occupancy levels" %}
+
+{% block beforeContent %}
+{{ govukBreadcrumbs({
+  items: [
+    {
+      text: "Home",
+      href: "../../../home"
+    },
+    {
+      text: "Care provision",
+      href: "../subtopics"
+    }
+  ]
+}) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-full">
+    <h1 class="govuk-heading-xl">{{pageName}}</h1>
+    <p class="govuk-body-l">Provision and capacity data for care homes, including local, regional and national statistics.</p>
+    
+    <div class="govuk-form-group">
+      <h2 class="govuk-heading-l govuk-!-margin-top-9">Data overview</h2>
+      <!-- <p class="govuk-body">Data overview summary information, e.g. broad guidance.</p> -->
+    </div>
+
+  </div>
+
+</div>
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-full">
+
+    <div class="data-box govuk-form-group">
+
+      <div class="govuk-tabs" data-module="govuk-tabs">
+
+        <div class="govuk-form-group">
+          <h3 id="data1" class="govuk-heading-m">Care home bed numbers</h3>
+          <p class="govuk-body">Find out <a href="../../../help/beds-per-100000-adult-population" class="govuk-link">how the number of adult social care beds per 100,000 adult population is calculated</a>.</p>
+          {% include "./filters/_1-filter-component.html" %}
+        </div>
+
+        <h3 class="govuk-tabs__title">Contents</h3>
+        <ul class="govuk-tabs__list">
+          <li class="govuk-tabs__list-item">
+            <a class="govuk-tabs__tab" href="#data1-chart">Chart</a>
+          </li>
+          <li class="govuk-tabs__list-item">
+            <a class="govuk-tabs__tab" href="#data1-table">Table</a>
+          </li>
+          <li class="govuk-tabs__list-item">
+            <a class="govuk-tabs__tab" href="#data1-download">Download</a>
+          </li>
+        </ul>
+
+        <div class="govuk-tabs__panel" id="data1-chart">
+          {% include "./data-visualisations/_1-chart.html" %}
+        </div>
+
+        <div class="govuk-tabs__panel" id="data1-table">
+          {% include "./data-visualisations/_1-table.html" %}
+        </div>
+
+        <div class="govuk-tabs__panel" id="data1-download">
+          <h4 class="govuk-heading-s">Download</h4>
+          <ul class="govuk-list" data-module="edge">
+            <li>
+              <a class="govuk-link" href="#" data-message="Sorry, this hasn’t been designed yet">Download chart image (PNG, 1 MB)</a>
+            </li>
+            <li>
+              <a class="govuk-link" href="#" data-message="Sorry, this hasn’t been designed yet">Export table data (CSV, 420 KB)</a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-full">
+
+    <div class="data-box govuk-form-group">
+
+      <div class="govuk-tabs" data-module="govuk-tabs">
+
+        <div class="govuk-form-group">
+          <h3 id="data2" class="govuk-heading-m">Care home bed types</h3>
+          <p class="govuk-body">Find out how <a href="../../../help/beds-per-100000-adult-population" class="govuk-link">the number of adult social care beds per 100,000 adult population</a> are calculated.</p>
+          {% include "./filters/_2-filter-component.html" %}
+        </div>
+
+        <h3 class="govuk-tabs__title">Contents</h3>
+        <ul class="govuk-tabs__list">
+          <li class="govuk-tabs__list-item">
+            <a class="govuk-tabs__tab" href="#data2-table">Table</a>
+          </li>
+          <li class="govuk-tabs__list-item">
+            <a class="govuk-tabs__tab" href="#data2-more-information">Text summary</a>
+          </li>
+          <li class="govuk-tabs__list-item">
+            <a class="govuk-tabs__tab" href="#data2-download">Download</a>
+          </li>
+        </ul>
+
+        <div class="govuk-tabs__panel" id="data2-table">
+          {% include "./data-visualisations/_2-table.html" %}
+        </div>
+
+        <div class="govuk-tabs__panel" id="data2-more-information">
+          <h4 class="govuk-heading-s">Text summary</h4>
+          <p class="govuk-body">The number of adult social care beds per 100,000 adult population provides an indicator of current care capacity. A higher number suggests more sufficient capacity.</p>
+          <p class="govuk-body">Care homes in Suffolk have <strong>1,152 beds per 100,000 adult population</strong>, compared to the East of England regional average of 1,094 per 100,000.</p>
+        </div>
+
+        <div class="govuk-tabs__panel" id="data2-download">
+          <h4 class="govuk-heading-s">Download</h4>
+          <ul class="govuk-list" data-module="edge">
+            <li>
+              <a class="govuk-link" href="#" data-message="Sorry, this hasn’t been designed yet">Export table data (CSV, 420 KB)</a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-full">
+
+    <div class="data-box govuk-form-group">
+
+      <div class="govuk-tabs" data-module="govuk-tabs">
+
+        <div class="govuk-form-group">
+          <h3 class="govuk-heading-m">Beds per care home and occupancy levels</h3>
+          <p class="govuk-body">Find out how <a href="../../../help/percentage-beds-occupied" class="govuk-link">occupancy level percentages</a> and the <a href="../../../help/beds-per-100000-adult-population" class="govuk-link">number of adult social care beds per 100,000 adult population</a> are calculated.</p>
+        </div>
+
+        <details class="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              Definition of a &lsquo;median&rsquo; number
+            </span>
+          </summary>
+
+          <div class="govuk-details__text">
+            <p>If you place a set of numbers in order, the middle one of the set is the median number.</p>
+            <p>When there are two middle numbers, the median is the average of those two numbers.</p>
+          </div>
+
+        </details>
+
+        <h3 class="govuk-tabs__title">Contents</h3>
+        <ul class="govuk-tabs__list">
+          <li class="govuk-tabs__list-item">
+            <a class="govuk-tabs__tab" href="#data3-table">Table</a>
+          </li>
+          <li class="govuk-tabs__list-item">
+            <a class="govuk-tabs__tab" href="#data3-more-information">Text summary</a>
+          </li>
+          <li class="govuk-tabs__list-item">
+            <a class="govuk-tabs__tab" href="#data3-download">Download</a>
+          </li>
+        </ul>
+
+        <div class="govuk-tabs__panel" id="data3-table">
+          {% include "./data-visualisations/_3-table.html" %}
+        </div>
+
+        <div class="govuk-tabs__panel" id="data3-more-information">
+          <h4 class="govuk-heading-s">Text summary</h4>
+          <p class="govuk-body">{{data.selectedLocationName or 'Ashfield Court (Exeter)'}} is a large provider with <strong>85 total beds</strong>, compared to the median (20 beds) in Suffolk.</p>
+          <p class="govuk-body">{{data.selectedLocationName or 'Ashfield Court (Exeter)'}} has <strong>93% occupancy</strong> for all adult social care beds compared to the median occupancy of all care homes in Suffolk (87%), suggesting limited availability for new admissions.</p>
+          <p class="govuk-body">Suffolk care homes are <strong>operating at 87% occupancy</strong>, which is lower than the regional average (89%). This suggests a greater capacity to meet population needs as the regional average.</p>
+        </div>
+
+        <div class="govuk-tabs__panel" id="data3-download">
+          <h4 class="govuk-heading-s">Download</h4>
+          <ul class="govuk-list" data-module="edge">
+            <li>
+              <a class="govuk-link" href="#" data-message="Sorry, this hasn’t been designed yet">Export table data (CSV, 420 KB)</a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-full">
+    <h2 class="govuk-heading-l govuk-!-margin-top-9">Trends</h2>
+    <!-- <p class="govuk-body">Trends summary information, e.g. limitation.</p> -->
+  </div>
+
+</div>
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-full">
+
+    <div class="data-box govuk-form-group">
+
+      <div class="govuk-tabs" data-module="govuk-tabs">
+        
+        <div class="govuk-form-group">
+          <h3 id="trend1" class="govuk-heading-m">Care home bed numbers - trends over time</h3>
+          <p class="govuk-body">Find out <a href="../../../help/beds-per-100000-adult-population-over-time" class="govuk-link">how the total number of adult social care beds per 100,000 adults in the local authority area over time is calculated</a>.</p>
+          {% include "./filters/_4-filter-component.html" %}
+        </div>
+
+        <h3 class="govuk-tabs__title">Contents</h3>
+        <ul class="govuk-tabs__list">
+          <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+            <a class="govuk-tabs__tab" href="#trend-chart">Graph</a>
+          </li>
+          <li class="govuk-tabs__list-item">
+            <a class="govuk-tabs__tab" href="#trend-download">Download</a>
+          </li>
+        </ul>
+
+        <div class="govuk-tabs__panel" id="trend-chart">
+          {% include "./data-visualisations/_4-time-series.html" %}
+        </div>
+
+        <div class="govuk-tabs__panel" id="trend-download">
+          <h4 class="govuk-heading-s">Download</h4>
+          <ul class="govuk-list" data-module="edge">
+            <li>
+              <a class="govuk-link" href="#" data-message="Sorry, this hasn’t been designed yet">Download chart image (PNG, 1 MB)</a>
+            </li>
+            <li>
+              <a class="govuk-link" href="#" data-message="Sorry, this hasn’t been designed yet">Export table data (CSV, 420 KB)</a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-full">
+    <h2 class="govuk-heading-l govuk-!-margin-top-9">Data indicator details</h2>
+    <p class="govuk-body">Use the links to view details on the data source, how the data was collected and any limitations to consider when using the data.</p>
+
+    <div class="gem-c-cards">
+      <ul class="gem-c-cards__list gem-c-cards__list--one-column">
+        <li class="gem-c-cards__list-item">
+
+          <div class="gem-c-cards__list-item-wrapper">
+            <h2 class="gem-c-cards__sub-heading govuk-heading-s">
+              <a class="govuk-link gem-c-cards__link gem-c-force-print-link-styles" href="../../../help/beds-per-100000-adult-population">Adult social care beds per 100,000 adult population</a>
+            </h2>
+            <p class="govuk-body gem-c-cards__description">Sources: Capacity Tracker, Office for National Statistics. <br>Daily updates, limitations apply.</p>
+          </div>
+
+        </li>
+        <li class="gem-c-cards__list-item">
+
+          <div class="gem-c-cards__list-item-wrapper">
+            <h2 class="gem-c-cards__sub-heading govuk-heading-s">
+              <a class="govuk-link gem-c-cards__link gem-c-force-print-link-styles" href="../../../help/beds-per-100000-adult-population-over-time">Adult social care beds per 100,000 adult population - over time</a>
+            </h2>
+            <p class="govuk-body gem-c-cards__description">Sources: Capacity Tracker, Office for National Statistics. <br>Daily updates, limitations apply.</p>
+          </div>
+
+        </li>
+        <li class="gem-c-cards__list-item">
+
+          <div class="gem-c-cards__list-item-wrapper">
+            <h2 class="gem-c-cards__sub-heading govuk-heading-s">
+              <a class="govuk-link gem-c-cards__link gem-c-force-print-link-styles" href="../../../help/percentage-beds-occupied">Occupancy level percentages for adult social care beds</a>
+            </h2>
+            <p class="govuk-body gem-c-cards__description">Source: Capacity Tracker. <br>Daily updates, limitations apply.</p>
+          </div>
+
+        </li>
+      </ul>
+
+    </div>
+
+    <h2 class="govuk-heading-l govuk-!-margin-top-9">Related data</h2>
+
+    <div class="gem-c-cards">
+
+      <ul class="gem-c-cards__list gem-c-cards__list--one-column">
+        <li class="gem-c-cards__list-item">
+
+          <div class="gem-c-cards__list-item-wrapper">
+            <h2 class="gem-c-cards__sub-heading govuk-heading-s">
+              <a class="govuk-link gem-c-cards__link gem-c-force-print-link-styles" href="../residential-care-providers/data">Care providers: locations and services</a>
+            </h2>
+            <p class="govuk-body gem-c-cards__description">Data on residential care homes and nursing homes by location and service type.</p>
+          </div>
+
+        </li>
+        <li class="gem-c-cards__list-item">
+
+          <div class="gem-c-cards__list-item-wrapper">
+            <h2 class="gem-c-cards__sub-heading govuk-heading-s">
+              <a class="govuk-link gem-c-cards__link gem-c-force-print-link-styles" href="../unpaid-care/data">Unpaid care</a>
+            </h2>
+            <p class="govuk-body gem-c-cards__description">Statistics on the people who provide unpaid care to family members, friends and neighbours.</p>
+          </div>
+
+        </li>
+      </ul>
+
+    </div>
+
+    <h2 class="govuk-heading-l govuk-!-margin-top-9">Information on the local care market</h2>
+    <p class="govuk-body"><a href="#" class="govuk-link" data-message="This link would take you to the Market Position Statement on the Suffolk local authority website.">Market Position Statement for Suffolk (opens in new tab)</a></p>
+    <p class="govuk-body">Most local authorities in England publish Market Position Statements (MPS) to help care providers understand the local care market.</p>
+    <p class="govuk-body">You can usually find these <abbr title="Market Position Statement">MPS</abbr> documents on local authority websites.</p>
+    <p class="govuk-body"><abbr title="Market Position Statement">MPS</abbr> documents include information on:</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>supply and demand in the local care market</li>
+      <li>forecasts of future supply and demand for adult social care services</li>
+      <li>how the local authority will support the local care market to meet demand</li>
+      <li>how the local authority will engage with care providers on challenges in the sector, such as funding pressures</li>
+    </ul>
+
+    <div data-sticky-element class="gem-c-contents-list-with-body__link-wrapper govuk-!-margin-top-9">
+
+      <div class="gem-c-contents-list-with-body__link-container">
+        <a class="govuk-link gem-c-back-to-top-link govuk-!-display-none-print" href="#top">
+          <svg class="gem-c-back-to-top-link__icon" xmlns="http://www.w3.org/2000/svg" width="13" height="17" viewBox="0 0 13 17" aria-hidden="true" focusable="false">
+            <path fill="currentColor" d="M6.5 0L0 6.5 1.4 8l4-4v12.7h2V4l4.3 4L13 6.4z"></path>
+          </svg>
+          Back to top
+        </a>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+{% endblock %}
+
+{% block pageScripts %}
+<!-- Filters (progressive enhancement) code that loads and controls the dynamic filters for this page -->
+<script src="/public/javascripts/private-beta/2026/january/filters.js"></script>
+<!-- Font Awesome 4 icons for the notifications -->
+<link href="/public/open-source/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+{% endblock %}

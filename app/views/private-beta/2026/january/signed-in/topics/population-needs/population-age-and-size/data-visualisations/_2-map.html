@@ -1,0 +1,8 @@
+<div class="govuk-form-group">
+  <h3 class="govuk-heading-s">Figure 2: map of age group percentages for older age groups &ndash; local authority districts and MSOAs in England, mid-2024</h3>
+  <iframe width="100%" height="600px" title="ONS Census Maps" frameborder="0" src="https://www.ons.gov.uk/census/maps/choropleth/population/age/resident-age-11a/{% if data.ageGroup4 == 'Aged 65 to 74' %}aged-65-to-74-years{% elif data.ageGroup4 == 'Aged 75 to 84' %}aged-75-to-84-years{% else %}aged-85-years-and-over{% endif %}/?lad=E07000203&embed=true&embedInteractive=true&embedAreaSearch=false&embedCategorySelection=false&embedView=viewport&embedBounds=0.4518427976473447%2C51.95149998586203%2C1.7552472023533312%2C52.516917630727676"></iframe>
+</div>
+
+<div class="govuk-form-block">
+  <p class="govuk-body data-source">Source: Population estimates from the Office for National Statistics (ONS)</p>
+</div>

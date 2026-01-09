@@ -1,0 +1,72 @@
+{% extends "private-beta/2026/january/layouts/signed-in.html" %}
+
+{% set pageName = "Population needs" %}
+
+{% block beforeContent %}
+{{ govukBreadcrumbs({
+  items: [
+    {
+      text: "Home",
+      href: "../../home"
+    }
+  ]
+}) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">{{pageName}}</h1>
+    <p class="govuk-body-l">Find data on a range of care need indicators, such as household economic factors and disability prevalence.</p>
+
+    <div class="gem-c-cards">
+      <ul class="gem-c-cards__list gem-c-cards__list--one-column">
+        <li class="gem-c-cards__list-item">
+
+          <div class="gem-c-cards__list-item-wrapper">
+            <h2 class="gem-c-cards__sub-heading govuk-heading-s">
+              <a class="govuk-link gem-c-cards__link gem-c-force-print-link-styles" href="../population-needs/dementia-prevalence/data">Dementia prevalence and estimated diagnosis rate</a>
+            </h2>
+            <p class="govuk-body gem-c-cards__description">Data on registered dementia diagnoses with estimates for undiagnosed dementia.</p>
+          </div>
+
+        </li>
+        <li class="gem-c-cards__list-item">
+
+          <div class="gem-c-cards__list-item-wrapper">
+            <h2 class="gem-c-cards__sub-heading govuk-heading-s">
+              <a class="govuk-link gem-c-cards__link gem-c-force-print-link-styles" href="../population-needs/household-composition-and-economic-factors/data">Economic factors and household composition</a>
+            </h2>
+            <p class="govuk-body gem-c-cards__description">Data on household deprivation, property ownership and older people living alone.</p>
+          </div>
+
+        </li>
+        <li class="gem-c-cards__list-item">
+
+          <div class="gem-c-cards__list-item-wrapper">
+            <h2 class="gem-c-cards__sub-heading govuk-heading-s">
+              <a class="govuk-link gem-c-cards__link gem-c-force-print-link-styles" href="../population-needs/disability-prevalence/data">General health, disability and learning disability</a>
+            </h2>
+            <p class="govuk-body gem-c-cards__description">Data on disability prevalence, learning disability diagnoses and reasons for accessing care.</p>
+          </div>
+
+        </li>
+        <li class="gem-c-cards__list-item">
+
+          <div class="gem-c-cards__list-item-wrapper">
+            <h2 class="gem-c-cards__sub-heading govuk-heading-s">
+              <a class="govuk-link gem-c-cards__link gem-c-force-print-link-styles" href="../population-needs/population-age-and-size/data">Population size and age group percentages</a>
+            </h2>
+            <!-- <p class="govuk-body gem-c-cards__description">Population data at district, local authority, regional and national levels for England.</p> -->
+            <p class="govuk-body gem-c-cards__description">Population data at local authority, regional and national levels for England.</p>
+          </div>
+
+        </li>
+      </ul>
+    </div>
+
+  </div>
+
+</div>
+{% endblock %}

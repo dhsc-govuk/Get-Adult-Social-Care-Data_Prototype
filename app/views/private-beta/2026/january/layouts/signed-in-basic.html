@@ -1,0 +1,141 @@
+{#
+  For guidance on how to use layouts see:
+  https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
+#}
+
+{% from "govuk/components/cookie-banner/macro.njk" import govukCookieBanner %}
+{% extends "govuk-prototype-kit/layouts/govuk-branded.njk" %}
+{% from "di-govuk-one-login-service-header/service-header.njk" import govukOneLoginServiceHeader %}
+{% from "govuk/components/header/macro.njk" import govukHeader %}
+{% from "govuk/components/service-navigation/macro.njk" import govukServiceNavigation %}
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+{% from "govuk/components/footer/macro.njk" import govukFooter %}
+
+{% block stylesheets %}
+{{super()}}
+<link href="/public/css/private-beta/2026/january/styles.css" rel="stylesheet" type="text/css" />
+<link href="/public/css/private-beta/2026/january/print.css" media="print" rel="stylesheet" type="text/css" />
+{% endblock %}
+
+{% block header %}
+{% if data.onCookiesPage != "true" %}
+{% if data.cookiesAnalytics == null or data.cookiesAnalytics == "" %}
+{% set html %}
+  <p class="govuk-body">We use some essential cookies to make this service work.</p>
+  <p class="govuk-body">We&#39;d also like to use analytics cookies so we can understand how you use the service and make improvements.</p>
+{% endset %}
+
+<form method="post" novalidate>
+  
+  {{ govukCookieBanner({
+    ariaLabel: "Cookies on " + serviceName,
+    messages: [
+      {
+        headingText: "Cookies on " + serviceName,
+        html: html,
+        actions: [
+          {
+            text: "Accept analytics cookies",
+            type: "button",
+            href: "?cookiesAnalytics=Yes"
+          },
+          {
+            text: "Reject analytics cookies",
+            type: "button",
+            href: "?cookiesAnalytics=No"
+          },
+          {
+            text: "View cookies",
+            href: "/private-beta/2026/january/footer/cookies?onCookiesPage=true"
+          }
+        ]
+      }
+    ]
+  }) }}
+
+</form>
+{% else %}
+{% if data.cookiesBanner != "Hidden" %}
+{% set acceptHtml %}
+  <p class="govuk-body">You&#39;ve accepted additional cookies. You can <a class="govuk-link" href="/private-beta/2026/january/footer/cookies?onCookiesPage=true">change your cookie settings</a> at any time.</p>
+{% endset %}
+
+<form method="post" novalidate>
+
+  {{ govukCookieBanner({
+    ariaLabel: "Cookies on " + serviceName,
+    messages: [
+      {
+        html: acceptHtml,
+        actions: [
+          {
+            text: "Hide cookie message",
+            type: "button",
+            href: "?cookiesBanner=Hidden"
+          }
+        ]
+      }
+    ]
+  }) }}
+  
+</form>
+{% endif %}
+{% endif %}
+{% endif %}
+
+{{ govukOneLoginServiceHeader({
+  homepageLink: "/",
+  oneLoginLink: "/private-beta/2026/january/gov-uk/one-login/manage-account/your-services",
+  signOutLink: "/private-beta/2026/january/system/signed-out",
+  rebrand: true,
+  serviceNavigationParams: { 
+    rebrand: true,
+    serviceName: serviceName
+  }
+}) }}
+
+<div class="govuk-width-container">
+  {{ govukPhaseBanner({
+    tag: {
+      text: "Beta"
+    },
+    html: 'This is a new service. Help us improve it and <a href="https://forms.office.com/e/s9FCDSibN0" class="govuk-link" rel="noreferrer noopener" target="_blank">give your feedback (opens in new tab)</a>.'
+  }) }}
+</div>
+{% endblock %}
+
+
+{% block footer %}
+{{ govukFooter({
+  meta: {
+    items: [
+      {
+        href: "/private-beta/2026/january/footer/disclaimer?signedInState=signedInBasic&onCookiesPage=false",
+        text: "Disclaimer"
+      },
+      {
+        href: "/private-beta/2026/january/footer/help?signedInState=signedInBasic&onCookiesPage=false",
+        text: "Help"
+      },
+      {
+        href: "/private-beta/2026/january/footer/privacy-policy?signedInState=signedInBasic&onCookiesPage=false",
+        text: "Privacy"
+      },
+      {
+        href: "/private-beta/2026/january/footer/cookies?signedInState=signedInBasic&onCookiesPage=true",
+        text: "Cookies"
+      },
+      {
+        href: "https://forms.office.com/e/s9FCDSibN0",
+        text: "Feedback"
+      }
+    ]
+  }
+}) }}
+{% endblock %}
+
+{% block scripts %}
+  {{ super() }}
+  <!-- Custom global jQuery and JavaScript for GASCD -->
+  <script src="/public/javascripts/private-beta/2026/january/custom-global-behaviour.js"></script>
+{% endblock %}

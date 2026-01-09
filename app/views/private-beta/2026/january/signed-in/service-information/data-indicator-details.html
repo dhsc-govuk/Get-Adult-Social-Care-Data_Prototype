@@ -1,0 +1,176 @@
+{% extends "private-beta/2026/january/layouts/signed-in.html" %}
+
+{% set pageName = "Data indicator details" %}
+
+{% block beforeContent %}
+  <a href="javascript:history.back()" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">{{pageName}}</h1>
+    <p class="govuk-body-l">This page lists all the data indicators (or metrics) used in the Get adult social care data service.</p>
+    <p class="govuk-body">Use the links to view details on the data sources, how the data was collected and any limitations to consider when using the data.</p>
+
+    <h2 class="govuk-heading-m govuk-!-margin-top-7" id="how-to-use">Care provision data indicators</h2>
+
+    <div class="gem-c-cards">
+      <ul class="gem-c-cards__list gem-c-cards__list--one-column">
+        <li class="gem-c-cards__list-item">
+
+          <div class="gem-c-cards__list-item-wrapper">
+            <h2 class="gem-c-cards__sub-heading govuk-heading-s">
+              <a class="govuk-link gem-c-cards__link gem-c-force-print-link-styles" href="../help/beds-per-100000-adult-population">Adult social care beds per 100,000 adult population</a>
+            </h2>
+            <p class="govuk-body gem-c-cards__description">Sources: Capacity Tracker, Office for National Statistics.<br>Daily updates, limitations apply.</p>
+          </div>
+
+        </li>
+        <li class="gem-c-cards__list-item">
+
+          <div class="gem-c-cards__list-item-wrapper">
+            <h2 class="gem-c-cards__sub-heading govuk-heading-s">
+              <a class="govuk-link gem-c-cards__link gem-c-force-print-link-styles" href="../help/beds-per-100000-adult-population-over-time">Adult social care beds per 100,000 adult population - over time</a>
+            </h2>
+            <p class="govuk-body gem-c-cards__description">Sources: Capacity Tracker, Office for National Statistics.<br>Daily updates, limitations apply.</p>
+          </div>
+
+        </li>
+        <li class="gem-c-cards__list-item">
+
+          <div class="gem-c-cards__list-item-wrapper">
+            <h2 class="govuk-heading-s gem-c-cards__sub-heading">
+              <a class="govuk-link gem-c-cards__link gem-c-force-print-link-styles" href="../help/percentage-beds-occupied">Occupancy level percentages for adult social care beds</a>
+            </h2>
+            <p class="govuk-body gem-c-cards__description">Source: Capacity Tracker. <br>Daily updates, limitations apply.</p>
+          </div>
+
+        </li>
+        <li class="gem-c-cards__list-item">
+
+          <div class="gem-c-cards__list-item-wrapper">
+            <h2 class="govuk-heading-s gem-c-cards__sub-heading">
+              <a class="govuk-link gem-c-cards__link gem-c-force-print-link-styles" href="../help/percentage-people-aged-5-and-over-who-provide-unpaid-care">People aged 5 and over who provide unpaid care</a>
+            </h2>
+            <p class="govuk-body gem-c-cards__description">Source: Office for National Statistics.<br>Updated every 10 years, limitations might apply.</p>
+          </div>
+
+        </li>
+      </ul>
+
+    </div>
+
+    <h2 class="govuk-heading-m govuk-!-margin-top-7">Population needs data indicators</h2>
+
+    <div class="gem-c-cards">
+
+      <ul class="gem-c-cards__list gem-c-cards__list--one-column">
+        <li class="gem-c-cards__list-item">
+
+          <div class="gem-c-cards__list-item-wrapper">
+            <h2 class="govuk-heading-s gem-c-cards__sub-heading">
+              <a class="govuk-link gem-c-cards__link gem-c-force-print-link-styles" href="../help/population-age">Age group percentages</a>
+            </h2>
+            <p class="govuk-body gem-c-cards__description">Source: Office for National Statistics.<br>Yearly updates, limitations apply. </p>
+          </div>
+
+        </li>
+        <li class="gem-c-cards__list-item">
+
+          <div class="gem-c-cards__list-item-wrapper">
+            <h2 class="govuk-heading-s gem-c-cards__sub-heading">
+              <a class="govuk-link gem-c-cards__link gem-c-force-print-link-styles" href="../help/dementia-prevalence">Dementia prevalence</a>
+            </h2>
+            <p class="govuk-body gem-c-cards__description">Source: Department of Health and Social Care.<br>Yearly updates, limitations apply.</p>
+          </div>
+
+        </li>
+        <li class="gem-c-cards__list-item">
+
+          <div class="gem-c-cards__list-item-wrapper">
+            <h2 class="govuk-heading-s gem-c-cards__sub-heading">
+              <a class="govuk-link gem-c-cards__link gem-c-force-print-link-styles" href="../help/disability-prevalence">Disability prevalence</a>
+            </h2>
+            <p class="govuk-body gem-c-cards__description">Source: Office for National Statistics.<br>Updated every 10 years, limitations might apply.</p>
+          </div>
+
+        </li>
+        <li class="gem-c-cards__list-item">
+
+          <div class="gem-c-cards__list-item-wrapper">
+            <h2 class="govuk-heading-s gem-c-cards__sub-heading">
+              <a class="govuk-link gem-c-cards__link gem-c-force-print-link-styles" href="../help/estimated-dementia-diagnosis-rate-aged-65-and-over">Estimated dementia diagnosis rate for people aged 65 and over</a>
+            </h2>
+            <p class="govuk-body gem-c-cards__description">Source: Department of Health and Social Care.<br>Yearly updates, limitations apply.</p>
+          </div>
+
+        </li>
+        <li class="gem-c-cards__list-item">
+
+          <div class="gem-c-cards__list-item-wrapper">
+            <h2 class="govuk-heading-s gem-c-cards__sub-heading">
+              <a class="govuk-link gem-c-cards__link gem-c-force-print-link-styles" href="../help/household-deprivation">Households ‘deprived in 4 dimensions’</a>
+            </h2>
+            <p class="govuk-body gem-c-cards__description">Source: Office for National Statistics.<br>Updated every 10 years, limitations might apply. </p>
+          </div>
+
+        </li>
+        <li class="gem-c-cards__list-item">
+
+          <div class="gem-c-cards__list-item-wrapper">
+            <h2 class="govuk-heading-s gem-c-cards__sub-heading">
+              <a class="govuk-link gem-c-cards__link gem-c-force-print-link-styles" href="../help/households-where-property-is-owned-outright">Households where the property is owned outright</a>
+            </h2>
+            <p class="govuk-body gem-c-cards__description">Source: Office for National Statistics.<br>Updated every 10 years, limitations might apply. </p>
+          </div>
+
+        </li>
+        <li class="gem-c-cards__list-item">
+
+          <div class="gem-c-cards__list-item-wrapper">
+            <h2 class="govuk-heading-s gem-c-cards__sub-heading">
+              <a class="govuk-link gem-c-cards__link gem-c-force-print-link-styles" href="../help/one-person-households-where-person-aged-65-or-over">One-person households where the person is aged 65 or over</a>
+            </h2>
+            <p class="govuk-body gem-c-cards__description">Source: Office for National Statistics.<br>Updated every 10 years, limitations might apply. </p>
+          </div>
+
+        </li>
+        <li class="gem-c-cards__list-item">
+
+          <div class="gem-c-cards__list-item-wrapper">
+            <h2 class="govuk-heading-s gem-c-cards__sub-heading">
+              <a class="govuk-link gem-c-cards__link gem-c-force-print-link-styles" href="../help/learning-disability-prevalence">Learning disability prevalence</a>
+            </h2>
+            <p class="govuk-body gem-c-cards__description">Source: Department of Health and Social Care.<br>Yearly updates, limitations apply.</p>
+          </div>
+
+        </li>
+        <li class="gem-c-cards__list-item">
+
+          <div class="gem-c-cards__list-item-wrapper">
+            <h2 class="govuk-heading-s gem-c-cards__sub-heading">
+              <a class="govuk-link gem-c-cards__link gem-c-force-print-link-styles" href="../help/people-who-reported-bad-or-very-bad-health">People who reported bad or very bad health</a>
+            </h2>
+            <p class="govuk-body gem-c-cards__description">Source: Office for National Statistics.<br>Updated every 10 years, limitations might apply.</p>
+          </div>
+
+        </li>
+        <li class="gem-c-cards__list-item">
+
+          <div class="gem-c-cards__list-item-wrapper">
+            <h2 class="govuk-heading-s gem-c-cards__sub-heading">
+              <a class="govuk-link gem-c-cards__link gem-c-force-print-link-styles" href="../help/population-size">Population size</a>
+            </h2>
+            <p class="govuk-body gem-c-cards__description">Source: Office for National Statistics.<br>Yearly updates, limitations apply. </p>
+          </div>
+
+        </li>
+      </ul>
+    </div>
+
+  </div>
+
+</div>
+{% endblock %}

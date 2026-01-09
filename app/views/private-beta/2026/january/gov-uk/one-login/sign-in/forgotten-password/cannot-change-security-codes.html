@@ -1,0 +1,90 @@
+{% extends "private-beta/2026/january/gov-uk/one-login/layouts/default.html" %}
+
+<!-- Set a blank service name (i.e. not get adult social care data) -->
+{% set serviceName %}
+{% endset %}
+
+{% block pageTitle %}
+  You cannot change how you get security codes - GOV.UK One Login – Prototype Kit
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-two-thirds">
+    {% if error %}
+
+    <div class="govuk-error-summary" data-module="govuk-error-summary">
+      
+      <div role="alert">
+        <h2 class="govuk-error-summary__title">There is a problem</h2>
+
+        <div class="govuk-error-summary__body">
+          <ul class="govuk-list govuk-error-summary__list">
+            <li>
+              <a href="#help-to-delete-account">Select what you would like to do</a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+    </div>
+
+    {% endif %}
+    <h1 class="govuk-heading-l">You cannot change how you get security codes</h1>
+    <p class="govuk-body">You can only sign into your GOV.UK One Login using the method you already have set up to get security codes.</p>
+    <p class="govuk-body">If you’ve permanently lost access to this method, you should delete your GOV.UK One Login so you can create a new one.</p>
+
+    <form action="cannot-change-security-codes-validation" method="post">
+      <h2 class="govuk-heading-m">What would you like to do?</h2>
+
+      <div class="govuk-form-group{% if error %} govuk-form-group--error{% endif %}">
+        {% if error %}
+        <p id="cannotChangeHowGetSecurityCodeAction-error" class="govuk-error-message"><span class="govuk-visually-hidden">Error:</span> Select what you would like to do</p>
+        {% endif %}
+
+        <div class="govuk-radios" id="radio-cannot-change-how-get-security-code-action" data-module="govuk-radios" data-govuk-radios-init=""{% if error %} aria-describedby="cannotChangeHowGetSecurityCodeAction-error"{% endif %}>
+
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="help-to-delete-account" name="cannotChangeHowGetSecurityCodeAction" type="radio" value="Get help to delete your GOV.UK One Login from the support team" aria-describedby="help-to-delete-account-item-hint">
+            <label class="govuk-label govuk-radios__label" for="help-to-delete-account">Get help to delete your GOV.UK One Login from the support team</label>
+
+            <div id="help-to-delete-account-item-hint" class="govuk-hint govuk-radios__hint">
+              Call or use webchat to contact the GOV.UK One Login team
+            </div>
+
+          </div>
+
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="retry-security-code" name="cannotChangeHowGetSecurityCodeAction" type="radio" value="Try entering a security code again with the method you already have set up">
+            <label class="govuk-label govuk-radios__label" for="retry-security-code">Try entering a security code again with the method you already have set up</label>
+          </div>
+
+        </div>
+
+      </div>
+
+      <button type="Submit" data-prevent-double-click="true" class="govuk-button" data-module="govuk-button" data-govuk-button-init="">Continue</button>
+    </form>
+  
+  </div>
+
+</div>
+{% endblock %}
+
+{% block pageScripts %}
+<script>
+
+  $(document).ready(function () {
+    
+    $('#help-to-delete-account').click(function(){
+      $(this).prop('checked', false);
+      $(this).blur();
+      alert("Sorry, this is an external service feature (GOV.UK One Login) not within the scope of this prototype");
+    });
+
+  });
+
+</script>
+{% endblock %}
