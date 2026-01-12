@@ -406,18 +406,18 @@
               Guidance
               </span>
               <h1 class="gem-c-heading__text govuk-heading-l">
-                Sign into the {{serviceName}} service
+                {{serviceName}} (GASCD)
               </h1>
             </div>
           </div>
         </div>
-        <div class="govuk-grid-row">
+        <!-- <div class="govuk-grid-row">
           <div class="govuk-grid-column-two-thirds">
             <p class="gem-c-lead-paragraph">
               Care providers registered with the Care Quality Commission (CQC) can access a new service providing data on adult social care in England.  
             </p>
           </div>
-        </div>
+        </div> -->
         <div class="govuk-grid-row">
           <div class="metadata-wrapper gem-print-columns-none ">
             <div class="govuk-grid-column-two-thirds metadata-column">
@@ -428,7 +428,7 @@
                     <a href="https://www.gov.uk/government/organisations/department-of-health-and-social-care" class="govuk-link">Department for Health and Social Care</a>
                   </dd>
                   <dt class="gem-c-metadata__term">Published</dt>
-                  <dd class="gem-c-metadata__definition">1 December 2025</dd>
+                  <dd class="gem-c-metadata__definition">8 January 2026</dd>
                   <!-- <dt class="gem-c-metadata__term">Last updated</dt>
                   <dd class="gem-c-metadata__definition">
                     11 March 2015
@@ -483,25 +483,37 @@
                       <span class="gem-c-contents-list__list-item-dash" aria-hidden="true"></span>
                       <a class="gem-c-contents-list__link govuk-link gem-print-force-link-styles govuk-link--no-underline"
                         data-ga4-link='{"event_name":"select_content","section":"Contents","type":"contents list","index_total":3,"index_link":1}'
-                        href="#about-the-service">About this service</a>
+                        href="#overview">Overview</a>
                     </li>
                     <li class="gem-c-contents-list__list-item gem-c-contents-list__list-item--dashed">
                       <span class="gem-c-contents-list__list-item-dash" aria-hidden="true"></span>
                       <a class="gem-c-contents-list__link govuk-link gem-print-force-link-styles govuk-link--no-underline"
                         data-ga4-link='{"event_name":"select_content","section":"Contents","type":"contents list","index_total":3,"index_link":2}'
-                        href="#who-can-use-the-service">Who can use the service</a>
+                        href="#gascd-data"><abbr title="{{serviceName}}">GASCD</abbr> data</a>
                     </li>
                     <li class="gem-c-contents-list__list-item gem-c-contents-list__list-item--dashed">
                       <span class="gem-c-contents-list__list-item-dash" aria-hidden="true"></span>
                       <a class="gem-c-contents-list__link govuk-link gem-print-force-link-styles govuk-link--no-underline"
                         data-ga4-link='{"event_name":"select_content","section":"Contents","type":"contents list","index_total":3,"index_link":3}'
-                        href="#how-nominated-individuals-can-access-the-service">How to access the service</a>
+                        href="#who-can-use-this-service">Who can use this service</a>
                     </li>
                     <li class="gem-c-contents-list__list-item gem-c-contents-list__list-item--dashed">
                       <span class="gem-c-contents-list__list-item-dash" aria-hidden="true"></span>
                       <a class="gem-c-contents-list__link govuk-link gem-print-force-link-styles govuk-link--no-underline"
                         data-ga4-link='{"event_name":"select_content","section":"Contents","type":"contents list","index_total":3,"index_link":4}'
-                        href="#get-help-with-this-service">Get help with this service</a>
+                        href="#how-to-sign-up-to-use-gascd">How to sign up to use <abbr title="{{serviceName}}">GASCD</abbr></a>
+                    </li>
+                    <li class="gem-c-contents-list__list-item gem-c-contents-list__list-item--dashed">
+                      <span class="gem-c-contents-list__list-item-dash" aria-hidden="true"></span>
+                      <a class="gem-c-contents-list__link govuk-link gem-print-force-link-styles govuk-link--no-underline"
+                        data-ga4-link='{"event_name":"select_content","section":"Contents","type":"contents list","index_total":3,"index_link":5}'
+                        href="#data-sources-and-methodology">Data sources and methodology</a>
+                    </li>
+                    <li class="gem-c-contents-list__list-item gem-c-contents-list__list-item--dashed">
+                      <span class="gem-c-contents-list__list-item-dash" aria-hidden="true"></span>
+                      <a class="gem-c-contents-list__link govuk-link gem-print-force-link-styles govuk-link--no-underline"
+                        data-ga4-link='{"event_name":"select_content","section":"Contents","type":"contents list","index_total":3,"index_link":6}'
+                        href="#useful-links">Useful links</a>
                     </li>
                   </ol>
                 </nav>
@@ -511,37 +523,45 @@
               </div>
               <div data-module="govspeak" class="gem-c-govspeak govuk-govspeak govuk-!-margin-bottom-0">
                 <div class="govspeak">
-                  <h2 id="about-the-service">About this service</h2>
-                  <p class="govuk-body">{{serviceName}} is a new service providing access to data on adult social care and related population needs in England. It is managed by the Department of Health and Social Care (DHSC).</p>
-                  </p>
-                  <p class="govuk-body">The service displays a range of the most recent data from Capacity Tracker, the <abbr title="Care Quality Commission">CQC</abbr>, Office for National Statistics, NHS England and other sources.</p>
-                  <p class="govuk-body">You can use this service to:</p>
+                  <h2 id="overview">Overview</h2>
+                  <p class="govuk-body">The government collects and stores a significant amount of adult social care data from sources including care providers, the NHS, ONS and UKHSA. This data is analysed for government purposes and is now available as a free service to Adult and Social Care (ASC) providers and Local authorities (LA) to support strategic planning and operational purposes. This data is intended to give insights and help to build evidence to support confident decisions around future planning. Also included are the Market Position Statements written by local authorities helping care providers make informed decisions in providing the right care provision for everyone who needs support and care from adult social care services.</p>
+                  <h2 id="gascd-data">What the data includes</h2>
+                  <p class="govuk-body"><abbr title="{{serviceName}}">GASCD</abbr> gives you access to aggregated data and insights about population needs and services in your local area, region and across England.</p>
+                  <p class="govuk-body">Includes data on:</p>
+                  <h3>Care provision</h3>
                   <ul class="govuk-list govuk-list--bullet">
-                    <li>find data on topics such as care provision, funding and population needs</li>
-                    <li>compare local data to regional and national statistics</li>
-                    <li>explore trends over time</li>
-                    <li>download charts and data to use in your own analysis and documentation</li>
+                    <li>Care home beds and occupancy levels</li>
+                    <li>Care providers: locations and services</li>
+                    <li>Number of adults receiving community social care</li>
+                    <li>Unpaid care</li>
                   </ul>
-                  <h2 id="who-can-use-the-service">Who can use the service</h2>
-                  <p class="govuk-body">This service is currently in a private beta phase. This means only a limited number of users can access the service.</p>
-                  <p class="govuk-body">Nominated individuals from care providers listed in the <abbr title="Care Quality Commission">CQC</abbr> care directory can access the service using their <abbr title="Care Quality Commission">CQC</abbr> registered email.</p>
-                  <p class="govuk-body">We plan to widen access to other users within the adult social care sector once we have received more feedback.</p>
-                  <h2 id="how-nominated-individuals-can-access-the-service">How nominated individuals can access the service</h2>
-                  <p class="govuk-body">You need a GOV.UK One Login for your <abbr title="Care Quality Commission">CQC</abbr> registered email to sign in to this service. You can create one if you do not already have one.</p>
-                  <a href="gov-uk/one-login/start" role="button" draggable="false" class="govuk-button govuk-button--start" data-module="govuk-button">
-                    Start now
-                    <svg class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19" viewBox="0 0 33 40" aria-hidden="true" focusable="false">
-                      <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z" />
-                    </svg>
-                  </a>
-                  <h2 id="get-help-with-this-service">Get help with this service</h2>
-                  <p class="govuk-body">If you have any questions or need support with {{serviceName}}, email <a href="https://www.gov.uk/guidance/get-an-hmrc-agent-services-account" class="mailto:getadultsocialcaredata.team@dhsc.gov.uk">getadultsocialcaredata.team@dhsc.gov.uk</a>.</p>
+                  <h3>Funding</h3>
+                  <ul class="govuk-list govuk-list--bullet">
+                    <li>Local authority funding for adult social care</li>
+                  </ul>
+                  <h3>Population needs </h3>
+                  <ul class="govuk-list govuk-list--bullet">
+                    <li>Dementia prevalence and estimated diagnosis rate</li>
+                    <li>Economic factors and household composition</li>
+                    <li>General health, disability and learning disability</li>
+                    <li>Population size and age group percentages</li>
+                  </ul>
+                  <h2 id="who-can-use-this-service">Who can use this service</h2>
+                  <p class="govuk-body">You can only use this service if you are a nominated individual for your CQC registered care provider organisation or a local authority.</p>
+                  <h2 id="how-to-sign-up-to-use-gascd">How to sign up to use <abbr title="{{serviceName}}">GASCD</abbr></h2>
+                  <p class="govuk-body">You need a <a href="gov-uk/one-login/start" class="govuk-link">GOV.UK One Login</a> to sign in to this service. You can <a href="gov-uk/one-login/start" class="govuk-link">create one</a> if you do not already have one.</p>
+                  <p class="govuk-body">You will need to use the email address the CQC holds for you as a nominated individual for your care provider organisation.</p>
+                  <p class="govuk-body">You will be asked to create an account for <abbr title="{{serviceName}}">GASCD</abbr>.</p>
+                  <h2 id="data-sources-and-methodology">Data sources and methodology</h2>
+                  <p class="govuk-body">Links to source and methodology information is included with each data set provided within the service.</p>
+                  <h2 id="useful-links">Useful links</h2>
+                  <p class="govuk-body needs-content">[AWAITING CONTENT].</p>
                 </div>
               </div>
               <div id="full-publication-update-history" data-module="gem-toggle"
                 class="gem-c-published-dates gem-c-published-dates--history govuk-!-margin-bottom-5" lang="en">
                 <h2 class="govuk-visually-hidden">Updates to this page</h2>
-                <div>Published 1 December 2025</div>
+                <div>Published 8 January 2026</div>
                 <!-- Last updated 11 March 2015
                 <a href="#full-history" class="gem-c-published-dates__toggle govuk-link" data-controls="full-history"
                   data-expanded="false" data-toggled-text="&lt;span aria-hidden='true'&gt;‐ &lt;/span&gt;hide all updates"
@@ -632,15 +652,15 @@
               </div>
             </div>
           </div>
-          <div class="govuk-grid-column-one-third sidebar-navigation">
+          <!-- <div class="govuk-grid-column-one-third sidebar-navigation">
             <div class="gem-c-contextual-sidebar govuk-!-display-none-print">
               <div data-module="ga4-link-tracker" class="gem-c-related-navigation govuk-!-display-none-print">
                 <h2 id="related-nav-related_items-15d1ff5e" class="gem-c-related-navigation__main-heading">
                   Related content
                 </h2>
-                <nav class="gem-c-related-navigation__nav-section" aria-labelledby="related-nav-related_guides-15d1ff5e" data-module="gem-toggle">
+                <nav class="gem-c-related-navigation__nav-section" aria-labelledby="related-nav-related_guides-15d1ff5e" data-module="gem-toggle"> -->
                   <!-- Non-descriptive and does not link to anything, but keeping this from the previous iteration as potentially interesting to find out what users might expect from this. -->
-                  <li class="gem-c-related-navigation__link" data-module="edge">
+                  <!-- <li class="gem-c-related-navigation__link" data-module="edge">
                     <a href="#" class="govuk-link govuk-link gem-c-related-navigation__section-link govuk-link gem-c-related-navigation__section-link--sidebar" data-message="Sorry, this hasn’t been designed yet">Detailed guidance</a>
                   </li> 
                   <ul class="gem-c-related-navigation__link-list">
@@ -651,7 +671,7 @@
                 </nav>
               </div>
             </div>
-          </div>
+          </div> -->
         </div>
         <!-- <div class="govuk-grid-row">
           <div class="govuk-grid-column-two-thirds">

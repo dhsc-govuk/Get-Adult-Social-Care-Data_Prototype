@@ -2,7 +2,7 @@
 <html class="govuk-template govuk-template--rebranded" lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Sign into the {{serviceName}} service - GOV.UK</title>
+    <title>{{serviceName}} - GOV.UK</title>
     <script src="https://www.gov.uk/assets/static/govuk_publishing_components/vendor/lux/lux-measurer-d66192b1b665d415e1874e49a48138b7ae339548aa6cdb8687c7f9933e72b969.js" async="async"></script>
     <script src="https://www.gov.uk/assets/static/govuk_publishing_components/rum-custom-data-b9e1806d1da2fa8ef1855d01aa71ba5eb0afc010dd2c4de3672cc7c7a39b0c8c.js" type="module"></script>
     <script src="https://www.gov.uk/assets/static/govuk_publishing_components/rum-loader-a65b10e18ceeba3bd8a2eac507c7f2c513cdc82f35097df903fdea87f1dc2e33.js" async="async" data-lux-reporter-script="https://www.gov.uk/assets/static/govuk_publishing_components/vendor/lux/lux-reporter-205c90cd95af651d7b312dbedc8ed8aa04bbc5f64067777f9b83385a74f7307b.js"></script>
@@ -404,20 +404,20 @@
           <div class="govuk-grid-column-two-thirds translation-nav-header__child">
             
             <div class="gem-c-heading govuk-!-margin-bottom-0">
-              <h1 class="gem-c-heading__text govuk-heading-xl">Sign into the {{serviceName}} service</h1>
+              <h1 class="gem-c-heading__text govuk-heading-xl">{{serviceName}}</h1>
             </div>
 
           </div>
 
         </div>
         
-        <div class="govuk-grid-row">
+        <!-- <div class="govuk-grid-row">
           
           <div class="govuk-grid-column-two-thirds">
             <p class="gem-c-lead-paragraph">Care providers registered with the Care Quality Commission (CQC) can access a new service providing data on adult social care in England.</p>
           </div>
 
-        </div>
+        </div> -->
 
         <div class="govuk-grid-row gem-print-columns-none">
           
@@ -427,31 +427,30 @@
 
               <div data-module="govspeak" class="gem-c-govspeak govuk-govspeak govuk-!-margin-bottom-0">
                 <div class="govspeak">
-                  <h2 id="about-the-service">About this service</h2>
-                  <p class="govuk-body">{{serviceName}} is a new service providing access to data on adult social care and related population needs in England. It is managed by the Department of Health and Social Care (DHSC).</p>
-                  </p>
-                  <p class="govuk-body">The service displays a range of the most recent data from Capacity Tracker, the <abbr title="Care Quality Commission">CQC</abbr>, Office for National Statistics, NHS England and other sources.</p>
-                  <p class="govuk-body">You can use this service to:</p>
+                  <p class="govuk-body">You can use this service to find data on:</p>
                   <ul class="govuk-list govuk-list--bullet">
-                    <li>find data on topics such as care provision, funding and population needs</li>
-                    <li>compare local data to regional and national statistics</li>
-                    <li>explore trends over time</li>
-                    <li>download charts and data to use in your own analysis and documentation</li>
+                    <li>Care provision – care homes, community social care and unpaid care</li>
+                    <li>Funding – Local authority funding for long and short term adult social care</li>
+                    <li>Population needs – population size, age, general health and economic factors</li>
                   </ul>
-                  <h2 id="who-can-use-the-service">Who can use the service</h2>
-                  <p class="govuk-body">This service is currently in a private beta phase. This means only a limited number of users can access the service.</p>
-                  <p class="govuk-body">Nominated individuals from care providers listed in the <abbr title="Care Quality Commission">CQC</abbr> care directory can access the service using their <abbr title="Care Quality Commission">CQC</abbr> registered email.</p>
-                  <p class="govuk-body">We plan to widen access to other users within the adult social care sector once we have received more feedback.</p>
-                  <h2 id="how-nominated-individuals-can-access-the-service">How nominated individuals can access the service</h2>
-                  <p class="govuk-body">You need a GOV.UK One Login for your <abbr title="Care Quality Commission">CQC</abbr> registered email to sign in to this service. You can create one if you do not already have one.</p>
+                  <p class="govuk-body">You can choose to download this data:</p>
+                  <ul class="govuk-list govuk-list--bullet">
+                    <li>as a CSV file</li>
+                  </ul>
+                  <p class="govuk-body">This data covers England.</p>
+                  <h2>Who can use this service</h2>
+                  <p class="govuk-body">You can only use this service if you are a nominated individual for your CQC registered care provider organisation or a local authority.</p>
+                  <h2>Before you start</h2>
+                  <p class="govuk-body">You need a GOV.UK One Login to sign in to this service. You can create one if you do not already have one.</p>
                   <a href="gov-uk/one-login/start" role="button" draggable="false" class="govuk-button govuk-button--start" data-module="govuk-button">
                     Start now
                     <svg class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19" viewBox="0 0 33 40" aria-hidden="true" focusable="false">
                       <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z" />
                     </svg>
                   </a>
-                  <h2 id="get-help-with-this-service">Get help with this service</h2>
-                  <p class="govuk-body">If you have any questions or need support with {{serviceName}}, email <a href="https://www.gov.uk/guidance/get-an-hmrc-agent-services-account" class="mailto:getadultsocialcaredata.team@dhsc.gov.uk">getadultsocialcaredata.team@dhsc.gov.uk</a>.</p>
+                  <h2>More information</h2>
+                  <p class="govuk-body">Find out more about <a href="gov-uk/guidance/get-adult-and-social-care-data">{{serviceName}}</a>.</p>
+                  <p class="govuk-body">For enquiries about the data, please contact the Department for Health and Social Care at <a href="mailto:getadultsocialcaredata.team@dhsc.gov.uk">getadultsocialcaredata.team@dhsc.gov.uk</a>.</p>
                 </div>
               </div>
 
@@ -459,7 +458,7 @@
 
           </div>
 
-          <div class="govuk-grid-column-one-third sidebar-navigation">
+          <!-- <div class="govuk-grid-column-one-third sidebar-navigation">
             
             <div class="gem-c-contextual-sidebar govuk-!-display-none-print">
               
@@ -479,7 +478,7 @@
 
             </div>
 
-          </div>
+          </div> -->
           
         </div>
 
