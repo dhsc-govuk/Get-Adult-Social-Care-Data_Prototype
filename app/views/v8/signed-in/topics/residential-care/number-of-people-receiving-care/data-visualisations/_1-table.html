@@ -2,9 +2,9 @@
 
   <table class="govuk-table">
     {% if data.selectedServiceType == "Community social care" %}
-    <caption class="govuk-table__caption">Table 1: number of people receiving community social care in the last month &ndash; {{data.selectedLocationName or 'Station Road Centre (Sudbury)'}}, Suffolk local authority, East of England region and England, October 2025</caption>
+    <caption class="govuk-table__caption">Table 1: number of people receiving community social care in the last month &ndash; {{data.selectedLocationName or 'Station Road Centre (Sudbury)'}}, Suffolk <abbr title="Local Authority">LA</abbr>, East of England region and England, October 2025</caption>
     {% else %}
-    <caption class="govuk-table__caption">Table 1: number of people receiving community social care in the last month &ndash; Suffolk local authority, East of England region and England, October 2025</caption>
+    <caption class="govuk-table__caption">Table 1: number of people receiving community social care in the last month &ndash; Suffolk <abbr title="Local Authority">LA</abbr>, East of England region and England, October 2025</caption>
     {% endif %}
     <thead class="govuk-table__head">
       <tr class="govuk-table__row">
@@ -12,13 +12,13 @@
         <th scope="col" class="govuk-table__header">Indicator</th>
         <th scope="col" class="govuk-table__header govuk-table__header--numeric">Total for {{data.selectedLocationName or 'Station Road Centre (Sudbury)'}}</th>
         <th scope="col" class="govuk-table__header govuk-table__header--numeric">Total for Suffolk</th>
-        <th scope="col" class="govuk-table__header govuk-table__header--numeric">East of England (regional average by local authority)</th>
-        <th scope="col" class="govuk-table__header govuk-table__header--numeric">England (national average by local authority)</th>
+        <th scope="col" class="govuk-table__header govuk-table__header--numeric">East of England (regional average by <abbr title="Local Authority">LA</abbr>)</th>
+        <th scope="col" class="govuk-table__header govuk-table__header--numeric">England (national average by <abbr title="Local Authority">LA</abbr>)</th>
         {% else %}
         <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Indicator</th>
         <th scope="col" class="govuk-table__header govuk-!-width-one-quarter govuk-table__header--numeric">Total for Suffolk</th>
-        <th scope="col" class="govuk-table__header govuk-!-width-one-quarter govuk-table__header--numeric">East of England (regional average by local authority)</th>
-        <th scope="col" class="govuk-table__header govuk-!-width-one-quarter govuk-table__header--numeric">England (national average by local authority)</th>
+        <th scope="col" class="govuk-table__header govuk-!-width-one-quarter govuk-table__header--numeric">East of England (regional average by <abbr title="Local Authority">LA</abbr>)</th>
+        <th scope="col" class="govuk-table__header govuk-!-width-one-quarter govuk-table__header--numeric">England (national average by <abbr title="Local Authority">LA</abbr>)</th>
         {% endif %}
       </tr>
     </thead>

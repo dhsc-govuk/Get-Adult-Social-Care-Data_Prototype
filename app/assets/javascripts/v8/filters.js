@@ -96,6 +96,31 @@ window.addEventListener('load', function() {
     $('#update-filters').click();
   });
 
+  // Outstanding
+  $('#cqcRating_1-remove').on("click", function(e) {
+    e.preventDefault();
+    $('#cqcRating_1').prop("checked", false);
+    $('#update-filters').click();
+  });
+  // Good
+  $('#cqcRating_2-remove').on("click", function(e) {
+    e.preventDefault();
+    $('#cqcRating_2').prop("checked", false);
+    $('#update-filters').click();
+  });
+  // Requires improvement
+  $('#cqcRating_3-remove').on("click", function(e) {
+    e.preventDefault();
+    $('#cqcRating_3').prop("checked", false);
+    $('#update-filters').click();
+  });
+  // Inadequate
+  $('#cqcRating_4-remove').on("click", function(e) {
+    e.preventDefault();
+    $('#cqcRating_4').prop("checked", false);
+    $('#update-filters').click();
+  });
+
   // Filter (#1 for GASCD): Care home bed numbers - User interacts with the filter button
   $('#dhsc-filter--button1').on("click", function() {
     

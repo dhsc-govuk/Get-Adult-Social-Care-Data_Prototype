@@ -1,16 +1,16 @@
 <div class="moj-scrollable-pane">
 
-  {% set rows = data[data['v8localAuthorityFundingForAdultSocialCare']]['Local authority adult social care funding by duration of care'] %}
+  {% set rows = data[data['v8localAuthorityFundingForAdultSocialCare']]['<abbr title="Local Authority">LA</abbr> adult social care funding by duration of care'] %}
   {% set noFiltersSet = not data.ageGroup14 %}
   {% set age = (data.ageGroup14 if data.ageGroup14 else ("All age groups" if noFiltersSet else "All age groups")) %}
   <table class="govuk-table">
-    <caption class="govuk-table__caption">Table 1: local authority spending on short&#45;term and long&#45;term adult social care for people{% if data.ageGroup14 != "Aged 18 to 64" and data.ageGroup14 != "Aged 65 and over" %} of{% endif %} {{age | lower}} &ndash; Suffolk local authority, East of England region and England, financial year 2023 to 2024</caption>
+    <caption class="govuk-table__caption">Table 1: <abbr title="Local Authority">LA</abbr> spending on short&#45;term and long&#45;term adult social care for {% if data.ageGroup14 == "Aged 18 to 64" or data.ageGroup14 == "Aged 65 and over" %} people{% endif %} {{age | lower}} &ndash; Suffolk <abbr title="Local Authority">LA</abbr>, East of England region and England, financial year 2023 to 2024</caption>
     <thead class="govuk-table__head">
       <tr class="govuk-table__row">
         <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Duration of care</th>
         <th scope="col" class="govuk-table__header govuk-!-width-one-quarter govuk-table__header--numeric">Suffolk</th>
-        <th scope="col" class="govuk-table__header govuk-!-width-one-quarter govuk-table__header--numeric">East of England (regional average per local authority)</th>
-        <th scope="col" class="govuk-table__header govuk-!-width-one-quarter govuk-table__header--numeric">England (national average per local authority)</th>
+        <th scope="col" class="govuk-table__header govuk-!-width-one-quarter govuk-table__header--numeric">East of England (regional average per <abbr title="Local Authority">LA</abbr>)</th>
+        <th scope="col" class="govuk-table__header govuk-!-width-one-quarter govuk-table__header--numeric">England (national average per <abbr title="Local Authority">LA</abbr>)</th>
       </tr>
     </thead>
     <tbody class="govuk-table__body">

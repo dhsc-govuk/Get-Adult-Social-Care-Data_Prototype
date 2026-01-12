@@ -19,8 +19,12 @@
             {% include "./_1-postcode.html" %}
           </div>
           
-          <div class="govuk-grid-column-one-third">
+          <div class="govuk-grid-column-one-third dhsc-filter--section-spacer-for-mobile">
             {% include "./_1-service-types.html" %}
+          </div>
+
+          <div class="govuk-grid-column-one-third">
+            {% include "./_1-cqc-rating.html" %}
           </div>
 
         </div>
@@ -32,7 +36,7 @@
             <div class="govuk-button-group">
               <button id="update-filters" type="submit" class="govuk-button" data-module="govuk-button" name="filterApplied" value="Yes">Apply</button>
               {% if data.filterApplied %}
-              <a href="?filterApplied=&postcode=&serviceType=#data1" class="govuk-link">Clear all</a>
+              <a href="?filterApplied=&postcode=&serviceType=&cqcRating=#data1" class="govuk-link">Clear all</a>
               {% endif %}
             </div>
             
@@ -114,10 +118,52 @@
     </li>
     {% endif %}
     {% endfor %}
+    {% for param in data.cqcRating %}
+    {% if param == "Outstanding" %}
+    <li id="cqcRating_1-remove">
+      <a class="app-c-filter-summary__remove-filter" href="#">
+        <span>
+          <span class="govuk-visually-hidden">Remove filter</span>
+          CQC rating: Outstanding
+        </span>
+      </a>
+    </li>
+    {% endif %}
+    {% if param == "Good" %}
+    <li id="cqcRating_2-remove">
+      <a class="app-c-filter-summary__remove-filter" href="#">
+        <span>
+          <span class="govuk-visually-hidden">Remove filter</span>
+          CQC rating: Good
+        </span>
+      </a>
+    </li>
+    {% endif %}
+    {% if param == "Requires improvement" %}
+    <li id="cqcRating_3-remove">
+      <a class="app-c-filter-summary__remove-filter" href="#">
+        <span>
+          <span class="govuk-visually-hidden">Remove filter</span>
+          CQC rating: Requires improvement
+        </span>
+      </a>
+    </li>
+    {% endif %}
+    {% if param == "Inadequate" %}
+    <li id="cqcRating_4-remove">
+      <a class="app-c-filter-summary__remove-filter" href="#">
+        <span>
+          <span class="govuk-visually-hidden">Remove filter</span>
+          CQC rating: Inadequate
+        </span>
+      </a>
+    </li>
+    {% endif %}
+    {% endfor %}
   </ul>
 
   <div>
-    <a class="govuk-link govuk-link--no-visited-state" href="?filterApplied=&postcode=&serviceType=#data1">Clear all filters</a>
+    <a class="govuk-link govuk-link--no-visited-state" href="?filterApplied=&postcode=&serviceType=&cqcRating#data1">Clear all filters</a>
   </div>
 
 </div>

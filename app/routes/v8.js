@@ -304,8 +304,9 @@ module.exports = function(router) {
 
     // Data objects to be retrieved and queried
     var postcode = req.session.data['postcode']
-    var serviceType = req.session.data['serviceType']
     var selectedLocationPostcode = req.session.data['selectedLocationPostcode']
+    var serviceType = req.session.data['serviceType']
+    var cqcRating = req.session.data['cqcRating']
 
     // Reset all default values injected into our filters
     if (postcode == selectedLocationPostcode) {
@@ -313,7 +314,7 @@ module.exports = function(router) {
     }
 
     // User has chosen at least 1 filter  
-		if (postcode || serviceType) {
+		if (postcode || serviceType || cqcRating) {
       res.redirect('/' + version + '/' + 'signed-in/topics/residential-care/residential-care-providers/data?filterApplied=Yes#data1')     
 		}
 		// No filters selected by user
