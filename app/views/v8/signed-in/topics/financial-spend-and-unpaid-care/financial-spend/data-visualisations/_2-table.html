@@ -1,6 +1,6 @@
 <div class="moj-scrollable-pane">
 
-  {% set rows = data[data['v8localAuthorityFundingForAdultSocialCare']]['<abbr title="Local Authority">LA</abbr> funding for long-term adult social care'] %}
+  {% set rows = data[data['v8localAuthorityFundingForAdultSocialCare']]['Local authority funding for long-term adult social care'] %}
   {% set noFiltersSet = not data.ageGroup14 %}
   {% set age = (data.ageGroup14 if data.ageGroup14 else ("All age groups" if noFiltersSet else "All age groups")) %}
   <table class="govuk-table">
