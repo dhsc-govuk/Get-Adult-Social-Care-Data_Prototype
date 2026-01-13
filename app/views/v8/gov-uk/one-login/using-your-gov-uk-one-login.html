@@ -2,7 +2,7 @@
 <html class="govuk-template govuk-template--rebranded" lang="en">
   <head>
     <meta charset="utf-8">
-    <title>{{serviceName}} (GASCD) - GOV.UK</title>
+    <title>Using your GOV.UK One Login - GOV.UK</title>
     <script src="https://www.gov.uk/assets/static/govuk_publishing_components/vendor/lux/lux-measurer-d66192b1b665d415e1874e49a48138b7ae339548aa6cdb8687c7f9933e72b969.js" async="async"></script>
     <script src="https://www.gov.uk/assets/static/govuk_publishing_components/rum-custom-data-b9e1806d1da2fa8ef1855d01aa71ba5eb0afc010dd2c4de3672cc7c7a39b0c8c.js" type="module"></script>
     <script src="https://www.gov.uk/assets/static/govuk_publishing_components/rum-loader-a65b10e18ceeba3bd8a2eac507c7f2c513cdc82f35097df903fdea87f1dc2e33.js" async="async" data-lux-reporter-script="https://www.gov.uk/assets/static/govuk_publishing_components/vendor/lux/lux-reporter-205c90cd95af651d7b312dbedc8ed8aa04bbc5f64067777f9b83385a74f7307b.js"></script>
@@ -38,6 +38,274 @@
     <link rel="stylesheet" href="https://www.gov.uk/assets/frontend/govuk_publishing_components/components/_related-navigation-42a7cad92965d20b7d005fbb1c79271fd84647d97840094c553a324bb7488597.css">
     <link rel="canonical" href="https://www.gov.uk/guidance/enabling-integrated-care-in-the-nhs">
     <meta name="govuk:rendering-application" content="frontend">
+    <style>
+
+      .govuk-pagination {
+        margin-bottom: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        flex-wrap: wrap
+      }
+
+      @media(min-width: 40.0625em) {
+        .govuk-pagination {
+          margin-bottom: 30px
+        }
+      }
+
+      @media(min-width: 40.0625em) {
+        .govuk-pagination {
+          flex-direction: row;
+          align-items: flex-start
+        }
+      }
+
+      .govuk-pagination__list {
+        margin: 0;
+        padding: 0;
+        list-style: none
+      }
+
+      .govuk-pagination__item,
+      .govuk-pagination__next,
+      .govuk-pagination__prev {
+        font-family: "GDS Transport", arial, sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        font-weight: 400;
+        font-size: 1.1875rem;
+        line-height: 1.3157894737;
+        box-sizing: border-box;
+        position: relative;
+        min-width: 45px;
+        min-height: 45px;
+        padding: 10px 15px;
+        float: left
+      }
+
+      @media print {
+
+        .govuk-pagination__item,
+        .govuk-pagination__next,
+        .govuk-pagination__prev {
+          font-family: sans-serif
+        }
+      }
+
+      @media print {
+
+        .govuk-pagination__item,
+        .govuk-pagination__next,
+        .govuk-pagination__prev {
+          font-size: 14pt;
+          line-height: 1.15
+        }
+      }
+
+      .govuk-pagination__item:hover,
+      .govuk-pagination__next:hover,
+      .govuk-pagination__prev:hover {
+        background-color: #f3f2f1
+      }
+
+      .govuk-pagination__item {
+        display: none;
+        text-align: center
+      }
+
+      @media(min-width: 40.0625em) {
+        .govuk-pagination__item {
+          display: block
+        }
+      }
+
+      .govuk-pagination__prev,
+      .govuk-pagination__next {
+        font-weight: 700
+      }
+
+      .govuk-pagination__prev .govuk-pagination__link,
+      .govuk-pagination__next .govuk-pagination__link {
+        display: flex;
+        align-items: center
+      }
+
+      .govuk-pagination__prev {
+        padding-left: 0
+      }
+
+      .govuk-pagination__next {
+        padding-right: 0
+      }
+
+      .govuk-pagination__item--current,
+      .govuk-pagination__item--ellipsis,
+      .govuk-pagination__item--ellipses,
+      .govuk-pagination__item:first-child,
+      .govuk-pagination__item:last-child {
+        display: block
+      }
+
+      .govuk-pagination__item--current {
+        font-weight: 700;
+        outline: 1px solid rgba(0, 0, 0, 0);
+        background-color: #1d70b8
+      }
+
+      .govuk-pagination__item--current:hover {
+        background-color: #1d70b8
+      }
+
+      .govuk-pagination__item--current .govuk-pagination__link:link,
+      .govuk-pagination__item--current .govuk-pagination__link:visited {
+        color: #fff
+      }
+
+      .govuk-pagination__item--current .govuk-pagination__link:hover,
+      .govuk-pagination__item--current .govuk-pagination__link:active {
+        color: hsla(0, 0%, 100%, .99)
+      }
+
+      .govuk-pagination__item--current .govuk-pagination__link:focus {
+        color: #0b0c0c
+      }
+
+      .govuk-pagination__item--ellipsis,
+      .govuk-pagination__item--ellipses {
+        font-weight: 700;
+        color: #505a5f
+      }
+
+      .govuk-pagination__item--ellipsis:hover,
+      .govuk-pagination__item--ellipses:hover {
+        background-color: rgba(0, 0, 0, 0)
+      }
+
+      .govuk-pagination__link {
+        display: block;
+        min-width: 15px
+      }
+
+      @media screen {
+        .govuk-pagination__link::after {
+          content: "";
+          position: absolute;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0
+        }
+      }
+
+      .govuk-pagination__link:hover .govuk-pagination__link-title--decorated,
+      .govuk-pagination__link:active .govuk-pagination__link-title--decorated {
+        text-decoration: underline;
+        text-decoration-thickness: max(1px, .0625rem);
+        text-underline-offset: .1578em
+      }
+
+      .govuk-pagination__link:hover .govuk-pagination__link-label,
+      .govuk-pagination__link:hover .govuk-pagination__link-title--decorated,
+      .govuk-pagination__link:active .govuk-pagination__link-label,
+      .govuk-pagination__link:active .govuk-pagination__link-title--decorated {
+        text-decoration-thickness: max(3px, .1875rem, .12em);
+        -webkit-text-decoration-skip-ink: none;
+        text-decoration-skip-ink: none;
+        -webkit-text-decoration-skip: none;
+        text-decoration-skip: none
+      }
+
+      .govuk-pagination__link:focus .govuk-pagination__icon {
+        color: #0b0c0c
+      }
+
+      .govuk-pagination__link:focus .govuk-pagination__link-label {
+        text-decoration: none
+      }
+
+      .govuk-pagination__link:focus .govuk-pagination__link-title--decorated {
+        text-decoration: none
+      }
+
+      .govuk-pagination__link-title {
+        text-decoration-thickness: inherit
+      }
+
+      .govuk-pagination__link-label {
+        font-weight: 400;
+        text-decoration: underline;
+        text-decoration-thickness: max(1px, .0625rem);
+        text-underline-offset: .1578em;
+        display: inline-block
+      }
+
+      .govuk-pagination__icon {
+        width: .9375rem;
+        height: .8125rem;
+        color: #505a5f;
+        fill: currentcolor;
+        forced-color-adjust: auto
+      }
+
+      .govuk-pagination__icon--prev {
+        margin-right: 15px
+      }
+
+      .govuk-pagination__icon--next {
+        margin-left: 15px
+      }
+
+      .govuk-pagination--block {
+        display: block
+      }
+
+      .govuk-pagination--block .govuk-pagination__next,
+      .govuk-pagination--block .govuk-pagination__prev {
+        padding-left: 0;
+        float: none
+      }
+
+      .govuk-pagination--block .govuk-pagination__next .govuk-pagination__link,
+      .govuk-pagination--block .govuk-pagination__prev .govuk-pagination__link {
+        display: inline-block
+      }
+
+      .govuk-pagination--block .govuk-pagination__next {
+        padding-right: 15px
+      }
+
+      .govuk-pagination--block .govuk-pagination__prev+.govuk-pagination__next {
+        border-top: 1px solid #b1b4b6
+      }
+
+      .govuk-pagination--block .govuk-pagination__link-title::after {
+        content: "";
+        display: block
+      }
+
+      .govuk-pagination--block .govuk-pagination__link {
+        padding-left: 30px;
+        text-align: left
+      }
+
+      .govuk-pagination--block .govuk-pagination__link:not(:focus) {
+        text-decoration: none
+      }
+
+      .govuk-pagination--block .govuk-pagination__icon {
+        margin-top: .326em;
+        margin-left: -30px;
+        float: left
+      }
+
+      @media print {
+        .gem-c-pagination * {
+          color: #000 !important
+        }
+      }
+
+    </style>
   </head>
   <body class="gem-c-layout-for-public govuk-template__body mainstream">
     <script nonce="Td4E1xTOkKHEN2YahvPKaQ==">
@@ -90,8 +358,7 @@
         </div>
       </div>
     </div>
-    <a data-module="govuk-skip-link" class="gem-c-skip-link govuk-skip-link govuk-!-display-none-print"
-      href="#content">Skip to main content</a>
+    <a data-module="govuk-skip-link" class="gem-c-skip-link govuk-skip-link govuk-!-display-none-print" href="#content">Skip to main content</a>
     <header data-module="ga4-event-tracker ga4-link-tracker" data-ga4-expandable=""
       class="gem-c-layout-super-navigation-header">
       <div class="gem-c-layout-super-navigation-header__container govuk-width-container">
@@ -383,330 +650,94 @@
                 <a data-ga4-link='{"event_name":"navigation","type":"breadcrumb","index_link":"1","index_total":"5"}'
                   class="govuk-breadcrumbs__link" href="https://www.gov.uk">Home</a>
               </li>
-              <li class="govuk-breadcrumbs__list-item">
-                <a data-ga4-link='{"event_name":"navigation","type":"breadcrumb","index_link":"2","index_total":"5"}'
-                  class="govuk-breadcrumbs__link" href="https://www.gov.uk/health-and-social-care">Health and social care</a>
-              </li>
-              <li class="govuk-breadcrumbs__list-item">
-                <a data-ga4-link='{"event_name":"navigation","type":"breadcrumb","index_link":"3","index_total":"5"}'
-                  class="govuk-breadcrumbs__link" href="https://www.gov.uk/health-and-social-care/social-care">Social care</a>
-              </li>
             </ol>
           </nav>
         </div>
       </div>
 
       <!-- GASCD <main> body content section (START) -->
-      <main role="main" id="content" class="govuk-main-wrapper ">
+      <main role="main" id="content" class="govuk-main-wrapper">
         <span id="Top"></span>
-        <div class="govuk-grid-row gem-print-columns-none translation-nav-header">
-          <div class="govuk-grid-column-two-thirds translation-nav-header__child">
-            <div class="gem-c-heading govuk-!-margin-bottom-0">
-              <span class="govuk-caption-xl gem-c-heading__context">
-              Guidance
-              </span>
-              <h1 class="gem-c-heading__text govuk-heading-l">
-                {{serviceName}} (GASCD)
-              </h1>
-            </div>
-          </div>
-        </div>
-        <!-- <div class="govuk-grid-row">
-          <div class="govuk-grid-column-two-thirds">
-            <p class="gem-c-lead-paragraph">
-              Care providers registered with the Care Quality Commission (CQC) can access a new service providing data on adult social care in England.  
-            </p>
-          </div>
-        </div> -->
-        <div class="govuk-grid-row">
-          <div class="metadata-wrapper gem-print-columns-none ">
-            <div class="govuk-grid-column-two-thirds metadata-column">
-              <div data-module="metadata" class="gem-c-metadata">
-                <dl class="gem-c-metadata__list">
-                  <dt class="gem-c-metadata__term">From:</dt>
-                  <dd class="gem-c-metadata__definition" data-module="gem-toggle">
-                    <a href="https://www.gov.uk/government/organisations/department-of-health-and-social-care" class="govuk-link">Department for Health and Social Care</a>
-                  </dd>
-                  <dt class="gem-c-metadata__term">Published</dt>
-                  <dd class="gem-c-metadata__definition">8 January 2026</dd>
-                  <!-- <dt class="gem-c-metadata__term">Last updated</dt>
-                  <dd class="gem-c-metadata__definition">
-                    11 March 2015
-                    — <a href="#full-publication-update-history"
-                      class="gem-c-metadata__definition-link govuk-!-display-none-print js-see-all-updates-link">
-                    See all updates
-                    </a>
-                  </dd> -->
-                </dl>
-              </div>
-            </div>
-            <div class="govuk-grid-column-one-third">
-            </div>
-          </div>
-        </div>
-        <div data-button-location="top" data-button-text-subscribe="Get emails about this page"
-          data-button-text-unsubscribe="Stop getting emails about this page" data-module="ga4-link-tracker"
-          class="gem-c-single-page-notification-button govuk-!-display-none-print govuk-!-margin-bottom-6">
-          <form action="#" method="POST">
-            <input type="hidden" name="base_path" value="/guidance/enabling-integrated-care-in-the-nhs">
-            <button class="gem-c-single-page-notification-button__submit" type="submit"
-              data-ga4-link='{"event_name":"navigation","type":"subscribe","index_link":1,"index_total":2,"section":"Top","url":"/email/subscriptions/single-page/new"}'>
-              <svg class="gem-c-single-page-notification-button__icon" aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg" height="18" width="18" viewbox="0 0 459.334 459.334">
-                <path fill="currentColor"
-                  d="M177.216 404.514c-.001.12-.009.239-.009.359 0 30.078 24.383 54.461 54.461 54.461s54.461-24.383 54.461-54.461c0-.12-.008-.239-.009-.359H175.216zM403.549 336.438l-49.015-72.002v-89.83c0-60.581-43.144-111.079-100.381-122.459V24.485C254.152 10.963 243.19 0 229.667 0s-24.485 10.963-24.485 24.485v27.663c-57.237 11.381-100.381 61.879-100.381 122.459v89.83l-49.015 72.002a24.76 24.76 0 0 0 20.468 38.693H383.08a24.761 24.761 0 0 0 20.469-38.694z">
-                </path>
-              </svg>
-              <span class="gem-c-single-page-notication-button__text">Get emails about this page</span>
-            </button>
-          </form>
-        </div>
         <div class="govuk-grid-row gem-print-columns-none">
           <div class="govuk-grid-column-two-thirds">
-            <section data-ga4-devolved-nations-banner="England" data-module="ga4-link-tracker"
-              data-ga4-track-links-only="" data-ga4-set-indexes=""
-              data-ga4-link='{"event_name":"navigation","type":"devolved nations banner","section":"Applies to England"}'
-              aria-label="Nation" class="gem-c-devolved-nations">
-              <h2 class="govuk-heading-s govuk-!-margin-bottom-0">
-                Applies to England
-              </h2>
-            </section>
-            <div id="contents" data-module="contents-list-with-body" class="gem-c-contents-list-with-body">
-              <div class="gem-c-contents-list-with-body__list-container">
-                <nav data-module="ga4-link-tracker" aria-label="Contents"
-                  class="gem-c-contents-list govuk-!-margin-bottom-4">
-                  <h2 class="gem-c-contents-list__title">
-                    Contents
-                  </h2>
-                  <ol class="gem-c-contents-list__list">
-                    <li class="gem-c-contents-list__list-item gem-c-contents-list__list-item--dashed">
-                      <span class="gem-c-contents-list__list-item-dash" aria-hidden="true"></span>
-                      <a class="gem-c-contents-list__link govuk-link gem-print-force-link-styles govuk-link--no-underline"
-                        data-ga4-link='{"event_name":"select_content","section":"Contents","type":"contents list","index_total":3,"index_link":1}'
-                        href="#overview">Overview</a>
-                    </li>
-                    <li class="gem-c-contents-list__list-item gem-c-contents-list__list-item--dashed">
-                      <span class="gem-c-contents-list__list-item-dash" aria-hidden="true"></span>
-                      <a class="gem-c-contents-list__link govuk-link gem-print-force-link-styles govuk-link--no-underline"
-                        data-ga4-link='{"event_name":"select_content","section":"Contents","type":"contents list","index_total":3,"index_link":2}'
-                        href="#gascd-data"><abbr title="{{serviceName}}">GASCD</abbr> data</a>
-                    </li>
-                    <li class="gem-c-contents-list__list-item gem-c-contents-list__list-item--dashed">
-                      <span class="gem-c-contents-list__list-item-dash" aria-hidden="true"></span>
-                      <a class="gem-c-contents-list__link govuk-link gem-print-force-link-styles govuk-link--no-underline"
-                        data-ga4-link='{"event_name":"select_content","section":"Contents","type":"contents list","index_total":3,"index_link":3}'
-                        href="#who-can-use-this-service">Who can use this service</a>
-                    </li>
-                    <li class="gem-c-contents-list__list-item gem-c-contents-list__list-item--dashed">
-                      <span class="gem-c-contents-list__list-item-dash" aria-hidden="true"></span>
-                      <a class="gem-c-contents-list__link govuk-link gem-print-force-link-styles govuk-link--no-underline"
-                        data-ga4-link='{"event_name":"select_content","section":"Contents","type":"contents list","index_total":3,"index_link":4}'
-                        href="#how-to-sign-up-to-use-gascd">How to sign up to use <abbr title="{{serviceName}}">GASCD</abbr></a>
-                    </li>
-                    <li class="gem-c-contents-list__list-item gem-c-contents-list__list-item--dashed">
-                      <span class="gem-c-contents-list__list-item-dash" aria-hidden="true"></span>
-                      <a class="gem-c-contents-list__link govuk-link gem-print-force-link-styles govuk-link--no-underline"
-                        data-ga4-link='{"event_name":"select_content","section":"Contents","type":"contents list","index_total":3,"index_link":5}'
-                        href="#data-sources-and-methodology">Data sources and methodology</a>
-                    </li>
-                    <li class="gem-c-contents-list__list-item gem-c-contents-list__list-item--dashed">
-                      <span class="gem-c-contents-list__list-item-dash" aria-hidden="true"></span>
-                      <a class="gem-c-contents-list__link govuk-link gem-print-force-link-styles govuk-link--no-underline"
-                        data-ga4-link='{"event_name":"select_content","section":"Contents","type":"contents list","index_total":3,"index_link":6}'
-                        href="#useful-links">Useful links</a>
-                    </li>
-                  </ol>
-                </nav>
-              </div>
-              <div class="gem-c-print-link govuk-!-display-none-print govuk-!-margin-bottom-6">
-                <button class="govuk-link gem-c-print-link__button" data-module="print-link">Print this page</button>
-              </div>
-              <div data-module="govspeak" class="gem-c-govspeak govuk-govspeak govuk-!-margin-bottom-0">
-                <div class="govspeak">
-                  <h2 id="overview">Overview</h2>
-                  <p class="govuk-body">The government collects and stores a significant amount of adult social care data from sources including care providers, the NHS, ONS and UKHSA. This data is analysed for government purposes and is now available as a free service to Adult and Social Care (ASC) providers and Local authorities (LA) to support strategic planning and operational purposes. This data is intended to give insights and help to build evidence to support confident decisions around future planning. Also included are the Market Position Statements written by local authorities helping care providers make informed decisions in providing the right care provision for everyone who needs support and care from adult social care services.</p>
-                  <h2 id="gascd-data">What the data includes</h2>
-                  <p class="govuk-body"><abbr title="{{serviceName}}">GASCD</abbr> gives you access to aggregated data and insights about population needs and services in your local area, region and across England.</p>
-                  <p class="govuk-body">Includes data on:</p>
-                  <h3>Care provision</h3>
-                  <ul class="govuk-list govuk-list--bullet">
-                    <li>Care home beds and occupancy levels</li>
-                    <li>Care providers: locations and services</li>
-                    <li>Number of adults receiving community social care</li>
-                    <li>Unpaid care</li>
-                  </ul>
-                  <h3>Funding</h3>
-                  <ul class="govuk-list govuk-list--bullet">
-                    <li>Local authority funding for adult social care</li>
-                  </ul>
-                  <h3>Population needs </h3>
-                  <ul class="govuk-list govuk-list--bullet">
-                    <li>Dementia prevalence and estimated diagnosis rate</li>
-                    <li>Economic factors and household composition</li>
-                    <li>General health, disability and learning disability</li>
-                    <li>Population size and age group percentages</li>
-                  </ul>
-                  <h2 id="who-can-use-this-service">Who can use this service</h2>
-                  <p class="govuk-body">You can only use this service if you are a nominated individual for your CQC registered care provider organisation or a local authority.</p>
-                  <h2 id="how-to-sign-up-to-use-gascd">How to sign up to use <abbr title="{{serviceName}}">GASCD</abbr></h2>
-                  <p class="govuk-body">You need a <a href="../one-login/using-your-gov-uk-one-login" class="govuk-link">GOV.UK One Login</a> to sign in to this service. You can <a href="../one-login/start" class="govuk-link">create one</a> if you do not already have one.</p>
-                  <p class="govuk-body">You will need to use the email address the CQC holds for you as a nominated individual for your care provider organisation.</p>
-                  <p class="govuk-body">You will be asked to create an account for <abbr title="{{serviceName}}">GASCD</abbr>.</p>
-                  <h2 id="data-sources-and-methodology">Data sources and methodology</h2>
-                  <p class="govuk-body">Links to source and methodology information is included with each data set provided within the service.</p>
-                  <h2 id="useful-links">Useful links</h2>
-                  <p class="govuk-body needs-content">[AWAITING CONTENT].</p>
-                </div>
-              </div>
-              <div id="full-publication-update-history" data-module="gem-toggle"
-                class="gem-c-published-dates gem-c-published-dates--history govuk-!-margin-bottom-5" lang="en">
-                <h2 class="govuk-visually-hidden">Updates to this page</h2>
-                <div>Published 8 January 2026</div>
-                <!-- Last updated 11 March 2015
-                <a href="#full-history" class="gem-c-published-dates__toggle govuk-link" data-controls="full-history"
-                  data-expanded="false" data-toggled-text="&lt;span aria-hidden='true'&gt;‐ &lt;/span&gt;hide all updates"
-                  data-module="ga4-event-tracker"
-                  data-ga4-event='{"event_name":"select_content","type":"content history","section":"Footer"}'
-                  data-ga4-expandable><span aria-hidden="true">+ </span>show all updates</a>
-                <div class="gem-c-published-dates__change-history js-hidden" id="full-history">
-                  <ol class="gem-c-published-dates__list">
-                    <li class="gem-c-published-dates__change-item">
-                      <time class="gem-c-published-dates__change-date timestamp"
-                        datetime="2015-03-11T11:48:52.000+00:00">11 March 2015</time>
-                      <p class="gem-c-published-dates__change-note">Updated page with information on the 11 new integrated
-                        care pioneers. Added link to the integrated care pioneers' annual report.
-                      </p>
-                    </li>
-                    <li class="gem-c-published-dates__change-item">
-                      <time class="gem-c-published-dates__change-date timestamp"
-                        datetime="2014-10-24T10:18:37.000+01:00">24 October 2014</time>
-                      <p class="gem-c-published-dates__change-note">Added link to the updated publication: 'Supporting
-                        integrated care through regulation'.
-                      </p>
-                    </li>
-                    <li class="gem-c-published-dates__change-item">
-                      <time class="gem-c-published-dates__change-date timestamp"
-                        datetime="2014-09-08T10:33:15.000+01:00">8 September 2014</time>
-                      <p class="gem-c-published-dates__change-note">'Estimating NHS and social care spend: a tool for
-                        commissioners' added to list of tools.
-                      </p>
-                    </li>
-                    <li class="gem-c-published-dates__change-item">
-                      <time class="gem-c-published-dates__change-date timestamp"
-                        datetime="2014-08-14T15:42:22.000+01:00">14 August 2014</time>
-                      <p class="gem-c-published-dates__change-note">Added links to guidance titled: 'Integrated care: how
-                        to comply with Monitor’s requirements'.
-                      </p>
-                    </li>
-                    <li class="gem-c-published-dates__change-item">
-                      <time class="gem-c-published-dates__change-date timestamp"
-                        datetime="2014-07-24T11:15:30.000+01:00">24 July 2014</time>
-                      <p class="gem-c-published-dates__change-note">Added a new publication to the page: 'Integrated Care
-                        Pioneers: overview of selected localities'. This provides an overview of the pioneers' ambitious
-                        and innovative approaches to efficiently deliver integrated care.
-                      </p>
-                    </li>
-                    <li class="gem-c-published-dates__change-item">
-                      <time class="gem-c-published-dates__change-date timestamp"
-                        datetime="2014-05-27T14:31:00.000+01:00">27 May 2014</time>
-                      <p class="gem-c-published-dates__change-note">First published.</p>
-                    </li>
-                  </ol>
-                </div> -->
-              </div>
-              <div class="published-dates-button-group">
-                <h2 class="govuk-visually-hidden">
-                  Sign up for emails or print this page
+            <div class="gem-c-heading govuk-!-margin-bottom-8">
+              <h1 class="gem-c-heading__text govuk-heading-xl">
+                Using your GOV.UK One Login
+              </h1>
+            </div>
+            <a data-module="govuk-skip-link" class="gem-c-skip-link govuk-skip-link govuk-!-display-none-print" href="#guide-contents" data-govuk-skip-link-init="" data-govuk-skip-link-module-started="true">Skip contents</a>
+            <aside class="part-navigation-container" role="complementary">
+              <nav data-module="ga4-link-tracker" aria-label="Pages in this guide" class="gem-c-contents-list govuk-!-margin-bottom-4" data-ga4-link-tracker-module-started="true">
+                <h2 class="gem-c-contents-list__title">
+                  Contents
                 </h2>
-                <div data-button-location="bottom" data-button-text-subscribe="Get emails about this page"
-                  data-button-text-unsubscribe="Stop getting emails about this page" data-module="ga4-link-tracker"
-                  class="gem-c-single-page-notification-button govuk-!-display-none-print govuk-!-margin-bottom-3">
-                  <form action="#" method="POST">
-                    <input type="hidden" name="base_path" value="/guidance/enabling-integrated-care-in-the-nhs">
-                    <button class="gem-c-single-page-notification-button__submit" type="submit"
-                      data-ga4-link='{"event_name":"navigation","type":"subscribe","index_link":2,"index_total":2,"section":"Footer","url":"/email/subscriptions/single-page/new"}'>
-                      <svg class="gem-c-single-page-notification-button__icon" aria-hidden="true"
-                        xmlns="http://www.w3.org/2000/svg" height="18" width="18" viewbox="0 0 459.334 459.334">
-                        <path fill="currentColor"
-                          d="M177.216 404.514c-.001.12-.009.239-.009.359 0 30.078 24.383 54.461 54.461 54.461s54.461-24.383 54.461-54.461c0-.12-.008-.239-.009-.359H175.216zM403.549 336.438l-49.015-72.002v-89.83c0-60.581-43.144-111.079-100.381-122.459V24.485C254.152 10.963 243.19 0 229.667 0s-24.485 10.963-24.485 24.485v27.663c-57.237 11.381-100.381 61.879-100.381 122.459v89.83l-49.015 72.002a24.76 24.76 0 0 0 20.468 38.693H383.08a24.761 24.761 0 0 0 20.469-38.694z">
-                        </path>
-                      </svg>
-                      <span class="gem-c-single-page-notication-button__text">Get emails about this page</span>
-                    </button>
-                  </form>
-                </div>
-                <div class="gem-c-print-link govuk-!-display-none-print govuk-!-margin-bottom-8">
-                  <button class="govuk-link gem-c-print-link__button" data-module="print-link">Print this page</button>
-                </div>
+                <ol class="gem-c-contents-list__list">
+                  <li class="gem-c-contents-list__list-item gem-c-contents-list__list-item--dashed gem-c-contents-list__list-item--active" aria-current="true">
+                    <span class="gem-c-contents-list__list-item-dash" aria-hidden="true"></span>
+                    Sign in to your GOV.UK One Login
+                  </li>
+                  <li class="gem-c-contents-list__list-item gem-c-contents-list__list-item--dashed">
+                    <span class="gem-c-contents-list__list-item-dash" aria-hidden="true"></span>
+                    <a class="gem-c-contents-list__link govuk-link gem-print-force-link-styles" data-ga4-link="{&quot;event_name&quot;:&quot;navigation&quot;,&quot;section&quot;:&quot;Contents&quot;,&quot;type&quot;:&quot;contents list&quot;,&quot;index_total&quot;:2,&quot;index_link&quot;:2}" href="/using-your-gov-uk-one-login/proving-your-identity">Proving your identity with GOV.UK One Login</a>
+                  </li>
+                </ol>
+              </nav>
+            </aside>
+          </div>
+          <div class="govuk-grid-column-two-thirds govuk-!-margin-top-6" id="guide-contents">
+            <div class="gem-c-heading govuk-!-margin-bottom-6">
+              <h1 class="gem-c-heading__text govuk-heading-xl">
+                Sign in to your GOV.UK One Login
+              </h1>
+            </div>
+            <div data-module="govspeak" class="gem-c-govspeak govuk-govspeak gem-c-govspeak--direction-ltr js-disable-youtube govuk-!-margin-bottom-0" data-govspeak-module-started="true">
+              <p>At the moment, you can only use GOV.UK One Login to access some government services. See the <a rel="external" href="https://home.account.gov.uk/services-using-one-login">services you can use with GOV.UK One Login</a>.</p>
+              <p>It does not work with <a href="/sign-in">all government accounts and services</a> yet (for example Universal Credit).</p>
+              <p>Over time, GOV.UK One Login will replace all other ways to sign in to services on GOV.UK, including Government Gateway.</p>
+              <div role="note" aria-label="Information" class="application-notice info-notice">
+                <p>This service is also available <a href="/defnyddio-eich-gov-uk-one-login">in Welsh (Cymraeg)</a>.</p>
               </div>
-              <div data-sticky-element class="gem-c-contents-list-with-body__link-wrapper">
-                <div class="gem-c-contents-list-with-body__link-container">
-                  <a class="govuk-link gem-c-back-to-top-link govuk-!-display-none-print" href="#contents">
-                    <svg class="gem-c-back-to-top-link__icon" xmlns="http://www.w3.org/2000/svg" width="13" height="17"
-                      viewbox="0 0 13 17" aria-hidden="true" focusable="false">
-                      <path fill="currentColor" d="M6.5 0L0 6.5 1.4 8l4-4v12.7h2V4l4.3 4L13 6.4z"></path>
-                    </svg>
-                    Contents
-                  </a>
-                </div>
+              <p>If you need a GOV.UK One Login to use a service, and you do not already have one, you’ll be able to create one when you first use that service.</p>
+              <p>Sign in to:</p>
+              <ul>
+                <li>change your sign in details (email address, password or how you get security codes)</li>
+                <li>see and access the services you’ve used with your GOV.UK One Login</li>
+                <li>delete your GOV.UK One Login</li>
+              </ul>
+              <p>
+                <a class="gem-c-button govuk-button govuk-button--start" role="button" data-module="govuk-button" data-ga4-attributes="{&quot;event_name&quot;:&quot;navigation&quot;,&quot;type&quot;:&quot;start button&quot;}" draggable="false" href="start" data-govuk-button-init="" data-govuk-button-module-started="true">
+                  <span> Sign in </span>
+                  <svg class="govuk-button__start-icon govuk-!-display-none-print" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19" viewBox="0 0 33 40" focusable="false" aria-hidden="true">
+                    <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z"></path>
+                  </svg>
+                </a>
+              </p>
+              <h2 id="get-help-using-govuk-one-login">Get help using GOV.UK One Login</h2>
+              <p>You can <a rel="external" href="https://home.account.gov.uk/contact-gov-uk-one-login">contact the GOV.UK One Login team</a> to get help, report a problem or give feedback.</p>
+              <p>You can also ask someone you know and trust to help you if you do not feel comfortable using GOV.UK One Login by yourself. Find out <a href="/guidance/help-someone-use-govuk-one-login">what the person you ask can and cannot help you with</a>.</p>
+              <h2 id="how-govuk-one-login-uses-your-information">How GOV.UK One Login uses your information</h2>
+              <p>To find out how your information is stored and used when you use GOV.UK One Login, see the <a href="/government/publications/govuk-one-login-privacy-notice">GOV.UK One Login privacy notice</a>.</p>
+            </div>
+            <nav data-module="ga4-link-tracker" aria-label="Pagination" class="gem-c-pagination govuk-pagination govuk-pagination--block" data-ga4-link-tracker-module-started="true">
+              <div class="govuk-pagination__next">
+                <a href="/using-your-gov-uk-one-login/proving-your-identity" class="govuk-link govuk-pagination__link" data-ga4-link="{&quot;event_name&quot;:&quot;navigation&quot;,&quot;type&quot;:&quot;previous and next&quot;,&quot;text&quot;:&quot;Proving your identity with GOV.UK One Login&quot;,&quot;section&quot;:&quot;Next&quot;}">
+                  <svg class="govuk-pagination__icon govuk-pagination__icon--next" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
+                    <path d="m8.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z"></path>
+                  </svg>
+                  <span class="govuk-pagination__link-title">Next</span><span class="govuk-visually-hidden">:</span><span class="govuk-pagination__link-label">Proving your identity with GOV.UK One Login</span>
+                </a>
               </div>
+            </nav>
+            <div class="responsive-bottom-margin">
+              <a href="/using-your-gov-uk-one-login/print" class="govuk-link govuk-link--no-visited-state govuk-body" data-module="ga4-link-tracker" data-ga4-link="{&quot;event_name&quot;:&quot;navigation&quot;,&quot;type&quot;:&quot;print page&quot;,&quot;section&quot;:&quot;Footer&quot;,&quot;text&quot;:&quot;View a printable version of the whole guide&quot;}" data-ga4-link-tracker-module-started="true">
+              View a printable version of the whole guide
+              </a>
             </div>
           </div>
-          <!-- <div class="govuk-grid-column-one-third sidebar-navigation">
-            <div class="gem-c-contextual-sidebar govuk-!-display-none-print">
-              <div data-module="ga4-link-tracker" class="gem-c-related-navigation govuk-!-display-none-print">
-                <h2 id="related-nav-related_items-15d1ff5e" class="gem-c-related-navigation__main-heading">
-                  Related content
-                </h2>
-                <nav class="gem-c-related-navigation__nav-section" aria-labelledby="related-nav-related_guides-15d1ff5e" data-module="gem-toggle"> -->
-                  <!-- Non-descriptive and does not link to anything, but keeping this from the previous iteration as potentially interesting to find out what users might expect from this. -->
-                  <!-- <li class="gem-c-related-navigation__link" data-module="edge">
-                    <a href="#" class="govuk-link govuk-link gem-c-related-navigation__section-link govuk-link gem-c-related-navigation__section-link--sidebar" data-message="Sorry, this hasn’t been designed yet">Detailed guidance</a>
-                  </li> 
-                  <ul class="gem-c-related-navigation__link-list">
-                    <li class="gem-c-related-navigation__link">
-                      <a class="govuk-link govuk-link gem-c-related-navigation__section-link govuk-link gem-c-related-navigation__section-link--sidebar" href="https://www.gov.uk/government/publications/care-data-matters-a-roadmap-for-better-adult-social-care-data">Care data matters: a roadmap for better adult social care data</a>
-                    </li>
-                  </ul>
-                </nav>
-              </div>
-            </div>
-          </div> -->
+          <div class="govuk-grid-column-one-third sidebar-navigation">
+            <div class="gem-c-contextual-sidebar govuk-!-display-none-print"></div>
+          </div>
         </div>
-        <!-- <div class="govuk-grid-row">
-          <div class="govuk-grid-column-two-thirds">
-            <div class="gem-c-contextual-footer govuk-!-display-none-print">
-              <div data-module="ga4-link-tracker" class="gem-c-related-navigation govuk-!-display-none-print">
-                <nav class="gem-c-related-navigation__nav-section" aria-labelledby="related-nav-topics-148c663e"
-                  data-module="gem-toggle">
-                  <h2 id="related-nav-topics-148c663e"
-                    class="gem-c-related-navigation__sub-heading gem-c-related-navigation__sub-heading--footer"
-                    data-track-count="footerRelatedItemSection">Explore the topic</h2>
-                  <ul class="gem-c-related-navigation__link-list">
-                    <li class="gem-c-related-navigation__link"><a
-                      class="govuk-link govuk-link gem-c-related-navigation__section-link govuk-link gem-c-related-navigation__section-link--footer"
-                      data-ga4-link='{"event_name":"navigation","type":"contextual footer","index_section":"1","index_link":"1","index_section_count":"1","index_total":"4","section":"Explore the topic"}'
-                      href="/health-and-social-care/dementia">Dementia</a></li>
-                    <li class="gem-c-related-navigation__link"><a
-                      class="govuk-link govuk-link gem-c-related-navigation__section-link govuk-link gem-c-related-navigation__section-link--footer"
-                      data-ga4-link='{"event_name":"navigation","type":"contextual footer","index_section":"1","index_link":"2","index_section_count":"1","index_total":"4","section":"Explore the topic"}'
-                      href="/health-and-social-care/health-and-social-care-integration">Health and social care
-                      integration</a>
-                    </li>
-                    <li class="gem-c-related-navigation__link"><a
-                      class="govuk-link govuk-link gem-c-related-navigation__section-link govuk-link gem-c-related-navigation__section-link--footer"
-                      data-ga4-link='{"event_name":"navigation","type":"contextual footer","index_section":"1","index_link":"3","index_section_count":"1","index_total":"4","section":"Explore the topic"}'
-                      href="/health-and-social-care/national-health-service">National Health Service</a></li>
-                    <li class="gem-c-related-navigation__link"><a
-                      class="govuk-link govuk-link gem-c-related-navigation__section-link govuk-link gem-c-related-navigation__section-link--footer"
-                      data-ga4-link='{"event_name":"navigation","type":"contextual footer","index_section":"1","index_link":"4","index_section_count":"1","index_total":"4","section":"Explore the topic"}'
-                      href="/health-and-social-care/health-conditions">Health conditions</a></li>
-                  </ul>
-                </nav>
-              </div>
-            </div>
-          </div>
-        </div> -->
       </main>
       <!-- GASCD <main> body content section (END) -->
       
@@ -1028,8 +1059,8 @@
       </div>
     </footer>
     <!-- X-GOV.UK Prototype Components (https://x-govuk.github.io/govuk-prototype-components) JavaScript added and referenced directly due to not using the prototype layout partials for this page -->
-    <script type="module" src="/public/javascripts/v7/x-govuk/govuk-prototype-components.min.js"></script>
-    <script type="module" src="/public/javascripts/v7/x-govuk/init.js"></script>
+    <script type="module" src="/public/javascripts/v8/x-govuk/govuk-prototype-components.min.js"></script>
+    <script type="module" src="/public/javascripts/v8/x-govuk/init.js"></script>
     <script src="https://www.gov.uk/assets/static/application-797926e5a7d2db83c4d02a72bd4d31233750842fb58a04eeb1fdd2aab63d21b1.js" type="module"></script>
     <script src="https://www.gov.uk/assets/frontend/application-f06de4e35a53c24016352091ed899c2bfbdcc0385a8ad80c28fad4d2cc0bc1a1.js" type="module"></script>
     <script type="application/ld+json">
