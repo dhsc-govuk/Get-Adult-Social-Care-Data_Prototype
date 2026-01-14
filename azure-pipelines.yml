@@ -12,7 +12,7 @@ variables:
   - name: imageRepository
     value: 'dapprototype'
   - name: containerRegistry
-    value: 'dapalphaacrdev.azurecr.io'
+    value: 'gascdbeta.azurecr.io'
   - name: dockerfilePath
     value: '**/Dockerfile'
   - name: tag
@@ -51,3 +51,9 @@ stages:
             appName: "gascd-prototype"
             azureSubscription: $(dev_arm_service_connections)
             containers: "$(containerRegistry)/$(imageRepository):$(tag)"
+        - task: AzureContainerApps@1
+          inputs:
+            azureSubscription: $(dev_arm_service_connections)
+            containerAppName: 'prototype-dev'
+            resourceGroup: 'dapalpha-container-apps-dev-rg'
+            imageToDeploy: "$(containerRegistry)/$(imageRepository):$(tag)"
