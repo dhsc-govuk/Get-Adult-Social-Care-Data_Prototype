@@ -1,184 +1,108 @@
+{% set rows = data[data['v8CareProvidersLocationsAndServices']]['Care provider locations'] %}
+{% set selectedServiceType = data.serviceType or [] %}
+{% set selectedCqcRating = data.cqcRating or [] %}
+{% set rowsRendered = 0 %}
+{% for row in rows %}
+  {% set rowServicesNormalised = (',' + (row["Service Types"] or '') | lower | replace(' ', '') + ',') %}
+  {% set matchesServiceType = (selectedServiceType.length == 0) %}
+  {% if selectedServiceType.length > 0 %}
+    {% set matchesServiceType = false %}
+    {% for st in selectedServiceType %}
+      {% set selectedNormalised = ',' + (st | lower | replace(' ', '')) + ',' %}
+      {% if selectedNormalised in rowServicesNormalised %}
+        {% set matchesServiceType = true %}
+      {% endif %}
+    {% endfor %}
+  {% endif %}
+  {% set matchesCqcRating  = (selectedCqcRating.length == 0) or (row["CQC Rating"] in selectedCqcRating) %}
+  {% if matchesServiceType and matchesCqcRating %}
+    {% set rowsRendered = rowsRendered + 1 %}
+  {% endif %}
+{% endfor %}
+{% if rowsRendered == 0 %}
+<p class="govuk-body govuk-!-font-weight-bold">There are no matching results.</p>
+<p class="govuk-body">Improve your search results by:</p>
+<ul class="govuk-list govuk-list--bullet">
+  <li>removing filters</li>
+  <li>double-checking your postcode</li>
+</ul>
+{% else %}
 <table class="govuk-table responsive-table-data" data-module="moj-sortable-table">
   <caption class="govuk-table__caption">Table 1: CQC&#45;registered residential social care and community based adult social care service providers near {% if data.postcode %}postcode {{data.postcode}}{% else %}postcode {{data.selectedLocationPostcode or 'CO5 1ST'}} for {{data.selectedLocationName or 'Station Road Centre (Sudbury)'}}{% endif %}</caption>
   <thead class="govuk-table__head">
     <tr class="govuk-table__row">
       <th scope="col" class="govuk-table__header" aria-sort="none">Name</th>
-      <th scope="col" class="govuk-table__header" aria-sort="none">Address</th>
+      <th scope="col" class="govuk-table__header govuk-!-width-one-fifth" aria-sort="none">Address</th>
       <th scope="col" class="govuk-table__header" aria-sort="none">Services</th>
-      <th scope="col" class="govuk-table__header" aria-sort="ascending">Distance from postcode</th>
+      <th scope="col" class="govuk-table__header govuk-table__cell--numeric" aria-sort="none">Beds</th>
+      <th scope="col" class="govuk-table__header" aria-sort="none">CQC rating</th>
+      <th scope="col" class="govuk-table__header govuk-!-width-one-fifth govuk-table__cell--numeric" aria-sort="ascending">Distance from postcode</th>
     </tr>
   </thead>
   <tbody class="govuk-table__body">
-    {% if data.postcode %}
+    {% if data.postcode and (data.postcode != data.selectedLocationPostcode and data.postcode != undefined) %}
+    {% for row in rows %}
+    {% set rowServicesNormalised = (',' + (row["Service Types"] or '') | lower | replace(' ', '') + ',') %}
+    {% set matchesServiceType = (selectedServiceType.length == 0) %}
+    {% if selectedServiceType.length > 0 %}
+      {% set matchesServiceType = false %}
+      {% for st in selectedServiceType %}
+        {% set selectedNormalised = ',' + (st | lower | replace(' ', '')) + ',' %}
+        {% if selectedNormalised in rowServicesNormalised %}
+          {% set matchesServiceType = true %}
+        {% endif %}
+      {% endfor %}
+    {% endif %}
+    {% set matchesCqcRating = (selectedCqcRating.length == 0) or (row["CQC Rating"] in selectedCqcRating) %}
+    {% if matchesServiceType and matchesCqcRating %}
+    {% if row["Location City"] == "Haverhill" %}
     <tr class="govuk-table__row">
-      <td class="govuk-table__cell"><span class="table-heading" aria-hidden="true">Name </span>Haverhill Meadow View Care</td>
-      <td class="govuk-table__cell"><span class="table-heading" aria-hidden="true">Address </span>3 Meadow View Court, Hales Barn Road, Haverhill, CB9 9DT</td>
-      <td class="govuk-table__cell"><span class="table-heading" aria-hidden="true">Services </span>Residential care</td>
-      <td class="govuk-table__cell"><span class="table-heading" aria-hidden="true">Distance from postcode </span>0.17 miles</td>
+      <td class="govuk-table__cell"><span class="table-heading" aria-hidden="true">Name </span>{{row["Location Name"]}}</td>
+      <td class="govuk-table__cell"><span class="table-heading" aria-hidden="true">Address </span>{{row["Location Address Line"]}}{% if row["Location Address Line 2"] %}<br>{{row["Location Address Line 2"]}}{% endif %}<br>{{row["Location City"]}}<br>{{row["Location Postal Code"]}}</td>
+      <td class="govuk-table__cell"><span class="table-heading" aria-hidden="true">Services </span>{{row["Service Types"]}}</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric"><span class="table-heading" aria-hidden="true">Beds </span>{{row["Bed Numbers"]}}</td>
+      <td class="govuk-table__cell"><span class="table-heading" aria-hidden="true">CQC rating </span>{{row["CQC Rating"]}}</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric"><span class="table-heading" aria-hidden="true">Distance from postcode </span>0 miles</td>
     </tr>
-    <tr class="govuk-table__row">
-      <td class="govuk-table__cell"><span class="table-heading" aria-hidden="true">Name </span>Greenfields Outreach Support</td>
-      <td class="govuk-table__cell"><span class="table-heading" aria-hidden="true">Address </span>9 Greenfields Court, Park Road, Haverhill, CB9 7PG</td>
-      <td class="govuk-table__cell"><span class="table-heading" aria-hidden="true">Services </span>Nursing</td>
-      <td class="govuk-table__cell"><span class="table-heading" aria-hidden="true">Distance from postcode </span>0.30 miles</td>
-    </tr>
-    <tr class="govuk-table__row">
-      <td class="govuk-table__cell"><span class="table-heading" aria-hidden="true">Name </span>Blackthorpe Residential Lodge</td>
-      <td class="govuk-table__cell"><span class="table-heading" aria-hidden="true">Address </span>Blackthorpe Lodge, Manor Road, Haverhill, CB9 0SZ</td>
-      <td class="govuk-table__cell"><span class="table-heading" aria-hidden="true">Services </span>Residential care</td>
-      <td class="govuk-table__cell"><span class="table-heading" aria-hidden="true">Distance from postcode </span>0.44 miles</td>
-    </tr>
-    <tr class="govuk-table__row">
-      <td class="govuk-table__cell"><span class="table-heading" aria-hidden="true">Name </span>Stourfield Community Care</td>
-      <td class="govuk-table__cell"><span class="table-heading" aria-hidden="true">Address </span>Unit 2 Stourfield House, Camps Road, Haverhill, CB9 8HB</td>
-      <td class="govuk-table__cell"><span class="table-heading" aria-hidden="true">Services </span>Nursing<br>Residential care</td>
-      <td class="govuk-table__cell"><span class="table-heading" aria-hidden="true">Distance from postcode </span>0.58 miles</td>
-    </tr>
-    <tr class="govuk-table__row">
-      <td class="govuk-table__cell"><span class="table-heading" aria-hidden="true">Name </span>Chalkstone Nursing Lodge</td>
-      <td class="govuk-table__cell"><span class="table-heading" aria-hidden="true">Address </span>21 Chalkstone Way, Haverhill, CB9 0LP</td>
-      <td class="govuk-table__cell"><span class="table-heading" aria-hidden="true">Services </span>Nursing</td>
-      <td class="govuk-table__cell"><span class="table-heading" aria-hidden="true">Distance from postcode </span>0.63 miles</td>
-    </tr>
-    <tr class="govuk-table__row">
-      <td class="govuk-table__cell"><span class="table-heading" aria-hidden="true">Name </span>Fieldstone Community Support</td>
-      <td class="govuk-table__cell"><span class="table-heading" aria-hidden="true">Address </span>Fieldstone House, Duddery Hill, Haverhill, CB9 8EA</td>
-      <td class="govuk-table__cell"><span class="table-heading" aria-hidden="true">Services </span>Nursing<br>Home care</td>
-      <td class="govuk-table__cell"><span class="table-heading" aria-hidden="true">Distance from postcode </span>0.76 miles</td>
-    </tr>
-    <tr class="govuk-table__row">
-      <td class="govuk-table__cell"><span class="table-heading" aria-hidden="true">Name </span>Hazelwood Domiciliary Services</td>
-      <td class="govuk-table__cell"><span class="table-heading" aria-hidden="true">Address </span>18 Hazelwood Close, Haverhill, CB9 7RE</td>
-      <td class="govuk-table__cell"><span class="table-heading" aria-hidden="true">Services </span>Supported housing<br>Home care</td>
-      <td class="govuk-table__cell"><span class="table-heading" aria-hidden="true">Distance from postcode </span>0.87 miles</td>
-    </tr>
-    <tr class="govuk-table__row">
-      <td class="govuk-table__cell"><span class="table-heading" aria-hidden="true">Name </span>Orchard Gate Care Agency</td>
-      <td class="govuk-table__cell"><span class="table-heading" aria-hidden="true">Address </span>Unit 6 Orchard Gate, High Street, Haverhill, CB9 8AD</td>
-      <td class="govuk-table__cell"><span class="table-heading" aria-hidden="true">Services </span>Nursing<br>Residential care</td>
-      <td class="govuk-table__cell"><span class="table-heading" aria-hidden="true">Distance from postcode </span>0.91 miles</td>
-    </tr>
-    <tr class="govuk-table__row">
-      <td class="govuk-table__cell"><span class="table-heading" aria-hidden="true">Name </span>Ridgeway Homecare Services</td>
-      <td class="govuk-table__cell"><span class="table-heading" aria-hidden="true">Address </span>5 Ridgeway Place, Coupals Road, Haverhill, CB9 7AE</td>
-      <td class="govuk-table__cell"><span class="table-heading" aria-hidden="true">Services </span>Nursing<br>Home care</td>
-      <td class="govuk-table__cell"><span class="table-heading" aria-hidden="true">Distance from postcode </span>0.93 miles</td>
-    </tr>
-    <tr class="govuk-table__row">
-      <td class="govuk-table__cell"><span class="table-heading" aria-hidden="true">Name </span>Eastfields Support Agency</td>
-      <td class="govuk-table__cell"><span class="table-heading" aria-hidden="true">Address </span>Suite 4 Eastfields Business Centre, Burton End, Haverhill, CB9 9QG</td>
-      <td class="govuk-table__cell"><span class="table-heading" aria-hidden="true">Services </span>Nursing</td>
-      <td class="govuk-table__cell"><span class="table-heading" aria-hidden="true">Distance from postcode </span>0.97 miles</td>
-    </tr>
-    <tr class="govuk-table__row">
-      <td class="govuk-table__cell"><span class="table-heading" aria-hidden="true">Name </span>Cangle Court Care Home</td>
-      <td class="govuk-table__cell"><span class="table-heading" aria-hidden="true">Address </span>7 Cangle Court, Ehringshausen Way, Haverhill, CB9 0BB</td>
-      <td class="govuk-table__cell"><span class="table-heading" aria-hidden="true">Services </span>Residential care</td>
-      <td class="govuk-table__cell"><span class="table-heading" aria-hidden="true">Distance from postcode </span>0.99 miles</td>
-    </tr>
-    <tr class="govuk-table__row">
-      <td class="govuk-table__cell"><span class="table-heading" aria-hidden="true">Name </span>Millbrook House Supported Living</td>
-      <td class="govuk-table__cell"><span class="table-heading" aria-hidden="true">Address </span>12 Millbrook Close, Withersfield Road, Haverhill, CB9 9LS</td>
-      <td class="govuk-table__cell"><span class="table-heading" aria-hidden="true">Services </span>Residential care</td>
-      <td class="govuk-table__cell"><span class="table-heading" aria-hidden="true">Distance from postcode </span>1.04 miles</td>
-    </tr>
+    {% endif %}
+    {% endif %}
+    {% endfor %}
     {% else %}
     <tr class="govuk-table__row">
       <td class="govuk-table__cell"><span class="table-heading" aria-hidden="true">Name </span><strong>{{data.selectedLocationName or 'Station Road Centre (Sudbury)'}}</strong></td>
       <td class="govuk-table__cell"><span class="table-heading" aria-hidden="true">Address </span> {{data.selectedLocationAddress or '1st Floor, 54a Station Road, Sudbury, Suffolk, UK'}}, {{data.selectedLocationPostcode or 'CO5 1ST'}}</td>
-      <td class="govuk-table__cell"><span class="table-heading" aria-hidden="true">Services </span>{% if data.selectedServiceType == "Care home" %}Nursing<br>Residential care{% else %}Supported living<br>Home care{% endif %}</td>
-      <td class="govuk-table__cell"><span class="table-heading" aria-hidden="true">Distance from postcode </span>0 miles</td>
+      <td class="govuk-table__cell"><span class="table-heading" aria-hidden="true">Services </span>{% if data.selectedServiceType == "Care home" %}Nursing homes, Residential homes{% else %}Homecare agencies, supported living{% endif %}</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric"><span class="table-heading" aria-hidden="true">Beds </span>90</td>
+      <td class="govuk-table__cell"><span class="table-heading" aria-hidden="true">CQC rating </span>Good</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric"><span class="table-heading" aria-hidden="true">Distance from postcode </span>0 miles</td>
     </tr>
+    {% for row in rows %}
+    {% set rowServicesNormalised = (',' + (row["Service Types"] or '') | lower | replace(' ', '') + ',') %}
+    {% set rowServicesNormalised = (',' + (row["Service Types"] or '') | lower | replace(' ', '') + ',') %}
+      {% set matchesServiceType = (selectedServiceType.length == 0) %}
+      {% if selectedServiceType.length > 0 %}
+        {% set matchesServiceType = false %}
+        {% for st in selectedServiceType %}
+          {% set selectedNormalised = ',' + (st | lower | replace(' ', '')) + ',' %}
+          {% if selectedNormalised in rowServicesNormalised %}
+            {% set matchesServiceType = true %}
+          {% endif %}
+        {% endfor %}
+      {% endif %}
+    {% set matchesCqcRating = (selectedCqcRating.length == 0) or (row["CQC Rating"] in selectedCqcRating) %}
+    {% if matchesServiceType and matchesCqcRating %}
+    {% if row["Location City"] == "Sudbury" %}
     <tr class="govuk-table__row">
-      <td class="govuk-table__cell"><span class="table-heading" aria-hidden="true">Name </span>Forest Care Home Suffolk</td>
-      <td class="govuk-table__cell"><span class="table-heading" aria-hidden="true">Address </span>Unit 22 South Suffolk Business Centre, Alexandra Road, Sudbury, CO10 2XH</td>
-      <td class="govuk-table__cell"><span class="table-heading" aria-hidden="true">Services </span>Nursing<br>Residential care</td>
-      <td class="govuk-table__cell"><span class="table-heading" aria-hidden="true">Distance from postcode </span>0.6 miles</td>
+      <td class="govuk-table__cell"><span class="table-heading" aria-hidden="true">Name </span>{{row["Location Name"]}}</td>
+      <td class="govuk-table__cell"><span class="table-heading" aria-hidden="true">Address </span>{{row["Location Address Line"]}}{% if row["Location Address Line 2"] %}<br>{{row["Location Address Line 2"]}}{% endif %}<br>{{row["Location City"]}}<br>{{row["Location Postal Code"]}}</td>
+      <td class="govuk-table__cell"><span class="table-heading" aria-hidden="true">Services </span>{{row["Service Types"]}}</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric"><span class="table-heading" aria-hidden="true">Beds </span>{{row["Bed Numbers"]}}</td>
+      <td class="govuk-table__cell"><span class="table-heading" aria-hidden="true">CQC rating </span>{{row["CQC Rating"]}}</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric"><span class="table-heading" aria-hidden="true">Distance from postcode </span>0 miles</td>
     </tr>
-    <tr class="govuk-table__row">
-      <td class="govuk-table__cell"><span class="table-heading" aria-hidden="true">Name </span>Trust Care Home Solution South Suffolk Limited </td>
-      <td class="govuk-table__cell"><span class="table-heading" aria-hidden="true">Address </span>Unit 13, South Suffolk Business Centre, Alexandra Road, Sudbury, CO10 2ZX</td>
-      <td class="govuk-table__cell"><span class="table-heading" aria-hidden="true">Services </span>Nursing</td>
-      <td class="govuk-table__cell"><span class="table-heading" aria-hidden="true">Distance from postcode </span>0.6 miles</td>
-    </tr>
-    <tr class="govuk-table__row">
-      <td class="govuk-table__cell"><span class="table-heading" aria-hidden="true">Name </span>Supporting An Independent Life</td>
-      <td class="govuk-table__cell"><span class="table-heading" aria-hidden="true">Address </span>Unit 14, South Suffolk Business Centre, Alexandra Road, Sudbury, CO10 2ZX</td>
-      <td class="govuk-table__cell"><span class="table-heading" aria-hidden="true">Services </span>Nursing</td>
-      <td class="govuk-table__cell"><span class="table-heading" aria-hidden="true">Distance from postcode </span>0.6 miles</td>
-    </tr>
-    <tr class="govuk-table__row">
-      <td class="govuk-table__cell"><span class="table-heading" aria-hidden="true">Name </span>Willowbrook Residential Care</td>
-      <td class="govuk-table__cell"><span class="table-heading" aria-hidden="true">Address </span>2 Willowbrook Court, Alexandra Road, Sudbury, CO10 2YG</td>
-      <td class="govuk-table__cell"><span class="table-heading" aria-hidden="true">Services </span>Residential care</td>
-      <td class="govuk-table__cell"><span class="table-heading" aria-hidden="true">Distance from postcode </span>0.7 miles</td>
-    </tr>
-    <tr class="govuk-table__row">
-      <td class="govuk-table__cell"><span class="table-heading" aria-hidden="true">Name </span>Master Care Ipswich</td>
-      <td class="govuk-table__cell"><span class="table-heading" aria-hidden="true">Address </span>OFFICE 14, UNIT 5, STOUR VALLEY BUSINESS CENTRE, BRUNDON LANE, Sudbury, CO10 7GB</td>
-      <td class="govuk-table__cell"><span class="table-heading" aria-hidden="true">Services </span>Nursing</td>
-      <td class="govuk-table__cell"><span class="table-heading" aria-hidden="true">Distance from postcode </span>0.8 miles</td>
-    </tr>
-    <tr class="govuk-table__row">
-      <td class="govuk-table__cell"><span class="table-heading" aria-hidden="true">Name </span>Stonehill Community Care</td>
-      <td class="govuk-table__cell"><span class="table-heading" aria-hidden="true">Address </span>11 Stonehill Close, Great Cornard, Sudbury, CO10 0FE</td>
-      <td class="govuk-table__cell"><span class="table-heading" aria-hidden="true">Services </span>Residential care</td>
-      <td class="govuk-table__cell"><span class="table-heading" aria-hidden="true">Distance from postcode </span>1.0 miles</td>
-    </tr>
-    <tr class="govuk-table__row">
-      <td class="govuk-table__cell"><span class="table-heading" aria-hidden="true">Name </span>ivolve Suffolk Care Home</td>
-      <td class="govuk-table__cell"><span class="table-heading" aria-hidden="true">Address </span>Peter Dodd Mews, Shawlands Avenue,Great Cornard, Sudbury, CO10 0FY</td>
-      <td class="govuk-table__cell"><span class="table-heading" aria-hidden="true">Services </span>Residential care</td>
-      <td class="govuk-table__cell"><span class="table-heading" aria-hidden="true">Distance from postcode </span>1.1 miles</td>
-    </tr>
-    <tr class="govuk-table__row">
-      <td class="govuk-table__cell"><span class="table-heading" aria-hidden="true">Name </span>Ivolve Shawlands Care Home</td>
-      <td class="govuk-table__cell"><span class="table-heading" aria-hidden="true">Address </span>Fieldview, Hare Field, Woodpecke, Shawlands Avenue, Great Cornard, Sudbury, CO10 0EW</td>
-      <td class="govuk-table__cell"><span class="table-heading" aria-hidden="true">Services </span>Residential care</td>
-      <td class="govuk-table__cell"><span class="table-heading" aria-hidden="true">Distance from postcode </span>1.2 miles</td>
-    </tr>
-    <tr class="govuk-table__row">
-      <td class="govuk-table__cell"><span class="table-heading" aria-hidden="true">Name </span>Brookside Assisted Living</td>
-      <td class="govuk-table__cell"><span class="table-heading" aria-hidden="true">Address </span>9 Brookside Way, Great Cornard, Sudbury, CO10 0DL</td>
-      <td class="govuk-table__cell"><span class="table-heading" aria-hidden="true">Services </span>Residential care</td>
-      <td class="govuk-table__cell"><span class="table-heading" aria-hidden="true">Distance from postcode </span>1.3 miles</td>
-    </tr>
-    <tr class="govuk-table__row">
-      <td class="govuk-table__cell"><span class="table-heading" aria-hidden="true">Name </span>Cedar Path Support</td>
-      <td class="govuk-table__cell"><span class="table-heading" aria-hidden="true">Address </span>14 Cedar Path, Hall Road, Long Melford, CO10 9JT</td>
-      <td class="govuk-table__cell"><span class="table-heading" aria-hidden="true">Services </span>Homecare</td>
-      <td class="govuk-table__cell"><span class="table-heading" aria-hidden="true">Distance from postcode </span>2.8 miles</td>
-    </tr>
-    <tr class="govuk-table__row">
-      <td class="govuk-table__cell"><span class="table-heading" aria-hidden="true">Name </span>Harmonize Care</td>
-      <td class="govuk-table__cell"><span class="table-heading" aria-hidden="true">Address </span>The Old Pharmacy, Hall Street, Long Melford, Sudbury, CO10 9JQ</td>
-      <td class="govuk-table__cell"><span class="table-heading" aria-hidden="true">Services </span>Nursing</td>
-      <td class="govuk-table__cell"><span class="table-heading" aria-hidden="true">Distance from postcode </span>3 miles</td>
-    </tr>
-    <tr class="govuk-table__row">
-      <td class="govuk-table__cell"><span class="table-heading" aria-hidden="true">Name </span>1 Oak Care Home</td>
-      <td class="govuk-table__cell"><span class="table-heading" aria-hidden="true">Address </span>Unit 1 &#38; 2 Woodview, Bull Lane Industrial Estate, Bull Lane, Acton, Sudbury, CO10 0FD</td>
-      <td class="govuk-table__cell"><span class="table-heading" aria-hidden="true">Services </span>Nursing</td>
-      <td class="govuk-table__cell"><span class="table-heading" aria-hidden="true">Distance from postcode </span>3.2 miles</td>
-    </tr>
-    <tr class="govuk-table__row">
-      <td class="govuk-table__cell"><span class="table-heading" aria-hidden="true">Name </span>Briarcare Recruitment Agency</td>
-      <td class="govuk-table__cell"><span class="table-heading" aria-hidden="true">Address </span>Unit 3, Woodview, Bull Lane Industrial Estate, Bull Lane, Acton, Sudbury, CO10 0FD</td>
-      <td class="govuk-table__cell"><span class="table-heading" aria-hidden="true">Services </span>Nursing</td>
-      <td class="govuk-table__cell"><span class="table-heading" aria-hidden="true">Distance from postcode </span>3.2 miles</td>
-    </tr>
-    <tr class="govuk-table__row">
-      <td class="govuk-table__cell"><span class="table-heading" aria-hidden="true">Name </span>Maple House Care Agency</td>
-      <td class="govuk-table__cell"><span class="table-heading" aria-hidden="true">Address </span>Unit 5 Maple Court, Bull Lane Industrial Estate, Acton, Sudbury, CO10 0FH</td>
-      <td class="govuk-table__cell"><span class="table-heading" aria-hidden="true">Services </span>Nursing</td>
-      <td class="govuk-table__cell"><span class="table-heading" aria-hidden="true">Distance from postcode </span>3.1 miles</td>
-    </tr>
-    <tr class="govuk-table__row">
-      <td class="govuk-table__cell"><span class="table-heading" aria-hidden="true">Name </span>Orchard View Homecare</td>
-      <td class="govuk-table__cell"><span class="table-heading" aria-hidden="true">Address </span>87 Orchard View, Newton Road, Sudbury, CO10 0QS</td>
-      <td class="govuk-table__cell"><span class="table-heading" aria-hidden="true">Services </span>Supported living<br>Home care</td>
-      <td class="govuk-table__cell"><span class="table-heading" aria-hidden="true">Distance from postcode </span>3.4 miles</td>
-    </tr>
+    {% endif %}
+    {% endif %}
+    {% endfor %}
     {% endif %}
   </tbody>
 </table>
@@ -186,3 +110,4 @@
 <div class="govuk-form-block">
   <p class="govuk-body data-source">Source: Care Directory from the Care Quality Commission (CQC)</p>
 </div>
+{% endif %}

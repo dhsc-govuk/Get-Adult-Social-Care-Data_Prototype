@@ -304,7 +304,7 @@ module.exports = function(router) {
 
     // Data objects to be retrieved and queried
     var postcode = req.session.data['postcode']
-    var selectedLocationPostcode = req.session.data['selectedLocationPostcode']
+    var selectedLocationPostcode = req.session.data['selectedLocationPostcode'] || "CO5 1ST"
     var serviceType = req.session.data['serviceType']
     var cqcRating = req.session.data['cqcRating']
 

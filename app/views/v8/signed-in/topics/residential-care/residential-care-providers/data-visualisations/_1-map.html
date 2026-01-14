@@ -79,11 +79,13 @@
   var map = L.map('map', {
     attributionControl: false
   }).setView(homeCoords, 12);
+
   // --- Copywrite (©) map button ---
   var AttributionToggleControl = L.Control.extend({
     options: { position: 'bottomright' },
 
     onAdd: function () {
+      
       var container = L.DomUtil.create('div', 'leaflet-control-zoom leaflet-bar');
 
       // The © button using Leaflet zoom control structure
@@ -170,9 +172,9 @@
     options: { position: 'bottomright' },
 
     onAdd: function () {
+
       var container = L.DomUtil.create('div', 'leaflet-control-zoom leaflet-bar');
       var link = L.DomUtil.create('a', 'leaflet-control-reset-map', container);
-      
       link.href = '#';
       link.title = 'Reset map view';
       link.style.backgroundImage = "url('/public/images/reset-map-icon.png')";
@@ -190,6 +192,7 @@
 
       return container;
     }
+
   });
 
   // Add Reset Map View control AFTER zoom control repositioning
@@ -198,50 +201,118 @@
   // Create a clusters group
   var clusters = L.markerClusterGroup();
 
-  // Markers
-  var marker16 = L.marker([52.084312, 0.442187]);
-  var marker17 = L.marker([52.090754, 0.455923]);
-  var marker18 = L.marker([52.077981, 0.436512]);
-  var marker19 = L.marker([52.071624, 0.449308]);
-  var marker20 = L.marker([52.087159, 0.468911]);
-  var marker21 = L.marker([52.095482, 0.432774]);
-  var marker22 = L.marker([52.081237, 0.421905]);
-  var marker23 = L.marker([52.074896, 0.462131]);
-  var marker24 = L.marker([52.089021, 0.439782]);
-  var marker25 = L.marker([52.082563, 0.452664]);
-  var marker26 = L.marker([52.093317, 0.461209]);
-  var marker27 = L.marker([52.079944, 0.429318]);
-  
-  // All markers are added to the clusters group
-  clusters.addLayer(marker16);
-  clusters.addLayer(marker17);
-  clusters.addLayer(marker18);
-  clusters.addLayer(marker19);
-  clusters.addLayer(marker20);
-  clusters.addLayer(marker21);
-  clusters.addLayer(marker22);
-  clusters.addLayer(marker23);
-  clusters.addLayer(marker24);
-  clusters.addLayer(marker25);
-  clusters.addLayer(marker26);
-  clusters.addLayer(marker27);
+// Close this script so we can embed JSON without breaking the JS parser in editors
+</script>
+<script type="application/json" id="selectedServiceTypes">
 
-  // Add clusters to map
+  {{(data.serviceType or []) | dump | safe}}
+
+</script>
+<script type="application/json" id="selectedCqcRatings">
+
+  {{(data.cqcRating or []) | dump | safe}}
+
+</script>
+<script type="application/json" id="providerLocationsData-Haverhill">
+
+  [
+    {% set rows = data[data['v8CareProvidersLocationsAndServices']]['Care provider locations'] %}
+    {% set emitted = 0 %}
+    {% for row in rows %}
+      {% if row["Location City"] == "Haverhill" and row["Location Latitude"] and row["Location Longitude"] %}
+        {% if emitted > 0 %},{% endif %}
+        {{ {
+          "name": row["Location Name"],
+          "lat": row["Location Latitude"],
+          "lng": row["Location Longitude"],
+          "address1": row["Location Address Line"],
+          "address2": row["Location Address Line 2"],
+          "city": row["Location City"],
+          "postcode": row["Location Postal Code"],
+          "serviceTypes": row["Service Types"],
+          "beds": row["Bed Numbers"],
+          "cqcRating": row["CQC Rating"]
+        } | dump | safe }}
+        {% set emitted = emitted + 1 %}
+      {% endif %}
+    {% endfor %}
+  ]
+
+</script>
+<script>
+
+  function splitTypes(str) {
+    return (str || '')
+      .split(',')
+      .map(s => s.trim().toLowerCase())
+      .filter(Boolean);
+  }
+
+  function matchesServiceTypes(rowServiceTypesStr, selected) {
+    
+    if (!selected || selected.length === 0) return true;
+    
+    const rowTypes = splitTypes(rowServiceTypesStr);
+    return selected.some(s => rowTypes.includes(String(s).trim().toLowerCase()));
+  }
+
+  function matchesCqcRating(rowRating, selected) {
+    
+    if (!selected || selected.length === 0) return true;
+    
+    const r = String(rowRating || '').trim().toLowerCase();
+    return selected.some(x => String(x).trim().toLowerCase() === r);
+  }  
+
+  // Read JSON payload + selected filters
+  var locations = [];
+  var selectedServiceTypes = [];
+  var selectedCqcRatings = [];
+
+  try {
+    locations = JSON.parse(document.getElementById('providerLocationsData-Haverhill')?.textContent || '[]');
+  }
+  catch (e) {
+    console.error('Failed to parse provider JSON', e);
+    locations = [];
+  }
+
+  try {
+    selectedServiceTypes = JSON.parse(document.getElementById('selectedServiceTypes')?.textContent || '[]');
+    selectedCqcRatings = JSON.parse(document.getElementById('selectedCqcRatings')?.textContent || '[]');
+  }
+  catch (e) {
+    console.error('Failed to parse selected filters', e);
+    selectedServiceTypes = [];
+    selectedCqcRatings = [];
+  }
+
+  locations.forEach(function (loc) {
+    
+    if (!matchesServiceTypes(loc.serviceTypes, selectedServiceTypes)) return;
+
+    if (!matchesCqcRating(loc.cqcRating, selectedCqcRatings)) return;
+    
+    var lat = parseFloat(loc.lat);
+    var lng = parseFloat(loc.lng);
+    
+    if (isNaN(lat) || isNaN(lng)) return;
+
+    var marker = L.marker([lat, lng]);
+    var addressHtml = '';
+
+    if (loc.address1) addressHtml += loc.address1;
+    if (loc.address2) addressHtml += ', ' + loc.address2;
+    if (loc.city) addressHtml += ', ' + loc.city;
+    if (loc.postcode) addressHtml += ', ' + loc.postcode;
+
+    var popupHtml = "<span class='popup'>" + "Name: " + (loc.name || '') + "<br>" + "Address: " + addressHtml + "<br>" + "Services: " + (loc.serviceTypes || '') + "<br>" + "Distance from postcode: 0 miles" + "</span>";
+
+    marker.bindPopup(popupHtml);
+    clusters.addLayer(marker);
+  });
+
   map.addLayer(clusters);
-
-  // Popups (Haverhill)
-  marker16.bindPopup("<span class='popup'>Name: Haverhill Meadow View Care<br>Address: 3 Meadow View Court, Hales Barn Road, Haverhill, CB9 9DT<br>Services: Residential care<br>Distance from postcode: 0.17 miles</span>");
-  marker17.bindPopup("<span class='popup'>Name: Chalkstone Nursing Lodge<br>Address: 21 Chalkstone Way, Haverhill, CB9 0LP<br>Services: Nursing<br>Distance from postcode: 0.63 miles</span>");
-  marker18.bindPopup("<span class='popup'>Name: Stourfield Community Care<br>Address: Unit 2 Stourfield House, Camps Road, Haverhill, CB9 8HB<br>Services: Nursing, residential care<br>Distance from postcode: 0.58 miles</span>");
-  marker19.bindPopup("<span class='popup'>Name: Hazelwood Domiciliary Services<br>Address: 18 Hazelwood Close, Haverhill, CB9 7RE<br>Services: Supported housing, home care<br>Distance from postcode: 0.87 miles</span>");
-  marker20.bindPopup("<span class='popup'>Name: Cangle Court Care Home<br>Address: 7 Cangle Court, Ehringshausen Way, Haverhill, CB9 0BB<br>Services: Residential care<br>Distance from postcode: 0.99 miles</span>");
-  marker21.bindPopup("<span class='popup'>Name: Eastfields Support Agency<br>Address: Suite 4 Eastfields Business Centre, Burton End, Haverhill, CB9 9QG<br>Services: Nursing<br>Distance from postcode: 0.97 miles</span>");
-  marker22.bindPopup("<span class='popup'>Name: Millbrook House Supported Living<br>Address: 12 Millbrook Close, Withersfield Road, Haverhill, CB9 9LS<br>Services: Residential care<br>Distance from postcode: 1.04 miles</span>");
-  marker23.bindPopup("<span class='popup'>Name: Ridgeway Homecare Services<br>Address: 5 Ridgeway Place, Coupals Road, Haverhill, CB9 7AE<br>Services: Nursing, home care<br>Distance from postcode: 0.93 miles</span>");
-  marker24.bindPopup("<span class='popup'>Name: Blackthorpe Residential Lodge<br>Address: Blackthorpe Lodge, Manor Road, Haverhill, CB9 0SZ<br>Services: Residential care<br>Distance from postcode: 0.44 miles</span>");
-  marker25.bindPopup("<span class='popup'>Name: Greenfields Outreach Support<br>Address: 9 Greenfields Court, Park Road, Haverhill, CB9 7PG<br>Services: Nursing<br>Distance from postcode: 0.30 miles</span>");
-  marker26.bindPopup("<span class='popup'>Name: Orchard Gate Care Agency<br>Address: Unit 6 Orchard Gate, High Street, Haverhill, CB9 8AD<br>Services: Nursing, residential care<br>Distance from postcode: 0.91 miles</span>");
-  marker27.bindPopup("<span class='popup'>Name: Fieldstone Community Support<br>Address: Fieldstone House, Duddery Hill, Haverhill, CB9 8EA<br>Services: Nursing, home care<br>Distance from postcode: 0.76 miles</span>");
 
 </script>
 {% else %}
@@ -253,25 +324,23 @@
   var map = L.map('map', {
     attributionControl: false
   }).setView(homeCoords, 12);
+
   // --- Copywrite (©) map button ---
   var AttributionToggleControl = L.Control.extend({
     options: { position: 'bottomright' },
 
     onAdd: function () {
-      var container = L.DomUtil.create('div', 'leaflet-control-zoom leaflet-bar');
 
+      var container = L.DomUtil.create('div', 'leaflet-control-zoom leaflet-bar');
       // The © button using Leaflet zoom control structure
       var link = L.DomUtil.create('a', 'leaflet-control-attribution-toggle', container);
       link.href = '#';
       link.title = 'Show map attribution';
       link.innerHTML = '&copy;'; // copyright symbol
-
       // Copywrite panel (hidden by default)
       var panel = L.DomUtil.create('div', 'leaflet-control-attribution-expanded', container);
-      
       panel.style.display = 'none';
       panel.innerHTML = '&copy; OpenStreetMap contributors';
-
       L.DomEvent.disableClickPropagation(link);
 
       link.onclick = function (e) {
@@ -290,6 +359,7 @@
 
       return container;
     }
+
   });
 
   map.addControl(new AttributionToggleControl());
@@ -346,9 +416,9 @@
     options: { position: 'bottomright' },
 
     onAdd: function () {
+      
       var container = L.DomUtil.create('div', 'leaflet-control-zoom leaflet-bar');
       var link = L.DomUtil.create('a', 'leaflet-control-reset-map', container);
-      
       link.href = '#';
       link.title = 'Reset map view';
       link.style.backgroundImage = "url('/public/images/reset-map-icon.png')";
@@ -366,6 +436,7 @@
 
       return container;
     }
+
   });
 
   // Add Reset Map View control AFTER zoom control repositioning
@@ -374,59 +445,118 @@
   // Create a clusters group
   var clusters = L.markerClusterGroup();
 
-  // Markers
-  var marker1 = L.marker([52.079339, 0.747522]);
-  var marker2 = L.marker([52.07887, 0.747719]);
-  var marker3 = L.marker([52.039805, 0.745942]);
-  var marker4 = L.marker([52.036340, 0.712279]);
-  var marker5 = L.marker([52.079734, 0.719010]);
-  var marker6 = L.marker([52.039719, 0.743473]);
-  var marker7 = L.marker([52.033887, 0.756749]);
-  var marker8 = L.marker([52.033352, 0.757328]);
-  var marker9 = L.marker([52.039927, 0.74162]);
-  var marker10 = L.marker([52.043122, 0.738511]);
-  var marker11 = L.marker([52.048893, 0.725904]);
-  var marker12 = L.marker([52.031762, 0.744288]);
-  var marker13 = L.marker([52.075214, 0.758994]);
-  var marker14 = L.marker([52.067831, 0.700122]);
-  var marker15 = L.marker([52.056394, 0.736904]);
+// Close this script so we can embed JSON without breaking the JS parser in editors
+</script>
+<script type="application/json" id="selectedServiceTypes">
+
+  {{(data.serviceType or []) | dump | safe}}
+
+</script>
+<script type="application/json" id="selectedCqcRatings">
+
+  {{(data.cqcRating or []) | dump | safe}}
+
+</script>
+<script type="application/json" id="providerLocationsData-Sudbury">
+
+  [
+    {% set rows = data[data['v8CareProvidersLocationsAndServices']]['Care provider locations'] %}
+    {% set emitted = 0 %}
+    {% for row in rows %}
+      {% if row["Location City"] == "Sudbury" and row["Location Latitude"] and row["Location Longitude"] %}
+        {% if emitted > 0 %},{% endif %}
+        {{ {
+          "name": row["Location Name"],
+          "lat": row["Location Latitude"],
+          "lng": row["Location Longitude"],
+          "address1": row["Location Address Line"],
+          "address2": row["Location Address Line 2"],
+          "city": row["Location City"],
+          "postcode": row["Location Postal Code"],
+          "serviceTypes": row["Service Types"],
+          "beds": row["Bed Numbers"],
+          "cqcRating": row["CQC Rating"]
+        } | dump | safe }}
+        {% set emitted = emitted + 1 %}
+      {% endif %}
+    {% endfor %}
+  ]
+
+</script>
+<script>
   
-  // All markers are added to the clusters group
-  clusters.addLayer(marker1);
-  clusters.addLayer(marker2);
-  clusters.addLayer(marker3);
-  clusters.addLayer(marker4);
-  clusters.addLayer(marker5);
-  clusters.addLayer(marker6);
-  clusters.addLayer(marker7);
-  clusters.addLayer(marker8);
-  clusters.addLayer(marker9);
-  clusters.addLayer(marker10);
-  clusters.addLayer(marker11);
-  clusters.addLayer(marker12);
-  clusters.addLayer(marker13);
-  clusters.addLayer(marker14);
-  clusters.addLayer(marker15);
+  function splitTypes(str) {
+    return (str || '')
+      .split(',')
+      .map(s => s.trim().toLowerCase())
+      .filter(Boolean);
+  }
 
-  // Add clusters to map
+  function matchesServiceTypes(rowServiceTypesStr, selected) {
+    
+    if (!selected || selected.length === 0) return true;
+    
+    const rowTypes = splitTypes(rowServiceTypesStr);
+    return selected.some(s => rowTypes.includes(String(s).trim().toLowerCase()));
+  }
+
+  function matchesCqcRating(rowRating, selected) {
+   
+    if (!selected || selected.length === 0) return true;
+    
+    const r = String(rowRating || '').trim().toLowerCase();
+    return selected.some(x => String(x).trim().toLowerCase() === r);
+  }
+
+  // Read JSON payload + selected filters
+  var locations = [];
+  var selectedServiceTypes = [];
+  var selectedCqcRatings = [];
+
+  try {
+    locations = JSON.parse(document.getElementById('providerLocationsData-Sudbury')?.textContent || '[]');
+  }
+  catch (e) {
+    console.error('Failed to parse provider JSON', e);
+    locations = [];
+  }
+
+  try {
+    selectedServiceTypes = JSON.parse(document.getElementById('selectedServiceTypes')?.textContent || '[]');
+    selectedCqcRatings = JSON.parse(document.getElementById('selectedCqcRatings')?.textContent || '[]');
+  }
+  catch (e) {
+    console.error('Failed to parse selected filters', e);
+    selectedServiceTypes = [];
+    selectedCqcRatings = [];
+  }
+
+  locations.forEach(function (loc) {
+
+    if (!matchesServiceTypes(loc.serviceTypes, selectedServiceTypes)) return;
+    
+    if (!matchesCqcRating(loc.cqcRating, selectedCqcRatings)) return;
+
+    var lat = parseFloat(loc.lat);
+    var lng = parseFloat(loc.lng);
+
+    if (isNaN(lat) || isNaN(lng)) return;
+
+    var marker = L.marker([lat, lng]);
+    var addressHtml = '';
+
+    if (loc.address1) addressHtml += loc.address1;
+    if (loc.address2) addressHtml += ', ' + loc.address2;
+    if (loc.city) addressHtml += ', ' + loc.city;
+    if (loc.postcode) addressHtml += ', ' + loc.postcode;
+
+    var popupHtml = "<span class='popup'>" + "Name: " + (loc.name || '') + "<br>" + "Address: " + addressHtml + "<br>" + "Services: " + (loc.serviceTypes || '') + "<br>" + "Distance from postcode: 0 miles" + "</span>";
+
+    marker.bindPopup(popupHtml);
+    clusters.addLayer(marker);
+  });
+
   map.addLayer(clusters);
-
-  // Popups (Sudbury)
-  marker1.bindPopup("<span class='popup'>Name: 1 Oak Care Home<br>Address: Unit 1 &#38; 2 Woodview, Bull Lane Industrial Estate, Bull Lane, Acton, Sudbury, CO10 0FD<br>Services: Nursing<br>Distance from postcode: 3.2 miles</span>");
-  marker2.bindPopup("<span class='popup'>Name: Briarcare Recruitment Agency<br>Address: Unit 3, Woodview, Bull Lane Industrial Estate, Bull Lane, Acton, Sudbury, CO10 0FD<br>Services: Nursing<br>Distance from postcode: 3.2 miles</span>");
-  marker3.bindPopup("<span class='popup'>Name: Forest Care Home Suffolk<br>Address: Unit 22 South Suffolk Business Centre, Alexandra Road, Sudbury, CO10 2XH<br>Services: Nursing, residential care<br>Distance from postcode: 0.6 miles</span>");
-  marker4.bindPopup("<span class='popup'>Name: Master Care Ipswich<br>Address: OFFICE 14, UNIT 5, STOUR VALLEY BUSINESS CENTRE, BRUNDON LANE, Sudbury, CO10 7GB<br>Services: Supported housing, supported living<br>Distance from postcode: 0.8 miles</span>");
-  marker5.bindPopup("<span class='popup'>Name: Harmonize Care<br>Address: The Old Pharmacy, Hall Street, Long Melford, Sudbury, CO10 9JQ<br>Services: Homecare<br>Distance from postcode: 3 miles</span>");
-  marker6.bindPopup("<span class='popup'>Name: Supporting An Independent Life<br>Address: Unit 14, South Suffolk Business Centre, Alexandra Road, Sudbury, CO10 2ZX<br>Services: Nursing<br>Distance from postcode: 0.6 miles</span>");
-  marker7.bindPopup("<span class='popup'>Name: ivolve Suffolk Care Home<br>Address: Peter Dodd Mews, Shawlands Avenue,Great Cornard, Sudbury, CO10 0FY<br>Services: Residential care<br>Distance from postcode: 1.1 miles</span>");
-  marker8.bindPopup("<span class='popup'>Name: Ivolve Shawlands Care Home<br>Address: Fieldview, Hare Field, Woodpecke, Shawlands Avenue, Great Cornard, Sudbury, CO10 0EW<br>Services: Residential care<br>Distance from postcode: 1.2 miles</span>");
-  marker9.bindPopup("<span class='popup'>Name: Trust Care Home Solution South Suffolk Limited<br>Address: Unit 13, South Suffolk Business Centre, Alexandra Road, Sudbury, CO10 2ZX<br>Services: Nursing<br>Distance from postcode: 0.6 miles</span>");
-  marker10.bindPopup("<span class='popup'>Name: Willowbrook Residential Care<br>Address: 2 Willowbrook Court, Alexandra Road, Sudbury, CO10 2YG<br>Services: Residential care<br>Distance from postcode: 0.7 miles</span>");
-  marker11.bindPopup("<span class='popup'>Name: Cedar Path Support Services<br>Address: 14 Cedar Path, Hall Road, Long Melford, CO10 9JT<br>Services: Homecare<br>Distance from postcode: 2.8 miles</span>");
-  marker12.bindPopup("<span class='popup'>Name: Brookside Assisted Living<br>Address: 9 Brookside Way, Great Cornard, Sudbury, CO10 0DL<br>Services: Residential care<br>Distance from postcode: 1.3 miles</span>");
-  marker13.bindPopup("<span class='popup'>Name: Maple House Care Agency<br>Address: Unit 5 Maple Court, Bull Lane Industrial Estate, Acton, Sudbury, CO10 0FH<br>Services: Nursing<br>Distance from postcode: 3.1 miles</span>");
-  marker14.bindPopup("<span class='popup'>Name: Orchard View Homecare<br>Address: 87 Orchard View, Newton Road, Sudbury, CO10 0QS<br>Services: Supported living, home care<br>Distance from postcode: 3.4 miles</span>");
-  marker15.bindPopup("<span class='popup'>Name: Stonehill Community Care<br>Address: 11 Stonehill Close, Great Cornard, Sudbury, CO10 0FE<br>Services: Residential care<br>Distance from postcode: 1.0 miles</span>");
 
 </script>
 {% endif %}
