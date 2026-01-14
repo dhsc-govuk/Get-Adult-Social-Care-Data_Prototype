@@ -35,9 +35,10 @@ stages:
         command: buildAndPush
         repository: $(imageRepository)
         dockerfile: $(dockerfilePath)
-        containerRegistry: $(dev_acr_connection)
+        containerRegistry: $(acr_connection)
         tags: |
           $(tag)
+          latest
 - stage: Deploy
   displayName: Deploy to App Service
   jobs:
