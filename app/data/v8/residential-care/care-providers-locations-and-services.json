@@ -1,6 +1,42 @@
 {
   "Care provider locations": [
     {
+      "Location ID": "1-000000001",
+      "Location Name": "Station Road Centre (Sudbury)",
+      "Location Primary Inspection Category": "Residential Social Care",
+      "Service Types": "Nursing homes, residential homes",
+      "Bed Numbers": "90",
+      "Location Region": "East",
+      "Location Local Authority": "Suffolk",
+      "Location Postal Code": "CO5 1ST",
+      "Location Address Line": "1st Floor",
+      "Location Address Line 2": "54a Station Road",
+      "Location City": "Sudbury",
+      "Location Latitude": "52.037456",
+      "Location Longitude": "0.730166",
+      "CQC Rating": "Good",
+      "Provider Name": "Shoggins Care Home Ltd",
+      "Provider ID": "1-123456789"
+    },
+    {
+      "Location ID": "1-000000002",
+      "Location Name": "Station Road Centre (Sudbury)",
+      "Location Primary Inspection Category": "Community Based Adult Social Care Services",
+      "Service Types": "Homecare agencies, supported living",
+      "Bed Numbers": "",
+      "Location Region": "East",
+      "Location Local Authority": "Suffolk",
+      "Location Postal Code": "CO5 1ST",
+      "Location Address Line": "1st Floor",
+      "Location Address Line 2": "54a Station Road",
+      "Location City": "Sudbury",
+      "Location Latitude": "52.037456",
+      "Location Longitude": "0.730166",
+      "CQC Rating": "Good",
+      "Provider Name": "Shoggins Care Services Limited",
+      "Provider ID": "1-987654321"
+    },
+    {
       "Location ID": "1-107263645",
       "Location Name": "The Paddocks",
       "Location Primary Inspection Category": "Residential Social Care",
@@ -2755,24 +2791,6 @@
       "Provider ID": "1-18245727848"
     },
     {
-      "Location ID": "1-23457293072",
-      "Location Name": "Oxana Care Ltd",
-      "Location Primary Inspection Category": "Community Based Adult Social Care Services",
-      "Service Types": "Homecare agencies",
-      "Bed Numbers": "",
-      "Location Region": "East",
-      "Location Local Authority": "Suffolk",
-      "Location Postal Code": "IP1 2QA",
-      "Location Address Line": "Cundys Lane",
-      "Location Address Line 2": "Brent Eleigh",
-      "Location City": "Sudbury",
-      "Location Latitude": "52.093936",
-      "Location Longitude": "0.834434",
-      "CQC Rating": "Inadequate",
-      "Provider Name": "Oxana Care Limited",
-      "Provider ID": "1-21639890965"
-    },
-    {
       "Location ID": "1-23687698400",
       "Location Name": "Registered Office",
       "Location Primary Inspection Category": "Community Based Adult Social Care Services",
@@ -2789,24 +2807,6 @@
       "CQC Rating": "Requires improvement",
       "Provider Name": "Great Hope Care Ltd",
       "Provider ID": "1-20709625052"
-    },
-    {
-      "Location ID": "1-23833834181",
-      "Location Name": "Abbeygate Manor",
-      "Location Primary Inspection Category": "Residential Social Care",
-      "Service Types": "Nursing homes",
-      "Bed Numbers": "81",
-      "Location Region": "East",
-      "Location Local Authority": "Suffolk",
-      "Location Postal Code": "IP32 7AY",
-      "Location Address Line": "High Street",
-      "Location Address Line 2": "Cavendish",
-      "Location City": "Sudbury",
-      "Location Latitude": "52.087288",
-      "Location Longitude": "0.636945",
-      "CQC Rating": "Good",
-      "Provider Name": "Simply Care Group UK Ltd",
-      "Provider ID": "1-12959651319"
     },
     {
       "Location ID": "1-23844478137",
