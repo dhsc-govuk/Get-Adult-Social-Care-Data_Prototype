@@ -237,7 +237,8 @@
           "postcode": row["Location Postal Code"],
           "serviceTypes": row["Service Types"],
           "beds": row["Bed Numbers"],
-          "cqcRating": row["CQC Rating"]
+          "cqcRating": row["CQC Rating"],
+          "distanceFromPostcode": row["Distance from postcode"]
         } | dump | safe }}
         {% set emitted = emitted + 1 %}
       {% endif %}
@@ -324,7 +325,7 @@
     if (loc.city) addressHtml += ', ' + loc.city;
     if (loc.postcode) addressHtml += ', ' + loc.postcode;
 
-    var popupHtml = "<span class='popup'>" + "Name: " + (loc.name || '') + "<br>" + "Address: " + addressHtml + "<br>" + "Services: " + (loc.serviceTypes || '') + "<br>" + "Beds: " + (loc.beds || '') + "<br>" + "CQC rating: " + (loc.cqcRating || '') + "<br>" + "Distance from postcode: 0 miles" + "</span>";
+    var popupHtml = "<span class='popup'>" + "Name: " + (loc.name || '') + "<br>" + "Address: " + addressHtml + "<br>" + "Services: " + (loc.serviceTypes || '') + "<br>" + "Beds: " + (loc.beds || '') + "<br>" + "CQC rating: " + (loc.cqcRating || '') + "<br>" + "Distance from postcode: " + (loc.distanceFromPostcode || 'Not applicable') + "</span>";
 
     marker.bindPopup(popupHtml);
     clusters.addLayer(marker);
@@ -499,7 +500,8 @@
           "postcode": row["Location Postal Code"],
           "serviceTypes": row["Service Types"],
           "beds": row["Bed Numbers"],
-          "cqcRating": row["CQC Rating"]
+          "cqcRating": row["CQC Rating"],
+          "distanceFromPostcode": row["Distance from postcode"]
         } | dump | safe }}
         {% set emitted = emitted + 1 %}
       {% endif %}
@@ -584,7 +586,7 @@
     if (loc.city) addressHtml += ', ' + loc.city;
     if (loc.postcode) addressHtml += ', ' + loc.postcode;
 
-    var popupHtml = "<span class='popup'>" + "Name: " + (loc.name || '') + "<br>" + "Address: " + addressHtml + "<br>" + "Services: " + (loc.serviceTypes || '') + "<br>" + "Beds: " + (loc.beds || '') + "<br>" + "CQC rating: " + (loc.cqcRating || '') + "<br>" + "Distance from postcode: 0 miles" + "</span>";
+    var popupHtml = "<span class='popup'>" + "Name: " + (loc.name || '') + "<br>" + "Address: " + addressHtml + "<br>" + "Services: " + (loc.serviceTypes || '') + "<br>" + "Beds: " + (loc.beds || '') + "<br>" + "CQC rating: " + (loc.cqcRating || '') + "<br>" + "Distance from postcode: " + (loc.distanceFromPostcode || 'Not applicable') + "</span>";
 
     marker.bindPopup(popupHtml);
     clusters.addLayer(marker);

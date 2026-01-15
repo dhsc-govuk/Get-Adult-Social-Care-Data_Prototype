@@ -16,7 +16,8 @@
       "Location Longitude": "0.730166",
       "CQC Rating": "Good",
       "Provider Name": "Shoggins Care Home Ltd",
-      "Provider ID": "1-123456789"
+      "Provider ID": "1-123456789",
+      "Distance from postcode": "0 miles"
     },
     {
       "Location ID": "1-000000002",
@@ -34,7 +35,8 @@
       "Location Longitude": "0.730166",
       "CQC Rating": "Good",
       "Provider Name": "Shoggins Care Services Limited",
-      "Provider ID": "1-987654321"
+      "Provider ID": "1-987654321",
+      "Distance from postcode": "0 miles"
     },
     {
       "Location ID": "1-107263645",
@@ -52,7 +54,8 @@
       "Location Longitude": "0.943411",
       "CQC Rating": "Good",
       "Provider Name": "G Gibbs",
-      "Provider ID": "1-101627096"
+      "Provider ID": "1-101627096",
+      "Distance from postcode": "Not applicable"
     },
     {
       "Location ID": "1-108755195",
@@ -70,7 +73,8 @@
       "Location Longitude": "1.577336",
       "CQC Rating": "Good",
       "Provider Name": "Mrs P Barnard",
-      "Provider ID": "1-101705482"
+      "Provider ID": "1-101705482",
+      "Distance from postcode": "Not applicable"
     },
     {
       "Location ID": "1-110160699",
@@ -88,7 +92,8 @@
       "Location Longitude": "1.200274",
       "CQC Rating": "Inadequate",
       "Provider Name": "Suffolk Mind",
-      "Provider ID": "1-101614877"
+      "Provider ID": "1-101614877",
+      "Distance from postcode": "Not applicable"
     },
     {
       "Location ID": "1-112480192",
@@ -106,7 +111,8 @@
       "Location Longitude": "1.536287",
       "CQC Rating": "Outstanding",
       "Provider Name": "Waveney Care Ltd",
-      "Provider ID": "1-101693998"
+      "Provider ID": "1-101693998",
+      "Distance from postcode": "Not applicable"
     },
     {
       "Location ID": "1-113533609",
@@ -124,7 +130,8 @@
       "Location Longitude": "1.118601",
       "CQC Rating": "Outstanding",
       "Provider Name": "County Care Homes Limited",
-      "Provider ID": "1-101694197"
+      "Provider ID": "1-101694197",
+      "Distance from postcode": "Not applicable"
     },
     {
       "Location ID": "1-114408338",
@@ -142,7 +149,8 @@
       "Location Longitude": "1.343939",
       "CQC Rating": "Good",
       "Provider Name": "Tru-care Limited",
-      "Provider ID": "1-101627006"
+      "Provider ID": "1-101627006",
+      "Distance from postcode": "Not applicable"
     },
     {
       "Location ID": "1-115057493",
@@ -160,7 +168,8 @@
       "Location Longitude": "1.078868",
       "CQC Rating": "Good",
       "Provider Name": "Amber Care (East Anglia) Ltd",
-      "Provider ID": "1-101616649"
+      "Provider ID": "1-101616649",
+      "Distance from postcode": "Not applicable"
     },
     {
       "Location ID": "1-115057520",
@@ -178,7 +187,8 @@
       "Location Longitude": "0.724482",
       "CQC Rating": "Requires improvement",
       "Provider Name": "Amber Care (East Anglia) Ltd",
-      "Provider ID": "1-101616649"
+      "Provider ID": "1-101616649",
+      "Distance from postcode": "0.3 miles"
     },
     {
       "Location ID": "1-116793862",
@@ -196,7 +206,8 @@
       "Location Longitude": "1.559278",
       "CQC Rating": "Good",
       "Provider Name": "Martin Jay & Joanna Jay & Thom Wight",
-      "Provider ID": "1-101705365"
+      "Provider ID": "1-101705365",
+      "Distance from postcode": "Not applicable"
     },
     {
       "Location ID": "1-116793878",
@@ -214,7 +225,8 @@
       "Location Longitude": "1.327587",
       "CQC Rating": "Outstanding",
       "Provider Name": "Martin Jay & Joanna Jay & Thom Wight",
-      "Provider ID": "1-101705365"
+      "Provider ID": "1-101705365",
+      "Distance from postcode": "Not applicable"
     },
     {
       "Location ID": "1-117074725",
@@ -232,7 +244,8 @@
       "Location Longitude": "1.306423",
       "CQC Rating": "Requires improvement",
       "Provider Name": "Bethesda Eventide Homes",
-      "Provider ID": "1-101617063"
+      "Provider ID": "1-101617063",
+      "Distance from postcode": "Not applicable"
     },
     {
       "Location ID": "1-119138865",
@@ -250,7 +263,8 @@
       "Location Longitude": "0.996272",
       "CQC Rating": "Outstanding",
       "Provider Name": "MNS Care Plc",
-      "Provider ID": "1-101612376"
+      "Provider ID": "1-101612376",
+      "Distance from postcode": "Not applicable"
     },
     {
       "Location ID": "1-119827616",
@@ -268,7 +282,8 @@
       "Location Longitude": "0.51051",
       "CQC Rating": "Inadequate",
       "Provider Name": "Gemini Care Limited",
-      "Provider ID": "1-101614868"
+      "Provider ID": "1-101614868",
+      "Distance from postcode": "Not applicable"
     },
     {
       "Location ID": "1-120282779",
@@ -286,7 +301,8 @@
       "Location Longitude": "1.111889",
       "CQC Rating": "Good",
       "Provider Name": "Squirrel Lodge Limited",
-      "Provider ID": "1-101617503"
+      "Provider ID": "1-101617503",
+      "Distance from postcode": "Not applicable"
     },
     {
       "Location ID": "1-121065959",
@@ -304,7 +320,8 @@
       "Location Longitude": "1.752326",
       "CQC Rating": "Inadequate",
       "Provider Name": "The Partnership In Care Limited",
-      "Provider ID": "1-101667703"
+      "Provider ID": "1-101667703",
+      "Distance from postcode": "Not applicable"
     },
     {
       "Location ID": "1-121919662",
@@ -322,7 +339,8 @@
       "Location Longitude": "1.178816",
       "CQC Rating": "Good",
       "Provider Name": "Healthcare Homes Group Limited",
-      "Provider ID": "1-101669049"
+      "Provider ID": "1-101669049",
+      "Distance from postcode": "Not applicable"
     },
     {
       "Location ID": "1-121919740",
@@ -340,7 +358,8 @@
       "Location Longitude": "0.518927",
       "CQC Rating": "Good",
       "Provider Name": "Healthcare Homes Group Limited",
-      "Provider ID": "1-101669049"
+      "Provider ID": "1-101669049",
+      "Distance from postcode": "Not applicable"
     },
     {
       "Location ID": "1-121919754",
@@ -358,7 +377,8 @@
       "Location Longitude": "1.744351",
       "CQC Rating": "Good",
       "Provider Name": "Healthcare Homes Group Limited",
-      "Provider ID": "1-101669049"
+      "Provider ID": "1-101669049",
+      "Distance from postcode": "Not applicable"
     },
     {
       "Location ID": "1-123743865",
@@ -376,7 +396,8 @@
       "Location Longitude": "0.710254",
       "CQC Rating": "Inadequate",
       "Provider Name": "Cambridge Care Homes Limited",
-      "Provider ID": "1-101685978"
+      "Provider ID": "1-101685978",
+      "Distance from postcode": "Not applicable"
     },
     {
       "Location ID": "1-123751665",
@@ -394,7 +415,8 @@
       "Location Longitude": "0.972632",
       "CQC Rating": "Good",
       "Provider Name": "Orwell Mencap",
-      "Provider ID": "1-101689444"
+      "Provider ID": "1-101689444",
+      "Distance from postcode": "Not applicable"
     },
     {
       "Location ID": "1-124573394",
@@ -412,7 +434,8 @@
       "Location Longitude": "0.881495",
       "CQC Rating": "Outstanding",
       "Provider Name": "L'Arche",
-      "Provider ID": "1-101645396"
+      "Provider ID": "1-101645396",
+      "Distance from postcode": "Not applicable"
     },
     {
       "Location ID": "1-125050729",
@@ -430,7 +453,8 @@
       "Location Longitude": "1.156046",
       "CQC Rating": "Inadequate",
       "Provider Name": "Primary Homecare Limited",
-      "Provider ID": "1-101674935"
+      "Provider ID": "1-101674935",
+      "Distance from postcode": "Not applicable"
     },
     {
       "Location ID": "1-125498172",
@@ -448,7 +472,8 @@
       "Location Longitude": "1.182477",
       "CQC Rating": "Good",
       "Provider Name": "Housing 21",
-      "Provider ID": "1-102643148"
+      "Provider ID": "1-102643148",
+      "Distance from postcode": "Not applicable"
     },
     {
       "Location ID": "1-125862071",
@@ -466,7 +491,8 @@
       "Location Longitude": "1.36392",
       "CQC Rating": "Good",
       "Provider Name": "Barchester Healthcare Homes Limited",
-      "Provider ID": "1-102642955"
+      "Provider ID": "1-102642955",
+      "Distance from postcode": "Not applicable"
     },
     {
       "Location ID": "1-128711407",
@@ -484,7 +510,8 @@
       "Location Longitude": "1.162712",
       "CQC Rating": "Good",
       "Provider Name": "Alliance Home Care Limited",
-      "Provider ID": "1-118166267"
+      "Provider ID": "1-118166267",
+      "Distance from postcode": "Not applicable"
     },
     {
       "Location ID": "1-129757730",
@@ -502,7 +529,8 @@
       "Location Longitude": "1.736256",
       "CQC Rating": "Outstanding",
       "Provider Name": "Country Retirement & Nursing Homes Ltd",
-      "Provider ID": "1-120627433"
+      "Provider ID": "1-120627433",
+      "Distance from postcode": "Not applicable"
     },
     {
       "Location ID": "1-129786645",
@@ -520,7 +548,8 @@
       "Location Longitude": "1.438811",
       "CQC Rating": "Outstanding",
       "Provider Name": "Stowcare Limited",
-      "Provider ID": "1-101648667"
+      "Provider ID": "1-101648667",
+      "Distance from postcode": "Not applicable"
     },
     {
       "Location ID": "1-134620976",
@@ -538,7 +567,8 @@
       "Location Longitude": "1.753784",
       "CQC Rating": "Requires improvement",
       "Provider Name": "National Autistic Society (The)",
-      "Provider ID": "1-102642930"
+      "Provider ID": "1-102642930",
+      "Distance from postcode": "Not applicable"
     },
     {
       "Location ID": "1-142468437",
@@ -556,7 +586,8 @@
       "Location Longitude": "1.744181",
       "CQC Rating": "Good",
       "Provider Name": "Mr A Agarwal",
-      "Provider ID": "1-101705437"
+      "Provider ID": "1-101705437",
+      "Distance from postcode": "Not applicable"
     },
     {
       "Location ID": "1-145680661",
@@ -574,7 +605,8 @@
       "Location Longitude": "1.674025",
       "CQC Rating": "Requires improvement",
       "Provider Name": "Suffolk County Council",
-      "Provider ID": "1-101616919"
+      "Provider ID": "1-101616919",
+      "Distance from postcode": "Not applicable"
     },
     {
       "Location ID": "1-164949844",
@@ -592,7 +624,8 @@
       "Location Longitude": "0.429318",
       "CQC Rating": "Requires improvement",
       "Provider Name": "Greenfields Care Group Ltd",
-      "Provider ID": "1-55966406929"
+      "Provider ID": "1-55966406929",
+      "Distance from postcode": "0.8 miles"
     },
     {
       "Location ID": "1-220311573",
@@ -610,7 +643,8 @@
       "Location Longitude": "0.435504",
       "CQC Rating": "Requires improvement",
       "Provider Name": "Orwell Housing Association Limited",
-      "Provider ID": "1-101667217"
+      "Provider ID": "1-101667217",
+      "Distance from postcode": "1.0 miles"
     },
     {
       "Location ID": "1-261437952",
@@ -628,7 +662,8 @@
       "Location Longitude": "1.716666",
       "CQC Rating": "Good",
       "Provider Name": "The Orders Of St. John Care Trust",
-      "Provider ID": "1-102642912"
+      "Provider ID": "1-102642912",
+      "Distance from postcode": "Not applicable"
     },
     {
       "Location ID": "1-301414131",
@@ -646,7 +681,8 @@
       "Location Longitude": "0.443427",
       "CQC Rating": "Good",
       "Provider Name": "Althea HealthCare Limited",
-      "Provider ID": "1-182718925"
+      "Provider ID": "1-182718925",
+      "Distance from postcode": "0.1 miles"
     },
     {
       "Location ID": "1-350380723",
@@ -664,7 +700,8 @@
       "Location Longitude": "0.955875",
       "CQC Rating": "Good",
       "Provider Name": "Parkcare Homes (No.2) Limited",
-      "Provider ID": "1-118164217"
+      "Provider ID": "1-118164217",
+      "Distance from postcode": "Not applicable"
     },
     {
       "Location ID": "1-385482787",
@@ -682,7 +719,8 @@
       "Location Longitude": "1.717042",
       "CQC Rating": "Outstanding",
       "Provider Name": "Leading Lives Limited",
-      "Provider ID": "1-378490080"
+      "Provider ID": "1-378490080",
+      "Distance from postcode": "Not applicable"
     },
     {
       "Location ID": "1-385482818",
@@ -700,7 +738,8 @@
       "Location Longitude": "0.713275",
       "CQC Rating": "Good",
       "Provider Name": "Leading Lives Limited",
-      "Provider ID": "1-378490080"
+      "Provider ID": "1-378490080",
+      "Distance from postcode": "Not applicable"
     },
     {
       "Location ID": "1-385503588",
@@ -718,7 +757,8 @@
       "Location Longitude": "1.140236",
       "CQC Rating": "Inadequate",
       "Provider Name": "Leading Lives Limited",
-      "Provider ID": "1-378490080"
+      "Provider ID": "1-378490080",
+      "Distance from postcode": "Not applicable"
     },
     {
       "Location ID": "1-441153798",
@@ -736,7 +776,8 @@
       "Location Longitude": "1.192236",
       "CQC Rating": "Inadequate",
       "Provider Name": "The Papworth Trust",
-      "Provider ID": "1-101664427"
+      "Provider ID": "1-101664427",
+      "Distance from postcode": "Not applicable"
     },
     {
       "Location ID": "1-450269840",
@@ -754,7 +795,8 @@
       "Location Longitude": "1.410941",
       "CQC Rating": "Requires improvement",
       "Provider Name": "The Limes Retirement Home Ltd",
-      "Provider ID": "1-441157161"
+      "Provider ID": "1-441157161",
+      "Distance from postcode": "Not applicable"
     },
     {
       "Location ID": "1-454929616",
@@ -772,7 +814,8 @@
       "Location Longitude": "1.737976",
       "CQC Rating": "Good",
       "Provider Name": "Hallmark Care Homes (Ipswich) Limited",
-      "Provider ID": "1-452446081"
+      "Provider ID": "1-452446081",
+      "Distance from postcode": "Not applicable"
     },
     {
       "Location ID": "1-490382352",
@@ -790,7 +833,8 @@
       "Location Longitude": "1.117232",
       "CQC Rating": "Good",
       "Provider Name": "Achieve Together Limited",
-      "Provider ID": "1-116992858"
+      "Provider ID": "1-116992858",
+      "Distance from postcode": "Not applicable"
     },
     {
       "Location ID": "1-498788118",
@@ -808,7 +852,8 @@
       "Location Longitude": "1.307291",
       "CQC Rating": "Good",
       "Provider Name": "Care UK Community Partnerships Ltd",
-      "Provider ID": "1-116865825"
+      "Provider ID": "1-116865825",
+      "Distance from postcode": "Not applicable"
     },
     {
       "Location ID": "1-590863088",
@@ -826,7 +871,8 @@
       "Location Longitude": "0.725904",
       "CQC Rating": "Good",
       "Provider Name": "Master Care Partners Ltd",
-      "Provider ID": "1-71909939234"
+      "Provider ID": "1-71909939234",
+      "Distance from postcode": "Not applicable"
     },
     {
       "Location ID": "1-688650723",
@@ -844,7 +890,8 @@
       "Location Longitude": "0.461209",
       "CQC Rating": "Good",
       "Provider Name": "Forest Community Support Ltd",
-      "Provider ID": "1-353342878"
+      "Provider ID": "1-353342878",
+      "Distance from postcode": "0.9 miles"
     },
     {
       "Location ID": "1-695466175",
@@ -862,7 +909,8 @@
       "Location Longitude": "1.354714",
       "CQC Rating": "Good",
       "Provider Name": "St Elizabeth Care Agency Ltd",
-      "Provider ID": "1-639373162"
+      "Provider ID": "1-639373162",
+      "Distance from postcode": "Not applicable"
     },
     {
       "Location ID": "1-730501784",
@@ -880,7 +928,8 @@
       "Location Longitude": "0.468911",
       "CQC Rating": "Good",
       "Provider Name": "Eastfields Care Partners Ltd",
-      "Provider ID": "1-92248897982"
+      "Provider ID": "1-92248897982",
+      "Distance from postcode": "1.0 miles"
     },
     {
       "Location ID": "1-738691362",
@@ -898,7 +947,8 @@
       "Location Longitude": "1.357758",
       "CQC Rating": "Good",
       "Provider Name": "Donna Burrows and Harold Burrows",
-      "Provider ID": "1-732257134"
+      "Provider ID": "1-732257134",
+      "Distance from postcode": "Not applicable"
     },
     {
       "Location ID": "1-784998993",
@@ -916,7 +966,8 @@
       "Location Longitude": "1.152066",
       "CQC Rating": "Good",
       "Provider Name": "Yourlife Management Services Limited",
-      "Provider ID": "1-172521302"
+      "Provider ID": "1-172521302",
+      "Distance from postcode": "Not applicable"
     },
     {
       "Location ID": "1-836084835",
@@ -934,7 +985,8 @@
       "Location Longitude": "1.562709",
       "CQC Rating": "Requires improvement",
       "Provider Name": "KRG Care Homes Limited",
-      "Provider ID": "1-635282639"
+      "Provider ID": "1-635282639",
+      "Distance from postcode": "Not applicable"
     },
     {
       "Location ID": "1-861932506",
@@ -952,7 +1004,8 @@
       "Location Longitude": "0.449308",
       "CQC Rating": "Inadequate",
       "Provider Name": "Fieldstone Care Group Ltd",
-      "Provider ID": "1-6804365399"
+      "Provider ID": "1-6804365399",
+      "Distance from postcode": "0.9 miles"
     },
     {
       "Location ID": "1-967575805",
@@ -970,7 +1023,8 @@
       "Location Longitude": "0.74162",
       "CQC Rating": "Good",
       "Provider Name": "Meadow Wellbeing Care Ltd",
-      "Provider ID": "1-6759396190"
+      "Provider ID": "1-6759396190",
+      "Distance from postcode": "0.5 miles"
     },
     {
       "Location ID": "1-1006660964",
@@ -988,7 +1042,8 @@
       "Location Longitude": "1.144272",
       "CQC Rating": "Good",
       "Provider Name": "Forest Homecare Limited",
-      "Provider ID": "1-101640241"
+      "Provider ID": "1-101640241",
+      "Distance from postcode": "Not applicable"
     },
     {
       "Location ID": "1-1145700829",
@@ -1006,7 +1061,8 @@
       "Location Longitude": "1.122062",
       "CQC Rating": "Inadequate",
       "Provider Name": "Laxfield House Limited",
-      "Provider ID": "1-1054010877"
+      "Provider ID": "1-1054010877",
+      "Distance from postcode": "Not applicable"
     },
     {
       "Location ID": "1-1235269548",
@@ -1024,7 +1080,8 @@
       "Location Longitude": "0.729238",
       "CQC Rating": "Good",
       "Provider Name": "Sygmacare",
-      "Provider ID": "1-1004425775"
+      "Provider ID": "1-1004425775",
+      "Distance from postcode": "0.5 miles"
     },
     {
       "Location ID": "1-1317119509",
@@ -1042,7 +1099,8 @@
       "Location Longitude": "1.347249",
       "CQC Rating": "Requires improvement",
       "Provider Name": "Healthcare Homes (LSC) Limited",
-      "Provider ID": "1-790958178"
+      "Provider ID": "1-790958178",
+      "Distance from postcode": "Not applicable"
     },
     {
       "Location ID": "1-1388882824",
@@ -1060,7 +1118,8 @@
       "Location Longitude": "0.757328",
       "CQC Rating": "Inadequate",
       "Provider Name": "Forest Wellbeing Care Ltd",
-      "Provider ID": "1-440638737"
+      "Provider ID": "1-440638737",
+      "Distance from postcode": "1.2 miles"
     },
     {
       "Location ID": "1-1445127860",
@@ -1078,7 +1137,8 @@
       "Location Longitude": "0.510025",
       "CQC Rating": "Inadequate",
       "Provider Name": "Care UK Community Partnerships Ltd",
-      "Provider ID": "1-116865825"
+      "Provider ID": "1-116865825",
+      "Distance from postcode": "Not applicable"
     },
     {
       "Location ID": "1-1471872817",
@@ -1096,7 +1156,8 @@
       "Location Longitude": "1.739306",
       "CQC Rating": "Good",
       "Provider Name": "Sanctuary Home Care Limited",
-      "Provider ID": "1-101693935"
+      "Provider ID": "1-101693935",
+      "Distance from postcode": "Not applicable"
     },
     {
       "Location ID": "1-1492095485",
@@ -1114,7 +1175,8 @@
       "Location Longitude": "1.314597",
       "CQC Rating": "Good",
       "Provider Name": "Sanctuary Home Care Limited",
-      "Provider ID": "1-101693935"
+      "Provider ID": "1-101693935",
+      "Distance from postcode": "Not applicable"
     },
     {
       "Location ID": "1-1627226792",
@@ -1132,7 +1194,8 @@
       "Location Longitude": "0.743614",
       "CQC Rating": "Outstanding",
       "Provider Name": "Hales Group Limited",
-      "Provider ID": "1-101691667"
+      "Provider ID": "1-101691667",
+      "Distance from postcode": "0.7 miles"
     },
     {
       "Location ID": "1-1718611233",
@@ -1150,7 +1213,8 @@
       "Location Longitude": "1.217932",
       "CQC Rating": "Outstanding",
       "Provider Name": "Care UK Community Partnerships Ltd",
-      "Provider ID": "1-116865825"
+      "Provider ID": "1-116865825",
+      "Distance from postcode": "Not applicable"
     },
     {
       "Location ID": "1-1942634442",
@@ -1168,7 +1232,8 @@
       "Location Longitude": "1.013277",
       "CQC Rating": "Good",
       "Provider Name": "Eastern Healthcare Ltd",
-      "Provider ID": "1-683534028"
+      "Provider ID": "1-683534028",
+      "Distance from postcode": "Not applicable"
     },
     {
       "Location ID": "1-1966400806",
@@ -1186,7 +1251,8 @@
       "Location Longitude": "1.715929",
       "CQC Rating": "Good",
       "Provider Name": "Care UK Community Partnerships Ltd",
-      "Provider ID": "1-116865825"
+      "Provider ID": "1-116865825",
+      "Distance from postcode": "Not applicable"
     },
     {
       "Location ID": "1-2084317263",
@@ -1204,7 +1270,8 @@
       "Location Longitude": "0.712945",
       "CQC Rating": "Outstanding",
       "Provider Name": "My Care at Home Limited",
-      "Provider ID": "1-743355391"
+      "Provider ID": "1-743355391",
+      "Distance from postcode": "1.6 miles"
     },
     {
       "Location ID": "1-2158395145",
@@ -1222,7 +1289,8 @@
       "Location Longitude": "1.499917",
       "CQC Rating": "Good",
       "Provider Name": "Avican Support Ltd",
-      "Provider ID": "1-142456471"
+      "Provider ID": "1-142456471",
+      "Distance from postcode": "Not applicable"
     },
     {
       "Location ID": "1-2199574616",
@@ -1240,7 +1308,8 @@
       "Location Longitude": "0.716888",
       "CQC Rating": "Good",
       "Provider Name": "Aps Care Ltd",
-      "Provider ID": "1-119229210"
+      "Provider ID": "1-119229210",
+      "Distance from postcode": "2.7 miles"
     },
     {
       "Location ID": "1-2204616886",
@@ -1258,7 +1327,8 @@
       "Location Longitude": "0.968062",
       "CQC Rating": "Good",
       "Provider Name": "Ultimate Care UK Ltd",
-      "Provider ID": "1-101689595"
+      "Provider ID": "1-101689595",
+      "Distance from postcode": "Not applicable"
     },
     {
       "Location ID": "1-2211447817",
@@ -1276,7 +1346,8 @@
       "Location Longitude": "1.343239",
       "CQC Rating": "Good",
       "Provider Name": "Anamar-Care Ltd",
-      "Provider ID": "1-2026586166"
+      "Provider ID": "1-2026586166",
+      "Distance from postcode": "Not applicable"
     },
     {
       "Location ID": "1-2258730097",
@@ -1294,7 +1365,8 @@
       "Location Longitude": "0.725715",
       "CQC Rating": "Good",
       "Provider Name": "Caring Forever Limited",
-      "Provider ID": "1-929277624"
+      "Provider ID": "1-929277624",
+      "Distance from postcode": "0.3 miles"
     },
     {
       "Location ID": "1-2374180279",
@@ -1312,7 +1384,8 @@
       "Location Longitude": "1.055398",
       "CQC Rating": "Requires improvement",
       "Provider Name": "Colneis Care Services Ltd",
-      "Provider ID": "1-119237502"
+      "Provider ID": "1-119237502",
+      "Distance from postcode": "Not applicable"
     },
     {
       "Location ID": "1-2397838058",
@@ -1330,7 +1403,8 @@
       "Location Longitude": "1.18423",
       "CQC Rating": "Good",
       "Provider Name": "Care UK Community Partnerships Ltd",
-      "Provider ID": "1-116865825"
+      "Provider ID": "1-116865825",
+      "Distance from postcode": "Not applicable"
     },
     {
       "Location ID": "1-2399732335",
@@ -1348,7 +1422,8 @@
       "Location Longitude": "0.729238",
       "CQC Rating": "Requires improvement",
       "Provider Name": "Westerfield House Care Ltd",
-      "Provider ID": "1-2267455206"
+      "Provider ID": "1-2267455206",
+      "Distance from postcode": "0.5 miles"
     },
     {
       "Location ID": "1-2452961533",
@@ -1366,7 +1441,8 @@
       "Location Longitude": "1.724909",
       "CQC Rating": "Good",
       "Provider Name": "Heritage Care At Home Ltd",
-      "Provider ID": "1-121615362"
+      "Provider ID": "1-121615362",
+      "Distance from postcode": "Not applicable"
     },
     {
       "Location ID": "1-2508473270",
@@ -1384,7 +1460,8 @@
       "Location Longitude": "1.737976",
       "CQC Rating": "Good",
       "Provider Name": "The Royal Masonic Benevolent Institution Care Company",
-      "Provider ID": "1-2218523567"
+      "Provider ID": "1-2218523567",
+      "Distance from postcode": "Not applicable"
     },
     {
       "Location ID": "1-2735055843",
@@ -1402,7 +1479,8 @@
       "Location Longitude": "0.945732",
       "CQC Rating": "Good",
       "Provider Name": "Anglia Home Care Limited",
-      "Provider ID": "1-101675628"
+      "Provider ID": "1-101675628",
+      "Distance from postcode": "Not applicable"
     },
     {
       "Location ID": "1-2845255112",
@@ -1420,7 +1498,8 @@
       "Location Longitude": "0.408904",
       "CQC Rating": "Outstanding",
       "Provider Name": "Suffolk County Council",
-      "Provider ID": "1-101616919"
+      "Provider ID": "1-101616919",
+      "Distance from postcode": "1.6 miles"
     },
     {
       "Location ID": "1-2989956028",
@@ -1438,7 +1517,8 @@
       "Location Longitude": "0.712355",
       "CQC Rating": "Good",
       "Provider Name": "Lifeways Community Care Limited",
-      "Provider ID": "1-101675727"
+      "Provider ID": "1-101675727",
+      "Distance from postcode": "Not applicable"
     },
     {
       "Location ID": "1-3087260524",
@@ -1456,7 +1536,8 @@
       "Location Longitude": "0.71901",
       "CQC Rating": "Requires improvement",
       "Provider Name": "Harmonize Care Ltd",
-      "Provider ID": "1-2837720239"
+      "Provider ID": "1-2837720239",
+      "Distance from postcode": "Not applicable"
     },
     {
       "Location ID": "1-3306736227",
@@ -1474,7 +1555,8 @@
       "Location Longitude": "1.357488",
       "CQC Rating": "Good",
       "Provider Name": "Anchor Hanover Group",
-      "Provider ID": "1-102642895"
+      "Provider ID": "1-102642895",
+      "Distance from postcode": "Not applicable"
     },
     {
       "Location ID": "1-4017347567",
@@ -1492,7 +1574,8 @@
       "Location Longitude": "1.136802",
       "CQC Rating": "Good",
       "Provider Name": "Fountain of Health Ltd",
-      "Provider ID": "1-3913516721"
+      "Provider ID": "1-3913516721",
+      "Distance from postcode": "Not applicable"
     },
     {
       "Location ID": "1-4197363711",
@@ -1510,7 +1593,8 @@
       "Location Longitude": "1.43464",
       "CQC Rating": "Good",
       "Provider Name": "Cathena Healthcare Limited",
-      "Provider ID": "1-4175772412"
+      "Provider ID": "1-4175772412",
+      "Distance from postcode": "Not applicable"
     },
     {
       "Location ID": "1-4335876242",
@@ -1528,7 +1612,8 @@
       "Location Longitude": "0.490125",
       "CQC Rating": "Requires improvement",
       "Provider Name": "Stow Healthcare Group Limited",
-      "Provider ID": "1-4138899486"
+      "Provider ID": "1-4138899486",
+      "Distance from postcode": "Not applicable"
     },
     {
       "Location ID": "1-4367273345",
@@ -1546,7 +1631,8 @@
       "Location Longitude": "0.439782",
       "CQC Rating": "Inadequate",
       "Provider Name": "Southgate Community Support Ltd",
-      "Provider ID": "1-2325472087"
+      "Provider ID": "1-2325472087",
+      "Distance from postcode": "0.4 miles"
     },
     {
       "Location ID": "1-4375991203",
@@ -1564,7 +1650,8 @@
       "Location Longitude": "0.747719",
       "CQC Rating": "Requires improvement",
       "Provider Name": "Millbrook Wellbeing Care Ltd",
-      "Provider ID": "1-73228529159"
+      "Provider ID": "1-73228529159",
+      "Distance from postcode": "3.0 miles"
     },
     {
       "Location ID": "1-4474080169",
@@ -1582,7 +1669,8 @@
       "Location Longitude": "0.625296",
       "CQC Rating": "Good",
       "Provider Name": "Angels By Classic (Healthcare At Home) Limited",
-      "Provider ID": "1-2107699351"
+      "Provider ID": "1-2107699351",
+      "Distance from postcode": "Not applicable"
     },
     {
       "Location ID": "1-4624830465",
@@ -1600,7 +1688,8 @@
       "Location Longitude": "1.40561",
       "CQC Rating": "Good",
       "Provider Name": "Deben Willow Care Limited",
-      "Provider ID": "1-2697523103"
+      "Provider ID": "1-2697523103",
+      "Distance from postcode": "Not applicable"
     },
     {
       "Location ID": "1-4726313044",
@@ -1618,7 +1707,8 @@
       "Location Longitude": "0.740204",
       "CQC Rating": "Good",
       "Provider Name": "Minster Care Management Limited",
-      "Provider ID": "1-101647792"
+      "Provider ID": "1-101647792",
+      "Distance from postcode": "0.4 miles"
     },
     {
       "Location ID": "1-4922344749",
@@ -1636,7 +1726,8 @@
       "Location Longitude": "1.708388",
       "CQC Rating": "Good",
       "Provider Name": "Orion Healthcare Limited",
-      "Provider ID": "1-4827880000"
+      "Provider ID": "1-4827880000",
+      "Distance from postcode": "Not applicable"
     },
     {
       "Location ID": "1-4997398499",
@@ -1654,7 +1745,8 @@
       "Location Longitude": "0.736904",
       "CQC Rating": "Requires improvement",
       "Provider Name": "Fieldstone Care Solutions Ltd",
-      "Provider ID": "1-72317498822"
+      "Provider ID": "1-72317498822",
+      "Distance from postcode": "1.3 miles"
     },
     {
       "Location ID": "1-5339649357",
@@ -1672,7 +1764,8 @@
       "Location Longitude": "1.718928",
       "CQC Rating": "Requires improvement",
       "Provider Name": "Park View Care Home (Ipswich) Limited",
-      "Provider ID": "1-5202947781"
+      "Provider ID": "1-5202947781",
+      "Distance from postcode": "Not applicable"
     },
     {
       "Location ID": "1-5437233141",
@@ -1690,7 +1783,8 @@
       "Location Longitude": "0.636049",
       "CQC Rating": "Good",
       "Provider Name": "Camanchi Care Limited",
-      "Provider ID": "1-5022163717"
+      "Provider ID": "1-5022163717",
+      "Distance from postcode": "Not applicable"
     },
     {
       "Location ID": "1-5446781338",
@@ -1708,7 +1802,8 @@
       "Location Longitude": "0.735387",
       "CQC Rating": "Good",
       "Provider Name": "PnS (Family Care Services) Limited",
-      "Provider ID": "1-719696879"
+      "Provider ID": "1-719696879",
+      "Distance from postcode": "0.4 miles"
     },
     {
       "Location ID": "1-5764989165",
@@ -1726,7 +1821,8 @@
       "Location Longitude": "0.968642",
       "CQC Rating": "Good",
       "Provider Name": "G P Homecare Limited",
-      "Provider ID": "1-101694224"
+      "Provider ID": "1-101694224",
+      "Distance from postcode": "Not applicable"
     },
     {
       "Location ID": "1-5764989478",
@@ -1744,7 +1840,8 @@
       "Location Longitude": "1.184699",
       "CQC Rating": "Good",
       "Provider Name": "G P Homecare Limited",
-      "Provider ID": "1-101694224"
+      "Provider ID": "1-101694224",
+      "Distance from postcode": "Not applicable"
     },
     {
       "Location ID": "1-5764989535",
@@ -1762,7 +1859,8 @@
       "Location Longitude": "0.636049",
       "CQC Rating": "Good",
       "Provider Name": "G P Homecare Limited",
-      "Provider ID": "1-101694224"
+      "Provider ID": "1-101694224",
+      "Distance from postcode": "Not applicable"
     },
     {
       "Location ID": "1-6093981374",
@@ -1780,7 +1878,8 @@
       "Location Longitude": "0.992258",
       "CQC Rating": "Good",
       "Provider Name": "AMC Care Ltd",
-      "Provider ID": "1-5827356042"
+      "Provider ID": "1-5827356042",
+      "Distance from postcode": "Not applicable"
     },
     {
       "Location ID": "1-6133189042",
@@ -1798,7 +1897,8 @@
       "Location Longitude": "1.754221",
       "CQC Rating": "Good",
       "Provider Name": "Cygnet Care Limited",
-      "Provider ID": "1-101705077"
+      "Provider ID": "1-101705077",
+      "Distance from postcode": "Not applicable"
     },
     {
       "Location ID": "1-6192575446",
@@ -1816,7 +1916,8 @@
       "Location Longitude": "1.435001",
       "CQC Rating": "Good",
       "Provider Name": "Athena Care Homes (Monmouth) Limited",
-      "Provider ID": "1-6093994638"
+      "Provider ID": "1-6093994638",
+      "Distance from postcode": "Not applicable"
     },
     {
       "Location ID": "1-6193818659",
@@ -1834,7 +1935,8 @@
       "Location Longitude": "1.595396",
       "CQC Rating": "Requires improvement",
       "Provider Name": "St Edmunds Care Ltd",
-      "Provider ID": "1-4349374369"
+      "Provider ID": "1-4349374369",
+      "Distance from postcode": "Not applicable"
     },
     {
       "Location ID": "1-6467897211",
@@ -1852,7 +1954,8 @@
       "Location Longitude": "0.944441",
       "CQC Rating": "Good",
       "Provider Name": "Cambridge Care Company Limited",
-      "Provider ID": "1-231150250"
+      "Provider ID": "1-231150250",
+      "Distance from postcode": "Not applicable"
     },
     {
       "Location ID": "1-6782894325",
@@ -1870,7 +1973,8 @@
       "Location Longitude": "1.144529",
       "CQC Rating": "Inadequate",
       "Provider Name": "WilsonParker Limited",
-      "Provider ID": "1-101659246"
+      "Provider ID": "1-101659246",
+      "Distance from postcode": "Not applicable"
     },
     {
       "Location ID": "1-6794046146",
@@ -1888,7 +1992,8 @@
       "Location Longitude": "1.543341",
       "CQC Rating": "Good",
       "Provider Name": "Royale Homecare Ltd",
-      "Provider ID": "1-5518172017"
+      "Provider ID": "1-5518172017",
+      "Distance from postcode": "Not applicable"
     },
     {
       "Location ID": "1-7207326819",
@@ -1906,7 +2011,8 @@
       "Location Longitude": "0.421905",
       "CQC Rating": "Outstanding",
       "Provider Name": "Amber Care Group Ltd",
-      "Provider ID": "1-79630207205"
+      "Provider ID": "1-79630207205",
+      "Distance from postcode": "1.0 miles"
     },
     {
       "Location ID": "1-7285074870",
@@ -1924,7 +2030,8 @@
       "Location Longitude": "0.745942",
       "CQC Rating": "Requires improvement",
       "Provider Name": "Blackthorpe Care Partners Ltd",
-      "Provider ID": "1-910804645245"
+      "Provider ID": "1-910804645245",
+      "Distance from postcode": "0.7 miles"
     },
     {
       "Location ID": "1-7424248280",
@@ -1942,7 +2049,8 @@
       "Location Longitude": "0.743614",
       "CQC Rating": "Good",
       "Provider Name": "Optima HCI Limited",
-      "Provider ID": "1-7094083535"
+      "Provider ID": "1-7094083535",
+      "Distance from postcode": "0.7 miles"
     },
     {
       "Location ID": "1-7840814436",
@@ -1960,7 +2068,8 @@
       "Location Longitude": "1.743677",
       "CQC Rating": "Requires improvement",
       "Provider Name": "Nightingale Homecare Suffolk Ltd",
-      "Provider ID": "1-7808067788"
+      "Provider ID": "1-7808067788",
+      "Distance from postcode": "Not applicable"
     },
     {
       "Location ID": "1-8279498524",
@@ -1978,7 +2087,8 @@
       "Location Longitude": "0.66801",
       "CQC Rating": "Good",
       "Provider Name": "Sunflower Homecare Ltd",
-      "Provider ID": "1-7813771099"
+      "Provider ID": "1-7813771099",
+      "Distance from postcode": "4.9 miles"
     },
     {
       "Location ID": "1-8622733735",
@@ -1996,7 +2106,8 @@
       "Location Longitude": "1.36392",
       "CQC Rating": "Requires improvement",
       "Provider Name": "Amica Homecare Limited",
-      "Provider ID": "1-8082942543"
+      "Provider ID": "1-8082942543",
+      "Distance from postcode": "Not applicable"
     },
     {
       "Location ID": "1-8745395006",
@@ -2014,7 +2125,8 @@
       "Location Longitude": "0.726725",
       "CQC Rating": "Good",
       "Provider Name": "Wickham Care Company Ltd",
-      "Provider ID": "1-8164760029"
+      "Provider ID": "1-8164760029",
+      "Distance from postcode": "Not applicable"
     },
     {
       "Location ID": "1-8775590353",
@@ -2032,7 +2144,8 @@
       "Location Longitude": "1.735441",
       "CQC Rating": "Good",
       "Provider Name": "Inspire Social Care Services",
-      "Provider ID": "1-8365856723"
+      "Provider ID": "1-8365856723",
+      "Distance from postcode": "Not applicable"
     },
     {
       "Location ID": "1-9005783097",
@@ -2050,7 +2163,8 @@
       "Location Longitude": "0.991697",
       "CQC Rating": "Inadequate",
       "Provider Name": "Midshires Care Limited",
-      "Provider ID": "1-101671690"
+      "Provider ID": "1-101671690",
+      "Distance from postcode": "Not applicable"
     },
     {
       "Location ID": "1-9177993068",
@@ -2068,7 +2182,8 @@
       "Location Longitude": "1.696674",
       "CQC Rating": "Good",
       "Provider Name": "Saturn Healthcare Ltd",
-      "Provider ID": "1-656411173"
+      "Provider ID": "1-656411173",
+      "Distance from postcode": "Not applicable"
     },
     {
       "Location ID": "1-9402551977",
@@ -2086,7 +2201,8 @@
       "Location Longitude": "0.832846",
       "CQC Rating": "Requires improvement",
       "Provider Name": "Highworth Care Ltd",
-      "Provider ID": "1-9201325948"
+      "Provider ID": "1-9201325948",
+      "Distance from postcode": "Not applicable"
     },
     {
       "Location ID": "1-9769147635",
@@ -2104,7 +2220,8 @@
       "Location Longitude": "0.721439",
       "CQC Rating": "Outstanding",
       "Provider Name": "Purest Support Limited",
-      "Provider ID": "1-8995940952"
+      "Provider ID": "1-8995940952",
+      "Distance from postcode": "Not applicable"
     },
     {
       "Location ID": "1-9976760806",
@@ -2122,7 +2239,8 @@
       "Location Longitude": "1.306476",
       "CQC Rating": "Good",
       "Provider Name": "St Peter's Care Home Limited",
-      "Provider ID": "1-9580225400"
+      "Provider ID": "1-9580225400",
+      "Distance from postcode": "Not applicable"
     },
     {
       "Location ID": "1-9983501615",
@@ -2140,7 +2258,8 @@
       "Location Longitude": "1.714054",
       "CQC Rating": "Inadequate",
       "Provider Name": "Support Haven Ltd",
-      "Provider ID": "1-9716977110"
+      "Provider ID": "1-9716977110",
+      "Distance from postcode": "Not applicable"
     },
     {
       "Location ID": "1-10000302982",
@@ -2158,7 +2277,8 @@
       "Location Longitude": "0.422844",
       "CQC Rating": "Good",
       "Provider Name": "Greensleeves Homes Trust",
-      "Provider ID": "1-102642938"
+      "Provider ID": "1-102642938",
+      "Distance from postcode": "1.1 miles"
     },
     {
       "Location ID": "1-10046654231",
@@ -2176,7 +2296,8 @@
       "Location Longitude": "1.187176",
       "CQC Rating": "Good",
       "Provider Name": "Advantage Angels Ltd",
-      "Provider ID": "1-9660271539"
+      "Provider ID": "1-9660271539",
+      "Distance from postcode": "Not applicable"
     },
     {
       "Location ID": "1-10170537209",
@@ -2194,7 +2315,8 @@
       "Location Longitude": "1.741247",
       "CQC Rating": "Good",
       "Provider Name": "Barnett Care Homes Ltd",
-      "Provider ID": "1-9335501812"
+      "Provider ID": "1-9335501812",
+      "Distance from postcode": "Not applicable"
     },
     {
       "Location ID": "1-10615566937",
@@ -2212,7 +2334,8 @@
       "Location Longitude": "1.19197",
       "CQC Rating": "Good",
       "Provider Name": "AgeCare MG2 Ltd",
-      "Provider ID": "1-10451003538"
+      "Provider ID": "1-10451003538",
+      "Distance from postcode": "Not applicable"
     },
     {
       "Location ID": "1-10936037140",
@@ -2230,7 +2353,8 @@
       "Location Longitude": "1.03222",
       "CQC Rating": "Good",
       "Provider Name": "Brampton Manor Newmarket Ltd",
-      "Provider ID": "1-10431439565"
+      "Provider ID": "1-10431439565",
+      "Distance from postcode": "Not applicable"
     },
     {
       "Location ID": "1-11639017786",
@@ -2248,7 +2372,8 @@
       "Location Longitude": "0.687727",
       "CQC Rating": "Outstanding",
       "Provider Name": "Alina Homecare Services Limited",
-      "Provider ID": "1-6455105516"
+      "Provider ID": "1-6455105516",
+      "Distance from postcode": "Not applicable"
     },
     {
       "Location ID": "1-11939209142",
@@ -2266,7 +2391,8 @@
       "Location Longitude": "1.123503",
       "CQC Rating": "Requires improvement",
       "Provider Name": "Lifetree Homecare Ltd",
-      "Provider ID": "1-11163580005"
+      "Provider ID": "1-11163580005",
+      "Distance from postcode": "Not applicable"
     },
     {
       "Location ID": "1-12206743129",
@@ -2284,7 +2410,8 @@
       "Location Longitude": "0.747522",
       "CQC Rating": "Outstanding",
       "Provider Name": "Briar Care Services Ltd",
-      "Provider ID": "1-2889816179"
+      "Provider ID": "1-2889816179",
+      "Distance from postcode": "3.0 miles"
     },
     {
       "Location ID": "1-12370181670",
@@ -2302,7 +2429,8 @@
       "Location Longitude": "0.478906",
       "CQC Rating": "Good",
       "Provider Name": "Healthcare Homes (LSC) Limited",
-      "Provider ID": "1-790958178"
+      "Provider ID": "1-790958178",
+      "Distance from postcode": "1.4 miles"
     },
     {
       "Location ID": "1-12958090508",
@@ -2320,7 +2448,8 @@
       "Location Longitude": "1.311063",
       "CQC Rating": "Good",
       "Provider Name": "BW Care Ltd",
-      "Provider ID": "1-12427824081"
+      "Provider ID": "1-12427824081",
+      "Distance from postcode": "Not applicable"
     },
     {
       "Location ID": "1-13166584889",
@@ -2338,7 +2467,8 @@
       "Location Longitude": "1.079441",
       "CQC Rating": "Outstanding",
       "Provider Name": "District Care Ltd",
-      "Provider ID": "1-1013084464"
+      "Provider ID": "1-1013084464",
+      "Distance from postcode": "Not applicable"
     },
     {
       "Location ID": "1-13319120539",
@@ -2356,7 +2486,8 @@
       "Location Longitude": "1.554561",
       "CQC Rating": "Good",
       "Provider Name": "Stow Healthcare Group Limited",
-      "Provider ID": "1-4138899486"
+      "Provider ID": "1-4138899486",
+      "Distance from postcode": "Not applicable"
     },
     {
       "Location ID": "1-13945514400",
@@ -2374,7 +2505,8 @@
       "Location Longitude": "1.251331",
       "CQC Rating": "Good",
       "Provider Name": "Complexus Spinal Care Limited",
-      "Provider ID": "1-13935318068"
+      "Provider ID": "1-13935318068",
+      "Distance from postcode": "Not applicable"
     },
     {
       "Location ID": "1-14320830700",
@@ -2392,7 +2524,8 @@
       "Location Longitude": "1.238156",
       "CQC Rating": "Good",
       "Provider Name": "Black Swan International Limited",
-      "Provider ID": "1-101660404"
+      "Provider ID": "1-101660404",
+      "Distance from postcode": "Not applicable"
     },
     {
       "Location ID": "1-14526433151",
@@ -2410,7 +2543,8 @@
       "Location Longitude": "1.340491",
       "CQC Rating": "Requires improvement",
       "Provider Name": "Trust Homecare Solution South Suffolk Limited",
-      "Provider ID": "1-13271544566"
+      "Provider ID": "1-13271544566",
+      "Distance from postcode": "Not applicable"
     },
     {
       "Location ID": "1-14764402535",
@@ -2428,7 +2562,8 @@
       "Location Longitude": "1.115616",
       "CQC Rating": "Good",
       "Provider Name": "WEAREFAMILY CARE LTD",
-      "Provider ID": "1-13929245742"
+      "Provider ID": "1-13929245742",
+      "Distance from postcode": "Not applicable"
     },
     {
       "Location ID": "1-15521798386",
@@ -2446,7 +2581,8 @@
       "Location Longitude": "0.875559",
       "CQC Rating": "Good",
       "Provider Name": "TLC Care Homes Supported Living Limited",
-      "Provider ID": "1-8927516072"
+      "Provider ID": "1-8927516072",
+      "Distance from postcode": "Not applicable"
     },
     {
       "Location ID": "1-15659339552",
@@ -2464,7 +2600,8 @@
       "Location Longitude": "1.349104",
       "CQC Rating": "Inadequate",
       "Provider Name": "Marvel Care Ltd",
-      "Provider ID": "1-15132617207"
+      "Provider ID": "1-15132617207",
+      "Distance from postcode": "Not applicable"
     },
     {
       "Location ID": "1-15670673645",
@@ -2482,7 +2619,8 @@
       "Location Longitude": "1.490242",
       "CQC Rating": "Good",
       "Provider Name": "Re-Create Social Enterprises Limited",
-      "Provider ID": "1-14853376700"
+      "Provider ID": "1-14853376700",
+      "Distance from postcode": "Not applicable"
     },
     {
       "Location ID": "1-16614175173",
@@ -2500,7 +2638,8 @@
       "Location Longitude": "1.343019",
       "CQC Rating": "Good",
       "Provider Name": "LivLa Limited",
-      "Provider ID": "1-14717163105"
+      "Provider ID": "1-14717163105",
+      "Distance from postcode": "Not applicable"
     },
     {
       "Location ID": "1-17188093512",
@@ -2518,7 +2657,8 @@
       "Location Longitude": "0.712279",
       "CQC Rating": "Inadequate",
       "Provider Name": "Master Care Ltd",
-      "Provider ID": "1-14595888065"
+      "Provider ID": "1-14595888065",
+      "Distance from postcode": "Not applicable"
     },
     {
       "Location ID": "1-18140303145",
@@ -2536,7 +2676,8 @@
       "Location Longitude": "0.705461",
       "CQC Rating": "Good",
       "Provider Name": "FJK Healthcare Limited",
-      "Provider ID": "1-13410157056"
+      "Provider ID": "1-13410157056",
+      "Distance from postcode": "Not applicable"
     },
     {
       "Location ID": "1-18296156434",
@@ -2554,7 +2695,8 @@
       "Location Longitude": "1.240574",
       "CQC Rating": "Outstanding",
       "Provider Name": "Maven Healthcare (North Court) LLP",
-      "Provider ID": "1-18019383104"
+      "Provider ID": "1-18019383104",
+      "Distance from postcode": "Not applicable"
     },
     {
       "Location ID": "1-18338478124",
@@ -2572,7 +2714,8 @@
       "Location Longitude": "1.14341",
       "CQC Rating": "Good",
       "Provider Name": "Haverhill Health Care Agency Ltd",
-      "Provider ID": "1-16514929002"
+      "Provider ID": "1-16514929002",
+      "Distance from postcode": "Not applicable"
     },
     {
       "Location ID": "1-18773168970",
@@ -2590,7 +2733,8 @@
       "Location Longitude": "1.291775",
       "CQC Rating": "Good",
       "Provider Name": "TLC Care Homes Supported Living Limited",
-      "Provider ID": "1-8927516072"
+      "Provider ID": "1-8927516072",
+      "Distance from postcode": "Not applicable"
     },
     {
       "Location ID": "1-19384329955",
@@ -2608,7 +2752,8 @@
       "Location Longitude": "0.70496",
       "CQC Rating": "Good",
       "Provider Name": "Danforth Care Felixstowe Limited",
-      "Provider ID": "1-18017390911"
+      "Provider ID": "1-18017390911",
+      "Distance from postcode": "Not applicable"
     },
     {
       "Location ID": "1-19801368343",
@@ -2626,7 +2771,8 @@
       "Location Longitude": "1.585612",
       "CQC Rating": "Good",
       "Provider Name": "Insight Care Agency Ltd",
-      "Provider ID": "1-18231043801"
+      "Provider ID": "1-18231043801",
+      "Distance from postcode": "Not applicable"
     },
     {
       "Location ID": "1-19887162381",
@@ -2644,7 +2790,8 @@
       "Location Longitude": "1.122387",
       "CQC Rating": "Good",
       "Provider Name": "Colchester Road Residential Home Limited",
-      "Provider ID": "1-14961993715"
+      "Provider ID": "1-14961993715",
+      "Distance from postcode": "Not applicable"
     },
     {
       "Location ID": "1-19896706381",
@@ -2662,7 +2809,8 @@
       "Location Longitude": "1.140332",
       "CQC Rating": "Good",
       "Provider Name": "Care UK Care Services Limited",
-      "Provider ID": "1-118164369"
+      "Provider ID": "1-118164369",
+      "Distance from postcode": "Not applicable"
     },
     {
       "Location ID": "1-19896727379",
@@ -2680,7 +2828,8 @@
       "Location Longitude": "1.118601",
       "CQC Rating": "Inadequate",
       "Provider Name": "Care UK Care Services Limited",
-      "Provider ID": "1-118164369"
+      "Provider ID": "1-118164369",
+      "Distance from postcode": "Not applicable"
     },
     {
       "Location ID": "1-20394477007",
@@ -2698,7 +2847,8 @@
       "Location Longitude": "1.349986",
       "CQC Rating": "Good",
       "Provider Name": "WeCan Suffolk CIC",
-      "Provider ID": "1-20394418614"
+      "Provider ID": "1-20394418614",
+      "Distance from postcode": "Not applicable"
     },
     {
       "Location ID": "1-22152667493",
@@ -2716,7 +2866,8 @@
       "Location Longitude": "1.731638",
       "CQC Rating": "Good",
       "Provider Name": "Right Care Local Ltd",
-      "Provider ID": "1-20710412669"
+      "Provider ID": "1-20710412669",
+      "Distance from postcode": "Not applicable"
     },
     {
       "Location ID": "1-22158748466",
@@ -2734,7 +2885,8 @@
       "Location Longitude": "1.185974",
       "CQC Rating": "Requires improvement",
       "Provider Name": "Skej Limited",
-      "Provider ID": "1-20628751065"
+      "Provider ID": "1-20628751065",
+      "Distance from postcode": "Not applicable"
     },
     {
       "Location ID": "1-22819950817",
@@ -2752,7 +2904,8 @@
       "Location Longitude": "1.187112",
       "CQC Rating": "Good",
       "Provider Name": "Your Mental Health Support Ltd",
-      "Provider ID": "1-20711514874"
+      "Provider ID": "1-20711514874",
+      "Distance from postcode": "Not applicable"
     },
     {
       "Location ID": "1-23000697686",
@@ -2770,7 +2923,8 @@
       "Location Longitude": "1.172371",
       "CQC Rating": "Good",
       "Provider Name": "True Care and Companionship Limited",
-      "Provider ID": "1-21300068932"
+      "Provider ID": "1-21300068932",
+      "Distance from postcode": "Not applicable"
     },
     {
       "Location ID": "1-23285313760",
@@ -2788,7 +2942,8 @@
       "Location Longitude": "1.153686",
       "CQC Rating": "Good",
       "Provider Name": "Empower Recruitment Ltd",
-      "Provider ID": "1-18245727848"
+      "Provider ID": "1-18245727848",
+      "Distance from postcode": "Not applicable"
     },
     {
       "Location ID": "1-23687698400",
@@ -2806,7 +2961,8 @@
       "Location Longitude": "0.730401",
       "CQC Rating": "Requires improvement",
       "Provider Name": "Great Hope Care Ltd",
-      "Provider ID": "1-20709625052"
+      "Provider ID": "1-20709625052",
+      "Distance from postcode": "0.1 miles"
     },
     {
       "Location ID": "1-23844478137",
@@ -2824,7 +2980,8 @@
       "Location Longitude": "0.463777",
       "CQC Rating": "Good",
       "Provider Name": "Reliance Health and Care Services Suffolk LTD",
-      "Provider ID": "1-21285320882"
+      "Provider ID": "1-21285320882",
+      "Distance from postcode": "Not applicable"
     },
     {
       "Location ID": "1-23859147115",
@@ -2842,7 +2999,8 @@
       "Location Longitude": "1.345107",
       "CQC Rating": "Good",
       "Provider Name": "Daily Care Suffolk Ltd",
-      "Provider ID": "1-22151543543"
+      "Provider ID": "1-22151543543",
+      "Distance from postcode": "Not applicable"
     },
     {
       "Location ID": "1-24302660018",
@@ -2860,7 +3018,8 @@
       "Location Longitude": "1.690917",
       "CQC Rating": "Outstanding",
       "Provider Name": "Kingsley Home Care Services Limited",
-      "Provider ID": "1-6775785908"
+      "Provider ID": "1-6775785908",
+      "Distance from postcode": "Not applicable"
     },
     {
       "Location ID": "1-24618268596",
@@ -2878,7 +3037,8 @@
       "Location Longitude": "0.707056",
       "CQC Rating": "Requires improvement",
       "Provider Name": "Inroads (Essex) Ltd",
-      "Provider ID": "1-101656750"
+      "Provider ID": "1-101656750",
+      "Distance from postcode": "Not applicable"
     },
     {
       "Location ID": "1-24636191135",
@@ -2896,7 +3056,8 @@
       "Location Longitude": "1.073764",
       "CQC Rating": "Good",
       "Provider Name": "Care Givers Limited",
-      "Provider ID": "1-2586038090"
+      "Provider ID": "1-2586038090",
+      "Distance from postcode": "Not applicable"
     },
     {
       "Location ID": "1-28356558030",
@@ -2914,7 +3075,8 @@
       "Location Longitude": "0.700122",
       "CQC Rating": "Good",
       "Provider Name": "Orchard Wellbeing Care Ltd",
-      "Provider ID": "1-575523611500"
+      "Provider ID": "1-575523611500",
+      "Distance from postcode": "2.5 miles"
     },
     {
       "Location ID": "1-37588171708",
@@ -2932,7 +3094,8 @@
       "Location Longitude": "0.758994",
       "CQC Rating": "Requires improvement",
       "Provider Name": "Amber Community Support Ltd",
-      "Provider ID": "1-250363730197"
+      "Provider ID": "1-250363730197",
+      "Distance from postcode": "2.9 miles"
     },
     {
       "Location ID": "1-43167812895",
@@ -2950,7 +3113,8 @@
       "Location Longitude": "0.744288",
       "CQC Rating": "Requires improvement",
       "Provider Name": "Greenfields Care Partners Ltd",
-      "Provider ID": "1-737372737"
+      "Provider ID": "1-737372737",
+      "Distance from postcode": "0.7 miles"
     },
     {
       "Location ID": "1-60523919729",
@@ -2968,7 +3132,8 @@
       "Location Longitude": "0.432774",
       "CQC Rating": "Inadequate",
       "Provider Name": "Apex Adult Support Ltd",
-      "Provider ID": "1-9027027994"
+      "Provider ID": "1-9027027994",
+      "Distance from postcode": "1.0 miles"
     },
     {
       "Location ID": "1-64232690358",
@@ -2986,7 +3151,8 @@
       "Location Longitude": "0.738511",
       "CQC Rating": "Requires improvement",
       "Provider Name": "Orchard Wellbeing Care Ltd",
-      "Provider ID": "1-122592580844"
+      "Provider ID": "1-122592580844",
+      "Distance from postcode": "0.5 miles"
     },
     {
       "Location ID": "1-95729464728",
@@ -3004,7 +3170,8 @@
       "Location Longitude": "0.436512",
       "CQC Rating": "Requires improvement",
       "Provider Name": "Willow Wellbeing Care Ltd",
-      "Provider ID": "1-980961282"
+      "Provider ID": "1-980961282",
+      "Distance from postcode": "0.6 miles"
     },
     {
       "Location ID": "1-99362327636",
@@ -3022,7 +3189,8 @@
       "Location Longitude": "0.455923",
       "CQC Rating": "Good",
       "Provider Name": "Millbrook Community Support Ltd",
-      "Provider ID": "1-17924620608"
+      "Provider ID": "1-17924620608",
+      "Distance from postcode": "0.6 miles"
     },
     {
       "Location ID": "1-289274447918",
@@ -3040,7 +3208,8 @@
       "Location Longitude": "0.462131",
       "CQC Rating": "Inadequate",
       "Provider Name": "Eastfields Care Solutions Ltd",
-      "Provider ID": "1-3112301029"
+      "Provider ID": "1-3112301029",
+      "Distance from postcode": "0.9 miles"
     },
     {
       "Location ID": "1-419367578778",
@@ -3058,7 +3227,8 @@
       "Location Longitude": "0.756749",
       "CQC Rating": "Requires improvement",
       "Provider Name": "Orchard Care Partners Ltd",
-      "Provider ID": "1-887181536286"
+      "Provider ID": "1-887181536286",
+      "Distance from postcode": "1.2 miles"
     },
     {
       "Location ID": "1-608913314223",
@@ -3076,7 +3246,8 @@
       "Location Longitude": "0.442187",
       "CQC Rating": "Inadequate",
       "Provider Name": "Trust Wellbeing Care Ltd",
-      "Provider ID": "1-396519797"
+      "Provider ID": "1-396519797",
+      "Distance from postcode": "0.2 miles"
     },
     {
       "Location ID": "1-721445372579",
@@ -3094,7 +3265,8 @@
       "Location Longitude": "0.452664",
       "CQC Rating": "Inadequate",
       "Provider Name": "Stour Care Group Ltd",
-      "Provider ID": "1-58885080671"
+      "Provider ID": "1-58885080671",
+      "Distance from postcode": "0.3 miles"
     },
     {
       "Location ID": "1-772436029029",
@@ -3112,7 +3284,8 @@
       "Location Longitude": "0.743473",
       "CQC Rating": "Requires improvement",
       "Provider Name": "Greenfields Care Partners Ltd",
-      "Provider ID": "1-28882554983"
+      "Provider ID": "1-28882554983",
+      "Distance from postcode": "0.6 miles"
     }
   ]
 }
