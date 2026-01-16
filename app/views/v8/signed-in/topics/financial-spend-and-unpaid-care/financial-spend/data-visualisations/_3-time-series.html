@@ -2,7 +2,7 @@
   
   {% set age = (data.ageGroup14 if data.ageGroup14 else ("All age groups" if noFiltersSet else "All age groups")) %}
   {% set supportSetting = (data.supportSetting16 if data.supportSetting16 else ("All types of adult social care" if noFiltersSet else "All types of adult social care")) %}
-  <h4 class="govuk-heading-s">Figure 3: graph of <abbr title="Local Authority">LA</abbr> funding for long-term adult social care ({{supportSetting | lower}}) for {% if data.ageGroup14 == "Aged 18 to 64" or data.ageGroup14 == "Aged 65 and over" %} people{% endif %} {{age | lower}} &ndash; Suffolk <abbr title="Local Authority">LA</abbr>, East of England region and England, financial years 2021 to 2024</h4>
+  <h4 class="govuk-heading-s">Figure 3: graph of <abbr title="Local Authority">LA</abbr> funding for long-term adult social care ({{supportSetting | lower}}) for {% if data.ageGroup14 == "Aged 18 to 64" or data.ageGroup14 == "Aged 65 and over" %} people{% endif %} {{age | lower}} &ndash; Suffolk <abbr title="Local Authority">LA</abbr>, East of England region and England, financial years 2021 to 2024 (£ thousand)</h4>
   {% if data.supportSetting == "Community direct payments" %}
   <img src="/public/images/data-visualisations/financial-spend-and-unpaid-care/financial-spend/time-series-community-direct-payments.jpg" alt class="data-visualisation-image">
   {% elif data.supportSetting == "Community social care" %}

@@ -2,12 +2,14 @@
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
 <!-- Leaflet.js (JavaScript) - Make sure you put this AFTER Leaflet's CSS -->
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
-<!-- Leaflet.markercluster -->
+<!-- Other Leaflet.js assets -->
 <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css" />
 <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css" />
 <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/leaflet-gesture-handling/dist/leaflet-gesture-handling.min.css">
+<script src="https://unpkg.com/leaflet-gesture-handling/dist/leaflet-gesture-handling.min.js"></script>
 <style>
-  
+
   #map {
     height: 420px;
     width: 100%;
@@ -43,6 +45,30 @@
     line-height: 1.3;
   }
 
+  /* --- Map attribution modal (centred) --- */
+  .leaflet-attrib-modal-backdrop {
+    position: absolute;
+    inset: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0,0,0,0.35);
+    z-index: 1000;
+  }
+
+  .leaflet-attrib-modal {
+    background: #ffffff;
+    border: 2px solid #0b0c0c;
+    border-radius: 6px;
+    width: min(520px, calc(100% - 32px));
+    padding: 16px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+  }
+
+  .govuk-button--in-modal {
+    margin-bottom: 0;
+  }
+
   /* Leaflet.markercluster */
   .marker-cluster div {
     font-size: 1rem;
@@ -60,19 +86,7 @@
 
 <div class="govuk-form-group">
 
-  <div class="map-wrap" style="position: relative;">
-    <div id="map"></div>
-
-    <!-- Map overlay: prevents scroll trapping on iPad -->
-    <div id="mapOverlay" style="position: absolute; inset: 0; z-index: 500; background: rgba(255, 255, 255, 0.15); display: none; align-items: center; justify-content: center; text-align: center; padding: 10px;">
-
-      <div class="govuk-inset-text" style="margin: 0; max-width: 28rem;">
-        <strong>Tap to activate the map</strong>
-        <br>
-        You can then drag to move around.
-      </div>
-
-    </div>
+  <div id="map">
 
   </div>
 
@@ -84,143 +98,113 @@
 
 {% if data.postcode and (data.postcode != data.selectedLocationPostcode and data.postcode != undefined) %}
 <script>
-  
+
   // Home location (Haverhill)
   var homeCoords = [52.084024, 0.446052];
   // Initialise the map ONCE, with attribution disabled
   var map = L.map('map', {
-    attributionControl: false
+    attributionControl: false,
+    gestureHandling: true,
+    gestureHandlingOptions: {
+      text: {
+        touch: "Use two fingers to move the map",
+        scroll: "Use Ctrl + scroll to zoom the map",
+        scrollMac: "Use ⌘ + scroll to zoom the map"
+      }
+    }
   }).setView(homeCoords, 12);
 
-  // ================================
-  // Tap-to-activate map interaction
-  // TOUCH DEVICES ONLY
-  // ================================
-  (function () {
+  // Put the home marker in a dedicated pane below clustered markers
+  map.createPane('homePane');
+  map.getPane('homePane').style.zIndex = 399; // below markerPane (400) used by markers/clusters
 
-    // Detect touch devices
-    var isTouchDevice =
-      (window.matchMedia && window.matchMedia('(pointer: coarse)').matches) ||
-      ('ontouchstart' in window) ||
-      (navigator.maxTouchPoints && navigator.maxTouchPoints > 0);
+  // NEW: click pane ABOVE clusters so the home icon is still tappable/clickable
+  map.createPane('homeClickPane');
+  map.getPane('homeClickPane').style.zIndex = 650; // above marker/cluster panes
 
-    // If not touch, do nothing (desktop/laptop UX unchanged)
-    if (!isTouchDevice) {
-      var overlay = document.getElementById('mapOverlay');
-      
-      if (overlay) overlay.style.display = 'none';
-
-      return;
-    }
-
-    var overlay = document.getElementById('mapOverlay');
-    var mapEl = document.getElementById('map');
-
-    if (!overlay || !mapEl || !map) return;
-
-    function disableMapInteractions() {
-      map.scrollWheelZoom.disable();
-      map.dragging.disable();
-      map.touchZoom.disable();
-      map.doubleClickZoom.disable();
-      map.boxZoom.disable();
-      map.keyboard.disable();
-
-      if (map.tap) map.tap.disable();
-
-    }
-
-    function enableMapInteractions() {
-      map.scrollWheelZoom.enable();
-      map.dragging.enable();
-      map.touchZoom.enable();
-      map.doubleClickZoom.enable();
-      map.boxZoom.enable();
-      map.keyboard.enable();
-
-      if (map.tap) map.tap.enable();
-
-    }
-
-    function activateMap() {
-      overlay.style.display = 'none';
-      enableMapInteractions();
-    }
-
-    function deactivateMap() {
-      disableMapInteractions();
-      overlay.style.display = 'flex';
-    }
-
-    // Start inactive on touch devices (so scrolling works)
-    overlay.style.display = 'flex';
-    disableMapInteractions();
-
-    // Activate on tap
-    overlay.addEventListener('touchstart', function (e) {
-      e.preventDefault();
-      activateMap();
-    }, { passive: false });
-
-    overlay.addEventListener('click', function (e) {
-      e.preventDefault();
-      activateMap();
-    });
-
-    // Deactivate if user taps outside map
-    document.addEventListener('touchstart', function (e) {
-      
-      if (!mapEl.contains(e.target) && overlay.style.display === 'none') {
-        deactivateMap();
-      }
-
-    }, { passive: true });
-
-    document.addEventListener('click', function (e) {
-      
-      if (!mapEl.contains(e.target) && overlay.style.display === 'none') {
-        deactivateMap();
-      }
-
-    });
-
-  })();
-
-  // --- Copywrite (©) map button ---
+  // --- Copyright (©) map button -> centred modal ---
   var AttributionToggleControl = L.Control.extend({
     options: { position: 'bottomright' },
 
-    onAdd: function () {
-      
+    onAdd: function (map) {
       var container = L.DomUtil.create('div', 'leaflet-control-zoom leaflet-bar');
 
-      // The © button using Leaflet zoom control structure
+      // The © button
       var link = L.DomUtil.create('a', 'leaflet-control-attribution-toggle', container);
       link.href = '#';
-      link.title = 'Show map attribution';
-      link.innerHTML = '&copy;'; // copyright symbol
+      link.title = 'Open copyright information';
+      link.setAttribute('role', 'button');
+      link.setAttribute('aria-haspopup', 'dialog');
+      link.innerHTML = '&copy;';
 
-      // Copywrite panel (hidden by default)
-      var panel = L.DomUtil.create('div', 'leaflet-control-attribution-expanded', container);
-      
-      panel.style.display = 'none';
-      panel.innerHTML = '&copy; OpenStreetMap contributors';
+      // Create modal backdrop inside the map container so it overlays the map
+      var mapEl = map.getContainer();
 
-      L.DomEvent.disableClickPropagation(link);
+      // Ensure map container can position absolute children
+      if (getComputedStyle(mapEl).position === 'static') {
+        mapEl.style.position = 'relative';
+      }
 
-      link.onclick = function (e) {
+      var backdrop = L.DomUtil.create('div', 'leaflet-attrib-modal-backdrop', mapEl);
+      backdrop.setAttribute('aria-hidden', 'true');
+
+      var modal = L.DomUtil.create('div', 'leaflet-attrib-modal', backdrop);
+      modal.setAttribute('role', 'dialog');
+      modal.setAttribute('aria-modal', 'true');
+      modal.setAttribute('aria-labelledby', 'leaflet-attrib-title');
+
+      modal.innerHTML = "<h5 class='govuk-heading-s' id='leaflet-attrib-title'>Copyright information</h5>" + "<p class='govuk-body'>Leaflet | &copy; OpenStreetMap contributors.</p>";
+
+      var closeBtn = document.createElement('button');
+      closeBtn.type = 'button';
+      closeBtn.className = 'govuk-button govuk-button--in-modal';
+      closeBtn.textContent = 'Close';
+      modal.appendChild(closeBtn);
+
+      function openModal() {
+        backdrop.style.display = 'flex';
+        backdrop.setAttribute('aria-hidden', 'false');
+
+        // Focus the close button immediately
+        setTimeout(function () { closeBtn.focus(); }, 0);
+      }
+
+      function closeModal() {
+        backdrop.style.display = 'none';
+        backdrop.setAttribute('aria-hidden', 'true');
+
+        // Return focus to the © button
+        setTimeout(function () { link.focus(); }, 0);
+      }
+
+      // Prevent map drag/scroll when interacting with modal
+      L.DomEvent.disableClickPropagation(container);
+      L.DomEvent.disableClickPropagation(backdrop);
+      L.DomEvent.disableScrollPropagation(backdrop);
+
+      // Open on click/tap
+      L.DomEvent.on(link, 'click', function (e) {
         L.DomEvent.preventDefault(e);
+        openModal();
+      });
 
-        // Toggle panel
-        if (panel.style.display === 'none') {
-          panel.style.display = 'block';
-          link.title = 'Hide map attribution';
+      // Close button
+      L.DomEvent.on(closeBtn, 'click', function (e) {
+        L.DomEvent.preventDefault(e);
+        closeModal();
+      });
+
+      // Click outside modal closes (optional, but feels natural)
+      L.DomEvent.on(backdrop, 'click', function (e) {
+        if (e.target === backdrop) closeModal();
+      });
+
+      // ESC closes
+      L.DomEvent.on(document, 'keydown', function (e) {
+        if (backdrop.style.display === 'flex' && (e.key === 'Escape' || e.key === 'Esc')) {
+          closeModal();
         }
-        else {
-          panel.style.display = 'none';
-          link.title = 'Show map attribution';
-        }
-      };
+      });
 
       return container;
     }
@@ -245,12 +229,60 @@
     popupAnchor: [0, -50]
   });
 
-  // Home marker
-  L.marker(homeCoords, { icon: homeIcon })
+  // Visible home marker (kept behind clusters)
+  var homeMarker = L.marker(homeCoords, { icon: homeIcon, pane: 'homePane' })
     .addTo(map)
     .bindPopup("<span class='popup'><strong>{{data.postcode}}</strong></span>");
 
-  // --- 5 mile radius circle (Sudbury) ---
+  // --- Make the click target match the icon body (not just the tip) ---
+  function iconHitLatLng(map, anchorLatLng, yOffsetPx) {
+
+    // yOffsetPx should be NEGATIVE to move up
+    var p = map.latLngToLayerPoint(anchorLatLng);
+    var p2 = L.point(p.x, p.y + yOffsetPx);
+
+    return map.layerPointToLatLng(p2);
+  }
+
+  // Keep this updated when zoom changes (fitBounds changes zoom!)
+  var homeHitLatLng = homeCoords;
+
+  // Invisible click target ABOVE clusters (but we can disable it when clusters overlap)
+  var homeClickMarker = L.circleMarker(homeCoords, {
+    pane: 'homeClickPane',
+    radius: 26,
+    opacity: 0,
+    fillOpacity: 0,
+    interactive: true,
+    bubblingMouseEvents: false
+  }).addTo(map);
+
+  function updateHomeClickMarkerPosition() {
+    // Icon is 50px tall and anchored at y=50, so centre is ~25px above the anchor
+    homeHitLatLng = iconHitLatLng(map, homeCoords, -25);
+    homeClickMarker.setLatLng(homeHitLatLng);
+  }
+
+  // Position it once now (will be re-run after fitBounds and on zoom/move)
+  updateHomeClickMarkerPosition();
+
+  // Open the real marker popup on tap/click
+  function openHomePopup() { homeMarker.openPopup(); }
+  homeClickMarker.on('click', openHomePopup);
+  homeClickMarker.on('touchstart', openHomePopup);
+  homeClickMarker.on('pointerdown', openHomePopup);
+
+  function setHomeClickEnabled(enabled) {
+
+    var el = homeClickMarker.getElement && homeClickMarker.getElement();
+
+    if (!el) return;
+
+    // When disabled, it won't receive taps/clicks (clusters will)
+    el.style.pointerEvents = enabled ? 'auto' : 'none';
+  }
+
+  // --- 5 mile radius circle (Haverhill) ---
   // 5 miles in metres
   var fiveMilesInMetres = 8046.72;
   var radiusCircle = L.circle(homeCoords, {
@@ -259,7 +291,8 @@
     fillOpacity: 0.25,
     radius: fiveMilesInMetres
   }).addTo(map);
-  // --- Manual calculations around Sudbury (approx 5 miles) ---
+
+  // --- Manual calculations around Haverhill (approx 5 miles) ---
   // Approx conversions at ~52°N:
   // 1 degree latitude ≈ 111.32 km
   // 1 degree longitude ≈ 111.32 * cos(52°) km ≈ 68.5 km
@@ -272,6 +305,9 @@
 
   // Automatically zoom the map so this "5-mile box" (and thus the circle) is visible
   map.fitBounds(circleBounds);
+
+  // IMPORTANT: fitBounds changes zoom, so re-align the click target afterwards
+  updateHomeClickMarkerPosition();
 
   // --- Reset map view button ---
   var ResetMapControl = L.Control.extend({
@@ -294,6 +330,8 @@
       L.DomEvent.on(link, 'click', function (e) {
         L.DomEvent.preventDefault(e);
         map.fitBounds(circleBounds);
+        // keep click target aligned after reset
+        updateHomeClickMarkerPosition();
       });
 
       return container;
@@ -362,17 +400,17 @@
   }
 
   function matchesServiceTypes(rowServiceTypesStr, selected) {
-    
+
     if (!selected || selected.length === 0) return true;
-    
+
     const rowTypes = splitTypes(rowServiceTypesStr);
     return selected.some(s => rowTypes.includes(String(s).trim().toLowerCase()));
   }
 
   function matchesCqcRating(rowRating, selected) {
-    
+
     if (!selected || selected.length === 0) return true;
-    
+
     const r = String(rowRating || '').trim().toLowerCase();
     return selected.some(x => String(x).trim().toLowerCase() === r);
   }  
@@ -411,16 +449,16 @@
   }
 
   locations.forEach(function (loc) {
-    
+
     // Only include ONE of the two “context” locations
     if (loc.locationId === '1-000000001' && selectedContextServiceType !== 'Care home') return;
     if (loc.locationId === '1-000000002' && selectedContextServiceType !== 'Community social care') return;
     if (!matchesServiceTypes(loc.serviceTypes, selectedServiceTypes)) return;
     if (!matchesCqcRating(loc.cqcRating, selectedCqcRatings)) return;
-    
+
     var lat = parseFloat(loc.lat);
     var lng = parseFloat(loc.lng);
-    
+
     if (isNaN(lat) || isNaN(lng)) return;
 
     var marker = L.marker([lat, lng]);
@@ -439,146 +477,170 @@
 
   map.addLayer(clusters);
 
+  function updateHomeClickPriority() {
+
+    // Default: allow clicking the home icon
+    var enabled = true;
+
+    try {
+
+      // Get rendered cluster/marker layers (includes clusters + unclustered markers)
+      var layers = clusters.getLayers();
+      // Convert home HIT coords to pixel point (screen space)
+      var homePt = map.latLngToLayerPoint(homeHitLatLng);
+      // If any cluster/marker is within ~22px, treat it as overlapping
+      var thresholdPx = 22;
+
+      for (var i = 0; i < layers.length; i++) {
+
+        var lyr = layers[i];
+
+        // Only check visible markers/clusters that are on the map
+        if (!lyr.getLatLng) continue;
+
+        var pt = map.latLngToLayerPoint(lyr.getLatLng());
+        var dx = pt.x - homePt.x;
+        var dy = pt.y - homePt.y;
+
+        if ((dx * dx + dy * dy) <= (thresholdPx * thresholdPx)) {
+          enabled = false; // cluster/marker overlaps home -> clusters win
+          break;
+        }
+
+      }
+    }
+    catch (e) {
+      // If anything goes wrong, fail safe: clusters win
+      enabled = false;
+    }
+
+    setHomeClickEnabled(enabled);
+  }
+
+  function onMapViewChanged() {
+    updateHomeClickMarkerPosition();
+    updateHomeClickPriority();
+  }
+
+  // Run now + whenever the map/cluster layout changes
+  map.whenReady(onMapViewChanged);
+  map.on('zoomend moveend', onMapViewChanged);
+  clusters.on('animationend', updateHomeClickPriority);
+  clusters.on('spiderfied unspiderfied', updateHomeClickPriority);
+
 </script>
 {% else %}
 <script>
-  
+
   // Home location (Sudbury)
   var homeCoords = [52.037456, 0.730166];
   // Initialise the map ONCE, with attribution disabled
   var map = L.map('map', {
-    attributionControl: false
+    attributionControl: false,
+    gestureHandling: true,
+    gestureHandlingOptions: {
+      text: {
+        touch: "Use two fingers to move the map",
+        scroll: "Use Ctrl + scroll to zoom the map",
+        scrollMac: "Use ⌘ + scroll to zoom the map"
+      }
+    }
   }).setView(homeCoords, 12);
 
-  // ================================
-  // Tap-to-activate map interaction
-  // TOUCH DEVICES ONLY
-  // ================================
-  (function () {
+  // Put the home marker in a dedicated pane below clustered markers
+  map.createPane('homePane');
+  map.getPane('homePane').style.zIndex = 399; // below markerPane (400) used by markers/clusters
 
-    // Detect touch devices
-    var isTouchDevice =
-      (window.matchMedia && window.matchMedia('(pointer: coarse)').matches) ||
-      ('ontouchstart' in window) ||
-      (navigator.maxTouchPoints && navigator.maxTouchPoints > 0);
+  // NEW: click pane ABOVE clusters so the home icon is still tappable/clickable
+  map.createPane('homeClickPane');
+  map.getPane('homeClickPane').style.zIndex = 650; // above marker/cluster panes
 
-    // If not touch, do nothing (desktop/laptop UX unchanged)
-    if (!isTouchDevice) {
-      var overlay = document.getElementById('mapOverlay');
-      
-      if (overlay) overlay.style.display = 'none';
-      
-      return;
-    }
-
-    var overlay = document.getElementById('mapOverlay');
-    var mapEl = document.getElementById('map');
-
-    if (!overlay || !mapEl || !map) return;
-
-    function disableMapInteractions() {
-      map.scrollWheelZoom.disable();
-      map.dragging.disable();
-      map.touchZoom.disable();
-      map.doubleClickZoom.disable();
-      map.boxZoom.disable();
-      map.keyboard.disable();
-
-      if (map.tap) map.tap.disable();
-
-    }
-
-    function enableMapInteractions() {
-      map.scrollWheelZoom.enable();
-      map.dragging.enable();
-      map.touchZoom.enable();
-      map.doubleClickZoom.enable();
-      map.boxZoom.enable();
-      map.keyboard.enable();
-
-      if (map.tap) map.tap.enable();
-
-    }
-
-    function activateMap() {
-      overlay.style.display = 'none';
-      enableMapInteractions();
-    }
-
-    function deactivateMap() {
-      disableMapInteractions();
-      overlay.style.display = 'flex';
-    }
-
-    // Start inactive on touch devices (so scrolling works)
-    overlay.style.display = 'flex';
-    disableMapInteractions();
-
-    // Activate on tap
-    overlay.addEventListener('touchstart', function (e) {
-      e.preventDefault();
-      activateMap();
-    }, { passive: false });
-
-    overlay.addEventListener('click', function (e) {
-      e.preventDefault();
-      activateMap();
-    });
-
-    // Deactivate if user taps outside map
-    document.addEventListener('touchstart', function (e) {
-      
-      if (!mapEl.contains(e.target) && overlay.style.display === 'none') {
-        deactivateMap();
-      }
-
-    }, { passive: true });
-
-    document.addEventListener('click', function (e) {
-      
-      if (!mapEl.contains(e.target) && overlay.style.display === 'none') {
-        deactivateMap();
-      }
-
-    });
-
-  })();
-
-  // --- Copywrite (©) map button ---
+  // --- Copyright (©) map button -> centred modal ---
   var AttributionToggleControl = L.Control.extend({
     options: { position: 'bottomright' },
 
-    onAdd: function () {
-
+    onAdd: function (map) {
       var container = L.DomUtil.create('div', 'leaflet-control-zoom leaflet-bar');
-      // The © button using Leaflet zoom control structure
+
+      // The © button
       var link = L.DomUtil.create('a', 'leaflet-control-attribution-toggle', container);
       link.href = '#';
-      link.title = 'Show map attribution';
-      link.innerHTML = '&copy;'; // copyright symbol
-      // Copywrite panel (hidden by default)
-      var panel = L.DomUtil.create('div', 'leaflet-control-attribution-expanded', container);
-      panel.style.display = 'none';
-      panel.innerHTML = '&copy; OpenStreetMap contributors';
-      L.DomEvent.disableClickPropagation(link);
+      link.title = 'Open copyright information';
+      link.setAttribute('role', 'button');
+      link.setAttribute('aria-haspopup', 'dialog');
+      link.innerHTML = '&copy;';
 
-      link.onclick = function (e) {
+      // Create modal backdrop inside the map container so it overlays the map
+      var mapEl = map.getContainer();
+
+      // Ensure map container can position absolute children
+      if (getComputedStyle(mapEl).position === 'static') {
+        mapEl.style.position = 'relative';
+      }
+
+      var backdrop = L.DomUtil.create('div', 'leaflet-attrib-modal-backdrop', mapEl);
+      backdrop.setAttribute('aria-hidden', 'true');
+
+      var modal = L.DomUtil.create('div', 'leaflet-attrib-modal', backdrop);
+      modal.setAttribute('role', 'dialog');
+      modal.setAttribute('aria-modal', 'true');
+      modal.setAttribute('aria-labelledby', 'leaflet-attrib-title');
+
+      modal.innerHTML = "<h5 class='govuk-heading-s' id='leaflet-attrib-title'>Copyright information</h5>" + "<p class='govuk-body'>Leaflet | &copy; OpenStreetMap contributors.</p>";
+
+      var closeBtn = document.createElement('button');
+      closeBtn.type = 'button';
+      closeBtn.className = 'govuk-button govuk-button--in-modal';
+      closeBtn.textContent = 'Close';
+      modal.appendChild(closeBtn);
+
+      function openModal() {
+        backdrop.style.display = 'flex';
+        backdrop.setAttribute('aria-hidden', 'false');
+
+        // Focus the close button immediately
+        setTimeout(function () { closeBtn.focus(); }, 0);
+      }
+
+      function closeModal() {
+        backdrop.style.display = 'none';
+        backdrop.setAttribute('aria-hidden', 'true');
+
+        // Return focus to the © button
+        setTimeout(function () { link.focus(); }, 0);
+      }
+
+      // Prevent map drag/scroll when interacting with modal
+      L.DomEvent.disableClickPropagation(container);
+      L.DomEvent.disableClickPropagation(backdrop);
+      L.DomEvent.disableScrollPropagation(backdrop);
+
+      // Open on click/tap
+      L.DomEvent.on(link, 'click', function (e) {
         L.DomEvent.preventDefault(e);
+        openModal();
+      });
 
-        // Toggle panel
-        if (panel.style.display === 'none') {
-          panel.style.display = 'block';
-          link.title = 'Hide map attribution';
+      // Close button
+      L.DomEvent.on(closeBtn, 'click', function (e) {
+        L.DomEvent.preventDefault(e);
+        closeModal();
+      });
+
+      // Click outside modal closes (optional, but feels natural)
+      L.DomEvent.on(backdrop, 'click', function (e) {
+        if (e.target === backdrop) closeModal();
+      });
+
+      // ESC closes
+      L.DomEvent.on(document, 'keydown', function (e) {
+        if (backdrop.style.display === 'flex' && (e.key === 'Escape' || e.key === 'Esc')) {
+          closeModal();
         }
-        else {
-          panel.style.display = 'none';
-          link.title = 'Show map attribution';
-        }
-      };
+      });
 
       return container;
     }
-
   });
 
   map.addControl(new AttributionToggleControl());
@@ -592,20 +654,67 @@
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
   }).addTo(map);
 
-  // Home icon
+  // Postcode icon
   var homeIcon = L.icon({
-    iconUrl: '/public/images/your-care-home.svg',
-    iconSize:     [40, 50],
-    shadowSize:   [50, 64],
-    iconAnchor:   [22, 94],
-    shadowAnchor: [4, 62],
-    popupAnchor:  [-3, -76]
+    iconUrl: '/public/images/your-postcode.svg',
+    iconSize: [40, 50],
+    iconAnchor: [20, 50],
+    popupAnchor: [0, -50]
   });
 
-  // Home marker
-  L.marker(homeCoords, { icon: homeIcon })
+  // Visible home marker (kept behind clusters)
+  var homeMarker = L.marker(homeCoords, { icon: homeIcon, pane: 'homePane' })
     .addTo(map)
-    .bindPopup("<span class='popup'><strong>{{data.selectedLocationName or 'Station Road Centre (Sudbury)'}}</strong></span>");
+    .bindPopup("<span class='popup'><strong>{{data.selectedLocationPostcode or 'CO5 1ST'}}</strong></span>");
+
+  // --- Make the click target match the icon body (not just the tip) ---
+  function iconHitLatLng(map, anchorLatLng, yOffsetPx) {
+
+    // yOffsetPx should be NEGATIVE to move up
+    var p = map.latLngToLayerPoint(anchorLatLng);
+    var p2 = L.point(p.x, p.y + yOffsetPx);
+
+    return map.layerPointToLatLng(p2);
+  }
+
+  // Keep this updated when zoom changes (fitBounds changes zoom!)
+  var homeHitLatLng = homeCoords;
+
+  // Invisible click target ABOVE clusters (but we can disable it when clusters overlap)
+  var homeClickMarker = L.circleMarker(homeCoords, {
+    pane: 'homeClickPane',
+    radius: 26,
+    opacity: 0,
+    fillOpacity: 0,
+    interactive: true,
+    bubblingMouseEvents: false
+  }).addTo(map);
+
+  function updateHomeClickMarkerPosition() {
+    // Icon is 50px tall and anchored at y=50, so centre is ~25px above the anchor
+    homeHitLatLng = iconHitLatLng(map, homeCoords, -25);
+    homeClickMarker.setLatLng(homeHitLatLng);
+  }
+
+  // Position it once now (will be re-run after fitBounds and on zoom/move)
+  updateHomeClickMarkerPosition();
+
+  // Open the real marker popup on tap/click
+  function openHomePopup() { homeMarker.openPopup(); }
+  
+  homeClickMarker.on('click', openHomePopup);
+  homeClickMarker.on('touchstart', openHomePopup);
+  homeClickMarker.on('pointerdown', openHomePopup);
+
+  function setHomeClickEnabled(enabled) {
+
+    var el = homeClickMarker.getElement && homeClickMarker.getElement();
+
+    if (!el) return;
+
+    // When disabled, it won't receive taps/clicks (clusters will)
+    el.style.pointerEvents = enabled ? 'auto' : 'none';
+  }
 
   // --- 5 mile radius circle (Sudbury) ---
   // 5 miles in metres
@@ -616,6 +725,7 @@
     fillOpacity: 0.25,
     radius: fiveMilesInMetres
   }).addTo(map);
+
   // --- Manual calculations around Sudbury (approx 5 miles) ---
   // Approx conversions at ~52°N:
   // 1 degree latitude ≈ 111.32 km
@@ -630,12 +740,15 @@
   // Automatically zoom the map so this "5-mile box" (and thus the circle) is visible
   map.fitBounds(circleBounds);
 
+  // IMPORTANT: fitBounds changes zoom, so re-align the click target afterwards
+  updateHomeClickMarkerPosition();
+
   // --- Reset map view button ---
   var ResetMapControl = L.Control.extend({
     options: { position: 'bottomright' },
 
     onAdd: function () {
-      
+
       var container = L.DomUtil.create('div', 'leaflet-control-zoom leaflet-bar');
       var link = L.DomUtil.create('a', 'leaflet-control-reset-map', container);
       link.href = '#';
@@ -651,6 +764,8 @@
       L.DomEvent.on(link, 'click', function (e) {
         L.DomEvent.preventDefault(e);
         map.fitBounds(circleBounds);
+        // keep click target aligned after reset
+        updateHomeClickMarkerPosition();
       });
 
       return container;
@@ -669,7 +784,7 @@
 <script type="application/json" id="selectedContextServiceType">
 
   {{(data.selectedServiceType or '') | dump | safe}}
-  
+
 </script>
 <script type="application/json" id="selectedServiceTypes">
 
@@ -710,7 +825,7 @@
 
 </script>
 <script>
-  
+
   function splitTypes(str) {
     return (str || '')
       .split(',')
@@ -719,17 +834,17 @@
   }
 
   function matchesServiceTypes(rowServiceTypesStr, selected) {
-    
+
     if (!selected || selected.length === 0) return true;
-    
+
     const rowTypes = splitTypes(rowServiceTypesStr);
     return selected.some(s => rowTypes.includes(String(s).trim().toLowerCase()));
   }
 
   function matchesCqcRating(rowRating, selected) {
-   
+
     if (!selected || selected.length === 0) return true;
-    
+
     const r = String(rowRating || '').trim().toLowerCase();
     return selected.some(x => String(x).trim().toLowerCase() === r);
   }
@@ -793,6 +908,57 @@
   });
 
   map.addLayer(clusters);
+
+  function updateHomeClickPriority() {
+
+    // Default: allow clicking the home icon
+    var enabled = true;
+
+    try {
+
+      // Get rendered cluster/marker layers (includes clusters + unclustered markers)
+      var layers = clusters.getLayers();
+      // Convert home HIT coords to pixel point (screen space)
+      var homePt = map.latLngToLayerPoint(homeHitLatLng);
+      // If any cluster/marker is within ~22px, treat it as overlapping
+      var thresholdPx = 22;
+
+      for (var i = 0; i < layers.length; i++) {
+
+        var lyr = layers[i];
+
+        // Only check visible markers/clusters that are on the map
+        if (!lyr.getLatLng) continue;
+
+        var pt = map.latLngToLayerPoint(lyr.getLatLng());
+        var dx = pt.x - homePt.x;
+        var dy = pt.y - homePt.y;
+
+        if ((dx * dx + dy * dy) <= (thresholdPx * thresholdPx)) {
+          enabled = false; // cluster/marker overlaps home -> clusters win
+          break;
+        }
+
+      }
+    }
+    catch (e) {
+      // If anything goes wrong, fail safe: clusters win
+      enabled = false;
+    }
+
+    setHomeClickEnabled(enabled);
+  }
+
+  function onMapViewChanged() {
+    updateHomeClickMarkerPosition();
+    updateHomeClickPriority();
+  }
+
+  // Run now + whenever the map/cluster layout changes
+  map.whenReady(onMapViewChanged);
+  map.on('zoomend moveend', onMapViewChanged);
+  clusters.on('animationend', updateHomeClickPriority);
+  clusters.on('spiderfied unspiderfied', updateHomeClickPriority);
 
 </script>
 {% endif %}
