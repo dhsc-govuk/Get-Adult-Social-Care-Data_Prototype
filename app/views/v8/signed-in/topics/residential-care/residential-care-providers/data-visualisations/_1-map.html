@@ -60,7 +60,19 @@
 
 <div class="govuk-form-group">
 
-  <div id="map">
+  <div class="map-wrap" style="position: relative;">
+    <div id="map"></div>
+
+    <!-- Map overlay: prevents scroll trapping on iPad -->
+    <div id="mapOverlay" style="position: absolute; inset: 0; z-index: 500; background: rgba(255, 255, 255, 0.15); display: none; align-items: center; justify-content: center; text-align: center; padding: 10px;">
+
+      <div class="govuk-inset-text" style="margin: 0; max-width: 28rem;">
+        <strong>Tap to activate the map</strong>
+        <br>
+        You can then drag to move around.
+      </div>
+
+    </div>
 
   </div>
 
@@ -79,6 +91,100 @@
   var map = L.map('map', {
     attributionControl: false
   }).setView(homeCoords, 12);
+
+  // ================================
+  // Tap-to-activate map interaction
+  // TOUCH DEVICES ONLY
+  // ================================
+  (function () {
+
+    // Detect touch devices
+    var isTouchDevice =
+      (window.matchMedia && window.matchMedia('(pointer: coarse)').matches) ||
+      ('ontouchstart' in window) ||
+      (navigator.maxTouchPoints && navigator.maxTouchPoints > 0);
+
+    // If not touch, do nothing (desktop/laptop UX unchanged)
+    if (!isTouchDevice) {
+      var overlay = document.getElementById('mapOverlay');
+      
+      if (overlay) overlay.style.display = 'none';
+
+      return;
+    }
+
+    var overlay = document.getElementById('mapOverlay');
+    var mapEl = document.getElementById('map');
+
+    if (!overlay || !mapEl || !map) return;
+
+    function disableMapInteractions() {
+      map.scrollWheelZoom.disable();
+      map.dragging.disable();
+      map.touchZoom.disable();
+      map.doubleClickZoom.disable();
+      map.boxZoom.disable();
+      map.keyboard.disable();
+
+      if (map.tap) map.tap.disable();
+
+    }
+
+    function enableMapInteractions() {
+      map.scrollWheelZoom.enable();
+      map.dragging.enable();
+      map.touchZoom.enable();
+      map.doubleClickZoom.enable();
+      map.boxZoom.enable();
+      map.keyboard.enable();
+
+      if (map.tap) map.tap.enable();
+
+    }
+
+    function activateMap() {
+      overlay.style.display = 'none';
+      enableMapInteractions();
+    }
+
+    function deactivateMap() {
+      disableMapInteractions();
+      overlay.style.display = 'flex';
+    }
+
+    // Start inactive on touch devices (so scrolling works)
+    overlay.style.display = 'flex';
+    disableMapInteractions();
+
+    // Activate on tap
+    overlay.addEventListener('touchstart', function (e) {
+      e.preventDefault();
+      activateMap();
+    }, { passive: false });
+
+    overlay.addEventListener('click', function (e) {
+      e.preventDefault();
+      activateMap();
+    });
+
+    // Deactivate if user taps outside map
+    document.addEventListener('touchstart', function (e) {
+      
+      if (!mapEl.contains(e.target) && overlay.style.display === 'none') {
+        deactivateMap();
+      }
+
+    }, { passive: true });
+
+    document.addEventListener('click', function (e) {
+      
+      if (!mapEl.contains(e.target) && overlay.style.display === 'none') {
+        deactivateMap();
+      }
+
+    });
+
+  })();
 
   // --- Copywrite (©) map button ---
   var AttributionToggleControl = L.Control.extend({
@@ -343,6 +449,100 @@
   var map = L.map('map', {
     attributionControl: false
   }).setView(homeCoords, 12);
+
+  // ================================
+  // Tap-to-activate map interaction
+  // TOUCH DEVICES ONLY
+  // ================================
+  (function () {
+
+    // Detect touch devices
+    var isTouchDevice =
+      (window.matchMedia && window.matchMedia('(pointer: coarse)').matches) ||
+      ('ontouchstart' in window) ||
+      (navigator.maxTouchPoints && navigator.maxTouchPoints > 0);
+
+    // If not touch, do nothing (desktop/laptop UX unchanged)
+    if (!isTouchDevice) {
+      var overlay = document.getElementById('mapOverlay');
+      
+      if (overlay) overlay.style.display = 'none';
+      
+      return;
+    }
+
+    var overlay = document.getElementById('mapOverlay');
+    var mapEl = document.getElementById('map');
+
+    if (!overlay || !mapEl || !map) return;
+
+    function disableMapInteractions() {
+      map.scrollWheelZoom.disable();
+      map.dragging.disable();
+      map.touchZoom.disable();
+      map.doubleClickZoom.disable();
+      map.boxZoom.disable();
+      map.keyboard.disable();
+
+      if (map.tap) map.tap.disable();
+
+    }
+
+    function enableMapInteractions() {
+      map.scrollWheelZoom.enable();
+      map.dragging.enable();
+      map.touchZoom.enable();
+      map.doubleClickZoom.enable();
+      map.boxZoom.enable();
+      map.keyboard.enable();
+
+      if (map.tap) map.tap.enable();
+
+    }
+
+    function activateMap() {
+      overlay.style.display = 'none';
+      enableMapInteractions();
+    }
+
+    function deactivateMap() {
+      disableMapInteractions();
+      overlay.style.display = 'flex';
+    }
+
+    // Start inactive on touch devices (so scrolling works)
+    overlay.style.display = 'flex';
+    disableMapInteractions();
+
+    // Activate on tap
+    overlay.addEventListener('touchstart', function (e) {
+      e.preventDefault();
+      activateMap();
+    }, { passive: false });
+
+    overlay.addEventListener('click', function (e) {
+      e.preventDefault();
+      activateMap();
+    });
+
+    // Deactivate if user taps outside map
+    document.addEventListener('touchstart', function (e) {
+      
+      if (!mapEl.contains(e.target) && overlay.style.display === 'none') {
+        deactivateMap();
+      }
+
+    }, { passive: true });
+
+    document.addEventListener('click', function (e) {
+      
+      if (!mapEl.contains(e.target) && overlay.style.display === 'none') {
+        deactivateMap();
+      }
+
+    });
+
+  })();
 
   // --- Copywrite (©) map button ---
   var AttributionToggleControl = L.Control.extend({
