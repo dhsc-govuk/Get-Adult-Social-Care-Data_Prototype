@@ -9,23 +9,32 @@ const router = govukPrototypeKit.requests.setupRouter()
 // Workaround for Azure App Service URL encoding
 // https://github.com/Azure/azure-functions-host/pull/9402
 router.use((req, res, next) => {
-  // 1. Capture the URL as Express currently sees it
+  // We only want to interfere with requests for these specific plugin assets
+  const problematicScopes = [
+    '@ministryofjustice',
+    '@x-govuk'
+  ];
+
   let url = req.url;
 
-  // 2. Check if the URL contains a literal '@' 
-  // Azure often decodes %40 to @, which Express might struggle to route
-  if (url.includes('@')) {
+  // Check if the URL contains any of our problematic package scopes
+  const needsRepair = problematicScopes.some(scope => url.includes(scope));
+
+  if (needsRepair) {
+    // 1. Fix the @ symbol
     url = url.replace(/@/g, '%40');
+
+    // 2. Fix the slash specifically within the package scope
+    // This repairs '@ministryofjustice/frontend' to '%40ministryofjustice%2ffrontend'
+    // without breaking the rest of the URL path slashes
+    url = url.replace(/%40ministryofjustice\/frontend/g, '%40ministryofjustice%2ffrontend');
+    url = url.replace(/%40x-govuk\/govuk-prototype-components/g, '%40x-govuk%2fgovuk-prototype-components');
+    url = url.replace(/%40x-govuk\/govuk-prototype-filters/g, '%40x-govuk%2fgovuk-prototype-filters');
+
+    req.url = url;
+    req.originalUrl = url;
   }
 
-  // 3. Fix for 'double slashes' or mangled encoded slashes
-  // Some Azure proxies turn %2F into / which breaks routing logic
-  // This is rarer but happens with scoped npm packages in paths
-  
-  if (url !== req.url) {
-    req.url = url;
-  }
-  
   next();
 });
 
