@@ -9,20 +9,25 @@ const router = govukPrototypeKit.requests.setupRouter()
 // Workaround for Azure App Service URL encoding
 // https://github.com/Azure/azure-functions-host/pull/9402
 router.use((req, res, next) => {
-  // Azure App Service stores the raw URL in this header
-  const rawUrl = req.headers['x-waws-unencoded-url']
-  
-  if (rawUrl) {
-    // rawUrl includes the query string (e.g. /public/images/@user.png?v=1)
-    const urlParts = rawUrl.split('?')
-    
-    // Override the request properties so Express can find the real file
-    req.url = rawUrl
-    req.originalUrl = rawUrl
-    req.path = urlParts[0]
+  // 1. Capture the URL as Express currently sees it
+  let url = req.url;
+
+  // 2. Check if the URL contains a literal '@' 
+  // Azure often decodes %40 to @, which Express might struggle to route
+  if (url.includes('@')) {
+    url = url.replace(/@/g, '%40');
   }
-  next()
-})
+
+  // 3. Fix for 'double slashes' or mangled encoded slashes
+  // Some Azure proxies turn %2F into / which breaks routing logic
+  // This is rarer but happens with scoped npm packages in paths
+  
+  if (url !== req.url) {
+    req.url = url;
+  }
+  
+  next();
+});
 
 // Versioned route files
 require('./routes/private-beta/2026/january/routes')(router)
