@@ -6,37 +6,58 @@
 const govukPrototypeKit = require('govuk-prototype-kit')
 const router = govukPrototypeKit.requests.setupRouter()
 
-// Workaround for Azure App Service URL encoding
-// https://github.com/Azure/azure-functions-host/pull/9402
-router.use((req, res, next) => {
-  // We only want to interfere with requests for these specific plugin assets
-  const problematicScopes = [
+const path = require('path')
+
+// Workaround for IIS path mangling, which turns URL encoded chars into their equivalents
+// before sending them to the app
+router.get('/plugin-assets/:scope/:package/*', (req, res, next) => {
+  const { scope, package } = req.params
+  console.log(scope, package);
+  
+  // 1. Only intercept the known problematic scopes
+  const allowedScopes = [
     '@ministryofjustice',
-    '@x-govuk'
-  ];
-
-  let url = req.url;
-
-  // Check if the URL contains any of our problematic package scopes
-  const needsRepair = problematicScopes.some(scope => url.includes(scope));
-
-  if (needsRepair) {
-    // 1. Fix the @ symbol
-    url = url.replace(/@/g, '%40');
-
-    // 2. Fix the slash specifically within the package scope
-    // This repairs '@ministryofjustice/frontend' to '%40ministryofjustice%2ffrontend'
-    // without breaking the rest of the URL path slashes
-    url = url.replace(/%40ministryofjustice\/frontend/g, '%40ministryofjustice%2ffrontend');
-    url = url.replace(/%40x-govuk\/govuk-prototype-components/g, '%40x-govuk%2fgovuk-prototype-components');
-    url = url.replace(/%40x-govuk\/govuk-prototype-filters/g, '%40x-govuk%2fgovuk-prototype-filters');
-
-    req.url = url;
-    req.originalUrl = url;
+    '@ministryofjustice/frontend',
+    '@x-govuk',
+    '@x-govuk/govuk-prototype-components',
+  ]
+  if (!allowedScopes.includes(scope)) {
+    return next()
   }
 
-  next();
-});
+  // 2. Extension Lock-Down
+  const allowedExtensions = ['.css', '.js']
+  const requestedAssetPath = req.params[0]
+  const extension = path.extname(requestedAssetPath).toLowerCase()
+
+  if (!allowedExtensions.includes(extension)) {
+    console.warn(`Blocked request for unsupported file extension: ${extension}`)
+    return res.status(403).send('Forbidden: File type not allowed')
+  }
+
+  // 3. Resolve the absolute base directory for this specific package
+  const rootModules = path.join(__dirname, '../node_modules')
+  const packageDir = path.join(rootModules, scope, package)
+  
+  // 4. Resolve and Normalize the requested file path
+  const safeFilePath = path.resolve(packageDir, requestedAssetPath)
+
+  // 5. SECURITY CHECK: Path Traversal Jail-break check
+  if (!safeFilePath.startsWith(packageDir)) {
+    console.error(`Security blocked path traversal attempt: ${safeFilePath}`)
+    return res.status(403).send('Forbidden')
+  }
+
+  // 6. Serve the file
+  res.sendFile(safeFilePath, (err) => {
+    if (err) {
+      // If file not found, fall back to default prototype kit behavior
+      next() 
+    }
+  })
+})
+
+
 
 // Versioned route files
 require('./routes/private-beta/2026/january/routes')(router)
