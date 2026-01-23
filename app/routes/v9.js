@@ -18,41 +18,51 @@ module.exports = function(router) {
     var entryPoint = req.session.data['entryPoint']
     var numberOfLocations = req.session.data['numberOfLocations']
 
-    // For 'Number of locations' is '1'
-    if (numberOfLocations == "1") {
-
-      if (userType == "Care provider (care home)") {
-        req.session.data['selectedLocationName'] = "Ashfield Court (Exeter)"
-        req.session.data['selectedServiceType'] = "Care home"
-      }
-      else {
-        req.session.data['selectedLocationName'] = "Station Road Centre (Sudbury)"
-        req.session.data['selectedServiceType'] = "Community social care"
-      }
-
+    if (userType == "Local authority") {
+      req.session.data['selectedLocationName'] = "Suffolk"
+      req.session.data['selectedServiceType'] = "Local authority"
       req.session.data['locations'] = "1"
       req.session.data['postAuthenticationURL'] = "home"
     }
-    // For 'Number of locations' is '2 to 20'
-    else if (numberOfLocations == "2 to 20 (select a location)") {
-      req.session.data['locations'] = ""
-      req.session.data['selectedLocationName'] = ""
-      req.session.data['justSignedIn'] = "true"
-      req.session.data['postAuthenticationURL'] = "select-location?searchRequired=false&paginationRequired=false"
-    }
-    // For 'Number of locations' is '21 to 100'
-    else if (numberOfLocations == "21 to 100 (select a location with search)") {
-      req.session.data['locations'] = ""
-      req.session.data['selectedLocationName'] = ""
-      req.session.data['justSignedIn'] = "true"
-      req.session.data['postAuthenticationURL'] = "select-location?searchRequired=true&paginationRequired=false"
-    }
-    // For 'Number of locations' is '101 or more'
     else {
-      req.session.data['locations'] = ""
-      req.session.data['selectedLocationName'] = ""
-      req.session.data['justSignedIn'] = "true"
-      req.session.data['postAuthenticationURL'] = "select-location?searchRequired=true&paginationRequired=true&page1=true"
+
+      // For 'Number of locations' is '1'
+      if (numberOfLocations == "1") {
+
+        if (userType == "Care provider (care home)") {
+          req.session.data['selectedLocationName'] = "Ashfield Court (Exeter)"
+          req.session.data['selectedServiceType'] = "Care home"
+        }
+        else {
+          req.session.data['selectedLocationName'] = "Station Road Centre (Sudbury)"
+          req.session.data['selectedServiceType'] = "Community social care"
+        }
+
+        req.session.data['locations'] = "1"
+        req.session.data['postAuthenticationURL'] = "home"
+      }
+      // For 'Number of locations' is '2 to 20'
+      else if (numberOfLocations == "2 to 20 (select a location)") {
+        req.session.data['locations'] = ""
+        req.session.data['selectedLocationName'] = ""
+        req.session.data['justSignedIn'] = "true"
+        req.session.data['postAuthenticationURL'] = "select-location?searchRequired=false&paginationRequired=false"
+      }
+      // For 'Number of locations' is '21 to 100'
+      else if (numberOfLocations == "21 to 100 (select a location with search)") {
+        req.session.data['locations'] = ""
+        req.session.data['selectedLocationName'] = ""
+        req.session.data['justSignedIn'] = "true"
+        req.session.data['postAuthenticationURL'] = "select-location?searchRequired=true&paginationRequired=false"
+      }
+      // For 'Number of locations' is '101 or more'
+      else {
+        req.session.data['locations'] = ""
+        req.session.data['selectedLocationName'] = ""
+        req.session.data['justSignedIn'] = "true"
+        req.session.data['postAuthenticationURL'] = "select-location?searchRequired=true&paginationRequired=true&page1=true"
+      }
+      
     }
 
     // Routing - send to the chosen entry point
