@@ -6,6 +6,7 @@
 const govukPrototypeKit = require('govuk-prototype-kit')
 const router = govukPrototypeKit.requests.setupRouter()
 
+// Added by Matt to fix the bizarre Azure URL encoding issues with the GOV.UK Prototype Kit
 const path = require('path')
 
 // Workaround for IIS path mangling, which turns URL encoded chars into their equivalents
@@ -57,9 +58,8 @@ router.get('/plugin-assets/:scope/:package/*', (req, res, next) => {
   })
 })
 
-
-
 // Versioned route files
+require('./routes/v9')(router)
 require('./routes/private-beta/2026/january/routes')(router)
 require('./routes/v8')(router)
 require('./routes/private-beta/2025/december/routes')(router)

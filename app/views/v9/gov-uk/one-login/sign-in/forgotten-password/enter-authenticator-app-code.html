@@ -1,0 +1,44 @@
+{% extends "v9/gov-uk/one-login/layouts/default.html" %}
+
+<!-- Set a blank service name (i.e. not get adult social care data) -->
+{% set serviceName %}
+{% endset %}
+
+{% block pageTitle %}
+  Enter the 6 digit security code shown in your authenticator app - GOV.UK One Login – Prototype Kit
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  
+  <div class="govuk-grid-column-two-thirds">
+
+    <form action="reset-password" method="post" novalidate>
+      <input type="hidden" name="_csrf" value="FQEx5CmW-wECjiIDVDmkXfHnMF-_Vzf1__Us">
+      <input type="hidden" name="isAccountRecoveryPermitted" value="true">
+      <input type="hidden" name="checkEmailLink" value="/check-email-change-security-codes?type=AUTH_APP">
+
+      <div class="govuk-form-group">
+        <h1 class="govuk-label-wrapper">
+          <label class="govuk-label govuk-label--l" for="code">Enter the 6 digit security code shown in your authenticator app</label>
+        </h1>
+        <input class="govuk-input govuk-input--width-10" id="code" name="code" type="text" spellcheck="false" autocomplete="one-time-code" inputmode="numeric">
+      </div>
+
+      <button type="Submit" data-prevent-double-click="true" class="govuk-button" data-module="govuk-button">Continue</button>
+      <details class="govuk-details" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">I do not have access to the authenticator app</span>
+        </summary>
+        
+        <div class="govuk-details__text">
+          <p class="govuk-body">You can <a href="cannot-change-security-codes?redirectMFA=enter-authenticator-app-code" class="govuk-link" rel="noreferrer noopener">try another way to get a security code</a>.</p>
+        </div>
+
+      </details>
+    </form>
+
+  </div>
+
+</div>
+{% endblock %}

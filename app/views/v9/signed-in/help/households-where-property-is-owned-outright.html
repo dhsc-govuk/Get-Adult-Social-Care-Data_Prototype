@@ -1,0 +1,64 @@
+{% extends "v9/layouts/signed-in.html" %}
+
+{% set pageName = "Households where the property is owned outright" %}
+
+{% block beforeContent %}
+<a href="javascript:history.back()" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-two-thirds">
+        <span class="govuk-caption-l">Data indicator details</span>
+        <h1 class="govuk-heading-l">{{pageName}}</h1>
+        <dl class="govuk-summary-list">
+
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">What this measures</dt>
+                <dd class="govuk-summary-list__value">The proportion of households within the selected administrative area within England that own their home outright, without a mortgage or loan. This includes properties owned entirely by at least one household member.</dd>
+            </div>
+
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Source</dt>
+                <dd class="govuk-summary-list__value"><a href="https://www.nomisweb.co.uk/datasets/c2021ts054" class="govuk-link" target="_blank">Census 2021 from the Office for National Statistics (opens in new tab)</a></dd>
+            </div>
+
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Data correct as of</dt>
+                <dd class="govuk-summary-list__value">21 March 2021</dd>
+            </div>
+
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Update frequency</dt>
+                <dd class="govuk-summary-list__value">Census cadence</dd>
+            </div>
+
+            <!-- <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">Data available for</dt>
+              <dd class="govuk-summary-list__value">{{"today" | govukDate}} to {% set expirationDate = "today" | duration(5, "years") %}{{expirationDate | govukDate}}</dd>
+            </div> -->
+            
+
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Methodology</dt>
+                <dd class="govuk-summary-list__value">This dataset provides Census 2021 estimates that classify households in England and Wales by tenure. The estimates are as at Census Day, 21 March 2021.</dd>
+            </div>
+
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Limitations</dt>
+                <dd class="govuk-summary-list__value">
+                    See data source for details.
+                </dd>
+            </div>
+
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Data definitions</dt>
+                <dd class="govuk-summary-list__value">See data source for details.</dd>
+            </div>
+
+        </dl>
+    </div>
+
+</div>
+{% endblock %}

@@ -1,0 +1,68 @@
+<div id="dhsc-filter--action13" class="dhsc-filter--action">
+  <button id="dhsc-filter--button13" class="govuk-button" type="button" aria-expanded="false" aria-controls="dhsc-filter--content13">
+    <span id="dhsc-filter--button-content13" class="dhsc-filter--button-content">Filters</span>
+    <i id="dhsc-filter--icon13" class="fa fa-plus" aria-hidden="true"><span id="dhsc-filter--icon13-content" class="govuk-visually-hidden">Open</span></i>
+  </button>
+</div>
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-full">
+
+    <div id="dhsc-filter--content13" class="dhsc-filter--content" aria-labelledby="dhsc-filter--button13">
+
+      <form action="data-update-filters13" method="post" novalidate>
+
+        <div class="govuk-grid-row">
+          
+          <div class="govuk-grid-column-one-third">
+            {% include "./_2-la.html" %}
+          </div>
+
+        </div>
+
+        <div class="govuk-grid-row govuk-!-margin-top-4">
+
+          <div class="govuk-grid-column-full">
+
+            <div class="govuk-button-group">
+              <button id="update-filters13" type="submit" class="govuk-button" data-module="govuk-button" name="filterApplied13" value="Yes">Apply</button>
+              {% if data.filterApplied13 %}
+              <a href="?filterApplied13=&localAuthority13=#data2" class="govuk-link">Clear all</a>
+              {% endif %}
+            </div>
+            
+          </div>
+
+        </div>
+
+      </form>
+
+    </div>
+
+  </div>
+
+</div>
+{% if data.filterApplied13 %}
+
+<div class="app-c-filter-summary">
+  <h5 class="app-c-filter-summary__heading">Active filters</h5>
+  <ul class="app-c-filter-summary__remove-filters">
+    {% if data.localAuthority13 %}
+    <li id="localAuthority13-remove">
+      <a class="app-c-filter-summary__remove-filter" href="#">
+        <span>
+          <span class="govuk-visually-hidden">Remove filter</span>
+          <abbr title="Local Authority">LA</abbr>: {{data.localAuthority13}}
+        </span>
+      </a>
+    </li>
+    {% endif %}
+  </ul>
+
+  <div>
+    <a class="govuk-link govuk-link--no-visited-state" href="?filterApplied13=&localAuthority13=#data2">Clear all filters</a>
+  </div>
+
+</div>
+{% endif %}

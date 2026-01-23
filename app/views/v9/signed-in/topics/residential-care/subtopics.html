@@ -1,0 +1,71 @@
+{% extends "v9/layouts/signed-in.html" %}
+
+{% set pageName = "Care provision" %}
+
+{% block beforeContent %}
+{{ govukBreadcrumbs({
+  items: [
+    {
+      text: "Home",
+      href: "../../home"
+    }
+  ]
+}) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">{{pageName}}</h1>
+    <p class="govuk-body-l">Find data on care provision and the support provided by unpaid carers across England.</p>
+
+    <div class="gem-c-cards">
+      <ul class="gem-c-cards__list gem-c-cards__list--one-column">
+        <li class="gem-c-cards__list-item">
+
+          <div class="gem-c-cards__list-item-wrapper">
+            <h2 class="gem-c-cards__sub-heading govuk-heading-s">
+              <a class="govuk-link gem-c-cards__link gem-c-force-print-link-styles" href="../residential-care/provision-and-occupancy/data">Care home beds and occupancy levels</a>
+            </h2>
+            <p class="govuk-body gem-c-cards__description">Provision and capacity data for care homes, including local, regional and national statistics.</p>
+          </div>
+
+        </li>
+        <li class="gem-c-cards__list-item">
+
+          <div class="gem-c-cards__list-item-wrapper">
+            <h2 class="gem-c-cards__sub-heading govuk-heading-s">
+              <a class="govuk-link gem-c-cards__link gem-c-force-print-link-styles" href="../residential-care/residential-care-providers/data">Care providers: locations and services</a>
+            </h2>
+            <p class="govuk-body gem-c-cards__description">Data on care provision by location, service type and number of providers.</p>
+          </div>
+
+        </li>
+        <li class="gem-c-cards__list-item">
+
+          <div class="gem-c-cards__list-item-wrapper">
+            <h2 class="gem-c-cards__sub-heading govuk-heading-s">
+              <a class="govuk-link gem-c-cards__link gem-c-force-print-link-styles" href="../residential-care/number-of-people-receiving-care/data">Number of adults receiving community social care</a>
+            </h2>
+            <p class="govuk-body gem-c-cards__description">Data on the number of people supported through community social care, including trends over time.</p>
+          </div>
+
+        </li>
+        <li class="gem-c-cards__list-item">
+
+          <div class="gem-c-cards__list-item-wrapper">
+            <h2 class="gem-c-cards__sub-heading govuk-heading-s">
+              <a class="govuk-link gem-c-cards__link gem-c-force-print-link-styles" href="../residential-care/unpaid-care/data">Unpaid care</a>
+            </h2>
+            <p class="govuk-body gem-c-cards__description">Statistics on the people who provide unpaid care to family members, friends and neighbours.</p>
+          </div>
+
+        </li>
+      </ul>
+    </div>
+
+  </div>
+
+</div>
+{% endblock %}

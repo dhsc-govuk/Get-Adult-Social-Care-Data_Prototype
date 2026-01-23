@@ -1,0 +1,283 @@
+{% extends "govuk-prototype-kit/layouts/unbranded.html" %}
+
+{% set pageName = "All user journeys (" + version + ")" %}
+{% set bodyClasses = "extra-page-width-1400" %}
+
+{% block content %}
+<div class="govuk-form-group">
+  <a class="govuk-back-link" href="javascript:history.back()">Back</a>
+</div>
+
+<h1 class="govuk-heading-xl">
+  <span class="govuk-caption-xl">{{version}}</span>
+  All user journeys
+</h1>
+
+<h2 class="govuk-heading-l heading-override">Entry points into {{serviceName | lower}}</h2>
+<ol class="govuk-list govuk-list--number">
+  <li><a href="start-private-beta">Start page (private beta)</a></li>
+  <li><a href="start">Start page on GOV.UK</a></li>
+</ol>
+
+<h2 class="govuk-heading-l heading-override">GOV.UK guidance pages</h2>
+<ul class="govuk-list govuk-list--bullet">  
+  <li><a href="gov-uk/guidance/get-adult-and-social-care-data">Get adult and social care data (GASCD)</a></li>
+</ul>
+
+<div class="externalService">
+  <span class="govuk-caption-l">Last synchronised: 10 October 2025</span>
+  <h2 class="govuk-heading-l heading-override">GOV.UK One Login</h2>
+
+  <ul class="govuk-list govuk-list--bullet">  
+    <li><a href="gov-uk/one-login/start">Create your GOV.UK One Login or sign in</a></li>
+  </ul>
+
+  <h3 class="govuk-heading-m heading-override">Create an account</h3>
+  <ul class="govuk-list govuk-list--bullet">
+    <li><a href="gov-uk/one-login/create-account/enter-email">Enter your email address</a></li>
+    <li><a href="gov-uk/one-login/create-account/check-email">Check your email</a></li>
+    <ul class="govuk-list--bullet">
+      <li><i class="fa fa-envelope" aria-hidden="true"><span class="govuk-visually-hidden">Email</span></i> <a href="gov-uk/one-login/notifications/email/create-account/security-code-email">Security code email</a></li>
+      <li>Send the code again - <a href="gov-uk/one-login/create-account/resend-code">Get security code</a></li>
+    </ul>
+    <li><a href="gov-uk/one-login/create-account/create-password">Create your password</li>
+    <li><a href="gov-uk/one-login/create-account/get-security-code">Choose how to get security codes</a></li>
+    <ul class="govuk-list--bullet">
+      <li>Text message - <a href="gov-uk/one-login/create-account/enter-phone-number">Enter your mobile phone number</a></li>
+      <li>Text message - <a href="gov-uk/one-login/create-account/check-phone">Check your phone</a></li>
+      <ul class="govuk-list--bullet">
+        <li><i class="fa fa-comment" aria-hidden="true"><span class="govuk-visually-hidden">SMS</span></i> <a href="gov-uk/one-login/notifications/sms/create-account/security-code-text-message">Security code text message</a></li>
+        <li>Send the code again - <a href="gov-uk/one-login/create-account/resend-code-sms">Get security code</a></li>
+      </ul>
+      <li>Authenticator app for smartphone, tablet or computer - <a href="gov-uk/one-login/create-account/auth-app">Set up an authenticator app</a></li>
+    </ul>
+    <li><i class="fa fa-envelope" aria-hidden="true"><span class="govuk-visually-hidden">Email</span></i> <a href="gov-uk/one-login/notifications/email/create-account/account-created-email">Created GOV.UK One Login email</a></li>
+    <li><a href="gov-uk/one-login/create-account/account-created">You’ve created your GOV.UK One Login</a></li>
+  </ul>
+
+  <h3 class="govuk-heading-m heading-override">Sign in</h3>
+  <ul class="govuk-list govuk-list--bullet">
+    <li><a href="gov-uk/one-login/sign-in/enter-email">Enter your email address to sign in to your GOV.UK One Login</a></li>
+    <li><a href="gov-uk/one-login/sign-in/enter-password">Enter your password</a></li>
+    <li><a href="gov-uk/one-login/sign-in/check-phone">Check your phone</a></li>
+    <ul class="govuk-list--bullet">
+      <li><i class="fa fa-comment" aria-hidden="true"><span class="govuk-visually-hidden">SMS</span></i> <a href="gov-uk/one-login/notifications/sms/sign-in/security-code-text-message">Security code text message</a></li>
+      <li>Send the code again - <a href="gov-uk/one-login/sign-in/resend-code-sms">Get security code</a></li>
+      <li>Check if you can change how you get security codes (no back-up method) - <a href="gov-uk/one-login/sign-in/cannot-change-security-codes">You cannot change how you get security codes</a></li>
+      <li>Check if you can change how you get security codes (back-up method added) - <a href="gov-uk/one-login/sign-in/how-do-you-want-security-codes">How do you want to get a security code?</a></li>
+    </ul>
+    <li><a href="gov-uk/one-login/sign-in/enter-authenticator-app-code">Enter the 6 digit security code shown in your authenticator app</a></li>
+    <ul class="govuk-list--bullet">
+      <li>Check if you can change how you get security codes (no back-up method) - <a href="gov-uk/one-login/sign-in/cannot-change-security-codes">You cannot change how you get security codes</a></li>
+      <li>Check if you can change how you get security codes (back-up method added) - <a href="gov-uk/one-login/sign-in/how-do-you-want-security-codes">How do you want to get a security code?</a></li>
+    </ul>
+  </ul>
+
+  <h4 class="govuk-heading-s heading-override">I’ve forgotten my password</h4>
+  <ul class="govuk-list govuk-list--bullet">
+    <li><a href="gov-uk/one-login/sign-in/forgotten-password/check-email">Check your email</a></li>
+    <ul class="govuk-list--bullet">
+      <li><i class="fa fa-envelope" aria-hidden="true"><span class="govuk-visually-hidden">Email</span></i> <a href="gov-uk/one-login/notifications/email/forgotten-password/password-reset-security-code-email">Password reset security code email</a></li>
+      <li>Send the code again - <a href="gov-uk/one-login/sign-in/forgotten-password/resend-code">Get security code</a></li>
+    </ul>
+    <li><a href="gov-uk/one-login/sign-in/check-phone">Check your phone</a></li>
+    <ul class="govuk-list--bullet">
+      <li><i class="fa fa-comment" aria-hidden="true"><span class="govuk-visually-hidden">SMS</span></i> <a href="gov-uk/one-login/notifications/sms/forgotten-password/security-code-text-message">Security code text message</a></li>
+      <li>Send the code again - <a href="gov-uk/one-login/sign-in/resend-code-sms">Get security code</a></li>
+      <li>Check if you can change how you get security codes (no back-up method) - <a href="gov-uk/one-login/sign-in/cannot-change-security-codes">You cannot change how you get security codes</a></li>
+      <li>Check if you can change how you get security codes (back-up method added) - <a href="gov-uk/one-login/sign-in/how-do-you-want-security-codes">How do you want to get a security code?</a></li>
+    </ul>
+    <li><a href="gov-uk/one-login/sign-in/enter-authenticator-app-code">Enter the 6 digit security code shown in your authenticator app</a></li>
+    <ul class="govuk-list--bullet">
+      <li>Check if you can change how you get security codes (no back-up method) - <a href="gov-uk/one-login/sign-in/cannot-change-security-codes">You cannot change how you get security codes</a></li>
+      <li>Check if you can change how you get security codes (back-up method added) - <a href="gov-uk/one-login/sign-in/how-do-you-want-security-codes">How do you want to get a security code?</a></li>
+    </ul>
+    <li><a href="gov-uk/one-login/sign-in/forgotten-password/reset-password">Reset your password</a></li>
+    <li><i class="fa fa-envelope" aria-hidden="true"><span class="govuk-visually-hidden">Email</span></i> <a href="gov-uk/one-login/notifications/email/forgotten-password/password-reset-confirmation-email">Password reset confirmation email</a></li>
+    <li><i class="fa fa-comment" aria-hidden="true"><span class="govuk-visually-hidden">SMS</span></i> <a href="gov-uk/one-login/notifications/sms/forgotten-password/password-reset-confirmation-text-message">Password reset confirmation text message</a></li>
+  </ul>
+
+  <h3 class="govuk-heading-m heading-override">Manage your account</h3>
+  <ul class="govuk-list govuk-list--bullet">
+    <li><a href="gov-uk/one-login/manage-account/your-services">Your services</a></li>
+    <li><a href="gov-uk/one-login/manage-account/security">Security</a></li>
+    <li><a href="gov-uk/one-login/manage-account/signed-out">You have signed out</a></li>
+  </ul>
+</div>
+
+<h2 class="govuk-heading-l">{{serviceName}}</h2>
+
+<h3 class="govuk-heading-m">Home</h3>
+
+<h4 class="govuk-heading-s heading-override">Care providers (care home)</h4>
+<ul class="govuk-list govuk-list--bullet">
+  <li><a href="signed-in/home?selectedLocationName=Ashfield Court (Exeter)&selectedServiceType=Care home&locations=1">1 location</a></li>
+  <li><a href="signed-in/select-location?userType=Care provider (care home)&justSignedIn=true&selectedLocationName=&locations=&searchRequired=false&paginationRequired=false">2 to 20 locations (select a location)</a></li>
+  <li><a href="signed-in/select-location?userType=Care provider (care home)&justSignedIn=true&selectedLocationName=&locations=&searchRequired=true&paginationRequired=false">21 to 100 locations (select a location with search)</a></li>
+</ul>
+
+<h4 class="govuk-heading-s heading-override">Care providers (community social care)</h4>
+<ul class="govuk-list govuk-list--bullet">
+  <li><a href="signed-in/home?selectedLocationName=Station Road Centre (Sudbury)&selectedServiceType=Community social care&locations=1">1 location</a></li>
+  <li><a href="signed-in/select-location?userType=Care provider (community social care)&justSignedIn=true&selectedLocationName=&locations=&searchRequired=false&paginationRequired=false">2 to 20 locations (select a location)</a></li>
+  <li><a href="signed-in/select-location?userType=Care provider (community social care)&justSignedIn=true&selectedLocationName=&locations=&searchRequired=true&paginationRequired=false">21 to 100 locations (select a location with search)</a></li>
+</ul>
+
+<h4 class="govuk-heading-s heading-override">Care providers (all services)</h4>
+<ul class="govuk-list govuk-list--bullet">
+  <li><a href="signed-in/select-location?userType=&justSignedIn=true&selectedLocationName=&locations=&searchRequired=false&paginationRequired=false">2 to 20 locations (select a location)</a></li>
+  <li><a href="signed-in/select-location?userType=&justSignedIn=true&selectedLocationName=&locations=&searchRequired=true&paginationRequired=false">21 to 100 locations (select a location with search)</a></li>
+  <li><a href="signed-in/select-location?userType=&justSignedIn=true&selectedLocationName=&locations=&searchRequired=true&paginationRequired=true&page1=true">101 or more locations (select a location with search and pagination)</a></li>
+</ul>
+
+<h3 class="govuk-heading-m heading-override">Data > Care provision</h3>
+<ul class="govuk-list govuk-list--bullet">
+  <li><a href="signed-in/topics/residential-care/subtopics">Care provision (topic page)</a></li>
+</ul>
+
+<h4 class="govuk-heading-s heading-override">Care home beds and occupancy levels</h4>
+<ul class="govuk-list govuk-list--bullet">
+  <li>Care providers (care home) - <a href="signed-in/topics/residential-care/provision-and-occupancy/data?selectedLocationName=Ashfield Court (Exeter)&selectedServiceType=Care home">Care home beds and occupancy levels (data page)</a></li>
+  <li>Care providers (community social care) - <a href="signed-in/topics/residential-care/provision-and-occupancy/data?selectedLocationName=Station Road Centre (Sudbury)&selectedServiceType=Community social care">Care home beds and occupancy levels (data page)</a></li>
+</ul>
+
+<h4 class="govuk-heading-s heading-override">Care providers: locations and services</h4>
+<ul class="govuk-list govuk-list--bullet">
+  <li><a href="signed-in/topics/residential-care/residential-care-providers/data">Care providers: locations and services (data page)</a></li>
+</ul>
+
+<h4 class="govuk-heading-s heading-override">Number of adults receiving community social care</h4>
+<ul class="govuk-list govuk-list--bullet">
+  <li>Care providers (care home) - <a href="signed-in/topics/residential-care/number-of-people-receiving-care/data?selectedLocationName=Ashfield Court (Exeter)&selectedServiceType=Care home">Number of adults receiving community social care (data page)</a></li>
+  <li>Care providers (community social care) - <a href="signed-in/topics/residential-care/number-of-people-receiving-care/data?selectedLocationName=Station Road Centre (Sudbury)&selectedServiceType=Community social care">Number of adults receiving community social care (data page)</a></li>
+</ul>
+
+<h4 class="govuk-heading-s heading-override">Unpaid care</h4>
+<ul class="govuk-list govuk-list--bullet">
+  <li><a href="signed-in/topics/residential-care/unpaid-care/data">Unpaid care (data page)</a></li>
+</ul>
+
+<h4 class="govuk-heading-s heading-override">Data indicator details</h4>
+<ul class="govuk-list govuk-list--bullet">
+  <li><a href="signed-in/help/beds-per-100000-adult-population">Adult social care beds per 100,000 adult population</a></li>
+  <li><a href="signed-in/help/beds-per-100000-adult-population-over-time">Adult social care beds per 100,000 adult population - over time</a></li>
+  <li><a href="signed-in/help/total-number-community-social-care-providers">Number of community social care providers</a> <strong class="govuk-tag govuk-tag--grey">To do</strong></li>
+  <li><a href="signed-in/help/number-people-receiving-care-from-community-social-care-provider">Number of people receiving care from a community social care provider</a></li>
+  <li><a href="signed-in/help/percentage-beds-occupied">Occupancy level percentages for adult social care beds</a></li>
+  <li><a href="signed-in/help/percentage-people-aged-5-and-over-who-provide-unpaid-care">People aged 5 and over who provide unpaid care</a></li>
+</ul>
+
+<h3 class="govuk-heading-m heading-override">Data > Funding</h3>
+<ul class="govuk-list govuk-list--bullet">
+  <li><a href="signed-in/topics/financial-spend-and-unpaid-care/subtopics">Funding (topic page)</a></li>
+</ul>
+
+<h4 class="govuk-heading-s heading-override">Local authority (LA) funding for adult social care</h4>
+<ul class="govuk-list govuk-list--bullet">
+  <li><a href="signed-in/topics/financial-spend-and-unpaid-care/financial-spend/data">Local authority (LA) funding for adult social care (data page)</a></li>
+</ul>
+
+<h4 class="govuk-heading-s heading-override">Data indicator details</h4>
+<ul class="govuk-list govuk-list--bullet">
+  <li><a href="signed-in/help/total-financial-spend-adult-social-care"><abbr title="Local Authority">LA</abbr> funding for adult social care</a></li>
+  <li><a href="signed-in/help/total-financial-spend-long-term-community-adult-social-care"><abbr title="Local Authority">LA</abbr> funding for long&#45;term community adult social care</a></li>
+  <li><a href="signed-in/help/percentages-financial-spend-long-term-and-short-term-care"><abbr title="Local Authority">LA</abbr> funding for short&#45;term and long&#45;term adult social care</a></li>
+</ul>
+
+<h3 class="govuk-heading-m heading-override">Data > Population needs</h3>
+<ul class="govuk-list govuk-list--bullet">
+  <li><a href="signed-in/topics/population-needs/subtopics">Population needs (topic page)</a></li>
+</ul>
+
+<h4 class="govuk-heading-s heading-override">Dementia prevalence and estimated diagnosis rate</h4>
+<ul class="govuk-list govuk-list--bullet">
+  <li><a href="signed-in/topics/population-needs/dementia-prevalence/data">Dementia prevalence and estimated diagnosis rate (data page)</a></li>
+</ul>
+
+<h4 class="govuk-heading-s heading-override">Economic factors and household composition</h4>
+<ul class="govuk-list govuk-list--bullet">
+  <li><a href="signed-in/topics/population-needs/household-composition-and-economic-factors/data">Economic factors and household composition (data page)</a></li>
+</ul>
+
+<h4 class="govuk-heading-s heading-override">General health, disability and learning disability</h4>
+<ul class="govuk-list govuk-list--bullet">
+  <li><a href="signed-in/topics/population-needs/disability-prevalence/data">General health, disability and learning disability (data page)</a></li>
+</ul>
+
+<h4 class="govuk-heading-s heading-override">Population size and age group percentages</h4>
+<ul class="govuk-list govuk-list--bullet">
+  <li><a href="signed-in/topics/population-needs/population-age-and-size/data">Population size and age group percentages (data page)</a></li>
+</ul>
+
+<h4 class="govuk-heading-s heading-override">Data indicator details</h4>
+<ul class="govuk-list govuk-list--bullet">
+  <li><a href="signed-in/help/population-age">Age group percentages</a></li>
+  <li><a href="signed-in/help/dementia-prevalence">Dementia prevalence</a></li>
+  <li><a href="signed-in/help/disability-prevalence">Disability prevalence</a></li>
+  <li><a href="signed-in/help/estimated-dementia-diagnosis-rate-aged-65-and-over">Estimated dementia diagnosis rate for people aged 65 and over</a></li>
+  <li><a href="signed-in/help/household-deprivation">Households &lsquo;deprived in 4 dimensions&rsquo;</a></li>
+  <li><a href="signed-in/help/households-where-property-is-owned-outright">Households where the property is owned outright</a></li>
+  <li><a href="signed-in/help/learning-disability-prevalence">Learning disability prevalence</a></li>
+  <li><a href="signed-in/help/one-person-households-where-person-aged-65-or-over">One&#45;person households where the person is aged 65 or over</a></li>
+  <li><a href="signed-in/help/people-who-reported-bad-or-very-bad-health">People who reported bad or very bad health</a></li>
+  <li><a href="signed-in/help/primary-reason-for-accessing-long-term-adult-social-care">Primary reason for people to access long&#45;term adult social care</a></li>
+  <li><a href="signed-in/help/population-size">Population size</a></li>  
+</ul>
+
+<h3 class="govuk-heading-m">Additional screens</h3>
+
+<h4 class="govuk-heading-s heading-override">Service information pages</h4>
+<ul class="govuk-list govuk-list--bullet">
+  <li><a href="service-information/data-indicator-details">Data indicator details</a></li>
+</ul>
+
+<h4 class="govuk-heading-s heading-override">Footer pages</h4>
+<ul class="govuk-list govuk-list--bullet">
+  <li><a href="footer/disclaimer?onCookiesPage=false">Disclaimer (private beta)</a></li>
+  <li><a href="footer/help?onCookiesPage=false">Help</a></li>
+  <li><a href="footer/privacy-policy?onCookiesPage=false">Privacy</a></li>
+  <li><a href="footer/cookies?onCookiesPage=true">Cookies</a></li>
+  <li><a href="footer/accessibility-statement?onCookiesPage=false">Accessibility statement</a></li>
+</ul>
+
+<h4 class="govuk-heading-s heading-override">Session sign in, sign out and timeout</h4>
+<ul class="govuk-list govuk-list--bullet">
+  <li><a href="system/access-denied">Access denied</a></li>
+  <li><a href="signed-in/topics/residential-care/residential-care-providers/data?sessionTimeoutJs=true">Session timeout warning (modal window)</a></li>
+  <li><a href="signed-in/topics/residential-care/residential-care-providers/data?sessionTimeoutNonJs=true">Session timeout warning (non JavaScript alternative)</a></li>
+  <li><a href="system/signed-out">You have signed out</a></li>
+  <li><a href="system/session-expired">Your session has expired</a></li>
+</ul>
+
+<h4 class="govuk-heading-s heading-override">System pages</h4>
+<ul class="govuk-list govuk-list--bullet">
+  <li><a href="system/http-status-codes/page-not-found">HTTP 404 Not found: Page not found</a></li>
+  <li><a href="system/http-status-codes/problem-with-service">HTTP 500 Internal server error: Sorry, there is a problem with the service</a></li>
+  <li><a href="system/http-status-codes/service-unavailable?hideFooterLinks=true">HTTP 503 Service unavailable: Sorry, the service is unavailable (generic message)</a></li>
+  <li><a href="system/http-status-codes/service-unavailable-with-date?hideFooterLinks=true">HTTP 503 Service unavailable: Sorry, the service is unavailable (if date/time known)</a> <strong class="govuk-tag govuk-tag--grey">To do</strong></li>
+</ul>
+
+<div class="externalService">
+  <span class="govuk-caption-l">Last synchronised: N/A</span>
+  <h2 class="govuk-heading-l">GOV.UK Notify</h2>
+
+  <h3 class="govuk-heading-m heading-override">Request access <strong class="govuk-tag govuk-tag--grey"><a href="#" title="To do" class="js-modal js-modal-bolder" data-modal-text="This email content will be reviewed, iterated and moved into GOV.UK Notify as part of this SoW 4." data-modal-title="To do" data-modal-close-text="Close" data-modal-close-title="Close this window" id="label_modal_3" aria-haspopup="dialog">To do</a></strong></h3>
+  <ul class="govuk-list govuk-list--bullet">
+    <li><i class="fa fa-envelope" aria-hidden="true"><span class="govuk-visually-hidden">Email</span></i> <a href="communications/email/request-approved">Your request to access Get adult social care data (request approved)</a></li>
+    <li><i class="fa fa-envelope" aria-hidden="true"><span class="govuk-visually-hidden">Email</span></i> <a href="communications/email/request-declined">Your request to access Get adult social care data (request declined)</a></li>
+    <li><i class="fa fa-envelope" aria-hidden="true"><span class="govuk-visually-hidden">Email</span></i> <a href="communications/email/request-pending">Your request to access Get adult social care data (request needs more information)</a></li>
+  </ul>
+  
+  <h3 class="govuk-heading-m heading-override">User management <strong class="govuk-tag govuk-tag--grey">To do</strong></h3>
+  <ul class="govuk-list govuk-list--bullet">
+    <li><i class="fa fa-envelope" aria-hidden="true"><span class="govuk-visually-hidden">Email</span></i> <a href="gov-uk/notify/email/registration/TEMPLATE">TEMPLATE</a></li>
+  </ul>
+</div>
+{% endblock %}
+
+{% block pageScripts %}
+<!-- Tooltip taken from Nicolas Hoffmann (https://a11y.nicolas-hoffmann.net/modal/) -->
+<script src="/public/javascripts/jquery-accessible-modal-window-aria.js"></script>
+<!-- Font Awesome 4 icons for the notifications -->
+<link href="/public/open-source/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+{% endblock %}

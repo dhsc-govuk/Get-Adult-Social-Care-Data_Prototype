@@ -1,0 +1,98 @@
+{% extends "v9/layouts/signed-in.html" %}
+
+{% set pageName = "Adult social care beds per 100,000 adult population - over time" %}
+
+{% block beforeContent %}
+<a href="javascript:history.back()" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-two-thirds">
+    <span class="govuk-caption-l">Data indicator details</span>
+    <h1 class="govuk-heading-l">{{pageName}}</h1>
+    <dl class="govuk-summary-list">
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">What this measures</dt>
+        <dd class="govuk-summary-list__value">The total number of adult social care beds in a specific care provider's <abbr title="Local Authority">LA</abbr> area by type, over time.</dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Source</dt>
+        <dd class="govuk-summary-list__value"><a href="https://www.necsu.nhs.uk/digital-applications/capacity-tracker/" class="govuk-link" rel="noreferrer noopener" target="_blank">Capacity Tracker (opens in new tab)</a>, <a href="https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/bulletins/populationestimatesforenglandandwales/mid2023" class="govuk-link" rel="noreferrer noopener" target="_blank">Office for National Statistics (opens in new tab)</a></dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Data correct as of</dt>
+        <dd class="govuk-summary-list__value">{{"today" | govukDate}}</dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Update frequency</dt>
+        <dd class="govuk-summary-list__value">Daily</dd>
+      </div>
+
+      <!-- <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">Data available for</dt>
+      <dd class="govuk-summary-list__value">{{"today" | govukDate}} to {% set expirationDate = "today" | duration(5, "years") %}{{expirationDate | govukDate}}</dd>
+    </div> -->
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Methodology</dt>
+        <dd class="govuk-summary-list__value">
+          This indicator counts all beds reported by care providers that are related to adult social care, including the following categories:
+          <br>
+          <br>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>general residential</li>
+            <li>general nursing</li>
+            <li>dementia residential</li>
+            <li>dementia nursing</li>
+            <li>mental health residential</li>
+            <li>mental health nursing</li>
+            <li>learning disability residential</li>
+            <li>learning disability nursing</li>
+            <li>transitional care</li>
+            <li>young physically disabled</li>
+          </ul>
+          The data covers both self&#45;funded and <abbr title="Local Authority">LA</abbr>&#45;funded beds.
+          <br>
+          <br>
+          Care providers registered with the Care Quality Commission (CQC) must update this information at least monthly using the Capacity Tracker tool. The mandated reporting period is between the 8th and 14th every month, or the next working day if the 14th falls on a weekend or holiday.
+          <br>
+          <br>
+          Small number suppression is applied. All bed counts in the <abbr title="Local Authority">LA</abbr> are rounded to the nearest 5.
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Limitations</dt>
+        <dd class="govuk-summary-list__value">
+          Care providers may update their Capacity Tracker data at different times outside the reporting period.
+          <br>
+          <br>
+          As a result, the data does not provide a snapshot of all providers at the same time. It reflects the most recent information available when the data was retrieved.
+          <br>
+          <br>
+          The data is self&#45;reported and not independently verified.
+          <br>
+          <br>
+          When adult social care beds are vacant, they can be used flexibly across a range of bed types. We are exploring ways to reflect this in the data.
+          <br>
+          <br>
+          The current bed types are not clearly defined and may be interpreted differently by care providers submitting data. To improve consistency, we are working with Capacity Tracker to explore whether more detailed bed descriptions can be provided.
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Data definitions</dt>
+        <dd class="govuk-summary-list__value">Refer to the Limitations section for details about work relating to bed type descriptions.</dd>
+      </div>
+
+    </dl>
+  </div>
+
+</div>
+{% endblock %}

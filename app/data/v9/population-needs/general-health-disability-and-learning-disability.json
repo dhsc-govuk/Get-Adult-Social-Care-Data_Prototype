@@ -1,0 +1,256 @@
+{
+  "Primary reason for people to access long-term adult social care": [
+    {
+      "Age group": "Aged 18 to 64",
+      "Primary support reason": "Learning disability support",
+      "Suffolk": "1,935",
+      "East of England (LA average)": "1,317",
+      "England (LA average)": "846"
+    },
+    {
+      "Age group": "Aged 18 to 64",
+      "Primary support reason": "Mental health support",
+      "Suffolk": "465",
+      "East of England (LA average)": "446",
+      "England (LA average)": "335"
+    },
+    {
+      "Age group": "Aged 18 to 64",
+      "Primary support reason": "Physical support: Access and mobility only",
+      "Suffolk": "110",
+      "East of England (LA average)": "223",
+      "England (LA average)": "110"
+    },
+    {
+      "Age group": "Aged 18 to 64",
+      "Primary support reason": "Physical support: Personal care support",
+      "Suffolk": "775",
+      "East of England (LA average)": "471",
+      "England (LA average)": "394"
+    },
+    {
+      "Age group": "Aged 18 to 64",
+      "Primary support reason": "Sensory support: Support for dual impairment",
+      "Suffolk": "5",
+      "East of England (LA average)": "6",
+      "England (LA average)": "(*)"
+    },
+    {
+      "Age group": "Aged 18 to 64",
+      "Primary support reason": "Sensory support: Support for hearing impairment",
+      "Suffolk": "10",
+      "East of England (LA average)": "10",
+      "England (LA average)": "6"
+    },
+    {
+      "Age group": "Aged 18 to 64",
+      "Primary support reason": "Sensory support: Support for visual impairment",
+      "Suffolk": "15",
+      "East of England (LA average)": "16",
+      "England (LA average)": "13"
+    },
+    {
+      "Age group": "Aged 18 to 64",
+      "Primary support reason": "Social support: Asylum seeker support",
+      "Suffolk": "(*)",
+      "East of England (LA average)": "(*)",
+      "England (LA average)": "(*)"
+    },
+    {
+      "Age group": "Aged 18 to 64",
+      "Primary support reason": "Social support: Substance misuse support",
+      "Suffolk": "(*)",
+      "East of England (LA average)": "(*)",
+      "England (LA average)": "6"
+    },
+    {
+      "Age group": "Aged 18 to 64",
+      "Primary support reason": "Social support: Support for social isolation or other reason",
+      "Suffolk": "125",
+      "East of England (LA average)": "74",
+      "England (LA average)": "44"
+    },
+    {
+      "Age group": "Aged 18 to 64",
+      "Primary support reason": "Support with memory and cognition",
+      "Suffolk": "75",
+      "East of England (LA average)": "31",
+      "England (LA average)": "30"
+    },
+    {
+      "Age group": "Aged 18 to 64",
+      "Primary support reason": "Unknown",
+      "Suffolk": "(*)",
+      "East of England (LA average)": "10",
+      "England (LA average)": "16"
+    },
+    {
+      "Age group": "Aged 65 and over",
+      "Primary support reason": "Learning disability support",
+      "Suffolk": "270",
+      "East of England (LA average)": "174",
+      "England (LA average)": "116"
+    },
+    {
+      "Age group": "Aged 65 and over",
+      "Primary support reason": "Mental health support",
+      "Suffolk": "310",
+      "East of England (LA average)": "245",
+      "England (LA average)": "192"
+    },
+    {
+      "Age group": "Aged 65 and over",
+      "Primary support reason": "Physical support: Access and mobility only",
+      "Suffolk": "315",
+      "East of England (LA average)": "523",
+      "England (LA average)": "321"
+    },
+    {
+      "Age group": "Aged 65 and over",
+      "Primary support reason": "Physical support: Personal care support",
+      "Suffolk": "4,515",
+      "East of England (LA average)": "2,380",
+      "England (LA average)": "1,545"
+    },
+    {
+      "Age group": "Aged 65 and over",
+      "Primary support reason": "Sensory support: Support for dual impairment",
+      "Suffolk": "10",
+      "East of England (LA average)": "9",
+      "England (LA average)": "6"
+    },
+    {
+      "Age group": "Aged 65 and over",
+      "Primary support reason": "Sensory support: Support for hearing impairment",
+      "Suffolk": "(*)",
+      "East of England (LA average)": "11",
+      "England (LA average)": "7"
+    },
+    {
+      "Age group": "Aged 65 and over",
+      "Primary support reason": "Sensory support: Support for visual impairment",
+      "Suffolk": "25",
+      "East of England (LA average)": "27",
+      "England (LA average)": "17"
+    },
+    {
+      "Age group": "Aged 65 and over",
+      "Primary support reason": "Social support: Asylum seeker support",
+      "Suffolk": "(*)",
+      "East of England (LA average)": "(*)",
+      "England (LA average)": "(*)"
+    },
+    {
+      "Age group": "Aged 65 and over",
+      "Primary support reason": "Social support: Substance misuse support",
+      "Suffolk": "5",
+      "East of England (LA average)": "(*)",
+      "England (LA average)": "(*)"
+    },
+    {
+      "Age group": "Aged 65 and over",
+      "Primary support reason": "Social support: Support for social isolation or other reason",
+      "Suffolk": "140",
+      "East of England (LA average)": "71",
+      "England (LA average)": "31"
+    },
+    {
+      "Age group": "Aged 65 and over",
+      "Primary support reason": "Support with memory and cognition",
+      "Suffolk": "770",
+      "East of England (LA average)": "377",
+      "England (LA average)": "330"
+    },
+    {
+      "Age group": "Aged 65 and over",
+      "Primary support reason": "Unknown",
+      "Suffolk": "15",
+      "East of England (LA average)": "39",
+      "England (LA average)": "24"
+    },
+    {
+      "Age group": "All age groups",
+      "Primary support reason": "Learning disability support",
+      "Suffolk": "2,205",
+      "East of England (LA average)": "1,491",
+      "England (LA average)": "961"
+    },
+    {
+      "Age group": "All age groups",
+      "Primary support reason": "Mental health support",
+      "Suffolk": "775",
+      "East of England (LA average)": "692",
+      "England (LA average)": "527"
+    },
+    {
+      "Age group": "All age groups",
+      "Primary support reason": "Physical support: Access and mobility only",
+      "Suffolk": "425",
+      "East of England (LA average)": "746",
+      "England (LA average)": "431"
+    },
+    {
+      "Age group": "All age groups",
+      "Primary support reason": "Physical support: Personal care support",
+      "Suffolk": "5,290",
+      "East of England (LA average)": "2,852",
+      "England (LA average)": "1,938"
+    },
+    {
+      "Age group": "All age groups",
+      "Primary support reason": "Sensory support: Support for dual impairment",
+      "Suffolk": "15",
+      "East of England (LA average)": "15",
+      "England (LA average)": "9"
+    },
+    {
+      "Age group": "All age groups",
+      "Primary support reason": "Sensory support: Support for hearing impairment",
+      "Suffolk": "10",
+      "East of England (LA average)": "21",
+      "England (LA average)": "12"
+    },
+    {
+      "Age group": "All age groups",
+      "Primary support reason": "Sensory support: Support for visual impairment",
+      "Suffolk": "40",
+      "East of England (LA average)": "44",
+      "England (LA average)": "30"
+    },
+    {
+      "Age group": "All age groups",
+      "Primary support reason": "Social support: Asylum seeker support",
+      "Suffolk": "(*)",
+      "East of England (LA average)": "(*)",
+      "England (LA average)": "(*)"
+    },
+    {
+      "Age group": "All age groups",
+      "Primary support reason": "Social support: Substance misuse support",
+      "Suffolk": "5",
+      "East of England (LA average)": "8",
+      "England (LA average)": "8"
+    },
+    {
+      "Age group": "All age groups",
+      "Primary support reason": "Social support: Support for social isolation or other reason",
+      "Suffolk": "265",
+      "East of England (LA average)": "145",
+      "England (LA average)": "75"
+    },
+    {
+      "Age group": "All age groups",
+      "Primary support reason": "Support with memory and cognition",
+      "Suffolk": "845",
+      "East of England (LA average)": "408",
+      "England (LA average)": "360"
+    },
+    {
+      "Age group": "All age groups",
+      "Primary support reason": "Unknown",
+      "Suffolk": "15",
+      "East of England (LA average)": "49",
+      "England (LA average)": "40"
+    }
+  ]
+}

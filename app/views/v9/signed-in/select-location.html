@@ -1,0 +1,724 @@
+{% if data.justSignedIn == "true" %}
+{% extends "v9/layouts/signed-in-basic.html" %}
+{% else %}
+{% extends "v9/layouts/signed-in-select-location.html" %}
+{% endif %}
+
+{% set pageName = "Select a location from your care provider group" %}
+
+{% block pageTitle %}
+  {% if error %}Error: {% endif %}{{pageName}} – {{serviceName}} – GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{% if data.justSignedIn != "true" %}
+<a class="govuk-back-link" href="javascript:history.back()">Back</a>
+{% endif %}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  
+  <div class="govuk-grid-column-two-thirds">
+
+    {% if error %}
+    <div class="govuk-error-summary" data-module="govuk-error-summary">
+      
+      <div role="alert">
+        <h2 class="govuk-error-summary__title">There is a problem</h2>
+        
+        <div class="govuk-error-summary__body">
+          <ul class="govuk-list govuk-error-summary__list">
+          {% if error1 %}
+          <li><a href="#searchLocation">Search for a location</a></li>
+          {% endif %}
+          {% if error2 %}
+          <li><a href="#locationId-1">Select a location</a></li>
+          {% endif %}
+        </ul>
+        </div>
+
+      </div>
+
+    </div>
+    {% endif %}
+
+    <!-- 21-120 RESULTS -->
+    {% if data.searchRequired == "true" %}
+    <!-- Radio button SEARCH (START) -->
+    <form action="select-location-non-javascript-post" method="get">
+      <fieldset class="govuk-fieldset">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+          <h1 class="govuk-fieldset__heading govuk-!-padding-bottom-6">Select a location from your care provider group</h1>
+        </legend>
+        <p class="govuk-body">We use the selected location to show you:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>data about the location</li>
+          <li>local and regional data based on that location</li>
+        </ul>
+        <p class="govuk-body">You can change to another location in your care provider group at any time.</p>
+          
+        <div class="{% if error1 %}govuk-form-group--error {% endif %}search-field search-field-darker" data-radio-buttons-search-filter>
+            
+          <div class="search-input search-input-with-button">
+            <label class="govuk-label" for="searchLocation">Search for a location</label>
+            {% if error1 %}
+            <span class="govuk-error-message">Search for a location</span>
+            {% endif %}
+            <input class="form-control" id="searchLocation" name="searchLocation" type="text" autocomplete="off" value="">
+          </div>
+
+          <div class="search-submit">
+            <button class="button" type="submit" id="searchLocationSubmit" name="searchLocationSubmit" value="Search for a location">Search for a location</button>
+          </div>
+
+        </div>
+
+      </fieldset>
+
+    </form>
+    <!-- Radio button SEARCH (END) -->
+                
+    <div class="govuk-form-group">
+      <p class="govuk-body hidden" data-clear-filter><a href="select-location?searchRequired={{data.searchRequired or 'true'}}&paginationRequired={{data.paginationRequired or 'true'}}{% if data.paginationRequired != 'false' %}&page1=true{% endif %}" id="clearSearchAndSelection">Clear search</a></p>
+    </div>
+    
+    <h2 id="selectedChoiceHeading" class="govuk-heading-m hidden">No location selected</h2>
+    <p data-filtered-message>{% if data.paginationRequired != "true" %}{% if data.userType == "Care provider (care home)" %}30{% elif data.userType == "Care provider (community social care)" %}24{% else %}30{% endif %}{% else %}120{% endif %} locations</p>
+    
+    <form action="/v9/signed-in/select-location-search-and-pagination-validation" method="post" novalidate>
+    
+      <fieldset class="govuk-fieldset">
+        <legend id="locationRadios" class="hidden">Select a location from your care provider group</legend>
+
+        <!-- NON JS RADIO BUTTONS (START) -->
+        <div class="govuk-form-group{% if error2 %} govuk-form-group--error{% endif %}" data-non-js-radio-buttons>
+          {% if error2 %}
+          <span class="govuk-error-message">Select a location</span>
+          {% endif %}
+
+          <div class="govuk-radios" data-module="govuk-radios">
+            
+            {% if data.paginationRequired != "true" %}
+            {% set careHomeCount = 0 %}
+            {% for item in data[data['v9ProviderLocations']] %}
+            {% if data.userType == "Care provider (community social care)" %}
+            <!-- SHOWING 24 LOCATIONS -->
+            {% if item['Service type'] == 'Community social care' %}
+            <div class="govuk-radios__item searchable-radio">
+              <input class="govuk-radios__input" id="locationId-{{item['ID']}}" name="locationId" type="radio" data-search-value="{{item['Provider name']}}, {{item['Location name']}}, {{item['Address']}}, {{item['Postcode']}}" value="{{item['ID']}}" aria-describedby="locationId-{{item['ID']}}-hint"{% if data.locationId == item['ID'] %} checked{% endif %}>
+              <label class="govuk-label govuk-radios__label" for="locationId-{{item['ID']}}">{{item['Location name']}}</label>
+            
+              <div id="locationId-{{item['ID']}}-hint" class="govuk-hint govuk-radios__hint">
+                Address: {{item['Address']}}, {{item['Postcode']}}
+                <br>
+                Provider: {{item['Provider name']}}
+              </div>
+
+            </div>
+            {% endif %}
+            {% elif data.userType == "Care provider (care home)" %}
+            <!-- SHOWING 30 LOCATIONS -->
+            {% if item['Service type'] == 'Care home' and careHomeCount < 30 %}
+            <div class="govuk-radios__item searchable-radio">
+              <input class="govuk-radios__input" id="locationId-{{item['ID']}}" name="locationId" type="radio" data-search-value="{{item['Provider name']}}, {{item['Location name']}}, {{item['Address']}}, {{item['Postcode']}}" value="{{item['ID']}}" aria-describedby="locationId-{{item['ID']}}-hint"{% if data.locationId == item['ID'] %} checked{% endif %}>
+              <label class="govuk-label govuk-radios__label" for="locationId-{{item['ID']}}">{{item['Location name']}}</label>
+            
+              <div id="locationId-{{item['ID']}}-hint" class="govuk-hint govuk-radios__hint">
+                Address: {{item['Address']}}, {{item['Postcode']}}
+                <br>
+                Provider: {{item['Provider name']}}
+              </div>
+
+            </div>
+            {% set careHomeCount = careHomeCount + 1 %}
+            {% endif %}
+            {% else %}
+            <!-- SHOWING 30 LOCATIONS -->
+            {% if (loop.index <= 30) %}
+            <div class="govuk-radios__item searchable-radio">
+              <input class="govuk-radios__input" id="locationId-{{item['ID']}}" name="locationId" type="radio" data-search-value="{{item['Provider name']}}, {{item['Location name']}}, {{item['Address']}}, {{item['Postcode']}}" value="{{item['ID']}}" aria-describedby="locationId-{{item['ID']}}-hint"{% if data.locationId == item['ID'] %} checked{% endif %}>
+              <label class="govuk-label govuk-radios__label" for="locationId-{{item['ID']}}">{{item['Location name']}}</label>
+            
+              <div id="locationId-{{item['ID']}}-hint" class="govuk-hint govuk-radios__hint">
+                Address: {{item['Address']}}, {{item['Postcode']}}
+                <br>
+                Provider: {{item['Provider name']}}
+              </div>
+
+            </div>
+            {% endif %}
+            {% endif %}
+            {% endfor %}
+            {% else %}
+            <!-- SHOWING 1 TO 100 OF 120 LOCATIONS -->
+            {% if page1 %}
+            {% for item in data[data['v9ProviderLocations']] %}
+            {% if (loop.index <= 100) %}
+            <div class="govuk-radios__item searchable-radio">
+              <input class="govuk-radios__input" id="locationId-{{item['ID']}}" name="locationId" type="radio" data-search-value="{{item['Provider name']}}, {{item['Location name']}}, {{item['Address']}}, {{item['Postcode']}}" value="{{item['ID']}}" aria-describedby="locationId-{{item['ID']}}-hint"{% if data.locationId == item['ID'] %} checked{% endif %}>
+              <label class="govuk-label govuk-radios__label" for="locationId-{{item['ID']}}">{{item['Location name']}}</label>
+            
+              <div id="locationId-{{item['ID']}}-hint" class="govuk-hint govuk-radios__hint">
+                Address: {{item['Address']}}, {{item['Postcode']}}
+                <br>
+                Provider: {{item['Provider name']}}
+              </div>
+
+            </div>
+            {% endif %}
+            {% endfor %}
+            {% elif page2 %}
+            <!-- SHOWING 101 TO 120 OF 120 LOCATIONS -->
+            {% for item in data[data['v9ProviderLocations']] %}
+            {% if (loop.index >= 101) %}
+            <div class="govuk-radios__item searchable-radio">
+              <input class="govuk-radios__input" id="locationId-{{item['ID']}}" name="locationId" type="radio" data-search-value="{{item['Provider name']}}, {{item['Location name']}}, {{item['Address']}}, {{item['Postcode']}}" value="{{item['ID']}}" aria-describedby="locationId-{{item['ID']}}-hint"{% if data.locationId == item['ID'] %} checked{% endif %}>
+              <label class="govuk-label govuk-radios__label" for="locationId-{{item['ID']}}">{{item['Location name']}}</label>
+            
+              <div id="locationId-{{item['ID']}}-hint" class="govuk-hint govuk-radios__hint">
+                Address: {{item['Address']}}, {{item['Postcode']}}
+                <br>
+                Provider: {{item['Provider name']}}
+              </div>
+
+            </div>
+            {% endif %}
+            {% endfor %}
+            {% endif %}
+            {% endif %}
+
+          </div>
+
+        </div>
+        <!-- NON JS RADIO BUTTONS (END) -->
+    
+        <!-- JS RADIO BUTTONS (START) -->
+        <div class="govuk-form-group{% if error2 %} govuk-form-group--error{% endif %} hidden" hidden aria-hidden="true" data-radio-buttons>
+          {% if error2 %}
+          <span class="govuk-error-message">Select a location</span>
+          {% endif %}
+
+          <div class="govuk-radios" data-module="govuk-radios">
+
+            {% if data.paginationRequired != "true" %}
+            {% set careHomeCount = 0 %}
+            {% for item in data[data['v9ProviderLocations']] %}
+            {% if data.userType == "Care provider (community social care)" %}
+            <!-- SHOWING 24 LOCATIONS -->
+            {% if item['Service type'] == 'Community social care' %}
+            <div class="govuk-radios__item searchable-radio">
+              <input class="govuk-radios__input" id="locationId-{{item['ID']}}" name="locationId" type="radio" data-search-value="{{item['Provider name']}}, {{item['Location name']}}, {{item['Address']}}, {{item['Postcode']}}" value="{{item['ID']}}" aria-describedby="locationId-{{item['ID']}}-hint"{% if data.locationId == item['ID'] %} checked{% endif %}>
+              <label class="govuk-label govuk-radios__label" for="locationId-{{item['ID']}}">{{item['Location name']}}</label>
+            
+              <div id="locationId-{{item['ID']}}-hint" class="govuk-hint govuk-radios__hint">
+                Address: {{item['Address']}}, {{item['Postcode']}}
+                <br>
+                Provider: {{item['Provider name']}}
+              </div>
+
+            </div>
+            {% endif %}
+            {% elif data.userType == "Care provider (care home)" %}
+            <!-- SHOWING 30 LOCATIONS -->
+            {% if item['Service type'] == 'Care home' and careHomeCount < 30 %}
+            <div class="govuk-radios__item searchable-radio">
+              <input class="govuk-radios__input" id="locationId-{{item['ID']}}" name="locationId" type="radio" data-search-value="{{item['Provider name']}}, {{item['Location name']}}, {{item['Address']}}, {{item['Postcode']}}" value="{{item['ID']}}" aria-describedby="locationId-{{item['ID']}}-hint"{% if data.locationId == item['ID'] %} checked{% endif %}>
+              <label class="govuk-label govuk-radios__label" for="locationId-{{item['ID']}}">{{item['Location name']}}</label>
+            
+              <div id="locationId-{{item['ID']}}-hint" class="govuk-hint govuk-radios__hint">
+                Address: {{item['Address']}}, {{item['Postcode']}}
+                <br>
+                Provider: {{item['Provider name']}}
+              </div>
+
+            </div>
+            {% set careHomeCount = careHomeCount + 1 %}
+            {% endif %}
+            {% else %}
+            <!-- SHOWING 30 LOCATIONS -->
+            {% if (loop.index <= 30) %}
+            <div class="govuk-radios__item searchable-radio">
+              <input class="govuk-radios__input" id="locationId-{{item['ID']}}" name="locationId" type="radio" data-search-value="{{item['Provider name']}}, {{item['Location name']}}, {{item['Address']}}, {{item['Postcode']}}" value="{{item['ID']}}" aria-describedby="locationId-{{item['ID']}}-hint"{% if data.locationId == item['ID'] %} checked{% endif %}>
+              <label class="govuk-label govuk-radios__label" for="locationId-{{item['ID']}}">{{item['Location name']}}</label>
+            
+              <div id="locationId-{{item['ID']}}-hint" class="govuk-hint govuk-radios__hint">
+                Address: {{item['Address']}}, {{item['Postcode']}}
+                <br>
+                Provider: {{item['Provider name']}}
+              </div>
+
+            </div>
+            {% endif %}
+            {% endif %}
+            {% endfor %}
+            {% else %}
+            <!-- 120 LOCATIONS -->
+            {% for item in data[data['v9ProviderLocations']] %}
+            <div class="govuk-radios__item searchable-radio">
+              <input class="govuk-radios__input" id="locationId-{{item['ID']}}" name="locationId" type="radio" data-search-value="{{item['Provider name']}}, {{item['Location name']}}, {{item['Address']}}, {{item['Postcode']}}" value="{{item['ID']}}" aria-describedby="locationId-{{item['ID']}}-hint"{% if data.locationId == item['ID'] %} checked{% endif %}>
+              <label class="govuk-label govuk-radios__label" for="locationId-{{item['ID']}}">{{item['Location name']}}</label>
+            
+              <div id="locationId-{{item['ID']}}-hint" class="govuk-hint govuk-radios__hint">
+                Address: {{item['Address']}}, {{item['Postcode']}}
+                <br>
+                Provider: {{item['Provider name']}}
+              </div>
+
+            </div>
+            {% endfor %}
+            {% endif %}
+
+          </div>
+
+        </div>
+        <!-- JS RADIO BUTTONS (END) -->
+
+        {% if data.paginationRequired == "true" %}
+        <!-- NON JS PAGING (START) -->
+        {% if page1 %}
+        {{ govukPagination({
+          next: {
+            href: "select-location?searchRequired=true&paginationRequired=true&page2=true"
+          },
+          attributes: "data-non-js-paging",
+          items: [
+            {
+              number: 1,
+              current: true,
+              href: "select-location?searchRequired=true&paginationRequired=true&page1=true"
+            },
+            {
+              number: 2,
+              href: "select-location?searchRequired=true&paginationRequired=true&page2=true"
+            }
+          ]
+        }) }}
+        {% elif page2 %}
+        {{ govukPagination({
+          previous: {
+            href: "select-location?searchRequired=true&paginationRequired=true&page1=true"
+          },
+          attributes: "data-non-js-paging",
+          items: [
+            {
+              number: 1,
+              href: "select-location?searchRequired=true&paginationRequired=true&page1=true"
+            },
+            {
+              number: 2,
+              current: true,
+              href: "select-location?searchRequired=true&paginationRequired=true&page2=true"
+            }
+          ]
+        }) }}
+        {% endif %}
+        <!-- NON JS PAGING (START) -->
+        {% endif %}
+
+        {% if data.paginationRequired == "true" %}
+        <!-- JS PAGING (START) -->
+        <nav class="govuk-pagination hidden" aria-label="Pagination" hidden aria-hidden="true" data-paging>
+          
+          <div class="govuk-pagination__prev pager-prev">
+            <a class="govuk-link govuk-pagination__link" href="#" rel="prev">
+              <svg class="govuk-pagination__icon govuk-pagination__icon--prev" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
+                <path d="m6.5938-0.0078125-6.7266 6.7266 6.7441 6.4062 1.377-1.449-4.1856-3.9768h12.896v-2h-12.984l4.2931-4.293-1.414-1.414z"></path>
+              </svg>
+              <span class="govuk-pagination__link-title">Previous<span class="govuk-visually-hidden"> page</span></span>
+            </a>
+          </div>
+
+          <ul class="govuk-pagination__list pager-items">
+
+          </ul>
+
+          <div class="govuk-pagination__next pager-next">
+            <a class="govuk-link govuk-pagination__link" href="#" rel="next">
+              <span class="govuk-pagination__link-title">Next<span class="govuk-visually-hidden"> page</span></span>
+              <svg class="govuk-pagination__icon govuk-pagination__icon--next" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
+                <path d="m8.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z"></path>
+              </svg>
+            </a>
+          </div>
+        </nav>
+        <!-- JS PAGING (END) -->
+        {% endif %}
+
+      </fieldset>
+
+      {% if data.justSignedIn == "true" %}
+      <div class="govuk-form-block">
+        <button type="submit" class="govuk-button" data-module="govuk-button">Continue</button>
+      </div>
+      {% else %}
+      <div class="govuk-button-group">
+        <button type="submit" class="govuk-button" data-module="govuk-button">Apply changes</button>
+        <a href="javascript:history.back()" class="govuk-link">Cancel and go back</a>
+      </div>
+      {% endif %}
+
+    </form>
+    {% else %}
+    <form action="/v9/signed-in/select-location-validation" method="post" novalidate>
+      
+      <div class="govuk-form-group{% if error %} govuk-form-group--error{% endif %}">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+            <h1 class="govuk-fieldset__heading govuk-!-padding-bottom-6">Select a location from your care provider group</h1>
+          </legend>
+          <p class="govuk-body">We use the selected location to show you:</p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>data about the location</li>
+            <li>local and regional data based on that location</li>
+          </ul>
+          <p class="govuk-body">You can change to another location in your care provider group at any time.</p>
+
+          <div class="govuk-form-group{% if error2 %} govuk-form-group--error{% endif %}">
+            {% if error2 %}
+            <span class="govuk-error-message">Select a location</span>
+            {% endif %}
+
+            <div class="govuk-radios" data-module="govuk-radios">
+
+              {% if data.userType == "Care provider (care home)" %}
+              <!-- SHOWING 8 LOCATIONS -->
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="locationId-84" name="locationId" type="radio"
+                  value="84" aria-describedby="locationId-84-hint"{% if data.locationId == "84" %} checked{% endif %}>
+                <label class="govuk-label govuk-radios__label" for="locationId-84">London Road Court (Plymouth)</label>
+
+                <div id="locationId-84-hint" class="govuk-hint govuk-radios__hint">
+                  Address: 5 London Road, Plymouth, Devon, UK, PL13 4WS
+                  <br>
+                  Provider: Shoggins Care Home Ltd
+                </div>
+
+              </div>
+
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="locationId-96" name="locationId" type="radio"
+                  value="96" aria-describedby="locationId-96-hint"{% if data.locationId == "96" %} checked{% endif %}>
+                <label class="govuk-label govuk-radios__label" for="locationId-96">Meadow Lane Lodge (Preston)</label>
+
+                <div id="locationId-96-hint" class="govuk-hint govuk-radios__hint">
+                  Address: 72 Meadow Lane, Preston, Lancashire, UK, PR9 7GF
+                  <br>
+                  Provider: Shoggins Care Home Ltd
+                </div>
+
+              </div>
+
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="locationId-1" name="locationId" type="radio" value="1" aria-describedby="locationId-1-hint"{% if data.locationId == "1" %} checked{% endif %}>
+                <label class="govuk-label govuk-radios__label" for="locationId-1">Meadowbrook House (Birmingham)</label>
+
+                <div id="locationId-1-hint" class="govuk-hint govuk-radios__hint">
+                  Address: 16 High Street, Birmingham, West Midlands, UK, B4 2DG
+                  <br>
+                  Provider: Shoggins Care Home Ltd
+                </div>
+
+              </div>
+
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="locationId-48" name="locationId" type="radio"
+                  value="48" aria-describedby="locationId-48-hint"{% if data.locationId == "48" %} checked{% endif %}>
+                <label class="govuk-label govuk-radios__label" for="locationId-48">Riverbank House (Exeter)</label>
+
+                <div id="locationId-48-hint" class="govuk-hint govuk-radios__hint">
+                  Address: 73 Riverbank Road, Exeter, Devon, UK, EX5 4RD
+                  <br>
+                  Provider: Shoggins Care Home Ltd
+                </div>
+
+              </div>
+
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="locationId-60" name="locationId" type="radio"
+                  value="60" aria-describedby="locationId-60-hint"{% if data.locationId == "60" %} checked{% endif %}>
+                <label class="govuk-label govuk-radios__label" for="locationId-60">Riverbank House (Newcastle)</label>
+
+                <div id="locationId-60-hint" class="govuk-hint govuk-radios__hint">
+                  Address: 15 Riverbank Road, Newcastle, Tyne and Wear, UK, NE1 7BR
+                  <br>
+                  Provider: Shoggins Care Home Ltd
+                </div>
+
+              </div>
+
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="locationId-36" name="locationId" type="radio"
+                  value="36" aria-describedby="locationId-36-hint"{% if data.locationId == "36" %} checked{% endif %}>
+                <label class="govuk-label govuk-radios__label" for="locationId-36">Station Road Lodge (Durham)</label>
+
+                <div id="locationId-36-hint" class="govuk-hint govuk-radios__hint">
+                  Address: 169 Station Road, Durham, County Durham, UK, DH9 1FP
+                  <br>
+                  Provider: Shoggins Care Home Ltd
+                </div>
+
+              </div>
+
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="locationId-72" name="locationId" type="radio"
+                  value="72" aria-describedby="locationId-72-hint"{% if data.locationId == "72" %} checked{% endif %}>
+                <label class="govuk-label govuk-radios__label" for="locationId-72">Station Road Lodge (Nottingham)</label>
+
+                <div id="locationId-72-hint" class="govuk-hint govuk-radios__hint">
+                  Address: 70 Station Road, Nottingham, Nottinghamshire, UK, NG17 1LE
+                  <br>
+                  Provider: Shoggins Care Home Ltd
+                </div>
+
+              </div>
+
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="locationId-24" name="locationId" type="radio"
+                  value="24" aria-describedby="locationId-24-hint"{% if data.locationId == "24" %} checked{% endif %}>
+                <label class="govuk-label govuk-radios__label" for="locationId-24">Victoria Road Manor (Canterbury)</label>
+
+                <div id="locationId-24-hint" class="govuk-hint govuk-radios__hint">
+                  Address: 94 Victoria Road, Canterbury, Kent, UK, CT13 7UB
+                  <br>
+                  Provider: Shoggins Care Home Ltd
+                </div>
+
+              </div>
+              {% elif data.userType == "Care provider (community social care)" %}
+              <!-- SHOWING 2 LOCATIONS -->
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="locationId-120" name="locationId" type="radio"
+                  value="120" aria-describedby="locationId-120-hint"{% if data.locationId == "120" %} checked{% endif %}>
+                <label class="govuk-label govuk-radios__label" for="locationId-120">Springfield Court (York)</label>
+
+                <div id="locationId-120-hint" class="govuk-hint govuk-radios__hint">
+                  Address: 57 Springfield Drive, York, North Yorkshire, UK, YO1 4DG
+                  <br>
+                  Provider: Shoggins Care Services Limited
+                </div>
+
+              </div>
+              
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="locationId-108" name="locationId" type="radio"
+                  value="108" aria-describedby="locationId-108-hint"{% if data.locationId == "108" %} checked{% endif %}>
+                <label class="govuk-label govuk-radios__label" for="locationId-108">Station Road Centre (Sudbury)</label>
+
+                <div id="locationId-108-hint" class="govuk-hint govuk-radios__hint">
+                  Address: 1st Floor, 54a Station Road, Sudbury, Suffolk, UK, CO5 1ST
+                  <br>
+                  Provider: Shoggins Care Services Limited
+                </div>
+
+              </div>
+              {% else %}
+              <!-- SHOWING 10 LOCATIONS -->
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="locationId-84" name="locationId" type="radio"
+                  value="84" aria-describedby="locationId-84-hint"{% if data.locationId == "84" %} checked{% endif %}>
+                <label class="govuk-label govuk-radios__label" for="locationId-84">London Road Court (Plymouth)</label>
+
+                <div id="locationId-84-hint" class="govuk-hint govuk-radios__hint">
+                  Address: 5 London Road, Plymouth, Devon, UK, PL13 4WS
+                  <br>
+                  Provider: Shoggins Care Home Ltd
+                </div>
+
+              </div>
+
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="locationId-96" name="locationId" type="radio"
+                  value="96" aria-describedby="locationId-96-hint"{% if data.locationId == "96" %} checked{% endif %}>
+                <label class="govuk-label govuk-radios__label" for="locationId-96">Meadow Lane Lodge (Preston)</label>
+
+                <div id="locationId-96-hint" class="govuk-hint govuk-radios__hint">
+                  Address: 72 Meadow Lane, Preston, Lancashire, UK, PR9 7GF
+                  <br>
+                  Provider: Shoggins Care Home Ltd
+                </div>
+
+              </div>
+
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="locationId-1" name="locationId" type="radio" value="1" aria-describedby="locationId-1-hint"{% if data.locationId == "1" %} checked{% endif %}>
+                <label class="govuk-label govuk-radios__label" for="locationId-1">Meadowbrook House (Birmingham)</label>
+
+                <div id="locationId-1-hint" class="govuk-hint govuk-radios__hint">
+                  Address: 16 High Street, Birmingham, West Midlands, UK, B4 2DG
+                  <br>
+                  Provider: Shoggins Care Home Ltd
+                </div>
+
+              </div>
+
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="locationId-48" name="locationId" type="radio"
+                  value="48" aria-describedby="locationId-48-hint"{% if data.locationId == "48" %} checked{% endif %}>
+                <label class="govuk-label govuk-radios__label" for="locationId-48">Riverbank House (Exeter)</label>
+
+                <div id="locationId-48-hint" class="govuk-hint govuk-radios__hint">
+                  Address: 73 Riverbank Road, Exeter, Devon, UK, EX5 4RD
+                  <br>
+                  Provider: Shoggins Care Home Ltd
+                </div>
+
+              </div>
+
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="locationId-60" name="locationId" type="radio"
+                  value="60" aria-describedby="locationId-60-hint"{% if data.locationId == "60" %} checked{% endif %}>
+                <label class="govuk-label govuk-radios__label" for="locationId-60">Riverbank House (Newcastle)</label>
+
+                <div id="locationId-60-hint" class="govuk-hint govuk-radios__hint">
+                  Address: 15 Riverbank Road, Newcastle, Tyne and Wear, UK, NE1 7BR
+                  <br>
+                  Provider: Shoggins Care Home Ltd
+                </div>
+
+              </div>
+
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="locationId-120" name="locationId" type="radio"
+                  value="120" aria-describedby="locationId-120-hint"{% if data.locationId == "120" %} checked{% endif %}>
+                <label class="govuk-label govuk-radios__label" for="locationId-120">Springfield Court (York)</label>
+
+                <div id="locationId-120-hint" class="govuk-hint govuk-radios__hint">
+                  Address: 57 Springfield Drive, York, North Yorkshire, UK, YO1 4DG
+                  <br>
+                  Provider: Shoggins Care Services Limited
+                </div>
+
+              </div>
+
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="locationId-108" name="locationId" type="radio"
+                  value="108" aria-describedby="locationId-108-hint"{% if data.locationId == "108" %} checked{% endif %}>
+                <label class="govuk-label govuk-radios__label" for="locationId-108">Station Road Centre (Sudbury)</label>
+
+                <div id="locationId-108-hint" class="govuk-hint govuk-radios__hint">
+                  Address: 1st Floor, 54a Station Road, Sudbury, Suffolk, UK, CO5 1ST
+                  <br>
+                  Provider: Shoggins Care Services Limited
+                </div>
+
+              </div>
+
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="locationId-36" name="locationId" type="radio"
+                  value="36" aria-describedby="locationId-36-hint"{% if data.locationId == "36" %} checked{% endif %}>
+                <label class="govuk-label govuk-radios__label" for="locationId-36">Station Road Lodge (Durham)</label>
+
+                <div id="locationId-36-hint" class="govuk-hint govuk-radios__hint">
+                  Address: 169 Station Road, Durham, County Durham, UK, DH9 1FP
+                  <br>
+                  Provider: Shoggins Care Home Ltd
+                </div>
+
+              </div>
+
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="locationId-72" name="locationId" type="radio"
+                  value="72" aria-describedby="locationId-72-hint"{% if data.locationId == "72" %} checked{% endif %}>
+                <label class="govuk-label govuk-radios__label" for="locationId-72">Station Road Lodge (Nottingham)</label>
+
+                <div id="locationId-72-hint" class="govuk-hint govuk-radios__hint">
+                  Address: 70 Station Road, Nottingham, Nottinghamshire, UK, NG17 1LE
+                  <br>
+                  Provider: Shoggins Care Home Ltd
+                </div>
+
+              </div>
+
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="locationId-24" name="locationId" type="radio"
+                  value="24" aria-describedby="locationId-24-hint"{% if data.locationId == "24" %} checked{% endif %}>
+                <label class="govuk-label govuk-radios__label" for="locationId-24">Victoria Road Manor (Canterbury)</label>
+
+                <div id="locationId-24-hint" class="govuk-hint govuk-radios__hint">
+                  Address: 94 Victoria Road, Canterbury, Kent, UK, CT13 7UB
+                  <br>
+                  Provider: Shoggins Care Home Ltd
+                </div>
+
+              </div>
+              {% endif %}
+
+            </div>
+
+          </div>
+
+        </fieldset>
+      </div>
+
+      {% if data.justSignedIn == "true" %}
+      <div class="govuk-form-block">
+        <button type="submit" class="govuk-button" data-module="govuk-button">Continue</button>
+      </div>
+      {% else %}
+      <div class="govuk-button-group">
+        <button type="submit" class="govuk-button" data-module="govuk-button">Apply changes</button>
+        <a href="javascript:history.back()" class="govuk-link">Cancel and go back</a>
+      </div>
+      {% endif %}
+
+    </form>
+    {% endif %}
+
+  </div>
+
+</div>
+{% endblock %}
+
+{% block pageScripts %}
+<!-- Searchable radio button choices (configuration) -->
+{% if updateMyLocation == "true" %}
+<script>
+
+	$(document).ready(function() {
+
+    // Pass these parameters in (below)
+		radioButtonsSearch(
+      // (120) - total items (totalRadioButtonCount)
+      120,
+      // (true) - boolean whether to clear down the session data or not
+      false,
+      // (100) - how many items to show per page
+			100,
+      // 1 result
+			"location",
+      // 2+ results
+			"locations"
+		)
+
+  });
+    
+</script>
+{% else %}
+<script>
+
+	$(document).ready(function() {
+
+    // Pass these parameters in (below)
+		radioButtonsSearch(
+      // (120) - total items (totalRadioButtonCount)
+      120,
+      // (true) - boolean whether to clear down the session data or not
+      true,
+      // (100) - how many items to show per page
+			100,
+      // 1 result
+			"location",
+      // 2+ results
+			"locations"
+		)
+
+  });
+    
+</script>
+{% endif %}
+<!-- Searchable radio button choices (code) -->
+<script src="/public/javascripts/v9/radio-button-editing.js"></script>
+<!-- Dynamic search against all radio buttons (provider locations) -->
+<script src="/public/javascripts/v9/search-radio-buttons.js"></script>
+{% endblock %}

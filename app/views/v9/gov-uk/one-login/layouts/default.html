@@ -1,0 +1,92 @@
+{#
+  For guidance on how to use layouts see:
+  https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
+#}
+
+{% extends "govuk-prototype-kit/layouts/govuk-branded.njk" %}
+{% from "govuk/components/header/macro.njk" import govukHeader %}
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+{% from "govuk/components/footer/macro.njk" import govukFooter %}
+
+{% block stylesheets %}
+{{super()}}
+<link href="/public/css/v9/styles.css" rel="stylesheet" type="text/css" />
+<link href="/public/css/v9/print.css" media="print" rel="stylesheet" type="text/css" />
+{% endblock %}
+
+{% block header %}
+{{ govukHeader({
+  homepageUrl: "/"
+}) }}
+
+<div class="govuk-width-container">
+  {{ govukPhaseBanner({
+    tag: {
+      text: "Beta",
+      classes: "govuk-tag-current"
+    },
+    html: 'This is a new service – your <a href="#" class="govuk-link" rel="noreferrer noopener" target="_blank" data-message="Sorry, this is an external service feature (GOV.UK One Login) not within the scope of this prototype">feedback (opens in new tab)</a> will help us to improve it.'
+  }) }}
+
+  <nav class="language-select" aria-label="Choose Language" role="navigation">
+    <ul class="govuk-list language-select__list govuk-body-s govuk-!-margin-0" role="list">
+      <li class="language-select__list-item" role="listitem">
+        <span aria-current="language">English</span>
+      </li>
+      <li class="language-select__list-item" role="listitem">
+        <a class="govuk-link govuk-link--no-visited-state" href="#" data-journey-click="link - click:lang-select:cy" rel="alternate" hreflang="cy" role="link" data-message="Sorry, this is an external service feature (GOV.UK One Login) not within the scope of this prototype">Cymraeg
+
+          <div class="govuk-visually-hidden">
+            Newid yr iaith ir Gymraeg
+          </div>
+        
+        </a>
+      </li>
+    </ul>
+  </nav>
+</div>
+{% endblock %}
+
+{% set bodyAttributes = {
+  "data-module": "edge"
+} %}
+
+{% block footer %}
+{{ govukFooter({
+  meta: {
+    items: [
+      {
+        href: "#",
+        text: "Accessibility statement",
+        attributes: "data-message='Sorry, this is an external service feature (GOV.UK One Login) not within the scope of this prototype'"
+      },
+      {
+        href: "#",
+        text: "Cookies",
+        attributes: "data-message='Sorry, this is an external service feature (GOV.UK One Login) not within the scope of this prototype'"
+      },
+      {
+        href: "#",
+        text: "Terms and conditions",
+        attributes: "data-message='Sorry, this is an external service feature (GOV.UK One Login) not within the scope of this prototype'"
+      },
+      {
+        href: "#",
+        text: "Privacy notice",
+        attributes: "data-message='Sorry, this is an external service feature (GOV.UK One Login) not within the scope of this prototype'"
+      },
+      {
+        href: "#",
+        text: "Support (opens in new tab)",
+        attributes: "data-message='Sorry, this is an external service feature (GOV.UK One Login) not within the scope of this prototype'"
+      }
+    ]
+  }
+}) }}
+{% endblock %}
+
+{% block scripts %}
+  {{ super() }}
+  <!-- Custom global jQuery and JavaScript for GASCD -->
+  <script src="/public/javascripts/v9/custom-global-behaviour.js"></script>
+{% endblock %}

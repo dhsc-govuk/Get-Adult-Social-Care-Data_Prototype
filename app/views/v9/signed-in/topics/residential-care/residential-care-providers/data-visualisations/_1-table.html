@@ -1,0 +1,127 @@
+{% set rows = data[data['v9CareProvidersLocationsAndServices']]['Care provider locations'] %}
+{% set selectedServiceType = data.serviceType or [] %}
+{% set selectedCqcRating = data.cqcRating or [] %}
+{% set isNewPostcode = data.postcode and (data.postcode != data.selectedLocationPostcode and data.postcode != undefined) %}
+{% set targetCity = "Sudbury" %}
+{% if isNewPostcode %}
+  {% set targetCity = "Haverhill" %}
+{% endif %}
+{% if data.selectedServiceType == 'Care home' %}
+  {% set excludeProviderType = "1-000000002" %}
+{% else %}
+  {% set excludeProviderType = "1-000000001" %}
+{% endif %}
+{% set rowsRendered = 0 %}
+{% for row in rows %}
+  {% if (row["Location City"] == targetCity) and (row["Location ID"] != excludeProviderType) %}
+    {% set rowServicesNormalised = (',' + (row["Service Types"] or '') | lower | replace(' ', '') + ',') %}
+    {% set matchesServiceType = (selectedServiceType.length == 0) %}
+    {% if selectedServiceType.length > 0 %}
+      {% set matchesServiceType = false %}
+      {% for st in selectedServiceType %}
+        {% set selectedNormalised = ',' + (st | lower | replace(' ', '')) + ',' %}
+        {% if selectedNormalised in rowServicesNormalised %}
+          {% set matchesServiceType = true %}
+        {% endif %}
+      {% endfor %}
+    {% endif %}
+    {% set matchesCqcRating = (selectedCqcRating.length == 0) or (row["CQC Rating"] in selectedCqcRating) %}
+    {% if matchesServiceType and matchesCqcRating %}
+      {% set rowsRendered = rowsRendered + 1 %}
+    {% endif %}
+  {% endif %}
+{% endfor %}
+{% if rowsRendered == 0 %}
+<p class="govuk-body govuk-!-font-weight-bold">There are no matching results.</p>
+<p class="govuk-body">Improve your search results by:</p>
+<ul class="govuk-list govuk-list--bullet">
+  <li>removing filters</li>
+  <li>double-checking your postcode</li>
+</ul>
+{% else %}
+<table class="govuk-table responsive-table-data" data-module="moj-sortable-table">
+  <caption class="govuk-table__caption">Table 1: CQC&#45;registered residential social care and community based adult social care service providers near {% if data.postcode %}postcode {{data.postcode}}{% else %}postcode {{data.selectedLocationPostcode or 'CO5 1ST'}} for {{data.selectedLocationName or 'Station Road Centre (Sudbury)'}}{% endif %}</caption>
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header" aria-sort="none">Name</th>
+      <th scope="col" class="govuk-table__header govuk-!-width-one-fifth" aria-sort="none">Address</th>
+      <th scope="col" class="govuk-table__header" aria-sort="none">Services</th>
+      <th scope="col" class="govuk-table__header govuk-table__cell--numeric" aria-sort="none">Beds</th>
+      <th scope="col" class="govuk-table__header" aria-sort="none">CQC rating</th>
+      <th scope="col" class="govuk-table__header govuk-!-width-one-fifth govuk-table__cell--numeric" aria-sort="ascending">Distance from postcode</th>
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+    {% if data.postcode and (data.postcode != data.selectedLocationPostcode and data.postcode != undefined) %}
+    {% for row in rows %}
+    {% set rowServicesNormalised = (',' + (row["Service Types"] or '') | lower | replace(' ', '') + ',') %}
+    {% set matchesServiceType = (selectedServiceType.length == 0) %}
+    {% if selectedServiceType.length > 0 %}
+      {% set matchesServiceType = false %}
+      {% for st in selectedServiceType %}
+        {% set selectedNormalised = ',' + (st | lower | replace(' ', '')) + ',' %}
+        {% if selectedNormalised in rowServicesNormalised %}
+          {% set matchesServiceType = true %}
+        {% endif %}
+      {% endfor %}
+    {% endif %}
+    {% set matchesCqcRating = (selectedCqcRating.length == 0) or (row["CQC Rating"] in selectedCqcRating) %}
+    {% if matchesServiceType and matchesCqcRating %}
+    {% if (row["Location City"] == "Haverhill") and (row["Location ID"] != excludeProviderType) %}
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"><span class="table-heading" aria-hidden="true">Name </span>{{row["Location Name"]}}</td>
+      <td class="govuk-table__cell"><span class="table-heading" aria-hidden="true">Address </span>{{row["Location Address Line"]}}{% if row["Location Address Line 2"] %}<br>{{row["Location Address Line 2"]}}{% endif %}<br>{{row["Location City"]}}<br>{{row["Location Postal Code"]}}</td>
+      <td class="govuk-table__cell"><span class="table-heading" aria-hidden="true">Services </span>{{row["Service Types"]}}</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric"><span class="table-heading" aria-hidden="true">Beds </span>{{row["Bed Numbers"]}}</td>
+      <td class="govuk-table__cell"><span class="table-heading" aria-hidden="true">CQC rating </span>{{row["CQC Rating"]}}</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric"><span class="table-heading" aria-hidden="true">Distance from postcode </span>{{row["Distance from postcode"]}}</td>
+    </tr>
+    {% endif %}
+    {% endif %}
+    {% endfor %}
+    {% else %}
+    {% for row in rows %}
+    {% set rowServicesNormalised = (',' + (row["Service Types"] or '') | lower | replace(' ', '') + ',') %}
+      {% set matchesServiceType = (selectedServiceType.length == 0) %}
+      {% if selectedServiceType.length > 0 %}
+        {% set matchesServiceType = false %}
+        {% for st in selectedServiceType %}
+          {% set selectedNormalised = ',' + (st | lower | replace(' ', '')) + ',' %}
+          {% if selectedNormalised in rowServicesNormalised %}
+            {% set matchesServiceType = true %}
+          {% endif %}
+        {% endfor %}
+      {% endif %}
+    {% set matchesCqcRating = (selectedCqcRating.length == 0) or (row["CQC Rating"] in selectedCqcRating) %}
+    {% if matchesServiceType and matchesCqcRating %}
+    {% if (row["Location City"] == "Sudbury") and (row["Location ID"] != excludeProviderType) %}
+    {% if row["Location ID"] == "1-000000001" or row["Location ID"] == "1-000000002" %}
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"><span class="table-heading" aria-hidden="true">Name </span><strong>{{data.selectedLocationName or row["Location Name"]}}</strong></td>
+      <td class="govuk-table__cell"><span class="table-heading" aria-hidden="true">Address </span>{{row["Location Address Line"]}}{% if row["Location Address Line 2"] %}<br>{{row["Location Address Line 2"]}}{% endif %}<br>{{row["Location City"]}}<br>{{row["Location Postal Code"]}}</td>
+      <td class="govuk-table__cell"><span class="table-heading" aria-hidden="true">Services </span>{{row["Service Types"]}}</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric"><span class="table-heading" aria-hidden="true">Beds </span>{{row["Bed Numbers"]}}</td>
+      <td class="govuk-table__cell"><span class="table-heading" aria-hidden="true">CQC rating </span>{{row["CQC Rating"]}}</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric"><span class="table-heading" aria-hidden="true">Distance from postcode </span>{{row["Distance from postcode"]}}</td>
+    </tr>
+    {% else %}
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"><span class="table-heading" aria-hidden="true">Name </span>{{row["Location Name"]}}</td>
+      <td class="govuk-table__cell"><span class="table-heading" aria-hidden="true">Address </span>{{row["Location Address Line"]}}{% if row["Location Address Line 2"] %}<br>{{row["Location Address Line 2"]}}{% endif %}<br>{{row["Location City"]}}<br>{{row["Location Postal Code"]}}</td>
+      <td class="govuk-table__cell"><span class="table-heading" aria-hidden="true">Services </span>{{row["Service Types"]}}</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric"><span class="table-heading" aria-hidden="true">Beds </span>{{row["Bed Numbers"]}}</td>
+      <td class="govuk-table__cell"><span class="table-heading" aria-hidden="true">CQC rating </span>{{row["CQC Rating"]}}</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric"><span class="table-heading" aria-hidden="true">Distance from postcode </span>{{row["Distance from postcode"]}}</td>
+    </tr>
+    {% endif %}
+    {% endif %}
+    {% endif %}
+    {% endfor %}
+    {% endif %}
+  </tbody>
+</table>
+
+<div class="govuk-form-block">
+  <p class="govuk-body data-source">Source: Care Directory from the Care Quality Commission (CQC)</p>
+</div>
+{% endif %}

@@ -1,0 +1,44 @@
+<div class="moj-scrollable-pane">
+
+  {% set rows = data[data['v9localAuthorityFundingForAdultSocialCare']]['Local authority funding for long-term adult social care – trends over time'] %}
+  {% set noFiltersSet = (not data.ageGroup14) and (not data.supportSetting16) %}
+  {% set age = (data.ageGroup14 if data.ageGroup14 else ("All age groups" if noFiltersSet else "All age groups")) %}
+  {% set supportSetting = (data.supportSetting16 if data.supportSetting16 else ("All types of adult social care" if noFiltersSet else "All types of adult social care")) %}
+  <table class="govuk-table">
+    <caption class="govuk-table__caption">Table 3: <abbr title="Local Authority">LA</abbr> funding for long-term adult social care ({{supportSetting | lower}}) for {% if data.ageGroup14 == "Aged 18 to 64" or data.ageGroup14 == "Aged 65 and over" %} people{% endif %} {{age | lower}} &ndash; Suffolk <abbr title="Local Authority">LA</abbr>, East of England region and England, financial years 2021 to 2024 (£ thousand)</caption>
+    <thead class="govuk-table__head">
+      <tr class="govuk-table__row">
+        <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Financial year</th>
+        <th scope="col" class="govuk-table__header govuk-!-width-one-quarter govuk-table__header--numeric">Suffolk<br>(£ thousand)</th>
+        <th scope="col" class="govuk-table__header govuk-!-width-one-quarter govuk-table__header--numeric">East of England - regional average<br>(£ thousand)</th>
+        <th scope="col" class="govuk-table__header govuk-!-width-one-quarter govuk-table__header--numeric">England - national average<br>(£ thousand)</th>
+      </tr>
+    </thead>
+    <tbody class="govuk-table__body">
+      {% set rowsRendered = 0 %}
+      {% for row in rows %}
+      {% set matchesAge = (row["Age group"] == age) %}
+      {% set matchesSupportSetting = (row["Care type or funding method"] in supportSetting) %}
+      {% if matchesAge and matchesSupportSetting %}
+      {% set rowsRendered = rowsRendered + 1 %}
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">{{row["Financial year"]}}</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">&#163;{{row["Suffolk"]}}</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">&#163;{{row["East of England (LA average)"]}}</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">&#163;{{row["England (LA average)"]}}</td>
+      </tr>
+      {% endif %}
+      {% endfor %}
+      <!-- {% if rowsRendered == 0 %}
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell" colspan="4">No results match your selection.</td>
+      </tr>
+      {% endif %} -->
+    </tbody>
+  </table>
+
+</div>
+
+<div class="govuk-form-block">
+  <p class="govuk-body data-source">Source: Adult Social Care Activity and Finance Report from NHS England</p>
+</div>

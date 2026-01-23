@@ -1,0 +1,964 @@
+<!-- Leaflet.js (CSS) -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+<!-- Leaflet.js (JavaScript) - Make sure you put this AFTER Leaflet's CSS -->
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+<!-- Other Leaflet.js assets -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css" />
+<link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css" />
+<script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/leaflet-gesture-handling/dist/leaflet-gesture-handling.min.css">
+<script src="https://unpkg.com/leaflet-gesture-handling/dist/leaflet-gesture-handling.min.js"></script>
+<style>
+
+  #map {
+    height: 420px;
+    width: 100%;
+  }
+
+  .popup {
+    font-family: "GDS Transport", arial, sans-serif;
+  }
+
+  /* Attribution toggle styling */
+  .leaflet-control-attribution-toggle {
+    background: white;
+    width: 26px;
+    height: 26px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    color: #0b0c0c;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .leaflet-control-attribution-expanded {
+    background: white;
+    border: 2px solid #0b0c0c;
+    padding: 6px 8px;
+    border-radius: 4px;
+    max-width: 250px;
+    font-size: 14px;
+    color: #0b0c0c;
+    line-height: 1.3;
+  }
+
+  /* --- Map attribution modal (centred) --- */
+  .leaflet-attrib-modal-backdrop {
+    position: absolute;
+    inset: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0,0,0,0.35);
+    z-index: 1000;
+  }
+
+  .leaflet-attrib-modal {
+    background: #ffffff;
+    border: 2px solid #0b0c0c;
+    border-radius: 6px;
+    /* width: min(520px, calc(100% - 32px)); */
+    padding: 16px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+  }
+
+  .govuk-button--in-modal {
+    margin-bottom: 0;
+  }
+
+  /* Leaflet.markercluster */
+  .marker-cluster div {
+    font-size: 1rem;
+    font-weight: bold;
+  }
+  @media (min-width: 40.0625em) {
+    .marker-cluster div {
+      font-size: 1.1875rem;
+    }
+  }
+
+</style>
+
+<h4 class="govuk-heading-s">Figure 1: map of CQC-registered residential social care and community based adult social care service providers near {% if data.postcode %}postcode {{data.postcode}}{% else %}postcode {{data.selectedLocationPostcode or 'CO5 1ST'}} for {{data.selectedLocationName or 'Station Road Centre (Sudbury)'}}{% endif %}</h4>
+
+<div class="govuk-form-group">
+
+  <div id="map">
+
+  </div>
+
+</div>
+
+<div class="govuk-form-block">
+  <p class="govuk-body data-source">Source: Care Directory from the Care Quality Commission (CQC)</p>
+</div>
+
+{% if data.postcode and (data.postcode != data.selectedLocationPostcode and data.postcode != undefined) %}
+<script>
+
+  // Home location (Haverhill)
+  var homeCoords = [52.084024, 0.446052];
+  // Initialise the map ONCE, with attribution disabled
+  var map = L.map('map', {
+    attributionControl: false,
+    gestureHandling: true,
+    gestureHandlingOptions: {
+      text: {
+        touch: "Use two fingers to move the map",
+        scroll: "Use Ctrl + scroll to zoom the map",
+        scrollMac: "Use ⌘ + scroll to zoom the map"
+      }
+    }
+  }).setView(homeCoords, 12);
+
+  // Put the home marker in a dedicated pane below clustered markers
+  map.createPane('homePane');
+  map.getPane('homePane').style.zIndex = 399; // below markerPane (400) used by markers/clusters
+
+  // NEW: click pane ABOVE clusters so the home icon is still tappable/clickable
+  map.createPane('homeClickPane');
+  map.getPane('homeClickPane').style.zIndex = 650; // above marker/cluster panes
+
+  // --- Copyright (©) map button -> centred modal ---
+  var AttributionToggleControl = L.Control.extend({
+    options: { position: 'bottomright' },
+
+    onAdd: function (map) {
+      var container = L.DomUtil.create('div', 'leaflet-control-zoom leaflet-bar');
+
+      // The © button
+      var link = L.DomUtil.create('a', 'leaflet-control-attribution-toggle', container);
+      link.href = '#';
+      link.title = 'Open copyright information';
+      link.setAttribute('role', 'button');
+      link.setAttribute('aria-haspopup', 'dialog');
+      link.innerHTML = '&copy;';
+
+      // Create modal backdrop inside the map container so it overlays the map
+      var mapEl = map.getContainer();
+
+      // Ensure map container can position absolute children
+      if (getComputedStyle(mapEl).position === 'static') {
+        mapEl.style.position = 'relative';
+      }
+
+      var backdrop = L.DomUtil.create('div', 'leaflet-attrib-modal-backdrop', mapEl);
+      backdrop.setAttribute('aria-hidden', 'true');
+
+      var modal = L.DomUtil.create('div', 'leaflet-attrib-modal', backdrop);
+      modal.setAttribute('role', 'dialog');
+      modal.setAttribute('aria-modal', 'true');
+      modal.setAttribute('aria-labelledby', 'leaflet-attrib-title');
+
+      modal.innerHTML = "<h5 class='govuk-heading-s' id='leaflet-attrib-title'>Copyright information</h5>" + "<p class='govuk-body'>Leaflet | &copy; OpenStreetMap contributors.</p>";
+
+      var closeBtn = document.createElement('button');
+      closeBtn.type = 'button';
+      closeBtn.className = 'govuk-button govuk-button--in-modal';
+      closeBtn.textContent = 'Close';
+      modal.appendChild(closeBtn);
+
+      function openModal() {
+        backdrop.style.display = 'flex';
+        backdrop.setAttribute('aria-hidden', 'false');
+
+        // Focus the close button immediately
+        setTimeout(function () { closeBtn.focus(); }, 0);
+      }
+
+      function closeModal() {
+        backdrop.style.display = 'none';
+        backdrop.setAttribute('aria-hidden', 'true');
+
+        // Return focus to the © button
+        setTimeout(function () { link.focus(); }, 0);
+      }
+
+      // Prevent map drag/scroll when interacting with modal
+      L.DomEvent.disableClickPropagation(container);
+      L.DomEvent.disableClickPropagation(backdrop);
+      L.DomEvent.disableScrollPropagation(backdrop);
+
+      // Open on click/tap
+      L.DomEvent.on(link, 'click', function (e) {
+        L.DomEvent.preventDefault(e);
+        openModal();
+      });
+
+      // Close button
+      L.DomEvent.on(closeBtn, 'click', function (e) {
+        L.DomEvent.preventDefault(e);
+        closeModal();
+      });
+
+      // Click outside modal closes (optional, but feels natural)
+      L.DomEvent.on(backdrop, 'click', function (e) {
+        if (e.target === backdrop) closeModal();
+      });
+
+      // ESC closes
+      L.DomEvent.on(document, 'keydown', function (e) {
+        if (backdrop.style.display === 'flex' && (e.key === 'Escape' || e.key === 'Esc')) {
+          closeModal();
+        }
+      });
+
+      return container;
+    }
+  });
+
+  map.addControl(new AttributionToggleControl());
+
+  // Move default zoom buttons to bottom-right
+  map.zoomControl.setPosition('bottomright');
+
+  // Tile layer
+  L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+  }).addTo(map);
+
+  // Postcode icon
+  var homeIcon = L.icon({
+    iconUrl: '/public/images/your-postcode.svg',
+    iconSize: [40, 50],
+    iconAnchor: [20, 50],
+    popupAnchor: [0, -50]
+  });
+
+  // Visible home marker (kept behind clusters)
+  var homeMarker = L.marker(homeCoords, { icon: homeIcon, pane: 'homePane' })
+    .addTo(map)
+    .bindPopup("<span class='popup'><strong>{{data.postcode}}</strong></span>");
+
+  // --- Make the click target match the icon body (not just the tip) ---
+  function iconHitLatLng(map, anchorLatLng, yOffsetPx) {
+
+    // yOffsetPx should be NEGATIVE to move up
+    var p = map.latLngToLayerPoint(anchorLatLng);
+    var p2 = L.point(p.x, p.y + yOffsetPx);
+
+    return map.layerPointToLatLng(p2);
+  }
+
+  // Keep this updated when zoom changes (fitBounds changes zoom!)
+  var homeHitLatLng = homeCoords;
+
+  // Invisible click target ABOVE clusters (but we can disable it when clusters overlap)
+  var homeClickMarker = L.circleMarker(homeCoords, {
+    pane: 'homeClickPane',
+    radius: 26,
+    opacity: 0,
+    fillOpacity: 0,
+    interactive: true,
+    bubblingMouseEvents: false
+  }).addTo(map);
+
+  function updateHomeClickMarkerPosition() {
+    // Icon is 50px tall and anchored at y=50, so centre is ~25px above the anchor
+    homeHitLatLng = iconHitLatLng(map, homeCoords, -25);
+    homeClickMarker.setLatLng(homeHitLatLng);
+  }
+
+  // Position it once now (will be re-run after fitBounds and on zoom/move)
+  updateHomeClickMarkerPosition();
+
+  // Open the real marker popup on tap/click
+  function openHomePopup() { homeMarker.openPopup(); }
+  homeClickMarker.on('click', openHomePopup);
+  homeClickMarker.on('touchstart', openHomePopup);
+  homeClickMarker.on('pointerdown', openHomePopup);
+
+  function setHomeClickEnabled(enabled) {
+
+    var el = homeClickMarker.getElement && homeClickMarker.getElement();
+
+    if (!el) return;
+
+    // When disabled, it won't receive taps/clicks (clusters will)
+    el.style.pointerEvents = enabled ? 'auto' : 'none';
+  }
+
+  // --- 5 mile radius circle (Haverhill) ---
+  // 5 miles in metres
+  var fiveMilesInMetres = 8046.72;
+  var radiusCircle = L.circle(homeCoords, {
+    color: '#1d70b8',
+    fillColor: '#b1b4b6',
+    fillOpacity: 0.25,
+    radius: fiveMilesInMetres
+  }).addTo(map);
+
+  // --- Manual calculations around Haverhill (approx 5 miles) ---
+  // Approx conversions at ~52°N:
+  // 1 degree latitude ≈ 111.32 km
+  // 1 degree longitude ≈ 111.32 * cos(52°) km ≈ 68.5 km
+  // 5 miles ≈ 8.0467 km
+  var deltaLat = 8.0467 / 111.32;   // ≈ 0.0723
+  var deltaLng = 8.0467 / 68.5;     // ≈ 0.1174
+  var southWest = L.latLng(homeCoords[0] - deltaLat, homeCoords[1] - deltaLng);
+  var northEast = L.latLng(homeCoords[0] + deltaLat, homeCoords[1] + deltaLng);
+  var circleBounds = L.latLngBounds(southWest, northEast);
+
+  // Automatically zoom the map so this "5-mile box" (and thus the circle) is visible
+  map.fitBounds(circleBounds);
+
+  // IMPORTANT: fitBounds changes zoom, so re-align the click target afterwards
+  updateHomeClickMarkerPosition();
+
+  // --- Reset map view button ---
+  var ResetMapControl = L.Control.extend({
+    options: { position: 'bottomright' },
+
+    onAdd: function () {
+
+      var container = L.DomUtil.create('div', 'leaflet-control-zoom leaflet-bar');
+      var link = L.DomUtil.create('a', 'leaflet-control-reset-map', container);
+      link.href = '#';
+      link.title = 'Reset map view';
+      link.style.backgroundImage = "url('/public/images/reset-map-icon.png')";
+      link.style.backgroundSize = '18px 18px';
+      link.style.backgroundPosition = 'center';
+      link.style.backgroundRepeat = 'no-repeat';
+      link.style.width = '30px';
+      link.style.height = '30px';
+
+      L.DomEvent.disableClickPropagation(link);
+      L.DomEvent.on(link, 'click', function (e) {
+        L.DomEvent.preventDefault(e);
+        map.fitBounds(circleBounds);
+        // keep click target aligned after reset
+        updateHomeClickMarkerPosition();
+      });
+
+      return container;
+    }
+
+  });
+
+  // Add Reset Map View control AFTER zoom control repositioning
+  map.addControl(new ResetMapControl());  
+
+  // Create a clusters group
+  var clusters = L.markerClusterGroup();
+
+// Close this script so we can embed JSON without breaking the JS parser in editors
+</script>
+<script type="application/json" id="selectedContextServiceType">
+
+  {{(data.selectedServiceType or '') | dump | safe}}
+
+</script>
+<script type="application/json" id="selectedServiceTypes">
+
+  {{(data.serviceType or []) | dump | safe}}
+
+</script>
+<script type="application/json" id="selectedCqcRatings">
+
+  {{(data.cqcRating or []) | dump | safe}}
+
+</script>
+<script type="application/json" id="providerLocationsData-Haverhill">
+
+  [
+    {% set rows = data[data['v9CareProvidersLocationsAndServices']]['Care provider locations'] %}
+    {% set emitted = 0 %}
+    {% for row in rows %}
+      {% if row["Location City"] == "Haverhill" and row["Location Latitude"] and row["Location Longitude"] %}
+        {% if emitted > 0 %},{% endif %}
+        {{ {
+          "locationId": row["Location ID"],
+          "name": row["Location Name"],
+          "lat": row["Location Latitude"],
+          "lng": row["Location Longitude"],
+          "address1": row["Location Address Line"],
+          "address2": row["Location Address Line 2"],
+          "city": row["Location City"],
+          "postcode": row["Location Postal Code"],
+          "serviceTypes": row["Service Types"],
+          "beds": row["Bed Numbers"],
+          "cqcRating": row["CQC Rating"],
+          "distanceFromPostcode": row["Distance from postcode"]
+        } | dump | safe }}
+        {% set emitted = emitted + 1 %}
+      {% endif %}
+    {% endfor %}
+  ]
+
+</script>
+<script>
+
+  function splitTypes(str) {
+    return (str || '')
+      .split(',')
+      .map(s => s.trim().toLowerCase())
+      .filter(Boolean);
+  }
+
+  function matchesServiceTypes(rowServiceTypesStr, selected) {
+
+    if (!selected || selected.length === 0) return true;
+
+    const rowTypes = splitTypes(rowServiceTypesStr);
+    return selected.some(s => rowTypes.includes(String(s).trim().toLowerCase()));
+  }
+
+  function matchesCqcRating(rowRating, selected) {
+
+    if (!selected || selected.length === 0) return true;
+
+    const r = String(rowRating || '').trim().toLowerCase();
+    return selected.some(x => String(x).trim().toLowerCase() === r);
+  }  
+
+  // Read JSON payload + selected filters
+  var locations = [];
+  var selectedServiceTypes = [];
+  var selectedCqcRatings = [];
+  var selectedContextServiceType = '';
+
+  try {
+    locations = JSON.parse(document.getElementById('providerLocationsData-Haverhill')?.textContent || '[]');
+  }
+  catch (e) {
+    console.error('Failed to parse provider JSON', e);
+    locations = [];
+  }
+
+  try {
+    selectedServiceTypes = JSON.parse(document.getElementById('selectedServiceTypes')?.textContent || '[]');
+    selectedCqcRatings = JSON.parse(document.getElementById('selectedCqcRatings')?.textContent || '[]');
+  }
+  catch (e) {
+    console.error('Failed to parse selected filters', e);
+    selectedServiceTypes = [];
+    selectedCqcRatings = [];
+  }  
+
+  try {
+    selectedContextServiceType = JSON.parse(
+      document.getElementById('selectedContextServiceType')?.textContent || '""'
+    );
+  }
+  catch (e) {
+    selectedContextServiceType = '';
+  }
+
+  locations.forEach(function (loc) {
+
+    // Only include ONE of the two “context” locations
+    if (loc.locationId === '1-000000001' && selectedContextServiceType !== 'Care home') return;
+    if (loc.locationId === '1-000000002' && selectedContextServiceType !== 'Community social care') return;
+    if (!matchesServiceTypes(loc.serviceTypes, selectedServiceTypes)) return;
+    if (!matchesCqcRating(loc.cqcRating, selectedCqcRatings)) return;
+
+    var lat = parseFloat(loc.lat);
+    var lng = parseFloat(loc.lng);
+
+    if (isNaN(lat) || isNaN(lng)) return;
+
+    var marker = L.marker([lat, lng]);
+    var addressHtml = '';
+
+    if (loc.address1) addressHtml += loc.address1;
+    if (loc.address2) addressHtml += ', ' + loc.address2;
+    if (loc.city) addressHtml += ', ' + loc.city;
+    if (loc.postcode) addressHtml += ', ' + loc.postcode;
+
+    var popupHtml = "<span class='popup'>" + "Name: " + (loc.name || '') + "<br>" + "Address: " + addressHtml + "<br>" + "Services: " + (loc.serviceTypes || '') + "<br>" + "Beds: " + (loc.beds || '') + "<br>" + "CQC rating: " + (loc.cqcRating || '') + "<br>" + "Distance from postcode: " + (loc.distanceFromPostcode || 'Not applicable') + "</span>";
+
+    marker.bindPopup(popupHtml);
+    clusters.addLayer(marker);
+  });
+
+  map.addLayer(clusters);
+
+  function updateHomeClickPriority() {
+
+    // Default: allow clicking the home icon
+    var enabled = true;
+
+    try {
+
+      // Get rendered cluster/marker layers (includes clusters + unclustered markers)
+      var layers = clusters.getLayers();
+      // Convert home HIT coords to pixel point (screen space)
+      var homePt = map.latLngToLayerPoint(homeHitLatLng);
+      // If any cluster/marker is within ~22px, treat it as overlapping
+      var thresholdPx = 22;
+
+      for (var i = 0; i < layers.length; i++) {
+
+        var lyr = layers[i];
+
+        // Only check visible markers/clusters that are on the map
+        if (!lyr.getLatLng) continue;
+
+        var pt = map.latLngToLayerPoint(lyr.getLatLng());
+        var dx = pt.x - homePt.x;
+        var dy = pt.y - homePt.y;
+
+        if ((dx * dx + dy * dy) <= (thresholdPx * thresholdPx)) {
+          enabled = false; // cluster/marker overlaps home -> clusters win
+          break;
+        }
+
+      }
+    }
+    catch (e) {
+      // If anything goes wrong, fail safe: clusters win
+      enabled = false;
+    }
+
+    setHomeClickEnabled(enabled);
+  }
+
+  function onMapViewChanged() {
+    updateHomeClickMarkerPosition();
+    updateHomeClickPriority();
+  }
+
+  // Run now + whenever the map/cluster layout changes
+  map.whenReady(onMapViewChanged);
+  map.on('zoomend moveend', onMapViewChanged);
+  clusters.on('animationend', updateHomeClickPriority);
+  clusters.on('spiderfied unspiderfied', updateHomeClickPriority);
+
+</script>
+{% else %}
+<script>
+
+  // Home location (Sudbury)
+  var homeCoords = [52.037456, 0.730166];
+  // Initialise the map ONCE, with attribution disabled
+  var map = L.map('map', {
+    attributionControl: false,
+    gestureHandling: true,
+    gestureHandlingOptions: {
+      text: {
+        touch: "Use two fingers to move the map",
+        scroll: "Use Ctrl + scroll to zoom the map",
+        scrollMac: "Use ⌘ + scroll to zoom the map"
+      }
+    }
+  }).setView(homeCoords, 12);
+
+  // Put the home marker in a dedicated pane below clustered markers
+  map.createPane('homePane');
+  map.getPane('homePane').style.zIndex = 399; // below markerPane (400) used by markers/clusters
+
+  // NEW: click pane ABOVE clusters so the home icon is still tappable/clickable
+  map.createPane('homeClickPane');
+  map.getPane('homeClickPane').style.zIndex = 650; // above marker/cluster panes
+
+  // --- Copyright (©) map button -> centred modal ---
+  var AttributionToggleControl = L.Control.extend({
+    options: { position: 'bottomright' },
+
+    onAdd: function (map) {
+      var container = L.DomUtil.create('div', 'leaflet-control-zoom leaflet-bar');
+
+      // The © button
+      var link = L.DomUtil.create('a', 'leaflet-control-attribution-toggle', container);
+      link.href = '#';
+      link.title = 'Open copyright information';
+      link.setAttribute('role', 'button');
+      link.setAttribute('aria-haspopup', 'dialog');
+      link.innerHTML = '&copy;';
+
+      // Create modal backdrop inside the map container so it overlays the map
+      var mapEl = map.getContainer();
+
+      // Ensure map container can position absolute children
+      if (getComputedStyle(mapEl).position === 'static') {
+        mapEl.style.position = 'relative';
+      }
+
+      var backdrop = L.DomUtil.create('div', 'leaflet-attrib-modal-backdrop', mapEl);
+      backdrop.setAttribute('aria-hidden', 'true');
+
+      var modal = L.DomUtil.create('div', 'leaflet-attrib-modal', backdrop);
+      modal.setAttribute('role', 'dialog');
+      modal.setAttribute('aria-modal', 'true');
+      modal.setAttribute('aria-labelledby', 'leaflet-attrib-title');
+
+      modal.innerHTML = "<h5 class='govuk-heading-s' id='leaflet-attrib-title'>Copyright information</h5>" + "<p class='govuk-body'>Leaflet | &copy; OpenStreetMap contributors.</p>";
+
+      var closeBtn = document.createElement('button');
+      closeBtn.type = 'button';
+      closeBtn.className = 'govuk-button govuk-button--in-modal';
+      closeBtn.textContent = 'Close';
+      modal.appendChild(closeBtn);
+
+      function openModal() {
+        backdrop.style.display = 'flex';
+        backdrop.setAttribute('aria-hidden', 'false');
+
+        // Focus the close button immediately
+        setTimeout(function () { closeBtn.focus(); }, 0);
+      }
+
+      function closeModal() {
+        backdrop.style.display = 'none';
+        backdrop.setAttribute('aria-hidden', 'true');
+
+        // Return focus to the © button
+        setTimeout(function () { link.focus(); }, 0);
+      }
+
+      // Prevent map drag/scroll when interacting with modal
+      L.DomEvent.disableClickPropagation(container);
+      L.DomEvent.disableClickPropagation(backdrop);
+      L.DomEvent.disableScrollPropagation(backdrop);
+
+      // Open on click/tap
+      L.DomEvent.on(link, 'click', function (e) {
+        L.DomEvent.preventDefault(e);
+        openModal();
+      });
+
+      // Close button
+      L.DomEvent.on(closeBtn, 'click', function (e) {
+        L.DomEvent.preventDefault(e);
+        closeModal();
+      });
+
+      // Click outside modal closes (optional, but feels natural)
+      L.DomEvent.on(backdrop, 'click', function (e) {
+        if (e.target === backdrop) closeModal();
+      });
+
+      // ESC closes
+      L.DomEvent.on(document, 'keydown', function (e) {
+        if (backdrop.style.display === 'flex' && (e.key === 'Escape' || e.key === 'Esc')) {
+          closeModal();
+        }
+      });
+
+      return container;
+    }
+  });
+
+  map.addControl(new AttributionToggleControl());
+
+  // Move default zoom buttons to bottom-right
+  map.zoomControl.setPosition('bottomright');
+
+  // Tile layer
+  L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+  }).addTo(map);
+
+  // Postcode icon
+  var homeIcon = L.icon({
+    iconUrl: '/public/images/your-postcode.svg',
+    iconSize: [40, 50],
+    iconAnchor: [20, 50],
+    popupAnchor: [0, -50]
+  });
+
+  // Visible home marker (kept behind clusters)
+  var homeMarker = L.marker(homeCoords, { icon: homeIcon, pane: 'homePane' })
+    .addTo(map)
+    .bindPopup("<span class='popup'><strong>{{data.selectedLocationPostcode or 'CO5 1ST'}}</strong></span>");
+
+  // --- Make the click target match the icon body (not just the tip) ---
+  function iconHitLatLng(map, anchorLatLng, yOffsetPx) {
+
+    // yOffsetPx should be NEGATIVE to move up
+    var p = map.latLngToLayerPoint(anchorLatLng);
+    var p2 = L.point(p.x, p.y + yOffsetPx);
+
+    return map.layerPointToLatLng(p2);
+  }
+
+  // Keep this updated when zoom changes (fitBounds changes zoom!)
+  var homeHitLatLng = homeCoords;
+
+  // Invisible click target ABOVE clusters (but we can disable it when clusters overlap)
+  var homeClickMarker = L.circleMarker(homeCoords, {
+    pane: 'homeClickPane',
+    radius: 26,
+    opacity: 0,
+    fillOpacity: 0,
+    interactive: true,
+    bubblingMouseEvents: false
+  }).addTo(map);
+
+  function updateHomeClickMarkerPosition() {
+    // Icon is 50px tall and anchored at y=50, so centre is ~25px above the anchor
+    homeHitLatLng = iconHitLatLng(map, homeCoords, -25);
+    homeClickMarker.setLatLng(homeHitLatLng);
+  }
+
+  // Position it once now (will be re-run after fitBounds and on zoom/move)
+  updateHomeClickMarkerPosition();
+
+  // Open the real marker popup on tap/click
+  function openHomePopup() { homeMarker.openPopup(); }
+  
+  homeClickMarker.on('click', openHomePopup);
+  homeClickMarker.on('touchstart', openHomePopup);
+  homeClickMarker.on('pointerdown', openHomePopup);
+
+  function setHomeClickEnabled(enabled) {
+
+    var el = homeClickMarker.getElement && homeClickMarker.getElement();
+
+    if (!el) return;
+
+    // When disabled, it won't receive taps/clicks (clusters will)
+    el.style.pointerEvents = enabled ? 'auto' : 'none';
+  }
+
+  // --- 5 mile radius circle (Sudbury) ---
+  // 5 miles in metres
+  var fiveMilesInMetres = 8046.72;
+  var radiusCircle = L.circle(homeCoords, {
+    color: '#1d70b8',
+    fillColor: '#b1b4b6',
+    fillOpacity: 0.25,
+    radius: fiveMilesInMetres
+  }).addTo(map);
+
+  // --- Manual calculations around Sudbury (approx 5 miles) ---
+  // Approx conversions at ~52°N:
+  // 1 degree latitude ≈ 111.32 km
+  // 1 degree longitude ≈ 111.32 * cos(52°) km ≈ 68.5 km
+  // 5 miles ≈ 8.0467 km
+  var deltaLat = 8.0467 / 111.32;   // ≈ 0.0723
+  var deltaLng = 8.0467 / 68.5;     // ≈ 0.1174
+  var southWest = L.latLng(homeCoords[0] - deltaLat, homeCoords[1] - deltaLng);
+  var northEast = L.latLng(homeCoords[0] + deltaLat, homeCoords[1] + deltaLng);
+  var circleBounds = L.latLngBounds(southWest, northEast);
+
+  // Automatically zoom the map so this "5-mile box" (and thus the circle) is visible
+  map.fitBounds(circleBounds);
+
+  // IMPORTANT: fitBounds changes zoom, so re-align the click target afterwards
+  updateHomeClickMarkerPosition();
+
+  // --- Reset map view button ---
+  var ResetMapControl = L.Control.extend({
+    options: { position: 'bottomright' },
+
+    onAdd: function () {
+
+      var container = L.DomUtil.create('div', 'leaflet-control-zoom leaflet-bar');
+      var link = L.DomUtil.create('a', 'leaflet-control-reset-map', container);
+      link.href = '#';
+      link.title = 'Reset map view';
+      link.style.backgroundImage = "url('/public/images/reset-map-icon.png')";
+      link.style.backgroundSize = '18px 18px';
+      link.style.backgroundPosition = 'center';
+      link.style.backgroundRepeat = 'no-repeat';
+      link.style.width = '30px';
+      link.style.height = '30px';
+
+      L.DomEvent.disableClickPropagation(link);
+      L.DomEvent.on(link, 'click', function (e) {
+        L.DomEvent.preventDefault(e);
+        map.fitBounds(circleBounds);
+        // keep click target aligned after reset
+        updateHomeClickMarkerPosition();
+      });
+
+      return container;
+    }
+
+  });
+
+  // Add Reset Map View control AFTER zoom control repositioning
+  map.addControl(new ResetMapControl());  
+
+  // Create a clusters group
+  var clusters = L.markerClusterGroup();
+
+// Close this script so we can embed JSON without breaking the JS parser in editors
+</script>
+<script type="application/json" id="selectedContextServiceType">
+
+  {{(data.selectedServiceType or '') | dump | safe}}
+
+</script>
+<script type="application/json" id="selectedServiceTypes">
+
+  {{(data.serviceType or []) | dump | safe}}
+
+</script>
+<script type="application/json" id="selectedCqcRatings">
+
+  {{(data.cqcRating or []) | dump | safe}}
+
+</script>
+<script type="application/json" id="providerLocationsData-Sudbury">
+
+  [
+    {% set rows = data[data['v9CareProvidersLocationsAndServices']]['Care provider locations'] %}
+    {% set emitted = 0 %}
+    {% for row in rows %}
+      {% if row["Location City"] == "Sudbury" and row["Location Latitude"] and row["Location Longitude"] %}
+        {% if emitted > 0 %},{% endif %}
+        {{ {
+          "locationId": row["Location ID"],
+          "name": row["Location Name"],
+          "lat": row["Location Latitude"],
+          "lng": row["Location Longitude"],
+          "address1": row["Location Address Line"],
+          "address2": row["Location Address Line 2"],
+          "city": row["Location City"],
+          "postcode": row["Location Postal Code"],
+          "serviceTypes": row["Service Types"],
+          "beds": row["Bed Numbers"],
+          "cqcRating": row["CQC Rating"],
+          "distanceFromPostcode": row["Distance from postcode"]
+        } | dump | safe }}
+        {% set emitted = emitted + 1 %}
+      {% endif %}
+    {% endfor %}
+  ]
+
+</script>
+<script>
+
+  function splitTypes(str) {
+    return (str || '')
+      .split(',')
+      .map(s => s.trim().toLowerCase())
+      .filter(Boolean);
+  }
+
+  function matchesServiceTypes(rowServiceTypesStr, selected) {
+
+    if (!selected || selected.length === 0) return true;
+
+    const rowTypes = splitTypes(rowServiceTypesStr);
+    return selected.some(s => rowTypes.includes(String(s).trim().toLowerCase()));
+  }
+
+  function matchesCqcRating(rowRating, selected) {
+
+    if (!selected || selected.length === 0) return true;
+
+    const r = String(rowRating || '').trim().toLowerCase();
+    return selected.some(x => String(x).trim().toLowerCase() === r);
+  }
+
+  // Read JSON payload + selected filters
+  var locations = [];
+  var selectedServiceTypes = [];
+  var selectedCqcRatings = [];
+  var selectedContextServiceType = '';
+
+  try {
+    locations = JSON.parse(document.getElementById('providerLocationsData-Sudbury')?.textContent || '[]');
+  }
+  catch (e) {
+    console.error('Failed to parse provider JSON', e);
+    locations = [];
+  }
+
+  try {
+    selectedServiceTypes = JSON.parse(document.getElementById('selectedServiceTypes')?.textContent || '[]');
+    selectedCqcRatings = JSON.parse(document.getElementById('selectedCqcRatings')?.textContent || '[]');
+  }
+  catch (e) {
+    console.error('Failed to parse selected filters', e);
+    selectedServiceTypes = [];
+    selectedCqcRatings = [];
+  }  
+
+  try {
+    selectedContextServiceType = JSON.parse(document.getElementById('selectedContextServiceType')?.textContent || '""');
+  }
+  catch (e) {
+    selectedContextServiceType = '';
+  }
+
+  locations.forEach(function (loc) {
+
+    // Only include ONE of the two “context” locations
+    if (loc.locationId === '1-000000001' && selectedContextServiceType !== 'Care home') return;
+    if (loc.locationId === '1-000000002' && selectedContextServiceType !== 'Community social care') return;
+    if (!matchesServiceTypes(loc.serviceTypes, selectedServiceTypes)) return;
+    if (!matchesCqcRating(loc.cqcRating, selectedCqcRatings)) return;
+
+    var lat = parseFloat(loc.lat);
+    var lng = parseFloat(loc.lng);
+
+    if (isNaN(lat) || isNaN(lng)) return;
+
+    var marker = L.marker([lat, lng]);
+    var addressHtml = '';
+
+    if (loc.address1) addressHtml += loc.address1;
+    if (loc.address2) addressHtml += ', ' + loc.address2;
+    if (loc.city) addressHtml += ', ' + loc.city;
+    if (loc.postcode) addressHtml += ', ' + loc.postcode;
+
+    var popupHtml = "<span class='popup'>" + "Name: " + (loc.name || '') + "<br>" + "Address: " + addressHtml + "<br>" + "Services: " + (loc.serviceTypes || '') + "<br>" + "Beds: " + (loc.beds || '') + "<br>" + "CQC rating: " + (loc.cqcRating || '') + "<br>" + "Distance from postcode: " + (loc.distanceFromPostcode || 'Not applicable') + "</span>";
+
+    marker.bindPopup(popupHtml);
+    clusters.addLayer(marker);
+  });
+
+  map.addLayer(clusters);
+
+  function updateHomeClickPriority() {
+
+    // Default: allow clicking the home icon
+    var enabled = true;
+
+    try {
+
+      // Get rendered cluster/marker layers (includes clusters + unclustered markers)
+      var layers = clusters.getLayers();
+      // Convert home HIT coords to pixel point (screen space)
+      var homePt = map.latLngToLayerPoint(homeHitLatLng);
+      // If any cluster/marker is within ~22px, treat it as overlapping
+      var thresholdPx = 22;
+
+      for (var i = 0; i < layers.length; i++) {
+
+        var lyr = layers[i];
+
+        // Only check visible markers/clusters that are on the map
+        if (!lyr.getLatLng) continue;
+
+        var pt = map.latLngToLayerPoint(lyr.getLatLng());
+        var dx = pt.x - homePt.x;
+        var dy = pt.y - homePt.y;
+
+        if ((dx * dx + dy * dy) <= (thresholdPx * thresholdPx)) {
+          enabled = false; // cluster/marker overlaps home -> clusters win
+          break;
+        }
+
+      }
+    }
+    catch (e) {
+      // If anything goes wrong, fail safe: clusters win
+      enabled = false;
+    }
+
+    setHomeClickEnabled(enabled);
+  }
+
+  function onMapViewChanged() {
+    updateHomeClickMarkerPosition();
+    updateHomeClickPriority();
+  }
+
+  // Run now + whenever the map/cluster layout changes
+  map.whenReady(onMapViewChanged);
+  map.on('zoomend moveend', onMapViewChanged);
+  clusters.on('animationend', updateHomeClickPriority);
+  clusters.on('spiderfied unspiderfied', updateHomeClickPriority);
+
+</script>
+{% endif %}

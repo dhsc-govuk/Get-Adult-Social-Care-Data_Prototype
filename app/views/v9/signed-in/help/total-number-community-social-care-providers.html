@@ -1,0 +1,74 @@
+{% extends "v9/layouts/signed-in.html" %}
+
+{% set pageName = "Total number of community social care providers" %}
+
+{% block beforeContent %}
+<a href="javascript:history.back()" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-two-thirds">
+    <span class="govuk-caption-l">Data indicator details</span>
+    <h1 class="govuk-heading-l">{{pageName}}</h1>
+    <dl class="govuk-summary-list">
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">What this measures</dt>
+        <dd class="govuk-summary-list__value">The total number of care providers registered as community social care providers, including homecare, supported living, supported housing and other non&#45;NHS community social care providers with the Care Quality Commission (CQC).</dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Source</dt>
+        <dd class="govuk-summary-list__value"><a href="https://www.cqc.org.uk/about-us/transparency/using-cqc-data" class="govuk-link" target="_blank">Care Directory from the CQC (opens in new tab)</a></dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Data correct as of</dt>
+        <dd class="govuk-summary-list__value">August 2025</dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Update frequency</dt>
+        <dd class="govuk-summary-list__value">Monthly</dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Methodology</dt>
+        <dd class="govuk-summary-list__value">
+          The total number of community social care providers is calculated by summing the total number of providers registered under the following categories with the CQC:
+          <br>
+          <br>
+          <ul class="govuk-list--bullet">
+            <li>homecare providers</li>
+            <li>supported living providers</li>
+            <li>supported housing providers</li>
+            <li>other non&#45;NHS community social care providers, such as those that provide community services or shared lives services</li>
+          </ul>
+          <br>
+          If a provider provides more than one type of community social care they will be included within both statistics. For example, if a provider is registered with CQC as providing &lsquo;homecare and supported living&rsquo; they will appear as both a homecare and a supported living provider in the above calculations.
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Limitations</dt>
+        <dd class="govuk-summary-list__value">
+          Community social care providers&#39; registered location with CQC is the location of their registered office, and as such that is how care providers are allocated to a certain <abbr title="Local Authority">LA</abbr> and region. This might not reflect the actual location that community social care is provided within as not all care providers provide care within the same location as their registered office.
+          <br>
+          <br>
+          Information might not reflect current services provided by the care provider as it is collected at registration and so might not be kept regularly updated.
+        </dd>
+      </div>
+
+      <!-- Not included in Edge content document
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Data definitions</dt>
+        <dd class="govuk-summary-list__value">See data source for details.</dd>
+      </div> -->
+
+    </dl>
+  </div>
+
+</div>
+{% endblock %}

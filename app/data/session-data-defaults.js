@@ -1,5 +1,17 @@
 module.exports = {
 
+  // v9
+  "v9ProviderLocationsData": require('./v9/provider-locations.json'),
+  "v9ProviderLocations": "v9ProviderLocationsData",
+  "v9CareProvidersLocationsAndServicesData": require('./v9/residential-care/care-providers-locations-and-services.json'),
+  "v9CareProvidersLocationsAndServices": "v9CareProvidersLocationsAndServicesData",
+  "v9CareHomeBedsAndOccupancyData": require('./v9/residential-care/care-home-beds-and-occupancy.json'),
+  "v9CareHomeBedsAndOccupancy": "v9CareHomeBedsAndOccupancyData",
+  "v9localAuthorityFundingForAdultSocialCareData": require('./v9/funding/local-authority-funding-for-adult-social-care.json'),
+  "v9localAuthorityFundingForAdultSocialCare": "v9localAuthorityFundingForAdultSocialCareData",
+  "v9generalHealthDisabilityAndLearningDisabilityData": require('./v9/population-needs/general-health-disability-and-learning-disability.json'),
+  "v9generalHealthDisabilityAndLearningDisability": "v9generalHealthDisabilityAndLearningDisabilityData",
+
   // v8
   "v8ProviderLocationsData": require('./v8/provider-locations.json'),
   "v8ProviderLocations": "v8ProviderLocationsData",
