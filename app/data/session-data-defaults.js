@@ -11,6 +11,8 @@ module.exports = {
   "v9localAuthorityFundingForAdultSocialCare": "v9localAuthorityFundingForAdultSocialCareData",
   "v9generalHealthDisabilityAndLearningDisabilityData": require('./v9/population-needs/general-health-disability-and-learning-disability.json'),
   "v9generalHealthDisabilityAndLearningDisability": "v9generalHealthDisabilityAndLearningDisabilityData",
+  "v9linkedHealthAndSocialCareDataData": require('./v9/future-planning/linked-health-and-social-care-data.json'),
+  "v9linkedHealthAndSocialCareData": "v9linkedHealthAndSocialCareDataData",
 
   // v8
   "v8ProviderLocationsData": require('./v8/provider-locations.json'),

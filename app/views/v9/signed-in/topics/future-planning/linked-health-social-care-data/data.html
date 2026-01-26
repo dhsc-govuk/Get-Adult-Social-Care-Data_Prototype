@@ -1,6 +1,6 @@
-{% extends "v8/layouts/signed-in.html" %}
+{% extends "v9/layouts/signed-in.html" %}
 
-{% set pageName = "Unpaid care" %}
+{% set pageName = "Linked health and social care data" %}
 
 {% block beforeContent %}
 {{ govukBreadcrumbs({
@@ -10,7 +10,7 @@
       href: "../../../home"
     },
     {
-      text: "Care provision",
+      text: "Future planning (experimental)",
       href: "../subtopics"
     }
   ]
@@ -22,12 +22,15 @@
 
   <div class="govuk-grid-column-full">
     <h1 class="govuk-heading-xl">{{pageName}}</h1>
-    <p class="govuk-body-l">Statistics on the people who provide unpaid care to family members, friends and neighbours.</p>
+    <p class="govuk-body-l">Data on [NEEDS CONTENT].</p>
+
+    <div class="govuk-inset-text">
+      All data shown on this page is experimental. You can find out <a href="caveats" class="govuk-link">why this data is experimental</a>.
+    </div>
     
     <div class="govuk-form-group">
       <h2 class="govuk-heading-l govuk-!-margin-top-9">Data overview</h2>
       <!-- <p class="govuk-body">Data overview summary information, e.g. broad guidance.</p> -->
-      {% include "./filters/_page-filter-component.html" %}
     </div>
 
   </div>
@@ -43,29 +46,29 @@
       <div class="govuk-tabs" data-module="govuk-tabs">
         
         <div class="govuk-form-group">
-          <h3 class="govuk-heading-m">People aged 5 and over who provide unpaid care</h3>
-          <p class="govuk-body">Find out <a href="../../../help/percentage-people-aged-5-and-over-who-provide-unpaid-care">how unpaid care is measured</a>.</p>
+          <h3 class="govuk-heading-m">[NEEDS CONTENT]</h3>
+          <p class="govuk-body">Find out <a href="#">how the [NEEDS CONTENT] is calculated</a>.</p>
         </div>
 
         <h3 class="govuk-tabs__title">Contents</h3>
         <ul class="govuk-tabs__list">
           <li class="govuk-tabs__list-item">
-            <a class="govuk-tabs__tab" href="#data-table">Table</a>
+            <a class="govuk-tabs__tab" href="#data1-table">Table</a>
           </li>
           <li class="govuk-tabs__list-item">
-            <a class="govuk-tabs__tab" href="#data-download">Download</a>
+            <a class="govuk-tabs__tab" href="#data1-download">Download</a>
           </li>
         </ul>
 
-        <div class="govuk-tabs__panel" id="data-table">
+        <div class="govuk-tabs__panel" id="data1-table">
           {% include "./data-visualisations/_1-table.html" %}
         </div>
 
-        <div class="govuk-tabs__panel" id="data-download">
+        <div class="govuk-tabs__panel" id="data1-download">
           <h4 class="govuk-heading-s">Download</h4>
           <ul class="govuk-list">
             <li>
-              <a class="govuk-link" href="/public/downloads/v8/residential-care/unpaid-care/table-1-people-aged-5-and-over-who-provide-unpaid-care.csv">Export table data (CSV)</a>
+              <a class="govuk-link" href="#">Export table data (CSV)</a>
             </li>
           </ul>
         </div>
@@ -82,7 +85,7 @@
 
   <div class="govuk-grid-column-full">
     <h2 class="govuk-heading-l govuk-!-margin-top-9">Data indicator details</h2>
-    <p class="govuk-body">Use the link to view details on the data source, how the data was collected and any limitations to consider when using the data.</p>
+    <p class="govuk-body">Use the links to view details on the data source, how the data was collected and any limitations to consider when using the data.</p>
 
     <div class="gem-c-cards">
       <ul class="gem-c-cards__list gem-c-cards__list--one-column">
@@ -90,42 +93,15 @@
 
           <div class="gem-c-cards__list-item-wrapper">
             <h2 class="gem-c-cards__sub-heading govuk-heading-s">
-              <a class="govuk-link gem-c-cards__link gem-c-force-print-link-styles" href="../../../help/percentage-people-aged-5-and-over-who-provide-unpaid-care">People aged 5 and over who provide unpaid care</a>
+              <a class="govuk-link gem-c-cards__link gem-c-force-print-link-styles" href="#">[NEEDS CONTENT]</a>
             </h2>
-            <p class="govuk-body gem-c-cards__description">Source: Office for National Statistics.<br>Updated every 10 years, limitations might apply.</p>
+            <p class="govuk-body gem-c-cards__description">Source: [NEEDS CONTENT].<br>Yearly updates, limitations might apply.</p>
           </div>
 
         </li>
       </ul>
     </div>
-
-    <h2 class="govuk-heading-l govuk-!-margin-top-9">Related data</h2>
-
-    <div class="gem-c-cards">
-      <ul class="gem-c-cards__list gem-c-cards__list--one-column">
-        <li class="gem-c-cards__list-item">
-
-          <div class="gem-c-cards__list-item-wrapper">
-            <h2 class="gem-c-cards__sub-heading govuk-heading-s">
-              <a class="govuk-link gem-c-cards__link gem-c-force-print-link-styles" href="../provision-and-occupancy/data">Care home beds and occupancy levels</a>
-            </h2>
-            <p class="govuk-body gem-c-cards__description">Provision and capacity data for care homes, including local, regional and national statistics.</p>
-          </div>
-
-        </li>
-        <li class="gem-c-cards__list-item">
-
-          <div class="gem-c-cards__list-item-wrapper">
-            <h2 class="gem-c-cards__sub-heading govuk-heading-s">
-              <a class="govuk-link gem-c-cards__link gem-c-force-print-link-styles" href="../residential-care-providers/data">Care providers: locations and services</a>
-            </h2>
-            <p class="govuk-body gem-c-cards__description">Data on residential care homes and nursing homes by location and service type.</p>
-          </div>
-
-        </li>
-      </ul>
-    </div>
-
+    
     <h2 class="govuk-heading-l govuk-!-margin-top-9">Information on the local care market</h2>
     <p class="govuk-body"><a href="#" class="govuk-link" data-message="This link would take you to the Market Position Statement on the Suffolk LA website.">Market Position Statement for Suffolk (opens in new tab)</a></p>
     <p class="govuk-body">Most <abbr title="Local Authority">LA</abbr>s in England publish Market Position Statements (MPS) to help care providers understand the local care market.</p>
@@ -158,7 +134,7 @@
 
 {% block pageScripts %}
 <!-- Filters (progressive enhancement) code that loads and controls the dynamic filters for this page -->
-<script src="/public/javascripts/v8/filters.js"></script>
+<script src="/public/javascripts/v9/filters.js"></script>
 <!-- Font Awesome 4 icons for the notifications -->
 <link href="/public/open-source/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
 {% endblock %}

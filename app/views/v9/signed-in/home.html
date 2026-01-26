@@ -22,7 +22,7 @@
     <a href="topics/residential-care/provision-and-occupancy/data" class="app-card">
       <h3 class="govuk-heading-m app-card__heading">Care home beds and occupancy levels</h3>
       <p class="govuk-body">Provision and capacity data for care homes, including local, regional and national statistics.</p>
-      </a>
+    </a>
   </div>
 
 </div>
@@ -57,8 +57,8 @@
 
   <div class="govuk-grid-column-one-half">
     <a href="topics/financial-spend-and-unpaid-care/financial-spend/data" class="app-card">
-        <h3 class="govuk-heading-m app-card__heading">Local authority (LA) funding</h3>
-        <p class="govuk-body">Data on funding for both short-term and long-term care, also funding by individual care type.</p>
+      <h3 class="govuk-heading-m app-card__heading">Local authority (LA) funding</h3>
+      <p class="govuk-body">Data on funding for both short-term and long-term care, also funding by individual care type.</p>
     </a>
   </div>
 
@@ -84,7 +84,7 @@
 
   <div class="govuk-grid-column-one-half">
     <a href="topics/population-needs/household-composition-and-economic-factors/data" class="app-card">
-        <h3 class="govuk-heading-m app-card__heading">Economic factors and household composition</h3>
+      <h3 class="govuk-heading-m app-card__heading">Economic factors and household composition</h3>
       <p class="govuk-body">Data on household deprivation, property ownership and older people living alone.</p>
     </a>
   </div>
@@ -108,4 +108,25 @@
   </div>
 
 </div>
+
+{% if data.selectedServiceType == "Local authority" %}
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-full">
+    <h2 class="govuk-heading-l govuk-!-margin-top-7"><a href="topics/future-planning/subtopics" class="govuk-link">Future planning (experimental)</a></h2>
+  </div>
+
+</div>
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-one-half">
+    <a href="topics/future-planning/linked-health-social-care-data/data" class="app-card">
+      <h3 class="govuk-heading-m app-card__heading">Linked health and social care data</h3>
+      <p class="govuk-body needs-content">[NEEDS CONTENT].</p>
+    </a>
+  </div>
+
+</div>
+{% endif %}
 {% endblock %}

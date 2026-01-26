@@ -1,0 +1,23 @@
+{% extends "v9/layouts/signed-in.html" %}
+
+{% set pageName = "[NEEDS CONTENT]" %}
+
+{% block beforeContent %}
+<a href="javascript:history.back()" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-full">
+    <h1 class="govuk-heading-xl">{{pageName}}</h1>
+    <p class="govuk-body">[NEEDS CONTENT].</p>
+  </div>
+
+</div>
+{% endblock %}
+
+{% block pageScripts %}
+<!-- Font Awesome 4 icons for the notifications -->
+<link href="/public/open-source/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+{% endblock %}
