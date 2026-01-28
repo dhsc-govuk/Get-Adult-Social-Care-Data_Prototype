@@ -667,6 +667,33 @@ module.exports = function(router) {
   })
 
   /*****
+   * Signed in
+   * Data > Future planning
+  *****/
+
+  // Estimated population size and age group percentages
+  router.post('/' + version + '/' + 'signed-in/topics/future-planning/estimated-population-age-and-size/data-update-filters17', function (req, res) {
+
+    // Data objects to be retrieved and queried
+    var year = req.session.data['year']
+
+    // Reset all default values injected into our filters
+    if (year == "2030") {
+      year = undefined
+    }
+
+    // User has chosen at least 1 filter  
+		if (year) {
+      res.redirect('/' + version + '/' + 'signed-in/topics/future-planning/estimated-population-age-and-size/data?filterApplied17=Yes')     
+		}
+		// No filters selected by user
+		else {			
+      res.redirect('/' + version + '/' + 'signed-in/topics/future-planning/estimated-population-age-and-size/data?filterApplied17=')
+    }
+    
+  })
+
+  /*****
    * Additional screens
    * Footer, service information and system pages
   *****/

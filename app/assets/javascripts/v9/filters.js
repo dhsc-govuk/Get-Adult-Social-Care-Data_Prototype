@@ -28,6 +28,7 @@ window.addEventListener('load', function() {
   $('#dhsc-filter--button-content14').html('Show filters');
   $('#dhsc-filter--button-content15').html('Show filters');
   $('#dhsc-filter--button-content16').html('Show filters');
+  $('#dhsc-filter--button-content17').html('Show filters');
 
   // Show the search box for searchable radios
   $('#radios-search').show();
@@ -757,30 +758,6 @@ window.addEventListener('load', function() {
     $('#update-filters13').click();
   });
 
-  // Page filter (#15 for GASCD) - User interacts with the filter button
-  $('#dhsc-filter--button15').on("click", function() {
-    
-    if (!$('#dhsc-filter--action15').hasClass('dhsc-filter--open')) {
-      $('#dhsc-filter--content15').show().focus();
-      $('#dhsc-filter--action15').addClass('dhsc-filter--open');
-      $('#dhsc-filter--button15').attr('aria-expanded', 'true');
-      $("#dhsc-filter--button15 .dhsc-filter--button-content").text('Hide filters');
-      $('#dhsc-filter--icon15').addClass('fa-minus');
-      $('#dhsc-filter--icon15').removeClass('fa-plus');
-      $('#dhsc-filter--icon15-content').text('Close');
-    }
-    else {
-      $('#dhsc-filter--content15').hide();
-      $('#dhsc-filter--action15').removeClass('dhsc-filter--open');
-      $('#dhsc-filter--button15').attr('aria-expanded', 'false');
-      $("#dhsc-filter--button15 .dhsc-filter--button-content").text('Show filters');
-      $('#dhsc-filter--icon15').addClass('fa-plus');
-      $('#dhsc-filter--icon15').removeClass('fa-minus');
-      $('#dhsc-filter--icon15-content').text('Open');
-    }
-
-  });
-
   // Page filter (#14 for GASCD) - User interacts with the filter button
   $('#dhsc-filter--button14').on("click", function() {
     
@@ -813,14 +790,38 @@ window.addEventListener('load', function() {
     $('#localAuthority14').val('Suffolk');
     $('#update-filters14').click();
   });
-  // Age group
 
+  // Age group
   $('#ageGroup14-remove').on("click", function(e) {
     e.preventDefault();
     $('#ageGroup14_1').prop("checked", true);
     $('#ageGroup14_2').prop("checked", false);
     $('#ageGroup14_3').prop("checked", false);
     $('#update-filters14').click();
+  });
+
+  // Page filter (#15 for GASCD) - User interacts with the filter button
+  $('#dhsc-filter--button15').on("click", function() {
+    
+    if (!$('#dhsc-filter--action15').hasClass('dhsc-filter--open')) {
+      $('#dhsc-filter--content15').show().focus();
+      $('#dhsc-filter--action15').addClass('dhsc-filter--open');
+      $('#dhsc-filter--button15').attr('aria-expanded', 'true');
+      $("#dhsc-filter--button15 .dhsc-filter--button-content").text('Hide filters');
+      $('#dhsc-filter--icon15').addClass('fa-minus');
+      $('#dhsc-filter--icon15').removeClass('fa-plus');
+      $('#dhsc-filter--icon15-content').text('Close');
+    }
+    else {
+      $('#dhsc-filter--content15').hide();
+      $('#dhsc-filter--action15').removeClass('dhsc-filter--open');
+      $('#dhsc-filter--button15').attr('aria-expanded', 'false');
+      $("#dhsc-filter--button15 .dhsc-filter--button-content").text('Show filters');
+      $('#dhsc-filter--icon15').addClass('fa-plus');
+      $('#dhsc-filter--icon15').removeClass('fa-minus');
+      $('#dhsc-filter--icon15-content').text('Open');
+    }
+
   });
 
   // Page filter (#15 for GASCD) - Quick and dirty way of updating the filters individually, when a user clicks a related pill
@@ -863,6 +864,42 @@ window.addEventListener('load', function() {
     e.preventDefault();
     $('#supportSetting16 option[value=All types of adult social care]').prop("checked", true);
     $('#update-filters16').click();
+  });
+
+  // Filter (#17 for GASCD): Estimated population size with age group percentages - User interacts with the filter button
+  $('#dhsc-filter--button17').on("click", function() {
+    
+    if (!$('#dhsc-filter--action17').hasClass('dhsc-filter--open')) {
+      $('#dhsc-filter--content17').show().focus();
+      $('#dhsc-filter--action17').addClass('dhsc-filter--open');
+      $('#dhsc-filter--button17').attr('aria-expanded', 'true');
+      $("#dhsc-filter--button17 .dhsc-filter--button-content").text('Hide filters');
+      $('#dhsc-filter--icon17').addClass('fa-minus');
+      $('#dhsc-filter--icon17').removeClass('fa-plus');
+      $('#dhsc-filter--icon17-content').text('Close');
+    }
+    else {
+      $('#dhsc-filter--content17').hide();
+      $('#dhsc-filter--action17').removeClass('dhsc-filter--open');
+      $('#dhsc-filter--button17').attr('aria-expanded', 'false');
+      $("#dhsc-filter--button17 .dhsc-filter--button-content").text('Show filters');
+      $('#dhsc-filter--icon17').addClass('fa-plus');
+      $('#dhsc-filter--icon17').removeClass('fa-minus');
+      $('#dhsc-filter--icon17-content').text('Open');
+    }
+
+  });
+
+  /* Filter (#17 for GASCD): Estimated population size with age group percentages - Quick and dirty way of updating the filters individually, when a user clicks a related pill */
+
+  // Year
+  $('#year-remove').on("click", function(e) {
+    e.preventDefault();
+    $('#year_1').prop("checked", true);
+    $('#year_2').prop("checked", false);
+    $('#year_3').prop("checked", false);
+    $('#year_4').prop("checked", false);
+    $('#update-filters17').click();
   });
 
 });
