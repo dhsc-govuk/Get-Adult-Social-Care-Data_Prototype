@@ -42,7 +42,7 @@
       <div class="govuk-tabs" data-module="govuk-tabs">
 
         <div class="govuk-form-group">
-          <h3 class="govuk-heading-m">Estimated population size with age group percentages</h3>
+          <h3 id="data1" class="govuk-heading-m">Estimated population size with age group percentages</h3>
           <p class="govuk-body">Find out how <a href="../../../help/population-size" class="govuk-link">population size</a> and <a href="../../../help/population-age" class="govuk-link">age group percentages</a> are calculated.</p>
           {% include "./filters/_1-filter-component.html" %}
         </div>
@@ -64,6 +64,115 @@
         <div class="govuk-tabs__panel" id="data1-download">
           <h4 class="govuk-heading-s">Download</h4>
           <ul class="govuk-list">
+            <li>
+              <a class="govuk-link" href="#">Export table data (CSV)</a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-full">
+
+    <div class="data-box govuk-form-group">
+
+      <div class="govuk-tabs" data-module="govuk-tabs">
+
+        <div class="govuk-form-group">
+          <h3 id="data2" class="govuk-heading-m">Estimated population size with age group percentages across Suffolk and similar <abbr title="Local Authority">LA</abbr>s</h3>
+          <p class="govuk-body">Find out <a href="#">how the [NEEDS CONTENT] is calculated</a>.</p>
+          {% include "./filters/_2-filter-component.html" %}
+        </div>
+
+        <h3 class="govuk-tabs__title">Contents</h3>
+        <ul class="govuk-tabs__list">
+          <li class="govuk-tabs__list-item">
+            <a class="govuk-tabs__tab" href="#data2-table">Table</a>
+          </li>
+          <li class="govuk-tabs__list-item">
+            <a class="govuk-tabs__tab" href="#data2-download">Download</a>
+          </li>
+        </ul>
+
+        <div class="govuk-tabs__panel" id="data2-table">
+          {% include "./data-visualisations/_2-table.html" %}
+        </div>
+
+        <div class="govuk-tabs__panel" id="data2-download">
+          <h4 class="govuk-heading-s">Download</h4>
+          <ul class="govuk-list">
+            <li>
+              <a class="govuk-link" href="#">Export table data (CSV)</a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-full">
+    <h2 class="govuk-heading-l govuk-!-margin-top-9">Trends</h2>
+    <!-- <p class="govuk-body">Trends summary information, e.g. limitation.</p> -->
+  </div>
+
+</div>
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-full">
+
+    <div class="data-box govuk-form-group">
+
+      <div class="govuk-tabs" data-module="govuk-tabs">
+        
+        <div class="govuk-form-group">
+          <h3 id="trend1" class="govuk-heading-m">Estimated population change across Suffolk and similar <abbr title="Local Authority">LA</abbr>s - trends over time</h3>
+          <p class="govuk-body">Find out <a href="#">how the [NEEDS CONTENT] is calculated</a>.</p>
+          {% include "./filters/_3-filter-component.html" %}
+        </div>
+
+        <h3 class="govuk-tabs__title">Contents</h3>
+        <ul class="govuk-tabs__list">
+          <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+            <a class="govuk-tabs__tab" href="#trend-chart">Graph</a>
+          </li>
+          <li class="govuk-tabs__list-item">
+            <a class="govuk-tabs__tab" href="#trend-table">Table</a>
+          </li>
+          <li class="govuk-tabs__list-item">
+            <a class="govuk-tabs__tab" href="#trend-download">Download</a>
+          </li>
+        </ul>
+
+        <div class="govuk-tabs__panel" id="trend-chart">
+          {% include "./data-visualisations/_3-time-series.html" %}
+        </div>
+
+        <div class="govuk-tabs__panel" id="trend-table">
+          {% include "./data-visualisations/_3-table.html" %}
+        </div>
+
+        <div class="govuk-tabs__panel" id="trend-download">
+          <h4 class="govuk-heading-s">Download</h4>
+          <ul class="govuk-list">
+            <li>
+              <a class="govuk-link" href="#">Download chart image (PNG)</a>
+            </li>
             <li>
               <a class="govuk-link" href="#">Export table data (CSV)</a>
             </li>

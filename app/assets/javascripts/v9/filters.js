@@ -29,6 +29,8 @@ window.addEventListener('load', function() {
   $('#dhsc-filter--button-content15').html('Show filters');
   $('#dhsc-filter--button-content16').html('Show filters');
   $('#dhsc-filter--button-content17').html('Show filters');
+  $('#dhsc-filter--button-content18').html('Show filters');
+  $('#dhsc-filter--button-content19').html('Show filters');
 
   // Show the search box for searchable radios
   $('#radios-search').show();
@@ -900,6 +902,79 @@ window.addEventListener('load', function() {
     $('#year_3').prop("checked", false);
     $('#year_4').prop("checked", false);
     $('#update-filters17').click();
+  });
+
+  // Filter (#18 for GASCD): Estimated population size with age group percentages across Suffolk and similar LAs - User interacts with the filter button
+  $('#dhsc-filter--button18').on("click", function() {
+    
+    if (!$('#dhsc-filter--action18').hasClass('dhsc-filter--open')) {
+      $('#dhsc-filter--content18').show().focus();
+      $('#dhsc-filter--action18').addClass('dhsc-filter--open');
+      $('#dhsc-filter--button18').attr('aria-expanded', 'true');
+      $("#dhsc-filter--button18 .dhsc-filter--button-content").text('Hide filters');
+      $('#dhsc-filter--icon18').addClass('fa-minus');
+      $('#dhsc-filter--icon18').removeClass('fa-plus');
+      $('#dhsc-filter--icon18-content').text('Close');
+    }
+    else {
+      $('#dhsc-filter--content18').hide();
+      $('#dhsc-filter--action18').removeClass('dhsc-filter--open');
+      $('#dhsc-filter--button18').attr('aria-expanded', 'false');
+      $("#dhsc-filter--button18 .dhsc-filter--button-content").text('Show filters');
+      $('#dhsc-filter--icon18').addClass('fa-plus');
+      $('#dhsc-filter--icon18').removeClass('fa-minus');
+      $('#dhsc-filter--icon18-content').text('Open');
+    }
+
+  });
+
+  /* Filter (#18 for GASCD): Estimated population size with age group percentages across Suffolk and similar LAs - Quick and dirty way of updating the filters individually, when a user clicks a related pill */
+
+  // Year
+  $('#year18-remove').on("click", function(e) {
+    e.preventDefault();
+    $('#year18_1').prop("checked", true);
+    $('#year18_2').prop("checked", false);
+    $('#year18_3').prop("checked", false);
+    $('#year18_4').prop("checked", false);
+    $('#update-filters18').click();
+  });
+
+  // Filter (#19 for GASCD): Estimated population change across Suffolk and similar LAs - trends over time - User interacts with the filter button
+  $('#dhsc-filter--button19').on("click", function() {
+    
+    if (!$('#dhsc-filter--action19').hasClass('dhsc-filter--open')) {
+      $('#dhsc-filter--content19').show().focus();
+      $('#dhsc-filter--action19').addClass('dhsc-filter--open');
+      $('#dhsc-filter--button19').attr('aria-expanded', 'true');
+      $("#dhsc-filter--button19 .dhsc-filter--button-content").text('Hide filters');
+      $('#dhsc-filter--icon19').addClass('fa-minus');
+      $('#dhsc-filter--icon19').removeClass('fa-plus');
+      $('#dhsc-filter--icon19-content').text('Close');
+    }
+    else {
+      $('#dhsc-filter--content19').hide();
+      $('#dhsc-filter--action19').removeClass('dhsc-filter--open');
+      $('#dhsc-filter--button19').attr('aria-expanded', 'false');
+      $("#dhsc-filter--button19 .dhsc-filter--button-content").text('Show filters');
+      $('#dhsc-filter--icon19').addClass('fa-plus');
+      $('#dhsc-filter--icon19').removeClass('fa-minus');
+      $('#dhsc-filter--icon19-content').text('Open');
+    }
+
+  });
+
+  /* Filter (#19 for GASCD): Estimated population change across Suffolk and similar LAs - trends over time - Quick and dirty way of updating the filters individually, when a user clicks a related pill */
+
+  // Age group
+  $('#ageGroup19-remove').on("click", function(e) {
+    e.preventDefault();
+    $('#ageGroup19_1').prop("checked", true);
+    $('#ageGroup19_2').prop("checked", false);
+    $('#ageGroup19_3').prop("checked", false);
+    $('#ageGroup19_4').prop("checked", false);
+    $('#ageGroup19_5').prop("checked", false);
+    $('#update-filters19').click();
   });
 
 });

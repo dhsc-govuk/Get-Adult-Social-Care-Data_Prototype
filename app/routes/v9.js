@@ -684,11 +684,51 @@ module.exports = function(router) {
 
     // User has chosen at least 1 filter  
 		if (year) {
-      res.redirect('/' + version + '/' + 'signed-in/topics/future-planning/estimated-population-age-and-size/data?filterApplied17=Yes')     
+      res.redirect('/' + version + '/' + 'signed-in/topics/future-planning/estimated-population-age-and-size/data?filterApplied17=Yes#data1')     
 		}
 		// No filters selected by user
 		else {			
-      res.redirect('/' + version + '/' + 'signed-in/topics/future-planning/estimated-population-age-and-size/data?filterApplied17=')
+      res.redirect('/' + version + '/' + 'signed-in/topics/future-planning/estimated-population-age-and-size/data?filterApplied17=#data1')
+    }
+    
+  })
+  router.post('/' + version + '/' + 'signed-in/topics/future-planning/estimated-population-age-and-size/data-update-filters18', function (req, res) {
+
+    // Data objects to be retrieved and queried
+    var year18 = req.session.data['year18']
+
+    // Reset all default values injected into our filters
+    if (year18 == "2030") {
+      year18 = undefined
+    }
+
+    // User has chosen at least 1 filter  
+		if (year18) {
+      res.redirect('/' + version + '/' + 'signed-in/topics/future-planning/estimated-population-age-and-size/data?filterApplied18=Yes#data2')     
+		}
+		// No filters selected by user
+		else {			
+      res.redirect('/' + version + '/' + 'signed-in/topics/future-planning/estimated-population-age-and-size/data?filterApplied18=#data2')
+    }
+    
+  })
+  router.post('/' + version + '/' + 'signed-in/topics/future-planning/estimated-population-age-and-size/data-update-filters19', function (req, res) {
+
+    // Data objects to be retrieved and queried
+    var ageGroup19 = req.session.data['ageGroup19']
+
+    // Reset all default values injected into our filters
+    if (ageGroup19 == "All age groups") {
+      ageGroup19 = undefined
+    }
+
+    // User has chosen at least 1 filter  
+		if (ageGroup19) {
+      res.redirect('/' + version + '/' + 'signed-in/topics/future-planning/estimated-population-age-and-size/data?filterApplied19=Yes#trend1')     
+		}
+		// No filters selected by user
+		else {			
+      res.redirect('/' + version + '/' + 'signed-in/topics/future-planning/estimated-population-age-and-size/data?filterApplied19=#trend1')
     }
     
   })
