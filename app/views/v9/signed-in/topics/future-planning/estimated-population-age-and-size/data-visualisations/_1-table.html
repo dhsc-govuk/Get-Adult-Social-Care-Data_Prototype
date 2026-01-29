@@ -21,9 +21,9 @@
       {% set rowsRendered = rowsRendered + 1 %}
       <tr class="govuk-table__row">
         <td class="govuk-table__cell">{{row["Indicator"]}}</td>
-        <td class="govuk-table__cell govuk-table__cell--numeric">{{row["Suffolk"]}}</td>
-        <td class="govuk-table__cell govuk-table__cell--numeric">{{row["East of England"]}}</td>
-        <td class="govuk-table__cell govuk-table__cell--numeric">{{row["England"]}}</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">{% if row["Indicator"] == "Total adult population" %}{{row["Suffolk"]}}{% else %}{{row["Suffolk (%)"]}}{% endif %}</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">{% if row["Indicator"] == "Total adult population" %}{{row["East of England"]}}{% else %}{{row["East of England (%)"]}}{% endif %}</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">{% if row["Indicator"] == "Total adult population" %}{{row["England"]}}{% else %}{{row["England (%)"]}}{% endif %}</td>
       </tr>
       {% endif %}
       {% endfor %}

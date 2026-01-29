@@ -4,141 +4,201 @@
       "Indicator": "Total adult population",
       "Year": "2030",
       "Suffolk": "645,400",
+      "Suffolk (%)": "82.60%",
       "East of England": "5,321,200",
-      "England": "47,385,000"
+      "East of England (%)": "84.00%",
+      "England": "47,385,000",
+      "England (%)": "81.00%"
     },
     {
       "Indicator": "Aged 18 to 64",
       "Year": "2030",
-      "Suffolk": "",
-      "East of England": "",
-      "England": ""
+      "Suffolk": "444,000",
+      "Suffolk (%)": "58.60%",
+      "East of England": "3,980,000",
+      "East of England (%)": "62.80%",
+      "England": "36,341,200",
+      "England (%)": "62.10%"
     },
     {
       "Indicator": "Aged 65 to 74",
       "Year": "2030",
-      "Suffolk": "",
-      "East of England": "",
-      "England": ""
+      "Suffolk": "91,100",
+      "Suffolk (%)": "11.70%",
+      "East of England": "1,471,000",
+      "East of England (%)": "23.20%",
+      "England": "12,363,500",
+      "England (%)": "21.10%"
     },
     {
       "Indicator": "Aged 75 to 84",
       "Year": "2030",
-      "Suffolk": "",
-      "East of England": "",
-      "England": ""
+      "Suffolk": "85,000",
+      "Suffolk (%)": "10.90%",
+      "East of England": "623,000",
+      "East of England (%)": "9.80%",
+      "England": "4,126,500",
+      "England (%)": "7.10%"
     },
     {
       "Indicator": "Aged 85 and over",
       "Year": "2030",
-      "Suffolk": "",
-      "East of England": "",
-      "England": ""
+      "Suffolk": "37,100",
+      "Suffolk (%)": "4.70%",
+      "East of England": "180,000",
+      "East of England (%)": "2.80%",
+      "England": "1,456,000",
+      "England (%)": "2.50%"
     },
     {
       "Indicator": "Total adult population",
       "Year": "2035",
       "Suffolk": "667,000",
+      "Suffolk (%)": "86.70%",
       "East of England": "5,400,000",
-      "England": "48,800,200"
+      "East of England (%)": "83.10%",
+      "England": "48,800,200",
+      "England (%)": "81.50%"
     },
     {
       "Indicator": "Aged 18 to 64",
       "Year": "2035",
-      "Suffolk": "",
-      "East of England": "",
-      "England": ""
+      "Suffolk": "453,100",
+      "Suffolk (%)": "56.80%",
+      "East of England": "4,063,000",
+      "East of England (%)": "62.50%",
+      "England": "37,349,200",
+      "England (%)": "61.20%"
     },
     {
       "Indicator": "Aged 65 to 74",
       "Year": "2035",
-      "Suffolk": "",
-      "East of England": "",
-      "England": ""
+      "Suffolk": "93,900",
+      "Suffolk (%)": "11.80%",
+      "East of England": "1,598,900",
+      "East of England (%)": "24.60%",
+      "England": "13,439,200",
+      "England (%)": "21.50%"
     },
     {
       "Indicator": "Aged 75 to 84",
       "Year": "2035",
-      "Suffolk": "",
-      "East of England": "",
-      "England": ""
+      "Suffolk": "87,900",
+      "Suffolk (%)": "11.00%",
+      "East of England": "798,900",
+      "East of England (%)": "12.30%",
+      "England": "6,046,100",
+      "England (%)": "9.70%"
     },
     {
       "Indicator": "Aged 85 and over",
       "Year": "2035",
-      "Suffolk": "",
-      "East of England": "",
-      "England": ""
+      "Suffolk": "43,000",
+      "Suffolk (%)": "5.40%",
+      "East of England": "198,000",
+      "East of England (%)": "3.00%",
+      "England": "1,765,000",
+      "England (%)": "2.80%"
     },
     {
       "Indicator": "Total adult population",
       "Year": "2040",
       "Suffolk": "674,000",
+      "Suffolk (%)": "84.30%",
       "East of England": "5,340,400",
-      "England": "50,345,000"
+      "East of England (%)": "83.60%",
+      "England": "50,345,000",
+      "England (%)": "81.90%"
     },
     {
       "Indicator": "Aged 18 to 64",
       "Year": "2040",
-      "Suffolk": "",
-      "East of England": "",
-      "England": ""
+      "Suffolk": "460,900",
+      "Suffolk (%)": "56.80%",
+      "East of England": "4,154,200",
+      "East of England (%)": "62.90%",
+      "England": "37,498,900",
+      "England (%)": "59.60%"
     },
     {
       "Indicator": "Aged 65 to 74",
       "Year": "2040",
-      "Suffolk": "",
-      "East of England": "",
-      "England": ""
+      "Suffolk": "97,000",
+      "Suffolk (%)": "11.90%",
+      "East of England": "1,682,400",
+      "East of England (%)": "25.50%",
+      "England": "13,992,500",
+      "England (%)": "22.20%"
     },
     {
       "Indicator": "Aged 75 to 84",
       "Year": "2040",
-      "Suffolk": "",
-      "East of England": "",
-      "England": ""
+      "Suffolk": "90,300",
+      "Suffolk (%)": "11.10%",
+      "East of England": "908,000",
+      "East of England (%)": "13.80%",
+      "England": "7,414,200",
+      "England (%)": "11.80%"
     },
     {
       "Indicator": "Aged 85 and over",
       "Year": "2040",
-      "Suffolk": "",
-      "East of England": "",
-      "England": ""
+      "Suffolk": "46,100",
+      "Suffolk (%)": "5.70%",
+      "East of England": "220,000",
+      "East of England (%)": "3.30%",
+      "England": "2,145,200",
+      "England (%)": "3.40%"
     },
     {
       "Indicator": "Total adult population",
       "Year": "2045",
       "Suffolk": "680,100",
+      "Suffolk (%)": "84.80%",
       "East of England": "5,430,000",
-      "England": "52,345,600"
+      "East of England (%)": "83.70%",
+      "England": "52,345,600",
+      "England (%)": "82.20%"
     },
     {
       "Indicator": "Aged 18 to 64",
       "Year": "2045",
-      "Suffolk": "",
-      "East of England": "",
-      "England": ""
+      "Suffolk": "470,900",
+      "Suffolk (%)": "57.00%",
+      "East of England": "4,234,500",
+      "East of England (%)": "63.20%",
+      "England": "38,483,800",
+      "England (%)": "59.20%"
     },
     {
       "Indicator": "Aged 65 to 74",
       "Year": "2045",
-      "Suffolk": "",
-      "East of England": "",
-      "England": ""
+      "Suffolk": "102,000",
+      "Suffolk (%)": "12.30%",
+      "East of England": "1,741,900",
+      "East of England (%)": "26.00%",
+      "England": "14,692,200",
+      "England (%)": "22.60%"
     },
     {
       "Indicator": "Aged 75 to 84",
       "Year": "2045",
-      "Suffolk": "",
-      "East of England": "",
-      "England": ""
+      "Suffolk": "94,500",
+      "Suffolk (%)": "11.40%",
+      "East of England": "1,234,000",
+      "East of England (%)": "18.40%",
+      "England": "8,765,300",
+      "England (%)": "13.50%"
     },
     {
       "Indicator": "Aged 85 and over",
       "Year": "2045",
-      "Suffolk": "",
-      "East of England": "",
-      "England": ""
+      "Suffolk": "49,200",
+      "Suffolk (%)": "5.90%",
+      "East of England": "254,000",
+      "East of England (%)": "3.80%",
+      "England": "2,356,000",
+      "England (%)": "3.60%"
     }
   ],
   "TBC 1": [
@@ -865,7 +925,7 @@
   ],
   "TBC 2": [
     {
-      "Indicator": "All age groups",
+      "Indicator": "Total adult population",
       "Year": "2025",
       "Suffolk": "0",
       "Norfolk": "0",
@@ -915,7 +975,7 @@
       "Herefordshire": "0"
     },
     {
-      "Indicator": "All age groups",
+      "Indicator": "Total adult population",
       "Year": "2026",
       "Suffolk": "0.75",
       "Norfolk": "0.12",
@@ -965,7 +1025,7 @@
       "Herefordshire": "3.57"
     },
     {
-      "Indicator": "All age groups",
+      "Indicator": "Total adult population",
       "Year": "2027",
       "Suffolk": "0.72",
       "Norfolk": "0.49",
@@ -1015,7 +1075,7 @@
       "Herefordshire": "3.45"
     },
     {
-      "Indicator": "All age groups",
+      "Indicator": "Total adult population",
       "Year": "2028",
       "Suffolk": "0.66",
       "Norfolk": "0.12",
@@ -1065,7 +1125,7 @@
       "Herefordshire": "6.67"
     },
     {
-      "Indicator": "All age groups",
+      "Indicator": "Total adult population",
       "Year": "2029",
       "Suffolk": "0.71",
       "Norfolk": "0.36",
@@ -1115,7 +1175,7 @@
       "Herefordshire": "3.13"
     },
     {
-      "Indicator": "All age groups",
+      "Indicator": "Total adult population",
       "Year": "2030",
       "Suffolk": "0.69",
       "Norfolk": "0.12",
@@ -1165,7 +1225,7 @@
       "Herefordshire": "3.03"
     },
     {
-      "Indicator": "All age groups",
+      "Indicator": "Total adult population",
       "Year": "2035",
       "Suffolk": "3.38",
       "Norfolk": "1.33",
@@ -1215,7 +1275,7 @@
       "Herefordshire": "2.94"
     },
     {
-      "Indicator": "All age groups",
+      "Indicator": "Total adult population",
       "Year": "2040",
       "Suffolk": "2.59",
       "Norfolk": "0.72",
@@ -1265,7 +1325,7 @@
       "Herefordshire": "5.71"
     },
     {
-      "Indicator": "All age groups",
+      "Indicator": "Total adult population",
       "Year": "2045",
       "Suffolk": "2.44",
       "Norfolk": "0.59",

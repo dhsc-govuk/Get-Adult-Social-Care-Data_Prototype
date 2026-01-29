@@ -1,7 +1,7 @@
 <div class="moj-scrollable-pane">
-  
+
   <table class="govuk-table">
-    <caption class="govuk-table__caption">Table 3: [NEEDS CONTENT]</caption>
+    <caption class="govuk-table__caption">Table 1: [NEEDS CONTENT]</caption>
     <thead class="govuk-table__head">
       <tr class="govuk-table__row">
         <th scope="col" class="govuk-table__header">Indicator</th>
@@ -14,16 +14,10 @@
       </tr>
     </thead>
     <tbody class="govuk-table__body">
-      {% set rows = data[data['v9estimatedPopulationSize']]['TBC 2'] %}
-      {% set noFiltersSet = not data.ageGroup19 %}
-      {% set age = (data.ageGroup19 if data.ageGroup19 else ("All age groups" if noFiltersSet else "All age groups")) %}
-      {% set rowsRendered = 0 %}
+      {% set rows = data[data['v9estimatedLearningDisability']]['Estimated learning disability'] %}
       {% for row in rows %}
-      {% set matchesAge = (row["Indicator"] == age) %}
-      {% if matchesAge %}
-      {% set rowsRendered = rowsRendered + 1 %}
       <tr class="govuk-table__row">
-        <td class="govuk-table__cell">{{row["Indicator"]}} ({{row["Year"]}})</td>
+        <td class="govuk-table__cell">{{row["Indicator"]}}</td>
         <td class="govuk-table__cell govuk-table__cell--numeric">{{row["Suffolk"]}}</td>
         <td class="govuk-table__cell govuk-table__cell--numeric">{{row["Dorset"]}}</td>
         <td class="govuk-table__cell govuk-table__cell--numeric">{{row["Herefordshire"]}}</td>
@@ -31,13 +25,7 @@
         <td class="govuk-table__cell govuk-table__cell--numeric">{{row["Norfolk"]}}</td>
         <td class="govuk-table__cell govuk-table__cell--numeric">{{row["Somerset"]}}</td>
       </tr>
-      {% endif %}
       {% endfor %}
-      <!-- {% if rowsRendered == 0 %}
-      <tr class="govuk-table__row">
-        <td class="govuk-table__cell" colspan="4">No results match your selection.</td>
-      </tr>
-      {% endif %} -->
     </tbody>
   </table>
 

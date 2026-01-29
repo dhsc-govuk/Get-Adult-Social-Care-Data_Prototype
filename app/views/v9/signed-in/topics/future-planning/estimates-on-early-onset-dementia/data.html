@@ -1,6 +1,6 @@
 {% extends "v9/layouts/signed-in.html" %}
 
-{% set pageName = "Population size and age group percentages" %}
+{% set pageName = "Estimates on early onset dementia" %}
 
 {% block beforeContent %}
 {{ govukBreadcrumbs({
@@ -22,13 +22,11 @@
 
   <div class="govuk-grid-column-full">
     <h1 class="govuk-heading-xl">{{pageName}}</h1>
-    <!-- <p class="govuk-body-l">Population data at district, <abbr title="Local Authority">LA</abbr>, regional and national levels for England.</p> -->
-    <p class="govuk-body-l">Population data at <abbr title="Local Authority">LA</abbr>, regional and national levels for England.</p>
+    <p class="govuk-body-l needs-content">[NEEDS CONTENT].</p>
 
     <div class="govuk-form-group">
       <h2 class="govuk-heading-l govuk-!-margin-top-9">Data overview</h2>
       <!-- <p class="govuk-body">Data overview summary information, e.g. broad guidance.</p> -->
-      {% include "./filters/_page-filter-component.html" %}
     </div>
 
   </div>
@@ -44,17 +42,14 @@
       <div class="govuk-tabs" data-module="govuk-tabs">
 
         <div class="govuk-form-group">
-          <h3 class="govuk-heading-m">Adult population size with age group percentages</h3>
-          <p class="govuk-body">Find out how <a href="../../../help/population-size" class="govuk-link">population size</a> and <a href="../../../help/population-age" class="govuk-link">age group percentages</a> are calculated.</p>
+          <h3 id="data1" class="govuk-heading-m">[NEEDS CONTENT]</h3>
+          <p class="govuk-body">Find out <a href="#">how the [NEEDS CONTENT] is calculated</a>.</p>
         </div>
 
         <h3 class="govuk-tabs__title">Contents</h3>
         <ul class="govuk-tabs__list">
           <li class="govuk-tabs__list-item">
             <a class="govuk-tabs__tab" href="#data1-table">Table</a>
-          </li>
-          <li class="govuk-tabs__list-item">
-            <a class="govuk-tabs__tab" href="#data1-more-information">Text summary</a>
           </li>
           <li class="govuk-tabs__list-item">
             <a class="govuk-tabs__tab" href="#data1-download">Download</a>
@@ -65,57 +60,7 @@
           {% include "./data-visualisations/_1-table.html" %}
         </div>
 
-        <div class="govuk-tabs__panel" id="data1-more-information">
-          <h4 class="govuk-heading-s">Text summary</h4>
-          <p class="govuk-body">Suffolk has a <strong>similar proportion of people aged 65 and over (21.4%) compared to the national average (21.4%)</strong>. This suggests the need for care services adjusted by population size in this <abbr title="Local Authority">LA</abbr> may be in line with the national average.</p>
-        </div>
-
         <div class="govuk-tabs__panel" id="data1-download">
-          <h4 class="govuk-heading-s">Download</h4>
-          <ul class="govuk-list">
-            <li>
-              <a class="govuk-link" href="/public/downloads/v9/population-needs/population-size-and-age-group-percentages/table-1-adult-population-size-with-age-group-percentages.csv">Export table data (CSV)</a>
-            </li>
-          </ul>
-        </div>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</div>
-
-<div class="govuk-grid-row">
-
-  <div class="govuk-grid-column-full">
-
-    <div class="data-box govuk-form-group">
-
-      <div class="govuk-tabs" data-module="govuk-tabs">
-
-        <div class="govuk-form-group">
-          <h3 class="govuk-heading-m">Adult population size estimates</h3>
-          <p class="govuk-body">Find out <a href="#" class="govuk-link">how population size estimates</a> are calculated.</p>
-          {% include "./filters/_2-filter-component.html" %}
-        </div>
-
-        <h3 class="govuk-tabs__title">Contents</h3>
-        <ul class="govuk-tabs__list">
-          <li class="govuk-tabs__list-item">
-            <a class="govuk-tabs__tab" href="#data2-table">Table</a>
-          </li>
-          <li class="govuk-tabs__list-item">
-            <a class="govuk-tabs__tab" href="#data2-download">Download</a>
-          </li>
-        </ul>
-
-        <div class="govuk-tabs__panel" id="data2-table">
-          {% include "./data-visualisations/_2-table.html" %}
-        </div>
-
-        <div class="govuk-tabs__panel" id="data2-download">
           <h4 class="govuk-heading-s">Download</h4>
           <ul class="govuk-list">
             <li>
@@ -135,36 +80,54 @@
 <div class="govuk-grid-row">
 
   <div class="govuk-grid-column-full">
+    <h2 class="govuk-heading-l govuk-!-margin-top-9">Trends</h2>
+    <!-- <p class="govuk-body">Trends summary information, e.g. limitation.</p> -->
+  </div>
+
+</div>
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-full">
 
     <div class="data-box govuk-form-group">
 
       <div class="govuk-tabs" data-module="govuk-tabs">
-
+        
         <div class="govuk-form-group">
-          <h3 id="data3" class="govuk-heading-m">Age group percentages for regional <abbr title="Local Authority">LA</abbr>s</h3>
-          <p class="govuk-body">Find out <a href="../../../help/population-age" class="govuk-link">how age group percentages are calculated</a>.</p>
-          {% include "./filters/_3-filter-component.html" %}
+          <h3 id="trend1" class="govuk-heading-m">[NEEDS CONTENT] - trends over time</h3>
+          <p class="govuk-body">Find out <a href="#">how the [NEEDS CONTENT] is calculated</a>.</p>
         </div>
 
         <h3 class="govuk-tabs__title">Contents</h3>
         <ul class="govuk-tabs__list">
-          <li class="govuk-tabs__list-item">
-            <a class="govuk-tabs__tab" href="#data3-table">Table</a>
+          <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+            <a class="govuk-tabs__tab" href="#trend-chart">Graph</a>
           </li>
           <li class="govuk-tabs__list-item">
-            <a class="govuk-tabs__tab" href="#data3-download">Download</a>
+            <a class="govuk-tabs__tab" href="#trend-table">Table</a>
+          </li>
+          <li class="govuk-tabs__list-item">
+            <a class="govuk-tabs__tab" href="#trend-download">Download</a>
           </li>
         </ul>
 
-        <div class="govuk-tabs__panel" id="data3-table">
-          {% include "./data-visualisations/_3-table.html" %}
+        <div class="govuk-tabs__panel" id="trend-chart">
+          {% include "./data-visualisations/_2-time-series.html" %}
         </div>
 
-        <div class="govuk-tabs__panel" id="data3-download">
+        <div class="govuk-tabs__panel" id="trend-table">
+          {% include "./data-visualisations/_2-table.html" %}
+        </div>
+
+        <div class="govuk-tabs__panel" id="trend-download">
           <h4 class="govuk-heading-s">Download</h4>
           <ul class="govuk-list">
             <li>
-              <a class="govuk-link" href="/public/downloads/v9/population-needs/population-size-and-age-group-percentages/table-3-age-group-percentages-for-regional-las.csv">Export table data (CSV)</a>
+              <a class="govuk-link" href="#">Download chart image (PNG)</a>
+            </li>
+            <li>
+              <a class="govuk-link" href="#">Export table data (CSV)</a>
             </li>
           </ul>
         </div>
@@ -189,19 +152,9 @@
 
           <div class="gem-c-cards__list-item-wrapper">
             <h2 class="gem-c-cards__sub-heading govuk-heading-s">
-              <a class="govuk-link gem-c-cards__link gem-c-force-print-link-styles" href="../../../help/population-age">Age group percentages</a>
+              <a class="govuk-link gem-c-cards__link gem-c-force-print-link-styles" href="#">[NEEDS CONTENT]</a>
             </h2>
-            <p class="govuk-body gem-c-cards__description">Source: Office for National Statistics.<br>Yearly updates, limitations apply. </p>
-          </div>
-
-        </li>
-        <li class="gem-c-cards__list-item">
-
-          <div class="gem-c-cards__list-item-wrapper">
-            <h2 class="gem-c-cards__sub-heading govuk-heading-s">
-              <a class="govuk-link gem-c-cards__link gem-c-force-print-link-styles" href="../../../help/population-size">Population size</a>
-            </h2>
-            <p class="govuk-body gem-c-cards__description">Source: Office for National Statistics.<br>Yearly updates, limitations apply. </p>
+            <p class="govuk-body gem-c-cards__description">Source: [NEEDS CONTENT].<br>Yearly updates, limitations might apply.</p>
           </div>
 
         </li>
@@ -216,9 +169,19 @@
 
           <div class="gem-c-cards__list-item-wrapper">
             <h2 class="gem-c-cards__sub-heading govuk-heading-s">
-              <a class="govuk-link gem-c-cards__link gem-c-force-print-link-styles" href="../dementia-prevalence/data">Dementia prevalence and estimated diagnosis rate</a>
+              <a class="govuk-link gem-c-cards__link gem-c-force-print-link-styles" href="../future-planning/estimated-population-age-and-size/data">Estimated population size and age group percentages</a>
             </h2>
-            <p class="govuk-body gem-c-cards__description">Data on registered dementia diagnoses with estimates for undiagnosed dementia.</p>
+            <p class="govuk-body gem-c-cards__description needs-content">[NEEDS CONTENT].</p>
+          </div>
+
+        </li>
+         <li class="gem-c-cards__list-item">
+
+          <div class="gem-c-cards__list-item-wrapper">
+            <h2 class="gem-c-cards__sub-heading govuk-heading-s">
+              <a class="govuk-link gem-c-cards__link gem-c-force-print-link-styles" href="../future-planning/estimates-on-autistic-spectrum-disorders/data">Estimates on autistic spectrum disorders</a>
+            </h2>
+            <p class="govuk-body gem-c-cards__description needs-content">[NEEDS CONTENT].</p>
           </div>
 
         </li>
@@ -226,9 +189,9 @@
 
           <div class="gem-c-cards__list-item-wrapper">
             <h2 class="gem-c-cards__sub-heading govuk-heading-s">
-              <a class="govuk-link gem-c-cards__link gem-c-force-print-link-styles" href="../household-composition-and-economic-factors/data">Economic factors and household composition</a>
+              <a class="govuk-link gem-c-cards__link gem-c-force-print-link-styles" href="../future-planning/estimates-on-genera- health-disabilities-and-learning-disabilities/data">Estimates on general health, disabilities and learning disabilities</a>
             </h2>
-            <p class="govuk-body gem-c-cards__description">Data on household deprivation, property ownership and older people living alone.</p>
+            <p class="govuk-body gem-c-cards__description needs-content">[NEEDS CONTENT].</p>
           </div>
 
         </li>
@@ -236,9 +199,9 @@
 
           <div class="gem-c-cards__list-item-wrapper">
             <h2 class="gem-c-cards__sub-heading govuk-heading-s">
-              <a class="govuk-link gem-c-cards__link gem-c-force-print-link-styles" href="../disability-prevalence/data">General health, disability and learning disability</a>
+              <a class="govuk-link gem-c-cards__link gem-c-force-print-link-styles" href="../future-planning/linked-health-social-care-data/data">Linked health and social care data (experimental)</a>
             </h2>
-            <p class="govuk-body gem-c-cards__description">Data on disability prevalence, learning disability diagnoses and reasons for accessing care.</p>
+            <p class="govuk-body gem-c-cards__description needs-content">[NEEDS CONTENT].</p>
           </div>
 
         </li>

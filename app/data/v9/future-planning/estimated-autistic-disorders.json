@@ -1,7 +1,7 @@
 {
   "Estimated autistic disorders": [
     {
-      "Indicator": "Total population aged 18-64 predicted to have autistic spectrum disorders (2025) ",
+      "Indicator": "Total population aged 18-64 predicted to have autistic spectrum disorders (2025)",
       "Year": "2025",
       "Suffolk": "4,880",
       "Norfolk": "5,950",
@@ -11,7 +11,7 @@
       "Herefordshire": "1,190"
     },
     {
-      "Indicator": "Total population aged 18-64 predicted to have autistic spectrum disorders(2026) ",
+      "Indicator": "Total population aged 18-64 predicted to have autistic spectrum disorders (2026)",
       "Year": "2026",
       "Suffolk": "4,910",
       "Norfolk": "6,000",
@@ -21,7 +21,7 @@
       "Herefordshire": "1,200"
     },
     {
-      "Indicator": "Total population aged 18-64 predicted to have autistic spectrum disorders (2027) ",
+      "Indicator": "Total population aged 18-64 predicted to have autistic spectrum disorders (2027)",
       "Year": "2027",
       "Suffolk": "4,930",
       "Norfolk": "6,040",
@@ -31,7 +31,7 @@
       "Herefordshire": "1,210"
     },
     {
-      "Indicator": "Total population aged 18-64 predicted to have autistic spectrum disorders (2028) ",
+      "Indicator": "Total population aged 18-64 predicted to have autistic spectrum disorders (2028)",
       "Year": "2028",
       "Suffolk": "4,950",
       "Norfolk": "6,080",
@@ -41,7 +41,7 @@
       "Herefordshire": "1,210"
     },
     {
-      "Indicator": "Total population aged 18-64 predicted to have autistic spectrum disorders (2029) ",
+      "Indicator": "Total population aged 18-64 predicted to have autistic spectrum disorders (2029)",
       "Year": "2029",
       "Suffolk": "4,990",
       "Norfolk": "6,120",
@@ -51,7 +51,7 @@
       "Herefordshire": "1,220"
     },
     {
-      "Indicator": "Total population aged 18-64 predicted to have autistic spectrum disorders (2030) ",
+      "Indicator": "Total population aged 18-64 predicted to have autistic spectrum disorders (2030)",
       "Year": "2030",
       "Suffolk": "5,030",
       "Norfolk": "6,160",
@@ -61,7 +61,7 @@
       "Herefordshire": "1,220"
     },
     {
-      "Indicator": "Total population aged 18-64 predicted to have autistic spectrum disorders (2035) ",
+      "Indicator": "Total population aged 18-64 predicted to have autistic spectrum disorders (2035)",
       "Year": "2035",
       "Suffolk": "5,130",
       "Norfolk": "6,300",
@@ -71,7 +71,7 @@
       "Herefordshire": "1,250"
     },
     {
-      "Indicator": "Total population aged 18-64 predicted to have autistic spectrum disorders (2040) ",
+      "Indicator": "Total population aged 18-64 predicted to have autistic spectrum disorders (2040)",
       "Year": "2040",
       "Suffolk": "5,190",
       "Norfolk": "6,370",
@@ -81,7 +81,7 @@
       "Herefordshire": "1,260"
     },
     {
-      "Indicator": "Total population aged 18-64 predicted to have autistic spectrum disorders (2045) ",
+      "Indicator": "Total population aged 18-64 predicted to have autistic spectrum disorders (2045)",
       "Year": "2045",
       "Suffolk": "5,270",
       "Norfolk": "6,440",
@@ -93,7 +93,7 @@
   ],
   "Change over time": [
     {
-      "Indicator": "Total population aged 18-64 with a learning disability, predicted to display challenging behaviour (2025) ",
+      "Indicator": "Total population aged 18-64 with a learning disability, predicted to display challenging behaviour (2025)",
       "Year": "2025",
       "Suffolk": "0",
       "Norfolk": "0",
@@ -103,7 +103,7 @@
       "Herefordshire": "0"
     },
     {
-      "Indicator": "Total population aged 18-64 with a learning disability, predicted to display challenging behaviour (2026) ",
+      "Indicator": "Total population aged 18-64 with a learning disability, predicted to display challenging behaviour (2026)",
       "Year": "2026",
       "Suffolk": "0.61",
       "Norfolk": "0.84",
@@ -113,7 +113,7 @@
       "Herefordshire": "0.84"
     },
     {
-      "Indicator": "Total population aged 18-64 with a learning disability, predicted to display challenging behaviour (2027) ",
+      "Indicator": "Total population aged 18-64 with a learning disability, predicted to display challenging behaviour (2027)",
       "Year": "2027",
       "Suffolk": "0.41",
       "Norfolk": "0.67",
@@ -123,7 +123,7 @@
       "Herefordshire": "0.83"
     },
     {
-      "Indicator": "Total population aged 18-64 with a learning disability, predicted to display challenging behaviour (2028) ",
+      "Indicator": "Total population aged 18-64 with a learning disability, predicted to display challenging behaviour (2028)",
       "Year": "2028",
       "Suffolk": "0.41",
       "Norfolk": "0.66",
@@ -133,7 +133,7 @@
       "Herefordshire": "0"
     },
     {
-      "Indicator": "Total population aged 18-64 with a learning disability, predicted to display challenging behaviour (2029) ",
+      "Indicator": "Total population aged 18-64 with a learning disability, predicted to display challenging behaviour (2029)",
       "Year": "2029",
       "Suffolk": "0.81",
       "Norfolk": "0.66",
@@ -143,7 +143,7 @@
       "Herefordshire": "0.83"
     },
     {
-      "Indicator": "Total population aged 18-64 with a learning disability, predicted to display challenging behaviour (2030) ",
+      "Indicator": "Total population aged 18-64 with a learning disability, predicted to display challenging behaviour (2030)",
       "Year": "2030",
       "Suffolk": "0.8",
       "Norfolk": "0.65",
@@ -153,7 +153,7 @@
       "Herefordshire": "0"
     },
     {
-      "Indicator": "Total population aged 18-64 with a learning disability, predicted to display challenging behaviour (2035) ",
+      "Indicator": "Total population aged 18-64 with a learning disability, predicted to display challenging behaviour (2035)",
       "Year": "2035",
       "Suffolk": "1.99",
       "Norfolk": "2.27",
@@ -163,7 +163,7 @@
       "Herefordshire": "2.46"
     },
     {
-      "Indicator": "Total population aged 18-64 with a learning disability, predicted to display challenging behaviour (2040) ",
+      "Indicator": "Total population aged 18-64 with a learning disability, predicted to display challenging behaviour (2040)",
       "Year": "2040",
       "Suffolk": "1.17",
       "Norfolk": "1.11",
@@ -173,7 +173,7 @@
       "Herefordshire": "0.8"
     },
     {
-      "Indicator": "Total population aged 18-64 with a learning disability, predicted to display challenging behaviour (2045) ",
+      "Indicator": "Total population aged 18-64 with a learning disability, predicted to display challenging behaviour (2045)",
       "Year": "2045",
       "Suffolk": "1.54",
       "Norfolk": "1.1",
