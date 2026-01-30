@@ -21,6 +21,8 @@ module.exports = {
   "v9estimatedLearningDisability": "v9estimatedLearningDisabilityData",
   "v9estimatedEarlyOnsetDementiaData": require('./v9/future-planning/estimated-early-onset-dementia.json'),
   "v9estimatedEarlyOnsetDementia": "v9estimatedEarlyOnsetDementiaData",
+  "v9laFundingPlanningData": require('./v9/future-planning/la-funding-planning.json'),
+  "v9laFundingPlanning": "v9laFundingPlanningData",
   "v9linkedHealthAndSocialCareDataData": require('./v9/future-planning/linked-health-and-social-care-data.json'),
   "v9linkedHealthAndSocialCareData": "v9linkedHealthAndSocialCareDataData",
 

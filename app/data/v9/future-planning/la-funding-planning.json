@@ -1,0 +1,78 @@
+{
+  "LA funding planning": [
+    {
+      "2025": "234",
+      "2026": "234",
+      "2027": "234",
+      "2028": "233",
+      "2029": "232",
+      "2030": "229",
+      "2035": "224",
+      "2040": "226",
+      "2045": "241",
+      "Indicator": "Total population aged 30-64 to have early onset dementia"
+    },
+    {
+      "2025": "199",
+      "2026": "199",
+      "2027": "200",
+      "2028": "200",
+      "2029": "203",
+      "2030": "203",
+      "2035": "205",
+      "2040": "209",
+      "2045": "213",
+      "Indicator": "Total population aged 18-64 with a learning disability, predicted to display challenging behaviour"
+    },
+    {
+      "2025": "4,880",
+      "2026": "4,910",
+      "2027": "4,930",
+      "2028": "4,950",
+      "2029": "4,990",
+      "2030": "5,030",
+      "2035": "5,130",
+      "2040": "5,190",
+      "2045": "5,270",
+      "Indicator": "Total population aged 18-64 predicted to have autistic spectrum disorders"
+    }
+  ],
+  "Change over time": [
+    {
+      "2025": "0",
+      "2026": "0",
+      "2027": "0",
+      "2028": "-0.427350427",
+      "2029": "-0.429184549",
+      "2030": "-1.293103448",
+      "2035": "-2.183406114",
+      "2040": "0.892857143",
+      "2045": "6.637168142",
+      "Indicator": "Total population aged 30-64 to have early onset dementia"
+    },
+    {
+      "2025": "0",
+      "2026": "0",
+      "2027": "0.502512563",
+      "2028": "0",
+      "2029": "1.5",
+      "2030": "0",
+      "2035": "0.985221675",
+      "2040": "1.951219512",
+      "2045": "1.913875598",
+      "Indicator": "Total population aged 18-64 with a learning disability, predicted to display challenging behaviour"
+    },
+    {
+      "2025": "0",
+      "2026": "0.614754098",
+      "2027": "0.407331976",
+      "2028": "0.405679513",
+      "2029": "0.808080808",
+      "2030": "0.801603206",
+      "2035": "1.988071571",
+      "2040": "1.169590643",
+      "2045": "1.541425819",
+      "Indicator": "Total population aged 18-64 predicted to have autistic spectrum disorders"
+    }
+  ]
+}
