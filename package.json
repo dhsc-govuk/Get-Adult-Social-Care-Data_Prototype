@@ -8,6 +8,7 @@
     "@govuk-one-login/service-header": "^5.0.0",
     "@govuk-prototype-kit/common-templates": "2.0.1",
     "@ministryofjustice/frontend": "8.0.0",
+    "@ons/design-system": "^73.0.4",
     "@x-govuk/govuk-prototype-components": "^5.0.2",
     "@x-govuk/govuk-prototype-filters": "2.1.0",
     "accessible-autocomplete": "^3.0.1",
