@@ -791,6 +791,18 @@ module.exports = function(router) {
    * Footer, service information and system pages
   *****/
 
+  router.get('/' + version + '/' + 'footer/disclaimer', function (req, res) {
+    res.render(version + '/footer/disclaimer', {
+      'backLink' : req.query.backLink
+		})
+  })
+
+  router.get('/' + version + '/' + 'footer/privacy-policy', function (req, res) {
+    res.render(version + '/footer/privacy-policy', {
+      'backLink' : req.query.backLink
+		})
+  })
+  
   router.get('/' + version + '/' + 'footer/cookies', function (req, res) {
     res.render(version + '/footer/cookies', {
       'cookiesUpdated' : req.query.cookiesUpdated

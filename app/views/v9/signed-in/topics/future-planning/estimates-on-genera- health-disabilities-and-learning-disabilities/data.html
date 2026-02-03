@@ -22,7 +22,7 @@
 
   <div class="govuk-grid-column-full">
     <h1 class="govuk-heading-xl">{{pageName}}</h1>
-    <p class="govuk-body-l needs-content">[NEEDS CONTENT].</p>
+    <p class="govuk-body-l">Estimated data on population aged 18-64 with learning disabilities predicted to display challenging behaviour with comparison data across <abbr title="Local Authority">LA</abbr>s.</p>
 
     <div class="govuk-form-group">
       <h2 class="govuk-heading-l govuk-!-margin-top-9">Data overview</h2>
@@ -42,8 +42,8 @@
       <div class="govuk-tabs" data-module="govuk-tabs">
 
         <div class="govuk-form-group">
-          <h3 id="data1" class="govuk-heading-m">[NEEDS CONTENT]</h3>
-          <p class="govuk-body">Find out <a href="#">how the [NEEDS CONTENT] is calculated</a>.</p>
+          <h3 id="data1" class="govuk-heading-m">Estimated adult population with learning disabilities and predicted challenging behaviour over time</h3>
+          <p class="govuk-body" data-module="edge">Find out how <a href="#" data-message="Sorry, this hasn’t been designed yet">[MISSING]</a>.</p>
         </div>
 
         <h3 class="govuk-tabs__title">Contents</h3>
@@ -95,15 +95,15 @@
       <div class="govuk-tabs" data-module="govuk-tabs">
         
         <div class="govuk-form-group">
-          <h3 id="trend1" class="govuk-heading-m">[NEEDS CONTENT] - trends over time</h3>
-          <p class="govuk-body">Find out <a href="#">how the [NEEDS CONTENT] is calculated</a>.</p>
+          <h3 id="trend1" class="govuk-heading-m">Estimated percentage change in population with learning disabilities with predicted challenging behaviour - trends over time</h3>
+          <p class="govuk-body" data-module="edge">Find out how <a href="#" data-message="Sorry, this hasn’t been designed yet">[MISSING]</a>.</p>
         </div>
 
         <h3 class="govuk-tabs__title">Contents</h3>
         <ul class="govuk-tabs__list">
-          <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+          <!-- <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
             <a class="govuk-tabs__tab" href="#trend-chart">Graph</a>
-          </li>
+          </li> -->
           <li class="govuk-tabs__list-item">
             <a class="govuk-tabs__tab" href="#trend-table">Table</a>
           </li>
@@ -112,9 +112,9 @@
           </li>
         </ul>
 
-        <div class="govuk-tabs__panel" id="trend-chart">
+        <!-- <div class="govuk-tabs__panel" id="trend-chart">
           {% include "./data-visualisations/_2-time-series.html" %}
-        </div>
+        </div> -->
 
         <div class="govuk-tabs__panel" id="trend-table">
           {% include "./data-visualisations/_2-table.html" %}
@@ -151,8 +151,8 @@
         <li class="gem-c-cards__list-item">
 
           <div class="gem-c-cards__list-item-wrapper">
-            <h2 class="gem-c-cards__sub-heading govuk-heading-s">
-              <a class="govuk-link gem-c-cards__link gem-c-force-print-link-styles" href="#">[NEEDS CONTENT]</a>
+            <h2 class="gem-c-cards__sub-heading govuk-heading-s" data-module="edge">
+              <a class="govuk-link gem-c-cards__link gem-c-force-print-link-styles" href="#" data-message="Sorry, this hasn’t been designed yet">[NEEDS CONTENT]</a>
             </h2>
             <p class="govuk-body gem-c-cards__description">Source: [NEEDS CONTENT].<br>Yearly updates, limitations might apply.</p>
           </div>
@@ -171,17 +171,17 @@
             <h2 class="gem-c-cards__sub-heading govuk-heading-s">
               <a class="govuk-link gem-c-cards__link gem-c-force-print-link-styles" href="../../future-planning/estimated-population-age-and-size/data">Estimated population size and age group percentages</a>
             </h2>
-            <p class="govuk-body gem-c-cards__description needs-content">[NEEDS CONTENT].</p>
+            <p class="govuk-body gem-c-cards__description">Estimated data at <abbr title="Local Authority">LA</abbr>, regional and national levels for England including comparison data across <abbr title="Local Authority">LA</abbr>s.</p>
           </div>
 
         </li>
-         <li class="gem-c-cards__list-item">
+        <li class="gem-c-cards__list-item">
 
           <div class="gem-c-cards__list-item-wrapper">
             <h2 class="gem-c-cards__sub-heading govuk-heading-s">
-              <a class="govuk-link gem-c-cards__link gem-c-force-print-link-styles" href="../../future-planning/estimates-on-autistic-spectrum-disorders/data">Estimates on autistic spectrum disorders</a>
+              <a class="govuk-link gem-c-cards__link gem-c-force-print-link-styles" href="../../future-planning/estimates-on-autistic-spectrum-disorders/data">Estimates on <abbr title="Autistic Spectrum Disorders">ASD</abbr></a>
             </h2>
-            <p class="govuk-body gem-c-cards__description needs-content">[NEEDS CONTENT].</p>
+            <p class="govuk-body gem-c-cards__description">Estimated data on population aged 18-64 predicted to have <abbr title="Autistic Spectrum Disorders">ASD</abbr> with comparison data across <abbr title="Local Authority">LA</abbr>s.</p>
           </div>
 
         </li>
@@ -191,7 +191,7 @@
             <h2 class="gem-c-cards__sub-heading govuk-heading-s">
               <a class="govuk-link gem-c-cards__link gem-c-force-print-link-styles" href="../../future-planning/estimates-on-early-onset-dementia/data">Estimates on early onset dementia</a>
             </h2>
-            <p class="govuk-body gem-c-cards__description needs-content">[NEEDS CONTENT].</p>
+            <p class="govuk-body gem-c-cards__description">Estimated data on population aged 30-64 predicted to have early onset dementia with comparison data across <abbr title="Local Authority">LA</abbr>s.</p>
           </div>
 
         </li>
@@ -201,7 +201,7 @@
             <h2 class="gem-c-cards__sub-heading govuk-heading-s">
               <a class="govuk-link gem-c-cards__link gem-c-force-print-link-styles" href="../../future-planning/la-funding-planning/data"><abbr title="Local Authority">LA</abbr> funding planning</a>
             </h2>
-            <p class="govuk-body gem-c-cards__description needs-content">[NEEDS CONTENT].</p>
+            <p class="govuk-body gem-c-cards__description">Consolidated estimated data on population with selected conditions within a <abbr title="Local Authority">LA</abbr> area.</p>
           </div>
 
         </li>
@@ -211,7 +211,7 @@
             <h2 class="gem-c-cards__sub-heading govuk-heading-s">
               <a class="govuk-link gem-c-cards__link gem-c-force-print-link-styles" href="../../future-planning/linked-health-social-care-data/data">Linked health and social care data (experimental)</a>
             </h2>
-            <p class="govuk-body gem-c-cards__description needs-content">[NEEDS CONTENT].</p>
+            <p class="govuk-body gem-c-cards__description">Experimental data on specific medical cohorts at the <abbr title="Local Authority">LA</abbr> and national level with predicted need for <abbr title="Adult Social Care">ASC</abbr> in the next 12 months.</p>
           </div>
 
         </li>
