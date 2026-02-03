@@ -28,7 +28,7 @@ router.get('/plugin-assets/:scope/:package/*', (req, res, next) => {
   }
 
   // 2. Extension Lock-Down
-  const allowedExtensions = ['.css', '.js']
+  const allowedExtensions = ['.css', '.js', '.css.map', '.js.map']
   const requestedAssetPath = req.params[0]
   const extension = path.extname(requestedAssetPath).toLowerCase()
 
