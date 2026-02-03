@@ -18,7 +18,13 @@
     "jquery": "4.0.0",
     "moment": "^2.30.1",
     "node": "^20.19.4",
-    "nunjucks": "^3.2.4",
+    "nunjucks": "^3.2.4"
+  }, 
+  "devDependencies": {
     "xlsx": "^0.18.5"
+  },
+  "overrides": {
+    "lodash": "^4.17.23",
+    "qs": "^6.14.1"
   }
 }
