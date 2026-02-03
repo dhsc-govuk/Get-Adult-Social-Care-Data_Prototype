@@ -13,7 +13,6 @@ const path = require('path')
 // before sending them to the app
 router.get('/plugin-assets/:scope/:package/*', (req, res, next) => {
   const { scope, package } = req.params
-  console.log(scope, package);
   
   // 1. Only intercept the known problematic scopes
   const allowedScopes = [
@@ -21,6 +20,8 @@ router.get('/plugin-assets/:scope/:package/*', (req, res, next) => {
     '@ministryofjustice/frontend',
     '@x-govuk',
     '@x-govuk/govuk-prototype-components',
+    '@govuk-one-login',
+    '@govuk-one-login/service-header',
   ]
   if (!allowedScopes.includes(scope)) {
     return next()
