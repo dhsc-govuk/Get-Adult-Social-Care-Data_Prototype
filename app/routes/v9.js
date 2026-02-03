@@ -2,6 +2,7 @@ module.exports = function(router) {
 
   var version = 'v9';
   const providerLocations = require('../data/v9/provider-locations.json');
+  const estimatedEarlyOnsetDementia = require('../data/v9/future-planning/estimated-early-onset-dementia.json');
 
   /*****
    * General prototype pages (not part of the service)
@@ -732,6 +733,58 @@ module.exports = function(router) {
     }
     
   })
+
+  // Early onset dementia: change over time (line chart)
+  router.get('/' + version + '/' + 'signed-in/topics/future-planning/estimates-on-early-onset-dementia/data', function (req, res) {
+
+    const rows = estimatedEarlyOnsetDementia['Change over time'] || [];
+    // X-axis categories (years)
+    const categories = rows.map(r => String(r.Year));
+    // Series (each LA becomes one line)
+    const areas = ["Suffolk", "Norfolk", "Kent", "Somerset", "Dorset", "Herefordshire"];
+    const series = areas.map((area) => ({
+      name: area,
+      data: rows.map(r => {
+        
+        const raw = r[area];
+
+        // Keep gaps if your dataset ever has blanks
+        if (raw === "" || raw === null || typeof raw === "undefined") return null;
+
+        const num = Number(raw);
+        
+        return Number.isFinite(num) ? num : null;
+      }),
+      // ONS line chart supports marker toggle per series
+      marker: false
+    }));
+
+    res.render(version + '/signed-in/topics/future-planning/estimates-on-early-onset-dementia/data', {
+      chart: {
+        chartType: "line",
+        theme: "primary",
+        title: "Change over time",
+        subtitle: "Percentage change over time (ages 30 to 64)",
+        id: "estimated-early-onset-dementia-change-over-time",
+        headingLevel: 2,
+        caption: "Source: Prototype dataset",
+        description:
+          "Line chart showing percentage change over time for Suffolk, Norfolk, Kent, Somerset, Dorset and Herefordshire.",
+        legend: true,
+        yAxis: {
+          title: "Percentage change (%)",
+          labelFormat: "{value:.2f}"
+        },
+        xAxis: {
+          title: "Year",
+          type: "category",
+          categories
+        },
+        series
+      }
+    });
+
+  });
 
   /*****
    * Additional screens
