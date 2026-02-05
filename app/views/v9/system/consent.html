@@ -1,0 +1,53 @@
+{% extends "v9/layouts/signed-in-basic.html" %}
+
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form action="/first-login-complete" method="post">
+
+        {{ govukRadios({
+          name: "marketing-consent",
+          fieldset: {
+            legend: {
+              text: "Do you want to receive email updates about this service?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--xl govuk-!-padding-bottom-6"
+            }
+          },
+          hint: {
+            html: "
+              <p class='govuk-body'>We can send you emails about 'Get adult social care data', including new features and opportunities to take part in user research.</p>
+              <p class='govuk-body'>
+                  <a href='/privacy-policy' class='govuk-link' target='_blank'>Read our privacy policy (opens in new tab)</a> to find out how we use your personal information.
+              </p>
+            "
+          },
+          items: [
+            {
+              value: "yes",
+              text: "Yes, I want to receive email updates"
+            },
+            {
+              value: "no",
+              text: "No, I do not want to receive email updates"
+            }
+          ]
+        }) }}
+
+        <p class="govuk-body">
+          You can unsubscribe at any time using the link at the bottom of our emails.
+        </p>
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+{% endblock %}
