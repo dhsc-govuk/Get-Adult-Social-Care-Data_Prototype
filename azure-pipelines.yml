@@ -46,12 +46,6 @@ stages:
       pool:
         vmImage: $(vmImageName)
       steps:
-        - task: AzureWebAppContainer@1
-          inputs:
-            appType: "webAppLinux"
-            appName: "gascd-prototype"
-            azureSubscription: $(dev_arm_service_connections)
-            containers: "$(containerRegistry)/$(imageRepository):$(tag)"
         - task: AzureContainerApps@1
           inputs:
             azureSubscription: $(dev_arm_service_connections)
