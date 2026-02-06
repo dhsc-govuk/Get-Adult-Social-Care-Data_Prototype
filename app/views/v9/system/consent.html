@@ -13,34 +13,34 @@
           name: "marketing-consent",
           fieldset: {
             legend: {
-              text: "Do you want to receive email updates about this service?",
+              text: "Can we send you emails about the DHSC’s Get Adult Social Care Data (GASCD) service?",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--xl govuk-!-padding-bottom-6"
             }
           },
           hint: {
             html: "
-              <p class='govuk-body'>We can send you emails about 'Get adult social care data', including new features and opportunities to take part in user research.</p>
               <p class='govuk-body'>
-                  <a href='/privacy-policy' class='govuk-link' target='_blank'>Read our privacy policy (opens in new tab)</a> to find out how we use your personal information.
+From time to time, we’d like to send you news about the GASCD service such as new features and ways you can help us improve the service.            </p>
+              <p class='govuk-body'>
+                  Read the GASCD service <a href='/privacy-policy' class='govuk-link' target='_blank'>privacy policy (opens in new tab)</a> to find out what happens to your personal information.
               </p>
             "
           },
           items: [
             {
               value: "yes",
-              text: "Yes, I want to receive email updates"
+              text: "Yes, I'd like to receive emails"
             },
             {
               value: "no",
-              text: "No, I do not want to receive email updates"
+              text: "No, I don’t want to receive emails"
             }
           ]
         }) }}
 
         <p class="govuk-body">
-          You can unsubscribe at any time using the link at the bottom of our emails.
-        </p>
+You can tell us to stop sending these emails at any time.  We’ll include details of how to unsubscribe in every email.        </p>
 
         {{ govukButton({
           text: "Continue"
