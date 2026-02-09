@@ -1,6 +1,6 @@
 <div class="moj-scrollable-pane">
 
-  {% set rows = data[data['v9generalHealthDisabilityAndLearningDisability']]['Primary reason for people to access long-term adult social care'] %}
+  {% set rows = data[data['pbFebruary2026generalHealthDisabilityAndLearningDisability']]['Primary reason for people to access long-term adult social care'] %}
   {% set noFiltersSet = (not data.ageGroup8) and (not data.primarySupportReason8 or data.primarySupportReason8.length == 0) %}
   {% set age = (data.ageGroup8 if data.ageGroup8 else ("All age groups" if noFiltersSet else "All age groups")) %}
   {% set selectedReasons = data.primarySupportReason8 or [] %}

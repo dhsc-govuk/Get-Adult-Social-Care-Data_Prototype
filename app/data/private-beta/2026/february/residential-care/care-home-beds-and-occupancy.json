@@ -1,0 +1,148 @@
+{
+  "Care home beds and occupancy": [
+    {
+      "Indicator": "All bed types",
+      "Feb": "1,206",
+      "Mar": "1,285",
+      "Apr": "1,842",
+      "May": "1,965",
+      "Jun": "2,012",
+      "Jul": "1,876",
+      "Aug": "1,945",
+      "Sep": "2,089",
+      "Oct": "2,156"
+    },
+    {
+      "Indicator": "Community care bed",
+      "Feb": "9",
+      "Mar": "9",
+      "Apr": "9",
+      "May": "9",
+      "Jun": "9",
+      "Jul": "9",
+      "Aug": "9",
+      "Sep": "9",
+      "Oct": "9"
+    },
+    {
+      "Indicator": "Dementia nursing",
+      "Feb": "162",
+      "Mar": "148",
+      "Apr": "185",
+      "May": "210",
+      "Jun": "245",
+      "Jul": "268",
+      "Aug": "295",
+      "Sep": "312",
+      "Oct": "298"
+    },
+    {
+      "Indicator": "Dementia residential",
+      "Feb": "175",
+      "Mar": "168",
+      "Apr": "182",
+      "May": "215",
+      "Jun": "195",
+      "Jul": "188",
+      "Aug": "192",
+      "Sep": "198",
+      "Oct": "205"
+    },
+    {
+      "Indicator": "General nursing",
+      "Feb": "294",
+      "Mar": "312",
+      "Apr": "458",
+      "May": "485",
+      "Jun": "492",
+      "Jul": "445",
+      "Aug": "468",
+      "Sep": "512",
+      "Oct": "535"
+    },
+    {
+      "Indicator": "General residential",
+      "Feb": "402",
+      "Mar": "475",
+      "Apr": "785",
+      "May": "812",
+      "Jun": "835",
+      "Jul": "742",
+      "Aug": "755",
+      "Sep": "815",
+      "Oct": "862"
+    },
+    {
+      "Indicator": "Learning disability nursing",
+      "Feb": "0",
+      "Mar": "0",
+      "Apr": "0",
+      "May": "0",
+      "Jun": "0",
+      "Jul": "0",
+      "Aug": "0",
+      "Sep": "0",
+      "Oct": "0"
+    },
+    {
+      "Indicator": "Learning disability residential",
+      "Feb": "129",
+      "Mar": "135",
+      "Apr": "168",
+      "May": "175",
+      "Jun": "178",
+      "Jul": "168",
+      "Aug": "172",
+      "Sep": "182",
+      "Oct": "185"
+    },
+    {
+      "Indicator": "Mental health nursing",
+      "Feb": "5",
+      "Mar": "6",
+      "Apr": "8",
+      "May": "9",
+      "Jun": "8",
+      "Jul": "7",
+      "Aug": "8",
+      "Sep": "9",
+      "Oct": "10"
+    },
+    {
+      "Indicator": "Mental health residential",
+      "Feb": "30",
+      "Mar": "32",
+      "Apr": "45",
+      "May": "48",
+      "Jun": "48",
+      "Jul": "47",
+      "Aug": "44",
+      "Sep": "50",
+      "Oct": "52"
+    },
+    {
+      "Indicator": "Transitional",
+      "Feb": "0",
+      "Mar": "0",
+      "Apr": "2",
+      "May": "2",
+      "Jun": "2",
+      "Jul": "2",
+      "Aug": "2",
+      "Sep": "2",
+      "Oct": "0"
+    },
+    {
+      "Indicator": "Young physically disabled",
+      "Feb": "0",
+      "Mar": "0",
+      "Apr": "0",
+      "May": "0",
+      "Jun": "0",
+      "Jul": "0",
+      "Aug": "0",
+      "Sep": "0",
+      "Oct": "0"
+    }
+  ]
+}

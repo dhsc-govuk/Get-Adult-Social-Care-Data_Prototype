@@ -1,8 +1,7 @@
 module.exports = function(router) {
 
   var version = 'private-beta/2026/february';
-  const providerLocations = require('../../../../data/v9/provider-locations.json');
-  const estimatedEarlyOnsetDementia = require('../../../../data/v9/future-planning/estimated-early-onset-dementia.json');
+  const providerLocations = require('../../../../data/private-beta/2026/february/provider-locations.json');
 
   /*****
    * General prototype pages (not part of the service)

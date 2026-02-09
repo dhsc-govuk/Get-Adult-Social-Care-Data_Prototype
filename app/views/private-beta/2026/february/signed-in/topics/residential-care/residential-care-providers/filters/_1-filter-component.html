@@ -14,10 +14,6 @@
       <form action="data-update-filters" method="post" novalidate>
 
         <div class="govuk-grid-row">
-
-          <div class="govuk-grid-column-one-third dhsc-filter--section-spacer-for-mobile">
-            {% include "./_1-postcode.html" %}
-          </div>
           
           <div class="govuk-grid-column-one-third dhsc-filter--section-spacer-for-mobile">
             {% include "./_1-service-types.html" %}
@@ -36,7 +32,7 @@
             <div class="govuk-button-group">
               <button id="update-filters" type="submit" class="govuk-button" data-module="govuk-button" name="filterApplied" value="Yes">Apply</button>
               {% if data.filterApplied %}
-              <a href="?filterApplied=&postcode=&serviceType=&cqcRating=#data1" class="govuk-link">Clear all</a>
+              <a href="?filterApplied=&serviceType=&cqcRating=#data1" class="govuk-link">Clear all</a>
               {% endif %}
             </div>
             
@@ -56,16 +52,6 @@
 <div class="app-c-filter-summary">
   <h5 class="app-c-filter-summary__heading">Active filters</h5>
   <ul class="app-c-filter-summary__remove-filters">
-    {% if data.postcode != data.selectedLocationPostcode %}
-    <li id="postcode-remove">
-      <a class="app-c-filter-summary__remove-filter" href="#">
-        <span>
-          <span class="govuk-visually-hidden">Remove filter</span>
-          Postcode: {{data.postcode}}
-        </span>
-      </a>
-    </li>
-    {% endif %}
     {% for param in data.serviceType %}
     {% if param == "Extra care housing" %}
     <li id="serviceType_1-remove">
@@ -163,7 +149,7 @@
   </ul>
 
   <div>
-    <a class="govuk-link govuk-link--no-visited-state" href="?filterApplied=&postcode=&serviceType=&cqcRating#data1">Clear all filters</a>
+    <a class="govuk-link govuk-link--no-visited-state" href="?filterApplied=&serviceType=&cqcRating#data1">Clear all filters</a>
   </div>
 
 </div>

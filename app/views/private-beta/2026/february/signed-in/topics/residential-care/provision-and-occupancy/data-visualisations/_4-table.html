@@ -1,6 +1,6 @@
 <div class="moj-scrollable-pane">
 
-  {% set rows = data[data['v9CareHomeBedsAndOccupancy']]['Care home beds and occupancy'] %}
+  {% set rows = data[data['pbFebruary2026CareHomeBedsAndOccupancy']]['Care home beds and occupancy'] %}
   {% set selectedBedTypes = data.bedType3 or [] %}
   {% if selectedBedTypes and (selectedBedTypes is string) %}
   {% set selectedBedTypes = [selectedBedTypes] %}

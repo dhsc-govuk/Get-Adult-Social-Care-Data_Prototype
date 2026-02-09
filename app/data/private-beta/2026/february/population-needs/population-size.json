@@ -1,0 +1,34 @@
+{
+  "Adult population size": [
+    {
+      "Indicator": "Total adult population",
+      "Suffolk": "173,241",
+      "East of England": "5,183,241",
+      "England": "55,286,249"
+    },
+    {
+      "Indicator": "Aged 18 to 64",
+      "Suffolk": "56.4%",
+      "East of England": "49.0%",
+      "England": "57.0%"
+    },
+    {
+      "Indicator": "Aged 65 to 74",
+      "Suffolk": "11.6%",
+      "East of England": "19.9%",
+      "England": "21.4%"
+    },
+    {
+      "Indicator": "Aged 75 to 84",
+      "Suffolk": "9.2%",
+      "East of England": "3.4%",
+      "England": "5.4%"
+    },
+    {
+      "Indicator": "Aged 85 and over",
+      "Suffolk": "3.4%",
+      "East of England": "2.2%",
+      "England": "3.1%"
+    }
+  ]
+}

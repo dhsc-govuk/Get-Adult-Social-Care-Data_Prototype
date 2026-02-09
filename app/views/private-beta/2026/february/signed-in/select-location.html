@@ -101,7 +101,7 @@
             
             {% if data.paginationRequired != "true" %}
             {% set careHomeCount = 0 %}
-            {% for item in data[data['v9ProviderLocations']] %}
+            {% for item in data[data['pbFebruary2026ProviderLocations']] %}
             {% if data.userType == "Care provider (community social care)" %}
             <!-- SHOWING 24 LOCATIONS -->
             {% if item['Service type'] == 'Community social care' %}
@@ -153,7 +153,7 @@
             {% else %}
             <!-- SHOWING 1 TO 100 OF 120 LOCATIONS -->
             {% if page1 %}
-            {% for item in data[data['v9ProviderLocations']] %}
+            {% for item in data[data['pbFebruary2026ProviderLocations']] %}
             {% if (loop.index <= 100) %}
             <div class="govuk-radios__item searchable-radio">
               <input class="govuk-radios__input" id="locationId-{{item['ID']}}" name="locationId" type="radio" data-search-value="{{item['Provider name']}}, {{item['Location name']}}, {{item['Address']}}, {{item['Postcode']}}" value="{{item['ID']}}" aria-describedby="locationId-{{item['ID']}}-hint"{% if data.locationId == item['ID'] %} checked{% endif %}>
@@ -170,7 +170,7 @@
             {% endfor %}
             {% elif page2 %}
             <!-- SHOWING 101 TO 120 OF 120 LOCATIONS -->
-            {% for item in data[data['v9ProviderLocations']] %}
+            {% for item in data[data['pbFebruary2026ProviderLocations']] %}
             {% if (loop.index >= 101) %}
             <div class="govuk-radios__item searchable-radio">
               <input class="govuk-radios__input" id="locationId-{{item['ID']}}" name="locationId" type="radio" data-search-value="{{item['Provider name']}}, {{item['Location name']}}, {{item['Address']}}, {{item['Postcode']}}" value="{{item['ID']}}" aria-describedby="locationId-{{item['ID']}}-hint"{% if data.locationId == item['ID'] %} checked{% endif %}>
@@ -203,7 +203,7 @@
 
             {% if data.paginationRequired != "true" %}
             {% set careHomeCount = 0 %}
-            {% for item in data[data['v9ProviderLocations']] %}
+            {% for item in data[data['pbFebruary2026ProviderLocations']] %}
             {% if data.userType == "Care provider (community social care)" %}
             <!-- SHOWING 24 LOCATIONS -->
             {% if item['Service type'] == 'Community social care' %}
@@ -254,7 +254,7 @@
             {% endfor %}
             {% else %}
             <!-- 120 LOCATIONS -->
-            {% for item in data[data['v9ProviderLocations']] %}
+            {% for item in data[data['pbFebruary2026ProviderLocations']] %}
             <div class="govuk-radios__item searchable-radio">
               <input class="govuk-radios__input" id="locationId-{{item['ID']}}" name="locationId" type="radio" data-search-value="{{item['Provider name']}}, {{item['Location name']}}, {{item['Address']}}, {{item['Postcode']}}" value="{{item['ID']}}" aria-describedby="locationId-{{item['ID']}}-hint"{% if data.locationId == item['ID'] %} checked{% endif %}>
               <label class="govuk-label govuk-radios__label" for="locationId-{{item['ID']}}">{{item['Location name']}}</label>

@@ -1,5 +1,19 @@
 module.exports = {
 
+  // Private beta (February 2026)
+  "pbFebruary2026ProviderLocationsData": require('./private-beta/2026/february/provider-locations.json'),
+  "pbFebruary2026ProviderLocations": "pbFebruary2026ProviderLocationsData",
+  "pbFebruary2026CareProvidersLocationsAndServicesData": require('./private-beta/2026/february/residential-care/care-providers-locations-and-services.json'),
+  "pbFebruary2026CareProvidersLocationsAndServices": "pbFebruary2026CareProvidersLocationsAndServicesData",
+  "pbFebruary2026CareHomeBedsAndOccupancyData": require('./private-beta/2026/february/residential-care/care-home-beds-and-occupancy.json'),
+  "pbFebruary2026CareHomeBedsAndOccupancy": "pbFebruary2026CareHomeBedsAndOccupancyData",
+  "pbFebruary2026localAuthorityFundingForAdultSocialCareData": require('./private-beta/2026/february/funding/local-authority-funding-for-adult-social-care.json'),
+  "pbFebruary2026localAuthorityFundingForAdultSocialCare": "pbFebruary2026localAuthorityFundingForAdultSocialCareData",
+  "pbFebruary2026populationSizeAndAgeGroupPercentagesData": require('./private-beta/2026/february/population-needs/population-size.json'),
+  "pbFebruary2026populationSizeAndAgeGroupPercentages": "pbFebruary2026populationSizeAndAgeGroupPercentagesData",
+  "pbFebruary2026generalHealthDisabilityAndLearningDisabilityData": require('./private-beta/2026/february/population-needs/general-health-disability-and-learning-disability.json'),
+  "pbFebruary2026generalHealthDisabilityAndLearningDisability": "pbFebruary2026generalHealthDisabilityAndLearningDisabilityData",
+  
   // v9
   "v9ProviderLocationsData": require('./v9/provider-locations.json'),
   "v9ProviderLocations": "v9ProviderLocationsData",
