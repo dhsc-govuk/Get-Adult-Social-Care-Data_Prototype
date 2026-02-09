@@ -1,0 +1,42 @@
+<div class="moj-scrollable-pane">
+
+  <table class="govuk-table">
+    <caption class="govuk-table__caption">Table 1: population size estimates and age group percentages ({% if data.year%}{{data.year}}{% else %}2030{% endif %}) &ndash; Suffolk <abbr title="Local Authority">LA</abbr>, East of England region and England</caption>
+    <thead class="govuk-table__head">
+      <tr class="govuk-table__row">
+        <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Indicator</th>
+        <th scope="col" class="govuk-table__header govuk-!-width-one-quarter govuk-table__header--numeric">Suffolk</th>
+        <th scope="col" class="govuk-table__header govuk-!-width-one-quarter govuk-table__header--numeric">East of England</th>
+        <th scope="col" class="govuk-table__header govuk-!-width-one-quarter govuk-table__header--numeric">England</th>
+      </tr>
+    </thead>
+    <tbody class="govuk-table__body">
+      {% set rows = data[data['v9estimatedPopulationSize']]['Adult population size estimates'] %}
+      {% set noFiltersSet = not data.year %}
+      {% set year = (data.year if data.year else ("2030" if noFiltersSet else "2030")) %}
+      {% set rowsRendered = 0 %}
+      {% for row in rows %}
+      {% set matchesYear = (row["Year"] == year) %}
+      {% if matchesYear %}
+      {% set rowsRendered = rowsRendered + 1 %}
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">{{row["Indicator"]}}</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">{% if row["Indicator"] == "Total adult population" %}{{row["Suffolk"]}}{% else %}{{row["Suffolk (%)"]}}{% endif %}</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">{% if row["Indicator"] == "Total adult population" %}{{row["East of England"]}}{% else %}{{row["East of England (%)"]}}{% endif %}</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">{% if row["Indicator"] == "Total adult population" %}{{row["England"]}}{% else %}{{row["England (%)"]}}{% endif %}</td>
+      </tr>
+      {% endif %}
+      {% endfor %}
+      <!-- {% if rowsRendered == 0 %}
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell" colspan="4">No results match your selection.</td>
+      </tr>
+      {% endif %} -->
+    </tbody>
+  </table>
+
+</div>
+
+<div class="govuk-form-block">
+  <p class="govuk-body data-source">Source: Population estimates from the Office for National Statistics (ONS), mid&#45;2024</p>
+</div>

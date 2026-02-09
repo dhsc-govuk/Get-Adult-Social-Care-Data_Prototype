@@ -1,0 +1,58 @@
+<div class="moj-scrollable-pane">
+
+  {% set rows = data[data['v9localAuthorityFundingForAdultSocialCare']]['Local authority adult social care funding by duration of care'] %}
+  {% set noFiltersSet = not data.ageGroup14 %}
+  {% set age = (data.ageGroup14 if data.ageGroup14 else ("All age groups" if noFiltersSet else "All age groups")) %}
+  <table class="govuk-table">
+    <caption class="govuk-table__caption">Table 1: <abbr title="Local Authority">LA</abbr> spending on short&#45;term and long&#45;term adult social care for {% if data.ageGroup14 == "Aged 18 to 64" or data.ageGroup14 == "Aged 65 and over" %} people{% endif %} {{age | lower}} &ndash; Suffolk <abbr title="Local Authority">LA</abbr>, East of England region and England, financial year 2023 to 2024 (£ thousand)</caption>
+    <thead class="govuk-table__head">
+      <tr class="govuk-table__row">
+        <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Duration of care</th>
+        <th scope="col" class="govuk-table__header govuk-!-width-one-quarter govuk-table__header--numeric">Suffolk<br>(£ thousand)</th>
+        <th scope="col" class="govuk-table__header govuk-!-width-one-quarter govuk-table__header--numeric">East of England - regional average<br>(£ thousand)</th>
+        <th scope="col" class="govuk-table__header govuk-!-width-one-quarter govuk-table__header--numeric">England - national average<br>(£ thousand)</th>
+      </tr>
+    </thead>
+    <tbody class="govuk-table__body">
+      {% set rowsRendered = 0 %}
+      {% for row in rows %}
+      {% set matchesAge = (row["Age group"] == age) %}
+      {% if matchesAge %}
+      {% set rowsRendered = rowsRendered + 1 %}
+      {% if row["Duration of care"] == "Both short-term and long-term" %}
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell"><strong>{{row["Duration of care"]}}</strong></td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">&#163;{{row["Suffolk"]}}</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">&#163;{{row["East of England (LA average)"]}}</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">&#163;{{row["England (LA average)"]}}</td>
+      </tr>
+      {% elif row["Duration of care"] == "Long-term" or row["Duration of care"] == "Short-term" %}
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell"><br><strong>{{row["Duration of care"]}}</strong></td>
+        <td class="govuk-table__cell govuk-table__cell--numeric"><br>&#163;{{row["Suffolk"]}}</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric"><br>&#163;{{row["East of England (LA average)"]}}</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric"><br>&#163;{{row["England (LA average)"]}}</td>
+      </tr>
+      {% else %}
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell table-indent">{{row["Duration of care"]}}</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">&#163;{{row["Suffolk"]}}</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">&#163;{{row["East of England (LA average)"]}}</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">&#163;{{row["England (LA average)"]}}</td>
+      </tr>
+      {% endif %}
+      {% endif %}
+      {% endfor %}
+      <!-- {% if rowsRendered == 0 %}
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell" colspan="4">No results match your selection.</td>
+      </tr>
+      {% endif %} -->
+    </tbody>
+  </table>
+
+</div>
+
+<div class="govuk-form-block">
+  <p class="govuk-body data-source">Source: Adult Social Care Activity and Finance Report from NHS England</p>
+</div>

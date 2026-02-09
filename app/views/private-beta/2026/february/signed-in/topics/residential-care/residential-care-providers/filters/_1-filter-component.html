@@ -1,0 +1,170 @@
+<div id="dhsc-filter--action" class="dhsc-filter--action">
+  <button id="dhsc-filter--button" class="govuk-button" type="button" aria-expanded="false" aria-controls="dhsc-filter--content">
+    <span id="dhsc-filter--button-content" class="dhsc-filter--button-content">Filters</span>
+    <i id="dhsc-filter--icon" class="fa fa-plus" aria-hidden="true"><span id="dhsc-filter--icon-content" class="govuk-visually-hidden">Open</span></i>
+  </button>
+</div>
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-full">
+
+    <div id="dhsc-filter--content" class="dhsc-filter--content" aria-labelledby="dhsc-filter--button">
+
+      <form action="data-update-filters" method="post" novalidate>
+
+        <div class="govuk-grid-row">
+
+          <div class="govuk-grid-column-one-third dhsc-filter--section-spacer-for-mobile">
+            {% include "./_1-postcode.html" %}
+          </div>
+          
+          <div class="govuk-grid-column-one-third dhsc-filter--section-spacer-for-mobile">
+            {% include "./_1-service-types.html" %}
+          </div>
+
+          <div class="govuk-grid-column-one-third">
+            {% include "./_1-cqc-rating.html" %}
+          </div>
+
+        </div>
+
+        <div class="govuk-grid-row govuk-!-margin-top-4">
+
+          <div class="govuk-grid-column-full">
+
+            <div class="govuk-button-group">
+              <button id="update-filters" type="submit" class="govuk-button" data-module="govuk-button" name="filterApplied" value="Yes">Apply</button>
+              {% if data.filterApplied %}
+              <a href="?filterApplied=&postcode=&serviceType=&cqcRating=#data1" class="govuk-link">Clear all</a>
+              {% endif %}
+            </div>
+            
+          </div>
+
+        </div>
+
+      </form>
+
+    </div>
+
+  </div>
+
+</div>
+{% if data.filterApplied %}
+
+<div class="app-c-filter-summary">
+  <h5 class="app-c-filter-summary__heading">Active filters</h5>
+  <ul class="app-c-filter-summary__remove-filters">
+    {% if data.postcode != data.selectedLocationPostcode %}
+    <li id="postcode-remove">
+      <a class="app-c-filter-summary__remove-filter" href="#">
+        <span>
+          <span class="govuk-visually-hidden">Remove filter</span>
+          Postcode: {{data.postcode}}
+        </span>
+      </a>
+    </li>
+    {% endif %}
+    {% for param in data.serviceType %}
+    {% if param == "Extra care housing" %}
+    <li id="serviceType_1-remove">
+      <a class="app-c-filter-summary__remove-filter" href="#">
+        <span>
+          <span class="govuk-visually-hidden">Remove filter</span>
+          Service type: Extra care housing
+        </span>
+      </a>
+    </li>
+    {% endif %}
+    {% if param == "Homecare agencies" %}
+    <li id="serviceType_2-remove">
+      <a class="app-c-filter-summary__remove-filter" href="#">
+        <span>
+          <span class="govuk-visually-hidden">Remove filter</span>
+          Service type: Homecare agencies
+        </span>
+      </a>
+    </li>
+    {% endif %}
+    {% if param == "Nursing homes" %}
+    <li id="serviceType_3-remove">
+      <a class="app-c-filter-summary__remove-filter" href="#">
+        <span>
+          <span class="govuk-visually-hidden">Remove filter</span>
+          Service type: Nursing homes
+        </span>
+      </a>
+    </li>
+    {% endif %}
+    {% if param == "Residential homes" %}
+    <li id="serviceType_4-remove">
+      <a class="app-c-filter-summary__remove-filter" href="#">
+        <span>
+          <span class="govuk-visually-hidden">Remove filter</span>
+          Service type: Residential homes
+        </span>
+      </a>
+    </li>
+    {% endif %}
+    {% if param == "Supported living" %}
+    <li id="serviceType_5-remove">
+      <a class="app-c-filter-summary__remove-filter" href="#">
+        <span>
+          <span class="govuk-visually-hidden">Remove filter</span>
+          Service type: Supported living
+        </span>
+      </a>
+    </li>
+    {% endif %}
+    {% endfor %}
+    {% for param in data.cqcRating %}
+    {% if param == "Outstanding" %}
+    <li id="cqcRating_1-remove">
+      <a class="app-c-filter-summary__remove-filter" href="#">
+        <span>
+          <span class="govuk-visually-hidden">Remove filter</span>
+          CQC rating: Outstanding
+        </span>
+      </a>
+    </li>
+    {% endif %}
+    {% if param == "Good" %}
+    <li id="cqcRating_2-remove">
+      <a class="app-c-filter-summary__remove-filter" href="#">
+        <span>
+          <span class="govuk-visually-hidden">Remove filter</span>
+          CQC rating: Good
+        </span>
+      </a>
+    </li>
+    {% endif %}
+    {% if param == "Requires improvement" %}
+    <li id="cqcRating_3-remove">
+      <a class="app-c-filter-summary__remove-filter" href="#">
+        <span>
+          <span class="govuk-visually-hidden">Remove filter</span>
+          CQC rating: Requires improvement
+        </span>
+      </a>
+    </li>
+    {% endif %}
+    {% if param == "Inadequate" %}
+    <li id="cqcRating_4-remove">
+      <a class="app-c-filter-summary__remove-filter" href="#">
+        <span>
+          <span class="govuk-visually-hidden">Remove filter</span>
+          CQC rating: Inadequate
+        </span>
+      </a>
+    </li>
+    {% endif %}
+    {% endfor %}
+  </ul>
+
+  <div>
+    <a class="govuk-link govuk-link--no-visited-state" href="?filterApplied=&postcode=&serviceType=&cqcRating#data1">Clear all filters</a>
+  </div>
+
+</div>
+{% endif %}

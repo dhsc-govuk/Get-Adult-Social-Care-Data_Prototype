@@ -1,0 +1,30 @@
+<div class="govuk-form-group">
+  <fieldset class="govuk-fieldset">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">Age group</legend>
+    
+    <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+      
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="ageGroup5_1" name="ageGroup5" type="checkbox" value="Aged 18 to 64"{% for param in data.ageGroup5 %}{% if param == 'Aged 18 to 64' %} checked{% endif %}{% endfor %}>
+        <label class="govuk-label govuk-checkboxes__label" for="ageGroup5_1">Aged 18 to 64</label>
+      </div>
+      
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="ageGroup5_2" name="ageGroup5" type="checkbox" value="Aged 65 to 74"{% for param in data.ageGroup5 %}{% if param == 'Aged 65 to 74' %} checked{% endif %}{% endfor %}>
+        <label class="govuk-label govuk-checkboxes__label" for="ageGroup5_2">Aged 65 to 74</label>
+      </div>
+
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="ageGroup5_3" name="ageGroup5" type="checkbox" value="Aged 75 to 84"{% for param in data.ageGroup5 %}{% if param == 'Aged 75 to 84' %} checked{% endif %}{% endfor %}>
+        <label class="govuk-label govuk-checkboxes__label" for="ageGroup5_3">Aged 75 to 84</label>
+      </div>
+
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="ageGroup5_4" name="ageGroup5" type="checkbox" value="Aged 85 and over"{% for param in data.ageGroup5 %}{% if param == 'Aged 85 and over' %} checked{% endif %}{% endfor %}>
+        <label class="govuk-label govuk-checkboxes__label" for="ageGroup5_4">Aged 85 and over</label>
+      </div>
+
+    </div>
+
+  </fieldset>
+</div>

@@ -1,0 +1,180 @@
+<div id="dhsc-filter--action2" class="dhsc-filter--action">
+  <button id="dhsc-filter--button2" class="govuk-button" type="button" aria-expanded="false" aria-controls="dhsc-filter--content2">
+    <span id="dhsc-filter--button-content2" class="dhsc-filter--button-content">Filters</span>
+    <i id="dhsc-filter--icon2" class="fa fa-plus" aria-hidden="true"><span id="dhsc-filter--icon2-content" class="govuk-visually-hidden">Open</span></i>
+  </button>
+</div>
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-full">
+
+    <div id="dhsc-filter--content2" class="dhsc-filter--content" aria-labelledby="dhsc-filter--button2">
+
+      <form action="data-update-filters2" method="post" novalidate>
+
+        <div class="govuk-grid-row">
+          
+          <div class="govuk-grid-column-one-third govuk-grid-column-one-third-searchable-checkboxes-section">
+            {% include "./_2-bed-types.html" %}
+          </div>
+
+        </div>
+
+        <div class="govuk-grid-row govuk-!-margin-top-4">
+
+          <div class="govuk-grid-column-full">
+
+            <div class="govuk-button-group">
+              <button id="update-filters2" type="submit" class="govuk-button" data-module="govuk-button" name="filterApplied2" value="Yes">Apply</button>
+              {% if data.filterApplied2 %}
+              <a href="?filterApplied2=&bedType2=#data2" class="govuk-link">Clear all</a>
+              {% endif %}
+            </div>
+            
+          </div>
+
+        </div>
+
+      </form>
+
+    </div>
+
+  </div>
+
+</div>
+{% if data.filterApplied2 %}
+
+<div class="app-c-filter-summary">
+  <h5 class="app-c-filter-summary__heading">Active filters</h5>
+  <ul class="app-c-filter-summary__remove-filters">
+    {% for param in data.bedType2 %}
+    {% if param == "All bed types" %}
+    <li id="bedType2_1-remove">
+      <a class="app-c-filter-summary__remove-filter" href="#">
+        <span>
+          <span class="govuk-visually-hidden">Remove filter</span>
+          Bed type: All bed types
+        </span>
+      </a>
+    </li>
+    {% endif %}
+    {% if param == "Community care bed" %}
+    <li id="bedType2_2-remove">
+      <a class="app-c-filter-summary__remove-filter" href="#">
+        <span>
+          <span class="govuk-visually-hidden">Remove filter</span>
+          Bed type: Community care bed
+        </span>
+      </a>
+    </li>
+    {% endif %}
+    {% if param == "Dementia nursing" %}
+    <li id="bedType2_3-remove">
+      <a class="app-c-filter-summary__remove-filter" href="#">
+        <span>
+          <span class="govuk-visually-hidden">Remove filter</span>
+          Bed type: Dementia nursing
+        </span>
+      </a>
+    </li>
+    {% endif %}
+    {% if param == "Dementia residential" %}
+    <li id="bedType2_4-remove">
+      <a class="app-c-filter-summary__remove-filter" href="#">
+        <span>
+          <span class="govuk-visually-hidden">Remove filter</span>
+          Bed type: Dementia residential
+        </span>
+      </a>
+    </li>
+    {% endif %}
+    {% if param == "General nursing" %}
+    <li id="bedType2_5-remove">
+      <a class="app-c-filter-summary__remove-filter" href="#">
+        <span>
+          <span class="govuk-visually-hidden">Remove filter</span>
+          Bed type: General nursing
+        </span>
+      </a>
+    </li>
+    {% endif %}
+    {% if param == "General residential" %}
+    <li id="bedType2_6-remove">
+      <a class="app-c-filter-summary__remove-filter" href="#">
+        <span>
+          <span class="govuk-visually-hidden">Remove filter</span>
+          Bed type: General residential
+        </span>
+      </a>
+    </li>
+    {% endif %}
+    {% if param == "Learning disability nursing" %}
+    <li id="bedType2_7-remove">
+      <a class="app-c-filter-summary__remove-filter" href="#">
+        <span>
+          <span class="govuk-visually-hidden">Remove filter</span>
+          Bed type: Learning disability nursing
+        </span>
+      </a>
+    </li>
+    {% endif %}
+    {% if param == "Learning disability residential" %}
+    <li id="bedType2_8-remove">
+      <a class="app-c-filter-summary__remove-filter" href="#">
+        <span>
+          <span class="govuk-visually-hidden">Remove filter</span>
+          Bed type: Learning disability residential
+        </span>
+      </a>
+    </li>
+    {% endif %}
+    {% if param == "Mental health nursing" %}
+    <li id="bedType2_9-remove">
+      <a class="app-c-filter-summary__remove-filter" href="#">
+        <span>
+          <span class="govuk-visually-hidden">Remove filter</span>
+          Bed type: Mental health nursing
+        </span>
+      </a>
+    </li>
+    {% endif %}
+    {% if param == "Mental health residential" %}
+    <li id="bedType2_10-remove">
+      <a class="app-c-filter-summary__remove-filter" href="#">
+        <span>
+          <span class="govuk-visually-hidden">Remove filter</span>
+          Bed type: Mental health residential
+        </span>
+      </a>
+    </li>
+    {% endif %}
+    {% if param == "Transitional" %}
+    <li id="bedType2_11-remove">
+      <a class="app-c-filter-summary__remove-filter" href="#">
+        <span>
+          <span class="govuk-visually-hidden">Remove filter</span>
+          Bed type: Transitional
+        </span>
+      </a>
+    </li>
+    {% endif %}
+    {% if param == "Young physically disabled" %}
+    <li id="bedType2_12-remove">
+      <a class="app-c-filter-summary__remove-filter" href="#">
+        <span>
+          <span class="govuk-visually-hidden">Remove filter</span>
+          Bed type: Young physically disabled
+        </span>
+      </a>
+    </li>
+    {% endif %}
+    {% endfor %}
+  </ul>
+
+  <div>
+    <a class="govuk-link govuk-link--no-visited-state" href="?filterApplied2=&bedType2=#data2">Clear all filters</a>
+  </div>
+
+</div>
+{% endif %}

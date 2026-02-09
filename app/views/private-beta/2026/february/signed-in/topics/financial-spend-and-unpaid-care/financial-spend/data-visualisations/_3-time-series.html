@@ -1,0 +1,23 @@
+<div class="govuk-form-group">
+  
+  {% set age = (data.ageGroup14 if data.ageGroup14 else ("All age groups" if noFiltersSet else "All age groups")) %}
+  {% set supportSetting = (data.supportSetting16 if data.supportSetting16 else ("All types of adult social care" if noFiltersSet else "All types of adult social care")) %}
+  <h4 class="govuk-heading-s">Figure 3: graph of <abbr title="Local Authority">LA</abbr> funding for long-term adult social care ({{supportSetting | lower}}) for {% if data.ageGroup14 == "Aged 18 to 64" or data.ageGroup14 == "Aged 65 and over" %} people{% endif %} {{age | lower}} &ndash; Suffolk <abbr title="Local Authority">LA</abbr>, East of England region and England, financial years 2021 to 2024 (£ thousand)</h4>
+  {% if data.supportSetting == "Community direct payments" %}
+  <img src="/public/images/data-visualisations/financial-spend-and-unpaid-care/financial-spend/time-series-community-direct-payments.jpg" alt class="data-visualisation-image">
+  {% elif data.supportSetting == "Community social care" %}
+  <img src="/public/images/data-visualisations/financial-spend-and-unpaid-care/financial-spend/time-series-community-social-care.jpg" alt class="data-visualisation-image">
+  {% elif data.supportSetting == "Homecare" %}
+  <img src="/public/images/data-visualisations/financial-spend-and-unpaid-care/financial-spend/time-series-homecare.jpg" alt class="data-visualisation-image">
+  {% elif data.supportSetting == "Supported housing" %}
+  <img src="/public/images/data-visualisations/financial-spend-and-unpaid-care/financial-spend/time-series-supported-housing.jpg" alt class="data-visualisation-image">
+  {% elif data.supportSetting == "Supported living" %}
+  <img src="/public/images/data-visualisations/financial-spend-and-unpaid-care/financial-spend/time-series-supported-living.jpg" alt class="data-visualisation-image">
+  {% else %}
+  <img src="/public/images/data-visualisations/financial-spend-and-unpaid-care/financial-spend/time-series-adult-social-care.jpg" alt class="data-visualisation-image">
+  {% endif %}
+</div>
+
+<div class="govuk-form-block">
+  <p class="govuk-body data-source">Source: Adult Social Care Activity and Finance Report from NHS England</p>
+</div>

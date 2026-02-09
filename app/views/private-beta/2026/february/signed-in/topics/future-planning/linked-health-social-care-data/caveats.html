@@ -1,0 +1,32 @@
+{% extends "private-beta/2026/february/layouts/signed-in.html" %}
+
+{% set pageName = "Caveats and Appropriate and Inappropriate Use Cases" %}
+
+{% block beforeContent %}
+<a href="javascript:history.back()" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">{{pageName}}</h1>
+    <h2 class="govuk-heading-m">Key Caveats</h2>
+    <p class="govuk-body">The findings show associations between hospital use and subsequent utilisation of local authority arranged long-term adult social care but should not be interpreted as evidence of causation. In many cases the relationship between secondary care and social care utilisation will be driven by a third external factor such as an individual’s underlying health and care needs. The analysis also only considers health events seen in secondary acute care and does not currently consider health events such as community or primary care events that might also show associations in subsequent utilisation of local authority arranged long-term social care.</p>
+    <p class="govuk-body">This analysis reflects patterns in adult social care arranged for or funded by the local authority only and  so where someone is not in receipt of local authority arranged long-term care, the analysis does not identify whether those individuals have social care needs, the degree to which needs are met, or whether they are in receipt of alternative forms of support for their needs (e.g. short-term care, self-funded care, unpaid care or community support). Results should therefore not be interpreted as a full picture of social care utilisation in the population, nor used for direct comparison between local authorities, as underlying social care needs and care eligibility vary across local authorities.</p>
+    <h2 class="govuk-heading-m">Appropriate Use Cases</h2>
+    <p class="govuk-body">To understand those cohorts of individuals at greater relative risk of starting long-term adult social care and the relative size of those cohorts within the individual local authority.</p>
+    <p class="govuk-body">This analysis can be used to improve our understanding of the flow of users from secondary care to local authority arranged long-term adult social care based on historic data, and how this flow differs across cohorts.</p>
+    <h2 class="govuk-heading-m">Inappropriate Use Cases</h2>
+    <p class="govuk-body">This analysis cannot be used to infer or predict social care needs or demands for local authority arranged long-term care. The findings highlight only adult social care arranged for or funded by the local authority and therefore do not capture all adult social care need (e.g. unpaid care, self-funded care, social care clients who do not appear in hospital data) and therefore should not be extended to make assumptions about these additional types of social care. Additionally, as this analysis is retrospective and based on historical patterns within the linked dataset, it cannot be used to predict future social care need at an individual or population level.</p>
+    <p class="govuk-body">This analysis cannot be used to compare local authorities or to make judgements around performance and what good looks like as provision will vary across a local authority and high or low levels of individuals within the cohort does not necessarily correlate to good or bad provision. </p>
+    <p class="govuk-body">This analysis cannot be used to make conclusions that assume a causal link between hospital use and subsequent social care need. The findings highlight an association between the two but should not be interpreted as evidence of causation.</p>
+  </div>
+
+</div>
+{% endblock %}
+
+{% block pageScripts %}
+<!-- Font Awesome 4 icons for the notifications -->
+<link href="/public/open-source/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+{% endblock %}

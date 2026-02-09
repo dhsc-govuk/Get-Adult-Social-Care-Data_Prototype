@@ -1,0 +1,32 @@
+<div class="moj-scrollable-pane">
+
+  <table class="govuk-table">
+    <caption class="govuk-table__caption">Table 1: cohorts at risk of needing long-term <abbr title="Adult Social Care">ASC</abbr> and percentage going on to long-term <abbr title="Adult Social Care">ASC</abbr> within 12 months at local and national level</caption>
+    <thead class="govuk-table__head">
+      <tr class="govuk-table__row">
+        <th scope="col" class="govuk-table__header">Cohort</th>
+        <th scope="col" class="govuk-table__header govuk-table__header--numeric">Size of cohort in Suffolk at risk of needing long-term <abbr title="Adult Social Care">ASC</abbr> from <abbr title="Local Authority">LA</abbr></th>
+        <th scope="col" class="govuk-table__header govuk-table__header--numeric">Percentage of cohort in Suffolk going on to long-term <abbr title="Adult Social Care">ASC</abbr> from <abbr title="Local Authority">LA</abbr> within 12 months</th>
+        <th scope="col" class="govuk-table__header govuk-table__header--numeric">Size of cohort nationally at risk of needing long-term <abbr title="Adult Social Care">ASC</abbr> from <abbr title="Local Authority">LA</abbr></th>
+        <th scope="col" class="govuk-table__header govuk-table__header--numeric">Average percentage of cohort nationally going on to long-term <abbr title="Adult Social Care">ASC</abbr> from <abbr title="Local Authority">LA</abbr> within 12 months</th>
+      </tr>
+    </thead>
+    <tbody class="govuk-table__body">
+      {% set rows = data[data['v9linkedHealthAndSocialCareData']]['TBC'] %}
+      {% for row in rows %}
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">{{row["Cohort"]}}</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">{{row["Size in LA"]}}</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">{{row["Percentage in LA"]}}</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">{{row["Size nationally (national average)"]}}</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">{{row["Percentage nationally (national average)"]}}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+</div>
+
+<div class="govuk-form-block">
+  <p class="govuk-body data-source">Source: Hospital episode statistics (HES), Emergency care dataset (ECDS) and Client level data (CLD)</p>
+</div>
