@@ -978,3 +978,15 @@
   padding-right: 5px;
   font-size: 22px;
 }
+
+/* Expansion on the ONS Design System line chart component (https://service-manual.ons.gov.uk/design-system/components/line-chart-component) so that it works for GASCD */
+.ons-scope .ons-chart {
+  max-width: none !important;
+}
+.ons-scope .ons-chart__caption {
+  color: inherit !important;
+}
+.ons-chart__fallback-image {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
