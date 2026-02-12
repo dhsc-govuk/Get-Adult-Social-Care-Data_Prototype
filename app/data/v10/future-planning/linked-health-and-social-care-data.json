@@ -1,0 +1,53 @@
+{
+  "TBC": [
+    {
+      "Cohort": "Cohort 1: Adults with severe mental health conditions and frailty",
+      "Size in LA": "67",
+      "Percentage in LA": "20%",
+      "Size nationally (national average)": "98",
+      "Percentage nationally (national average)": "18%"
+    },
+    {
+      "Cohort": "Cohort 2: Adults with dementia admitted in an emergency",
+      "Size in LA": "1,500",
+      "Percentage in LA": "19%",
+      "Size nationally (national average)": "2,288",
+      "Percentage nationally (national average)": "25%"
+    },
+    {
+      "Cohort": "Cohort 3: Adults with learning disability admitted in an emergency",
+      "Size in LA": "102",
+      "Percentage in LA": "30%",
+      "Size nationally (national average)": "163",
+      "Percentage nationally (national average)": "10%"
+    },
+    {
+      "Cohort": "Cohort 4: Adults with severe mental health conditions and frequent emergency admissions",
+      "Size in LA": "21",
+      "Percentage in LA": "15%",
+      "Size nationally (national average)": "78",
+      "Percentage nationally (national average)": "11%"
+    },
+    {
+      "Cohort": "Cohort 5: Adults with complex physical disabilities admitted in an emergency",
+      "Size in LA": "345",
+      "Percentage in LA": "22%",
+      "Size nationally (national average)": "719",
+      "Percentage nationally (national average)": "19%"
+    },
+    {
+      "Cohort": "Cohort 6: Adults 65+ with severe frailty admitted in an emergency",
+      "Size in LA": "360",
+      "Percentage in LA": "18%",
+      "Size nationally (national average)": "654",
+      "Percentage nationally (national average)": "20%"
+    },
+    {
+      "Cohort": "Cohort 7: Adults 85+ with multiple A&E attendances",
+      "Size in LA": "134",
+      "Percentage in LA": "20%",
+      "Size nationally (national average)": "490",
+      "Percentage nationally (national average)": "12%"
+    }
+  ]
+}

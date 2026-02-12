@@ -1,0 +1,186 @@
+{
+  "Estimated autistic disorders": [
+    {
+      "Indicator": "Total population aged 18-64 predicted to have autistic spectrum disorders (2025)",
+      "Year": "2025",
+      "Suffolk": "4,880",
+      "Norfolk": "5,950",
+      "Kent": "10,710",
+      "Somerset": "3,510",
+      "Dorset": "2,250",
+      "Herefordshire": "1,190"
+    },
+    {
+      "Indicator": "Total population aged 18-64 predicted to have autistic spectrum disorders (2026)",
+      "Year": "2026",
+      "Suffolk": "4,910",
+      "Norfolk": "6,000",
+      "Kent": "10,780",
+      "Somerset": "3,530",
+      "Dorset": "2,260",
+      "Herefordshire": "1,200"
+    },
+    {
+      "Indicator": "Total population aged 18-64 predicted to have autistic spectrum disorders (2027)",
+      "Year": "2027",
+      "Suffolk": "4,930",
+      "Norfolk": "6,040",
+      "Kent": "10,850",
+      "Somerset": "3,550",
+      "Dorset": "2,280",
+      "Herefordshire": "1,210"
+    },
+    {
+      "Indicator": "Total population aged 18-64 predicted to have autistic spectrum disorders (2028)",
+      "Year": "2028",
+      "Suffolk": "4,950",
+      "Norfolk": "6,080",
+      "Kent": "10,920",
+      "Somerset": "3,570",
+      "Dorset": "2,290",
+      "Herefordshire": "1,210"
+    },
+    {
+      "Indicator": "Total population aged 18-64 predicted to have autistic spectrum disorders (2029)",
+      "Year": "2029",
+      "Suffolk": "4,990",
+      "Norfolk": "6,120",
+      "Kent": "10,970",
+      "Somerset": "3,590",
+      "Dorset": "2,300",
+      "Herefordshire": "1,220"
+    },
+    {
+      "Indicator": "Total population aged 18-64 predicted to have autistic spectrum disorders (2030)",
+      "Year": "2030",
+      "Suffolk": "5,030",
+      "Norfolk": "6,160",
+      "Kent": "11,040",
+      "Somerset": "3,610",
+      "Dorset": "2,320",
+      "Herefordshire": "1,220"
+    },
+    {
+      "Indicator": "Total population aged 18-64 predicted to have autistic spectrum disorders (2035)",
+      "Year": "2035",
+      "Suffolk": "5,130",
+      "Norfolk": "6,300",
+      "Kent": "11,240",
+      "Somerset": "3,680",
+      "Dorset": "2,360",
+      "Herefordshire": "1,250"
+    },
+    {
+      "Indicator": "Total population aged 18-64 predicted to have autistic spectrum disorders (2040)",
+      "Year": "2040",
+      "Suffolk": "5,190",
+      "Norfolk": "6,370",
+      "Kent": "11,350",
+      "Somerset": "3,720",
+      "Dorset": "2,390",
+      "Herefordshire": "1,260"
+    },
+    {
+      "Indicator": "Total population aged 18-64 predicted to have autistic spectrum disorders (2045)",
+      "Year": "2045",
+      "Suffolk": "5,270",
+      "Norfolk": "6,440",
+      "Kent": "11,460",
+      "Somerset": "3,760",
+      "Dorset": "2,420",
+      "Herefordshire": "1,270"
+    }
+  ],
+  "Change over time": [
+    {
+      "Indicator": "Total population aged 18-64 predicted to have autistic spectrum disorders (2025)",
+      "Year": "2025",
+      "Suffolk": "0",
+      "Norfolk": "0",
+      "Kent": "0",
+      "Somerset": "0",
+      "Dorset": "0",
+      "Herefordshire": "0"
+    },
+    {
+      "Indicator": "Total population aged 18-64 predicted to have autistic spectrum disorders (2026)",
+      "Year": "2026",
+      "Suffolk": "0.61",
+      "Norfolk": "0.84",
+      "Kent": "0.65",
+      "Somerset": "0.57",
+      "Dorset": "0.44",
+      "Herefordshire": "0.84"
+    },
+    {
+      "Indicator": "Total population aged 18-64 predicted to have autistic spectrum disorders (2027)",
+      "Year": "2027",
+      "Suffolk": "0.41",
+      "Norfolk": "0.67",
+      "Kent": "0.65",
+      "Somerset": "0.57",
+      "Dorset": "0.88",
+      "Herefordshire": "0.83"
+    },
+    {
+      "Indicator": "Total population aged 18-64 predicted to have autistic spectrum disorders (2028)",
+      "Year": "2028",
+      "Suffolk": "0.41",
+      "Norfolk": "0.66",
+      "Kent": "0.65",
+      "Somerset": "0.56",
+      "Dorset": "0.44",
+      "Herefordshire": "0"
+    },
+    {
+      "Indicator": "Total population aged 18-64 predicted to have autistic spectrum disorders (2029)",
+      "Year": "2029",
+      "Suffolk": "0.81",
+      "Norfolk": "0.66",
+      "Kent": "0.46",
+      "Somerset": "0.56",
+      "Dorset": "0.44",
+      "Herefordshire": "0.83"
+    },
+    {
+      "Indicator": "Total population aged 18-64 predicted to have autistic spectrum disorders (2030)",
+      "Year": "2030",
+      "Suffolk": "0.8",
+      "Norfolk": "0.65",
+      "Kent": "0.64",
+      "Somerset": "0.56",
+      "Dorset": "0.87",
+      "Herefordshire": "0"
+    },
+    {
+      "Indicator": "Total population aged 18-64 predicted to have autistic spectrum disorders (2035)",
+      "Year": "2035",
+      "Suffolk": "1.99",
+      "Norfolk": "2.27",
+      "Kent": "1.81",
+      "Somerset": "1.94",
+      "Dorset": "1.72",
+      "Herefordshire": "2.46"
+    },
+    {
+      "Indicator": "Total population aged 18-64 predicted to have autistic spectrum disorders (2040)",
+      "Year": "2040",
+      "Suffolk": "1.17",
+      "Norfolk": "1.11",
+      "Kent": "0.98",
+      "Somerset": "1.09",
+      "Dorset": "1.27",
+      "Herefordshire": "0.8"
+    },
+    {
+      "Indicator": "Total population aged 18-64 predicted to have autistic spectrum disorders (2045)",
+      "Year": "2045",
+      "Suffolk": "1.54",
+      "Norfolk": "1.1",
+      "Kent": "0.97",
+      "Somerset": "1.08",
+      "Dorset": "1.26",
+      "Herefordshire": "0.79"
+    }
+  ]
+}

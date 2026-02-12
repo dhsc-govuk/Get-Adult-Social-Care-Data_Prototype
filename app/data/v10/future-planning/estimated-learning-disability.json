@@ -1,0 +1,186 @@
+{
+  "Estimated learning disability": [
+    {
+      "Indicator": "Total population aged 18-64 with a learning disability, predicted to display challenging behaviour (2025)",
+      "Year": "2025",
+      "Suffolk": "199",
+      "Norfolk": "232",
+      "Kent": "400",
+      "Somerset": "146",
+      "Dorset": "340",
+      "Herefordshire": "225"
+    },
+    {
+      "Indicator": "Total population aged 18-64 with a learning disability, predicted to display challenging behaviour (2026)",
+      "Year": "2026",
+      "Suffolk": "199",
+      "Norfolk": "234",
+      "Kent": "403",
+      "Somerset": "146",
+      "Dorset": "341",
+      "Herefordshire": "226"
+    },
+    {
+      "Indicator": "Total population aged 18-64 with a learning disability, predicted to display challenging behaviour (2027)",
+      "Year": "2027",
+      "Suffolk": "200",
+      "Norfolk": "236",
+      "Kent": "405",
+      "Somerset": "149",
+      "Dorset": "341",
+      "Herefordshire": "226"
+    },
+    {
+      "Indicator": "Total population aged 18-64 with a learning disability, predicted to display challenging behaviour (2028)",
+      "Year": "2028",
+      "Suffolk": "200",
+      "Norfolk": "237",
+      "Kent": "409",
+      "Somerset": "149",
+      "Dorset": "342",
+      "Herefordshire": "225"
+    },
+    {
+      "Indicator": "Total population aged 18-64 with a learning disability, predicted to display challenging behaviour (2029)",
+      "Year": "2029",
+      "Suffolk": "203",
+      "Norfolk": "237",
+      "Kent": "409",
+      "Somerset": "148",
+      "Dorset": "334",
+      "Herefordshire": "223"
+    },
+    {
+      "Indicator": "Total population aged 18-64 with a learning disability, predicted to display challenging behaviour (2030)",
+      "Year": "2030",
+      "Suffolk": "203",
+      "Norfolk": "239",
+      "Kent": "412",
+      "Somerset": "150",
+      "Dorset": "340",
+      "Herefordshire": "224"
+    },
+    {
+      "Indicator": "Total population aged 18-64 with a learning disability, predicted to display challenging behaviour (2035)",
+      "Year": "2035",
+      "Suffolk": "205",
+      "Norfolk": "243",
+      "Kent": "416",
+      "Somerset": "154",
+      "Dorset": "346",
+      "Herefordshire": "223"
+    },
+    {
+      "Indicator": "Total population aged 18-64 with a learning disability, predicted to display challenging behaviour (2040)",
+      "Year": "2040",
+      "Suffolk": "209",
+      "Norfolk": "250",
+      "Kent": "422",
+      "Somerset": "156",
+      "Dorset": "348",
+      "Herefordshire": "230"
+    },
+    {
+      "Indicator": "Total population aged 18-64 with a learning disability, predicted to display challenging behaviour (2045)",
+      "Year": "2045",
+      "Suffolk": "213",
+      "Norfolk": "256",
+      "Kent": "429",
+      "Somerset": "160",
+      "Dorset": "350",
+      "Herefordshire": "236"
+    }
+  ],
+  "Change over time": [
+    {
+      "Indicator": "Total population aged 18-64 with a learning disability, predicted to display challenging behaviour (2025)",
+      "Year": "2025",
+      "Suffolk": "0",
+      "Norfolk": "0",
+      "Kent": "0",
+      "Somerset": "0",
+      "Dorset": "0",
+      "Herefordshire": "0"
+    },
+    {
+      "Indicator": "Total population aged 18-64 with a learning disability, predicted to display challenging behaviour (2026)",
+      "Year": "2026",
+      "Suffolk": "0",
+      "Norfolk": "0.86",
+      "Kent": "0.75",
+      "Somerset": "0",
+      "Dorset": "0.29",
+      "Herefordshire": "0.44"
+    },
+    {
+      "Indicator": "Total population aged 18-64 with a learning disability, predicted to display challenging behaviour (2027)",
+      "Year": "2027",
+      "Suffolk": "0.5",
+      "Norfolk": "0.85",
+      "Kent": "0.5",
+      "Somerset": "2.05",
+      "Dorset": "0",
+      "Herefordshire": "0"
+    },
+    {
+      "Indicator": "Total population aged 18-64 with a learning disability, predicted to display challenging behaviour (2028)",
+      "Year": "2028",
+      "Suffolk": "0",
+      "Norfolk": "0.42",
+      "Kent": "0.99",
+      "Somerset": "0",
+      "Dorset": "0.29",
+      "Herefordshire": "-0.44"
+    },
+    {
+      "Indicator": "Total population aged 18-64 with a learning disability, predicted to display challenging behaviour (2029)",
+      "Year": "2029",
+      "Suffolk": "1.5",
+      "Norfolk": "0",
+      "Kent": "0",
+      "Somerset": "-0.67",
+      "Dorset": "-2.34",
+      "Herefordshire": "-0.89"
+    },
+    {
+      "Indicator": "Total population aged 18-64 with a learning disability, predicted to display challenging behaviour (2030)",
+      "Year": "2030",
+      "Suffolk": "0",
+      "Norfolk": "0.84",
+      "Kent": "0.73",
+      "Somerset": "1.35",
+      "Dorset": "1.8",
+      "Herefordshire": "0.45"
+    },
+    {
+      "Indicator": "Total population aged 18-64 with a learning disability, predicted to display challenging behaviour (2035)",
+      "Year": "2035",
+      "Suffolk": "0.99",
+      "Norfolk": "1.67",
+      "Kent": "0.97",
+      "Somerset": "2.67",
+      "Dorset": "1.76",
+      "Herefordshire": "-0.45"
+    },
+    {
+      "Indicator": "Total population aged 18-64 with a learning disability, predicted to display challenging behaviour (2040)",
+      "Year": "2040",
+      "Suffolk": "1.95",
+      "Norfolk": "2.88",
+      "Kent": "1.44",
+      "Somerset": "1.3",
+      "Dorset": "0.58",
+      "Herefordshire": "3.14"
+    },
+    {
+      "Indicator": "Total population aged 18-64 with a learning disability, predicted to display challenging behaviour (2045)",
+      "Year": "2045",
+      "Suffolk": "1.91",
+      "Norfolk": "2.4",
+      "Kent": "1.66",
+      "Somerset": "2.56",
+      "Dorset": "0.57",
+      "Herefordshire": "2.61"
+    }
+  ]
+}

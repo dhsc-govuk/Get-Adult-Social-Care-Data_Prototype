@@ -1,0 +1,106 @@
+{% extends "v10/layouts/signed-in.html" %}
+
+{% set pageName = "Linked health and social care data" %}
+
+{% block beforeContent %}
+<a href="javascript:history.back()" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-two-thirds">
+    <span class="govuk-caption-l">Data indicator details</span>
+    <h1 class="govuk-heading-l">{{pageName}}</h1>
+    <dl class="govuk-summary-list">
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">What this measures</dt>
+        <dd class="govuk-summary-list__value">
+          The linked data insights combine health and social care data across seven identified acute healthcare cohorts to show:
+          <br>
+          <br>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>the size of the cohort at risk of needing long-term adult social care arranged for by the local authority</li>
+            <li>the percentage of people within each cohort that went on to receive long-term adult social care arranged for by the local authority within 12 months of an acute hospital event</li>
+          </ul>
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Source</dt>
+        <dd class="govuk-summary-list__value">Hospital Episode Statistics (HES), Emergency Care Dataset (ECDS) and Client Level Data (CLD)</dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Data correct as of</dt>
+        <dd class="govuk-summary-list__value">31 March 2025</dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Update frequency</dt>
+        <dd class="govuk-summary-list__value">Yearly (Financial Year)</dd>
+      </div>
+
+      <!-- <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Data available for</dt>
+        <dd class="govuk-summary-list__value">{{"today" | govukDate}} to {% set expirationDate = "today" | duration(5, "years") %}{{expirationDate | govukDate}}</dd>
+      </div> -->
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Methodology</dt>
+        <dd class="govuk-summary-list__value">
+          <p class="govuk-body">For each of the seven cohorts:</p>
+          <h2 class="govuk-heading-s">Cohort 1: Adults with severe mental health conditions and frailty</h2>
+          <p class="govuk-body">Adults 18+ admitted into an acute general hospital in the 2023/24 financial year as an emergency with a recorded diagnosis of a severe mental health condition and severe frailty.</p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>Severe mental health condition defined by having one of the following diagnosis codes in any position: F20, F21, F22, F25, F28, F29, F30, F31</li>
+            <li>Severe frailty defined by having a Hospital Frailty Risk Score (HFRS) greater than 15</li>
+          </ul>
+          <h2 class="govuk-heading-s">Cohort 2: Adults with dementia admitted in an emergency</h2>
+          <p class="govuk-body">Adults 18+ admitted into an acute general hospital in the 2023/24 financial year as an emergency with a recorded diagnosis of dementia.</p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>Dementia defined by having one of the following diagnosis codes in any position: F00, F01, F02, F03, F05, G30, R41</li>
+          </ul>
+          <h2 class="govuk-heading-s">Cohort 3: Adults with learning disability admitted in an emergency</h2>
+          <p class="govuk-body">Adults 18+ admitted into an acute general hospital in the 2023/24 financial year as an emergency with a recorded diagnosis of a learning disability.</p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>Learning disability defined by having one of the following diagnosis codes in any position: F067, F70, F71, F72, F73, F74, F75, F76, F77, F78, F79, F803, F813, F818, F819, F83, F84, F88, F89</li>
+          </ul>
+          <h2 class="govuk-heading-s">Cohort 4: Adults with severe mental health conditions and frequent emergency admissions</h2>
+          <p class="govuk-body">Adults 18+ admitted into an acute general hospital in the 2022/23 financial year as an emergency with a recorded diagnosis of a severe mental health condition and a history of multiple emergency admissions in the same year.</p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>Severe mental health condition defined by having one of the following diagnosis codes in any position: F20, F21, F22, F25, F28, F29, F30, F31</li>
+          </ul>
+          <h2 class="govuk-heading-s">Cohort 5: Adults with complex physical disabilities admitted in an emergency</h2>
+          <p class="govuk-body">Adults 18+ admitted into an acute general hospital in the 2022/23 financial year as an emergency with a recorded diagnosis of complex physical disabilities and a history of multiple emergency admissions in the same year. </p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>Complex physical disability defined by having one of the following diagnosis codes in any position: G80, G81, G82, G83, G35, G60, G61, G62, G63, G64, G70, G71, G72, G73, S06, T90, I60, I61, I62, I63, I64, G20, H54, H91</li>
+          </ul>
+          <h2 class="govuk-heading-s">Cohort 6: Adults 65+ with severe frailty admitted in an emergency</h2>
+          <p class="govuk-body">Adults 65+ admitted into an acute general hospital in the 2023/24 financial year as an emergency with severe frailty.</p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>Severe frailty defined by having a Hospital Frailty Risk Score (HFRS) greater than 15</li>
+          </ul>
+          <h2 class="govuk-heading-s">Cohort 7: Adults 85+ with multiple A&E attendances</h2>
+          <p class="govuk-body">Adults 85+ who have multiple A&E attendances in the 2023/24 financial year.</p>
+          <p class="govuk-body">Two metrics were calculated for each cohort as follows:</p>
+          <h3 class="govuk-heading-s">The size of the cohort at risk of needing long-term adult social care arranged for by the local authority</h3>
+          <p class="govuk-body">Calculated as the number of people within each cohort that met the criteria for the cohort. Note a hierarchy is applied to the cohorts and so if an individual meets the criteria for more than one cohort they will fall into the highest ranked cohort only. The hierarchy was based on the client level data extracts and decided with an expert group of local authority commissioners, analysts, clinicians and social care practitioners.</p>
+          <h3 class="govuk-heading-s">The percentage of people within each cohort that went on to receive long-term adult social care arranged for by the local authority within 12 months of an acute hospital event</h3>
+          <p class="govuk-body">Calculated as the number of people within each cohort who go on to start a new long-term care package arranged for by the local authority within 12 months of an acute hospital event divided by the total number of people within each cohort.</p>
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Limitations</dt>
+        <dd class="govuk-summary-list__value">
+          See additional caveats and use cases page for further details.
+        </dd>
+      </div>
+
+    </dl>
+  </div>
+
+</div>
+{% endblock %}

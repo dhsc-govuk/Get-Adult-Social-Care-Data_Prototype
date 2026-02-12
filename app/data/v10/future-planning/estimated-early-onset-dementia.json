@@ -1,0 +1,186 @@
+{
+  "Estimated early onset dementia": [
+    {
+      "Indicator": "Total population aged 30-64 to have early onset dementia (2025)",
+      "Year": "2025",
+      "Suffolk": "234",
+      "Norfolk": "262",
+      "Kent": "260",
+      "Somerset": "170",
+      "Dorset": "120",
+      "Herefordshire": "340"
+    },
+    {
+      "Indicator": "Total population aged 30-64 to have early onset dementia (2026)",
+      "Year": "2026",
+      "Suffolk": "234",
+      "Norfolk": "262",
+      "Kent": "262",
+      "Somerset": "170",
+      "Dorset": "120",
+      "Herefordshire": "340"
+    },
+    {
+      "Indicator": "Total population aged 30-64 to have early onset dementia (2027)",
+      "Year": "2027",
+      "Suffolk": "234",
+      "Norfolk": "262",
+      "Kent": "262",
+      "Somerset": "170",
+      "Dorset": "119",
+      "Herefordshire": "341"
+    },
+    {
+      "Indicator": "Total population aged 30-64 to have early onset dementia (2028)",
+      "Year": "2028",
+      "Suffolk": "233",
+      "Norfolk": "262",
+      "Kent": "262",
+      "Somerset": "169",
+      "Dorset": "118",
+      "Herefordshire": "341"
+    },
+    {
+      "Indicator": "Total population aged 30-64 to have early onset dementia (2029)",
+      "Year": "2029",
+      "Suffolk": "232",
+      "Norfolk": "261",
+      "Kent": "261",
+      "Somerset": "168",
+      "Dorset": "119",
+      "Herefordshire": "340"
+    },
+    {
+      "Indicator": "Total population aged 30-64 to have early onset dementia (2030)",
+      "Year": "2030",
+      "Suffolk": "229",
+      "Norfolk": "259",
+      "Kent": "259",
+      "Somerset": "167",
+      "Dorset": "119",
+      "Herefordshire": "342"
+    },
+    {
+      "Indicator": "Total population aged 30-64 to have early onset dementia (2035)",
+      "Year": "2035",
+      "Suffolk": "224",
+      "Norfolk": "263",
+      "Kent": "263",
+      "Somerset": "163",
+      "Dorset": "116",
+      "Herefordshire": "345"
+    },
+    {
+      "Indicator": "Total population aged 30-64 to have early onset dementia (2040)",
+      "Year": "2040",
+      "Suffolk": "226",
+      "Norfolk": "264",
+      "Kent": "264",
+      "Somerset": "168",
+      "Dorset": "119",
+      "Herefordshire": "348"
+    },
+    {
+      "Indicator": "Total population aged 30-64 to have early onset dementia (2045)",
+      "Year": "2045",
+      "Suffolk": "241",
+      "Norfolk": "270",
+      "Kent": "270",
+      "Somerset": "180",
+      "Dorset": "225",
+      "Herefordshire": "360"
+    }
+  ],
+  "Change over time": [
+    {
+      "Indicator": "Total population aged 30-64 to have early onset dementia (2025)",
+      "Year": "2025",
+      "Suffolk": "0",
+      "Norfolk": "0",
+      "Kent": "0",
+      "Somerset": "0",
+      "Dorset": "0",
+      "Herefordshire": "0"
+    },
+    {
+      "Indicator": "Total population aged 30-64 to have early onset dementia (2026)",
+      "Year": "2026",
+      "Suffolk": "0",
+      "Norfolk": "0",
+      "Kent": "0.77",
+      "Somerset": "0",
+      "Dorset": "0",
+      "Herefordshire": "0"
+    },
+    {
+      "Indicator": "Total population aged 30-64 to have early onset dementia (2027)",
+      "Year": "2027",
+      "Suffolk": "0",
+      "Norfolk": "0",
+      "Kent": "0",
+      "Somerset": "0",
+      "Dorset": "-0.83",
+      "Herefordshire": "0.29"
+    },
+    {
+      "Indicator": "Total population aged 30-64 to have early onset dementia (2028)",
+      "Year": "2028",
+      "Suffolk": "-0.43",
+      "Norfolk": "0",
+      "Kent": "0",
+      "Somerset": "-0.59",
+      "Dorset": "-0.84",
+      "Herefordshire": "0"
+    },
+    {
+      "Indicator": "Total population aged 30-64 to have early onset dementia (2029)",
+      "Year": "2029",
+      "Suffolk": "-0.43",
+      "Norfolk": "-0.38",
+      "Kent": "-0.38",
+      "Somerset": "-0.59",
+      "Dorset": "0.85",
+      "Herefordshire": "-0.29"
+    },
+    {
+      "Indicator": "Total population aged 30-64 to have early onset dementia (2030)",
+      "Year": "2030",
+      "Suffolk": "-1.29",
+      "Norfolk": "-0.77",
+      "Kent": "-0.77",
+      "Somerset": "-0.6",
+      "Dorset": "0",
+      "Herefordshire": "0.59"
+    },
+    {
+      "Indicator": "Total population aged 30-64 to have early onset dementia (2035)",
+      "Year": "2035",
+      "Suffolk": "-2.18",
+      "Norfolk": "1.54",
+      "Kent": "1.54",
+      "Somerset": "-2.4",
+      "Dorset": "-2.52",
+      "Herefordshire": "0.88"
+    },
+    {
+      "Indicator": "Total population aged 30-64 to have early onset dementia (2040)",
+      "Year": "2040",
+      "Suffolk": "0.89",
+      "Norfolk": "0.38",
+      "Kent": "0.38",
+      "Somerset": "3.07",
+      "Dorset": "2.59",
+      "Herefordshire": "0.87"
+    },
+    {
+      "Indicator": "Total population aged 30-64 to have early onset dementia (2045)",
+      "Year": "2045",
+      "Suffolk": "6.64",
+      "Norfolk": "2.27",
+      "Kent": "2.27",
+      "Somerset": "7.14",
+      "Dorset": "89.08",
+      "Herefordshire": "3.45"
+    }
+  ]
+}

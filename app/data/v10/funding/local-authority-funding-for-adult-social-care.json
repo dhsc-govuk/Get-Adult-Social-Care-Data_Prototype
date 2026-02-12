@@ -1,0 +1,1211 @@
+{
+  "Local authority adult social care funding by duration of care": [
+    {
+      "Age group": "Aged 18 to 64",
+      "Duration of care": "Both short-term and long-term",
+      "Suffolk": "157,436",
+      "East of England (LA average)": "109,869",
+      "England (LA average)": "69,317"
+    },
+    {
+      "Age group": "Aged 18 to 64",
+      "Duration of care": "Long-term",
+      "Suffolk": "156,749",
+      "East of England (LA average)": "108,809",
+      "England (LA average)": "67,909"
+    },
+    {
+      "Age group": "Aged 18 to 64",
+      "Duration of care": "Learning disability support",
+      "Suffolk": "113,195",
+      "East of England (LA average)": "78,795",
+      "England (LA average)": "45,885"
+    },
+    {
+      "Age group": "Aged 18 to 64",
+      "Duration of care": "Mental health support",
+      "Suffolk": "15,545",
+      "East of England (LA average)": "9,180",
+      "England (LA average)": "8,270"
+    },
+    {
+      "Age group": "Aged 18 to 64",
+      "Duration of care": "Physical support",
+      "Suffolk": "24,537",
+      "East of England (LA average)": "18,808",
+      "England (LA average)": "12,392"
+    },
+    {
+      "Age group": "Aged 18 to 64",
+      "Duration of care": "Sensory support",
+      "Suffolk": "751",
+      "East of England (LA average)": "363",
+      "England (LA average)": "481"
+    },
+    {
+      "Age group": "Aged 18 to 64",
+      "Duration of care": "Support with memory and cognition",
+      "Suffolk": "2,721",
+      "East of England (LA average)": "1,117",
+      "England (LA average)": "881"
+    },
+    {
+      "Age group": "Aged 18 to 64",
+      "Duration of care": "Short-term",
+      "Suffolk": "687",
+      "East of England (LA average)": "1,060",
+      "England (LA average)": "1,408"
+    },
+    {
+      "Age group": "Aged 18 to 64",
+      "Duration of care": "Learning disability support",
+      "Suffolk": "116",
+      "East of England (LA average)": "453",
+      "England (LA average)": "565"
+    },
+    {
+      "Age group": "Aged 18 to 64",
+      "Duration of care": "Mental health support",
+      "Suffolk": "69",
+      "East of England (LA average)": "101",
+      "England (LA average)": "33,151"
+    },
+    {
+      "Age group": "Aged 18 to 64",
+      "Duration of care": "Physical support",
+      "Suffolk": "4",
+      "East of England (LA average)": "473",
+      "England (LA average)": "574"
+    },
+    {
+      "Age group": "Aged 18 to 64",
+      "Duration of care": "Sensory support",
+      "Suffolk": "12",
+      "East of England (LA average)": "7",
+      "England (LA average)": "17"
+    },
+    {
+      "Age group": "Aged 18 to 64",
+      "Duration of care": "Support with memory and cognition",
+      "Suffolk": "486",
+      "East of England (LA average)": "26",
+      "England (LA average)": "35"
+    },
+    {
+      "Age group": "Aged 65 and over",
+      "Duration of care": "Both short-term and long-term",
+      "Suffolk": "305,975",
+      "East of England (LA average)": "211,586",
+      "England (LA average)": "130,463"
+    },
+    {
+      "Age group": "Aged 65 and over",
+      "Duration of care": "Long-term",
+      "Suffolk": "287,432",
+      "East of England (LA average)": "198,597",
+      "England (LA average)": "122,395"
+    },
+    {
+      "Age group": "Aged 65 and over",
+      "Duration of care": "Learning disability support",
+      "Suffolk": "31,245",
+      "East of England (LA average)": "21,605",
+      "England (LA average)": "13,333"
+    },
+    {
+      "Age group": "Aged 65 and over",
+      "Duration of care": "Mental health support",
+      "Suffolk": "25,916",
+      "East of England (LA average)": "17,732",
+      "England (LA average)": "10,702"
+    },
+    {
+      "Age group": "Aged 65 and over",
+      "Duration of care": "Physical support",
+      "Suffolk": "142,891",
+      "East of England (LA average)": "98,839",
+      "England (LA average)": "61,060"
+    },
+    {
+      "Age group": "Aged 65 and over",
+      "Duration of care": "Sensory support",
+      "Suffolk": "8,924",
+      "East of England (LA average)": "6,168",
+      "England (LA average)": "3,806"
+    },
+    {
+      "Age group": "Aged 65 and over",
+      "Duration of care": "Support with memory and cognition",
+      "Suffolk": "78,456",
+      "East of England (LA average)": "54,253",
+      "England (LA average)": "33,494"
+    },
+    {
+      "Age group": "Aged 65 and over",
+      "Duration of care": "Short-term",
+      "Suffolk": "18,543",
+      "East of England (LA average)": "12,989",
+      "England (LA average)": "8,069"
+    },
+    {
+      "Age group": "Aged 65 and over",
+      "Duration of care": "Learning disability support",
+      "Suffolk": "1,654",
+      "East of England (LA average)": "1,160",
+      "England (LA average)": "721"
+    },
+    {
+      "Age group": "Aged 65 and over",
+      "Duration of care": "Mental health support",
+      "Suffolk": "1,212",
+      "East of England (LA average)": "829",
+      "England (LA average)": "516"
+    },
+    {
+      "Age group": "Aged 65 and over",
+      "Duration of care": "Physical support",
+      "Suffolk": "9,876",
+      "East of England (LA average)": "6,930",
+      "England (LA average)": "4,303"
+    },
+    {
+      "Age group": "Aged 65 and over",
+      "Duration of care": "Sensory support",
+      "Suffolk": "1,234",
+      "East of England (LA average)": "866",
+      "England (LA average)": "538"
+    },
+    {
+      "Age group": "Aged 65 and over",
+      "Duration of care": "Support with memory and cognition",
+      "Suffolk": "4,567",
+      "East of England (LA average)": "3,203",
+      "England (LA average)": "1,990"
+    },
+    {
+      "Age group": "All age groups",
+      "Duration of care": "Both short-term and long-term",
+      "Suffolk": "463,411",
+      "East of England (LA average)": "321,455",
+      "England (LA average)": "199,780"
+    },
+    {
+      "Age group": "All age groups",
+      "Duration of care": "Long-term",
+      "Suffolk": "444,181",
+      "East of England (LA average)": "307,406",
+      "England (LA average)": "190,304"
+    },
+    {
+      "Age group": "All age groups",
+      "Duration of care": "Learning disability support",
+      "Suffolk": "144,440",
+      "East of England (LA average)": "100,400",
+      "England (LA average)": "59,218"
+    },
+    {
+      "Age group": "All age groups",
+      "Duration of care": "Mental health support",
+      "Suffolk": "41,461",
+      "East of England (LA average)": "26,912",
+      "England (LA average)": "18,973"
+    },
+    {
+      "Age group": "All age groups",
+      "Duration of care": "Physical support",
+      "Suffolk": "167,428",
+      "East of England (LA average)": "117,647",
+      "England (LA average)": "73,452"
+    },
+    {
+      "Age group": "All age groups",
+      "Duration of care": "Sensory support",
+      "Suffolk": "9,675",
+      "East of England (LA average)": "6,531",
+      "England (LA average)": "4,287"
+    },
+    {
+      "Age group": "All age groups",
+      "Duration of care": "Support with memory and cognition",
+      "Suffolk": "81,177",
+      "East of England (LA average)": "55,370",
+      "England (LA average)": "34,375"
+    },
+    {
+      "Age group": "All age groups",
+      "Duration of care": "Short-term",
+      "Suffolk": "19,230",
+      "East of England (LA average)": "14,049",
+      "England (LA average)": "9,476"
+    },
+    {
+      "Age group": "All age groups",
+      "Duration of care": "Learning disability support",
+      "Suffolk": "1,770",
+      "East of England (LA average)": "1,613",
+      "England (LA average)": "1,286"
+    },
+    {
+      "Age group": "All age groups",
+      "Duration of care": "Mental health support",
+      "Suffolk": "1,281",
+      "East of England (LA average)": "930",
+      "England (LA average)": "33,667"
+    },
+    {
+      "Age group": "All age groups",
+      "Duration of care": "Physical support",
+      "Suffolk": "9,880",
+      "East of England (LA average)": "7,404",
+      "England (LA average)": "4,877"
+    },
+    {
+      "Age group": "All age groups",
+      "Duration of care": "Sensory support",
+      "Suffolk": "1,246",
+      "East of England (LA average)": "873",
+      "England (LA average)": "555"
+    },
+    {
+      "Age group": "All age groups",
+      "Duration of care": "Support with memory and cognition",
+      "Suffolk": "5,053",
+      "East of England (LA average)": "3,229",
+      "England (LA average)": "2,026"
+    }
+  ],
+  "Local authority funding for long-term adult social care": [
+    {
+      "Age group": "Aged 18 to 64",
+      "Care type or funding method": "All types of adult social care",
+      "Suffolk": "156,749",
+      "East of England (LA average)": "108,809",
+      "England (LA average)": "67,909"
+    },
+    {
+      "Age group": "Aged 18 to 64",
+      "Care type or funding method": "All types of care home, including residential and nursing",
+      "Suffolk": "29,466",
+      "East of England (LA average)": "33,497",
+      "England (LA average)": "20,462"
+    },
+    {
+      "Age group": "Aged 18 to 64",
+      "Care type or funding method": "Residential",
+      "Suffolk": "25,652",
+      "East of England (LA average)": "30,743",
+      "England (LA average)": "17,808"
+    },
+    {
+      "Age group": "Aged 18 to 64",
+      "Care type or funding method": "Nursing",
+      "Suffolk": "3,814",
+      "East of England (LA average)": "2,754",
+      "England (LA average)": "2,654"
+    },
+    {
+      "Age group": "Aged 18 to 64",
+      "Care type or funding method": "All types of community social care, including home care, supported living, community direct payments and other schemes",
+      "Suffolk": "65,221",
+      "East of England (LA average)": "69,195",
+      "England (LA average)": "42,683"
+    },
+    {
+      "Age group": "Aged 18 to 64",
+      "Care type or funding method": "Home care",
+      "Suffolk": "27,076",
+      "East of England (LA average)": "20,495",
+      "England (LA average)": "7,219"
+    },
+    {
+      "Age group": "Aged 18 to 64",
+      "Care type or funding method": "Supported living",
+      "Suffolk": "0",
+      "East of England (LA average)": "23,876",
+      "England (LA average)": "19,311"
+    },
+    {
+      "Age group": "Aged 18 to 64",
+      "Care type or funding method": "Community direct payments",
+      "Suffolk": "19,303",
+      "East of England (LA average)": "14,966",
+      "England (LA average)": "10,482"
+    },
+    {
+      "Age group": "Aged 18 to 64",
+      "Care type or funding method": "Other",
+      "Suffolk": "18,842",
+      "East of England (LA average)": "9,858",
+      "England (LA average)": "5,671"
+    },
+    {
+      "Age group": "Aged 18 to 64",
+      "Care type or funding method": "Supported accomodation",
+      "Suffolk": "62,062",
+      "East of England (LA average)": "6,117",
+      "England (LA average)": "4,764"
+    },
+    {
+      "Age group": "Aged 65 and over",
+      "Care type or funding method": "All types of adult social care",
+      "Suffolk": "250,058",
+      "East of England (LA average)": "115,581",
+      "England (LA average)": "75,913"
+    },
+    {
+      "Age group": "Aged 65 and over",
+      "Care type or funding method": "All types of care home, including residential and nursing",
+      "Suffolk": "125,557",
+      "East of England (LA average)": "64,824",
+      "England (LA average)": "44,879"
+    },
+    {
+      "Age group": "Aged 65 and over",
+      "Care type or funding method": "Residential",
+      "Suffolk": "98,990",
+      "East of England (LA average)": "50,090",
+      "England (LA average)": "29,442"
+    },
+    {
+      "Age group": "Aged 65 and over",
+      "Care type or funding method": "Nursing",
+      "Suffolk": "26,567",
+      "East of England (LA average)": "14,734",
+      "England (LA average)": "15,437"
+    },
+    {
+      "Age group": "Aged 65 and over",
+      "Care type or funding method": "All types of community social care, including home care, supported living, community direct payments and other schemes",
+      "Suffolk": "62,205",
+      "East of England (LA average)": "43,276",
+      "England (LA average)": "26,104"
+    },
+    {
+      "Age group": "Aged 65 and over",
+      "Care type or funding method": "Home care",
+      "Suffolk": "40,397",
+      "East of England (LA average)": "28,903",
+      "England (LA average)": "17,091"
+    },
+    {
+      "Age group": "Aged 65 and over",
+      "Care type or funding method": "Supported living",
+      "Suffolk": "0",
+      "East of England (LA average)": "3,768",
+      "England (LA average)": "3,121"
+    },
+    {
+      "Age group": "Aged 65 and over",
+      "Care type or funding method": "Community direct payments",
+      "Suffolk": "19,303",
+      "East of England (LA average)": "6,576",
+      "England (LA average)": "4,122"
+    },
+    {
+      "Age group": "Aged 65 and over",
+      "Care type or funding method": "Other",
+      "Suffolk": "2,505",
+      "East of England (LA average)": "4,029",
+      "England (LA average)": "1,770"
+    },
+    {
+      "Age group": "Aged 65 and over",
+      "Care type or funding method": "Supported accomodation",
+      "Suffolk": "62,296",
+      "East of England (LA average)": "7,480",
+      "England (LA average)": "4,929"
+    },
+    {
+      "Age group": "All age groups",
+      "Care type or funding method": "All types of adult social care",
+      "Suffolk": "406,807",
+      "East of England (LA average)": "224,390",
+      "England (LA average)": "143,822"
+    },
+    {
+      "Age group": "All age groups",
+      "Care type or funding method": "All types of care home, including residential and nursing",
+      "Suffolk": "155,023",
+      "East of England (LA average)": "98,321",
+      "England (LA average)": "65,341"
+    },
+    {
+      "Age group": "All age groups",
+      "Care type or funding method": "Residential",
+      "Suffolk": "124,642",
+      "East of England (LA average)": "80,833",
+      "England (LA average)": "47,250"
+    },
+    {
+      "Age group": "All age groups",
+      "Care type or funding method": "Nursing",
+      "Suffolk": "30,381",
+      "East of England (LA average)": "17,488",
+      "England (LA average)": "18,091"
+    },
+    {
+      "Age group": "All age groups",
+      "Care type or funding method": "All types of community social care, including home care, supported living, community direct payments and other schemes",
+      "Suffolk": "127,426",
+      "East of England (LA average)": "112,472",
+      "England (LA average)": "68,788"
+    },
+    {
+      "Age group": "All age groups",
+      "Care type or funding method": "Home care",
+      "Suffolk": "67,473",
+      "East of England (LA average)": "49,398",
+      "England (LA average)": "24,311"
+    },
+    {
+      "Age group": "All age groups",
+      "Care type or funding method": "Supported living",
+      "Suffolk": "0",
+      "East of England (LA average)": "27,644",
+      "England (LA average)": "22,432"
+    },
+    {
+      "Age group": "All age groups",
+      "Care type or funding method": "Community direct payments",
+      "Suffolk": "38,606",
+      "East of England (LA average)": "21,542",
+      "England (LA average)": "14,604"
+    },
+    {
+      "Age group": "All age groups",
+      "Care type or funding method": "Other",
+      "Suffolk": "21,347",
+      "East of England (LA average)": "13,887",
+      "England (LA average)": "7,441"
+    },
+    {
+      "Age group": "All age groups",
+      "Care type or funding method": "Supported accomodation",
+      "Suffolk": "124,358",
+      "East of England (LA average)": "13,597",
+      "England (LA average)": "9,693"
+    }
+  ],
+  "Local authority funding for long-term adult social care – trends over time": [
+    {
+      "Age group": "Aged 18 to 64",
+      "Financial year": "2023 to 2024",
+      "Care type or funding method": "All types of adult social care",
+      "Suffolk": "124,567",
+      "East of England (LA average)": "108,809",
+      "England (LA average)": "67,909"
+    },
+    {
+      "Age group": "Aged 18 to 64",
+      "Financial year": "2023 to 2024",
+      "Care type or funding method": "All types of care home, including residential and nursing",
+      "Suffolk": "29,466",
+      "East of England (LA average)": "33,497",
+      "England (LA average)": "20,462"
+    },
+    {
+      "Age group": "Aged 18 to 64",
+      "Financial year": "2023 to 2024",
+      "Care type or funding method": "Residential",
+      "Suffolk": "25,652",
+      "East of England (LA average)": "30,743",
+      "England (LA average)": "17,808"
+    },
+    {
+      "Age group": "Aged 18 to 64",
+      "Financial year": "2023 to 2024",
+      "Care type or funding method": "Nursing",
+      "Suffolk": "3,814",
+      "East of England (LA average)": "2,754",
+      "England (LA average)": "2,654"
+    },
+    {
+      "Age group": "Aged 18 to 64",
+      "Financial year": "2023 to 2024",
+      "Care type or funding method": "All types of community social care, including home care, supported living, community direct payments and other schemes",
+      "Suffolk": "65,221",
+      "East of England (LA average)": "69,195",
+      "England (LA average)": "42,683"
+    },
+    {
+      "Age group": "Aged 18 to 64",
+      "Financial year": "2023 to 2024",
+      "Care type or funding method": "Home care",
+      "Suffolk": "27,076",
+      "East of England (LA average)": "20,495",
+      "England (LA average)": "7,219"
+    },
+    {
+      "Age group": "Aged 18 to 64",
+      "Financial year": "2023 to 2024",
+      "Care type or funding method": "Supported living",
+      "Suffolk": "0",
+      "East of England (LA average)": "23,876",
+      "England (LA average)": "19,311"
+    },
+    {
+      "Age group": "Aged 18 to 64",
+      "Financial year": "2023 to 2024",
+      "Care type or funding method": "Community direct payments",
+      "Suffolk": "19,303",
+      "East of England (LA average)": "14,966",
+      "England (LA average)": "10,482"
+    },
+    {
+      "Age group": "Aged 18 to 64",
+      "Financial year": "2023 to 2024",
+      "Care type or funding method": "Other",
+      "Suffolk": "18,842",
+      "East of England (LA average)": "9,858",
+      "England (LA average)": "5,671"
+    },
+    {
+      "Age group": "Aged 18 to 64",
+      "Financial year": "2023 to 2024",
+      "Care type or funding method": "Supported accomodation",
+      "Suffolk": "62,062",
+      "East of England (LA average)": "6,117",
+      "England (LA average)": "4,764"
+    },
+    {
+      "Age group": "Aged 18 to 64",
+      "Financial year": "2022 to 2023",
+      "Care type or funding method": "All types of adult social care",
+      "Suffolk": "118,234",
+      "East of England (LA average)": "102,230",
+      "England (LA average)": "64,553"
+    },
+    {
+      "Age group": "Aged 18 to 64",
+      "Financial year": "2022 to 2023",
+      "Care type or funding method": "All types of care home, including residential and nursing",
+      "Suffolk": "41,285",
+      "East of England (LA average)": "46,894",
+      "England (LA average)": "52,118"
+    },
+    {
+      "Age group": "Aged 18 to 64",
+      "Financial year": "2022 to 2023",
+      "Care type or funding method": "Residential",
+      "Suffolk": "35,912",
+      "East of England (LA average)": "43,041",
+      "England (LA average)": "45,347"
+    },
+    {
+      "Age group": "Aged 18 to 64",
+      "Financial year": "2022 to 2023",
+      "Care type or funding method": "Nursing",
+      "Suffolk": "5,373",
+      "East of England (LA average)": "3,853",
+      "England (LA average)": "6,771"
+    },
+    {
+      "Age group": "Aged 18 to 64",
+      "Financial year": "2022 to 2023",
+      "Care type or funding method": "All types of community social care, including home care, supported living, community direct payments and other schemes",
+      "Suffolk": "91,309",
+      "East of England (LA average)": "96,873",
+      "England (LA average)": "108,742"
+    },
+    {
+      "Age group": "Aged 18 to 64",
+      "Financial year": "2022 to 2023",
+      "Care type or funding method": "Home care",
+      "Suffolk": "37,906",
+      "East of England (LA average)": "28,693",
+      "England (LA average)": "27,338"
+    },
+    {
+      "Age group": "Aged 18 to 64",
+      "Financial year": "2022 to 2023",
+      "Care type or funding method": "Supported living",
+      "Suffolk": "0",
+      "East of England (LA average)": "33,426",
+      "England (LA average)": "38,621"
+    },
+    {
+      "Age group": "Aged 18 to 64",
+      "Financial year": "2022 to 2023",
+      "Care type or funding method": "Community direct payments",
+      "Suffolk": "27,024",
+      "East of England (LA average)": "20,952",
+      "England (LA average)": "26,714"
+    },
+    {
+      "Age group": "Aged 18 to 64",
+      "Financial year": "2022 to 2023",
+      "Care type or funding method": "Other",
+      "Suffolk": "26,379",
+      "East of England (LA average)": "13,802",
+      "England (LA average)": "16,069"
+    },
+    {
+      "Age group": "Aged 18 to 64",
+      "Financial year": "2022 to 2023",
+      "Care type or funding method": "Supported accomodation",
+      "Suffolk": "86,887",
+      "East of England (LA average)": "8,564",
+      "England (LA average)": "12,148"
+    },
+    {
+      "Age group": "Aged 18 to 64",
+      "Financial year": "2021 to 2022",
+      "Care type or funding method": "All types of adult social care",
+      "Suffolk": "112,456",
+      "East of England (LA average)": "97,081",
+      "England (LA average)": "60,357"
+    },
+    {
+      "Age group": "Aged 18 to 64",
+      "Financial year": "2021 to 2022",
+      "Care type or funding method": "All types of care home, including residential and nursing",
+      "Suffolk": "54,832",
+      "East of England (LA average)": "58,214",
+      "England (LA average)": "63,477"
+    },
+    {
+      "Age group": "Aged 18 to 64",
+      "Financial year": "2021 to 2022",
+      "Care type or funding method": "Residential",
+      "Suffolk": "47,156",
+      "East of England (LA average)": "49,892",
+      "England (LA average)": "53,641"
+    },
+    {
+      "Age group": "Aged 18 to 64",
+      "Financial year": "2021 to 2022",
+      "Care type or funding method": "Nursing",
+      "Suffolk": "7,676",
+      "East of England (LA average)": "8,322",
+      "England (LA average)": "9,836"
+    },
+    {
+      "Age group": "Aged 18 to 64",
+      "Financial year": "2021 to 2022",
+      "Care type or funding method": "All types of community social care, including home care, supported living, community direct payments and other schemes",
+      "Suffolk": "78,543",
+      "East of England (LA average)": "84,617",
+      "England (LA average)": "91,254"
+    },
+    {
+      "Age group": "Aged 18 to 64",
+      "Financial year": "2021 to 2022",
+      "Care type or funding method": "Home care",
+      "Suffolk": "32,894",
+      "East of England (LA average)": "25,118",
+      "England (LA average)": "22,647"
+    },
+    {
+      "Age group": "Aged 18 to 64",
+      "Financial year": "2021 to 2022",
+      "Care type or funding method": "Supported living",
+      "Suffolk": "0",
+      "East of England (LA average)": "29,184",
+      "England (LA average)": "34,892"
+    },
+    {
+      "Age group": "Aged 18 to 64",
+      "Financial year": "2021 to 2022",
+      "Care type or funding method": "Community direct payments",
+      "Suffolk": "23,417",
+      "East of England (LA average)": "18,563",
+      "England (LA average)": "21,078"
+    },
+    {
+      "Age group": "Aged 18 to 64",
+      "Financial year": "2021 to 2022",
+      "Care type or funding method": "Other",
+      "Suffolk": "22,232",
+      "East of England (LA average)": "11,752",
+      "England (LA average)": "12,637"
+    },
+    {
+      "Age group": "Aged 18 to 64",
+      "Financial year": "2021 to 2022",
+      "Care type or funding method": "Supported accomodation",
+      "Suffolk": "73,418",
+      "East of England (LA average)": "9,823",
+      "England (LA average)": "11,547"
+    },
+    {
+      "Age group": "Aged 65 and over",
+      "Financial year": "2023 to 2024",
+      "Care type or funding method": "All types of adult social care",
+      "Suffolk": "187,432",
+      "East of England (LA average)": "163,214",
+      "England (LA average)": "101,864"
+    },
+    {
+      "Age group": "Aged 65 and over",
+      "Financial year": "2023 to 2024",
+      "Care type or funding method": "All types of care home, including residential and nursing",
+      "Suffolk": "44,199",
+      "East of England (LA average)": "50,246",
+      "England (LA average)": "30,693"
+    },
+    {
+      "Age group": "Aged 65 and over",
+      "Financial year": "2023 to 2024",
+      "Care type or funding method": "Residential",
+      "Suffolk": "38,478",
+      "East of England (LA average)": "46,115",
+      "England (LA average)": "26,712"
+    },
+    {
+      "Age group": "Aged 65 and over",
+      "Financial year": "2023 to 2024",
+      "Care type or funding method": "Nursing",
+      "Suffolk": "5,721",
+      "East of England (LA average)": "4,131",
+      "England (LA average)": "3,981"
+    },
+    {
+      "Age group": "Aged 65 and over",
+      "Financial year": "2023 to 2024",
+      "Care type or funding method": "All types of community social care, including home care, supported living, community direct payments and other schemes",
+      "Suffolk": "97,832",
+      "East of England (LA average)": "103,793",
+      "England (LA average)": "64,025"
+    },
+    {
+      "Age group": "Aged 65 and over",
+      "Financial year": "2023 to 2024",
+      "Care type or funding method": "Home care",
+      "Suffolk": "40,614",
+      "East of England (LA average)": "30,743",
+      "England (LA average)": "10,829"
+    },
+    {
+      "Age group": "Aged 65 and over",
+      "Financial year": "2023 to 2024",
+      "Care type or funding method": "Supported living",
+      "Suffolk": "0",
+      "East of England (LA average)": "35,814",
+      "England (LA average)": "28,967"
+    },
+    {
+      "Age group": "Aged 65 and over",
+      "Financial year": "2023 to 2024",
+      "Care type or funding method": "Community direct payments",
+      "Suffolk": "28,955",
+      "East of England (LA average)": "22,449",
+      "England (LA average)": "15,723"
+    },
+    {
+      "Age group": "Aged 65 and over",
+      "Financial year": "2023 to 2024",
+      "Care type or funding method": "Other",
+      "Suffolk": "28,263",
+      "East of England (LA average)": "14,787",
+      "England (LA average)": "8,506"
+    },
+    {
+      "Age group": "Aged 65 and over",
+      "Financial year": "2023 to 2024",
+      "Care type or funding method": "Supported accomodation",
+      "Suffolk": "93,093",
+      "East of England (LA average)": "9,176",
+      "England (LA average)": "7,146"
+    },
+    {
+      "Age group": "Aged 65 and over",
+      "Financial year": "2022 to 2023",
+      "Care type or funding method": "All types of adult social care",
+      "Suffolk": "177,351",
+      "East of England (LA average)": "153,345",
+      "England (LA average)": "96,830"
+    },
+    {
+      "Age group": "Aged 65 and over",
+      "Financial year": "2022 to 2023",
+      "Care type or funding method": "All types of care home, including residential and nursing",
+      "Suffolk": "61,928",
+      "East of England (LA average)": "70,341",
+      "England (LA average)": "78,177"
+    },
+    {
+      "Age group": "Aged 65 and over",
+      "Financial year": "2022 to 2023",
+      "Care type or funding method": "Residential",
+      "Suffolk": "53,868",
+      "East of England (LA average)": "64,562",
+      "England (LA average)": "68,021"
+    },
+    {
+      "Age group": "Aged 65 and over",
+      "Financial year": "2022 to 2023",
+      "Care type or funding method": "Nursing",
+      "Suffolk": "8,060",
+      "East of England (LA average)": "5,779",
+      "England (LA average)": "10,156"
+    },
+    {
+      "Age group": "Aged 65 and over",
+      "Financial year": "2022 to 2023",
+      "Care type or funding method": "All types of community social care, including home care, supported living, community direct payments and other schemes",
+      "Suffolk": "136,964",
+      "East of England (LA average)": "145,310",
+      "England (LA average)": "163,113"
+    },
+    {
+      "Age group": "Aged 65 and over",
+      "Financial year": "2022 to 2023",
+      "Care type or funding method": "Home care",
+      "Suffolk": "56,859",
+      "East of England (LA average)": "43,040",
+      "England (LA average)": "41,007"
+    },
+    {
+      "Age group": "Aged 65 and over",
+      "Financial year": "2022 to 2023",
+      "Care type or funding method": "Supported living",
+      "Suffolk": "0",
+      "East of England (LA average)": "50,139",
+      "England (LA average)": "57,932"
+    },
+    {
+      "Age group": "Aged 65 and over",
+      "Financial year": "2022 to 2023",
+      "Care type or funding method": "Community direct payments",
+      "Suffolk": "40,536",
+      "East of England (LA average)": "31,428",
+      "England (LA average)": "40,071"
+    },
+    {
+      "Age group": "Aged 65 and over",
+      "Financial year": "2022 to 2023",
+      "Care type or funding method": "Other",
+      "Suffolk": "39,569",
+      "East of England (LA average)": "20,703",
+      "England (LA average)": "24,103"
+    },
+    {
+      "Age group": "Aged 65 and over",
+      "Financial year": "2022 to 2023",
+      "Care type or funding method": "Supported accomodation",
+      "Suffolk": "130,331",
+      "East of England (LA average)": "12,846",
+      "England (LA average)": "18,222"
+    },
+    {
+      "Age group": "Aged 65 and over",
+      "Financial year": "2021 to 2022",
+      "Care type or funding method": "All types of adult social care",
+      "Suffolk": "168,684",
+      "East of England (LA average)": "145,622",
+      "England (LA average)": "90,536"
+    },
+    {
+      "Age group": "Aged 65 and over",
+      "Financial year": "2021 to 2022",
+      "Care type or funding method": "All types of care home, including residential and nursing",
+      "Suffolk": "82,248",
+      "East of England (LA average)": "87,321",
+      "England (LA average)": "95,216"
+    },
+    {
+      "Age group": "Aged 65 and over",
+      "Financial year": "2021 to 2022",
+      "Care type or funding method": "Residential",
+      "Suffolk": "70,734",
+      "East of England (LA average)": "74,838",
+      "England (LA average)": "80,462"
+    },
+    {
+      "Age group": "Aged 65 and over",
+      "Financial year": "2021 to 2022",
+      "Care type or funding method": "Nursing",
+      "Suffolk": "11,514",
+      "East of England (LA average)": "12,483",
+      "England (LA average)": "14,754"
+    },
+    {
+      "Age group": "Aged 65 and over",
+      "Financial year": "2021 to 2022",
+      "Care type or funding method": "All types of community social care, including home care, supported living, community direct payments and other schemes",
+      "Suffolk": "117,815",
+      "East of England (LA average)": "126,926",
+      "England (LA average)": "136,881"
+    },
+    {
+      "Age group": "Aged 65 and over",
+      "Financial year": "2021 to 2022",
+      "Care type or funding method": "Home care",
+      "Suffolk": "49,341",
+      "East of England (LA average)": "37,677",
+      "England (LA average)": "33,971"
+    },
+    {
+      "Age group": "Aged 65 and over",
+      "Financial year": "2021 to 2022",
+      "Care type or funding method": "Supported living",
+      "Suffolk": "0",
+      "East of England (LA average)": "43,776",
+      "England (LA average)": "52,338"
+    },
+    {
+      "Age group": "Aged 65 and over",
+      "Financial year": "2021 to 2022",
+      "Care type or funding method": "Community direct payments",
+      "Suffolk": "35,126",
+      "East of England (LA average)": "27,845",
+      "England (LA average)": "31,617"
+    },
+    {
+      "Age group": "Aged 65 and over",
+      "Financial year": "2021 to 2022",
+      "Care type or funding method": "Other",
+      "Suffolk": "33,348",
+      "East of England (LA average)": "17,628",
+      "England (LA average)": "18,955"
+    },
+    {
+      "Age group": "Aged 65 and over",
+      "Financial year": "2021 to 2022",
+      "Care type or funding method": "Supported accomodation",
+      "Suffolk": "110,127",
+      "East of England (LA average)": "14,735",
+      "England (LA average)": "17,321"
+    },
+    {
+      "Age group": "All age groups",
+      "Financial year": "2023 to 2024",
+      "Care type or funding method": "All types of adult social care",
+      "Suffolk": "311,999",
+      "East of England (LA average)": "272,023",
+      "England (LA average)": "169,773"
+    },
+    {
+      "Age group": "All age groups",
+      "Financial year": "2023 to 2024",
+      "Care type or funding method": "All types of care home, including residential and nursing",
+      "Suffolk": "73,665",
+      "East of England (LA average)": "83,743",
+      "England (LA average)": "51,155"
+    },
+    {
+      "Age group": "All age groups",
+      "Financial year": "2023 to 2024",
+      "Care type or funding method": "Residential",
+      "Suffolk": "64,130",
+      "East of England (LA average)": "76,858",
+      "England (LA average)": "44,520"
+    },
+    {
+      "Age group": "All age groups",
+      "Financial year": "2023 to 2024",
+      "Care type or funding method": "Nursing",
+      "Suffolk": "9,535",
+      "East of England (LA average)": "6,885",
+      "England (LA average)": "6,635"
+    },
+    {
+      "Age group": "All age groups",
+      "Financial year": "2023 to 2024",
+      "Care type or funding method": "All types of community social care, including home care, supported living, community direct payments and other schemes",
+      "Suffolk": "163,053",
+      "East of England (LA average)": "172,988",
+      "England (LA average)": "106,708"
+    },
+    {
+      "Age group": "All age groups",
+      "Financial year": "2023 to 2024",
+      "Care type or funding method": "Home care",
+      "Suffolk": "67,690",
+      "East of England (LA average)": "51,238",
+      "England (LA average)": "18,048"
+    },
+    {
+      "Age group": "All age groups",
+      "Financial year": "2023 to 2024",
+      "Care type or funding method": "Supported living",
+      "Suffolk": "0",
+      "East of England (LA average)": "59,690",
+      "England (LA average)": "48,278"
+    },
+    {
+      "Age group": "All age groups",
+      "Financial year": "2023 to 2024",
+      "Care type or funding method": "Community direct payments",
+      "Suffolk": "48,258",
+      "East of England (LA average)": "37,415",
+      "England (LA average)": "26,205"
+    },
+    {
+      "Age group": "All age groups",
+      "Financial year": "2023 to 2024",
+      "Care type or funding method": "Other",
+      "Suffolk": "47,105",
+      "East of England (LA average)": "24,645",
+      "England (LA average)": "14,177"
+    },
+    {
+      "Age group": "All age groups",
+      "Financial year": "2023 to 2024",
+      "Care type or funding method": "Supported accomodation",
+      "Suffolk": "155,155",
+      "East of England (LA average)": "15,293",
+      "England (LA average)": "11,910"
+    },
+    {
+      "Age group": "All age groups",
+      "Financial year": "2022 to 2023",
+      "Care type or funding method": "All types of adult social care",
+      "Suffolk": "295,585",
+      "East of England (LA average)": "255,575",
+      "England (LA average)": "161,383"
+    },
+    {
+      "Age group": "All age groups",
+      "Financial year": "2022 to 2023",
+      "Care type or funding method": "All types of care home, including residential and nursing",
+      "Suffolk": "103,213",
+      "East of England (LA average)": "117,235",
+      "England (LA average)": "130,295"
+    },
+    {
+      "Age group": "All age groups",
+      "Financial year": "2022 to 2023",
+      "Care type or funding method": "Residential",
+      "Suffolk": "89,780",
+      "East of England (LA average)": "107,603",
+      "England (LA average)": "113,368"
+    },
+    {
+      "Age group": "All age groups",
+      "Financial year": "2022 to 2023",
+      "Care type or funding method": "Nursing",
+      "Suffolk": "13,433",
+      "East of England (LA average)": "9,632",
+      "England (LA average)": "16,927"
+    },
+    {
+      "Age group": "All age groups",
+      "Financial year": "2022 to 2023",
+      "Care type or funding method": "All types of community social care, including home care, supported living, community direct payments and other schemes",
+      "Suffolk": "228,273",
+      "East of England (LA average)": "242,183",
+      "England (LA average)": "271,855"
+    },
+    {
+      "Age group": "All age groups",
+      "Financial year": "2022 to 2023",
+      "Care type or funding method": "Home care",
+      "Suffolk": "94,765",
+      "East of England (LA average)": "71,733",
+      "England (LA average)": "68,345"
+    },
+    {
+      "Age group": "All age groups",
+      "Financial year": "2022 to 2023",
+      "Care type or funding method": "Supported living",
+      "Suffolk": "0",
+      "East of England (LA average)": "83,565",
+      "England (LA average)": "96,553"
+    },
+    {
+      "Age group": "All age groups",
+      "Financial year": "2022 to 2023",
+      "Care type or funding method": "Community direct payments",
+      "Suffolk": "67,560",
+      "East of England (LA average)": "52,380",
+      "England (LA average)": "66,785"
+    },
+    {
+      "Age group": "All age groups",
+      "Financial year": "2022 to 2023",
+      "Care type or funding method": "Other",
+      "Suffolk": "65,948",
+      "East of England (LA average)": "34,505",
+      "England (LA average)": "40,172"
+    },
+    {
+      "Age group": "All age groups",
+      "Financial year": "2022 to 2023",
+      "Care type or funding method": "Supported accomodation",
+      "Suffolk": "217,218",
+      "East of England (LA average)": "21,410",
+      "England (LA average)": "30,370"
+    },
+    {
+      "Age group": "All age groups",
+      "Financial year": "2021 to 2022",
+      "Care type or funding method": "All types of adult social care",
+      "Suffolk": "281,140",
+      "East of England (LA average)": "242,703",
+      "England (LA average)": "150,893"
+    },
+    {
+      "Age group": "All age groups",
+      "Financial year": "2021 to 2022",
+      "Care type or funding method": "All types of care home, including residential and nursing",
+      "Suffolk": "137,080",
+      "East of England (LA average)": "145,535",
+      "England (LA average)": "158,693"
+    },
+    {
+      "Age group": "All age groups",
+      "Financial year": "2021 to 2022",
+      "Care type or funding method": "Residential",
+      "Suffolk": "117,890",
+      "East of England (LA average)": "124,730",
+      "England (LA average)": "134,103"
+    },
+    {
+      "Age group": "All age groups",
+      "Financial year": "2021 to 2022",
+      "Care type or funding method": "Nursing",
+      "Suffolk": "19,190",
+      "East of England (LA average)": "20,805",
+      "England (LA average)": "24,590"
+    },
+    {
+      "Age group": "All age groups",
+      "Financial year": "2021 to 2022",
+      "Care type or funding method": "All types of community social care, including home care, supported living, community direct payments and other schemes",
+      "Suffolk": "196,358",
+      "East of England (LA average)": "211,543",
+      "England (LA average)": "228,135"
+    },
+    {
+      "Age group": "All age groups",
+      "Financial year": "2021 to 2022",
+      "Care type or funding method": "Home care",
+      "Suffolk": "82,235",
+      "East of England (LA average)": "62,795",
+      "England (LA average)": "56,618"
+    },
+    {
+      "Age group": "All age groups",
+      "Financial year": "2021 to 2022",
+      "Care type or funding method": "Supported living",
+      "Suffolk": "0",
+      "East of England (LA average)": "72,960",
+      "England (LA average)": "87,230"
+    },
+    {
+      "Age group": "All age groups",
+      "Financial year": "2021 to 2022",
+      "Care type or funding method": "Community direct payments",
+      "Suffolk": "58,543",
+      "East of England (LA average)": "46,408",
+      "England (LA average)": "52,695"
+    },
+    {
+      "Age group": "All age groups",
+      "Financial year": "2021 to 2022",
+      "Care type or funding method": "Other",
+      "Suffolk": "55,580",
+      "East of England (LA average)": "29,380",
+      "England (LA average)": "31,592"
+    },
+    {
+      "Age group": "All age groups",
+      "Financial year": "2021 to 2022",
+      "Care type or funding method": "Supported accomodation",
+      "Suffolk": "183,545",
+      "East of England (LA average)": "24,558",
+      "England (LA average)": "28,868"
+    }
+  ]
+}

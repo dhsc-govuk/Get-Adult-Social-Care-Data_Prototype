@@ -1,0 +1,30 @@
+<div class="govuk-form-group">
+  <fieldset class="govuk-fieldset">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">CQC rating</legend>
+    
+    <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+      
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="cqcRating_1" name="cqcRating" type="checkbox" value="Outstanding"{% for param in data.cqcRating %}{% if param == 'Outstanding' %} checked{% endif %}{% endfor %}>
+        <label class="govuk-label govuk-checkboxes__label" for="cqcRating_1">Outstanding</label>
+      </div>
+      
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="cqcRating_2" name="cqcRating" type="checkbox" value="Good"{% for param in data.cqcRating %}{% if param == 'Good' %} checked{% endif %}{% endfor %}>
+        <label class="govuk-label govuk-checkboxes__label" for="cqcRating_2">Good</label>
+      </div>
+
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="cqcRating_3" name="cqcRating" type="checkbox" value="Requires improvement"{% for param in data.cqcRating %}{% if param == 'Requires improvement' %} checked{% endif %}{% endfor %}>
+        <label class="govuk-label govuk-checkboxes__label" for="cqcRating_3">Requires improvement</label>
+      </div>
+
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="cqcRating_4" name="cqcRating" type="checkbox" value="Inadequate"{% for param in data.cqcRating %}{% if param == 'Inadequate' %} checked{% endif %}{% endfor %}>
+        <label class="govuk-label govuk-checkboxes__label" for="cqcRating_4">Inadequate</label>
+      </div>
+
+    </div>
+
+  </fieldset>
+</div>

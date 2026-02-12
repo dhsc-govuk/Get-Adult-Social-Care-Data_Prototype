@@ -1,5 +1,31 @@
 module.exports = {
 
+  // v10
+  "v10ProviderLocationsData": require('./v10/provider-locations.json'),
+  "v10ProviderLocations": "v10ProviderLocationsData",
+  "v10CareProvidersLocationsAndServicesData": require('./v10/residential-care/care-providers-locations-and-services.json'),
+  "v10CareProvidersLocationsAndServices": "v10CareProvidersLocationsAndServicesData",
+  "v10CareHomeBedsAndOccupancyData": require('./v10/residential-care/care-home-beds-and-occupancy.json'),
+  "v10CareHomeBedsAndOccupancy": "v10CareHomeBedsAndOccupancyData",
+  "v10localAuthorityFundingForAdultSocialCareData": require('./v10/funding/local-authority-funding-for-adult-social-care.json'),
+  "v10localAuthorityFundingForAdultSocialCare": "v10localAuthorityFundingForAdultSocialCareData",
+  "v10populationSizeAndAgeGroupPercentagesData": require('./v10/population-needs/population-size.json'),
+  "v10populationSizeAndAgeGroupPercentages": "v10populationSizeAndAgeGroupPercentagesData",
+  "v10generalHealthDisabilityAndLearningDisabilityData": require('./v10/population-needs/general-health-disability-and-learning-disability.json'),
+  "v10generalHealthDisabilityAndLearningDisability": "v10generalHealthDisabilityAndLearningDisabilityData",
+  "v10estimatedPopulationSizeData": require('./v10/future-planning/estimated-population-size.json'),
+  "v10estimatedPopulationSize": "v10estimatedPopulationSizeData",
+  "v10estimatedAutisticDisordersData": require('./v10/future-planning/estimated-autistic-disorders.json'),
+  "v10estimatedAutisticDisorders": "v10estimatedAutisticDisordersData",
+  "v10estimatedLearningDisabilityData": require('./v10/future-planning/estimated-learning-disability.json'),
+  "v10estimatedLearningDisability": "v10estimatedLearningDisabilityData",
+  "v10estimatedEarlyOnsetDementiaData": require('./v10/future-planning/estimated-early-onset-dementia.json'),
+  "v10estimatedEarlyOnsetDementia": "v10estimatedEarlyOnsetDementiaData",
+  "v10laFundingPlanningData": require('./v10/future-planning/la-funding-planning.json'),
+  "v10laFundingPlanning": "v10laFundingPlanningData",
+  "v10linkedHealthAndSocialCareDataData": require('./v10/future-planning/linked-health-and-social-care-data.json'),
+  "v10linkedHealthAndSocialCareData": "v10linkedHealthAndSocialCareDataData",
+
   // Private beta (February 2026)
   "pbFebruary2026ProviderLocationsData": require('./private-beta/2026/february/provider-locations.json'),
   "pbFebruary2026ProviderLocations": "pbFebruary2026ProviderLocationsData",

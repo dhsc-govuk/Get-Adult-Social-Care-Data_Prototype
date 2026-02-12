@@ -1,0 +1,66 @@
+<div id="dhsc-filter--action17" class="dhsc-filter--action">
+  <button id="dhsc-filter--button17" class="govuk-button" type="button" aria-expanded="false" aria-controls="dhsc-filter--content17">
+    <span id="dhsc-filter--button-content17" class="dhsc-filter--button-content">Filters</span>
+    <i id="dhsc-filter--icon17" class="fa fa-plus" aria-hidden="true"><span id="dhsc-filter--icon17-content" class="govuk-visually-hidden">Open</span></i>
+  </button>
+</div>
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-full">
+
+    <div id="dhsc-filter--content17" class="dhsc-filter--content" aria-labelledby="dhsc-filter--button17">
+
+      <form action="data-update-filters17" method="post" novalidate>
+
+        <div class="govuk-grid-row">
+          
+          <div class="govuk-grid-column-one-third">
+            {% include "./_1-year.html" %}
+          </div>
+
+        </div>
+
+        <div class="govuk-grid-row govuk-!-margin-top-4">
+
+          <div class="govuk-grid-column-full">
+
+            <div class="govuk-button-group">
+              <button id="update-filters17" type="submit" class="govuk-button" data-module="govuk-button" name="filterApplied17" value="Yes">Apply</button>
+              {% if data.filterApplied17 %}
+              <a href="?filterApplied17=&year=#data1" class="govuk-link">Clear all</a>
+              {% endif %}
+            </div>
+            
+          </div>
+
+        </div>
+
+      </form>
+
+    </div>
+
+  </div>
+
+</div>
+{% if data.filterApplied17 %}
+
+<div class="app-c-filter-summary">
+  <h5 class="app-c-filter-summary__heading">Active filters</h5>
+  <ul class="app-c-filter-summary__remove-filters">
+    <li id="year-remove">
+      <a class="app-c-filter-summary__remove-filter" href="?filterApplied17=&year=#data1">
+        <span>
+          <span class="govuk-visually-hidden">Remove filter</span>
+          Year: {{data.year or '2030'}}
+        </span>
+      </a>
+    </li>
+  </ul>
+
+  <div>
+    <a class="govuk-link govuk-link--no-visited-state" href="?filterApplied17=&year=#data1">Clear all filters</a>
+  </div>
+
+</div>
+{% endif %}

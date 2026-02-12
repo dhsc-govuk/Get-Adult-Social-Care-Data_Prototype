@@ -1,0 +1,30 @@
+<div class="govuk-form-group">
+  <fieldset class="govuk-fieldset">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">Year</legend>
+    
+    <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
+      
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="year_1" name="year" type="radio" value="2030"{% if data.year%}{% if data.year == '2030' %} checked{% endif %}{% else %} checked{% endif %}>
+        <label class="govuk-label govuk-radios__label" for="year_1">2030</label>
+      </div>
+      
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="year_2" name="year" type="radio" value="2035"{% if data.year == '2035' %} checked{% endif %}>
+        <label class="govuk-label govuk-radios__label" for="year_2">2035</label>
+      </div>
+
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="year_3" name="year" type="radio" value="2040"{% if data.year == '2040' %} checked{% endif %}>
+        <label class="govuk-label govuk-radios__label" for="year_3">2040</label>
+      </div>
+
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="year_4" name="year" type="radio" value="2045"{% if data.year == '2045' %} checked{% endif %}>
+        <label class="govuk-label govuk-radios__label" for="year_4">2045</label>
+      </div>
+
+    </div>
+
+  </fieldset>
+</div>

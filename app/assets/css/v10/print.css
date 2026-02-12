@@ -1,0 +1,40 @@
+/*****
+  * Print (CSS)
+  * Global - will be applied to all areas of the service  
+*****/
+
+/* Page parameters */
+@page {
+	size: A4 portrait;
+}
+
+/* DOM elements */
+body {
+  width: 100% !important;
+}
+
+table {
+  width: 100%;
+}
+
+/* Classes - GOV.UK Frontend */
+.govuk-phase-banner, .govuk-back-link, .govuk-footer__inline-list {
+  display: none;
+}
+
+/* Classes - GASCD */
+.print-page, .no-print {
+  display: none !important;
+}
+
+/* Main service 'Menu' section  */
+.gem-c-layout-super-navigation-header__navigation-second-item-description {
+  font-family: sans-serif;
+}
+
+/* Filter component inspired by Apply for plant export certificates and inspections (https://www.gov.uk/guidance/apply-for-plant-export-certificates-and-inspections) and GOV.UK search (https://www.gov.uk) */
+.app-c-filter-summary__heading, .app-c-filter-summary__remove-filter, .app-c-filter-summary__clear-filters {
+  font-family: sans-serif;
+  font-size: 14pt;
+  line-height: 1.15;
+}
