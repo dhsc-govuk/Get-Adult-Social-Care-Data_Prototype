@@ -2,8 +2,10 @@ module.exports = function(router) {
 
   var version = 'v10';
   const providerLocations = require('../data/v10/provider-locations.json');
-  const estimatedEarlyOnsetDementiaData = require('../data/v10/future-planning/estimated-early-onset-dementia.json');
+  const estimatedAutisticDisorders = require('../data/v10/future-planning/estimated-autistic-disorders.json');
+  const estimatedEarlyOnsetDementia = require('../data/v10/future-planning/estimated-early-onset-dementia.json');
   const estimatedLearningDisability = require('../data/v10/future-planning/estimated-learning-disability.json');
+  const laFundingPlanning = require('../data/v10/future-planning/la-funding-planning.json');
 
   /*****
    * General prototype pages (not part of the service)
@@ -732,12 +734,67 @@ module.exports = function(router) {
     
   })
 
+  // Estimates on ASD
+  router.get('/' + version + '/' + 'signed-in/topics/future-planning/estimates-on-autistic-spectrum-disorders/data', function (req, res) {
+    
+    // Chart (line chart): Estimated adult population with ASD - trends over time
+    // BUILD the chart
+    const rows = estimatedAutisticDisorders["Change over time"] || []
+    const categories = rows.map(r => String(r.Year))
+    const areas = ["Suffolk", "Dorset", "Herefordshire", "Kent", "Norfolk", "Somerset"]
+    const series = areas.map((area) => ({
+      name: area,
+      data: rows.map(r => {
+        const raw = r[area]
+        if (raw === "" || raw === null || typeof raw === "undefined") return null
+        const num = Number(raw)
+        return Number.isFinite(num) ? num : null
+      }),
+      marker: { enabled: false }
+    }))
+    const onsVersion = require("@ons/design-system/package.json").version
+    // Build the same config structure the macro would have output
+    const config = {
+      chart: { type: "line" },
+      legend: { enabled: true },
+      yAxis: {
+        title: { text: "Percentage change from baseline (2025)" },
+        labels: { format: "{value:.2f}" }
+      },
+      xAxis: {
+        title: { text: "Year" },
+        categories,
+        type: "category",
+        labels: {}
+      },
+      series
+    }
+
+    // RENDER all chart options and JSON
+    res.render(version + "/signed-in/topics/future-planning/estimates-on-autistic-spectrum-disorders/data", {
+      useOnsAssets: true,
+      onsVersion,
+      chart: {
+        chartType: "line",
+        theme: "primary",
+        title: "Figure 1: estimated percentage change in population aged 18-64 with ASD compared with similar LAs",
+        id: "figure-1-estimated-population-with-asd-over-time.png",
+        caption: "Source: PANSI",
+        description: "Line chart showing percentage change over time in population aged 18-64 with ASD for Suffolk and similar LAs Dorset, Herefordshire, Kent, Norfolk and Somerset.",
+        fallbackImageUrl: "/public/downloads/v10/future-planning/estimated-autistic-disorders/figure-1-estimated-population-with-asd-over-time.png",
+        fallbackImageAlt: "Line chart showing percentage change over time in population aged 18-64 with ASD for Suffolk and similar LAs Dorset, Herefordshire, Kent, Norfolk and Somerset."
+      },
+      // IMPORTANT: stringify server-side and pass as a literal string
+      highchartsConfig: JSON.stringify(config)
+    })
+  })
+  
   // Estimates on early onset dementia
   router.get('/' + version + '/' + 'signed-in/topics/future-planning/estimates-on-early-onset-dementia/data', function (req, res) {
     
     // Chart (line chart): Predicted early onset dementia prevalence - trends over time
     // BUILD the chart
-    const rows = estimatedEarlyOnsetDementiaData["Change over time"] || []
+    const rows = estimatedEarlyOnsetDementia["Change over time"] || []
     const categories = rows.map(r => String(r.Year))
     const areas = ["Suffolk", "Dorset", "Herefordshire", "Kent", "Norfolk", "Somerset"]
     const series = areas.map((area) => ({
@@ -776,7 +833,7 @@ module.exports = function(router) {
         chartType: "line",
         theme: "primary",
         title: "Figure 1: estimated percentage change in population aged 30-64 with early onset dementia compared with similar LAs",
-        id: "estimated-early-onset-dementia-change-over-time",
+        id: "figure-1-predicted-early-onset-dementia-prevalence-over-time.png",
         caption: "Source: PANSI",
         description: "Line chart showing percentage change over time in population aged 30-64 with early onset dementia for Suffolk and similar LAs Dorset, Herefordshire, Kent, Norfolk and Somerset.",
         fallbackImageUrl: "/public/downloads/v10/future-planning/estimated-early-onset-dementia/figure-1-predicted-early-onset-dementia-prevalence-over-time.png",
@@ -831,11 +888,68 @@ module.exports = function(router) {
         chartType: "line",
         theme: "primary",
         title: "Figure 1: estimated percentage change in population aged 18-64 with learning disabilities and predicted challenging behaviour compared with similar LAs",
-        id: "estimated-early-onset-dementia-change-over-time",
+        id: "figure-1-estimated-population-with-learning-disabilities-over-time.png",
         caption: "Source: PANSI",
         description: "Line chart showing percentage change over time in population aged 18-64 with learning disabilities and predicted challenging behaviour for Suffolk and similar LAs Dorset, Herefordshire, Kent, Norfolk and Somerset.",
         fallbackImageUrl: "/public/downloads/v10/future-planning/estimated-learning-disability/figure-1-estimated-population-with-learning-disabilities-over-time.png",
         fallbackImageAlt: "Line chart showing percentage change over time in population aged 18-64 with learning disabilities and predicted challenging behaviour for Suffolk and similar LAs Dorset, Herefordshire, Kent, Norfolk and Somerset."
+      },
+      // IMPORTANT: stringify server-side and pass as a literal string
+      highchartsConfig: JSON.stringify(config)
+    })
+  })
+
+  // LA funding planning
+  router.get('/' + version + '/' + 'signed-in/topics/future-planning/la-funding-planning/data', function (req, res) {
+    
+    // Chart (line chart): Estimated percentage change in population with selected health conditions - trends over time
+    // BUILD the chart
+    const rows = laFundingPlanning["Change over time"] || []
+    const categories = rows.length
+    ? Object.keys(rows[0]).filter(k => k !== "Indicator")
+    : []
+    categories.sort((a, b) => Number(a) - Number(b))
+    const series = rows.map((r) => ({
+      name: r.Indicator || "Unknown indicator",
+      data: categories.map((year) => {
+        const raw = r[year]
+        if (raw === "" || raw === null || typeof raw === "undefined") return null
+        const num = Number(raw)
+        return Number.isFinite(num) ? num : null
+      }),
+      marker: { enabled: false }
+    }))
+    const onsVersion = require("@ons/design-system/package.json").version
+    // Build the same config structure the macro would have output
+    const config = {
+      chart: { type: "line" },
+      legend: { enabled: true },
+      yAxis: {
+        title: { text: "Percentage change from baseline (2025)" },
+        labels: { format: "{value:.2f}" }
+      },
+      xAxis: {
+        title: { text: "Year" },
+        categories,
+        type: "category",
+        labels: {}
+      },
+      series
+    }
+
+    // RENDER all chart options and JSON
+    res.render(version + "/signed-in/topics/future-planning/la-funding-planning/data", {
+      useOnsAssets: true,
+      onsVersion,
+      chart: {
+        chartType: "line",
+        theme: "primary",
+        title: "Figure 1: estimated percentage change in population aged 18-64 with selected health conditions compared with similar LAs",
+        id: "figure-1-estimated-population-change-with-health-conditions-over-time",
+        caption: "Source: PANSI",
+        description: "Line chart showing percentage change over time in population aged 18-64 with selected health conditions for Suffolk and similar LAs Dorset, Herefordshire, Kent, Norfolk and Somerset.",
+        fallbackImageUrl: "/public/downloads/v10/future-planning/la-funding-planning/figure-1-estimated-population-change-with-health-conditions-over-time.png",
+        fallbackImageAlt: "Line chart showing percentage change over time in population aged 18-64 with selected health conditions for Suffolk and similar LAs Dorset, Herefordshire, Kent, Norfolk and Somerset."
       },
       // IMPORTANT: stringify server-side and pass as a literal string
       highchartsConfig: JSON.stringify(config)
