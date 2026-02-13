@@ -14,7 +14,7 @@
       </tr>
     </thead>
     <tbody class="govuk-table__body">
-      {% set rows = data[data['v10estimatedPopulationSize']]['TBC 1'] %}
+      {% set rows = data[data['v10estimatedPopulationSize']]['Adult population size estimates across LA and neighbours'] %}
       {% set noFiltersSet = not data.year18 %}
       {% set year = (data.year18 if data.year18 else ("2030" if noFiltersSet else "2030")) %}
       {% set rowsRendered = 0 %}

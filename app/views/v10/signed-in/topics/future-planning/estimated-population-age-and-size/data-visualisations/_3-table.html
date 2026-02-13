@@ -14,7 +14,7 @@
       </tr>
     </thead>
     <tbody class="govuk-table__body">
-      {% set rows = data[data['v10estimatedPopulationSize']]['TBC 2'] %}
+      {% set rows = data[data['v10estimatedPopulationSize']]['Change over time'] %}
       {% set noFiltersSet = not data.ageGroup19 %}
       {% set age = (data.ageGroup19 if data.ageGroup19 else ("All age groups" if noFiltersSet else "All age groups")) %}
       {% set rowsRendered = 0 %}

@@ -2,6 +2,7 @@ module.exports = function(router) {
 
   var version = 'v10';
   const providerLocations = require('../data/v10/provider-locations.json');
+  const estimatedPopulationSize = require('../data/v10/future-planning/estimated-population-size.json');
   const estimatedAutisticDisorders = require('../data/v10/future-planning/estimated-autistic-disorders.json');
   const estimatedEarlyOnsetDementia = require('../data/v10/future-planning/estimated-early-onset-dementia.json');
   const estimatedLearningDisability = require('../data/v10/future-planning/estimated-learning-disability.json');
@@ -673,6 +674,75 @@ module.exports = function(router) {
   *****/
 
   // Estimated population size and age group percentages
+  router.get('/' + version + '/' + 'signed-in/topics/future-planning/estimated-population-age-and-size/data', function (req, res) {
+    
+    // Chart (line chart): Estimated percentage change in population across Suffolk and similar LAs - trends over time
+    // BUILD the chart
+    const allRows = estimatedPopulationSize["Change over time"] || []
+    const selectedAgeGroup =
+      (req.session.data && req.session.data.ageGroup19 && String(req.session.data.ageGroup19).trim())
+      ? String(req.session.data.ageGroup19).trim()
+      : "All age groups"
+    const rows = allRows.filter(r => String(r.Indicator).trim() === selectedAgeGroup)
+    const fallbackImageMap = {
+      "All age groups": "/public/downloads/v10/future-planning/estimated-population-size/figure-1-estimated-population-size-change-over-time-all.png",
+      "18-64": "/public/downloads/v10/future-planning/estimated-population-size/figure-1-estimated-population-size-change-over-time-16-64.png",
+      "65+": "/public/downloads/v10/future-planning/estimated-population-size/figure-1-estimated-population-size-change-over-time-65-74.png",
+      "18-24": "/public/downloads/v10/future-planning/estimated-population-size/figure-1-estimated-population-size-change-over-time-75-84.png",
+      "25-64": "/public/downloads/v10/future-planning/estimated-population-size/figure-1-estimated-population-size-change-over-time-85-over.png"
+    }
+    const fallbackImageUrl = fallbackImageMap[selectedAgeGroup] || fallbackImageMap["All age groups"]
+    const finalRows = rows.length
+      ? rows
+      : allRows.filter(r => String(r.Indicator).trim() === "All age groups")
+    const categories = finalRows.map(r => String(r.Year));
+    const areas = ["Suffolk", "Dorset", "Herefordshire", "Kent", "Norfolk", "Somerset"]
+    const series = areas.map((area) => ({
+      name: area,
+      data: finalRows.map(r => {
+        const raw = r[area]
+        if (raw === "" || raw === null || typeof raw === "undefined") return null
+        const num = Number(raw)
+        return Number.isFinite(num) ? num : null
+      }),
+      marker: { enabled: false }
+    }))
+    const onsVersion = require("@ons/design-system/package.json").version
+    // Build the same config structure the macro would have output
+    const config = {
+      chart: { type: "line" },
+      legend: { enabled: true },
+      yAxis: {
+        title: { text: "Percentage change from baseline (2025)" },
+        labels: { format: "{value:.2f}" }
+      },
+      xAxis: {
+        title: { text: "Year" },
+        categories,
+        type: "category",
+        labels: {}
+      },
+      series
+    }
+
+    // RENDER all chart options and JSON
+    res.render(version + "/signed-in/topics/future-planning/estimated-population-age-and-size/data", {
+      useOnsAssets: true,
+      onsVersion,
+      chart: {
+        chartType: "line",
+        theme: "primary",
+        title: "Figure 1: estimated percentage change in adult population over time compared with similar LAs",
+        id: "figure-1-estimated-population-size-change-la-and-neighbours",
+        caption: "Source: Population estimates from the Office for National Statistics (ONS), 2022",
+        description: "Line chart showing percentage change over time in adult population for Suffolk and similar LAs Dorset, Herefordshire, Kent, Norfolk and Somerset.",
+        fallbackImageUrl,
+        fallbackImageAlt: "Line chart showing percentage change over time in adult population for Suffolk and similar LAs Dorset, Herefordshire, Kent, Norfolk and Somerset."
+      },
+      // IMPORTANT: stringify server-side and pass as a literal string
+      highchartsConfig: JSON.stringify(config)
+    })
+  })
   router.post('/' + version + '/' + 'signed-in/topics/future-planning/estimated-population-age-and-size/data-update-filters17', function (req, res) {
 
     // Data objects to be retrieved and queried
@@ -778,7 +848,7 @@ module.exports = function(router) {
         chartType: "line",
         theme: "primary",
         title: "Figure 1: estimated percentage change in population aged 18-64 with ASD compared with similar LAs",
-        id: "figure-1-estimated-population-with-asd-over-time.png",
+        id: "figure-1-estimated-population-with-asd-over-time",
         caption: "Source: PANSI",
         description: "Line chart showing percentage change over time in population aged 18-64 with ASD for Suffolk and similar LAs Dorset, Herefordshire, Kent, Norfolk and Somerset.",
         fallbackImageUrl: "/public/downloads/v10/future-planning/estimated-autistic-disorders/figure-1-estimated-population-with-asd-over-time.png",
@@ -833,7 +903,7 @@ module.exports = function(router) {
         chartType: "line",
         theme: "primary",
         title: "Figure 1: estimated percentage change in population aged 30-64 with early onset dementia compared with similar LAs",
-        id: "figure-1-predicted-early-onset-dementia-prevalence-over-time.png",
+        id: "figure-1-predicted-early-onset-dementia-prevalence-over-time",
         caption: "Source: PANSI",
         description: "Line chart showing percentage change over time in population aged 30-64 with early onset dementia for Suffolk and similar LAs Dorset, Herefordshire, Kent, Norfolk and Somerset.",
         fallbackImageUrl: "/public/downloads/v10/future-planning/estimated-early-onset-dementia/figure-1-predicted-early-onset-dementia-prevalence-over-time.png",
@@ -888,7 +958,7 @@ module.exports = function(router) {
         chartType: "line",
         theme: "primary",
         title: "Figure 1: estimated percentage change in population aged 18-64 with learning disabilities and predicted challenging behaviour compared with similar LAs",
-        id: "figure-1-estimated-population-with-learning-disabilities-over-time.png",
+        id: "figure-1-estimated-population-with-learning-disabilities-over-time",
         caption: "Source: PANSI",
         description: "Line chart showing percentage change over time in population aged 18-64 with learning disabilities and predicted challenging behaviour for Suffolk and similar LAs Dorset, Herefordshire, Kent, Norfolk and Somerset.",
         fallbackImageUrl: "/public/downloads/v10/future-planning/estimated-learning-disability/figure-1-estimated-population-with-learning-disabilities-over-time.png",
