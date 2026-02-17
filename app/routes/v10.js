@@ -2,6 +2,7 @@ module.exports = function(router) {
 
   var version = 'v10';
   const providerLocations = require('../data/v10/provider-locations.json');
+  const numberOfAdultsReceivingCommunitySocialCare = require('../data/v10/residential-care/number-of-adults-receiving-community-social-care.json');
   const estimatedPopulationSize = require('../data/v10/future-planning/estimated-population-size.json');
   const estimatedAutisticDisorders = require('../data/v10/future-planning/estimated-autistic-disorders.json');
   const estimatedEarlyOnsetDementia = require('../data/v10/future-planning/estimated-early-onset-dementia.json');
@@ -429,6 +430,71 @@ module.exports = function(router) {
   })
 
   // Number of adults receiving community social care
+  router.get('/' + version + '/' + 'signed-in/topics/residential-care/number-of-people-receiving-care/data', function (req, res) {
+
+    const selectedLocationName = req.session.data['selectedLocationName'] || "Station Road Centre (Sudbury)"
+    const dataset = numberOfAdultsReceivingCommunitySocialCare["Change over time"]?.[0]
+    const points = (dataset?.data || []).slice().reverse();
+    const shortMonth = (m) => {
+      const [month, year] = String(m).split(" ")
+      if (!month || !year) return String(m)
+      return `${month.slice(0, 3)} ${year.slice(2)}`
+    };
+    const categories = points.map(d => shortMonth(d.month))
+    const series = [{
+      name: "Proportion delivered by " + selectedLocationName,
+      data: points.map(d => {
+        const raw = d.proportion_percent
+        if (raw === "" || raw === null || typeof raw === "undefined") return null
+        const num = Number(raw)
+        if (!Number.isFinite(num)) return null
+        return {
+          y: num,
+          name: d.month
+        }
+      }),
+      marker: { enabled: false }
+    }]
+    const onsVersion = require("@ons/design-system/package.json").version
+    const config = {
+      chart: { type: "line" },
+      legend: { enabled: false },
+      tooltip: {
+        useHTML: false,
+        headerFormat: "",
+        pointFormat: "<b>{point.name}</b><br>{series.name}: <b>{point.y:.1f}%</b>"
+      },
+      yAxis: {
+        title: { text: "Proportion delivered by " + selectedLocationName },
+        labels: { format: "{value:.1f}%" }
+      },
+      xAxis: {
+        title: { text: "Month" },
+        categories,
+        type: "category",
+        labels: {}
+      },
+      series
+    }
+
+    res.render(version + "/signed-in/topics/residential-care/number-of-people-receiving-care/data", {
+      table: dataset,
+      tableRows: points,
+      useOnsAssets: true,
+      onsVersion,
+      chart: {
+        chartType: "line",
+        theme: "primary",
+        title: "Figure 1: percentage of the total number of people receiving community social care in Suffolk who were supported by " + selectedLocationName + " - August 2024 to July 2025",
+        id: "figure-1-proportion-community-social-care-over-time",
+        caption: "Source: Capacity Tracker from the Department of Health and Social Care (DHSC)",
+        description: "Line chart showing the percentage of the total number of people receiving community social care in Suffolk who were supported by " + selectedLocationName + " from August 2024 to July 2025.",
+        fallbackImageUrl: "/public/downloads/v10/residential-care/number-of-adults-receiving-community-social-care/figure-1-proportion-community-social-care-over-time.png",
+        fallbackImageAlt: "Line chart showing the percentage of the total number of people receiving community social care in Suffolk who were supported by " + selectedLocationName + " from August 2024 to July 2025."
+      },
+      highchartsConfig: JSON.stringify(config)
+    })
+  })
   router.post('/' + version + '/' + 'signed-in/topics/residential-care/number-of-people-receiving-care/data-update-filters12', function (req, res) {
 
     // Data objects to be retrieved and queried

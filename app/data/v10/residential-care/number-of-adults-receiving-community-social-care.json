@@ -1,0 +1,85 @@
+{
+  "Change over time": [
+    {
+      "units": {
+        "supported_by_station_road_centre": "people",
+        "total_people_in_suffolk": "people",
+        "proportion_percent": "percent"
+      },
+      "data": [
+        {
+          "month": "July 2025",
+          "supported_by_station_road_centre": 1320,
+          "total_people_in_suffolk": 11000,
+          "proportion_percent": 12.0
+        },
+        {
+          "month": "June 2025",
+          "supported_by_station_road_centre": 1342,
+          "total_people_in_suffolk": 10910,
+          "proportion_percent": 12.3
+        },
+        {
+          "month": "May 2025",
+          "supported_by_station_road_centre": 1374,
+          "total_people_in_suffolk": 10820,
+          "proportion_percent": 12.7
+        },
+        {
+          "month": "April 2025",
+          "supported_by_station_road_centre": 1406,
+          "total_people_in_suffolk": 10730,
+          "proportion_percent": 13.1
+        },
+        {
+          "month": "March 2025",
+          "supported_by_station_road_centre": 1436,
+          "total_people_in_suffolk": 10640,
+          "proportion_percent": 13.5
+        },
+        {
+          "month": "February 2025",
+          "supported_by_station_road_centre": 1456,
+          "total_people_in_suffolk": 10550,
+          "proportion_percent": 13.8
+        },
+        {
+          "month": "January 2025",
+          "supported_by_station_road_centre": 1463,
+          "total_people_in_suffolk": 10450,
+          "proportion_percent": 14.0
+        },
+        {
+          "month": "December 2024",
+          "supported_by_station_road_centre": 1471,
+          "total_people_in_suffolk": 10360,
+          "proportion_percent": 14.2
+        },
+        {
+          "month": "November 2024",
+          "supported_by_station_road_centre": 1479,
+          "total_people_in_suffolk": 10270,
+          "proportion_percent": 14.4
+        },
+        {
+          "month": "October 2024",
+          "supported_by_station_road_centre": 1476,
+          "total_people_in_suffolk": 10180,
+          "proportion_percent": 14.5
+        },
+        {
+          "month": "September 2024",
+          "supported_by_station_road_centre": 1483,
+          "total_people_in_suffolk": 10090,
+          "proportion_percent": 14.7
+        },
+        {
+          "month": "August 2024",
+          "supported_by_station_road_centre": 1500,
+          "total_people_in_suffolk": 10000,
+          "proportion_percent": 15.0
+        }
+      ]
+    }
+  ]
+}

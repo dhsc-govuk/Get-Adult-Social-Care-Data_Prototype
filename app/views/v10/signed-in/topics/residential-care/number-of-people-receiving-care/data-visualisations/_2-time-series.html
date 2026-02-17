@@ -1,8 +1,53 @@
-<div class="govuk-form-group">
-    <h4 class="govuk-heading-s">Figure 2: percentage of the total number of people receiving community social care in Suffolk who were supported by {{data.selectedLocationName or 'Station Road Centre (Sudbury)'}} &ndash; August 2024 to July 2025</h4>
-  <img src="/public/images/data-visualisations/community-social-care/number-of-people-receiving-care/time-series.jpg" alt class="data-visualisation-image">
-</div>
+{# 
+  NOTE:
+  We intentionally do NOT use the ONS chart Nunjucks macro.
 
-<div class="govuk-form-block">
-  <p class="govuk-body data-source">Source: Capacity Tracker from the Department of Health and Social Care (DHSC)</p>
+  Reasons:
+  - Macro requires custom Nunjucks filters/globals not supported cleanly in GOV.UK Prototype Kit
+  - Caused conflicts with tojson / extend functions
+  - We instead render the same HTML structure manually and pass Highcharts config via JSON.
+
+  This approach is:
+  - More stable
+  - Easier to debug
+  - Compatible with scoped ONS CSS
+#}
+<div class="govuk-form-group ons-scope">
+
+  <div data-highcharts-base-chart data-highcharts-type="{{chart.chartType}}" data-highcharts-theme="{{chart.theme}}" data-highcharts-title="{{chart.title}}" data-highcharts-id="{{chart.id}}">
+    <figure class="ons-chart" aria-describedby="chart-audio-description-{{chart.id}}">
+      <h2 class="govuk-heading-s">{{chart.title}}</h2>
+      {% if chart.subtitle %}
+      <h3 class="ons-chart__subtitle">{{chart.subtitle}}</h3>
+      {% endif %}
+      <p class="ons-u-vh" id="chart-audio-description-{{chart.id}}">{{chart.description}}</p>
+
+      <div data-highcharts-chart-container class="ons-chart__container" tabindex="0" role="region" aria-label="chart container" aria-describedby="chart-instructions-{{chart.id}}">
+        
+        <div id="chart-instructions-{{chart.id}}" class="ons-u-vh">
+          Use the Tab key to move focus into the chart. Once inside, use the arrow keys to navigate between data points. As you move, tooltips will be announced to describe each point. Touch device users, explore by touch or with swipe gestures.
+        </div>
+
+        <div data-highcharts-chart class="ons-chart__chart">
+
+        </div>
+
+      </div>
+
+      {% if chart.fallbackImageUrl %}
+      {% set fallbackImageId = "fallback-image--" + chart.id %}
+      <noscript id="{{fallbackImageId}}">
+        <img src="{{chart.fallbackImageUrl}}" alt="{{chart.fallbackImageAlt or 'Fallback image for the chart as JavaScript is disabled'}}" class="ons-chart__fallback-image">
+      </noscript>
+      {% endif %}
+      {% if chart.caption %}
+      <figcaption class="ons-chart__caption">{{chart.caption}}</figcaption>
+      {% endif %}
+    </figure>
+
+    <script type="application/json" data-highcharts-config--{{chart.id}}>
+      {{highchartsConfig | safe}}
+    </script>
+  </div>
+
 </div>

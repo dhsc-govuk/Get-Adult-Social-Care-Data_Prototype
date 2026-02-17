@@ -7,6 +7,8 @@ module.exports = {
   "v10CareProvidersLocationsAndServices": "v10CareProvidersLocationsAndServicesData",
   "v10CareHomeBedsAndOccupancyData": require('./v10/residential-care/care-home-beds-and-occupancy.json'),
   "v10CareHomeBedsAndOccupancy": "v10CareHomeBedsAndOccupancyData",
+  "v10numberOfAdultsReceivingCommunitySocialCareData": require('./v10/residential-care/number-of-adults-receiving-community-social-care.json'),
+  "v10numberOfAdultsReceivingCommunitySocialCare": "v10numberOfAdultsReceivingCommunitySocialCareData",
   "v10localAuthorityFundingForAdultSocialCareData": require('./v10/funding/local-authority-funding-for-adult-social-care.json'),
   "v10localAuthorityFundingForAdultSocialCare": "v10localAuthorityFundingForAdultSocialCareData",
   "v10populationSizeAndAgeGroupPercentagesData": require('./v10/population-needs/population-size.json'),
