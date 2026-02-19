@@ -61,7 +61,7 @@ module.exports = function(router) {
     }
 
     // Routing - send to the chosen entry point
-    if (entryPoint == "Start page (private beta)") {
+    if (entryPoint == "Start page on GOV.UK (public beta)") {
       res.redirect('/' + version + '/' + 'start')
     }
     else if (entryPoint == "GOV.UK One Login") {
@@ -663,8 +663,8 @@ module.exports = function(router) {
    * Footer, service information and system pages
   *****/
 
-  router.get('/' + version + '/' + 'footer/disclaimer', function (req, res) {
-    res.render(version + '/footer/disclaimer', {
+  router.get('/' + version + '/' + 'footer/terms-of-use', function (req, res) {
+    res.render(version + '/footer/terms-of-use', {
       'backLink' : req.query.backLink
 		})
   })
