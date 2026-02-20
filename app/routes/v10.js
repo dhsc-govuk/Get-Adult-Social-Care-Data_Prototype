@@ -462,11 +462,11 @@ module.exports = function(router) {
       tooltip: {
         useHTML: false,
         headerFormat: "",
-        pointFormat: "<b>{point.name}</b><br>{series.name}: <b>{point.y:.1f}%</b>"
+        pointFormat: "<b>{point.name}</b><br/>{series.name}: <b>{point.y}%</b>"
       },
       yAxis: {
         title: { text: "Proportion delivered by " + selectedLocationName },
-        labels: { format: "{value:.1f}%" }
+        labels: { format: "{value}%" }
       },
       xAxis: {
         title: { text: "Month" },
