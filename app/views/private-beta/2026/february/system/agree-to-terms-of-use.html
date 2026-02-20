@@ -1,0 +1,23 @@
+{% extends "private-beta/2026/february/layouts/default.html" %}
+
+{% set pageName = "Terms of use" %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  
+  <div class="govuk-grid-column-two-thirds">
+
+    <form action="consent" method="post" novalidate>
+      <h1 class="govuk-heading-xl">{{pageName}}</h1>
+      <p class="govuk-body">You must agree to agree to our <a href="footer/terms-of-use" class="govuk-link">Terms of use</a> to use this service.</p>
+
+      <div class="govuk-form-block">
+        <button type="submit" class="govuk-button" data-module="govuk-button">Agree</button>
+      </div>
+
+    </form>
+
+  </div>
+
+</div>
+{% endblock %}

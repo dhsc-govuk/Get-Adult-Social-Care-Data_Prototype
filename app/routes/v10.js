@@ -1097,8 +1097,8 @@ module.exports = function(router) {
    * Footer, service information and system pages
   *****/
 
-  router.get('/' + version + '/' + 'footer/disclaimer', function (req, res) {
-    res.render(version + '/footer/disclaimer', {
+  router.get('/' + version + '/' + 'footer/terms-of-use', function (req, res) {
+    res.render(version + '/footer/terms-of-use', {
       'backLink' : req.query.backLink
 		})
   })
