@@ -3,6 +3,7 @@ module.exports = function(router) {
   var version = 'v10';
   const providerLocations = require('../data/v10/provider-locations.json');
   const numberOfAdultsReceivingCommunitySocialCare = require('../data/v10/residential-care/number-of-adults-receiving-community-social-care.json');
+  const localAuthorityFundingForAdultSocialCare = require('../data/v10/funding/local-authority-funding-for-adult-social-care.json');
   const estimatedPopulationSize = require('../data/v10/future-planning/estimated-population-size.json');
   const estimatedAutisticDisorders = require('../data/v10/future-planning/estimated-autistic-disorders.json');
   const estimatedEarlyOnsetDementia = require('../data/v10/future-planning/estimated-early-onset-dementia.json');
@@ -541,9 +542,78 @@ module.exports = function(router) {
   /*****
    * Signed in
    * Data > Funding
-  *****/
+  *****/  
 
-  // Local authority funding for adult social care
+  // LA funding for adult social care
+  router.get('/' + version + '/' + 'signed-in/topics/financial-spend-and-unpaid-care/financial-spend/data', function (req, res) {
+    
+    // Chart (line chart): LA funding for long-term adult social care - trends over time
+    // BUILD the chart
+    const selectedAgeGroup = req.session.data['ageGroup14'] || 'All age groups'
+    const lowerCaseAgeGroup = selectedAgeGroup.toLowerCase()
+    const chartTitleTextSelectedAgeGroup = selectedAgeGroup === "Aged 18 to 64" || selectedAgeGroup === "Aged 65 and over" ? "people " + lowerCaseAgeGroup : lowerCaseAgeGroup
+    const selectedSupportSetting = req.session.data['supportSetting16'] || 'All types of adult social care'
+    const chartTitleTextselectedSupportSetting = selectedSupportSetting.toLowerCase()
+    const allRows = localAuthorityFundingForAdultSocialCare["Local authority funding for long-term adult social care – trends over time"] || []
+    const filteredRows = allRows.filter(r => r['Age group'] === selectedAgeGroup && r['Care type or funding method'] === selectedSupportSetting)
+    const sortedRows = filteredRows.slice().sort((a, b) => {
+      const aStart = parseInt(String(a['Financial year']).split(' to ')[0], 10)
+      const bStart = parseInt(String(b['Financial year']).split(' to ')[0], 10)
+      return aStart - bStart
+    })
+    const categories = sortedRows.map(r => String(r['Financial year']))
+    const seriesNames = ['Suffolk', 'East of England (LA average)', 'England (LA average)']
+    const series = seriesNames.map(name => ({
+      name,
+      data: sortedRows.map(r => {
+        const raw = r[name]
+        if (raw === "" || raw === null || typeof raw === "undefined") return null
+        const num = Number(String(raw).replace(/,/g, ''))
+        return Number.isFinite(num) ? num : null
+      }),
+      marker: { enabled: false }
+    }))
+    const onsVersion = require("@ons/design-system/package.json").version
+    // Build the same config structure the macro would have output
+    const config = {
+      chart: { type: "line" },
+      legend: { enabled: true },
+      yAxis: {
+        title: { text: "Total financial spend" },
+        labels: { format: "£{value:,.0f}" }
+      },
+      xAxis: {
+        title: { text: "Financial Year" },
+        categories,
+        type: "category",
+        labels: {}
+      },
+      tooltip: {
+        valuePrefix: "£",
+        valueDecimals: 0
+      },
+      series
+    }
+
+    // RENDER all chart options and JSON
+    res.render(version + "/signed-in/topics/financial-spend-and-unpaid-care/financial-spend/data", {
+      useOnsAssets: true,
+      onsVersion,
+      fundingTrendRows: sortedRows,
+      chart: {
+        chartType: "line",
+        theme: "primary",
+        title: "Figure 1: <abbr title='Local Authority'>LA</abbr> funding for long-term adult social care (" + chartTitleTextselectedSupportSetting + ") for " + chartTitleTextSelectedAgeGroup + " &ndash; Suffolk <abbr title='Local Authority'>LA</abbr>, East of England region and England, financial years 2021 to 2024 (£ thousand)",
+        id: "figure-1-la-funding-for-long-term-adult-social-care-trends-over-time",
+        caption: "Source: Adult Social Care Activity and Finance Report from NHS England",
+        description: "Line chart showing total financial spened for long-term adult social care over time by Suffolk LA, East of England region and England.",
+        fallbackImageUrl: "/public/downloads/v10/funding/la-funding-for-adult-social-care/figure-1-la-funding-for-long-term-adult-social-care-trends-over-time.png",
+        fallbackImageAlt: "Line chart showing total financial spened for long-term adult social care over time by Suffolk LA, East of England region and England."
+      },
+      // IMPORTANT: stringify server-side and pass as a literal string
+      highchartsConfig: JSON.stringify(config)
+    })
+  })
   router.post('/' + version + '/' + 'signed-in/topics/financial-spend-and-unpaid-care/financial-spend/data-update-filters14', function (req, res) {
 
     // Data objects to be retrieved and queried
