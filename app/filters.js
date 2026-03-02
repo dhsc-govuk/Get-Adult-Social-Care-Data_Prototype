@@ -10,6 +10,7 @@ const addFilter = govukPrototypeKit.views.addFilter
 
 // Adds commas to separate thousands, for numbers greater than 999
 addFilter('addcommas', function (content) {
-  // TO DO - add case to handle nothing being there 
-  return content.toLocaleString("en-US") 
+  if (content === null || content === undefined || content === "") return ""
+  const num = Number(content)
+  return Number.isFinite(num) ? num.toLocaleString("en-GB") : content
 })

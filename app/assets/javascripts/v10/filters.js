@@ -33,7 +33,8 @@ window.addEventListener('load', function() {
   $('#dhsc-filter--button-content19').html('Show filters');
 
   // Show the search box for searchable radios
-  $('#radios-search').show();
+  $('#radios-search1').show();
+  $('#radios-search3').show();
 
   // Filter (#0 for GASCD): Care provider locations near postcode CO5 1ST for Shoggins Care Services Limited - User interacts with the filter button
   $('#dhsc-filter--button').on("click", function() {
@@ -981,13 +982,15 @@ window.addEventListener('load', function() {
 // jQuery (END)
 
 // JavaScript (START)
+
+// Filter (#1 for GASCD): Care home bed numbers - Allow users to search the radio button filter choices
 (function () {
     
-  var filterInput = document.getElementById('input-bedtype-radios');
+  var filterInput = document.getElementById('input-bedtype-radios1');
   
   if (!filterInput) return;
 
-  var radiosContainer = document.getElementById('radios-status');
+  var radiosContainer = document.getElementById('radios-status1');
   
   if (!radiosContainer) return;
 
@@ -1011,4 +1014,37 @@ window.addEventListener('load', function() {
   });
   
 })();
+
+// Filter (#3 for GASCD): Care home bed numbers - trends over time - Allow users to search the radio button filter choices
+(function () {
+    
+  var filterInput = document.getElementById('input-bedtype-radios3');
+  
+  if (!filterInput) return;
+
+  var radiosContainer = document.getElementById('radios-status3');
+  
+  if (!radiosContainer) return;
+
+  var items = Array.prototype.slice.call(
+    radiosContainer.querySelectorAll('.govuk-radios__item')
+  );
+
+  filterInput.addEventListener('keyup', function () {
+
+    var query = filterInput.value.toLowerCase().trim();
+
+    items.forEach(function (item) {
+      
+      var labelEl = item.querySelector('label');
+      var text = labelEl ? labelEl.innerText.toLowerCase() : '';
+      var match = text.indexOf(query) !== -1;
+
+      item.style.display = match ? '' : 'none';
+    });
+
+  });
+  
+})();
+
 // JavaScript (END)
