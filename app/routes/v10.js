@@ -362,11 +362,54 @@ module.exports = function(router) {
   // Care home beds and occupancy levels
   router.get('/' + version + '/' + 'signed-in/topics/residential-care/provision-and-occupancy/data', function (req, res) {
     
+    const onsVersion = require("@ons/design-system/package.json").version
+
+    // Chart (bar chart): Care home bed numbers
+    // BUILD the chart
+    const selectedBedType1 = (req.session.data['bedType1'] && String(req.session.data['bedType1']).trim()) || 'All bed types'
+    const rows1 = careHomeBedsAndOccupancy["Care home bed numbers"] || []
+    const selectedBarRow =
+      rows1.find(r => String(r["Care home bed type"] || '').trim() === selectedBedType1)
+      || rows1.find(r => String(r["Care home bed type"] || '').trim() === 'All bed types')
+      || rows1[0]
+    const barCategories = selectedBarRow
+      ? Object.keys(selectedBarRow).filter(k => k !== "Care home bed type")
+      : []
+    const barValues = barCategories.map(k => {
+      const num = Number(selectedBarRow?.[k])
+      return Number.isFinite(num) ? num : null
+    })
+    const barConfig = {
+      chart: { type: "bar" },
+      legend: { enabled: false },
+      yAxis: {
+        title: { text: "Bed numbers per 100,000 adult population" },
+        labels: { format: "{value:,.0f}" }
+      },
+      xAxis: {
+        categories: barCategories,
+        type: "linear"
+      },
+      series: [{
+        name: selectedBarRow?.["Care home bed type"] || selectedBedType1,
+        data: barValues,
+        dataLabels: true
+      }]
+    }
+    const bedTypeLabelLower1 = (selectedBarRow?.["Care home bed type"] || selectedBedType1).toLowerCase()
+    // Dynamically generate the correct URL for the non JavaScript fallback image to match the selected bed type
+    const slug1 = (selectedBarRow?.Indicator || selectedBedType1)
+      .toLowerCase()
+      .replace(/<[^>]+>/g, '')
+      .replace(/&[^;]+;/g, '')
+      .replace(/[^a-z0-9]+/g, '-')
+      .replace(/(^-|-$)/g, '')
+
     // Chart (line chart): Care home bed numbers - trends over time
     // BUILD the chart
-    const selectedBedType = (req.session.data['bedType3'] && String(req.session.data['bedType3']).trim()) || 'All bed types'
-    const rows = careHomeBedsAndOccupancy["Change over time"] || []
-    const selectedRow = rows.find(r => String(r.Indicator || '').trim() === selectedBedType) || rows.find(r => String(r.Indicator || '').trim() === 'All bed types') || rows[0]
+    const selectedBedType2 = (req.session.data['bedType3'] && String(req.session.data['bedType3']).trim()) || 'All bed types'
+    const rows2 = careHomeBedsAndOccupancy["Change over time"] || []
+    const selectedRow = rows2.find(r => String(r.Indicator || '').trim() === selectedBedType2) || rows2.find(r => String(r.Indicator || '').trim() === 'All bed types') || rows2[0]
     const monthIndex = { january: 0, february: 1, march: 2, april: 3, may: 4, june: 5, july: 6, august: 7, september: 8, october: 9, november: 10, december: 11 }
     const parseMonthYear = (label) => {
       const [month, year] = String(label).trim().split(/\s+/)
@@ -385,8 +428,8 @@ module.exports = function(router) {
       if (pa.y !== pb.y) return pa.y - pb.y
       return pa.m - pb.m
     })
-    const series = [{
-      name: selectedRow?.Indicator || selectedBedType,
+    const lineSeries = [{
+      name: selectedRow?.Indicator || selectedBedType2,
       data: categoriesFull.map((label) => {
         const parsed = parseMonthYear(label)
         if (!parsed) return null
@@ -402,11 +445,10 @@ module.exports = function(router) {
       }).filter(Boolean),
       marker: { enabled: false }
     }]
-    const bedTypeLabel = selectedRow?.Indicator || selectedBedType
-    const bedTypeLabelLower = bedTypeLabel.toLowerCase()
-    const onsVersion = require("@ons/design-system/package.json").version
+    const bedTypeLabel = selectedRow?.Indicator || selectedBedType2
+    const bedTypeLabelLower2 = bedTypeLabel.toLowerCase()
     // Build the same config structure the macro would have output
-    const config = {
+    const lineConfig = {
       chart: { type: "line" },
       legend: { enabled: false },
       tooltip: {
@@ -425,10 +467,10 @@ module.exports = function(router) {
           format: "{value:%b %y}"
         }
       },
-      series
+      series: lineSeries
     }
     // Dynamically generate the correct URL for the non JavaScript fallback image to match the selected bed type
-    const slug = (selectedRow?.Indicator || selectedBedType)
+    const slug2 = (selectedRow?.Indicator || selectedBedType2)
       .toLowerCase()
       .replace(/<[^>]+>/g, '')
       .replace(/&[^;]+;/g, '')
@@ -439,21 +481,36 @@ module.exports = function(router) {
     res.render(version + "/signed-in/topics/residential-care/provision-and-occupancy/data", {
       useOnsAssets: true,
       onsVersion,
-      selectedBedType,
-      selectedRow,
-      monthColumns: categoriesFull,
-      chart: {
-        chartType: "line",
+      // Chart (bar chart): Care home bed numbers
+      selectedBedType1,
+      barChart: {
+        chartType: "bar",
         theme: "primary",
-        title: "Figure 2: care home bed numbers per 100,000 adult population (" + bedTypeLabelLower + ") – Suffolk <abbr title='Local Authority'>LA</abbr>, 1 February 2025 to 1 October 2025",
-        id: "figure-2-care-home-bed-numbers-trends-over-time",
+        title: "Figure 1: care home bed numbers per 100,000 adult population (" + bedTypeLabelLower1 + ") – <abbr title='Local Authority'>LA</abbr>s in the East of England, October 2025",
+        id: "figure-1-care-home-bed-numbers",
         caption: "Source: Capacity Tracker from the Department of Health and Social Care (DHSC), population estimates from the Office for National Statistics (ONS)",
-        description: "Line chart showing care home bed numbers per 100,000 adult population for " + (selectedRow?.Indicator || selectedBedType) + " in Suffolk over time.",
-        fallbackImageUrl: "/public/downloads/v10/residential-care/care-home-beds-and-occupancy-levels/figure-2-care-home-bed-numbers-trends-over-time-" + slug + ".png",
-        fallbackImageAlt: "Line chart showing care home bed numbers per 100,000 adult population for " + (selectedRow?.Indicator || selectedBedType) + " in Suffolk over time."
+        description: "Bar chart showing care home bed numbers per 100,000 adult population for " + (selectedBarRow?.Indicator || selectedBedType1) + " in Suffolk LA.",
+        fallbackImageUrl: "/public/downloads/v10/residential-care/care-home-beds-and-occupancy-levels/figure-1-care-home-bed-numbers-" + slug1 + ".png",
+        fallbackImageAlt: "Bar chart showing care home bed numbers per 100,000 adult population for " + (selectedBarRow?.Indicator || selectedBedType1) + " in Suffolk LA."
       },
       // IMPORTANT: stringify server-side and pass as a literal string
-      highchartsConfig: JSON.stringify(config)
+      barHighchartsConfig:JSON.stringify(barConfig),
+      // Chart (line chart): Care home bed numbers - trends over time
+      selectedBedType2,
+      selectedRow,
+      monthColumns: categoriesFull,
+      lineChart: {
+        chartType: "line",
+        theme: "primary",
+        title: "Figure 2: care home bed numbers per 100,000 adult population (" + bedTypeLabelLower2 + ") – Suffolk <abbr title='Local Authority'>LA</abbr>, 1 February 2025 to 1 October 2025",
+        id: "figure-2-care-home-bed-numbers-trends-over-time",
+        caption: "Source: Capacity Tracker from the Department of Health and Social Care (DHSC), population estimates from the Office for National Statistics (ONS)",
+        description: "Line chart showing care home bed numbers per 100,000 adult population for " + (selectedRow?.Indicator || selectedBedType2) + " in Suffolk over time.",
+        fallbackImageUrl: "/public/downloads/v10/residential-care/care-home-beds-and-occupancy-levels/figure-2-care-home-bed-numbers-trends-over-time-" + slug2 + ".png",
+        fallbackImageAlt: "Line chart showing care home bed numbers per 100,000 adult population for " + (selectedRow?.Indicator || selectedBedType2) + " in Suffolk over time."
+      },
+      // IMPORTANT: stringify server-side and pass as a literal string
+      lineHighchartsConfig:JSON.stringify(lineConfig)
     })
   })
   router.post('/' + version + '/' + 'signed-in/topics/residential-care/provision-and-occupancy/data-update-filters15', function (req, res) {
@@ -700,7 +757,7 @@ module.exports = function(router) {
       chart: {
         chartType: "line",
         theme: "primary",
-        title: "Figure 1: <abbr title='Local Authority'>LA</abbr> funding for long-term adult social care (" + chartTitleTextselectedSupportSetting + ") for " + chartTitleTextSelectedAgeGroup + " &ndash; Suffolk <abbr title='Local Authority'>LA</abbr>, East of England region and England, financial years 2021 to 2024",
+        title: "Figure 1: Total funding for long-term adult social care for " + chartTitleTextselectedSupportSetting + " and " + chartTitleTextSelectedAgeGroup + " &ndash; Suffolk <abbr title='Local Authority'>LA</abbr>, East of England region and England, financial years 2021 to 2024",
         id: "figure-1-la-funding-for-long-term-adult-social-care-trends-over-time",
         caption: "Source: Adult Social Care Activity and Finance Report from NHS England",
         description: "Line chart showing total financial spened for long-term adult social care over time by Suffolk LA, East of England region and England.",

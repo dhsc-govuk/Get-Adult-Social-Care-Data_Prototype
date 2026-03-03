@@ -1,12 +1,12 @@
 {% if selectedRow %}
 <div class="moj-scrollable-pane">
 
-  <table class="govuk-table">
-    <caption class="govuk-table__caption">Table 4: care home bed numbers per 100,000 adult population ({{selectedBedType | lower}}) – Suffolk <abbr title="Local Authority">LA</abbr>, 1 February 2025 to 1 October 2025</caption>
+  <table class="govuk-table" data-module="moj-sortable-table">
+    <caption class="govuk-table__caption">Table 4: care home bed numbers per 100,000 adult population ({{selectedBedType2 | lower}}) – Suffolk <abbr title="Local Authority">LA</abbr>, 1 February 2025 to 1 October 2025</caption>
     <thead class="govuk-table__head">
       <tr class="govuk-table__row">
-        <th scope="col" class="govuk-table__header govuk-!-width-one-third">Month</th>
-        <th scope="col" class="govuk-table__header govuk-table__header--numeric">{{selectedBedType}}</th>
+        <th scope="col" class="govuk-table__header govuk-!-width-one-third" aria-sort="none">Month</th>
+        <th scope="col" class="govuk-table__header govuk-table__header--numeric" aria-sort="none">{{selectedBedType2}}</th>
       </tr>
     </thead>
     <tbody class="govuk-table__body">
