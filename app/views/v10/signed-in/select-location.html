@@ -4,7 +4,7 @@
 {% extends "v10/layouts/signed-in-select-location.html" %}
 {% endif %}
 
-{% set pageName = "Select a location from your care provider group" %}
+{% set pageName = "Select your CQC registered office address for your care provider organisation" %}
 
 {% block pageTitle %}
   {% if error %}Error: {% endif %}{{pageName}} – {{serviceName}} – GOV.UK
@@ -49,24 +49,14 @@
     <form action="select-location-non-javascript-post" method="get">
       <fieldset class="govuk-fieldset">
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
-          <h1 class="govuk-fieldset__heading govuk-!-padding-bottom-6">Select a location from your care provider group</h1>
+          <h1 class="govuk-fieldset__heading govuk-!-padding-bottom-6">Select your CQC registered office address for your care provider organisation</h1>
         </legend>
-        <p class="govuk-body">We use the selected location to show you:</p>
+        <p class="govuk-body">We use the selected address to show you:</p>
         <ul class="govuk-list govuk-list--bullet">
-          <li>data about the location</li>
-          <li>local and regional data based on that location</li>
+          <li>data about the address</li>
+          <li>local and regional data based on that address</li>
         </ul>
-        <p class="govuk-body">You can change to another location in your care provider group at any time.</p>
-        <details class="govuk-details">
-          <summary class="govuk-details__summary">
-            <span class="govuk-details__summary-text">Finding your location</span>
-          </summary>
-          
-          <div class="govuk-details__text">
-            Location - the area where the care is provided, for Domiciliary care providers, this will be the area where care in the home is provided.
-          </div>
-
-        </details>
+        <p class="govuk-body">You can change to another address in your care provider group at any time.</p>
           
         <div class="{% if error1 %}govuk-form-group--error {% endif %}search-field search-field-darker" data-radio-buttons-search-filter>
             
@@ -99,7 +89,7 @@
     <form action="/v10/signed-in/select-location-search-and-pagination-validation" method="post" novalidate>
     
       <fieldset class="govuk-fieldset">
-        <legend id="locationRadios" class="hidden">Select a location from your care provider group</legend>
+        <legend id="locationRadios" class="hidden">Select your CQC registered office address for your care provider organisation</legend>
 
         <!-- NON JS RADIO BUTTONS (START) -->
         <div class="govuk-form-group{% if error2 %} govuk-form-group--error{% endif %}" data-non-js-radio-buttons>
@@ -375,24 +365,14 @@
       <div class="govuk-form-group{% if error %} govuk-form-group--error{% endif %}">
         <fieldset class="govuk-fieldset">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
-            <h1 class="govuk-fieldset__heading govuk-!-padding-bottom-6">Select a location from your care provider group</h1>
+            <h1 class="govuk-fieldset__heading govuk-!-padding-bottom-6">Select your CQC registered office address for your care provider organisation</h1>
           </legend>
-          <p class="govuk-body">We use the selected location to show you:</p>
+          <p class="govuk-body">We use the selected address to show you:</p>
           <ul class="govuk-list govuk-list--bullet">
-            <li>data about the location</li>
-            <li>local and regional data based on that location</li>
+            <li>data about the address</li>
+            <li>local and regional data based on that address</li>
           </ul>
-          <p class="govuk-body">You can change to another location in your care provider group at any time.</p>
-          <details class="govuk-details">
-            <summary class="govuk-details__summary">
-              <span class="govuk-details__summary-text">Finding your location</span>
-            </summary>
-            
-            <div class="govuk-details__text">
-              Location - the area where the care is provided, for Domiciliary care providers, this will be the area where care in the home is provided.
-            </div>
-
-          </details>
+          <p class="govuk-body">You can change to another address in your care provider group at any time.</p>
 
           <div class="govuk-form-group{% if error2 %} govuk-form-group--error{% endif %}">
             {% if error2 %}
