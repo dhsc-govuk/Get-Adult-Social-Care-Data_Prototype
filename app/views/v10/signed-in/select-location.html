@@ -30,10 +30,10 @@
         <div class="govuk-error-summary__body">
           <ul class="govuk-list govuk-error-summary__list">
           {% if error1 %}
-          <li><a href="#searchLocation">Search for a location</a></li>
+          <li><a href="#searchLocation">Search for an address</a></li>
           {% endif %}
           {% if error2 %}
-          <li><a href="#locationId-1">Select a location</a></li>
+          <li><a href="#locationId-1">Select an address</a></li>
           {% endif %}
         </ul>
         </div>
@@ -61,15 +61,15 @@
         <div class="{% if error1 %}govuk-form-group--error {% endif %}search-field search-field-darker" data-radio-buttons-search-filter>
             
           <div class="search-input search-input-with-button">
-            <label class="govuk-label" for="searchLocation">Search for a location</label>
+            <label class="govuk-label" for="searchLocation">Search for an address</label>
             {% if error1 %}
-            <span class="govuk-error-message">Search for a location</span>
+            <span class="govuk-error-message">Search for an address</span>
             {% endif %}
             <input class="form-control" id="searchLocation" name="searchLocation" type="text" autocomplete="off" value="">
           </div>
 
           <div class="search-submit">
-            <button class="button" type="submit" id="searchLocationSubmit" name="searchLocationSubmit" value="Search for a location">Search for a location</button>
+            <button class="button" type="submit" id="searchLocationSubmit" name="searchLocationSubmit" value="Search for an address">Search for an address</button>
           </div>
 
         </div>
@@ -94,7 +94,7 @@
         <!-- NON JS RADIO BUTTONS (START) -->
         <div class="govuk-form-group{% if error2 %} govuk-form-group--error{% endif %}" data-non-js-radio-buttons>
           {% if error2 %}
-          <span class="govuk-error-message">Select a location</span>
+          <span class="govuk-error-message">Select an address</span>
           {% endif %}
 
           <div class="govuk-radios" data-module="govuk-radios">
@@ -196,7 +196,7 @@
         <!-- JS RADIO BUTTONS (START) -->
         <div class="govuk-form-group{% if error2 %} govuk-form-group--error{% endif %} hidden" hidden aria-hidden="true" data-radio-buttons>
           {% if error2 %}
-          <span class="govuk-error-message">Select a location</span>
+          <span class="govuk-error-message">Select an address</span>
           {% endif %}
 
           <div class="govuk-radios" data-module="govuk-radios">
@@ -376,7 +376,7 @@
 
           <div class="govuk-form-group{% if error2 %} govuk-form-group--error{% endif %}">
             {% if error2 %}
-            <span class="govuk-error-message">Select a location</span>
+            <span class="govuk-error-message">Select an address</span>
             {% endif %}
 
             <div class="govuk-radios" data-module="govuk-radios">

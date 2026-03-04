@@ -368,10 +368,7 @@ module.exports = function(router) {
     // BUILD the chart
     const selectedBedType1 = (req.session.data['bedType1'] && String(req.session.data['bedType1']).trim()) || 'All bed types'
     const rows1 = careHomeBedsAndOccupancy["Care home bed numbers"] || []
-    const selectedBarRow =
-      rows1.find(r => String(r["Care home bed type"] || '').trim() === selectedBedType1)
-      || rows1.find(r => String(r["Care home bed type"] || '').trim() === 'All bed types')
-      || rows1[0]
+    const selectedBarRow = rows1.find(r => String(r["Care home bed type"] || '').trim() === selectedBedType1) || rows1.find(r => String(r["Care home bed type"] || '').trim() === 'All bed types') || rows1[0]
     const barCategories = selectedBarRow
       ? Object.keys(selectedBarRow).filter(k => k !== "Care home bed type")
       : []
@@ -383,7 +380,7 @@ module.exports = function(router) {
       chart: { type: "bar" },
       legend: { enabled: false },
       yAxis: {
-        title: { text: "Bed numbers per 100,000 adult population" },
+        title: { text: "Care home beds per 100,000 adult population" },
         labels: { format: "{value:,.0f}" }
       },
       xAxis: {
@@ -457,7 +454,7 @@ module.exports = function(router) {
         pointFormat: "<b>{point.name}</b><br/>{series.name}: <b>{point.y:,.0f}</b>"
       },
       yAxis: {
-        title: { text: "Bed numbers per 100,000 adult population" },
+        title: { text: "Care home beds per 100,000 adult population" },
         labels: { format: "{value:,.0f}" }
       },
       xAxis: {
@@ -483,6 +480,8 @@ module.exports = function(router) {
       onsVersion,
       // Chart (bar chart): Care home bed numbers
       selectedBedType1,
+      selectedBarRow,
+      bedColumns: barCategories,
       barChart: {
         chartType: "bar",
         theme: "primary",
@@ -635,6 +634,7 @@ module.exports = function(router) {
     res.render(version + "/signed-in/topics/residential-care/number-of-people-receiving-care/data", {
       table: dataset,
       tableRows: points,
+      selectedLocationName,
       useOnsAssets: true,
       onsVersion,
       chart: {
