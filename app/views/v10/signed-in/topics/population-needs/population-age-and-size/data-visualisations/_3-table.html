@@ -1,7 +1,7 @@
 <div class="moj-scrollable-pane">
 
   <table class="govuk-table" data-module="moj-sortable-table">
-    <caption class="govuk-table__caption">Table 3: age group percentages for older age groups &ndash; <abbr title="Local Authority">LA</abbr>s in the East of England, mid-2024</caption>
+    <caption class="govuk-table__caption">Table 3: age group percentages for older age groups &ndash; <abbr title="Local Authority">LA</abbr>s in the East of England, mid-2025</caption>
     {% if data.ageGroup5 %}
     <thead class="govuk-table__head">
       <tr class="govuk-table__row">
@@ -27,19 +27,12 @@
         {% for param in data.ageGroup5 %}{% if param == 'Aged 75 to 84' %}<td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="7.4">7.4&#37;</td>{% endif %}{% endfor %}
         {% for param in data.ageGroup5 %}{% if param == 'Aged 85 and over' %}<td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="2.8">2.8&#37;</td>{% endif %}{% endfor %} 
       </tr>
-      <tr class="govuk-table__row">
-        <td scope="row" class="govuk-table__cell">Southend-on-Sea</td>
-        {% for param in data.ageGroup5 %}{% if param == 'Aged 18 to 64' %}<td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="59.3">59.3&#37;</td>{% endif %}{% endfor %}
-        {% for param in data.ageGroup5 %}{% if param == 'Aged 65 to 74' %}<td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="9.3">9.3&#37;</td>{% endif %}{% endfor %}
-        {% for param in data.ageGroup5 %}{% if param == 'Aged 75 to 84' %}<td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="7.1">7.1&#37;</td>{% endif %}{% endfor %}
-        {% for param in data.ageGroup5 %}{% if param == 'Aged 85 and over' %}<td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="2.8">2.8&#37;</td>{% endif %}{% endfor %} 
-      </tr>
-      <tr class="govuk-table__row">
-        <td scope="row" class="govuk-table__cell">Norfolk</td>
-        {% for param in data.ageGroup5 %}{% if param == 'Aged 18 to 64' %}<td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="56.8">56.8&#37;</td>{% endif %}{% endfor %}
-        {% for param in data.ageGroup5 %}{% if param == 'Aged 65 to 74' %}<td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="12.0">12.0&#37;</td>{% endif %}{% endfor %}
-        {% for param in data.ageGroup5 %}{% if param == 'Aged 75 to 84' %}<td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="9.5">9.5&#37;</td>{% endif %}{% endfor %}
-        {% for param in data.ageGroup5 %}{% if param == 'Aged 85 and over' %}<td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="3.5">3.5&#37;</td>{% endif %}{% endfor %} 
+       <tr class="govuk-table__row">
+        <td scope="row" class="govuk-table__cell">Bedford</td>
+        {% for param in data.ageGroup5 %}{% if param == 'Aged 18 to 64' %}<td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="60.1">60.1&#37;</td>{% endif %}{% endfor %}
+        {% for param in data.ageGroup5 %}{% if param == 'Aged 65 to 74' %}<td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="8.6">8.6&#37;</td>{% endif %}{% endfor %}
+        {% for param in data.ageGroup5 %}{% if param == 'Aged 75 to 84' %}<td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="6.1">6.1&#37;</td>{% endif %}{% endfor %}
+        {% for param in data.ageGroup5 %}{% if param == 'Aged 85 and over' %}<td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="2.4">2.4&#37;</td>{% endif %}{% endfor %} 
       </tr>
       <tr class="govuk-table__row">
         <td scope="row" class="govuk-table__cell">Cambridgeshire</td>
@@ -49,18 +42,18 @@
         {% for param in data.ageGroup5 %}{% if param == 'Aged 85 and over' %}<td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="2.6">2.6&#37;</td>{% endif %}{% endfor %} 
       </tr>
       <tr class="govuk-table__row">
-        <td class="govuk-table__cell"><strong>Suffolk</strong></td>
-        {% for param in data.ageGroup5 %}{% if param == 'Aged 18 to 64' %}<td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="56.4">56.4&#37;</td>{% endif %}{% endfor %}
-        {% for param in data.ageGroup5 %}{% if param == 'Aged 65 to 74' %}<td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="11.6">11.6&#37;</td>{% endif %}{% endfor %}
-        {% for param in data.ageGroup5 %}{% if param == 'Aged 75 to 84' %}<td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="9.2">9.2&#37;</td>{% endif %}{% endfor %}
-        {% for param in data.ageGroup5 %}{% if param == 'Aged 85 and over' %}<td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="3.4">3.4&#37;</td>{% endif %}{% endfor %} 
-      </tr>
-      <tr class="govuk-table__row">
         <td scope="row" class="govuk-table__cell">Central Bedfordshire</td>
         {% for param in data.ageGroup5 %}{% if param == 'Aged 18 to 64' %}<td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="59.6">59.6&#37;</td>{% endif %}{% endfor %}
         {% for param in data.ageGroup5 %}{% if param == 'Aged 65 to 74' %}<td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="9.3">9.3&#37;</td>{% endif %}{% endfor %}
         {% for param in data.ageGroup5 %}{% if param == 'Aged 75 to 84' %}<td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="6.6">6.6&#37;</td>{% endif %}{% endfor %}
         {% for param in data.ageGroup5 %}{% if param == 'Aged 85 and over' %}<td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="2.3">2.3&#37;</td>{% endif %}{% endfor %} 
+      </tr>
+      <tr class="govuk-table__row">
+        <td scope="row" class="govuk-table__cell">Essex</td>
+        {% for param in data.ageGroup5 %}{% if param == 'Aged 18 to 64' %}<td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="58.1">58.1&#37;</td>{% endif %}{% endfor %}
+        {% for param in data.ageGroup5 %}{% if param == 'Aged 65 to 74' %}<td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="10.0">10.0&#37;</td>{% endif %}{% endfor %}
+        {% for param in data.ageGroup5 %}{% if param == 'Aged 75 to 84' %}<td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="7.9">7.9&#37;</td>{% endif %}{% endfor %}
+        {% for param in data.ageGroup5 %}{% if param == 'Aged 85 and over' %}<td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="2.9">2.9&#37;</td>{% endif %}{% endfor %} 
       </tr>
       <tr class="govuk-table__row">
         <td scope="row" class="govuk-table__cell">Hertfordshire</td>
@@ -70,11 +63,18 @@
         {% for param in data.ageGroup5 %}{% if param == 'Aged 85 and over' %}<td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="2.7">2.7&#37;</td>{% endif %}{% endfor %} 
       </tr>
       <tr class="govuk-table__row">
-        <td scope="row" class="govuk-table__cell">Thurrock</td>
-        {% for param in data.ageGroup5 %}{% if param == 'Aged 18 to 64' %}<td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="60.9">60.9&#37;</td>{% endif %}{% endfor %}
-        {% for param in data.ageGroup5 %}{% if param == 'Aged 65 to 74' %}<td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="7.1">7.1&#37;</td>{% endif %}{% endfor %}
-        {% for param in data.ageGroup5 %}{% if param == 'Aged 75 to 84' %}<td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="4.8">4.8&#37;</td>{% endif %}{% endfor %}
+        <td scope="row" class="govuk-table__cell">Luton</td>
+        {% for param in data.ageGroup5 %}{% if param == 'Aged 18 to 64' %}<td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="62.6">62.6&#37;</td>{% endif %}{% endfor %}
+        {% for param in data.ageGroup5 %}{% if param == 'Aged 65 to 74' %}<td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="6.1">6.1&#37;</td>{% endif %}{% endfor %}
+        {% for param in data.ageGroup5 %}{% if param == 'Aged 75 to 84' %}<td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="3.6">3.6&#37;</td>{% endif %}{% endfor %}
         {% for param in data.ageGroup5 %}{% if param == 'Aged 85 and over' %}<td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="1.6">1.6&#37;</td>{% endif %}{% endfor %} 
+      </tr>
+      <tr class="govuk-table__row">
+        <td scope="row" class="govuk-table__cell">Norfolk</td>
+        {% for param in data.ageGroup5 %}{% if param == 'Aged 18 to 64' %}<td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="56.8">56.8&#37;</td>{% endif %}{% endfor %}
+        {% for param in data.ageGroup5 %}{% if param == 'Aged 65 to 74' %}<td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="12.0">12.0&#37;</td>{% endif %}{% endfor %}
+        {% for param in data.ageGroup5 %}{% if param == 'Aged 75 to 84' %}<td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="9.5">9.5&#37;</td>{% endif %}{% endfor %}
+        {% for param in data.ageGroup5 %}{% if param == 'Aged 85 and over' %}<td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="3.5">3.5&#37;</td>{% endif %}{% endfor %} 
       </tr>
       <tr class="govuk-table__row">
         <td scope="row" class="govuk-table__cell">Peterborough</td>
@@ -84,25 +84,25 @@
         {% for param in data.ageGroup5 %}{% if param == 'Aged 85 and over' %}<td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="1.9">1.9&#37;</td>{% endif %}{% endfor %} 
       </tr>
       <tr class="govuk-table__row">
-        <td scope="row" class="govuk-table__cell">Luton</td>
-        {% for param in data.ageGroup5 %}{% if param == 'Aged 18 to 64' %}<td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="62.6">62.6&#37;</td>{% endif %}{% endfor %}
-        {% for param in data.ageGroup5 %}{% if param == 'Aged 65 to 74' %}<td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="6.1">6.1&#37;</td>{% endif %}{% endfor %}
-        {% for param in data.ageGroup5 %}{% if param == 'Aged 75 to 84' %}<td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="3.6">3.6&#37;</td>{% endif %}{% endfor %}
+        <td scope="row" class="govuk-table__cell">Southend-on-Sea</td>
+        {% for param in data.ageGroup5 %}{% if param == 'Aged 18 to 64' %}<td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="59.3">59.3&#37;</td>{% endif %}{% endfor %}
+        {% for param in data.ageGroup5 %}{% if param == 'Aged 65 to 74' %}<td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="9.3">9.3&#37;</td>{% endif %}{% endfor %}
+        {% for param in data.ageGroup5 %}{% if param == 'Aged 75 to 84' %}<td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="7.1">7.1&#37;</td>{% endif %}{% endfor %}
+        {% for param in data.ageGroup5 %}{% if param == 'Aged 85 and over' %}<td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="2.8">2.8&#37;</td>{% endif %}{% endfor %} 
+      </tr>      
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell"><strong>Suffolk</strong></td>
+        {% for param in data.ageGroup5 %}{% if param == 'Aged 18 to 64' %}<td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="56.4">56.4&#37;</td>{% endif %}{% endfor %}
+        {% for param in data.ageGroup5 %}{% if param == 'Aged 65 to 74' %}<td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="11.6">11.6&#37;</td>{% endif %}{% endfor %}
+        {% for param in data.ageGroup5 %}{% if param == 'Aged 75 to 84' %}<td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="9.2">9.2&#37;</td>{% endif %}{% endfor %}
+        {% for param in data.ageGroup5 %}{% if param == 'Aged 85 and over' %}<td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="3.4">3.4&#37;</td>{% endif %}{% endfor %} 
+      </tr>
+      <tr class="govuk-table__row">
+        <td scope="row" class="govuk-table__cell">Thurrock</td>
+        {% for param in data.ageGroup5 %}{% if param == 'Aged 18 to 64' %}<td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="60.9">60.9&#37;</td>{% endif %}{% endfor %}
+        {% for param in data.ageGroup5 %}{% if param == 'Aged 65 to 74' %}<td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="7.1">7.1&#37;</td>{% endif %}{% endfor %}
+        {% for param in data.ageGroup5 %}{% if param == 'Aged 75 to 84' %}<td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="4.8">4.8&#37;</td>{% endif %}{% endfor %}
         {% for param in data.ageGroup5 %}{% if param == 'Aged 85 and over' %}<td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="1.6">1.6&#37;</td>{% endif %}{% endfor %} 
-      </tr>
-      <tr class="govuk-table__row">
-        <td scope="row" class="govuk-table__cell">Bedford</td>
-        {% for param in data.ageGroup5 %}{% if param == 'Aged 18 to 64' %}<td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="60.1">60.1&#37;</td>{% endif %}{% endfor %}
-        {% for param in data.ageGroup5 %}{% if param == 'Aged 65 to 74' %}<td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="8.6">8.6&#37;</td>{% endif %}{% endfor %}
-        {% for param in data.ageGroup5 %}{% if param == 'Aged 75 to 84' %}<td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="6.1">6.1&#37;</td>{% endif %}{% endfor %}
-        {% for param in data.ageGroup5 %}{% if param == 'Aged 85 and over' %}<td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="2.4">2.4&#37;</td>{% endif %}{% endfor %} 
-      </tr>
-      <tr class="govuk-table__row">
-        <td scope="row" class="govuk-table__cell">Essex</td>
-        {% for param in data.ageGroup5 %}{% if param == 'Aged 18 to 64' %}<td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="58.1">58.1&#37;</td>{% endif %}{% endfor %}
-        {% for param in data.ageGroup5 %}{% if param == 'Aged 65 to 74' %}<td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="10.0">10.0&#37;</td>{% endif %}{% endfor %}
-        {% for param in data.ageGroup5 %}{% if param == 'Aged 75 to 84' %}<td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="7.9">7.9&#37;</td>{% endif %}{% endfor %}
-        {% for param in data.ageGroup5 %}{% if param == 'Aged 85 and over' %}<td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="2.9">2.9&#37;</td>{% endif %}{% endfor %} 
       </tr>
     </tbody>
     {% else %}
@@ -131,18 +131,11 @@
         <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="2.8">2.8&#37;</td> 
       </tr>
       <tr class="govuk-table__row">
-        <td scope="row" class="govuk-table__cell">Southend-on-Sea</td>
-        <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="59.3">59.3&#37;</td>
-        <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="9.3">9.3&#37;</td>
-        <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="7.1">7.1&#37;</td>
-        <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="2.8">2.8&#37;</td> 
-      </tr>
-      <tr class="govuk-table__row">
-        <td scope="row" class="govuk-table__cell">Norfolk</td>
-        <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="56.8">56.8&#37;</td>
-        <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="12.0">12.0&#37;</td>
-        <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="9.5">9.5&#37;</td>
-        <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="3.5">3.5&#37;</td> 
+        <td scope="row" class="govuk-table__cell">Bedford</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="60.1">60.1&#37;</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="8.6">8.6&#37;</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="6.1">6.1&#37;</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="2.4">2.4&#37;</td> 
       </tr>
       <tr class="govuk-table__row">
         <td scope="row" class="govuk-table__cell">Cambridgeshire</td>
@@ -152,18 +145,18 @@
         <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="2.6">2.6&#37;</td> 
       </tr>
       <tr class="govuk-table__row">
-        <td class="govuk-table__cell"><strong>Suffolk</strong></td>
-        <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="56.4">56.4&#37;</td>
-        <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="11.6">11.6&#37;</td>
-        <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="9.2">9.2&#37;</td>
-        <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="3.4">3.4&#37;</td> 
-      </tr>
-      <tr class="govuk-table__row">
         <td scope="row" class="govuk-table__cell">Central Bedfordshire</td>
         <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="59.6">59.6&#37;</td>
         <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="9.3">9.3&#37;</td>
         <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="6.6">6.6&#37;</td>
         <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="2.3">2.3&#37;</td> 
+      </tr>
+      <tr class="govuk-table__row">
+        <td scope="row" class="govuk-table__cell">Essex</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="58.1">58.1&#37;</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="10.0">10.0&#37;</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="7.9">7.9&#37;</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="2.9">2.9&#37;</td> 
       </tr>
       <tr class="govuk-table__row">
         <td scope="row" class="govuk-table__cell">Hertfordshire</td>
@@ -173,12 +166,19 @@
         <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="2.7">2.7&#37;</td> 
       </tr>
       <tr class="govuk-table__row">
-        <td scope="row" class="govuk-table__cell">Thurrock</td>
-        <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="60.9">60.9&#37;</td>
-        <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="7.1">7.1&#37;</td>
-        <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="4.8">4.8&#37;</td>
+        <td scope="row" class="govuk-table__cell">Luton</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="62.6">62.6&#37;</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="6.1">6.1&#37;</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="3.6">3.6&#37;</td>
         <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="1.6">1.6&#37;</td> 
       </tr>
+      <tr class="govuk-table__row">
+        <td scope="row" class="govuk-table__cell">Norfolk</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="56.8">56.8&#37;</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="12.0">12.0&#37;</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="9.5">9.5&#37;</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="3.5">3.5&#37;</td> 
+      </tr>      
       <tr class="govuk-table__row">
         <td scope="row" class="govuk-table__cell">Peterborough</td>
         <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="59.9">59.9&#37;</td>
@@ -187,25 +187,25 @@
         <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="1.9">1.9&#37;</td> 
       </tr>
       <tr class="govuk-table__row">
-        <td scope="row" class="govuk-table__cell">Luton</td>
-        <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="62.6">62.6&#37;</td>
-        <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="6.1">6.1&#37;</td>
-        <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="3.6">3.6&#37;</td>
+        <td scope="row" class="govuk-table__cell">Southend-on-Sea</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="59.3">59.3&#37;</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="9.3">9.3&#37;</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="7.1">7.1&#37;</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="2.8">2.8&#37;</td> 
+      </tr>
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell"><strong>Suffolk</strong></td>
+        <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="56.4">56.4&#37;</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="11.6">11.6&#37;</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="9.2">9.2&#37;</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="3.4">3.4&#37;</td> 
+      </tr>
+      <tr class="govuk-table__row">
+        <td scope="row" class="govuk-table__cell">Thurrock</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="60.9">60.9&#37;</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="7.1">7.1&#37;</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="4.8">4.8&#37;</td>
         <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="1.6">1.6&#37;</td> 
-      </tr>
-      <tr class="govuk-table__row">
-        <td scope="row" class="govuk-table__cell">Bedford</td>
-        <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="60.1">60.1&#37;</td>
-        <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="8.6">8.6&#37;</td>
-        <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="6.1">6.1&#37;</td>
-        <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="2.4">2.4&#37;</td> 
-      </tr>
-      <tr class="govuk-table__row">
-        <td scope="row" class="govuk-table__cell">Essex</td>
-        <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="58.1">58.1&#37;</td>
-        <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="10.0">10.0&#37;</td>
-        <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="7.9">7.9&#37;</td>
-        <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="2.9">2.9&#37;</td> 
       </tr>
     </tbody>
     {% endif %}
