@@ -366,32 +366,55 @@ module.exports = function(router) {
 
     // Chart (bar chart): Care home bed numbers
     // BUILD the chart
-    const selectedBedType1 = (req.session.data['bedType1'] && String(req.session.data['bedType1']).trim()) || 'All bed types'
+    const selectedBedType1 = (req.session.data["bedType1"] && String(req.session.data["bedType1"]).trim()) || "All bed types"
     const rows1 = careHomeBedsAndOccupancy["Care home bed numbers"] || []
-    const selectedBarRow = rows1.find(r => String(r["Care home bed type"] || '').trim() === selectedBedType1) || rows1.find(r => String(r["Care home bed type"] || '').trim() === 'All bed types') || rows1[0]
-    const barCategories = selectedBarRow
-      ? Object.keys(selectedBarRow).filter(k => k !== "Care home bed type")
-      : []
-    const barValues = barCategories.map(k => {
-      const num = Number(selectedBarRow?.[k])
-      return Number.isFinite(num) ? num : null
+    const selectedBarRow = rows1.find((r) => String(r["Care home bed type"] || "").trim() === selectedBedType1) || rows1.find((r) => String(r["Care home bed type"] || "").trim() === "All bed types") || rows1[0]
+    const barKeys = selectedBarRow ? Object.keys(selectedBarRow).filter((k) => k !== "Care home bed type") : []
+    const barCategories = barKeys.map((k) => k === "Suffolk" ? "<strong>Suffolk</strong>" : k)
+    const secondaryBarColour = "#959495"
+    const primaryBarColour = "#1F6095"
+    const barData = barKeys.map((key) => {
+      const raw = selectedBarRow?.[key]
+      const num = Number(raw)
+      const y = Number.isFinite(num) ? num : null
+      return {
+        y,
+        color: key === "Suffolk" ? primaryBarColour : secondaryBarColour
+      }
     })
     const barConfig = {
       chart: { type: "bar" },
       legend: { enabled: false },
+      tooltip: {
+        headerFormat: "",
+        pointFormat: "<b>{point.category}</b><br/>{series.name}: <b>{point.y:,.0f}</b>"
+      },
       yAxis: {
         title: { text: "Care home beds per 100,000 adult population" },
         labels: { format: "{value:,.0f}" }
       },
       xAxis: {
         categories: barCategories,
-        type: "linear"
+        type: "category",
+        labels: {
+          useHTML: true
+        }
       },
-      series: [{
-        name: selectedBarRow?.["Care home bed type"] || selectedBedType1,
-        data: barValues,
-        dataLabels: true
-      }]
+      plotOptions: {
+        series: {
+          dataLabels: {
+            enabled: true,
+            format: "{y:,.0f}"
+          },
+          states: { inactive: { opacity: 1 } }
+        }
+      },
+      series: [
+        {
+          name: selectedBarRow?.["Care home bed type"] || selectedBedType1,
+          data: barData
+        }
+      ]
     }
     const bedTypeLabelLower1 = (selectedBarRow?.["Care home bed type"] || selectedBedType1).toLowerCase()
     // Dynamically generate the correct URL for the non JavaScript fallback image to match the selected bed type
@@ -415,9 +438,7 @@ module.exports = function(router) {
       if (!Number.isFinite(y) || typeof m === "undefined") return null
       return { y, m }
     }
-    const categoriesFull = selectedRow
-      ? Object.keys(selectedRow).filter(k => k !== "Indicator")
-      : []
+    const categoriesFull = selectedRow ? Object.keys(selectedRow).filter(k => k !== "Indicator") : []
     categoriesFull.sort((a, b) => {
       const pa = parseMonthYear(a)
       const pb = parseMonthYear(b)
@@ -481,7 +502,7 @@ module.exports = function(router) {
       // Chart (bar chart): Care home bed numbers
       selectedBedType1,
       selectedBarRow,
-      bedColumns: barCategories,
+      bedColumns: barKeys,
       barChart: {
         chartType: "bar",
         theme: "primary",
