@@ -49,21 +49,14 @@ module.exports = function(router) {
         req.session.data['locations'] = "1"
         req.session.data['postAuthenticationURL'] = "home"
       }
-      // For 'Number of locations' is '2 to 20'
-      else if (numberOfLocations == "2 to 20 (select a location)") {
+      // For 'Number of locations' is '2 to 10'
+      else if (numberOfLocations == "2 to 10 (select an address)") {
         req.session.data['locations'] = ""
         req.session.data['selectedLocationName'] = ""
         req.session.data['justSignedIn'] = "true"
         req.session.data['postAuthenticationURL'] = "select-location?searchRequired=false&paginationRequired=false"
       }
-      // For 'Number of locations' is '21 to 100'
-      else if (numberOfLocations == "21 to 100 (select a location with search)") {
-        req.session.data['locations'] = ""
-        req.session.data['selectedLocationName'] = ""
-        req.session.data['justSignedIn'] = "true"
-        req.session.data['postAuthenticationURL'] = "select-location?searchRequired=true&paginationRequired=false"
-      }
-      // For 'Number of locations' is '101 or more'
+      // For 'Number of locations' is '11 or more'
       else {
         req.session.data['locations'] = ""
         req.session.data['selectedLocationName'] = ""
@@ -217,6 +210,16 @@ module.exports = function(router) {
       'error2' : req.query.error2,
       'page1' : req.query.page1,
       'page2' : req.query.page2,
+      'page3' : req.query.page3,
+      'page4' : req.query.page4,
+      'page5' : req.query.page5,
+      'page6' : req.query.page6,
+      'page7' : req.query.page7,
+      'page8' : req.query.page8,
+      'page9' : req.query.page9,
+      'page10' : req.query.page10,
+      'page11' : req.query.page11,
+      'page12' : req.query.page12,
       'searchLocation' : req.query.searchLocation,
       'updateMyLocation' : req.query.updateMyLocation
 		})

@@ -24,8 +24,8 @@
               <label class="govuk-label govuk-checkboxes__label" for="bedType2_1">All bed types</label>
             </li>
             <li class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" id="bedType2_2" name="bedType2" type="checkbox" value="Community care bed" aria-describedby="bedType2-2-item-hint"{% for param in data.bedType2 %}{% if param == 'Community care bed' %} checked{% endif %}{% endfor %}>
-              <label class="govuk-label govuk-checkboxes__label" for="bedType2_2">Community care bed</label>
+              <input class="govuk-checkboxes__input" id="bedType2_2" name="bedType2" type="checkbox" value="Community care" aria-describedby="bedType2-2-item-hint"{% for param in data.bedType2 %}{% if param == 'Community care' %} checked{% endif %}{% endfor %}>
+              <label class="govuk-label govuk-checkboxes__label" for="bedType2_2">Community care</label>
 
               <div id="bedType2-2-item-hint" class="govuk-hint govuk-checkboxes__hint">
                 For patients leaving hospital who are not ready to go home needing 24 hour support.
