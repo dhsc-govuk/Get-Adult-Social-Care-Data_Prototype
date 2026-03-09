@@ -1,7 +1,7 @@
 {% extends "v10/layouts/signed-in.html" %}
 
 {% block pageTitle %}
-LA funding planning - {{serviceName}} - GOV.UK
+LA funding projected demand - {{serviceName}} - GOV.UK
 {% endblock %}
 
 {% block beforeContent %}
@@ -23,8 +23,8 @@ LA funding planning - {{serviceName}} - GOV.UK
 <div class="govuk-grid-row">
 
   <div class="govuk-grid-column-full">
-    <h1 class="govuk-heading-xl"><abbr title="Local Authority">LA</abbr> funding planning</h1>
-    <p class="govuk-body-l">Consolidated estimated data on population with selected conditions within a <abbr title="Local Authority">LA</abbr> area.</p>
+    <h1 class="govuk-heading-xl"><abbr title="Local Authority">LA</abbr> funding projected demand</h1>
+    <p class="govuk-body-l">Consolidated and estimated data on population with selected conditions within an <abbr title="Local Authority">LA</abbr> area.</p>
 
     <div class="govuk-form-group">
       <h2 class="govuk-heading-l govuk-!-margin-top-9">Data overview</h2>
@@ -45,7 +45,7 @@ LA funding planning - {{serviceName}} - GOV.UK
 
         <div class="govuk-form-group">
           <h3 id="data1" class="govuk-heading-m">Comparison of estimated population with selected health conditions over time</h3>
-          <p class="govuk-body" data-module="edge">Find out how <a href="#" data-message="Sorry, this hasn’t been designed yet">[MISSING]</a>.</p>
+          <p class="govuk-body">Find out how <a href="../../../help/estimated-population-early-onset-dementia" class="govuk-link">total population aged 30-64 to have early onset dementia</a>, <a href="../../../help/estimated-population-learning-disability" class="govuk-link">total population aged 18-64 with a learning disability, predicted to display challenging behaviour</a> and <a href="../../../help/estimated-population-asd" class="govuk-link">total population aged 18-64 predicted to have autistic spectrum disorders</a> are calculated.</p>
         </div>
 
         <h3 class="govuk-tabs__title">Contents</h3>
@@ -98,7 +98,7 @@ LA funding planning - {{serviceName}} - GOV.UK
         
         <div class="govuk-form-group">
           <h3 id="trend1" class="govuk-heading-m">Estimated percentage change in population with selected health conditions - trends over time</h3>
-          <p class="govuk-body" data-module="edge">Find out how <a href="#" data-message="Sorry, this hasn’t been designed yet">[MISSING]</a>.</p>
+          <p class="govuk-body">Find out how <a href="../../../help/estimated-population-early-onset-dementia" class="govuk-link">total population aged 30-64 to have early onset dementia</a>, <a href="../../../help/estimated-population-learning-disability" class="govuk-link">total population aged 18-64 with a learning disability, predicted to display challenging behaviour</a> and <a href="../../../help/estimated-population-asd" class="govuk-link">total population aged 18-64 predicted to have autistic spectrum disorders</a> are calculated.</p>
         </div>
 
         <h3 class="govuk-tabs__title">Contents</h3>
@@ -153,10 +153,30 @@ LA funding planning - {{serviceName}} - GOV.UK
         <li class="gem-c-cards__list-item">
 
           <div class="gem-c-cards__list-item-wrapper">
-            <h2 class="gem-c-cards__sub-heading govuk-heading-s" data-module="edge">
-              <a class="govuk-link gem-c-cards__link gem-c-force-print-link-styles" href="#" data-message="Sorry, this hasn’t been designed yet"><abbr title="Local Authority">LA</abbr> funding planning</a>
+            <h2 class="gem-c-cards__sub-heading govuk-heading-s">
+              <a class="govuk-link gem-c-cards__link gem-c-force-print-link-styles" href="../../../help/estimated-population-asd">Total population aged 18-64 predicted to have autistic spectrum disorders are</a>
             </h2>
-            <p class="govuk-body gem-c-cards__description">Source: PANSI.<br>[NEEDS CONTENT] updates, [NEEDS CONTENT].</p>
+            <p class="govuk-body gem-c-cards__description">Source: Office for National Statistics.<br><span class="needs-content">[NEEDS CONTENT]</span> updates, limitations apply.</p>
+          </div>
+
+        </li>
+        <li class="gem-c-cards__list-item">
+
+          <div class="gem-c-cards__list-item-wrapper">
+            <h2 class="gem-c-cards__sub-heading govuk-heading-s">
+              <a class="govuk-link gem-c-cards__link gem-c-force-print-link-styles" href="../../../help/estimated-population-learning-disability">Total population aged 18-64 with a learning disability, predicted to display challenging behaviour</a>
+            </h2>
+            <p class="govuk-body gem-c-cards__description">Source: Office for National Statistics.<br><span class="needs-content">[NEEDS CONTENT]</span> updates, limitations might apply.</p>
+          </div>
+
+        </li>
+        <li class="gem-c-cards__list-item">
+
+          <div class="gem-c-cards__list-item-wrapper">
+            <h2 class="gem-c-cards__sub-heading govuk-heading-s">
+              <a class="govuk-link gem-c-cards__link gem-c-force-print-link-styles" href="../../../help/estimated-population-early-onset-dementia">Total population aged 30-64 to have early onset dementia</a>
+            </h2>
+            <p class="govuk-body gem-c-cards__description">Source: Office for National Statistics.<br><span class="needs-content">[NEEDS CONTENT]</span> updates, limitations apply.</p>
           </div>
 
         </li>
@@ -201,7 +221,7 @@ LA funding planning - {{serviceName}} - GOV.UK
 
           <div class="gem-c-cards__list-item-wrapper">
             <h2 class="gem-c-cards__sub-heading govuk-heading-s">
-              <a class="govuk-link gem-c-cards__link gem-c-force-print-link-styles" href="../../future-planning/estimates-on-general-health-disabilities-and-learning-disabilities/data">Estimates on general health learning disabilities</a>
+              <a class="govuk-link gem-c-cards__link gem-c-force-print-link-styles" href="../../future-planning/estimates-on-general-health-disabilities-and-learning-disabilities/data">Estimates on general health and learning disabilities</a>
             </h2>
             <p class="govuk-body gem-c-cards__description">Estimated data on population aged 18-64 with learning disabilities predicted to display challenging behaviour with comparison data across <abbr title="Local Authority">LA</abbr>s.</p>
           </div>

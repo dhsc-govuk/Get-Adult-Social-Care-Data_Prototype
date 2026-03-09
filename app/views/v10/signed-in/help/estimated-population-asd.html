@@ -1,0 +1,66 @@
+{% extends "v10/layouts/signed-in.html" %}
+
+{% block pageTitle %}
+Total population aged 18&#45;64 predicted to have ASD - {{serviceName}} - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+<a href="javascript:history.back()" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-two-thirds">
+    <span class="govuk-caption-l">Data indicator details</span>
+    <h1 class="govuk-heading-l">Total population aged 18&#45;64 predicted to have <abbr title="Autistic Spectrum Disorders">ASD</abbr></h1>
+    <dl class="govuk-summary-list">
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">What this measures</dt>
+        <dd class="govuk-summary-list__value">The projection of the number of people aged 18&#45;64 to have autistic spectrum disorders (ASD), by age and gender, projected to 2045.</dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Source</dt>
+        <dd class="govuk-summary-list__value" data-module="edge"><a href="#" class="govuk-link" rel="noreferrer noopener" target="_blank" data-message="Sorry, this hasn’t been designed yet">Projected Adult Needs and Service Information (PANSI) v15 from the Office for National Statistics (opens in new tab)</a></dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Data correct as of</dt>
+        <dd class="govuk-summary-list__value">15 August 2025</dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Update frequency</dt>
+        <dd class="govuk-summary-list__value needs-content">[TBC]</dd>
+      </div>
+      
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Methodology</dt>
+        <dd class="govuk-summary-list__value">
+          <p class="govuk-body">The projected of the number of people aged 18&#45;64 with a learning disability, predicted to display challenging behaviours, is calculated by:</p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li><abbr title="Autistic Spectrum Disorders">ASD</abbr> prevalence rates are based on Autism Spectrum Disorders in adults living in households throughout England: Report from the Adult Psychiatric Morbidity Survey 2007 was published by the Health and Social Care Information Centre in September 2009.</li>
+            <li>Applying <abbr title="Autistic Spectrum Disorders">ASD</abbr> prevalence rates to <abbr title="Office for National Statistics">ONS</abbr> population projections of the 18 to 64 population to give estimated numbers predicted to have autistic spectrum disorder to 2045.</li>
+          </ul>
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Limitations</dt>
+        <dd class="govuk-summary-list__value">
+          <p class="govuk-body">The National Autistic Society states that &lsquo;estimates of the proportion of people with <abbr title="Autistic Spectrum Disorders">ASD</abbr> who have a learning disability, (IQ less than 70) vary considerably, and it is not possible to give an accurate figure. Some very able people with <abbr title="Autistic Spectrum Disorders">ASD</abbr> may never come to the attention of services as having special needs, because they have learned strategies to overcome any difficulties with communication and social interaction and found fulfilling employment that suits their particular talents. Other people with <abbr title="Autistic Spectrum Disorders">ASD</abbr> may be able intellectually, but have need of support from services, because the degree of impairment they have of social interaction hampers their chances of employment and achieving independence.&rsquo;</p>         
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Data definitions</dt>
+        <dd class="govuk-summary-list__value needs-content">[TBC]</dd>
+      </div>
+
+    </dl>
+  </div>
+
+</div>
+{% endblock %}

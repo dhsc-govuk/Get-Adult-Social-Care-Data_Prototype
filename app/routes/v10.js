@@ -1163,7 +1163,7 @@ module.exports = function(router) {
         theme: "primary",
         title: "Figure 1: estimated percentage change in population aged 18-64 with ASD compared with similar LAs",
         id: "figure-1-estimated-population-with-asd-over-time",
-        caption: "Source: PANSI",
+        caption: "Source: Projected Adult Needs and Service Information (PANSI) from the Office for National Statistics (ONS)",
         description: "Line chart showing percentage change over time in population aged 18-64 with ASD for Suffolk and similar LAs Dorset, Herefordshire, Kent, Norfolk and Somerset.",
         fallbackImageUrl: "/public/downloads/v10/future-planning/estimated-autistic-disorders/figure-1-estimated-population-with-asd-over-time.png",
         fallbackImageAlt: "Line chart showing percentage change over time in population aged 18-64 with ASD for Suffolk and similar LAs Dorset, Herefordshire, Kent, Norfolk and Somerset."
@@ -1218,7 +1218,7 @@ module.exports = function(router) {
         theme: "primary",
         title: "Figure 1: estimated percentage change in population aged 30-64 with early onset dementia compared with similar LAs",
         id: "figure-1-predicted-early-onset-dementia-prevalence-over-time",
-        caption: "Source: PANSI",
+        caption: "Source: Projected Adult Needs and Service Information (PANSI) from the Office for National Statistics (ONS)",
         description: "Line chart showing percentage change over time in population aged 30-64 with early onset dementia for Suffolk and similar LAs Dorset, Herefordshire, Kent, Norfolk and Somerset.",
         fallbackImageUrl: "/public/downloads/v10/future-planning/estimated-early-onset-dementia/figure-1-predicted-early-onset-dementia-prevalence-over-time.png",
         fallbackImageAlt: "Line chart showing percentage change over time in population aged 30-64 with early onset dementia for Suffolk and similar LAs Dorset, Herefordshire, Kent, Norfolk and Somerset."
@@ -1273,7 +1273,7 @@ module.exports = function(router) {
         theme: "primary",
         title: "Figure 1: estimated percentage change in population aged 18-64 with learning disabilities and predicted challenging behaviour compared with similar LAs",
         id: "figure-1-estimated-population-with-learning-disabilities-over-time",
-        caption: "Source: PANSI",
+        caption: "Source: Projected Adult Needs and Service Information (PANSI) from the Office for National Statistics (ONS)",
         description: "Line chart showing percentage change over time in population aged 18-64 with learning disabilities and predicted challenging behaviour for Suffolk and similar LAs Dorset, Herefordshire, Kent, Norfolk and Somerset.",
         fallbackImageUrl: "/public/downloads/v10/future-planning/estimated-learning-disability/figure-1-estimated-population-with-learning-disabilities-over-time.png",
         fallbackImageAlt: "Line chart showing percentage change over time in population aged 18-64 with learning disabilities and predicted challenging behaviour for Suffolk and similar LAs Dorset, Herefordshire, Kent, Norfolk and Somerset."
@@ -1330,7 +1330,7 @@ module.exports = function(router) {
         theme: "primary",
         title: "Figure 1: estimated percentage change in population aged 18-64 with selected health conditions compared with similar LAs",
         id: "figure-1-estimated-population-change-with-health-conditions-over-time",
-        caption: "Source: PANSI",
+        caption: "Source: Projected Adult Needs and Service Information (PANSI) from the Office for National Statistics (ONS)",
         description: "Line chart showing percentage change over time in population aged 18-64 with selected health conditions for Suffolk and similar LAs Dorset, Herefordshire, Kent, Norfolk and Somerset.",
         fallbackImageUrl: "/public/downloads/v10/future-planning/la-funding-planning/figure-1-estimated-population-change-with-health-conditions-over-time.png",
         fallbackImageAlt: "Line chart showing percentage change over time in population aged 18-64 with selected health conditions for Suffolk and similar LAs Dorset, Herefordshire, Kent, Norfolk and Somerset."
