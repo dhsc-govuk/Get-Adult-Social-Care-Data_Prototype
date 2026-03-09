@@ -761,7 +761,7 @@ module.exports = function(router) {
         labels: { format: "£{value:,.0f}" }
       },
       xAxis: {
-        title: { text: "Financial Year" },
+        title: { text: "Financial year" },
         categories,
         type: "category",
         labels: {}

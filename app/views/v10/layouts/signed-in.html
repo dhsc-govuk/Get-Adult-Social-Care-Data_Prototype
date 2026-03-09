@@ -209,10 +209,12 @@
               <a class="govuk-link gem-c-layout-super-navigation-header__navigation-second-item-link gem-c-layout-super-navigation-header__navigation-second-item-link--with-description" href="/v10/signed-in/topics/population-needs/subtopics">Population needs</a>
               <p class="govuk-body-s gem-c-layout-super-navigation-header__navigation-second-item-description">Find data on a range of care need indicators, such as household economic factors and disability prevalence.</p>
             </li>
+            {% if data.selectedServiceType == "Local authority" %}
             <li class="gem-c-layout-super-navigation-header__dropdown-list-item">
               <a class="govuk-link gem-c-layout-super-navigation-header__navigation-second-item-link gem-c-layout-super-navigation-header__navigation-second-item-link--with-description" href="/v10/signed-in/topics/future-planning/subtopics">Future planning</a>
               <p class="govuk-body-s gem-c-layout-super-navigation-header__navigation-second-item-description">Find estimated and experimental data on future population needs.</p>
             </li>
+            {% endif %}
           </ul>
         </div>
 
