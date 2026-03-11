@@ -1118,10 +1118,10 @@ module.exports = function(router) {
     
   })
 
-  // Estimates on ASD
+  // Estimates on autistic spectrum disorders
   router.get('/' + version + '/' + 'signed-in/topics/future-planning/estimates-on-autistic-spectrum-disorders/data', function (req, res) {
     
-    // Chart (line chart): Estimated adult population with ASD - trends over time
+    // Chart (line chart): Estimated adult population with autistic spectrum disorders - trends over time
     // BUILD the chart
     const rows = estimatedAutisticDisorders["Change over time"] || []
     const categories = rows.map(r => String(r.Year))
@@ -1161,12 +1161,12 @@ module.exports = function(router) {
       chart: {
         chartType: "line",
         theme: "primary",
-        title: "Figure 1: estimated percentage change in population aged 18-64 with ASD compared with similar LAs",
+        title: "Figure 1: estimated percentage change in population aged 18-64 with autistic spectrum disorders compared with similar LAs",
         id: "figure-1-estimated-population-with-asd-over-time",
         caption: "Source: Projected Adult Needs and Service Information (PANSI) from the Office for National Statistics (ONS)",
-        description: "Line chart showing percentage change over time in population aged 18-64 with ASD for Suffolk and similar LAs Dorset, Herefordshire, Kent, Norfolk and Somerset.",
+        description: "Line chart showing percentage change over time in population aged 18-64 with autistic spectrum disorders for Suffolk and similar LAs Dorset, Herefordshire, Kent, Norfolk and Somerset.",
         fallbackImageUrl: "/public/downloads/v10/future-planning/estimated-autistic-disorders/figure-1-estimated-population-with-asd-over-time.png",
-        fallbackImageAlt: "Line chart showing percentage change over time in population aged 18-64 with ASD for Suffolk and similar LAs Dorset, Herefordshire, Kent, Norfolk and Somerset."
+        fallbackImageAlt: "Line chart showing percentage change over time in population aged 18-64 with autistic spectrum disorders for Suffolk and similar LAs Dorset, Herefordshire, Kent, Norfolk and Somerset."
       },
       // IMPORTANT: stringify server-side and pass as a literal string
       highchartsConfig: JSON.stringify(config)
@@ -1331,12 +1331,12 @@ module.exports = function(router) {
       chart: {
         chartType: "line",
         theme: "primary",
-        title: "Figure 1: estimated percentage change in population aged 18-64 with selected health conditions compared with similar LAs",
+        title: "Figure 1: estimated percentage change in population aged 18-64 with selected health conditions over time within <abbr title='Local Authority'>LA</abbr> area",
         id: "figure-1-estimated-population-change-with-health-conditions-over-time",
-        caption: "Source: Projected Adult Needs and Service Information (PANSI) from the Office for National Statistics (ONS)",
-        description: "Line chart showing percentage change over time in population aged 18-64 with selected health conditions for Suffolk and similar LAs Dorset, Herefordshire, Kent, Norfolk and Somerset.",
+        caption: "Source: Projected Adult Needs and Service Information (PANSI) v15 August 2025 from the Institute of Public Care",
+        description: "Line chart showing percentage change over time in population aged 18-64 with selected health conditions over time within <abbr title='Local Authority'>LA</abbr> area.",
         fallbackImageUrl: "/public/downloads/v10/future-planning/la-funding-planning/figure-1-estimated-population-change-with-health-conditions-over-time.png",
-        fallbackImageAlt: "Line chart showing percentage change over time in population aged 18-64 with selected health conditions for Suffolk and similar LAs Dorset, Herefordshire, Kent, Norfolk and Somerset."
+        fallbackImageAlt: "Line chart showing percentage change over time in population aged 18-64 with selected health conditions over time within <abbr title='Local Authority'>LA</abbr> area."
       },
       // IMPORTANT: stringify server-side and pass as a literal string
       highchartsConfig: JSON.stringify(config)
