@@ -11,7 +11,7 @@
           "month": "July 2025",
           "supported_by_station_road_centre": 1320,
           "total_people_in_suffolk": 11000,
-          "proportion_percent": 12
+          "proportion_percent": 12.0
         },
         {
           "month": "June 2025",
@@ -47,7 +47,7 @@
           "month": "January 2025",
           "supported_by_station_road_centre": 1463,
           "total_people_in_suffolk": 10450,
-          "proportion_percent": 14
+          "proportion_percent": 14.0
         },
         {
           "month": "December 2024",
@@ -77,7 +77,7 @@
           "month": "August 2024",
           "supported_by_station_road_centre": 1500,
           "total_people_in_suffolk": 10000,
-          "proportion_percent": 15
+          "proportion_percent": 15.0
         }
       ]
     }

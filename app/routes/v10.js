@@ -1283,7 +1283,7 @@ module.exports = function(router) {
     })
   })
 
-  // LA funding planning
+  // LA funding projected demand
   router.get('/' + version + '/' + 'signed-in/topics/future-planning/la-funding-planning/data', function (req, res) {
     
     // Chart (line chart): Estimated percentage change in population with selected health conditions - trends over time
@@ -1308,9 +1308,12 @@ module.exports = function(router) {
     const config = {
       chart: { type: "line" },
       legend: { enabled: true },
+      tooltip: {
+        valueSuffix: "%"
+      },
       yAxis: {
         title: { text: "Percentage change from baseline (2025)" },
-        labels: { format: "{value:.2f}" }
+        labels: { format: "{value:.0f}%" }
       },
       xAxis: {
         title: { text: "Year" },
