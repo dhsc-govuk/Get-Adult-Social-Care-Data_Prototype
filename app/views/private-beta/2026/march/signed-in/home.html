@@ -1,0 +1,131 @@
+{% extends "private-beta/2026/march/layouts/signed-in-home.html" %}
+
+{% block content %}
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-full">
+    <h2 class="govuk-heading-l"><a href="topics/residential-care/subtopics" class="govuk-link">Care provision</a></h2>
+  </div>
+
+</div>
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-one-half">
+    <a href="topics/residential-care/residential-care-providers/data" class="app-card">
+      <h3 class="govuk-heading-m app-card__heading">Care provider services</h3>
+      <p class="govuk-body">Data on care provision by service type and number of providers.</p>
+    </a>
+  </div>
+
+  <div class="govuk-grid-column-one-half">
+    <a href="topics/residential-care/provision-and-occupancy/data" class="app-card">
+      <h3 class="govuk-heading-m app-card__heading">Care home beds and occupancy levels</h3>
+      <p class="govuk-body">Provision and capacity data for care homes, including local, regional and national statistics.</p>
+    </a>
+  </div>
+
+</div>
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-one-half">
+    <a href="topics/residential-care/number-of-people-receiving-care/data" class="app-card">
+      <h3 class="govuk-heading-m app-card__heading">Number of adults receiving community social care</h3>
+      <p class="govuk-body">Data on the number of people supported through community social care, including trends over time.</p>
+    </a>
+  </div>
+
+  <div class="govuk-grid-column-one-half">
+    <a href="topics/residential-care/unpaid-care/data" class="app-card">
+      <h3 class="govuk-heading-m app-card__heading">Unpaid care</h3>
+      <p class="govuk-body">Statistics on the people who provide unpaid care to family members, friends and neighbours.</p>
+    </a>
+  </div>
+
+</div>
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-full">
+    <h2 class="govuk-heading-l govuk-!-margin-top-7"><a href="topics/financial-spend-and-unpaid-care/subtopics" class="govuk-link">Funding</a></h2>
+  </div>
+
+</div>
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-one-half">
+    <a href="topics/financial-spend-and-unpaid-care/financial-spend/data" class="app-card">
+      <h3 class="govuk-heading-m app-card__heading">Local authority (LA) funding for adult social care</h3>
+      <p class="govuk-body">Data on funding for both short-term and long-term care, also funding by individual care type.</p>
+    </a>
+  </div>
+
+</div>
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-full">
+    <h2 class="govuk-heading-l govuk-!-margin-top-7"><a href="topics/population-needs/subtopics" class="govuk-link">Population needs</a></h2>
+  </div>
+
+</div>
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-one-half">
+    <a href="topics/population-needs/population-age-and-size/data" class="app-card">
+      <h3 class="govuk-heading-m app-card__heading">Population size and age group percentages</h3>
+      <p class="govuk-body">Population data at <abbr title="Local Authority">LA</abbr>, regional and national levels for England.</p>
+    </a>
+  </div>
+
+  <div class="govuk-grid-column-one-half">
+    <a href="topics/population-needs/household-composition-and-economic-factors/data" class="app-card">
+      <h3 class="govuk-heading-m app-card__heading">Economic factors and household composition</h3>
+      <p class="govuk-body">Data on household deprivation, property ownership and older people living alone.</p>
+    </a>
+  </div>
+
+</div>
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-one-half">
+    <a href="topics/population-needs/disability-prevalence/data" class="app-card">
+      <h3 class="govuk-heading-m app-card__heading">General health and disability</h3>
+      <p class="govuk-body">Data on disability prevalence, learning disability diagnoses and reasons for accessing care.</p>
+    </a>
+  </div>
+
+  <div class="govuk-grid-column-one-half">
+    <a href="topics/population-needs/dementia-prevalence/data" class="app-card">
+      <h3 class="govuk-heading-m app-card__heading">Dementia prevalence</h3>
+      <p class="govuk-body">Data estimates for undiagnosed dementia.</p>
+    </a>
+  </div>
+
+</div>
+
+{% if data.selectedServiceType == "Local authority" %}
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-full">
+    <h2 class="govuk-heading-l govuk-!-margin-top-7"><a href="topics/future-planning/subtopics" class="govuk-link">Future planning</a></h2>
+  </div>
+
+</div>
+
+<div class="govuk-grid-row">
+  
+  <div class="govuk-grid-column-one-half">
+    <a href="topics/future-planning/la-funding-planning/data" class="app-card">
+      <h3 class="govuk-heading-m app-card__heading">Population projections within local authorities</h3>
+      <p class="govuk-body">Data estimates on the prevalence of conditions that may require a social care response.</p>
+    </a>
+  </div>
+
+</div>
+{% endif %}
+{% endblock %}

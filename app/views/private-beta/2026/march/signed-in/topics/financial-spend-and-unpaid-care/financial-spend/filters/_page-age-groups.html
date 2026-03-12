@@ -1,0 +1,25 @@
+<div class="govuk-form-group">
+  <fieldset class="govuk-fieldset">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">Age group</legend>
+    
+    <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
+      
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="ageGroup14_1" name="ageGroup14" type="radio" value="All age groups"{% if data.ageGroup14%}{% if data.ageGroup14 == 'All age groups' %} checked{% endif %}{% else %} checked{% endif %}>
+        <label class="govuk-label govuk-radios__label" for="ageGroup14_1">All age groups</label>
+      </div>
+
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="ageGroup14_2" name="ageGroup14" type="radio" value="Aged 18 to 64"{% if data.ageGroup14 == 'Aged 18 to 64' %} checked{% endif %}>
+        <label class="govuk-label govuk-radios__label" for="ageGroup14_2">Aged 18 to 64</label>
+      </div>
+
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="ageGroup14_3" name="ageGroup14" type="radio" value="Aged 65 and over"{% if data.ageGroup14 == 'Aged 65 and over' %} checked{% endif %}>
+        <label class="govuk-label govuk-radios__label" for="ageGroup14_3">Aged 65 and over</label>
+      </div>
+
+    </div>
+
+  </fieldset>
+</div>

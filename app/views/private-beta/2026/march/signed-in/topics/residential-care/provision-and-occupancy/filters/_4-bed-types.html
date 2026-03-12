@@ -1,0 +1,87 @@
+<div class="app-c-option-select js-collapsible" id="bed-type-radios3">
+  <h3 class="js-container-heading govuk-heading-s searchable-filters-heading">
+    Bed type
+    <span class="app-c-option-select__title app-c-option-select__button govuk-heading-s" id="option-select-title-status-radios3"></span>
+  </h3>
+
+  <!-- 🔍 Search box for radios -->
+  <div id="radios-search3" class="app-c-option-select__filter" hidden>
+    <label for="input-bedtype-radios3" class="govuk-label govuk-visually-hidden">Bed type</label>
+    <input name="option-select-filter-bedtype-radios3" id="input-bedtype-radios3" class="app-c-option-select__filter-input govuk-input" type="text" aria-controls="radios-status3">
+  </div>
+
+  <div role="group" aria-labelledby="option-select-title-status-radios3" class="app-c-option-select__container js-options-container" id="list_of_status_radios_to_filter3" tabindex="-1">
+
+    <div class="app-c-option-select__container-inner js-auto-height-inner">
+
+      <div id="radios-status3" class="govuk-radios govuk-form-group govuk-radios--small" data-module="govuk-radios">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend gem-c-radios govuk-fieldset__legend--m govuk-visually-hidden">Bed type</legend>
+          <ul class="govuk-radios__list gem-c-radios__list">
+            <li class="govuk-radios__item">
+              <input class="govuk-radios__input" id="bedType3" name="bedType3" type="radio" value="All bed types"{% if data.bedType3 %}{% if data.bedType3 == 'All bed types' %} checked{% endif %}{% else %} checked{% endif %}>
+              <label class="govuk-label govuk-radios__label" for="bedType3">All bed types</label>
+            </li>
+            <li class="govuk-radios__item">
+              <input class="govuk-radios__input" id="bedType3_2" name="bedType3" type="radio" value="Community care" aria-describedby="bedType3-2-item-hint"{% if data.bedType3 == 'Community care' %} checked{% endif %}>
+              <label class="govuk-label govuk-radios__label" for="bedType3_2">Community care</label>
+
+              <div id="bedType3-2-item-hint" class="govuk-hint govuk-radios__hint">
+                Beds for people who cannot receive appropriate care at home but do not need to be in hospital.
+              </div>
+
+            </li>
+            <li class="govuk-radios__item">
+              <input class="govuk-radios__input" id="bedType3_3" name="bedType3" type="radio" value="Dementia nursing"{% if data.bedType3 == 'Dementia nursing' %} checked{% endif %}>
+              <label class="govuk-label govuk-radios__label" for="bedType3_3">Dementia nursing</label>
+            </li>
+            <li class="govuk-radios__item">
+              <input class="govuk-radios__input" id="bedType3_4" name="bedType3" type="radio" value="Dementia residential"{% if data.bedType3 == 'Dementia residential' %} checked{% endif %}>
+              <label class="govuk-label govuk-radios__label" for="bedType3_4">Dementia residential</label>
+            </li>
+            <li class="govuk-radios__item">
+              <input class="govuk-radios__input" id="bedType3_5" name="bedType3" type="radio" value="General nursing"{% if data.bedType3 == 'General nursing' %} checked{% endif %}>
+              <label class="govuk-label govuk-radios__label" for="bedType3_5">General nursing</label>
+            </li>
+            <li class="govuk-radios__item">
+              <input class="govuk-radios__input" id="bedType3_6" name="bedType3" type="radio" value="General residential"{% if data.bedType3 == 'General residential' %} checked{% endif %}>
+              <label class="govuk-label govuk-radios__label" for="bedType3_6">General residential</label>
+            </li>
+            <li class="govuk-radios__item">
+              <input class="govuk-radios__input" id="bedType3_7" name="bedType3" type="radio" value="Learning disability nursing"{% if data.bedType3 == 'Learning disability nursing' %} checked{% endif %}>
+              <label class="govuk-label govuk-radios__label" for="bedType3_7">Learning disability nursing</label>
+            </li>
+            <li class="govuk-radios__item">
+              <input class="govuk-radios__input" id="bedType3_8" name="bedType3" type="radio" value="Learning disability residential"{% if data.bedType3 == 'Learning disability residential' %} checked{% endif %}>
+              <label class="govuk-label govuk-radios__label" for="bedType3_8">Learning disability residential</label>
+            </li>
+            <li class="govuk-radios__item">
+              <input class="govuk-radios__input" id="bedType3_9" name="bedType3" type="radio" value="Mental health nursing"{% if data.bedType3 == 'Mental health nursing' %} checked{% endif %}>
+              <label class="govuk-label govuk-radios__label" for="bedType3_9">Mental health nursing</label>
+            </li>
+            <li class="govuk-radios__item">
+              <input class="govuk-radios__input" id="bedType3_10" name="bedType3" type="radio" value="Mental health residential"{% if data.bedType3 == 'Mental health residential' %} checked{% endif %}>
+              <label class="govuk-label govuk-radios__label" for="bedType3_10">Mental health residential</label>
+            </li>
+            <li class="govuk-radios__item">
+              <input class="govuk-radios__input" id="bedType3_11" name="bedType3" type="radio" value="Transitional" aria-describedby="bedType3-11-item-hint"{% if data.bedType3 == 'Transitional' %} checked{% endif %}>
+              <label class="govuk-label govuk-radios__label" for="bedType3_11">Transitional</label>
+
+              <div id="bedType3-11-item-hint" class="govuk-hint govuk-radios__hint">
+                For individuals moving from children's services to adult social care.
+              </div>
+
+            </li>
+            <li class="govuk-radios__item">
+              <input class="govuk-radios__input" id="bedType3_12" name="bedType3" type="radio" value="Young physically disabled"{% if data.bedType3 == 'Young physically disabled' %} checked{% endif %}>
+              <label class="govuk-label govuk-radios__label" for="bedType3_12">Young physically disabled</label>
+            </li>
+          </ul>
+        </fieldset>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

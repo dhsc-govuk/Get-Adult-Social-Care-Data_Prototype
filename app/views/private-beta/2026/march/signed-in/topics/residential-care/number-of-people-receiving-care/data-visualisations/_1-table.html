@@ -1,0 +1,42 @@
+<div class="moj-scrollable-pane">
+
+  <table class="govuk-table">
+    {% if data.selectedServiceType == "Community social care" %}
+    <caption class="govuk-table__caption">Table 1: number of people receiving community social care in the last month &ndash; {{data.selectedLocationName or 'Station Road Centre (Sudbury)'}}, Suffolk <abbr title="Local Authority">LA</abbr>, East of England region and England, October 2025</caption>
+    {% else %}
+    <caption class="govuk-table__caption">Table 1: number of people receiving community social care in the last month &ndash; Suffolk <abbr title="Local Authority">LA</abbr>, East of England region and England, October 2025</caption>
+    {% endif %}
+    <thead class="govuk-table__head">
+      <tr class="govuk-table__row">
+        {% if data.selectedServiceType == "Community social care" %}
+        <th scope="col" class="govuk-table__header">Indicator</th>
+        <th scope="col" class="govuk-table__header govuk-table__header--numeric">Total for {{data.selectedLocationName or 'Station Road Centre (Sudbury)'}}</th>
+        <th scope="col" class="govuk-table__header govuk-table__header--numeric">Total for Suffolk</th>
+        <th scope="col" class="govuk-table__header govuk-table__header--numeric">East of England (regional average)</th>
+        <th scope="col" class="govuk-table__header govuk-table__header--numeric">England (national average)</th>
+        {% else %}
+        <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Indicator</th>
+        <th scope="col" class="govuk-table__header govuk-!-width-one-quarter govuk-table__header--numeric">Total for Suffolk</th>
+        <th scope="col" class="govuk-table__header govuk-!-width-one-quarter govuk-table__header--numeric">East of England (regional average)</th>
+        <th scope="col" class="govuk-table__header govuk-!-width-one-quarter govuk-table__header--numeric">England (national average)</th>
+        {% endif %}
+      </tr>
+    </thead>
+    <tbody class="govuk-table__body">
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">People receiving community social care in October 2025</td>
+        {% if data.selectedServiceType == "Community social care" %}
+        <td class="govuk-table__cell govuk-table__cell--numeric">2,000</td>
+        {% endif %}
+        <td class="govuk-table__cell govuk-table__cell--numeric">11,000</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">15,000</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">20,000</td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>
+
+<div class="govuk-form-block">
+  <p class="govuk-body data-source">Source: Capacity Tracker from the Department of Health and Social Care (DHSC)</p>
+</div>

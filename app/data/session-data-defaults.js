@@ -1,5 +1,23 @@
 module.exports = {
 
+  // Private beta (March 2026)
+  "pbMarch2026ProviderLocationsData": require('./private-beta/2026/march/provider-locations.json'),
+  "pbMarch2026ProviderLocations": "pbMarch2026ProviderLocationsData",
+  "pbMarch2026CareProvidersLocationsAndServicesData": require('./private-beta/2026/march/residential-care/care-providers-locations-and-services.json'),
+  "pbMarch2026CareProvidersLocationsAndServices": "pbMarch2026CareProvidersLocationsAndServicesData",
+  "pbMarch2026CareHomeBedsAndOccupancyData": require('./private-beta/2026/march/residential-care/care-home-beds-and-occupancy.json'),
+  "pbMarch2026CareHomeBedsAndOccupancy": "pbMarch2026CareHomeBedsAndOccupancyData",
+  "pbMarch2026numberOfAdultsReceivingCommunitySocialCareData": require('./private-beta/2026/march/residential-care/number-of-adults-receiving-community-social-care.json'),
+  "pbMarch2026numberOfAdultsReceivingCommunitySocialCare": "pbMarch2026numberOfAdultsReceivingCommunitySocialCareData",
+  "pbMarch2026localAuthorityFundingForAdultSocialCareData": require('./private-beta/2026/march/funding/local-authority-funding-for-adult-social-care.json'),
+  "pbMarch2026localAuthorityFundingForAdultSocialCare": "pbMarch2026localAuthorityFundingForAdultSocialCareData",
+  "pbMarch2026populationSizeAndAgeGroupPercentagesData": require('./private-beta/2026/march/population-needs/population-size.json'),
+  "pbMarch2026populationSizeAndAgeGroupPercentages": "pbMarch2026populationSizeAndAgeGroupPercentagesData",
+  "pbMarch2026generalHealthDisabilityAndLearningDisabilityData": require('./private-beta/2026/march/population-needs/general-health-disability-and-learning-disability.json'),
+  "pbMarch2026generalHealthDisabilityAndLearningDisability": "pbMarch2026generalHealthDisabilityAndLearningDisabilityData",
+  "pbMarch2026laFundingPlanningData": require('./private-beta/2026/march/future-planning/la-funding-planning.json'),
+  "pbMarch2026laFundingPlanning": "pbMarch2026laFundingPlanningData",
+  
   // v10
   "v10ProviderLocationsData": require('./v10/provider-locations.json'),
   "v10ProviderLocations": "v10ProviderLocationsData",

@@ -60,6 +60,7 @@ router.get('/plugin-assets/:scope/:package/*', (req, res, next) => {
 })
 
 // Versioned route files
+require('./routes/private-beta/2026/march/routes')(router)
 require('./routes/v10')(router)
 require('./routes/private-beta/2026/february/routes')(router)
 require('./routes/v9')(router)

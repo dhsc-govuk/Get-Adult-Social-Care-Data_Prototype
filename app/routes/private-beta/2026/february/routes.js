@@ -61,7 +61,7 @@ module.exports = function(router) {
     }
 
     // Routing - send to the chosen entry point
-    if (entryPoint == "Start page on GOV.UK (private beta)") {
+    if (entryPoint == "Start page (private beta)") {
       res.redirect('/' + version + '/' + 'start')
     }
     else if (entryPoint == "GOV.UK One Login") {

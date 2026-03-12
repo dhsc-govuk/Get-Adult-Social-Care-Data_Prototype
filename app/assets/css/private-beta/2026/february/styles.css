@@ -20,6 +20,19 @@
   display: none;
 }
 
+/* Temporary style to the MoJ side navigation component used for the interim GASCD guidance page */
+.moj-side-navigation {
+  padding-top: 0;
+}
+
+/* Temporary styling for the private beta start page */
+.call-to-action {
+  margin: 0 0 20px 0;
+  background-color: #f3f2f1;
+  padding: 30px;
+  padding-bottom: 10px;
+}
+
 /* Expansion on the GOV.UK Design System service navigation component https://design-system.service.gov.uk/components/service-navigation) to make it work in our custom service header */
 
 /* Navigation links */

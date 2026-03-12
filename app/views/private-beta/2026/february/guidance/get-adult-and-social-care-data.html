@@ -1,0 +1,107 @@
+{% extends "private-beta/2026/february/layouts/default.html" %}
+
+{% set pageName = serviceName + " service" %}
+
+{% block content %} 
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">Guidance</h1>
+  </div>
+
+</div>
+
+<div class="govuk-grid-row">
+  
+  <div class="govuk-grid-column-one-third">
+    <nav class="moj-side-navigation" aria-label="Side navigation">
+      <ul class="moj-side-navigation__list">
+        <li class="moj-side-navigation__item moj-side-navigation__item--active">
+          <a href="#overview" aria-current="location">Overview</a>
+        </li>
+        <li class="moj-side-navigation__item">
+          <a href="#gascd-data">What data is available</a>
+        </li>
+        <li class="moj-side-navigation__item">
+          <a href="#data-not-included">Data not included</a>
+        </li>
+        <li class="moj-side-navigation__item">
+          <a href="#important">Important</a>
+        </li>
+        <li class="moj-side-navigation__item">
+          <a href="#who-can-use-this-service">Who can use this service</a>
+        </li>
+        <li class="moj-side-navigation__item">
+          <a href="#how-to-sign-up-to-use-gascd">How to sign up to use the <abbr title="{{serviceName}}">GASCD</abbr> service</a>
+        </li>
+        <li class="moj-side-navigation__item">
+          <a href="#data-sources-and-methodology">Data sources and methodology</a>
+        </li>
+        <li class="moj-side-navigation__item">
+          <a href="#useful-links">Useful links</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+
+  <div class="govuk-grid-column-two-thirds">
+    <h2 class="govuk-heading-m" id="overview">Overview</h2>
+    <p class="govuk-body">The government collects and stores a significant amount of adult social care data from sources including care providers and local authorities.</p>
+    <p class="govuk-body">This data is analysed for government purposes and is now being made available as a free, easy to access, service to <abbr title="Care Quality Commission">CQC</abbr>-registered Adult Social Care (ASC) providers and local authorities (LA) to support strategic planning and operational purposes.</p>
+    <p class="govuk-body">The data is intended to support confident strategic decision-making. Also available are the Market Position Statements written by local authorities to help care providers make informed decisions in providing the right care provision for everyone needing support and care from adult social care services.</p>
+    <h2 class="govuk-heading-m" id="gascd-data">What data is available</h2>
+    <p class="govuk-body"><abbr title="{{serviceName}}">GASCD</abbr> gives you access to data and insights such as population needs and services in your local area, region and across England.</p>
+    <p class="govuk-body">Includes data on:</p>
+    <h3 class="govuk-heading-s"><abbr title="Care Quality Commission">CQC</abbr> regulated care provision</h3>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>care providers locations and services</li>
+      <li>care home beds and occupancy levels</li>
+      <li>number of adults receiving care in their own home</li>
+    </ul>
+    <h3 class="govuk-heading-s">Non regulated care provision</h3>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>Unpaid care</li>
+    </ul>
+    <h3 class="govuk-heading-s">Funding</h3>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>local authority funding for adult social care</li>
+    </ul>
+    <h3 class="govuk-heading-s">Population needs</h3>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>dementia prevalence and estimated diagnosis rate</li>
+      <li>economic factors and household composition</li>
+      <li>general health, disability and learning disability</li>
+      <li>population size and age group percentages</li>
+    </ul>
+    <p class="govuk-body">Local authority Market Position Statements (MPS) giving detailed information on population needs and commissioning intentions are also included.</p>
+    <p class="govuk-body">Find out more about <a href="#" class="govuk-link">how to use this data</a>.</p>
+    <h2 class="govuk-heading-m" id="data-not-included">Data not included</h2>
+    <p class="govuk-body">The following data is not included:</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>services not regulated by the <abbr title="Care Quality Commission">CQC</abbr></li>
+      <li>quality of care</li>
+      <li>outcomes for people who draw on care</li>
+      <li>hospital discharge data</li>
+      <li>workforce</li>
+      <li>person-level data</li>
+    </ul>
+    <div class="call-to-action govuk-!-margin-top-7">
+      <h2 class="govuk-heading-m" id="important">Important</h2>
+      <p class="govuk-body">Note this service provides information only and does not constitute advice. <abbr title="Department of Health and Social Care">DHSC</abbr> does not accept any liability for decisions made by providers following use of this service. Further details read our <a href="footer/terms-of-use?backLink=false" class="govuk-link" rel="noreferrer noopener" target="_blank">Terms of use (opens in new tab)</a>.</p>
+    </div> 
+    <h2 class="govuk-heading-m" id="who-can-use-this-service">Who can use this service</h2>
+    <p class="govuk-body">You can only use this service if you are the nominated individual for a <abbr title="Care Quality Commission">CQC</abbr> registered care provider organisation or are a local authority officer.</p>
+    <h2 class="govuk-heading-m" id="how-to-sign-up-to-use-gascd">How to sign up to use the <abbr title="{{serviceName}}">GASCD</abbr> service</h2>
+    <p class="govuk-body">You need a <a href="gov-uk/one-login/using-your-gov-uk-one-login" class="govuk-link">GOV.UK One Login</a> to sign in to this service, and it must be tied to your <abbr title="Care Quality Commission">CQC</abbr> registered email address or your gov.uk email address if you are a local authority officer. You can <a href="gov-uk/one-login/start" class="govuk-link">create one</a> if you do not already have one.</p>
+    <p class="govuk-body">You can have more than one GOV.UK One login, for example, a work account in addition to your personal account, so you can create one to access this service.</p>
+    <p class="govuk-body">Find out why you need a <a href="footer/terms-of-use" class="govuk-link">GOV.UK One Login</a>.</p>
+    <h2 class="govuk-heading-m" id="data-sources-and-methodology">Data sources and methodology</h2>
+    <p class="govuk-body">Links to data sources and methodology information are included with each data set provided within the service.</p>
+    <h2 class="govuk-heading-m" id="useful-links">Useful links</h2>
+    <p class="govuk-body">Read the <abbr title="{{serviceName}}">GASCD</abbr> service <a href="../../footer/privacy-policy?backLink=false" class="govuk-link" rel="noreferrer noopener" target="_blank">privacy policy (opens in new tab)</a> to find out what happens to your personal information.</p>
+    <p class="govuk-body">Find out more about <a href="https://www.cqc.org.uk/what-we-do/services-we-regulate/services-we-regulate" class="govuk-link">services the <abbr title="Care Quality Commission">CQC</abbr> regulates</a>.</p>
+    </div>
+  </div>
+
+</div>
+{% endblock %}

@@ -1,0 +1,78 @@
+{
+  "LA funding planning": [
+    {
+      "2025": "234",
+      "2026": "234",
+      "2027": "234",
+      "2028": "233",
+      "2029": "232",
+      "2030": "229",
+      "2035": "224",
+      "2040": "226",
+      "2045": "241",
+      "Indicator": "Total population aged 30-64 predicted to have early onset dementia"
+    },
+    {
+      "2025": "199",
+      "2026": "199",
+      "2027": "200",
+      "2028": "200",
+      "2029": "203",
+      "2030": "203",
+      "2035": "205",
+      "2040": "209",
+      "2045": "213",
+      "Indicator": "Total population aged 18-64 with a learning disability predicted to display challenging behaviour"
+    },
+    {
+      "2025": "4,880",
+      "2026": "4,910",
+      "2027": "4,930",
+      "2028": "4,950",
+      "2029": "4,990",
+      "2030": "5,030",
+      "2035": "5,130",
+      "2040": "5,190",
+      "2045": "5,270",
+      "Indicator": "Total population aged 18-64 predicted to have autistic spectrum disorders"
+    }
+  ],
+  "Change over time": [
+    {
+      "2025": "0",
+      "2026": "0",
+      "2027": "0",
+      "2028": "-0.43",
+      "2029": "-0.43",
+      "2030": "-1.29",
+      "2035": "-2.18",
+      "2040": "0.89",
+      "2045": "6.64",
+      "Indicator": "Total population aged 30-64 predicted to have early onset dementia"
+    },
+    {
+      "2025": "0",
+      "2026": "0",
+      "2027": "0.50",
+      "2028": "0",
+      "2029": "1.50",
+      "2030": "0",
+      "2035": "0.99",
+      "2040": "1.95",
+      "2045": "1.91",
+      "Indicator": "Total population aged 18-64 with a learning disability predicted to display challenging behaviour"
+    },
+    {
+      "2025": "0",
+      "2026": "0.62",
+      "2027": "0.41",
+      "2028": "0.41",
+      "2029": "0.81",
+      "2030": "0.80",
+      "2035": "1.99",
+      "2040": "1.17",
+      "2045": "1.54",
+      "Indicator": "Total population aged 18-64 predicted to have autistic spectrum disorders"
+    }
+  ]
+}

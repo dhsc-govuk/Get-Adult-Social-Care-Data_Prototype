@@ -1,0 +1,962 @@
+[
+  {
+    "ID": 1,
+    "Provider name": "Shoggins Care Home Ltd",
+    "Location name": "Ashfield Court (Exeter)",
+    "Address": "249 Ashfield Road, Exeter, Devon, UK",
+    "Postcode": "EX16 1GF",
+    "Service type": "Care home"
+  },
+  {
+    "ID": 2,
+    "Provider name": "Shoggins Care Home Ltd",
+    "Location name": "Ashfield Court (Nottingham)",
+    "Address": "102 Ashfield Road, Nottingham, Nottinghamshire, UK",
+    "Postcode": "NG16 3RD",
+    "Service type": "Care home"
+  },
+  {
+    "ID": 3,
+    "Provider name": "Shoggins Care Home Ltd",
+    "Location name": "Ashfield Court (Portsmouth)",
+    "Address": "232 Ashfield Road, Portsmouth, Hampshire, UK",
+    "Postcode": "PO11 1PL",
+    "Service type": "Care home"
+  },
+  {
+    "ID": 4,
+    "Provider name": "Shoggins Care Home Ltd",
+    "Location name": "Ashfield House (Derby)",
+    "Address": "289 Ashfield Road, Derby, Derbyshire, UK",
+    "Postcode": "DE17 6TJ",
+    "Service type": "Care home"
+  },
+  {
+    "ID": 5,
+    "Provider name": "Shoggins Care Home Ltd",
+    "Location name": "Ashfield House (Norwich)",
+    "Address": "208 Ashfield Road, Norwich, Norfolk, UK",
+    "Postcode": "NR10 1JN",
+    "Service type": "Care home"
+  },
+  {
+    "ID": 6,
+    "Provider name": "Shoggins Care Services Limited",
+    "Location name": "Ashfield Lodge (Sheffield)",
+    "Address": "63 Ashfield Road, Sheffield, South Yorkshire, UK",
+    "Postcode": "S18 1RD",
+    "Service type": "Community social care"
+  },
+  {
+    "ID": 7,
+    "Provider name": "Shoggins Care Home Ltd",
+    "Location name": "Cathedral View House (Canterbury)",
+    "Address": "104 Queens Road, Canterbury, Kent, UK",
+    "Postcode": "CT1 3HW",
+    "Service type": "Care home"
+  },
+  {
+    "ID": 8,
+    "Provider name": "Shoggins Care Home Ltd",
+    "Location name": "Cedar Close Court (Manchester)",
+    "Address": "143 Cedar Close, Manchester, Greater Manchester, UK",
+    "Postcode": "M9 3PL",
+    "Service type": "Care home"
+  },
+  {
+    "ID": 9,
+    "Provider name": "Shoggins Care Services Limited",
+    "Location name": "Cedar Close Court (York)",
+    "Address": "13 Cedar Close, York, North Yorkshire, UK",
+    "Postcode": "YO12 1TJ",
+    "Service type": "Community social care"
+  },
+  {
+    "ID": 10,
+    "Provider name": "Shoggins Care Home Ltd",
+    "Location name": "Cedar Close House (Derby)",
+    "Address": "194 Cedar Close, Derby, Derbyshire, UK",
+    "Postcode": "DE8 3JN",
+    "Service type": "Care home"
+  },
+  {
+    "ID": 11,
+    "Provider name": "Shoggins Care Services Limited",
+    "Location name": "Cedar Close House (Southampton)",
+    "Address": "23 Cedar Close, Southampton, Hampshire, UK",
+    "Postcode": "SO7 4AA",
+    "Service type": "Community social care"
+  },
+  {
+    "ID": 12,
+    "Provider name": "Shoggins Care Home Ltd",
+    "Location name": "Cedar Close Lodge (Exeter)",
+    "Address": "284 Cedar Close, Exeter, Devon, UK",
+    "Postcode": "EX2 3NU",
+    "Service type": "Care home"
+  },
+  {
+    "ID": 13,
+    "Provider name": "Shoggins Care Home Ltd",
+    "Location name": "Cedar Close Lodge (Manchester)",
+    "Address": "154 Cedar Close, Manchester, Greater Manchester, UK",
+    "Postcode": "M15 5UB",
+    "Service type": "Care home"
+  },
+  {
+    "ID": 14,
+    "Provider name": "Shoggins Care Home Ltd",
+    "Location name": "Church Lane House (Leicester)",
+    "Address": "29 Church Lane, Leicester, Leicestershire, UK",
+    "Postcode": "LE3 1HW",
+    "Service type": "Care home"
+  },
+  {
+    "ID": 15,
+    "Provider name": "Shoggins Care Home Ltd",
+    "Location name": "Church Lane Lodge (Newcastle)",
+    "Address": "213 Church Lane, Newcastle, Tyne and Wear, UK",
+    "Postcode": "NE4 8EY",
+    "Service type": "Care home"
+  },
+  {
+    "ID": 16,
+    "Provider name": "Shoggins Care Home Ltd",
+    "Location name": "Hawthorne Court (Canterbury)",
+    "Address": "39 Hawthorne Crescent, Canterbury, Kent, UK",
+    "Postcode": "CT10 6ST",
+    "Service type": "Care home"
+  },
+  {
+    "ID": 17,
+    "Provider name": "Shoggins Care Home Ltd",
+    "Location name": "Hawthorne House (Portsmouth)",
+    "Address": "160 Hawthorne Crescent, Portsmouth, Hampshire, UK",
+    "Postcode": "PO19 6DG",
+    "Service type": "Care home"
+  },
+  {
+    "ID": 18,
+    "Provider name": "Shoggins Care Home Ltd",
+    "Location name": "Hawthorne Manor (Exeter)",
+    "Address": "185 Hawthorne Crescent, Exeter, Devon, UK",
+    "Postcode": "EX10 8BR",
+    "Service type": "Care home"
+  },
+  {
+    "ID": 19,
+    "Provider name": "Shoggins Care Home Ltd",
+    "Location name": "Hawthorne View (Derby)",
+    "Address": "26 Hawthorne Crescent, Derby, Derbyshire, UK",
+    "Postcode": "DE11 4NU",
+    "Service type": "Care home"
+  },
+  {
+    "ID": 20,
+    "Provider name": "Shoggins Care Home Ltd",
+    "Location name": "High Street House (Durham)",
+    "Address": "104 High Street, Durham, County Durham, UK",
+    "Postcode": "DH6 9DG",
+    "Service type": "Care home"
+  },
+  {
+    "ID": 21,
+    "Provider name": "Shoggins Care Home Ltd",
+    "Location name": "High Street House (Peterborough)",
+    "Address": "33 High Street, Peterborough, Cambridgeshire, UK",
+    "Postcode": "PE1 9JN",
+    "Service type": "Care home"
+  },
+  {
+    "ID": 22,
+    "Provider name": "Shoggins Care Services Limited",
+    "Location name": "High Street House (Warrington)",
+    "Address": "159 High Street, Warrington, Cheshire, UK",
+    "Postcode": "WA3 7JN",
+    "Service type": "Community social care"
+  },
+  {
+    "ID": 23,
+    "Provider name": "Shoggins Care Home Ltd",
+    "Location name": "High Street Lodge (Exeter)",
+    "Address": "142 High Street, Exeter, Devon, UK",
+    "Postcode": "EX1 5ST",
+    "Service type": "Care home"
+  },
+  {
+    "ID": 24,
+    "Provider name": "Shoggins Care Home Ltd",
+    "Location name": "High Street Lodge (Oxford)",
+    "Address": "257 High Street, Oxford, Oxfordshire, UK",
+    "Postcode": "OX6 4UB",
+    "Service type": "Care home"
+  },
+  {
+    "ID": 25,
+    "Provider name": "Shoggins Care Home Ltd",
+    "Location name": "Highfield House (Bolton)",
+    "Address": "111 High Street, Bolton, Greater Manchester, UK",
+    "Postcode": "BL16 6PL",
+    "Service type": "Care home"
+  },
+  {
+    "ID": 26,
+    "Provider name": "Shoggins Care Home Ltd",
+    "Location name": "Kingsway Court (Bristol)",
+    "Address": "98 Kingsway, Bristol, Bristol, UK",
+    "Postcode": "BS12 9AA",
+    "Service type": "Care home"
+  },
+  {
+    "ID": 27,
+    "Provider name": "Shoggins Care Home Ltd",
+    "Location name": "Kingsway Court (Derby)",
+    "Address": "295 Kingsway, Derby, Derbyshire, UK",
+    "Postcode": "DE20 7WS",
+    "Service type": "Care home"
+  },
+  {
+    "ID": 28,
+    "Provider name": "Shoggins Care Home Ltd",
+    "Location name": "Kingsway Court (Preston)",
+    "Address": "292 Kingsway, Preston, Lancashire, UK",
+    "Postcode": "PR3 5BR",
+    "Service type": "Care home"
+  },
+  {
+    "ID": 29,
+    "Provider name": "Shoggins Care Home Ltd",
+    "Location name": "Kingsway House (Brighton)",
+    "Address": "207 Kingsway, Brighton, East Sussex, UK",
+    "Postcode": "BN14 3GF",
+    "Service type": "Care home"
+  },
+  {
+    "ID": 30,
+    "Provider name": "Shoggins Care Home Ltd",
+    "Location name": "Kingsway House (Oxford)",
+    "Address": "120 Kingsway, Oxford, Oxfordshire, UK",
+    "Postcode": "OX20 2PL",
+    "Service type": "Care home"
+  },
+  {
+    "ID": 31,
+    "Provider name": "Shoggins Care Home Ltd",
+    "Location name": "Kingsway Lodge (Carlisle)",
+    "Address": "41 Kingsway, Carlisle, Cumbria, UK",
+    "Postcode": "CA2 1EY",
+    "Service type": "Care home"
+  },
+  {
+    "ID": 32,
+    "Provider name": "Shoggins Care Home Ltd",
+    "Location name": "Kingsway Lodge (Plymouth)",
+    "Address": "26 Kingsway, Plymouth, Devon, UK",
+    "Postcode": "PL7 2RD",
+    "Service type": "Care home"
+  },
+  {
+    "ID": 33,
+    "Provider name": "Shoggins Care Home Ltd",
+    "Location name": "London Road Court (Plymouth)",
+    "Address": "5 London Road, Plymouth, Devon, UK",
+    "Postcode": "PL13 4WS",
+    "Service type": "Care home"
+  },
+  {
+    "ID": 34,
+    "Provider name": "Shoggins Care Home Ltd",
+    "Location name": "London Road House (Cambridge)",
+    "Address": "245 London Road, Cambridge, Cambridgeshire, UK",
+    "Postcode": "CB15 1DG",
+    "Service type": "Care home"
+  },
+  {
+    "ID": 35,
+    "Provider name": "Shoggins Care Services Limited",
+    "Location name": "London Road House (York)",
+    "Address": "100 London Road, York, North Yorkshire, UK",
+    "Postcode": "YO9 9RD",
+    "Service type": "Community social care"
+  },
+  {
+    "ID": 36,
+    "Provider name": "Shoggins Care Home Ltd",
+    "Location name": "London Road Lodge (Bolton)",
+    "Address": "264 London Road, Bolton, Greater Manchester, UK",
+    "Postcode": "BL8 1BR",
+    "Service type": "Care home"
+  },
+  {
+    "ID": 37,
+    "Provider name": "Shoggins Care Home Ltd",
+    "Location name": "Maple Rise Court (Newcastle)",
+    "Address": "64 Maple Rise, Newcastle, Tyne and Wear, UK",
+    "Postcode": "NE7 9GF",
+    "Service type": "Care home"
+  },
+  {
+    "ID": 38,
+    "Provider name": "Shoggins Care Services Limited",
+    "Location name": "Maple Rise Court (Swindon)",
+    "Address": "200 Maple Rise, Swindon, Wiltshire, UK",
+    "Postcode": "SN17 5EY",
+    "Service type": "Community social care"
+  },
+  {
+    "ID": 39,
+    "Provider name": "Shoggins Care Home Ltd",
+    "Location name": "Maple Rise House (Exeter)",
+    "Address": "222 Maple Rise, Exeter, Devon, UK",
+    "Postcode": "EX13 9EY",
+    "Service type": "Care home"
+  },
+  {
+    "ID": 40,
+    "Provider name": "Shoggins Care Home Ltd",
+    "Location name": "Maple Rise Lodge (Portsmouth)",
+    "Address": "76 Maple Rise, Portsmouth, Hampshire, UK",
+    "Postcode": "PO20 4YH",
+    "Service type": "Care home"
+  },
+  {
+    "ID": 41,
+    "Provider name": "Shoggins Care Services Limited",
+    "Location name": "Maple Rise Manor (Southampton)",
+    "Address": "267 Maple Rise, Southampton, Hampshire, UK",
+    "Postcode": "SO10 5DG",
+    "Service type": "Community social care"
+  },
+  {
+    "ID": 42,
+    "Provider name": "Shoggins Care Home Ltd",
+    "Location name": "Maplehurst Manor (Birmingham)",
+    "Address": "56 Station Road, Birmingham, West Midlands, UK",
+    "Postcode": "B13 5LE",
+    "Service type": "Care home"
+  },
+  {
+    "ID": 43,
+    "Provider name": "Shoggins Care Services Limited",
+    "Location name": "Meadow Lane Court (Southampton)",
+    "Address": "30 Meadow Lane, Southampton, Hampshire, UK",
+    "Postcode": "SO13 6FP",
+    "Service type": "Community social care"
+  },
+  {
+    "ID": 44,
+    "Provider name": "Shoggins Care Home Ltd",
+    "Location name": "Meadow Lane House (Canterbury)",
+    "Address": "240 Meadow Lane, Canterbury, Kent, UK",
+    "Postcode": "CT7 5PL",
+    "Service type": "Care home"
+  },
+  {
+    "ID": 45,
+    "Provider name": "Shoggins Care Home Ltd",
+    "Location name": "Meadow Lane House (Manchester)",
+    "Address": "147 Meadow Lane, Manchester, Greater Manchester, UK",
+    "Postcode": "M12 4ST",
+    "Service type": "Care home"
+  },
+  {
+    "ID": 46,
+    "Provider name": "Shoggins Care Home Ltd",
+    "Location name": "Meadow Lane House (Peterborough)",
+    "Address": "113 Meadow Lane, Peterborough, Cambridgeshire, UK",
+    "Postcode": "PE12 6BR",
+    "Service type": "Care home"
+  },
+  {
+    "ID": 47,
+    "Provider name": "Shoggins Care Services Limited",
+    "Location name": "Meadow Lane House (Sunderland)",
+    "Address": "237 Meadow Lane, Sunderland, Tyne and Wear, UK",
+    "Postcode": "SR8 2UB",
+    "Service type": "Community social care"
+  },
+  {
+    "ID": 48,
+    "Provider name": "Shoggins Care Home Ltd",
+    "Location name": "Meadow Lane Lodge (Peterborough)",
+    "Address": "290 Meadow Lane, Peterborough, Cambridgeshire, UK",
+    "Postcode": "PE18 8GF",
+    "Service type": "Care home"
+  },
+  {
+    "ID": 49,
+    "Provider name": "Shoggins Care Home Ltd",
+    "Location name": "Meadow Lane Lodge (Preston)",
+    "Address": "72 Meadow Lane, Preston, Lancashire, UK",
+    "Postcode": "PR9 7GF",
+    "Service type": "Care home"
+  },
+  {
+    "ID": 50,
+    "Provider name": "Shoggins Care Home Ltd",
+    "Location name": "Meadowbrook House (Birmingham)",
+    "Address": "16 High Street, Birmingham, West Midlands, UK",
+    "Postcode": "B4 2DG",
+    "Service type": "Care home"
+  },
+  {
+    "ID": 51,
+    "Provider name": "Shoggins Care Home Ltd",
+    "Location name": "Mill Lane Court (Peterborough)",
+    "Address": "85 Mill Lane, Peterborough, Cambridgeshire, UK",
+    "Postcode": "PE4 1NU",
+    "Service type": "Care home"
+  },
+  {
+    "ID": 52,
+    "Provider name": "Shoggins Care Home Ltd",
+    "Location name": "Mill Lane House (Norwich)",
+    "Address": "270 Mill Lane, Norwich, Norfolk, UK",
+    "Postcode": "NR13 2NU",
+    "Service type": "Care home"
+  },
+  {
+    "ID": 53,
+    "Provider name": "Shoggins Care Home Ltd",
+    "Location name": "Mill Lane Lodge (Canterbury)",
+    "Address": "232 Mill Lane, Canterbury, Kent, UK",
+    "Postcode": "CT4 4LE",
+    "Service type": "Care home"
+  },
+  {
+    "ID": 54,
+    "Provider name": "Shoggins Care Services Limited",
+    "Location name": "Mill Lane Lodge (York)",
+    "Address": "238 Mill Lane, York, North Yorkshire, UK",
+    "Postcode": "YO18 3AA",
+    "Service type": "Community social care"
+  },
+  {
+    "ID": 55,
+    "Provider name": "Shoggins Care Home Ltd",
+    "Location name": "Mill Lane Manor (Leeds)",
+    "Address": "193 Mill Lane, Leeds, West Yorkshire, UK",
+    "Postcode": "LS14 7AA",
+    "Service type": "Care home"
+  },
+  {
+    "ID": 56,
+    "Provider name": "Shoggins Care Home Ltd",
+    "Location name": "Oakfield Court (Derby)",
+    "Address": "63 Oakfield Way, Derby, Derbyshire, UK",
+    "Postcode": "DE3 8AA",
+    "Service type": "Care home"
+  },
+  {
+    "ID": 57,
+    "Provider name": "Shoggins Care Home Ltd",
+    "Location name": "Oakfield House (Bristol)",
+    "Address": "121 Oakfield Way, Bristol, Bristol, UK",
+    "Postcode": "BS6 7TJ",
+    "Service type": "Care home"
+  },
+  {
+    "ID": 58,
+    "Provider name": "Shoggins Care Home Ltd",
+    "Location name": "Oakfield House (Durham)",
+    "Address": "99 Oakfield Way, Durham, County Durham, UK",
+    "Postcode": "DH18 4PL",
+    "Service type": "Care home"
+  },
+  {
+    "ID": 59,
+    "Provider name": "Shoggins Care Home Ltd",
+    "Location name": "Oakfield House (Portsmouth)",
+    "Address": "54 Oakfield Way, Portsmouth, Hampshire, UK",
+    "Postcode": "PO17 3UB",
+    "Service type": "Care home"
+  },
+  {
+    "ID": 60,
+    "Provider name": "Shoggins Care Services Limited",
+    "Location name": "Oakfield House (Sheffield)",
+    "Address": "230 Oakfield Way, Sheffield, South Yorkshire, UK",
+    "Postcode": "S15 9NU",
+    "Service type": "Community social care"
+  },
+  {
+    "ID": 61,
+    "Provider name": "Shoggins Care Services Limited",
+    "Location name": "Oakfield House (York)",
+    "Address": "193 Oakfield Way, York, North Yorkshire, UK",
+    "Postcode": "YO15 2WS",
+    "Service type": "Community social care"
+  },
+  {
+    "ID": 62,
+    "Provider name": "Shoggins Care Home Ltd",
+    "Location name": "Oakfield Lodge (Exeter)",
+    "Address": "274 Oakfield Way, Exeter, Devon, UK",
+    "Postcode": "EX19 2JN",
+    "Service type": "Care home"
+  },
+  {
+    "ID": 63,
+    "Provider name": "Shoggins Care Home Ltd",
+    "Location name": "Oakfield Manor (Derby)",
+    "Address": "156 Oakfield Way, Derby, Derbyshire, UK",
+    "Postcode": "DE5 2GF",
+    "Service type": "Care home"
+  },
+  {
+    "ID": 64,
+    "Provider name": "Shoggins Care Home Ltd",
+    "Location name": "Oakfield Manor (Durham)",
+    "Address": "172 Oakfield Way, Durham, County Durham, UK",
+    "Postcode": "DH12 2HW",
+    "Service type": "Care home"
+  },
+  {
+    "ID": 65,
+    "Provider name": "Shoggins Care Home Ltd",
+    "Location name": "Orchard View Court (Manchester)",
+    "Address": "98 Orchard View, Manchester, Greater Manchester, UK",
+    "Postcode": "M18 6YH",
+    "Service type": "Care home"
+  },
+  {
+    "ID": 66,
+    "Provider name": "Shoggins Care Home Ltd",
+    "Location name": "Orchard View House (Liverpool)",
+    "Address": "65 Orchard View, Liverpool, Merseyside, UK",
+    "Postcode": "L6 2LE",
+    "Service type": "Care home"
+  },
+  {
+    "ID": 67,
+    "Provider name": "Shoggins Care Home Ltd",
+    "Location name": "Orchard View House (Nottingham)",
+    "Address": "223 Orchard View, Nottingham, Nottinghamshire, UK",
+    "Postcode": "NG8 7DG",
+    "Service type": "Care home"
+  },
+  {
+    "ID": 68,
+    "Provider name": "Shoggins Care Services Limited",
+    "Location name": "Orchard View House (Swindon)",
+    "Address": "180 Orchard View, Swindon, Wiltshire, UK",
+    "Postcode": "SN14 4BR",
+    "Service type": "Community social care"
+  },
+  {
+    "ID": 69,
+    "Provider name": "Shoggins Care Home Ltd",
+    "Location name": "Orchard View Lodge (Derby)",
+    "Address": "282 Orchard View, Derby, Derbyshire, UK",
+    "Postcode": "DE14 5RD",
+    "Service type": "Care home"
+  },
+  {
+    "ID": 70,
+    "Provider name": "Shoggins Care Services Limited",
+    "Location name": "Park Avenue Court (Preston)",
+    "Address": "78 Park Avenue, Preston, Lancashire, UK",
+    "Postcode": "PR12 8JN",
+    "Service type": "Community social care"
+  },
+  {
+    "ID": 71,
+    "Provider name": "Shoggins Care Home Ltd",
+    "Location name": "Park Avenue House (Plymouth)",
+    "Address": "300 Park Avenue, Plymouth, Devon, UK",
+    "Postcode": "PL10 3TJ",
+    "Service type": "Care home"
+  },
+  {
+    "ID": 72,
+    "Provider name": "Shoggins Care Home Ltd",
+    "Location name": "Pine Grove House (Bolton)",
+    "Address": "180 Pine Grove, Bolton, Greater Manchester, UK",
+    "Postcode": "BL2 8UB",
+    "Service type": "Care home"
+  },
+  {
+    "ID": 73,
+    "Provider name": "Shoggins Care Services Limited",
+    "Location name": "Pine Grove Lodge (Swindon)",
+    "Address": "117 Pine Grove, Swindon, Wiltshire, UK",
+    "Postcode": "SN11 3YH",
+    "Service type": "Community social care"
+  },
+  {
+    "ID": 74,
+    "Provider name": "Shoggins Care Home Ltd",
+    "Location name": "Pine Grove Manor (Nottingham)",
+    "Address": "203 Pine Grove, Nottingham, Nottinghamshire, UK",
+    "Postcode": "NG5 6AA",
+    "Service type": "Care home"
+  },
+  {
+    "ID": 75,
+    "Provider name": "Shoggins Care Home Ltd",
+    "Location name": "Queens Road Court (Exeter)",
+    "Address": "173 Queens Road, Exeter, Devon, UK",
+    "Postcode": "EX7 7YH",
+    "Service type": "Care home"
+  },
+  {
+    "ID": 76,
+    "Provider name": "Shoggins Care Home Ltd",
+    "Location name": "Queens Road Court (Peterborough)",
+    "Address": "169 Queens Road, Peterborough, Cambridgeshire, UK",
+    "Postcode": "PE15 7EY",
+    "Service type": "Care home"
+  },
+  {
+    "ID": 77,
+    "Provider name": "Shoggins Care Home Ltd",
+    "Location name": "Queens Road House (Brighton)",
+    "Address": "282 Queens Road, Brighton, East Sussex, UK",
+    "Postcode": "BN3 6RD",
+    "Service type": "Care home"
+  },
+  {
+    "ID": 78,
+    "Provider name": "Shoggins Care Home Ltd",
+    "Location name": "Queens Road House (Portsmouth)",
+    "Address": "205 Queens Road, Portsmouth, Hampshire, UK",
+    "Postcode": "PO5 8HW",
+    "Service type": "Care home"
+  },
+  {
+    "ID": 79,
+    "Provider name": "Shoggins Care Home Ltd",
+    "Location name": "Queens Road Lodge (Portsmouth)",
+    "Address": "229 Queens Road, Portsmouth, Hampshire, UK",
+    "Postcode": "PO8 9LE",
+    "Service type": "Care home"
+  },
+  {
+    "ID": 80,
+    "Provider name": "Shoggins Care Home Ltd",
+    "Location name": "Queens Road Manor (Oxford)",
+    "Address": "19 Queens Road, Oxford, Oxfordshire, UK",
+    "Postcode": "OX3 3ST",
+    "Service type": "Care home"
+  },
+  {
+    "ID": 81,
+    "Provider name": "Shoggins Care Home Ltd",
+    "Location name": "Riverbank Court (Cambridge)",
+    "Address": "286 Riverbank Road, Cambridge, Cambridgeshire, UK",
+    "Postcode": "CB18 2FP",
+    "Service type": "Care home"
+  },
+  {
+    "ID": 82,
+    "Provider name": "Shoggins Care Home Ltd",
+    "Location name": "Riverbank Court (Nottingham)",
+    "Address": "259 Riverbank Road, Nottingham, Nottinghamshire, UK",
+    "Postcode": "NG11 8FP",
+    "Service type": "Care home"
+  },
+  {
+    "ID": 83,
+    "Provider name": "Shoggins Care Home Ltd",
+    "Location name": "Riverbank House (Exeter)",
+    "Address": "73 Riverbank Road, Exeter, Devon, UK",
+    "Postcode": "EX5 4RD",
+    "Service type": "Care home"
+  },
+  {
+    "ID": 84,
+    "Provider name": "Shoggins Care Home Ltd",
+    "Location name": "Riverbank House (Newcastle)",
+    "Address": "15 Riverbank Road, Newcastle, Tyne and Wear, UK",
+    "Postcode": "NE1 7BR",
+    "Service type": "Care home"
+  },
+  {
+    "ID": 85,
+    "Provider name": "Shoggins Care Home Ltd",
+    "Location name": "Riverbank House (Oxford)",
+    "Address": "73 Riverbank Road, Oxford, Oxfordshire, UK",
+    "Postcode": "OX9 5YH",
+    "Service type": "Care home"
+  },
+  {
+    "ID": 86,
+    "Provider name": "Shoggins Care Home Ltd",
+    "Location name": "Riverbank Lodge (Bristol)",
+    "Address": "195 Riverbank Road, Bristol, Bristol, UK",
+    "Postcode": "BS9 8WS",
+    "Service type": "Care home"
+  },
+  {
+    "ID": 87,
+    "Provider name": "Shoggins Care Home Ltd",
+    "Location name": "Riverbank Lodge (Nottingham)",
+    "Address": "116 Riverbank Road, Nottingham, Nottinghamshire, UK",
+    "Postcode": "NG19 4TJ",
+    "Service type": "Care home"
+  },
+  {
+    "ID": 88,
+    "Provider name": "Shoggins Care Home Ltd",
+    "Location name": "Riverbank Manor (Portsmouth)",
+    "Address": "38 Riverbank Road, Portsmouth, Hampshire, UK",
+    "Postcode": "PO14 2ST",
+    "Service type": "Care home"
+  },
+  {
+    "ID": 89,
+    "Provider name": "Shoggins Care Home Ltd",
+    "Location name": "Riverside Manor (Bolton)",
+    "Address": "278 Pine Grove, Bolton, Greater Manchester, UK",
+    "Postcode": "BL11 2EY",
+    "Service type": "Care home"
+  },
+  {
+    "ID": 90,
+    "Provider name": "Shoggins Care Home Ltd",
+    "Location name": "Springfield Court (Brighton)",
+    "Address": "231 Springfield Drive, Brighton, East Sussex, UK",
+    "Postcode": "BN20 5NU",
+    "Service type": "Care home"
+  },
+  {
+    "ID": 91,
+    "Provider name": "Shoggins Care Home Ltd",
+    "Location name": "Springfield Court (Portsmouth)",
+    "Address": "177 Springfield Drive, Portsmouth, Hampshire, UK",
+    "Postcode": "PO2 7FP",
+    "Service type": "Care home"
+  },
+  {
+    "ID": 92,
+    "Provider name": "Shoggins Care Services Limited",
+    "Location name": "Springfield Court (Southampton)",
+    "Address": "176 Springfield Drive, Southampton, Hampshire, UK",
+    "Postcode": "SO4 3WS",
+    "Service type": "Community social care"
+  },
+  {
+    "ID": 93,
+    "Provider name": "Shoggins Care Services Limited",
+    "Location name": "Springfield Court (York)",
+    "Address": "57 Springfield Drive, York, North Yorkshire, UK",
+    "Postcode": "YO1 4DG",
+    "Service type": "Community social care"
+  },
+  {
+    "ID": 94,
+    "Provider name": "Shoggins Care Services Limited",
+    "Location name": "Springfield House (Southampton)",
+    "Address": "127 Springfield Drive, Southampton, Hampshire, UK",
+    "Postcode": "SO1 2TJ",
+    "Service type": "Community social care"
+  },
+  {
+    "ID": 95,
+    "Provider name": "Shoggins Care Services Limited",
+    "Location name": "Springfield Lodge (Warrington)",
+    "Address": "9 Springfield Drive, Warrington, Cheshire, UK",
+    "Postcode": "WA6 8NU",
+    "Service type": "Community social care"
+  },
+  {
+    "ID": 96,
+    "Provider name": "Shoggins Care Home Ltd",
+    "Location name": "Springfield Manor (Plymouth)",
+    "Address": "92 Springfield Drive, Plymouth, Devon, UK",
+    "Postcode": "PL16 5AA",
+    "Service type": "Care home"
+  },
+  {
+    "ID": 97,
+    "Provider name": "Shoggins Care Home Ltd",
+    "Location name": "Springfield View (Bolton)",
+    "Address": "167 Springfield Drive, Bolton, Greater Manchester, UK",
+    "Postcode": "BL19 7ST",
+    "Service type": "Care home"
+  },
+  {
+    "ID": 98,
+    "Provider name": "Shoggins Care Services Limited",
+    "Location name": "Springfield View (Southampton)",
+    "Address": "77 Springfield Drive, Southampton, Hampshire, UK",
+    "Postcode": "SO2 9PL",
+    "Service type": "Community social care"
+  },
+  {
+    "ID": 99,
+    "Provider name": "Shoggins Care Home Ltd",
+    "Location name": "Springwell House (Carlisle)",
+    "Address": "204 Springfield Drive, Carlisle, Cumbria, UK",
+    "Postcode": "CA16 8YH",
+    "Service type": "Care home"
+  },
+  {
+    "ID": 100,
+    "Provider name": "Shoggins Care Services Limited",
+    "Location name": "Station Road Centre (Sudbury)",
+    "Address": "1st Floor, 54a Station Road, Sudbury, Suffolk, UK",
+    "Postcode": "CO5 1ST",
+    "Service type": "Community social care"
+  },
+  {
+    "ID": 101,
+    "Provider name": "Shoggins Care Home Ltd",
+    "Location name": "Station Road Court (Bolton)",
+    "Address": "253 Station Road, Bolton, Greater Manchester, UK",
+    "Postcode": "BL5 9YH",
+    "Service type": "Care home"
+  },
+  {
+    "ID": 102,
+    "Provider name": "Shoggins Care Home Ltd",
+    "Location name": "Station Road Court (Durham)",
+    "Address": "200 Station Road, Durham, County Durham, UK",
+    "Postcode": "DH15 3LE",
+    "Service type": "Care home"
+  },
+  {
+    "ID": 103,
+    "Provider name": "Shoggins Care Home Ltd",
+    "Location name": "Station Road Court (Nottingham)",
+    "Address": "65 Station Road, Nottingham, Nottinghamshire, UK",
+    "Postcode": "NG14 9HW",
+    "Service type": "Care home"
+  },
+  {
+    "ID": 104,
+    "Provider name": "Shoggins Care Home Ltd",
+    "Location name": "Station Road House (Leeds)",
+    "Address": "166 Station Road, Leeds, West Yorkshire, UK",
+    "Postcode": "LS11 6WS",
+    "Service type": "Care home"
+  },
+  {
+    "ID": 105,
+    "Provider name": "Shoggins Care Services Limited",
+    "Location name": "Station Road House (Southampton)",
+    "Address": "37 Station Road, Southampton, Hampshire, UK",
+    "Postcode": "SO16 7HW",
+    "Service type": "Community social care"
+  },
+  {
+    "ID": 106,
+    "Provider name": "Shoggins Care Home Ltd",
+    "Location name": "Station Road Lodge (Birmingham)",
+    "Address": "3 Station Road, Birmingham, West Midlands, UK",
+    "Postcode": "B10 4HW",
+    "Service type": "Care home"
+  },
+  {
+    "ID": 107,
+    "Provider name": "Shoggins Care Home Ltd",
+    "Location name": "Station Road Lodge (Durham)",
+    "Address": "169 Station Road, Durham, County Durham, UK",
+    "Postcode": "DH9 1FP",
+    "Service type": "Care home"
+  },
+  {
+    "ID": 108,
+    "Provider name": "Shoggins Care Home Ltd",
+    "Location name": "Station Road Lodge (Nottingham)",
+    "Address": "70 Station Road, Nottingham, Nottinghamshire, UK",
+    "Postcode": "NG17 1LE",
+    "Service type": "Care home"
+  },
+  {
+    "ID": 109,
+    "Provider name": "Shoggins Care Home Ltd",
+    "Location name": "Victoria Court (Carlisle)",
+    "Address": "295 Victoria Road, Carlisle, Cumbria, UK",
+    "Postcode": "CA19 9BR",
+    "Service type": "Care home"
+  },
+  {
+    "ID": 110,
+    "Provider name": "Shoggins Care Home Ltd",
+    "Location name": "Victoria Court (Leicester)",
+    "Address": "194 Victoria Road, Leicester, Leicestershire, UK",
+    "Postcode": "LE20 9FP",
+    "Service type": "Care home"
+  },
+  {
+    "ID": 111,
+    "Provider name": "Shoggins Care Home Ltd",
+    "Location name": "Victoria Road House (Nottingham)",
+    "Address": "163 Victoria Road, Nottingham, Nottinghamshire, UK",
+    "Postcode": "NG2 5WS",
+    "Service type": "Care home"
+  },
+  {
+    "ID": 112,
+    "Provider name": "Shoggins Care Home Ltd",
+    "Location name": "Victoria Road House (Preston)",
+    "Address": "3 Victoria Road, Preston, Lancashire, UK",
+    "Postcode": "PR6 6EY",
+    "Service type": "Care home"
+  },
+  {
+    "ID": 113,
+    "Provider name": "Shoggins Care Home Ltd",
+    "Location name": "Victoria Road Lodge (Leeds)",
+    "Address": "214 Victoria Road, Leeds, West Yorkshire, UK",
+    "Postcode": "LS17 8DG",
+    "Service type": "Care home"
+  },
+  {
+    "ID": 114,
+    "Provider name": "Shoggins Care Services Limited",
+    "Location name": "Victoria Road Lodge (Southampton)",
+    "Address": "52 Victoria Road, Southampton, Hampshire, UK",
+    "Postcode": "SO19 8LE",
+    "Service type": "Community social care"
+  },
+  {
+    "ID": 115,
+    "Provider name": "Shoggins Care Home Ltd",
+    "Location name": "Victoria Road Manor (Canterbury)",
+    "Address": "94 Victoria Road, Canterbury, Kent, UK",
+    "Postcode": "CT13 7UB",
+    "Service type": "Care home"
+  },
+  {
+    "ID": 116,
+    "Provider name": "Shoggins Care Home Ltd",
+    "Location name": "Westwood Court (Birmingham)",
+    "Address": "299 Westwood Avenue, Birmingham, West Midlands, UK",
+    "Postcode": "B7 3FP",
+    "Service type": "Care home"
+  },
+  {
+    "ID": 117,
+    "Provider name": "Shoggins Care Home Ltd",
+    "Location name": "Westwood Court (Exeter)",
+    "Address": "99 Westwood Avenue, Exeter, Devon, UK",
+    "Postcode": "EX8 5TJ",
+    "Service type": "Care home"
+  },
+  {
+    "ID": 118,
+    "Provider name": "Shoggins Care Services Limited",
+    "Location name": "Westwood Court (Warrington)",
+    "Address": "116 Westwood Avenue, Warrington, Cheshire, UK",
+    "Postcode": "WA20 6GF",
+    "Service type": "Community social care"
+  },
+  {
+    "ID": 119,
+    "Provider name": "Shoggins Care Home Ltd",
+    "Location name": "Westwood House (Exeter)",
+    "Address": "167 Westwood Avenue, Exeter, Devon, UK",
+    "Postcode": "EX4 6UB",
+    "Service type": "Care home"
+  },
+  {
+    "ID": 120,
+    "Provider name": "Shoggins Care Home Ltd",
+    "Location name": "Westwood Lodge (Brighton)",
+    "Address": "221 Westwood Avenue, Brighton, East Sussex, UK",
+    "Postcode": "BN17 4JN",
+    "Service type": "Care home"
+  }
+]

@@ -1,0 +1,29 @@
+{% extends "private-beta/2026/february/layouts/signed-in-basic.html" %}
+
+{% set pageName = "You do not have access to this service" %}
+
+{% block content %}
+<div class="govuk-grid-row">
+    
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">{{pageName}}</h1>
+    <h2 class="govuk-heading-m">People with access</h2>
+    <ul class="govuk-list govuk-list--bullet">
+      <li><abbr title="Care Quality Commission">CQC</abbr> nominated individuals with <abbr title="Care Quality Commission">CQC</abbr> registered email addresses</li>
+      <li>local authority <abbr title="Adult Social Care">ASC</abbr> representatives</li>
+    </ul>
+    <p class="govuk-body">If you think you need access, <a href="mailto:getadultsocialcaredata.team@dhsc.gov.uk" class="govuk-link">request access to this service</a>.</p>
+    <p class="govuk-body">We will need your:</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>name</li>
+      <li>organisation name</li>
+      <li><abbr title="Care Quality Commission">CQC</abbr> registration number</li>
+      <li><abbr title="Care Quality Commission">CQC</abbr> registered email address</li>
+      <li>gov.uk email address</li>
+    </ul>
+    <h2 class="govuk-heading-m">Get support or leave feedback</h2>
+    <p class="govuk-body"><a href="mailto:getadultsocialcaredata.team@dhsc.gov.uk" class="govuk-link">getadultsocialcaredata.team@dhsc.gov.uk</a></p>
+  </div>
+
+</div>
+{% endblock %}

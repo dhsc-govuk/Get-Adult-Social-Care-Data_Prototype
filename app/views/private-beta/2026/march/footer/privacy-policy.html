@@ -1,0 +1,177 @@
+{% if data.signedInState == "signedInBasic" %}
+{% extends "private-beta/2026/march/layouts/signed-in-basic.html" %}
+{% elif data.signedInState == "signedInSelectLocation" %}
+{% extends "private-beta/2026/march/layouts/signed-in-select-location.html" %}
+{% elif data.signedInState == "signedInHome" %}
+{% extends "private-beta/2026/march/layouts/signed-in-home.html" %}
+{% elif data.signedInState == "signedIn" %}
+{% extends "private-beta/2026/march/layouts/signed-in.html" %}
+{% elif data.signedInState == "signedInMenu" %}
+{% extends "private-beta/2026/march/layouts/signed-in-menu.html" %}
+{% else %}
+{% extends "private-beta/2026/march/layouts/default.html" %}
+{% endif %}
+
+{% set pageName = "Our privacy notice" %}
+
+{% block beforeContent %}
+{% if backLink != "false" %}
+<a href="javascript:history.back()" class="govuk-back-link">Back</a>
+{% endif %}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">{{pageName}}</h1>
+    <p class="govuk-body">
+      First published: 19 February 2026
+      <br>
+      Last updated: 19 February 2026
+    </p>
+    <p class="govuk-body">Your privacy is important to us. This privacy policy covers what we collect and how we use it.</p>
+
+    <h2 class="govuk-heading-m">Who we are</h2>
+    <p class="govuk-body">{{serviceName}} (GASCD) is a new service provided by the Department for Health and Social Care as part of the Data Access Project. The <abbr title="{{serviceName}}">GASCD</abbr> service gives key stakeholders in the adult social care sector access to adult social care data in one place.</p>
+
+    <h2 class="govuk-heading-m">Data controller</h2>
+    <p class="govuk-body">The Department of Health and Social Care (DHSC) is the data controller for the <abbr title="{{serviceName}}">GASCD</abbr> service.</p>    
+
+    <h2 class="govuk-heading-m">What data we collect from you</h2>
+    <p class="govuk-body">The personal data we collect from you when you create a <abbr title="{{serviceName}}">GASCD</abbr> service account includes:</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>your name</li>
+      <li>your Care Quality Commission (CQC) registered or GOV.UK email address</li>
+      <li>name and location of your employer or organisation</li>
+      <li>the IP address you use to access the <abbr title="{{serviceName}}">GASCD</abbr> service</li>
+    </ul>
+
+    <h2 class="govuk-heading-m">What data we collect from other sources</h2>
+    <p class="govuk-body">We work closely with trusted partners such as the <abbr title="Care Quality Commission">CQC</abbr> who provide us with information on:</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>name of registered <abbr title="Care Quality Commission">CQC</abbr> nominated individuals</li>
+      <li>email address of <abbr title="Care Quality Commission">CQC</abbr> nominated individuals</li>
+      <li>name and location of the <abbr title="Care Quality Commission">CQC</abbr> registered care provider organisation</li>
+    </ul>
+    <p class="govuk-body">We use this information for verification and pre-authorisation to allow access to the data the <abbr title="Department of Health and Social Care">DHSC</abbr> provides through its free <abbr title="{{serviceName}}">GASCD</abbr> service.  To find out more about how the <abbr title="Care Quality Commission">CQC</abbr> shares your data with us read the <a href="https://www.cqc.org.uk/about-us/our-policies/privacy-statement" class="govuk-link"><abbr title="Care Quality Commission">CQC</abbr>’s privacy statement</a>.</p>
+    
+    <h2 class="govuk-heading-m">When you subscribe to our mailing list</h2>
+    <p class="govuk-body">If you subscribe to the <abbr title="{{serviceName}}">GASCD</abbr> service mailing list, we’ll collect your:</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>email address</li>
+      <li>organisation</li>
+    </ul>
+    <p class="govuk-body">We use the GOV.UK Notify platform to send updates and requests. This involves us sharing your email address with the platform provider, Government Digital Service (GDS) as the data processor. For more information, you can read the <a href="https://www.notifications.service.gov.uk/privacy" class="govuk-link">GOV.UK Notify privacy notice</a>.</p>
+
+    <h2 class="govuk-heading-m">When you contact us</h2>
+    <p class="govuk-body">If you contact us about the <abbr title="{{serviceName}}">GASCD</abbr> service, we’ll collect your name, email address and any other personal information you choose to include in your message.</p>
+
+    <h2 class="govuk-heading-m">Why we need your data</h2>
+    <p class="govuk-body">We collect your personal data to:</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>allow you to access the <abbr title="{{serviceName}}">GASCD</abbr> service</li>
+      <li>understand who is using the service</li>
+      <li>gather feedback to improve our services</li>
+      <li>respond to any feedback you send us, if you’ve asked us to</li>
+      <li>send email alerts to users who request them</li>
+      <li>monitor use of the service to identify security threats</li>
+      <li>monitor the performance of the service to identify inefficiencies and errors</li>
+      <li>analyse the information we collect using Google Analytics to see how you use the <abbr title="{{serviceName}}">GASCD</abbr> service and to see how well it performs on your device</li>
+    </ul>
+    <p class="govuk-body">We do this to help:</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>make sure the <abbr title="{{serviceName}}">GASCD</abbr> service is meeting the needs of our intended users</li>
+      <li>make performance improvements to the service</li>
+    </ul>
+
+    <h2 class="govuk-heading-m">Our legal basis for processing your data</h2>
+    <p class="govuk-body">The legal basis for processing your personal data is Public Interest.</p>
+    <p class="govuk-body">The legal basis for processing data collected with Google Analytics and government digital services is your consent. For more information you can read about the <a href="cookies" class="govuk-link">cookies we use</a>.</p>
+
+    <h2 class="govuk-heading-m">What we do with your data</h2>
+    <p class="govuk-body">We use your data to check that you are allowed to access the <abbr title="{{serviceName}}">GASCD</abbr> service and to carry out the purposes mentioned earlier.</p>
+    <p class="govuk-body">We will not:</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>sell or rent your data to third parties</li>
+      <li>share your data with third parties for marketing purposes</li>
+    </ul>
+    <p class="govuk-body">We will share your data if we are required to do so by law – for example, by court order, or to prevent fraud or other crime.</p>
+
+    <h2 class="govuk-heading-m">How long we keep your data</h2>
+    <p class="govuk-body">We’ll keep your personal data for as long as you have a <abbr title="{{serviceName}}">GASCD</abbr> service account.</p>
+    <p class="govuk-body">We review accounts every six months. If you have not logged into your account for more than a year, your account will be deleted.</p>
+    <p class="govuk-body">When you ask us to close your account, we will delete your data within 1 year.</p>
+    <p class="govuk-body">When we close your account, we’ll delete your:</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>name</li>
+      <li>mobile phone number</li>
+      <li>name and location of your employer or organisation</li>
+      <li><abbr title="{{serviceName}}">GASCD</abbr> service password</li>
+    </ul>
+    <p class="govuk-body">So that we can carry out security audits, we’ll keep your email address and IP addresses for 1 year before we delete them.</p>
+
+    <h2 class="govuk-heading-m">Where your data is processed and stored</h2>
+    <p class="govuk-body">We design, build and run our systems to make sure that your data is as safe as possible at any stage, both while it’s processed and when it’s stored.</p>
+    <p class="govuk-body">Your personal data will be processed in the UK only.</p>
+
+    <h2 class="govuk-heading-m">How we protect your data and keep it secure</h2>
+    <p class="govuk-body">We are committed to doing all that we can to keep your data secure. To prevent unauthorised access or disclosure we have put in place technical and organisational procedures to secure the data we collect about you – for example, we protect your data using varying levels of encryption. We also make sure that any third parties that we deal with have an obligation to keep all personal data they process on our behalf secure.</p>
+
+    <h2 class="govuk-heading-m">Performance analysis and cookies</h2>
+    <p class="govuk-body">We also carry out performance analysis to see how you use the <abbr title="{{serviceName}}">GASCD</abbr> service and how well the site performs on your device during your visit.  We do this to make sure it’s meeting the needs of its users and to improve it.</p>
+    <p class="govuk-body">The legal basis for performing web analytics is your consent. When you first visit the service, you will be asked whether you consent to optional analytics cookies. If you do not give your consent, you will still be able to use the service. If you do give consent and change your mind, you can update your cookie settings at any time.</p>
+    <p class="govuk-body">For more information you can read about the <a href="cookies" class="govuk-link">cookies we use</a>.</p>
+
+    <h2 class="govuk-heading-m">What are your rights</h2>
+    <p class="govuk-body">You have the right to:</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>get copies of information &ndash; individuals have the right to ask for a copy of any information about them that is used</li>
+      <li>limit how the information is used - individuals have the right to ask for any of the information held about them to be restricted &ndash; for example, if they think inaccurate information is being used</li>
+      <li>get information corrected &ndash; individuals have the right to ask for any information held about them that they think is inaccurate to be corrected - this is not an absolute right under UK GDPR and will be assessed on a case-by-case basis</li>
+      <li>object to the information being used &ndash; individuals can ask for any information held about them to not be used - this is not an absolute right under UK GDPR and will be assessed on a case-by-case basis</li>
+      <li>get information deleted &ndash; this is not an absolute right under UK GDPR and will be assessed on a case-by-case basis</li>
+    </ul>
+    <p class="govuk-body">If you have any of these requests, get in contact with our Data Protection Officer, you can find their contact details below.</p>
+
+    <h2 class="govuk-heading-m">Questions or complaints</h2>
+    <p class="govuk-body">Contact the DHSC’s Data Protection Team if you either:</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>have questions about anything in this document</li>
+      <li>think that your personal data has been misused or mishandled</li>
+    </ul>
+    <p class="govuk-body"><abbr title="Department of Health and Social Care">DHSC</abbr>'s Data Protection Officer</p>
+    <p class="govuk-body">Email: <a href="mailto:data_protection@dhsc.gov.uk" class="govuk-link govuk-link--no-underline">data_protection@dhsc.gov.uk</a></p>
+    <p class="govuk-body">Post:</p>
+    <p class="govuk-body">
+      Data Protection Officer
+      <br>
+      1st Floor North
+      <br>
+      39 Victoria Street
+      <br>
+      London
+      <br>
+      SW1H 0EU
+    </p>
+    <p class="govuk-body">Anyone who is still not satisfied can complain to the Information Commissioner’s Office. Their website address is <a href="https://ico.org.uk" class="govuk-link">www.ico.org.uk</a> and their postal address is:</p>
+    <p class="govuk-body">
+      Information Commissioner’s Office
+      <br>
+      Wycliffe House
+      <br>
+      Water Lane
+      <br>
+      Wilmslow
+      <br>
+      Cheshire
+      <br>
+      SK9 5AF
+    </p>
+
+    <h2 class="govuk-heading-m">Changes to this notice</h2>
+    <p class="govuk-body">We may modify or amend this privacy notice at our discretion at any time. When we make changes to this notice, we will amend the last modified date at the top of this page. Any modification or amendment to this privacy notice will be applied to you and your data as of that revision date. We encourage you to periodically review this privacy notice to be informed about how we are protecting your data.</p>
+  </div>
+
+</div>
+{% endblock %}
