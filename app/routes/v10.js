@@ -1331,12 +1331,12 @@ module.exports = function(router) {
       chart: {
         chartType: "line",
         theme: "primary",
-        title: "Figure 1: estimated percentage change in population aged 18-64 with selected health conditions over time within <abbr title='Local Authority'>LA</abbr> area",
+        title: "Figure 1: estimated percentage change in population with selected needs over time",
         id: "figure-1-estimated-population-change-with-health-conditions-over-time",
         caption: "Source: Projected Adult Needs and Service Information (PANSI) v15 August 2025 from the Institute of Public Care",
-        description: "Line chart showing percentage change over time in population aged 18-64 with selected health conditions over time within <abbr title='Local Authority'>LA</abbr> area.",
+        description: "Line chart showing estimated percentage change with selected needs over time.",
         fallbackImageUrl: "/public/downloads/v10/future-planning/la-funding-planning/figure-1-estimated-population-change-with-health-conditions-over-time.png",
-        fallbackImageAlt: "Line chart showing percentage change over time in population aged 18-64 with selected health conditions over time within <abbr title='Local Authority'>LA</abbr> area."
+        fallbackImageAlt: "Line chart showing estimated percentage change with selected needs over time."
       },
       // IMPORTANT: stringify server-side and pass as a literal string
       highchartsConfig: JSON.stringify(config)
